@@ -3,7 +3,7 @@ import "./RegistrationScreen.scss";
 
 const RegistrationScreen: React.FC = () => {
   return (
-    <div className="login-screen">
+    <div className="registration-screen">
       <div>Registration Screen</div>
     </div>
   );
