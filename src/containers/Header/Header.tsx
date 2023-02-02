@@ -21,6 +21,7 @@ const Header: React.FC = () => {
             <li className="nav-list__item">RECIPES</li>
           </ul>
         </nav>
+        <div className="header__nav-close" />
       </div>
     </header>
   );
