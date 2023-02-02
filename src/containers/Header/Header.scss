@@ -67,7 +67,7 @@
     position: fixed;
     z-index: 100;
     margin: 0 auto;
-    transition: 0.2s all linear;
+    transition: 0.4s all ease;
     transform: translateX(100%);
   }
 
@@ -84,8 +84,9 @@
     position: absolute;
     top: 15.5px;
     right: 15.5px;
-    z-index: 11;
+    z-index: 110;
     cursor: pointer;
+    transition: 0.4s all ease;
   }
 
   &__nav-list {

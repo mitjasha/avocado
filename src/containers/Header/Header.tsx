@@ -2,6 +2,21 @@ import React from "react";
 import "./Header.scss";
 
 const Header: React.FC = () => {
+  const burgerMenuBtn = document.querySelector(
+    ".header__menu-btn",
+  ) as HTMLButtonElement;
+  const nav = document.querySelector(".header__nav") as HTMLElement;
+  const burgerCloseBtn = document.querySelector(
+    ".header__nav-close",
+  ) as HTMLElement;
+  burgerMenuBtn.addEventListener("click", () => {
+    nav.classList.add("header__nav-active");
+    burgerCloseBtn.style.display = "block";
+  });
+  burgerCloseBtn.addEventListener("click", () => {
+    nav.classList.remove("header__nav-active");
+    burgerCloseBtn.style.display = "none";
+  });
   return (
     <header className="header">
       <div className="container header__container">
