@@ -15,10 +15,10 @@ const Header: React.FC = () => {
         <h1 className="header__logo">AVOCADO</h1>
         <nav>
           <ul className="header__nav-list">
-            <li>ABOUT US</li>
-            <li>MAIN</li>
-            <li>PROFILE</li>
-            <li>RECIPES</li>
+            <li className="nav-list__item">ABOUT US</li>
+            <li className="nav-list__item">MAIN</li>
+            <li className="nav-list__item">PROFILE</li>
+            <li className="nav-list__item">RECIPES</li>
           </ul>
         </nav>
       </div>

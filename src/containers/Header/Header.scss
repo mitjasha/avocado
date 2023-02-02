@@ -93,6 +93,14 @@
     }
   }
 
+  .nav-list__item {
+    cursor: pointer;
+
+    &_active {
+      color: $dark-green;
+    }
+  }
+
   li {
     list-style: none;
   }
