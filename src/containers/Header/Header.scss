@@ -1,14 +1,12 @@
+@import "../../variables";
+
 .header {
-  background-color: #e8f2e1;
+  background-color: $bg-color;
   height: 75px;
   display: flex;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.5px;
-  color: #343633;
+  color: $dark-color;
   align-items: center;
 
   &__date-input {
@@ -16,14 +14,13 @@
     height: 44px;
     border-radius: 50px;
     border: none;
-    margin-left: 15px;
     cursor: pointer;
-    background: #fafdf8 url(../../assets/svg/calendar.svg) no-repeat;
+    background: $light-color url(../../assets/svg/calendar.svg) no-repeat;
     background-size: 30px;
     background-position: 50%;
 
     &:focus {
-      border: none;
+      outline: none;
     }
 
     &::-webkit-datetime-edit-month-field,
@@ -48,11 +45,10 @@
   &__menu-btn {
     width: 44px;
     height: 44px;
-    background-color: #fafdf8;
+    background-color: $light-color;
     border-radius: 50px;
     display: flex;
     border: none;
-    margin-right: 15px;
     gap: 3px;
     justify-content: center;
     align-items: center;
@@ -64,5 +60,5 @@
   width: 4.5px;
   height: 4.5px;
   border-radius: 50px;
-  background-color: #343633;
+  background-color: $dark-color;
 }
