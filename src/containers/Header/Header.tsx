@@ -13,7 +13,7 @@ const Header: React.FC = () => {
           <div className="dot" />
         </button>
         <h1 className="header__logo">AVOCADO</h1>
-        <nav>
+        <nav className="header__nav">
           <ul className="header__nav-list">
             <li className="nav-list__item">ABOUT US</li>
             <li className="nav-list__item">MAIN</li>
