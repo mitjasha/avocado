@@ -64,3 +64,36 @@
   border-radius: 50px;
   background-color: $dark-color;
 }
+
+@media screen and (min-width: $media-desk) {
+  .header {
+    &__date-input,
+    &__date,
+    &__menu-btn {
+      display: none;
+    }
+
+    &__container {
+      justify-content: space-between;
+    }
+
+    &__logo {
+      font-size: 40px;
+      font-weight: 200;
+      line-height: 49px;
+      color: $dark-green;
+    }
+
+    &__nav-list {
+      display: flex;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 300;
+      gap: 50px;
+    }
+  }
+
+  li {
+    list-style: none;
+  }
+}

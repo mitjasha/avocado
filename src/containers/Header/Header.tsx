@@ -12,6 +12,15 @@ const Header: React.FC = () => {
           <div className="dot" />
           <div className="dot" />
         </button>
+        <h1 className="header__logo">AVOCADO</h1>
+        <nav>
+          <ul className="header__nav-list">
+            <li>ABOUT US</li>
+            <li>MAIN</li>
+            <li>PROFILE</li>
+            <li>RECIPES</li>
+          </ul>
+        </nav>
       </div>
     </header>
   );
