@@ -6,7 +6,7 @@
   color: $bg-color;
 
   &__container {
-    margin: 0;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,9 +24,52 @@
     flex-direction: column;
     gap: 15px;
   }
+
+  &__media-icon {
+    background-color: $light-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    &_fb {
+      background-image: url(../../assets/svg/facebook.svg);
+    }
+
+    &_inst {
+      background-image: url(../../assets/svg/instagram.svg);
+    }
+
+    &_yt {
+      background-image: url(../../assets/svg/youtube.svg);
+    }
+  }
+
+  &__media-icon:hover {
+    background-color: $dark-color;
+    transition: 0.4s all ease;
+
+    &.footer__media-icon_fb {
+      background-image: url(../../assets/svg/facebook-light.svg);
+    }
+
+    &.footer__media-icon_inst {
+      background-image: url(../../assets/svg/instagram-light.svg);
+    }
+
+    &.footer__media-icon_yt {
+      background-image: url(../../assets/svg/youtube-light.svg);
+    }
+  }
 }
 
-.creators-list {
+.title {
+  margin: 0;
+  font-weight: 300;
+}
+
+.creators {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -35,7 +78,7 @@
   gap: 5px;
 }
 
-.list-item:hover {
+.creators__item:hover {
   color: $middle-green;
   transition: 0.4s all ease;
 }
@@ -43,42 +86,4 @@
 a {
   text-decoration: none;
   color: inherit;
-}
-
-.media-icon {
-  background-color: $light-color;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  background-repeat: no-repeat;
-  background-position: 50%;
-}
-
-.media-icon:hover {
-  background-color: $dark-color;
-  transition: 0.4s all ease;
-
-  &.fb-icon {
-    background-image: url(../../assets/svg/facebook-light.svg);
-  }
-
-  &.insta-icon {
-    background-image: url(../../assets/svg/instagram-light.svg);
-  }
-
-  &.youtube-icon {
-    background-image: url(../../assets/svg/youtube-light.svg);
-  }
-}
-
-.fb-icon {
-  background-image: url(../../assets/svg/facebook.svg);
-}
-
-.insta-icon {
-  background-image: url(../../assets/svg/instagram.svg);
-}
-
-.youtube-icon {
-  background-image: url(../../assets/svg/youtube.svg);
 }

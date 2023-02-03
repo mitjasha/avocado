@@ -6,15 +6,15 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="container footer__container">
         <div className="footer__creators">
-          Creators
-          <ul className="creators-list">
-            <li className="list-item">
+          <h3 className="title">Creators</h3>
+          <ul className="creators">
+            <li className="creators__item">
               <a href="https://github.com/mitjasha">mitjasha</a>
             </li>
-            <li className="list-item">
+            <li className="creators__item">
               <a href="https://github.com/asya2320">asya2320</a>
             </li>
-            <li className="list-item">
+            <li className="creators__item">
               <a href="https://github.com/viktoriakondrashova1">
                 ViktoriaKondrashova1
               </a>
@@ -23,13 +23,13 @@ const Footer: React.FC = () => {
         </div>
         <div className="footer__media">
           <a href="https://www.facebook.com/">
-            <div className="media-icon fb-icon" />
+            <div className="footer__media-icon footer__media-icon_fb" />
           </a>
           <a href="https://www.instagram.com/">
-            <div className="media-icon insta-icon" />
+            <div className="footer__media-icon footer__media-icon_inst" />
           </a>
           <a href="https://www.youtube.com/">
-            <div className="media-icon youtube-icon" />
+            <div className="footer__media-icon footer__media-icon_yt" />
           </a>
         </div>
       </div>
