@@ -21,6 +21,17 @@ const Footer: React.FC = () => {
             </li>
           </ul>
         </div>
+        <div className="footer__media">
+          <a href="https://www.facebook.com/">
+            <div className="media-icon fb-icon" />
+          </a>
+          <a href="https://www.instagram.com/">
+            <div className="media-icon insta-icon" />
+          </a>
+          <a href="https://www.youtube.com/">
+            <div className="media-icon youtube-icon" />
+          </a>
+        </div>
       </div>
     </footer>
   );

@@ -7,8 +7,7 @@
 
   &__container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
   }
 
   &__creators {
@@ -36,4 +35,25 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.media-icon {
+  background-color: $light-color;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.fb-icon {
+  background-image: url(../../assets/svg/facebook.svg);
+}
+
+.insta-icon {
+  background-image: url(../../assets/svg/instagram.svg);
+}
+
+.youtube-icon {
+  background-image: url(../../assets/svg/youtube.svg);
 }
