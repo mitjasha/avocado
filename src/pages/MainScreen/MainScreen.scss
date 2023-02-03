@@ -1,0 +1,59 @@
+@import "../../variables";
+
+.main-screen {
+  background-color: $bg-color;
+}
+
+.daily-events {
+  display: grid;
+
+  &__title {
+    font-weight: 300;
+  }
+
+  &__meal {
+    height: 75px;
+    background-color: $light-color;
+    border-radius: 20px;
+    padding-left: 10px;
+
+    &_breakfast {
+      border-left: solid 10px rgba(46, 209, 46, 0.5);
+    }
+
+    &_lunch {
+      border-left: solid 10px rgba(255, 169, 53, 0.5);
+    }
+
+    &_dinner {
+      border-left: solid 10px rgba(18, 229, 176, 0.5);
+    }
+
+    &_snack {
+      border-left: solid 10px rgba(181, 117, 231, 0.5);
+    }
+  }
+}
+
+.meal-title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 2;
+  margin: 0;
+
+  &_breakfast {
+    color: #2ed12e;
+  }
+
+  &_lunch {
+    color: #ffa935;
+  }
+
+  &_dinner {
+    color: #12e5b0;
+  }
+
+  &_snack {
+    color: #b575e7;
+  }
+}
