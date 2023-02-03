@@ -4,21 +4,12 @@ import NavComponent from "../../components/NavComponent/NavComponent";
 import "./Header.scss";
 
 const Header: React.FC = () => {
-  // const burgerMenuBtn = document.querySelector(
-  //   ".header__menu-btn",
-  // ) as HTMLButtonElement;
-  // const nav = document.querySelector(".header__nav-list") as HTMLElement;
-  // const burgerCloseBtn = document.querySelector(
-  //   ".header__nav-close",
-  // ) as HTMLElement;
-  // burgerMenuBtn.addEventListener("click", () => {
-  //   nav.classList.add("nav-active");
-  //   burgerCloseBtn.style.display = "block";
-  // });
-  // burgerCloseBtn.addEventListener("click", () => {
-  //   nav.classList.remove("nav-active");
-  //   burgerCloseBtn.style.display = "none";
-  // });
+  const openBurger = () => {
+    const nav = document.querySelector(".nav-list") as HTMLElement;
+    const burgerCloseBtn = document.querySelector(".nav-close") as HTMLElement;
+    nav.classList.add("nav-active");
+    burgerCloseBtn.style.display = "block";
+  };
   return (
     <header className="header">
       <div className="container header__container">
@@ -29,7 +20,11 @@ const Header: React.FC = () => {
         <div className="header_mob">
           <input type="date" className="header__date-input" />
           <div className="header__date">30 January, Monday</div>
-          <button type="button" className="header__menu-btn">
+          <button
+            type="button"
+            className="header__menu-btn"
+            onClick={openBurger}
+          >
             <div className="dot" />
             <div className="dot" />
             <div className="dot" />
