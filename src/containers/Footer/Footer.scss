@@ -1,0 +1,39 @@
+@import "../../variables";
+
+.footer {
+  background-color: $dark-color;
+  height: 179px;
+  color: $bg-color;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__creators {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+  }
+}
+
+.creators-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  font-size: 16px;
+  gap: 5px;
+}
+
+.list-item:hover {
+  color: $middle-green;
+  transition: 0.4s all ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
