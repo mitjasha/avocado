@@ -7,15 +7,24 @@
 .daily-events {
   display: grid;
 
+  &__meals {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
   &__title {
     font-weight: 300;
   }
 
   &__meal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 75px;
     background-color: $light-color;
     border-radius: 20px;
-    padding-left: 10px;
+    padding: 0 10px;
 
     &_breakfast {
       border-left: solid 10px rgba(46, 209, 46, 0.5);
@@ -38,7 +47,7 @@
 .meal-title {
   font-weight: 400;
   font-size: 18px;
-  line-height: 2;
+  line-height: 1.5;
   margin: 0;
 
   &_breakfast {
@@ -56,4 +65,25 @@
   &_snack {
     color: #b575e7;
   }
+}
+
+.recom {
+  color: #9da8c3;
+  font-size: 14px;
+  margin: 0;
+}
+
+.meal-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-meal {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50px;
+  background: $dark-color url(../../assets/svg/plus-light.svg) no-repeat;
+  background-position: 50%;
+  cursor: pointer;
 }
