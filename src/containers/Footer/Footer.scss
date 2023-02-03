@@ -6,8 +6,10 @@
   color: $bg-color;
 
   &__container {
+    margin: 0;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
   &__creators {
@@ -15,6 +17,12 @@
     font-weight: 300;
     line-height: 20px;
     letter-spacing: 0.5px;
+  }
+
+  &__media {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 }
 
@@ -44,6 +52,23 @@ a {
   border-radius: 50px;
   background-repeat: no-repeat;
   background-position: 50%;
+}
+
+.media-icon:hover {
+  background-color: $dark-color;
+  transition: 0.4s all ease;
+
+  &.fb-icon {
+    background-image: url(../../assets/svg/facebook-light.svg);
+  }
+
+  &.insta-icon {
+    background-image: url(../../assets/svg/instagram-light.svg);
+  }
+
+  &.youtube-icon {
+    background-image: url(../../assets/svg/youtube-light.svg);
+  }
 }
 
 .fb-icon {
