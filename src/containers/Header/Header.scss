@@ -114,10 +114,6 @@
     cursor: pointer;
     transition: 0.4s all ease;
   }
-
-  &__logo {
-    display: none;
-  }
 }
 
 .nav-list__item {
@@ -157,18 +153,6 @@
 
     &__date {
       margin: 0;
-    }
-
-    &__logo {
-      margin: 20px 0 20px 5px;
-    }
-
-    &__logo {
-      display: block;
-      font-size: 40px;
-      font-weight: 200;
-      line-height: 49px;
-      color: $dark-green;
     }
 
     &__nav-list {

@@ -1,0 +1,16 @@
+@import "../../variables.scss";
+
+.logo {
+  display: none;
+}
+
+@media screen and (min-width: $media-desk) {
+  .logo {
+    display: block;
+    font-size: 40px;
+    font-weight: 200;
+    line-height: 49px;
+    color: $dark-green;
+    margin: 20px 0 20px 5px;
+  }
+}

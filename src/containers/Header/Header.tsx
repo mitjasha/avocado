@@ -1,4 +1,5 @@
 import React from "react";
+import LogoComponent from "../../components/LogoComponent/LogoComponent";
 import "./Header.scss";
 
 const Header: React.FC = () => {
@@ -21,7 +22,7 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="container header__container">
         <div className="header_desk">
-          <h1 className="header__logo">AVOCADO</h1>
+          <LogoComponent className="logo" />
           <nav>
             <ul className="header__nav-list">
               <li className="nav-list__item">ABOUT US</li>
