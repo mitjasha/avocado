@@ -45,6 +45,13 @@
     }
   }
 
+  &__date-input:hover {
+    transition: 0.4s all ease;
+    background: $dark-color url(../../assets/svg/calendar-light.svg) no-repeat;
+    background-size: 30px;
+    background-position: 50%;
+  }
+
   &__date {
     margin: auto;
   }
@@ -60,6 +67,15 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+  }
+
+  &__menu-btn:hover {
+    transition: 0.4s all ease;
+    background-color: $dark-color;
+  }
+
+  &__menu-btn:hover .dot {
+    background-color: $light-color;
   }
 
   &__nav-list {
