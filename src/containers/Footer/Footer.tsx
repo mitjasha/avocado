@@ -21,6 +21,12 @@ const Footer: React.FC = () => {
             </li>
           </ul>
         </div>
+        <div className="footer__school-link">
+          <a href="https://rs.school/js/" className="school-link">
+            RS School
+          </a>
+          <div>2023</div>
+        </div>
         <div className="footer__media">
           <a href="https://www.facebook.com/">
             <div className="footer__media-icon footer__media-icon_fb" />
