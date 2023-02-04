@@ -29,6 +29,10 @@
     border-left: solid 10px rgba(56, 209, 209, 0.5);
   }
 
+  &_exercise {
+    border-left: solid 10px rgba(255, 101, 91, 0.5);
+  }
+
   &_breakfast h4 {
     color: #2ed12e;
   }
@@ -47,6 +51,10 @@
 
   &_water h4 {
     color: #38d1d1;
+  }
+
+  &_exercise h4 {
+    color: #ff655b;
   }
 }
 
