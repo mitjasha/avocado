@@ -6,10 +6,12 @@
 
 .daily-events {
   display: grid;
+  padding-bottom: 30px;
 
   &__meals,
   &__water,
-  &__exercise {
+  &__exercise,
+  &__weight {
     display: flex;
     flex-direction: column;
     gap: 15px;

@@ -33,6 +33,12 @@
     border-left: solid 10px rgba(255, 101, 91, 0.5);
   }
 
+  &_weight {
+    border-left: solid 10px rgba(85, 156, 79, 0.5);
+    flex-direction: column;
+    gap: 10px;
+  }
+
   &_breakfast h4 {
     color: #2ed12e;
   }
@@ -56,6 +62,11 @@
   &_exercise h4 {
     color: #ff655b;
   }
+
+  &_weight h4 {
+    color: #559c4f;
+    justify-content: center;
+  }
 }
 
 .item-info {
@@ -75,4 +86,11 @@ h4,
   color: #9da8c3;
   font-size: 14px;
   margin: 0;
+}
+
+.add-remove-events {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 60px;
 }
