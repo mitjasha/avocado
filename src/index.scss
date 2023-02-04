@@ -106,20 +106,21 @@ a {
 }
 
 .container {
+  max-width: 100%;
   height: 100%;
   margin: auto;
-  padding: 0 $offset-mob 0 $offset-mob;
+  padding: 0 $offset-mob;
 }
 
 @media screen and (min-width: $media-tab) {
   .container {
-    padding: 0 $offset-tab 0 $offset-tab;
+    padding: 0 $offset-tab;
   }
 }
 
 @media screen and (min-width: $media-tab-pt) {
   .container {
-    padding: 0 $offset-tab-pt 0 $offset-tab-pt;
+    padding: 0 $offset-tab-pt;
   }
 }
 
