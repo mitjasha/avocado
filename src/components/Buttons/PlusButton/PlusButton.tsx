@@ -9,7 +9,7 @@ const PlusButton: React.FC<PlusButtonProps> = ({ onClick }) => {
   return (
     <button
       type="button"
-      className="add-meal"
+      className="add-btn"
       aria-label="plus"
       onClick={onClick}
     />

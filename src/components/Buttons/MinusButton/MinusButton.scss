@@ -1,11 +1,11 @@
 @import "../../../variables.scss";
 
-.add-btn {
+.remove-btn {
   width: 30px;
   height: 30px;
   border: 0;
   border-radius: 50px;
-  background: $dark-color url(../../../assets/svg/plus-light.svg) no-repeat;
+  background: $dark-color url(../../../assets/svg/minus-light.svg) no-repeat;
   background-position: 50%;
   cursor: pointer;
 }
