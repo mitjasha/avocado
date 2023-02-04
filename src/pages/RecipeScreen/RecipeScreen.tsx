@@ -11,22 +11,22 @@ const RecipeScreen: React.FC = () => {
       >
         <div className="recipe__favorite" />
       </div>
-      <div>
-        <ul>
-          <li>
-            <span>Kcal:</span>
+      <div className="recipe__info">
+        <ul className="recipe__info__ul">
+          <li className="recipe__info__li">
+            <span className="recipe__info__span">Kcal:</span>
             <span>{recipes[0].calories}</span>
           </li>
-          <li>
-            <span>Protein:</span>
+          <li className="recipe__info__li">
+            <span className="recipe__info__span">Protein:</span>
             <span>{recipes[0].proteins}</span>
           </li>
-          <li>
-            <span>Fat:</span>
+          <li className="recipe__info__li">
+            <span className="recipe__info__span">Fat:</span>
             <span>{recipes[0].fats}</span>
           </li>
-          <li>
-            <span>Carbs:</span>
+          <li className="recipe__info__li">
+            <span className="recipe__info__span">Carbs:</span>
             <span>{recipes[0].carbs}</span>
           </li>
         </ul>
