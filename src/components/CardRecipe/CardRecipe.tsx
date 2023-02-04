@@ -31,14 +31,14 @@ const CardRecipe: React.FC<CardRecipesProps> = ({ data }) => {
       />
       <div className="recipe__card__wrapper">
         <h3 className="recipe__card__h3">{data.name}</h3>
-        <div>
-          <div>
-            <div />
-            <span>{data.calories} Kcal</span>
+        <div className="recipe__info">
+          <div className="recipe__info__calories">
+            <div className="recipe__info__img__calories" />
+            <span className="recipe__info__span">{data.calories} Kcal</span>
           </div>
-          <div>
-            <div />
-            <span>{data.time} min</span>
+          <div className="recipe__info__time">
+            <div className="recipe__info__img__time" />
+            <span className="recipe__info__span">{data.time} min</span>
           </div>
         </div>
       </div>
