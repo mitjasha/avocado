@@ -4,7 +4,7 @@ import * as data from "../../assets/recipes.json";
 
 const RecipesScreen: React.FC = () => {
   return (
-    <div>
+    <div className="recipes__screen">
       <div>
         <span>Categories</span>
         <span>View All</span>
@@ -38,8 +38,8 @@ const RecipesScreen: React.FC = () => {
           </span>
         </div>
       </div>
-      <h1>What is in your kitchen?</h1>
-      <h3>Enter some ingredient</h3>
+      <h1 className="recipes__screen__h1">What is in your kitchen?</h1>
+      <h3 className="recipes__screen__h3">Enter some ingredient</h3>
       <div>
         <input type="text" placeholder="Type your ingredient" />
         <div />

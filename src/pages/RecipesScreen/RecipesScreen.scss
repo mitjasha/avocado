@@ -1,0 +1,21 @@
+@import "../../variables";
+
+.recipes__screen {
+    width: 100%;
+    background-color: $bg-color;
+
+    &__h1 {
+        font-weight: 600;
+        font-size: 20px;
+        margin: 20px auto;
+        width: 90%;
+    }
+
+    &__h3 {
+        font-weight: 400;
+        font-size: 15px;
+        color: #424242;
+        margin: 0px auto;
+        width: 90%;
+    }
+}
