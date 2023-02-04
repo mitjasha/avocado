@@ -78,4 +78,25 @@
     }
 }
 
+.ingredients {
+    list-style-type: disc;
+    font-weight: 400;
+    font-size: 16px;
+    color: $dark-color;
+    padding: 0px;
+    margin: 10px 35px 20px;
 
+    &__li {
+        padding: 0px;
+    }
+}
+
+.steps {
+    list-style-type: none;
+    margin: 10px 20px;
+    padding: 0;
+
+    &__li {
+        padding: 5px 0px;
+    }
+}

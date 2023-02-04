@@ -34,17 +34,17 @@ const RecipeScreen: React.FC = () => {
       <div className="recipe__cook">
         <h2 className="recipe__cook__h2">{recipes[0].name}</h2>
         <span className="recipe__cook__span">INGREDIENTS:</span>
-        <ul>
+        <ul className="ingredients">
           {recipes[0].ingredients.map((item) => (
-            <li>
+            <li className="ingredients__li">
               {item.quantity} {item.name}
             </li>
           ))}
         </ul>
         <span className="recipe__cook__span">METHOD:</span>
-        <ul>
+        <ul className="steps">
           {recipes[0].steps.map((item) => (
-            <li>{item}</li>
+            <li className="steps__li">{item}</li>
           ))}
         </ul>
       </div>
