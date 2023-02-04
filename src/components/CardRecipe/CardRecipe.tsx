@@ -17,7 +17,7 @@ export interface DataRecipes {
   imageURL: string;
 }
 
-interface CardRecipesProps {
+export interface CardRecipesProps {
   data: DataRecipes;
   // className?: string;
 }
