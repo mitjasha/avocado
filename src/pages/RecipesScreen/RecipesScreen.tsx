@@ -1,6 +1,7 @@
 import React from "react";
 import "./RecipesScreen.scss";
 import * as data from "../../assets/recipes.json";
+import CardRecipe from "../../components/CardRecipe/CardRecipe";
 
 const RecipesScreen: React.FC = () => {
   return (
@@ -48,9 +49,12 @@ const RecipesScreen: React.FC = () => {
         />
         <div className="search__container__icon" />
       </div>
-      <div className="recipes__container" />
+      <div className="recipes__container">
+        {data.recipes.map((item) => (
+          <CardRecipe data={item} />
+        ))}
+      </div>
     </div>
   );
 };
-
 export default RecipesScreen;

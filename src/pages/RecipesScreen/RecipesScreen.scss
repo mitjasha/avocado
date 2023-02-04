@@ -1,4 +1,4 @@
-@import "../../variables";
+@import "../../variables.scss";
 
 .recipes__screen {
     width: 100%;
@@ -119,7 +119,7 @@
 }
 
 .recipes__container {
-    margin: 10px auto;
+    margin: 10px auto 0px;
     width: 90%;
     display: flex;
     flex-direction: row;

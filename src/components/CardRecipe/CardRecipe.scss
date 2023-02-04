@@ -1,4 +1,4 @@
-@import "../variables.scss";
+@import "../../variables.scss";
 
 .recipe__card {
     background: $light-color;
@@ -61,7 +61,7 @@
         height: 13px;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url(".././assets/svg/calories.svg");
+        background-image: url("../../assets/svg/calories.svg");
     }
 
     &__img__time {
@@ -69,6 +69,6 @@
         height: 13px;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url(".././assets/svg/clock_for_categories.svg");
+        background-image: url("../../assets/svg/clock_for_categories.svg");
     }
 }
