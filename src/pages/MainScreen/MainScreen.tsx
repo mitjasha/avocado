@@ -1,4 +1,5 @@
 import React from "react";
+import PlusButton from "../../components/Buttons/PlusButton/PlusButton";
 import "./MainScreen.scss";
 
 const MainScreen: React.FC = () => {
@@ -13,28 +14,28 @@ const MainScreen: React.FC = () => {
                 <p className="meal-title meal-title_breakfast">Breakfast</p>
                 <p className="recom recom_breakfast">Recomended 447 Kcal</p>
               </div>
-              <button type="button" className="add-meal" aria-label="plus" />
+              <PlusButton />
             </div>
             <div className="daily-events__meal daily-events__meal_lunch">
               <div className="meal-text">
                 <p className="meal-title meal-title_lunch">Lunch</p>
                 <p className="recom recom_lunch">Recomended 447 Kcal</p>
               </div>
-              <button type="button" className="add-meal" aria-label="plus" />
+              <PlusButton />
             </div>
             <div className="daily-events__meal daily-events__meal_dinner">
               <div className="meal-text">
                 <p className="meal-title meal-title_dinner">Dinner</p>
                 <p className="recom recom_dinner">Recomended 447 Kcal</p>
               </div>
-              <button type="button" className="add-meal" aria-label="plus" />
+              <PlusButton />
             </div>
             <div className="daily-events__meal daily-events__meal_snack">
               <div className="meal-text">
                 <p className="meal-title meal-title_snack">Snack</p>
                 <p className="recom recom_snack">Recomended 447 Kcal</p>
               </div>
-              <button type="button" className="add-meal" aria-label="plus" />
+              <PlusButton />
             </div>
           </div>
         </div>
@@ -42,4 +43,5 @@ const MainScreen: React.FC = () => {
     </div>
   );
 };
+
 export default MainScreen;
