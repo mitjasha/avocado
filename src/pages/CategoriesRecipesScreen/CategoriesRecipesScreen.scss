@@ -33,9 +33,63 @@
         background-image: url("../../assets/svg/back-arrow_category_page.svg");
     }
 
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 70px;
+    }
+
     &__h1 {
         font-weight: 600;
         font-size: 24px;
         margin: 5px 20px;
+    }
+
+    &__span {
+        font-weight: 400;
+        font-size: 12px;
+        margin: 5px 20px;
+    }
+
+    &__ul {
+        width: 95%;
+        margin: 10px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-self: center;
+        padding: 0px;
+    }
+
+    &__li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        width: 65px;
+        height: 37px;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 59px;
+        font-weight: 600;
+        font-size: 10px;
+    }
+
+    &__li:hover {
+        background-color: $light-color;
+        border: 1px solid #c5c6ca;
+        color: $dark-color;
+        cursor: pointer;
+    }
+
+    &__menu {
+        background-image: url("../../assets/svg/menu_category_page.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 35px;
+        height: 35px;
     }
 }

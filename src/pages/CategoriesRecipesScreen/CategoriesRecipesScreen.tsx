@@ -8,18 +8,23 @@ const CategoriesRecipesScreen: React.FC = () => {
       <header className="categories__header">
         <div className="categories__header__image" />
         <div className="categories__header__button__back" />
-        <h1 className="categories__header__h1">Appetizers</h1>
-        <span>
-          {data.recipes.filter((item) => item.category === "appetizers").length}{" "}
-          Recipes
-        </span>
-        <ul>
-          <li>Popular</li>
-          <li>Recent</li>
-          <li>Veg</li>
-          <li>Quick</li>
-          <div />
-        </ul>
+        <div className="categories__header__nav">
+          <h1 className="categories__header__h1">Appetizers</h1>
+          <span className="categories__header__span">
+            {
+              data.recipes.filter((item) => item.category === "appetizers")
+                .length
+            }{" "}
+            Recipes
+          </span>
+          <ul className="categories__header__ul">
+            <li className="categories__header__li">Popular</li>
+            <li className="categories__header__li">Recent</li>
+            <li className="categories__header__li">Veg</li>
+            <li className="categories__header__li">Quick</li>
+            <div className="categories__header__menu" />
+          </ul>
+        </div>
       </header>
       <main />
     </div>
