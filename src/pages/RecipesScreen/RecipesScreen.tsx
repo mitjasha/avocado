@@ -5,9 +5,9 @@ import * as data from "../../assets/recipes.json";
 const RecipesScreen: React.FC = () => {
   return (
     <div className="recipes__screen">
-      <div>
+      <div className="main__header__container">
         <span>Categories</span>
-        <span>View All</span>
+        <span className="main__header__container__view">View All</span>
       </div>
       <div className="categories__container">
         <div>

@@ -19,3 +19,21 @@
         width: 90%;
     }
 }
+
+.main__header__container {
+    padding: 10px 20px;
+    width: 90%;
+    margin: 0 auto;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__view {
+        font-weight: 600;
+        font-size: 14px;
+        color: #c4c4c4;
+    }
+
+}
