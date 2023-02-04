@@ -40,11 +40,15 @@ const RecipesScreen: React.FC = () => {
       </div>
       <h1 className="recipes__screen__h1">What is in your kitchen?</h1>
       <h3 className="recipes__screen__h3">Enter some ingredient</h3>
-      <div>
-        <input type="text" placeholder="Type your ingredient" />
-        <div />
+      <div className="search__container">
+        <input
+          className="search__container__input"
+          type="text"
+          placeholder="Type your ingredient"
+        />
+        <div className="search__container__icon" />
       </div>
-      <div />
+      <div className="recipes__container" />
     </div>
   );
 };
