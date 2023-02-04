@@ -5,10 +5,10 @@ import * as data from "../../assets/recipes.json";
 const CategoriesRecipesScreen: React.FC = () => {
   return (
     <div className="categories__recipes__screen">
-      <header>
-        <div />
-        <img src="svg/back-arrow.svg" alt="" />
-        <h1>Appetizers</h1>
+      <header className="categories__header">
+        <div className="categories__header__image" />
+        <div className="categories__header__button__back" />
+        <h1 className="categories__header__h1">Appetizers</h1>
         <span>
           {data.recipes.filter((item) => item.category === "appetizers").length}{" "}
           Recipes
@@ -18,7 +18,7 @@ const CategoriesRecipesScreen: React.FC = () => {
           <li>Recent</li>
           <li>Veg</li>
           <li>Quick</li>
-          <img src="svg/menu.svg" alt="" />
+          <div />
         </ul>
       </header>
       <main />

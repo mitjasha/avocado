@@ -1,0 +1,41 @@
+@import "../../variables.scss";
+
+.categories__recipes__screen {
+    width: 100%;
+    background-color: $bg-color;
+}
+
+.categories__header {
+    height: 210px;
+    width: 100%;
+    border-radius: 0 0 5% 5%;
+    background: rgba(85, 156, 79, 0.5);
+    color: $light-color;
+
+    &__image {
+        position: absolute;
+        right: 0;
+        height: 20%;
+        width: 126px;
+        background-image: url("../../assets/svg/appetizers_category_page.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &__button__back {
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-image: url("../../assets/svg/back-arrow_category_page.svg");
+    }
+
+    &__h1 {
+        font-weight: 600;
+        font-size: 24px;
+        margin: 5px 20px;
+    }
+}
