@@ -1,6 +1,7 @@
 import React from "react";
 import "./CategoriesRecipesScreen.scss";
 import * as data from "../../assets/recipes.json";
+import CardCategory from "../../components/CardCategory/CardRecipe/CardCategory";
 
 const CategoriesRecipesScreen: React.FC = () => {
   return (
@@ -26,7 +27,13 @@ const CategoriesRecipesScreen: React.FC = () => {
           </ul>
         </div>
       </header>
-      <main />
+      <main>
+        {data.recipes
+          .filter((item) => item.category === "appetizers")
+          .map((item) => (
+            <CardCategory data={item} />
+          ))}
+      </main>
     </div>
   );
 };
