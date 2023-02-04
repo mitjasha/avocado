@@ -8,4 +8,54 @@
   background-color: $light-color;
   border-radius: 20px;
   padding: 0 10px;
+
+  &_breakfast {
+    border-left: solid 10px rgba(46, 209, 46, 0.5);
+  }
+
+  &_lunch {
+    border-left: solid 10px rgba(255, 169, 53, 0.5);
+  }
+
+  &_dinner {
+    border-left: solid 10px rgba(18, 229, 176, 0.5);
+  }
+
+  &_snack {
+    border-left: solid 10px rgba(181, 117, 231, 0.5);
+  }
+
+  &_breakfast h4 {
+    color: #2ed12e;
+  }
+
+  &_lunch h4 {
+    color: #ffa935;
+  }
+
+  &_dinner h4 {
+    color: #12e5b0;
+  }
+
+  &_snack h4 {
+    color: #b575e7;
+  }
+}
+
+.meal-text {
+  display: flex;
+  flex-direction: column;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.recom {
+  color: #9da8c3;
+  font-size: 14px;
+  margin: 0;
 }

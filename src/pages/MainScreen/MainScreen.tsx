@@ -1,5 +1,5 @@
 import React from "react";
-import PlusButton from "../../components/Buttons/PlusButton/PlusButton";
+import DailyEventWrapper from "../../components/DailyEventWrapper/DailyEventWrapper";
 import "./MainScreen.scss";
 
 const MainScreen: React.FC = () => {
@@ -9,34 +9,26 @@ const MainScreen: React.FC = () => {
         <div className="daily-events">
           <div className="daily-events__meals">
             <h3 className="daily-events__title">Daily meals</h3>
-            <div className="daily-events__meal daily-events__meal_breakfast">
-              <div className="meal-text">
-                <p className="meal-title meal-title_breakfast">Breakfast</p>
-                <p className="recom recom_breakfast">Recomended 447 Kcal</p>
-              </div>
-              <PlusButton />
-            </div>
-            <div className="daily-events__meal daily-events__meal_lunch">
-              <div className="meal-text">
-                <p className="meal-title meal-title_lunch">Lunch</p>
-                <p className="recom recom_lunch">Recomended 447 Kcal</p>
-              </div>
-              <PlusButton />
-            </div>
-            <div className="daily-events__meal daily-events__meal_dinner">
-              <div className="meal-text">
-                <p className="meal-title meal-title_dinner">Dinner</p>
-                <p className="recom recom_dinner">Recomended 447 Kcal</p>
-              </div>
-              <PlusButton />
-            </div>
-            <div className="daily-events__meal daily-events__meal_snack">
-              <div className="meal-text">
-                <p className="meal-title meal-title_snack">Snack</p>
-                <p className="recom recom_snack">Recomended 447 Kcal</p>
-              </div>
-              <PlusButton />
-            </div>
+            <DailyEventWrapper
+              title="Breakfast"
+              recommended="Recomended 447 Kcal"
+              className="daily-events__meal daily-events__meal_breakfast"
+            />
+            <DailyEventWrapper
+              title="Lunch"
+              recommended="Recomended 447 Kcal"
+              className="daily-events__meal daily-events__meal_lunch"
+            />
+            <DailyEventWrapper
+              title="Dinner"
+              recommended="Recomended 447 Kcal"
+              className="daily-events__meal daily-events__meal_dinner"
+            />
+            <DailyEventWrapper
+              title="Snack"
+              recommended="Recomended 447 Kcal"
+              className="daily-events__meal daily-events__meal_snack"
+            />
           </div>
         </div>
       </div>
