@@ -1,11 +1,11 @@
 import React from "react";
-import "./MunisButton.scss";
+import "./MinusButton.scss";
 
-export interface MunisButtonProps {
+export interface MinusButtonProps {
   onClick?: () => void;
 }
 
-const MunisButton: React.FC<MunisButtonProps> = ({ onClick }) => {
+const MinusButton: React.FC<MinusButtonProps> = ({ onClick }) => {
   return (
     <button
       type="button"
@@ -16,4 +16,4 @@ const MunisButton: React.FC<MunisButtonProps> = ({ onClick }) => {
   );
 };
 
-export default MunisButton;
+export default MinusButton;

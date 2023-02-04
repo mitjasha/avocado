@@ -8,6 +8,8 @@ export interface DailyEventWrapperProps {
   quantity?: string;
   content?: JSX.Element;
   className?: string;
+  minusButton?: JSX.Element;
+  curWeight?: JSX.Element;
 }
 
 const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
@@ -16,6 +18,8 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
   quantity,
   content,
   className,
+  minusButton,
+  curWeight,
 }) => {
   return (
     <div className={className}>
@@ -27,7 +31,11 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
         <p className="recom">{recommended}</p>
         {content}
       </div>
-      <PlusButton />
+      <div className="add-remove-events">
+        {minusButton}
+        {curWeight}
+        <PlusButton />
+      </div>
     </div>
   );
 };

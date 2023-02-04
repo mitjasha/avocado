@@ -1,5 +1,6 @@
 import React from "react";
 import DailyEventWrapper from "../../components/DailyEventWrapper/DailyEventWrapper";
+import MinusButton from "../../components/Buttons/MinusButton/MinusButton";
 import "./MainScreen.scss";
 
 const MainScreen: React.FC = () => {
@@ -52,6 +53,16 @@ const MainScreen: React.FC = () => {
               title="Exercise"
               recommended="Last: Run 1 km"
               className="daily-events__item daily-events__item_exercise"
+            />
+          </div>
+          <div className="daily-events__weight">
+            <h3 className="daily-events__title">Body control</h3>
+            <DailyEventWrapper
+              title="Weight"
+              recommended="Target: 70.0 kg"
+              className="daily-events__item daily-events__item_weight"
+              minusButton={<MinusButton />}
+              curWeight=<p style={{ fontSize: "26px" }}>77.0 kg</p>
             />
           </div>
         </div>
