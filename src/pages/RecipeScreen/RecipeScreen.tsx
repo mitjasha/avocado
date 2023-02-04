@@ -48,9 +48,9 @@ const RecipeScreen: React.FC = () => {
           ))}
         </ul>
       </div>
-      <div>
-        <div />
-        <span>{recipes[0].time} MIN</span>
+      <div className="recipe__time">
+        <div className="recipe__time__icon" />
+        <span className="recipe__time__text">{recipes[0].time} MIN</span>
       </div>
     </div>
   );

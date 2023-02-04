@@ -100,3 +100,27 @@
         padding: 5px 0px;
     }
 }
+
+.recipe__time {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        background-image: url("../../assets/svg/clock_recipe.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0px 5px;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 18px;
+        color: $dark-green;
+    }
+}
