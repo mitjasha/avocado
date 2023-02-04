@@ -1,0 +1,11 @@
+@import "../../variables";
+
+.daily-events__meal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  background-color: $light-color;
+  border-radius: 20px;
+  padding: 0 10px;
+}
