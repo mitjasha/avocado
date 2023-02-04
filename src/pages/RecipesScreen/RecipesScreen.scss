@@ -37,3 +37,48 @@
     }
 
 }
+
+.categories__container {
+    width: 90%;
+    height: 160px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.category {
+    width: 30%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-weight: 600;
+
+    &__h3 {
+        font-size: 14px;
+        padding: 5px 8%;
+        margin: 0;
+        color: #ffffff;
+    }
+
+    &__span {
+        font-size: 10px;
+        padding: 0px 0px 15px 8%;
+        color: #d9d9d9;
+    }
+
+    &__breakfast {
+        background-image: url("../../assets/svg/breakfast_category.svg");
+    }
+
+    &__appetizers {
+        background-image: url("../../assets/svg/apper_category.svg");
+    }
+
+    &__pasta {
+        background-image: url("../../assets/svg/pasta_category.svg");
+    }
+}

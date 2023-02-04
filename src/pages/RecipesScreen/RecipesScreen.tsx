@@ -10,9 +10,9 @@ const RecipesScreen: React.FC = () => {
         <span className="main__header__container__view">View All</span>
       </div>
       <div className="categories__container">
-        <div>
-          <h3>Breakfast</h3>
-          <span>
+        <div className="category category__breakfast">
+          <h3 className="category__h3">Breakfast</h3>
+          <span className="category__span">
             {
               data.recipes.filter((item) => item.category === "breakfast")
                 .length
@@ -20,9 +20,9 @@ const RecipesScreen: React.FC = () => {
             Recipes
           </span>
         </div>
-        <div>
-          <h3>Appetizers</h3>
-          <span>
+        <div className="category category__appetizers">
+          <h3 className="category__h3">Appetizers</h3>
+          <span className="category__span">
             {
               data.recipes.filter((item) => item.category === "appetizers")
                 .length
@@ -30,9 +30,9 @@ const RecipesScreen: React.FC = () => {
             Recipes
           </span>
         </div>
-        <div>
-          <h3>Pasta</h3>
-          <span>
+        <div className="category category__pasta">
+          <h3 className="category__h3">Pasta</h3>
+          <span className="category__span">
             {data.recipes.filter((item) => item.category === "dinner").length}{" "}
             Recipes
           </span>
