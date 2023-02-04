@@ -42,12 +42,13 @@
   }
 }
 
-.meal-text {
+.meal-info {
   display: flex;
   flex-direction: column;
 }
 
-h4 {
+h4,
+.quantity {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;

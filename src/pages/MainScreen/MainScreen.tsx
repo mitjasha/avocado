@@ -12,6 +12,7 @@ const MainScreen: React.FC = () => {
             <DailyEventWrapper
               title="Breakfast"
               recommended="Recomended 447 Kcal"
+              quantity="356 kcal"
               className="daily-events__meal daily-events__meal_breakfast"
             />
             <DailyEventWrapper
@@ -29,6 +30,9 @@ const MainScreen: React.FC = () => {
               recommended="Recomended 447 Kcal"
               className="daily-events__meal daily-events__meal_snack"
             />
+          </div>
+          <div className="daily-events__water">
+            <h3 className="daily-events__title">Water consumed</h3>
           </div>
         </div>
       </div>
