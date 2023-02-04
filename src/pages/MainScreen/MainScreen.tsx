@@ -13,26 +13,38 @@ const MainScreen: React.FC = () => {
               title="Breakfast"
               recommended="Recomended 447 Kcal"
               quantity="356 kcal"
-              className="daily-events__meal daily-events__meal_breakfast"
+              className="daily-events__item daily-events__item_breakfast"
             />
             <DailyEventWrapper
               title="Lunch"
               recommended="Recomended 447 Kcal"
-              className="daily-events__meal daily-events__meal_lunch"
+              className="daily-events__item daily-events__item_lunch"
             />
             <DailyEventWrapper
               title="Dinner"
               recommended="Recomended 447 Kcal"
-              className="daily-events__meal daily-events__meal_dinner"
+              className="daily-events__item daily-events__item_dinner"
             />
             <DailyEventWrapper
               title="Snack"
               recommended="Recomended 447 Kcal"
-              className="daily-events__meal daily-events__meal_snack"
+              className="daily-events__item daily-events__item_snack"
             />
           </div>
           <div className="daily-events__water">
             <h3 className="daily-events__title">Water consumed</h3>
+            <DailyEventWrapper
+              title="Water"
+              quantity="0.75L (40%)"
+              recommended="Recomended 2.0L"
+              content=<div className="glasses">
+                <div className="glass" />
+                <div className="glass" />
+                <div className="glass" />
+                <div className="glass" />
+              </div>
+              className="daily-events__item daily-events__item_water"
+            />
           </div>
         </div>
       </div>

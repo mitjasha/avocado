@@ -7,7 +7,8 @@
 .daily-events {
   display: grid;
 
-  &__meals {
+  &__meals,
+  &__water {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -16,4 +17,18 @@
   &__title {
     font-weight: 300;
   }
+}
+
+.glasses {
+  display: flex;
+  flex-wrap: wrap;
+  width: 270px;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.glass {
+  width: 26px;
+  height: 44px;
+  background-image: url(../../assets/png/glass.png);
 }

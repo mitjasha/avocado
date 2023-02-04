@@ -6,7 +6,7 @@ export interface DailyEventWrapperProps {
   title: string;
   recommended?: string;
   quantity?: string;
-  content?: React.ReactNode;
+  content?: JSX.Element;
   className?: string;
 }
 
@@ -19,14 +19,14 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
 }) => {
   return (
     <div className={className}>
-      <div className="meal-info">
+      <div className="item-info">
         <div style={{ display: "flex", gap: "5px" }}>
           <h4 className="meal-title">{title}</h4>
           <p className="quantity">{quantity}</p>
         </div>
         <p className="recom">{recommended}</p>
+        {content}
       </div>
-      {content}
       <PlusButton />
     </div>
   );
