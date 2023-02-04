@@ -10,13 +10,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-weight: 300;
   }
 
   &__creators {
     font-size: 20px;
-    font-weight: 300;
     line-height: 1.5;
     letter-spacing: 0.5px;
+  }
+
+  &__school-link {
+    display: none;
   }
 
   &__media {
@@ -86,4 +90,17 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+@media screen and (min-width: $media-tab-pt) {
+  .footer__school-link {
+    display: flex;
+    gap: 5px;
+    margin: auto 0 25px 0;
+  }
+
+  .school-link:hover {
+    color: $middle-green;
+    transition: 0.4s all ease;
+  }
 }
