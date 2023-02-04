@@ -8,7 +8,8 @@
   display: grid;
 
   &__meals,
-  &__water {
+  &__water,
+  &__exercise {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -16,6 +17,7 @@
 
   &__title {
     font-weight: 300;
+    margin-bottom: 0;
   }
 }
 
