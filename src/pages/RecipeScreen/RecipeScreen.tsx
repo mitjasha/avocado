@@ -4,9 +4,12 @@ import { recipes } from "../../assets/recipes.json";
 
 const RecipeScreen: React.FC = () => {
   return (
-    <div className="recipes__screen">
-      <div style={{ backgroundImage: `url(${recipes[0].imageURL})` }}>
-        <div />
+    <div className="recipe__screen">
+      <div
+        className="recipe__image"
+        style={{ backgroundImage: `url(${recipes[0].imageURL})` }}
+      >
+        <div className="recipe__favorite" />
       </div>
       <div>
         <ul>

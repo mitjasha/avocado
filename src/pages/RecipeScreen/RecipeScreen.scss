@@ -1,0 +1,23 @@
+@import "../../variables.scss";
+
+.recipe__screen {
+    width: 100%;
+    background-color: $bg-color;
+}
+
+.recipe__image {
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+}
+
+.recipe__favorite {
+    background-image: url("../../assets/svg/heart_recipe.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 100px;
+    right: 15px;
+}
