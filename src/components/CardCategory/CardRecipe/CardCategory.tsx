@@ -8,20 +8,22 @@ const CardCategory: React.FC<CardRecipesProps> = ({ data }) => {
       className="card__category"
       style={{ backgroundImage: `url(${data.imageURL})` }}
     >
-      <div>
-        <div>
-          <h2>{data.name}</h2>
-          <span>{data.author}</span>
-          <div />
-          <div />
-        </div>
-        <div>
-          <div />
-          <span>{data.kitchen} Kitchen</span>
-        </div>
-        <div>
-          <div />
-          <span>{data.time} min</span>
+      <div className="card__category__bg">
+        <div className="category__recipe__container">
+          <h2 className="category__recipe__name">{data.name}</h2>
+          <span className="category__recipe__author">{data.author}</span>
+          <div className="category__recipe__kithcen">
+            <div className="category__recipe__kithcen__icon" />
+            <span className="category__recipe__kithcen__text">
+              {data.kitchen} Kitchen
+            </span>
+          </div>
+          <div className="category__recipe__time">
+            <div className="category__recipe__time__icon" />
+            <span className="category__recipe__time__text">
+              {data.time} min
+            </span>
+          </div>
         </div>
       </div>
     </div>
