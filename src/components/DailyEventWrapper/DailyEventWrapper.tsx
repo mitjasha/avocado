@@ -1,28 +1,28 @@
 import React from "react";
+import PlusButton from "../Buttons/PlusButton/PlusButton";
 import "./DailyEventWrapper.scss";
 
 export interface DailyEventWrapperProps {
-  //   color: string;
   title: string;
   recommended?: string;
-  //   children?: React.ReactNode;
-  //   className?: string;
+  content?: React.ReactNode;
+  className?: string;
 }
 
 const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
-  //   color,
   title,
   recommended,
-  //   children,
-  //   className,
+  content,
+  className,
 }) => {
   return (
-    <div className="daily-events__meal daily-events__meal_breakfast">
+    <div className={className}>
       <div className="meal-text">
-        <p className="meal-title meal-title_breakfast">{title}</p>
-        <p className="recom recom_breakfast">{recommended}</p>
+        <h4 className="meal-title">{title}</h4>
+        <p className="recom">{recommended}</p>
       </div>
-      <button type="button" className="add-meal" aria-label="plus" />
+      {content}
+      <PlusButton />
     </div>
   );
 };
