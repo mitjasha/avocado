@@ -5,6 +5,16 @@ import minus from "../../assets/svg/minus-light.svg";
 import "./MainScreen.scss";
 
 const MainScreen: React.FC = () => {
+  const getWaterConsumed = () => {
+    const content = [];
+    const litreConsumed = 0.75; // будем получать эти данные из бд
+    const oneGlass = 0.25;
+    const glasses = litreConsumed / oneGlass;
+    for (let i = 0; i < glasses; i += 1) {
+      content.push(<div className="glass" />);
+    }
+    return <div className="glasses">{content}</div>;
+  };
   return (
     <div className="main-screen">
       <div className="daily-data">
@@ -43,12 +53,7 @@ const MainScreen: React.FC = () => {
               quantity="0.75L (40%)"
               recommended="Recomended 2.0L (8 gls)"
               className="daily-events__item daily-events__item_water"
-              content=<div className="glasses">
-                <div className="glass" />
-                <div className="glass" />
-                <div className="glass" />
-                <div className="glass" />
-              </div>
+              content={getWaterConsumed()}
             />
           </div>
           <div className="daily-events__exercise">
