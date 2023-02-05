@@ -32,8 +32,10 @@ const ChartComponent: React.FC<DoughnutProps> = ({
   };
   const options = {
     cutout,
+    responsive: true,
+    maintainAspectRatio: false,
   };
-  return <Doughnut options={options} data={data} height={size} width={size} />;
+  return <Doughnut options={options} data={data} width={size} height={size} />;
 };
 
 export default ChartComponent;
