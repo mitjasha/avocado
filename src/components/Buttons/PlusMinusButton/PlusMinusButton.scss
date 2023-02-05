@@ -7,6 +7,12 @@
   border-radius: 50px;
   background-color: $dark-color;
   cursor: pointer;
+
+  &:hover {
+    width: 35px;
+    height: 35px;
+    transition: 0.4s all ease;
+  }
 }
 
 .plus-minus-img {
