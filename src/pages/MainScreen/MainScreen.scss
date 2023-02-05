@@ -8,6 +8,33 @@
   background-color: $middle-green;
 }
 
+.calories-chart {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+
+  &__info p,
+  &__info h5 {
+    margin: 0;
+  }
+
+  &__info p {
+    font-size: 22px;
+  }
+
+  &__info h5 {
+    font-weight: 300;
+    color: #9da8c3;
+  }
+}
+
 .daily-events {
   display: grid;
   padding-bottom: 30px;
