@@ -51,6 +51,10 @@ const MainScreen: React.FC = () => {
                 cutout={60}
                 spacing={6}
               />
+              <div className="kcal-available">
+                <p className="kcal-available__num">1645</p>
+                <h5 className="chart-data-title">Kcal available</h5>
+              </div>
             </div>
             <div className="calories-chart__info">
               <img src={eaten} alt="fire" />
@@ -64,39 +68,45 @@ const MainScreen: React.FC = () => {
           </div>
           <div className="nutrients-charts">
             <div className="nutrients-charts__item">
-              <ChartComponent
-                chartData={[eatenCarbs, availableCarbs]}
-                colors={["#559C4F", "#fafdf8"]}
-                size={60}
-                cutout={15}
-                spacing={3}
-              />
+              <div>
+                <ChartComponent
+                  chartData={[eatenCarbs, availableCarbs]}
+                  colors={["#559C4F", "#fafdf8"]}
+                  size={60}
+                  cutout={15}
+                  spacing={3}
+                />
+              </div>
               <div className="chart-info">
                 <p className="chart-data-num nutrients-num">{eatenCarbs}g</p>
                 <h5 className="chart-data-title">Carbs</h5>
               </div>
             </div>
             <div className="nutrients-charts__item">
-              <ChartComponent
-                chartData={[eatenFats, availableFats]}
-                colors={["#559C4F", "#fafdf8"]}
-                size={60}
-                cutout={15}
-                spacing={3}
-              />
+              <div>
+                <ChartComponent
+                  chartData={[eatenFats, availableFats]}
+                  colors={["#559C4F", "#fafdf8"]}
+                  size={60}
+                  cutout={15}
+                  spacing={3}
+                />
+              </div>
               <div className="chart-info">
                 <p className="chart-data-num nutrients-num">{eatenFats}g</p>
                 <h5 className="chart-data-title">Fats</h5>
               </div>
             </div>
             <div className="nutrients-charts__item">
-              <ChartComponent
-                chartData={[eatenProtein, availableProtein]}
-                colors={["#559C4F", "#fafdf8"]}
-                size={60}
-                cutout={15}
-                spacing={3}
-              />
+              <div>
+                <ChartComponent
+                  chartData={[eatenProtein, availableProtein]}
+                  colors={["#559C4F", "#fafdf8"]}
+                  size={60}
+                  cutout={15}
+                  spacing={3}
+                />
+              </div>
               <div className="chart-info">
                 <p className="chart-data-num nutrients-num">{eatenProtein}g</p>
                 <h5 className="chart-data-title">Protein</h5>
