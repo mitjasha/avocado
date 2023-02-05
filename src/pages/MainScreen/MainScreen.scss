@@ -6,6 +6,17 @@
 
 .daily-data {
   background-color: $middle-green;
+  padding-bottom: 20px;
+
+  &__status {
+    margin: auto;
+    width: 192px;
+    text-align: center;
+    background-color: $dark-color;
+    color: $bg-color;
+    border-radius: 20px;
+    padding: 10px;
+  }
 }
 
 .calories-chart {
