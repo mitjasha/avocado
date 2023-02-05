@@ -19,20 +19,24 @@
     align-items: center;
     gap: 3px;
   }
+}
 
-  &__info p,
-  &__info h5 {
-    margin: 0;
-  }
+.goal-kcal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
 
-  &__info p {
-    font-size: 22px;
-  }
+.kcalNum {
+  margin: 0;
+  font-size: 22px;
+}
 
-  &__info h5 {
-    font-weight: 300;
-    color: #9da8c3;
-  }
+.kcal-title {
+  margin: 0;
+  font-weight: 300;
+  color: #9da8c3;
 }
 
 .daily-events {

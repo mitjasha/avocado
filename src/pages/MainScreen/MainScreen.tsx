@@ -31,8 +31,8 @@ const MainScreen: React.FC = () => {
           <div className="calories-chart">
             <div className="calories-chart__info">
               <img src={fire} alt="fire" />
-              <p>690</p>
-              <h5>burnt</h5>
+              <p className="kcalNum">{burntKcal}</p>
+              <h5 className="kcal-title">burnt</h5>
             </div>
             <div className="calories-chart__chart">
               <ChartComponent
@@ -43,9 +43,13 @@ const MainScreen: React.FC = () => {
             </div>
             <div className="calories-chart__info">
               <img src={eaten} alt="fire" />
-              <p>536</p>
-              <h5>eaten</h5>
+              <p className="kcalNum">{eatenKcal}</p>
+              <h5 className="kcal-title">eaten</h5>
             </div>
+          </div>
+          <div className="goal-kcal">
+            <p className="kcalNum">{recomKcalPerDay}</p>
+            <h5 className="kcal-title">kcal goal</h5>
           </div>
         </div>
       </div>
