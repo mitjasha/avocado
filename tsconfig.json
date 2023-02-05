@@ -17,5 +17,5 @@
         "noEmit": true,
         "jsx": "react-jsx"
     },
-    "include": ["src", "module.d.ts", "src/pages/CategoriesRecipesScreen/CategoriesRecipesScreen.tsx"]
+    "include": ["src", "module.d.ts"]
 }
