@@ -2,6 +2,8 @@ import React from "react";
 import DailyEventWrapper from "../../components/DailyEventWrapper/DailyEventWrapper";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
 import minus from "../../assets/svg/minus-light.svg";
+import fire from "../../assets/svg/fire.svg";
+import eaten from "../../assets/svg/eaten.svg";
 import "./MainScreen.scss";
 
 const MainScreen: React.FC = () => {
@@ -18,7 +20,21 @@ const MainScreen: React.FC = () => {
   return (
     <div className="main-screen">
       <div className="daily-data">
-        <div className="container">data</div>
+        <div className="container">
+          <div className="calories-chart">
+            <div className="calories-chart__info">
+              <img src={fire} alt="fire" />
+              <p>690</p>
+              <h5>burnt</h5>
+            </div>
+            <div className="calories-chart__chart">chart</div>
+            <div className="calories-chart__info">
+              <img src={eaten} alt="fire" />
+              <p>536</p>
+              <h5>eaten</h5>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="container">
         <div className="daily-events">
