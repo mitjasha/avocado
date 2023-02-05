@@ -11,7 +11,7 @@ const MainScreen: React.FC = () => {
     const oneGlass = 0.25;
     const glasses = litreConsumed / oneGlass;
     for (let i = 0; i < glasses; i += 1) {
-      content.push(<div className="glass" />);
+      content.push(<div className="glass" key={i} />);
     }
     return <div className="glasses">{content}</div>;
   };
