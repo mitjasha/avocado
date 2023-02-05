@@ -25,18 +25,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  margin: 15px 0;
 }
 
-.kcalNum {
+.chart-data-num {
   margin: 0;
-  font-size: 22px;
+  font-size: 26px;
 }
 
-.kcal-title {
+.chart-data-title {
   margin: 0;
   font-weight: 300;
   color: #9da8c3;
+}
+
+.nutrients-charts {
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nutrients-num {
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .daily-events {
