@@ -1,5 +1,6 @@
 import React from "react";
-import PlusButton from "../Buttons/PlusButton/PlusButton";
+import PlusMinusButton from "../Buttons/PlusMinusButton/PlusMinusButton";
+import plus from "../../assets/svg/plus-light.svg";
 import "./DailyEventWrapper.scss";
 
 export interface DailyEventWrapperProps {
@@ -34,7 +35,9 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
       <div className="add-remove-events">
         {minusButton}
         {curWeight}
-        <PlusButton />
+        <PlusMinusButton>
+          <img src={plus} alt="plus" className="plus-minus-img" />
+        </PlusMinusButton>
       </div>
     </div>
   );

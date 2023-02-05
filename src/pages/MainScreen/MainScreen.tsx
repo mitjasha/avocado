@@ -1,11 +1,15 @@
 import React from "react";
 import DailyEventWrapper from "../../components/DailyEventWrapper/DailyEventWrapper";
-import MinusButton from "../../components/Buttons/MinusButton/MinusButton";
+import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
+import minus from "../../assets/svg/minus-light.svg";
 import "./MainScreen.scss";
 
 const MainScreen: React.FC = () => {
   return (
     <div className="main-screen">
+      <div className="daily-data">
+        <div className="container">data</div>
+      </div>
       <div className="container">
         <div className="daily-events">
           <div className="daily-events__meals">
@@ -37,7 +41,7 @@ const MainScreen: React.FC = () => {
             <DailyEventWrapper
               title="Water"
               quantity="0.75L (40%)"
-              recommended="Recomended 2.0L"
+              recommended="Recomended 2.0L (8 gls)"
               className="daily-events__item daily-events__item_water"
               content=<div className="glasses">
                 <div className="glass" />
@@ -61,7 +65,11 @@ const MainScreen: React.FC = () => {
               title="Weight"
               recommended="Target: 70.0 kg"
               className="daily-events__item daily-events__item_weight"
-              minusButton={<MinusButton />}
+              minusButton={
+                <PlusMinusButton>
+                  <img src={minus} alt="minus" className="plus-minus-img" />
+                </PlusMinusButton>
+              }
               curWeight=<p style={{ fontSize: "26px" }}>77.0 kg</p>
             />
           </div>
