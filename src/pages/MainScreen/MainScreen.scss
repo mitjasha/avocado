@@ -119,3 +119,35 @@
   height: 44px;
   background-image: url(../../assets/png/glass.png);
 }
+
+@media screen and (min-width: $media-tab-pt) {
+  .nutrients-charts {
+    width: 500px;
+    margin: auto;
+  }
+
+  .daily-events {
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "meals water"
+      "meals exercise"
+      "weight .";
+    gap: 10px 30px;
+
+    &__meals {
+      grid-area: meals;
+    }
+
+    &__water {
+      grid-area: water;
+    }
+
+    &__exercise {
+      grid-area: exercise;
+    }
+
+    &__weight {
+      grid-area: weight;
+    }
+  }
+}
