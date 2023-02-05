@@ -8,26 +8,30 @@ interface DoughnutProps {
   chartData: number[];
   colors: string[];
   size: number;
+  cutout: number;
+  spacing: number;
 }
 
 const ChartComponent: React.FC<DoughnutProps> = ({
   chartData,
   colors,
   size,
+  cutout,
+  spacing,
 }) => {
   const data = {
     datasets: [
       {
         data: chartData,
         backgroundColor: colors,
-        spacing: 6,
+        spacing,
         borderRadius: 5,
         borderWidth: 0,
       },
     ],
   };
   const options = {
-    cutout: 60,
+    cutout,
   };
   return <Doughnut options={options} data={data} height={size} width={size} />;
 };
