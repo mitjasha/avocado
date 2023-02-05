@@ -1,6 +1,7 @@
 import React from "react";
 import DailyEventWrapper from "../../components/DailyEventWrapper/DailyEventWrapper";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
+import ChartComponent from "../../components/ChartComponent/ChartComponent";
 import minus from "../../assets/svg/minus-light.svg";
 import fire from "../../assets/svg/fire.svg";
 import eaten from "../../assets/svg/eaten.svg";
@@ -17,6 +18,12 @@ const MainScreen: React.FC = () => {
     }
     return <div className="glasses">{content}</div>;
   };
+
+  const recomKcalPerDay = 2181;
+  const burntKcal = 690;
+  const eatenKcal = 536;
+  const availableKcal = recomKcalPerDay - eatenKcal;
+
   return (
     <div className="main-screen">
       <div className="daily-data">
@@ -27,7 +34,13 @@ const MainScreen: React.FC = () => {
               <p>690</p>
               <h5>burnt</h5>
             </div>
-            <div className="calories-chart__chart">chart</div>
+            <div className="calories-chart__chart">
+              <ChartComponent
+                chartData={[eatenKcal, availableKcal, burntKcal]}
+                colors={["#559C4F", "#fafdf8", "#FFA935"]}
+                size={158}
+              />
+            </div>
             <div className="calories-chart__info">
               <img src={eaten} alt="fire" />
               <p>536</p>
