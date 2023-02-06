@@ -8,4 +8,43 @@
     text-align: center;
     font-weight: 500;
   }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__chart {
+    width: 153px;
+  }
+
+  &_kg-left {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__slash:before {
+    content: "";
+    display: block;
+    height: 173px;
+    border-left: 3px solid $dark-color;
+  }
+
+  &__curr-weight {
+    width: 125px;
+    font-size: 24px;
+
+    &_bg {
+      background-color: #c6e8aa;
+      padding: 2px;
+      border-radius: 10px;
+    }
+  }
 }
