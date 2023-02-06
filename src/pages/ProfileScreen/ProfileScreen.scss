@@ -1,0 +1,22 @@
+@import "../../variables";
+
+.profile-screen {
+  background-color: $bg-color;
+}
+
+.user-data {
+  background-color: $light-color;
+
+  &__heading {
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;
+
+    &__avatar {
+      width: 122px;
+      height: 122px;
+      border-radius: 50%;
+      border: solid 1px $dark-color;
+    }
+  }
+}
