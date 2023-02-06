@@ -8,35 +8,23 @@ const SettingScreen = () => {
       <div className="setting__container">
         <div className="setting__container__child">
           <span className="setting__container__span">Dark theme</span>
-          <div className="setting__button">
-            <label htmlFor="switch-flat">
-              <input
-                id="switch-flat"
-                className="setting__button__input"
-                type="checkbox"
-              />
-            </label>
-          </div>
-        </div>
-        <div className="screen__container__child">
-          <span>Sound</span>
           <div className="switch__container">
-            <label htmlFor="switch-flat">
-              <input
-                id="switch-flat"
-                className="switch switch--flat"
-                type="checkbox"
-              />
-            </label>
+            <div className="switch" />
           </div>
         </div>
-        <div className="screen__container__child">
-          <span>Language</span>
-          <select id="selectID">
-            <option value="ru" defaultChecked>
-              ru
+        <div className="setting__container__child">
+          <span className="setting__container__span">Sound</span>
+          <div className="switch__container">
+            <div className="switch" />
+          </div>
+        </div>
+        <div className="setting__container__child">
+          <span className="setting__container__span">Language</span>
+          <select className="select__container">
+            <option value="ru">ru</option>
+            <option value="en" defaultChecked>
+              en
             </option>
-            <option value="en">en</option>
           </select>
         </div>
       </div>
