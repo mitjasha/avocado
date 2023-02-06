@@ -52,7 +52,7 @@ const MainScreen: React.FC = () => {
                 spacing={6}
               />
               <div className="kcal-available">
-                <p className="kcal-available__num">1645</p>
+                <p className="kcal-available__num">{availableKcal}</p>
                 <h5 className="chart-data-title">Kcal available</h5>
               </div>
             </div>

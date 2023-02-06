@@ -100,9 +100,9 @@
   }
 
   &__title {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 300;
-    margin-bottom: 0;
+    margin: 18px 0 0 0;
   }
 }
 
@@ -127,7 +127,7 @@
   }
 
   .daily-events {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
       "meals water"
       "meals exercise"
