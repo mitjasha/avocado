@@ -34,3 +34,17 @@
     }
   }
 }
+
+.profile-menu {
+  padding-bottom: 10px;
+
+  &__list {
+    background-color: $middle-green;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 80px;
+    border-top-left-radius: 80px;
+    padding: 20px 50px;
+    list-style: none;
+  }
+}

@@ -14,38 +14,56 @@ const ProfileScreen: React.FC = () => {
   const userTargetWeight = 63 as number;
   return (
     <div className="profile-screen">
-      <div className="user-data">
-        <div className="container">
-          <div className="user-data__heading">
-            <img
-              src={userAvatar}
-              alt="user avatar"
-              className="user-data__heading__avatar"
-            />
-            <h1 className="user-data__heading__title">
-              Hello,
-              <br /> <span style={{ color: "#559c4f" }}>{userName}</span>!
-            </h1>
+      <div className="user-data container">
+        <div className="user-data__heading">
+          <img
+            src={userAvatar}
+            alt="user avatar"
+            className="user-data__heading__avatar"
+          />
+          <h1 className="user-data__heading__title">
+            Hello,
+            <br /> <span style={{ color: "#559c4f" }}>{userName}</span>!
+          </h1>
+        </div>
+        <div className="user-data__info">
+          <div className="user-data__info__titles">
+            <p>Gender:</p>
+            <p>Age:</p>
+            <p>Height:</p>
+            <p>Weight:</p>
+            <p>Goal:</p>
+            <p>Target weight:</p>
           </div>
-          <div className="user-data__info">
-            <div className="user-data__info__titles">
-              <p>Gender:</p>
-              <p>Age:</p>
-              <p>Height:</p>
-              <p>Weight:</p>
-              <p>Goal:</p>
-              <p>Target weight:</p>
-            </div>
-            <div className="user-data__info__answers">
-              <p>{userGender}</p>
-              <p>{userAge}</p>
-              <p>{userHeight} cm</p>
-              <p>{userWeight} kg</p>
-              <p>{userGoal}</p>
-              <p>{userTargetWeight} kg</p>
-            </div>
+          <div className="user-data__info__answers">
+            <p>{userGender}</p>
+            <p>{userAge}</p>
+            <p>{userHeight} cm</p>
+            <p>{userWeight} kg</p>
+            <p>{userGoal}</p>
+            <p>{userTargetWeight} kg</p>
           </div>
         </div>
+      </div>
+      <div className="profile-menu container">
+        <ul className="profile-menu__list">
+          <li className="list-item">
+            <div className="list-item__icon list-item__icon_progress" />
+            <p className="list-item__name">Your Progress</p>
+          </li>
+          <li className="list-item">
+            <div className="list-item__icon list-item__icon_recipes" />
+            <p className="list-item__name">Favorite Recipes</p>
+          </li>
+          <li className="list-item">
+            <div className="list-item__icon list-item__icon_settings" />
+            <p className="list-item__name">Settings</p>
+          </li>
+          <li className="list-item">
+            <div className="list-item__icon list-item__icon_about" />
+            <p className="list-item__name">About Us</p>
+          </li>
+        </ul>
       </div>
     </div>
   );
