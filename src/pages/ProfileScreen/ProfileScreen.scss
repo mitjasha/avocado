@@ -6,17 +6,31 @@
 
 .user-data {
   background-color: $light-color;
+  padding-bottom: 20px;
 
   &__heading {
     display: flex;
     gap: 10px;
-    padding-top: 20px;
+    padding: 20px 0;
 
     &__avatar {
       width: 122px;
       height: 122px;
       border-radius: 50%;
       border: solid 1px $dark-color;
+      background-color: $middle-green;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+
+    &__titles p,
+    &__answers p {
+      margin: 10px;
+      font-weight: 500;
+      font-size: 18px;
     }
   }
 }
