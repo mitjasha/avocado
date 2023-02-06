@@ -14,17 +14,19 @@ const ProfileScreen: React.FC = () => {
   const userTargetWeight = 63 as number;
   return (
     <div className="profile-screen">
+      <h1 className="profile-screen__title">Your Profile</h1>
       <div className="user-data container">
+        <button type="button" className="user-data__edit" aria-label="edit" />
         <div className="user-data__heading">
           <img
             src={userAvatar}
             alt="user avatar"
             className="user-data__heading__avatar"
           />
-          <h1 className="user-data__heading__title">
+          <h2 className="user-data__heading__title">
             Hello,
             <br /> <span style={{ color: "#559c4f" }}>{userName}</span>!
-          </h1>
+          </h2>
         </div>
         <div className="user-data__info">
           <div className="user-data__info__titles">
