@@ -12,27 +12,45 @@ const ProgressScreen: React.FC = () => {
   } else if (userGoal === "gain weight" && userWeight < userTargetWeight) {
     kgLeft = userTargetWeight - userWeight;
   }
+  const userDailyKcalRecom = 1563 as number;
   return (
     <div className="progress-screen">
       <h1 className="progress-screen__title">Your Progress</h1>
-      <div className="container progress-screen-container">
-        <div style={{ position: "relative" }}>
-          <div className="progress-screen__chart">
-            <ChartComponent
-              chartData={[userWeight, kgLeft]}
-              colors={["#559C4F", "#FAFDF8"]}
-              size={153}
-              cutout={50}
-              spacing={3}
-            />
+      <div className="container">
+        <div className="progress-screen__progress">
+          <div style={{ position: "relative" }}>
+            <div className="progress-screen__chart">
+              <ChartComponent
+                chartData={[userWeight, kgLeft]}
+                colors={["#559C4F", "#FAFDF8"]}
+                size={153}
+                cutout={50}
+                spacing={3}
+              />
+            </div>
+            <div className="progress-screen_kg-left">{kgLeft} kg left</div>
           </div>
-          <div className="progress-screen_kg-left">{kgLeft} kg left</div>
+          <div className="progress-screen__slash" />
+          <div className="progress-screen__curr-weight">
+            Current weight is{" "}
+            <span className="progress-screen__curr-weight_bg">
+              {userWeight}
+            </span>{" "}
+            kg
+          </div>
         </div>
-        <div className="progress-screen__slash" />
-        <div className="progress-screen__curr-weight">
-          Current weight is{" "}
-          <span className="progress-screen__curr-weight_bg">{userWeight}</span>{" "}
-          kg
+
+        <div className="calories">
+          <h2 className="calories__title">Calories</h2>
+          <div className="calories__daily-data">
+            <h3 className="daily-data__title">
+              <span style={{ fontWeight: "200" }}>Average</span> <br />{" "}
+              {userDailyKcalRecom} kcal
+            </h3>
+            <button type="button" className="daily-data__btn">
+              Update Weight
+            </button>
+          </div>
         </div>
       </div>
     </div>
