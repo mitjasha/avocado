@@ -2,6 +2,7 @@
 
 .profile-screen {
   background-color: $bg-color;
+  color: $dark-color;
 }
 
 .user-data {
@@ -46,5 +47,83 @@
     border-top-left-radius: 80px;
     padding: 20px 50px;
     list-style: none;
+  }
+}
+
+.list-item {
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+
+    &:hover .list-item__name {
+      color: $dark-green;
+      font-weight: 500;
+      transition: 0.4s all ease;
+    }
+
+    &:hover .list-item__icon_progress {
+      background: $dark-color url(../../assets/svg/progress-light.svg) no-repeat;
+      transition: 0.4s all ease;
+      background-size: 25px;
+      background-position: 50%;
+    }
+
+    &:hover .list-item__icon_recipes {
+      background: $dark-color url(../../assets/svg/favorites-light.svg)
+        no-repeat;
+      transition: 0.4s all ease;
+      background-size: 25px;
+      background-position: 50%;
+    }
+
+    &:hover .list-item__icon_settings {
+      background: $dark-color url(../../assets/svg/settings-light.svg) no-repeat;
+      transition: 0.4s all ease;
+      background-size: 25px;
+      background-position: 50%;
+    }
+
+    &:hover .list-item__icon_about {
+      background: $dark-color url(../../assets/svg/about-us-light.svg) no-repeat;
+      transition: 0.4s all ease;
+      background-size: 25px;
+      background-position: 50%;
+    }
+  }
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    &_progress {
+      background: $light-color url(../../assets/svg/progress.svg) no-repeat;
+      background-size: 25px;
+      background-position: 50%;
+    }
+
+    &_recipes {
+      background: $light-color url(../../assets/svg/favorites.svg) no-repeat;
+      background-size: 25px;
+      background-position: 50%;
+    }
+
+    &_settings {
+      background: $light-color url(../../assets/svg/settings.svg) no-repeat;
+      background-size: 25px;
+      background-position: 50%;
+    }
+
+    &_about {
+      background: $light-color url(../../assets/svg/about-us.svg) no-repeat;
+      background-size: 25px;
+      background-position: 50%;
+    }
+  }
+
+  &__name {
+    font-weight: 400;
   }
 }

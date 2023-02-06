@@ -48,20 +48,28 @@ const ProfileScreen: React.FC = () => {
       <div className="profile-menu container">
         <ul className="profile-menu__list">
           <li className="list-item">
-            <div className="list-item__icon list-item__icon_progress" />
-            <p className="list-item__name">Your Progress</p>
+            <a href="/" className="list-item__link">
+              <div className="list-item__icon list-item__icon_progress" />
+              <p className="list-item__name">Your Progress</p>
+            </a>
           </li>
           <li className="list-item">
-            <div className="list-item__icon list-item__icon_recipes" />
-            <p className="list-item__name">Favorite Recipes</p>
+            <a href="/" className="list-item__link">
+              <div className="list-item__icon list-item__icon_recipes" />
+              <p className="list-item__name">Favorite Recipes</p>
+            </a>
           </li>
           <li className="list-item">
-            <div className="list-item__icon list-item__icon_settings" />
-            <p className="list-item__name">Settings</p>
+            <a href="/" className="list-item__link">
+              <div className="list-item__icon list-item__icon_settings" />
+              <p className="list-item__name">Settings</p>
+            </a>
           </li>
           <li className="list-item">
-            <div className="list-item__icon list-item__icon_about" />
-            <p className="list-item__name">About Us</p>
+            <a href="/" className="list-item__link">
+              <div className="list-item__icon list-item__icon_about" />
+              <p className="list-item__name">About Us</p>
+            </a>
           </li>
         </ul>
       </div>
