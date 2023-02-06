@@ -12,13 +12,13 @@ import CategoriesRecipesScreen from "./pages/CategoriesRecipesScreen/CategoriesR
 const App: React.FC = () => {
   return (
     <>
-      <CategoriesRecipesScreen />
       <Header />
       <main className="main-app">
         <MainScreen />
         <EventScreen />
         <RecipeScreen />
         <RecipesScreen />
+        <CategoriesRecipesScreen />
         <ProductCardScreen />
         <ProfileScreen />
       </main>
