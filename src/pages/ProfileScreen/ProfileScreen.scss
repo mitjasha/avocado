@@ -161,3 +161,26 @@
     font-weight: 400;
   }
 }
+
+@media screen and (min-width: $media-tab) {
+  .user-data {
+    &__edit {
+      right: 30%;
+    }
+
+    &__heading {
+      width: 600px;
+      margin: auto;
+    }
+
+    &__info {
+      width: 400px;
+      margin: auto;
+    }
+  }
+
+  .profile-menu__list {
+    display: flex;
+    justify-content: space-between;
+  }
+}
