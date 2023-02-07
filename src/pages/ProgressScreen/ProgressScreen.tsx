@@ -1,5 +1,6 @@
 import React from "react";
 import ChartComponent from "../../components/ChartComponent/ChartComponent";
+import BarChartComponent from "../../components/BarChartComponent/BarChartComponent";
 import "./ProgressScreen.scss";
 
 const ProgressScreen: React.FC = () => {
@@ -13,6 +14,14 @@ const ProgressScreen: React.FC = () => {
     kgLeft = userTargetWeight - userWeight;
   }
   const userDailyKcalRecom = 1563 as number;
+  const eatenKcalPerDay = {
+    "27 Jan": 1217,
+    "28 Jan": 1734,
+    "29 Jan": 1578,
+    "30 Jan": 1601,
+  };
+  const labels = Object.keys(eatenKcalPerDay);
+  const chartData = Object.values(eatenKcalPerDay);
   return (
     <div className="progress-screen">
       <h1 className="progress-screen__title">Your Progress</h1>
@@ -47,6 +56,11 @@ const ProgressScreen: React.FC = () => {
               <span style={{ fontWeight: "200" }}>Average</span> <br />{" "}
               {userDailyKcalRecom} kcal
             </h3>
+            <BarChartComponent
+              labels={labels}
+              chartData={chartData}
+              size={200}
+            />
             <button type="button" className="daily-data__btn">
               Update Weight
             </button>
