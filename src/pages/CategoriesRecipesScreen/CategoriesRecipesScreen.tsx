@@ -28,11 +28,13 @@ const CategoriesRecipesScreen: React.FC = () => {
         </div>
       </header>
       <main>
-        {data.recipes
-          .filter((item) => item.category === "appetizers")
-          .map((item) => (
-            <CardCategory data={item} />
-          ))}
+        <div className="container categories__main">
+          {data.recipes
+            .filter((item) => item.category === "appetizers")
+            .map((item) => (
+              <CardCategory data={item} />
+            ))}
+        </div>
       </main>
     </div>
   );

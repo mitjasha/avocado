@@ -1,13 +1,12 @@
 @import "../../variables.scss";
 
-main{
+.categories__main{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 .categories__recipes__screen {
-    width: 100%;
     background-color: $bg-color;
 }
 
