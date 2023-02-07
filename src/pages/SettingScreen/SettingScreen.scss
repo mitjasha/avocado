@@ -1,9 +1,8 @@
 @import "../../variables.scss";
 
 .setting__screen {
-    width: 100%;
-    padding: 20px 0px;
-    background-color: $bg-color;
+    padding: 0px 0px 20px;
+    background-color: #e8f2e1;
 
     &__h1 {
         text-align: center;
@@ -90,6 +89,3 @@
     position: relative;
     outline: none;
 }
-
-
-

@@ -6,9 +6,9 @@ import Header from "./containers/Header/Header";
 // import MainScreen from "./pages/MainScreen/MainScreen";
 // import ProductCardScreen from "./pages/ProductCardScreen/ProductCardScreen";
 // import ProfileScreen from "./pages/ProfileScreen/ProfieScreen";
-import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
+// import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
 // import CategoriesRecipesScreen from "./pages/CategoriesRecipesScreen/CategoriesRecipesScreen";
-// import SettingScreen from "./pages/SettingScreen/SettingScreen";
+import SettingScreen from "./pages/SettingScreen/SettingScreen";
 
 const App: React.FC = () => {
   return (
@@ -17,10 +17,10 @@ const App: React.FC = () => {
       <main className="main-app">
         {/* <MainScreen />
         <EventScreen />
-        <RecipeScreen /> */}
-        <RecipesScreen />
-        {/* <SettingScreen />
-        <CategoriesRecipesScreen />
+        <RecipeScreen />
+        <RecipesScreen /> */}
+        <SettingScreen />
+        {/* <CategoriesRecipesScreen />
         <ProductCardScreen />
         <ProfileScreen /> */}
       </main>

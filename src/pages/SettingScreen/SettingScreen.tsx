@@ -3,7 +3,7 @@ import "./SettingScreen.scss";
 
 const SettingScreen = () => {
   return (
-    <div className="setting__screen">
+    <div className="setting__screen container">
       <h1 className="setting__screen__h1">Settings</h1>
       <div className="setting__container">
         <div className="setting__container__child">
