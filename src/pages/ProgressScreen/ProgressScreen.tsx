@@ -1,6 +1,9 @@
 import React from "react";
 import ChartComponent from "../../components/ChartComponent/ChartComponent";
 import BarChartComponent from "../../components/BarChartComponent/BarChartComponent";
+import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
+import minus from "../../assets/svg/minus-light.svg";
+import plus from "../../assets/svg/plus-light.svg";
 import "./ProgressScreen.scss";
 
 const ProgressScreen: React.FC = () => {
@@ -19,6 +22,20 @@ const ProgressScreen: React.FC = () => {
     "28 Jan": 1734,
     "29 Jan": 1578,
     "30 Jan": 1601,
+  };
+  const openPopUp = () => {
+    const popUp = document.querySelector(
+      ".update-weight-pop-up",
+    ) as HTMLButtonElement;
+    popUp.style.opacity = "1";
+    popUp.style.visibility = "visible";
+  };
+  const closePopUp = () => {
+    const popUp = document.querySelector(
+      ".update-weight-pop-up",
+    ) as HTMLButtonElement;
+    popUp.style.opacity = "0";
+    popUp.style.visibility = "hidden";
   };
   return (
     <div className="progress-screen">
@@ -59,7 +76,11 @@ const ProgressScreen: React.FC = () => {
               chartData={Object.values(eatenKcalPerDay)}
               size={200}
             />
-            <button type="button" className="daily-data__btn">
+            <button
+              type="button"
+              className="daily-data__btn"
+              onClick={openPopUp}
+            >
               Update Weight
             </button>
           </div>
@@ -67,9 +88,21 @@ const ProgressScreen: React.FC = () => {
       </div>
       <div className="update-weight-pop-up">
         <div className="pop-up">
-          <h3>Current Weight</h3>
+          <button
+            type="button"
+            className="pop-up__close"
+            aria-label="close"
+            onClick={closePopUp}
+          />
+          <h3 className="pop-up__title">Current Weight</h3>
           <div className="pop-up__update">
+            <PlusMinusButton>
+              <img src={minus} alt="minus" className="plus-minus-img" />
+            </PlusMinusButton>
             <div className="pop-up__weight">67 kg</div>
+            <PlusMinusButton>
+              <img src={plus} alt="plus" className="plus-minus-img" />
+            </PlusMinusButton>
           </div>
         </div>
       </div>
