@@ -5,7 +5,7 @@ import CardRecipe from "../../components/CardRecipe/CardRecipe";
 
 const RecipesScreen: React.FC = () => {
   return (
-    <div className="recipes__screen">
+    <div className="recipes__screen container">
       <div className="main__header__container">
         <span>Categories</span>
         <span className="main__header__container__view">View All</span>
