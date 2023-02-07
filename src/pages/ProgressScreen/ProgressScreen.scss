@@ -89,3 +89,34 @@
     padding: 15px 300px;
   }
 }
+
+@media screen and (min-width: $media-tab) {
+  .progress-screen {
+    &__progress {
+      width: 600px;
+      margin: auto;
+    }
+
+    &__curr-weight {
+      font-size: 34px;
+      width: 200px;
+    }
+  }
+
+  .calories__title {
+    font-size: 36px;
+  }
+
+  .daily-data {
+    &__title {
+      font-size: 36px;
+    }
+
+    &__btn {
+      width: 350px;
+      margin: auto;
+      margin-top: 20px;
+      display: block;
+    }
+  }
+}
