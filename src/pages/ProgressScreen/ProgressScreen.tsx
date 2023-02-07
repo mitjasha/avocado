@@ -65,6 +65,14 @@ const ProgressScreen: React.FC = () => {
           </div>
         </div>
       </div>
+      <div className="update-weight-pop-up">
+        <div className="pop-up">
+          <h3>Current Weight</h3>
+          <div className="pop-up__update">
+            <div className="pop-up__weight">67 kg</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
