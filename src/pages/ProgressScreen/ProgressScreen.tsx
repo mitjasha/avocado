@@ -20,8 +20,6 @@ const ProgressScreen: React.FC = () => {
     "29 Jan": 1578,
     "30 Jan": 1601,
   };
-  const labels = Object.keys(eatenKcalPerDay);
-  const chartData = Object.values(eatenKcalPerDay);
   return (
     <div className="progress-screen">
       <h1 className="progress-screen__title">Your Progress</h1>
@@ -57,8 +55,8 @@ const ProgressScreen: React.FC = () => {
               {userDailyKcalRecom} kcal
             </h3>
             <BarChartComponent
-              labels={labels}
-              chartData={chartData}
+              labels={Object.keys(eatenKcalPerDay)}
+              chartData={Object.values(eatenKcalPerDay)}
               size={200}
             />
             <button type="button" className="daily-data__btn">

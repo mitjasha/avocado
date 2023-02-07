@@ -19,30 +19,35 @@ ChartJS.register(
   Legend,
 );
 
-interface DoughnutProps {
+interface BarProps {
   chartData: number[];
   labels: string[];
   size: number;
 }
 
-const BarChartComponent: React.FC<DoughnutProps> = ({
-  chartData,
-  labels,
-  size,
-}) => {
+const BarChartComponent: React.FC<BarProps> = ({ chartData, labels, size }) => {
   const data = {
     labels,
     datasets: [
       {
+        label: "Kcal Per Day",
         data: chartData.map((num) => num),
-        backgroundColor: "#559c4f",
+        backgroundColor: "#c6e8aa",
+        borderRadius: 50,
+        barPercentage: 0.5,
+        hoverBackgroundColor: "#559c4f",
       },
     ],
   };
   const options = {
     responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
   };
-  return <Bar options={options} data={data} width={size} height={size} />;
+  return <Bar data={data} options={options} width={size} height={size} />;
 };
 
 export default BarChartComponent;
