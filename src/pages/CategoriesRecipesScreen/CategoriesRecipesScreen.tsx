@@ -23,7 +23,6 @@ const CategoriesRecipesScreen: React.FC = () => {
             <li className="categories__header__li">Recent</li>
             <li className="categories__header__li">Veg</li>
             <li className="categories__header__li">Quick</li>
-            <div className="categories__header__menu" />
           </ul>
         </div>
       </header>

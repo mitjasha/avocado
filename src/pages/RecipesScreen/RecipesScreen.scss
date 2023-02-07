@@ -41,13 +41,19 @@
     width: 100%;
     height: 130px;
     margin: 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+    &__1 {
+        overflow-x: auto;
+        width: 138%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .category {
-    width: 30%;
+    width: 23%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -79,6 +85,10 @@
 
     &__pasta {
         background-image: url("../../assets/svg/pasta_category.svg");
+    }
+
+    &__favourites {
+        background-image: url("../../assets/svg/fav_category.svg");
     }
 }
 

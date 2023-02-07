@@ -11,32 +11,38 @@ const RecipesScreen: React.FC = () => {
         <span className="main__header__container__view">View All</span>
       </div>
       <div className="categories__container">
-        <div className="category category__breakfast">
-          <h3 className="category__h3">Breakfast</h3>
-          <span className="category__span">
-            {
-              data.recipes.filter((item) => item.category === "breakfast")
-                .length
-            }{" "}
-            Recipes
-          </span>
-        </div>
-        <div className="category category__appetizers">
-          <h3 className="category__h3">Appetizers</h3>
-          <span className="category__span">
-            {
-              data.recipes.filter((item) => item.category === "appetizers")
-                .length
-            }{" "}
-            Recipes
-          </span>
-        </div>
-        <div className="category category__pasta">
-          <h3 className="category__h3">Pasta</h3>
-          <span className="category__span">
-            {data.recipes.filter((item) => item.category === "dinner").length}{" "}
-            Recipes
-          </span>
+        <div className="categories__container__1">
+          <div className="category category__breakfast">
+            <h3 className="category__h3">Breakfast</h3>
+            <span className="category__span">
+              {
+                data.recipes.filter((item) => item.category === "breakfast")
+                  .length
+              }{" "}
+              Recipes
+            </span>
+          </div>
+          <div className="category category__appetizers">
+            <h3 className="category__h3">Appetizers</h3>
+            <span className="category__span">
+              {
+                data.recipes.filter((item) => item.category === "appetizers")
+                  .length
+              }{" "}
+              Recipes
+            </span>
+          </div>
+          <div className="category category__pasta">
+            <h3 className="category__h3">Pasta</h3>
+            <span className="category__span">
+              {data.recipes.filter((item) => item.category === "dinner").length}{" "}
+              Recipes
+            </span>
+          </div>
+          <div className="category category__favourites">
+            <h3 className="category__h3">Favourites</h3>
+            <span className="category__span">0 Recipes</span>
+          </div>
         </div>
       </div>
       <h1 className="recipes__screen__h1">What is in your kitchen?</h1>
