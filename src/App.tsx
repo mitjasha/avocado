@@ -14,11 +14,11 @@ const App: React.FC = () => {
       <Header />
       <main className="main-app">
         <AboutUsScreen />
-        {/* <MainScreen />
+        <MainScreen />
         <EventScreen />
         <RecipesScreen />
         <ProductCardScreen />
-        <ProfileScreen /> */}
+        <ProfileScreen />
       </main>
       <Footer />
     </>
