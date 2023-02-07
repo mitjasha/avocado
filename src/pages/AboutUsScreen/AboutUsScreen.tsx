@@ -1,9 +1,10 @@
 import React from "react";
 import "./AboutUsScreen.scss";
+import "../../index.scss";
 
 const AboutUsScreen = () => {
   return (
-    <div className="about__us__screen">
+    <div className="about__us__screen container">
       <h1 className="about__us__title">About us</h1>
       <div className="about__us__logo" />
       <h3 className="about__us__top_h3">WHO WE ARE?</h3>
