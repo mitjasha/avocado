@@ -1,11 +1,9 @@
 import React from "react";
 import "./RecipesScreen.scss";
 import * as data from "../../assets/recipes.json";
-import * as products from "../../assets/products.json";
 import CardRecipe from "../../components/CardRecipe/CardRecipe";
 
 const RecipesScreen: React.FC = () => {
-  console.log(products.products[0]["Молоко и молочные продукты"][0].Белки);
   return (
     <div className="recipes__screen container">
       <div className="main__header__container">
