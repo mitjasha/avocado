@@ -3,6 +3,7 @@ import RegInput from "../../components/RegInput/RegInput";
 import hideIcon from "../../assets/svg/reg-hide.svg";
 import showIcon from "../../assets/svg/reg-show.svg";
 import Button from "../../components/Buttons/Button/Button";
+import BackButton from "../../components/Buttons/BackButton/BackButton";
 import "./RegistrationScreen.scss";
 
 const RegistrationScreen: React.FC = () => {
@@ -69,6 +70,9 @@ const RegistrationScreen: React.FC = () => {
           By continuing, you agree to the <a href="/">Terms of Services</a> &{" "}
           <a href="/">Privacy Policy</a>
         </p>
+      </div>
+      <div className="container">
+        <BackButton />
       </div>
     </div>
   );
