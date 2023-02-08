@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
 import RegInput from "../../components/RegInput/RegInput";
 import hideIcon from "../../assets/svg/reg-hide.svg";
@@ -5,6 +6,8 @@ import showIcon from "../../assets/svg/reg-show.svg";
 import Button from "../../components/Buttons/Button/Button";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import NextButton from "../../components/Buttons/NextRegButton/NextRegButton";
+import maleIcon from "../../assets/svg/male.svg";
+import femaleIcon from "../../assets/svg/female.svg";
 import "./RegistrationScreen.scss";
 
 const RegistrationScreen: React.FC = () => {
@@ -72,7 +75,7 @@ const RegistrationScreen: React.FC = () => {
           <a href="/">Privacy Policy</a>
         </p>
       </div>
-      <div className="container">
+      <div className="container questions-container">
         <BackButton />
         <div className="process">1 / 6</div>
         <h2 className="reg-title">
@@ -81,7 +84,29 @@ const RegistrationScreen: React.FC = () => {
         <p className="data-info">
           We will use this data to give you a better diet type for you
         </p>
-        <NextButton firstDegree={135} secondDegree={90} />
+        <div className="gender-input">
+          <input
+            type="radio"
+            id="male"
+            name="gender"
+            className="gender-input__input"
+          />
+          <label htmlFor="male" className="gender-input__label">
+            <img src={maleIcon} alt="male" className="gender-input__icon" />
+            Male
+          </label>
+          <input
+            type="radio"
+            id="female"
+            name="gender"
+            className="gender-input__input"
+          />
+          <label htmlFor="female" className="gender-input__label">
+            <img src={femaleIcon} alt="female" className="gender-input__icon" />
+            Female
+          </label>
+        </div>
+        <NextButton firstDegree={150} secondDegree={90} />
       </div>
     </div>
   );

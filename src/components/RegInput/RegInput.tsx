@@ -3,7 +3,7 @@ import "./RegInput.scss";
 
 interface RegInputProps {
   type: string;
-  placeholder: string;
+  placeholder?: string;
   className?: string;
   minLength?: number;
 }
