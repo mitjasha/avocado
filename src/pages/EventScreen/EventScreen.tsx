@@ -1,8 +1,8 @@
 import React from "react";
 import products from "../../assets/products.json";
-import EventCardProduct from "../../components/EventCardProduct/EventCardProduct";
 import "./EventScreen.scss";
 import "../../index.scss";
+import EventCardProduct from "../../components/EventCardProduct/EventCardProduct";
 
 interface TypeOfMeal {
   type: string;
@@ -11,6 +11,7 @@ interface TypeOfMeal {
 const EventScreen: React.FC<TypeOfMeal> = ({ type }) => {
   return (
     <div className="container event__screen">
+      {/* <EventCardProductModal data={products.products[0]} /> */}
       <div className="event__screen">
         <div className="event__screen__header">
           <h1 className="event__screen__h1">{type}</h1>

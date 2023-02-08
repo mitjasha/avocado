@@ -48,11 +48,164 @@
     background-color: #fafdf8;
     border-radius: 30px;
 
-    &__span{
+    &__span {
       margin-top: 20px;
       padding: 0;
       text-align: center;
     }
   }
 
+}
+
+.card__container__modal__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(1, 1, 1, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.card__container__modal {
+  width: 90%;
+  height: 65%;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  background-color: #fafdf8;
+}
+
+.modal {
+  &__h2 {
+    font-weight: 400;
+    font-size: 24px;
+    color: $dark-color;
+    text-align: center;
+    margin: 20px 0px 10px;
+  }
+
+  &__close {
+    background-image: url("../../assets/svg/close.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    top: 125px;
+    right: 25px;
+    position: absolute;
+    z-index: 10001;
+  }
+
+  &__image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  &__kcal {
+    width: 93%;
+    margin: 0px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+  }
+
+  &__to__image {
+    background: url("../../assets/svg/arrow_modal.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 12px;
+  }
+
+  &__input {
+    border: 2px solid #559c4f;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    text-indent: 10%;
+    -moz-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    background: #fafdf8 !important;
+    outline: none;
+    height: 20px;
+    width: 50px;
+    font-weight: 400;
+    font-size: 15px;
+    color: #aeaeae;
+  }
+
+  &__span {
+    font-weight: 400;
+    font-size: 14px;
+    color: $dark-color;
+
+    &__disabled {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      background-color: $middle-green;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -khtml-border-radius: 20px;
+      outline: none;
+      height: 26px;
+      width: 58px;
+      font-weight: 400;
+      font-size: 14px;
+      color: $dark-color;
+    }
+  }
+
+  &__proteins {
+    margin-left: 60px;
+  }
+
+  &__fats {
+    margin-left: 88px;
+  }
+
+  &__carbs {
+    margin-left: 76px;
+  }
+
+  &__main {
+    width: 93%;
+    height: 96px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__block {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-self: center;
+      align-items: center;
+    }
+  }
+
+  &__button {
+    background: $dark-color;
+    border-radius: 20px;
+    width: 80%;
+    height: 50px;
+    margin: 10px auto;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: $light-color;
+  }
 }
