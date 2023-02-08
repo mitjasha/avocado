@@ -7,7 +7,14 @@ interface RegInputProps {
 }
 
 const RegInput: React.FC<RegInputProps> = ({ type, placeholder }) => {
-  return <input type={type} className="reg-input" placeholder={placeholder} />;
+  return (
+    <input
+      type={type}
+      className="reg-input"
+      placeholder={placeholder}
+      required
+    />
+  );
 };
 
 export default RegInput;

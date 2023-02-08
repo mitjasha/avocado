@@ -2,4 +2,64 @@
 
 .registration-screen {
   background-color: $bg-color;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.reg-input-wrapper {
+  position: relative;
+  width: 100%;
+
+  &_username:before {
+    content: url(../../assets/svg/reg-user.svg);
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding-left: 20px;
+  }
+
+  &_email:before {
+    content: url(../../assets/svg/reg-email.svg);
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding-left: 20px;
+  }
+
+  &_password:before {
+    content: url(../../assets/svg/reg-password.svg);
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding-left: 20px;
+  }
+
+  &_password:after {
+    content: url(../../assets/svg/reg-show.svg);
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 20px;
+  }
+}
+
+.first-last-name {
+  display: flex;
+  gap: 10px;
+}
+
+.input-title {
+  color: $dark-green;
+  font-size: 20px;
+  margin-top: 0;
 }
