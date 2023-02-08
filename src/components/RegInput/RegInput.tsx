@@ -4,19 +4,23 @@ import "./RegInput.scss";
 interface RegInputProps {
   type: string;
   placeholder: string;
-  className: string;
+  className?: string;
+  minLength?: number;
 }
 
 const RegInput: React.FC<RegInputProps> = ({
   type,
   placeholder,
   className,
+  minLength,
 }) => {
+  const classes = `${"reg-input"} ${className}`;
   return (
     <input
       type={type}
-      className={className}
+      className={classes}
       placeholder={placeholder}
+      minLength={minLength}
       required
     />
   );
