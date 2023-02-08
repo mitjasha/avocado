@@ -65,6 +65,10 @@ const RegistrationScreen: React.FC = () => {
           </div>
         </div>
         <Button className="continue-btn">Continue</Button>
+        <p className="rights">
+          By continuing, you agree to the <a href="/">Terms of Services</a> &{" "}
+          <a href="/">Privacy Policy</a>
+        </p>
       </div>
     </div>
   );

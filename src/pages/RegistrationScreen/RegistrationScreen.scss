@@ -90,3 +90,18 @@
     transition: 0.4s all ease;
   }
 }
+
+.rights {
+  width: 100%;
+  text-align: center;
+  color: $dark-green;
+}
+
+a {
+  font-weight: 600;
+
+  &:hover {
+    color: $middle-green;
+    transition: 0.4s all ease;
+  }
+}

@@ -15,4 +15,23 @@
   &::placeholder {
     color: rgba(0, 0, 0, 0.27);
   }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:invalid {
+    background-color: rgba(225, 112, 48, 0.1);
+    border: 3px solid #e17030;
+  }
+
+  &:placeholder-shown {
+    background-color: $light-color;
+    border: 3px solid $dark-green;
+  }
+
+  &:disabled {
+    background-color: rgba(52, 54, 51, 0.1);
+    border: 3px solid $dark-color;
+  }
 }
