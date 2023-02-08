@@ -4,6 +4,7 @@ import hideIcon from "../../assets/svg/reg-hide.svg";
 import showIcon from "../../assets/svg/reg-show.svg";
 import Button from "../../components/Buttons/Button/Button";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
+import NextButton from "../../components/Buttons/NextRegButton/NextRegButton";
 import "./RegistrationScreen.scss";
 
 const RegistrationScreen: React.FC = () => {
@@ -73,6 +74,14 @@ const RegistrationScreen: React.FC = () => {
       </div>
       <div className="container">
         <BackButton />
+        <div className="process">1 / 6</div>
+        <h2 className="reg-title">
+          What is your <span className="reg-title__highlight">gender</span>?
+        </h2>
+        <p className="data-info">
+          We will use this data to give you a better diet type for you
+        </p>
+        <NextButton firstDegree={135} secondDegree={90} />
       </div>
     </div>
   );
