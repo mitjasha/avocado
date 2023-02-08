@@ -1,23 +1,23 @@
 import React from "react";
 import "./EventCardProduct.scss";
 
-interface ProductProps {
+interface Product {
   name: string;
-  // proteins: string;
-  // fats: string;
-  // carbs: string;
-  // kcal: string;
   image: string;
 }
 
-const EventCardProduct: React.FC<ProductProps> = ({ name, image }) => {
+interface ProductProps {
+  data: Product;
+}
+
+const EventCardProduct: React.FC<ProductProps> = ({ data }) => {
   return (
-    <div className="card__container">
+    <div className="card__container container">
       <div
         className="card__container__image"
-        style={{ backgroundImage: `url(${image})` }}
+        style={{ background: `url(${data.image}) cover no-repeat` }}
       />
-      <span className="card__container__span">{name}</span>
+      <span className="card__container__span">{data.name}</span>
     </div>
   );
 };

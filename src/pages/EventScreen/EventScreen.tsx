@@ -11,7 +11,7 @@ const EventScreen: React.FC<TypeOfMeal> = ({ type }) => {
   return (
     <div className="event__screen container">
       <div className="event__screen__header">
-        <h1>{type}</h1>
+        <h1 className="event__screen__h1">{type}</h1>
         <div className="event__screen__header__add" />
       </div>
       <div className="event__screen__search">
@@ -24,15 +24,10 @@ const EventScreen: React.FC<TypeOfMeal> = ({ type }) => {
         <img src="../../assets/svg/close.svg" alt="" />
       </div>
       <div className="event__screen__main">
-        {Object.values(products.products).map((item) =>
-          Object.values(item).map((currentItem) => (
-            <EventCardProduct
-              key={currentItem.name}
-              name={currentItem.name}
-              image={currentItem.image}
-            />
-          )),
-        )}
+        <h3 className="event__main__h3">Found:</h3>
+        {Object.values(products.products).map((item) => (
+          <EventCardProduct data={item} />
+        ))}
       </div>
     </div>
   );

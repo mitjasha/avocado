@@ -1,27 +1,35 @@
 @import "../../variables.scss";
 
-.card__containter {
-  width: 100%;
-  height: 100px;
+.card__container {
+  width: 90%;
+  height: 80px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-self: center;
   align-items: center;
   padding: 10px;
-  background-color: $light-color;
+  margin: 10px;
+  background-color: #fafdf8;
+  border-radius: 30px;
 
   &__image {
-    width: 60px;
-    height: 60px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 50px;
+    height: 50px;
+    // background-repeat: no-repeat;
+    // background-size: cover;
   }
 
   &__span {
     font-weight: 400;
-    font-size: 24px;
+    font-size: 15px;
     color: $dark-color;
   }
 }
 
+.card__container:hover{
+  cursor: pointer;
+  background-color: $middle-green;
+  transform: scaleX(1.01);
+  color: $light-color;
+}
