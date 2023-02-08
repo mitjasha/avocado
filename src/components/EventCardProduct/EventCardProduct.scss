@@ -5,10 +5,9 @@
   height: 80px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-self: center;
   align-items: center;
-  padding: 10px;
   margin: 10px;
   background-color: #fafdf8;
   border-radius: 30px;
@@ -16,20 +15,44 @@
   &__image {
     width: 50px;
     height: 50px;
-    // background-repeat: no-repeat;
-    // background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   &__span {
     font-weight: 400;
     font-size: 15px;
+    padding-left: 20px;
     color: $dark-color;
   }
 }
 
-.card__container:hover{
+.card__container:hover {
   cursor: pointer;
   background-color: $middle-green;
   transform: scaleX(1.01);
   color: $light-color;
+}
+
+@media screen and (min-width: $media-tab-pt) {
+  .card__container {
+    width: 20%;
+    height: 120px;
+    display: flex;
+    padding: 0px;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    margin: 10px;
+    background-color: #fafdf8;
+    border-radius: 30px;
+
+    &__span{
+      margin-top: 20px;
+      padding: 0;
+      text-align: center;
+    }
+  }
+
 }

@@ -14,8 +14,8 @@ const EventCardProduct: React.FC<ProductProps> = ({ data }) => {
   return (
     <div className="card__container container">
       <div
+        style={{ backgroundImage: `url("${data.image}")` }}
         className="card__container__image"
-        style={{ background: `url(${data.image}) cover no-repeat` }}
       />
       <span className="card__container__span">{data.name}</span>
     </div>
