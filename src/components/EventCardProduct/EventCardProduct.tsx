@@ -109,19 +109,35 @@ export const EventCardProductAdd: React.FC = () => {
               placeholder="enter a name"
             />
             <div className="add__input__container">
-              <input className="add__input add__number" type="number" />
+              <input
+                className="add__input add__number"
+                type="number"
+                placeholder="kcal per 100 g"
+              />
               <span>kcal</span>
             </div>
             <div className="add__input__container">
-              <input className="add__input add__number" type="number" />
+              <input
+                className="add__input add__number"
+                type="number"
+                placeholder="proteins per 100 g"
+              />
               <span>g</span>
             </div>
             <div className="add__input__container">
-              <input className="add__input add__number" type="number" />
+              <input
+                className="add__input add__number"
+                type="number"
+                placeholder="fats per 100 g"
+              />
               <span>g</span>
             </div>
             <div className="add__input__container">
-              <input className="add__input add__number" type="number" />
+              <input
+                className="add__input add__number"
+                type="number"
+                placeholder="carbs per 100 g"
+              />
               <span>g</span>
             </div>
           </div>
