@@ -5,6 +5,7 @@ export interface NextRegButtonProps {
   to?: string;
   onClick?: () => void;
   degree: number;
+  secDegree: number;
   disabled?: boolean;
 }
 
@@ -12,6 +13,7 @@ const NextRegButton: React.FC<NextRegButtonProps> = ({
   to,
   onClick,
   degree,
+  secDegree,
   disabled,
   ...attrs
 }) => {
@@ -20,7 +22,7 @@ const NextRegButton: React.FC<NextRegButtonProps> = ({
       <div
         className="progress"
         style={{
-          backgroundImage: `linear-gradient(${degree}deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)`,
+          backgroundImage: `linear-gradient(${degree}deg, transparent 50%, #e8f2e1 50%), linear-gradient(${secDegree}deg, #e8f2e1 50%, transparent 50%)`,
         }}
       >
         <button

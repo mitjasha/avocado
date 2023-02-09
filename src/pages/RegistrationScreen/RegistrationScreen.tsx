@@ -8,6 +8,9 @@ import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton"
 import maleIcon from "../../assets/svg/male.svg";
 import femaleIcon from "../../assets/svg/female.svg";
 import TallInput from "../../components/TallInput/TallInput";
+import loseIcon from "../../assets/svg/lose-weight.svg";
+import maintainIcon from "../../assets/svg/maintain-weight.svg";
+import gainIcon from "../../assets/svg/gain-weight.svg";
 import "./RegistrationScreen.scss";
 
 const RegistrationScreen: React.FC = () => {
@@ -135,7 +138,7 @@ const RegistrationScreen: React.FC = () => {
               Female
             </label>
           </div>
-          <NextRegButton degree={150} disabled />
+          <NextRegButton degree={150} secDegree={90} disabled />
         </div>
       </div>
       <div className="container questions-container">
@@ -157,7 +160,7 @@ const RegistrationScreen: React.FC = () => {
             required
             onChange={displayAge}
           />
-          <NextRegButton degree={210} disabled />
+          <NextRegButton degree={210} secDegree={90} disabled />
         </div>
       </div>
       <div className="container questions-container">
@@ -173,7 +176,7 @@ const RegistrationScreen: React.FC = () => {
           <div className="unit">cm</div>
           <div className="triangle" />
           <TallInput />
-          <NextRegButton degree={270} disabled />
+          <NextRegButton degree={270} secDegree={90} disabled />
         </div>
       </div>
       <div className="container questions-container">
@@ -188,7 +191,7 @@ const RegistrationScreen: React.FC = () => {
           </p>
           <div className="unit">kg</div>
           <div className="triangle" />
-          <NextRegButton degree={330} disabled />
+          <NextRegButton degree={270} secDegree={90} disabled />
         </div>
       </div>
       <div className="container questions-container">
@@ -201,7 +204,43 @@ const RegistrationScreen: React.FC = () => {
           <p className="data-info">
             We will use this data to give you a better diet type for you
           </p>
-          <NextRegButton degree={390} disabled />
+          <div className="goal-input">
+            <input
+              type="radio"
+              id="lose"
+              name="goal"
+              className="goal-input__input"
+            />
+            <label htmlFor="lose" className="goal-input__label">
+              <img src={loseIcon} alt="lose" className="goal-input__icon" />
+              Lose weight
+            </label>
+            <input
+              type="radio"
+              id="maintain"
+              name="goal"
+              className="goal-input__input"
+            />
+            <label htmlFor="maintain" className="goal-input__label">
+              <img
+                src={maintainIcon}
+                alt="maintain"
+                className="goal-input__icon"
+              />
+              Maintain weight
+            </label>
+            <input
+              type="radio"
+              id="gain"
+              name="goal"
+              className="goal-input__input"
+            />
+            <label htmlFor="gain" className="goal-input__label">
+              <img src={gainIcon} alt="gain" className="goal-input__icon" />
+              Gain weight
+            </label>
+          </div>
+          <NextRegButton degree={270} secDegree={90} disabled />
         </div>
       </div>
     </div>
