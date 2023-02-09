@@ -1,20 +1,16 @@
 import React from "react";
 import "./NextRegButton.scss";
 
-export interface NextButtonProps {
-  children?: React.ReactNode;
+export interface NextRegButtonProps {
   to?: string;
   onClick?: () => void;
-  firstDegree: number;
-  secondDegree: number;
+  degree: number;
 }
 
-const NextButton: React.FC<NextButtonProps> = ({
+const NextRegButton: React.FC<NextRegButtonProps> = ({
   to,
-  children,
   onClick,
-  firstDegree,
-  secondDegree,
+  degree,
   ...attrs
 }) => {
   return (
@@ -22,7 +18,7 @@ const NextButton: React.FC<NextButtonProps> = ({
       <div
         className="progress"
         style={{
-          backgroundImage: `linear-gradient(${firstDegree}deg, transparent 50%, #e8f2e1 50%), linear-gradient(${secondDegree}deg, #e8f2e1 50%, transparent 50%)`,
+          backgroundImage: `linear-gradient(${degree}deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)`,
         }}
       >
         <a href="/" rel="noopener noreferrer" className="next-btn" {...attrs}>
@@ -33,4 +29,4 @@ const NextButton: React.FC<NextButtonProps> = ({
   );
 };
 
-export default NextButton;
+export default NextRegButton;

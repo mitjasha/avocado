@@ -5,7 +5,7 @@ import hideIcon from "../../assets/svg/reg-hide.svg";
 import showIcon from "../../assets/svg/reg-show.svg";
 import Button from "../../components/Buttons/Button/Button";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
-import NextButton from "../../components/Buttons/NextRegButton/NextRegButton";
+import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
 import maleIcon from "../../assets/svg/male.svg";
 import femaleIcon from "../../assets/svg/female.svg";
 import "./RegistrationScreen.scss";
@@ -106,7 +106,7 @@ const RegistrationScreen: React.FC = () => {
             Female
           </label>
         </div>
-        <NextButton firstDegree={150} secondDegree={90} />
+        <NextRegButton degree={150} />
       </div>
     </div>
   );
