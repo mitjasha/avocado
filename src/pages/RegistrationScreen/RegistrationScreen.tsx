@@ -176,6 +176,34 @@ const RegistrationScreen: React.FC = () => {
           <NextRegButton degree={270} disabled />
         </div>
       </div>
+      <div className="container questions-container">
+        <div className="questions__weight">
+          <BackButton />
+          <div className="process">4 / 6</div>
+          <h2 className="reg-title">
+            Your <span className="reg-title__highlight">current weight</span>?
+          </h2>
+          <p className="data-info">
+            We will use this data to give you a better diet type for you
+          </p>
+          <div className="unit">kg</div>
+          <div className="triangle" />
+          <NextRegButton degree={330} disabled />
+        </div>
+      </div>
+      <div className="container questions-container">
+        <div className="questions__goal">
+          <BackButton />
+          <div className="process">5 / 6</div>
+          <h2 className="reg-title">
+            Your is your <span className="reg-title__highlight">goal</span>?
+          </h2>
+          <p className="data-info">
+            We will use this data to give you a better diet type for you
+          </p>
+          <NextRegButton degree={390} disabled />
+        </div>
+      </div>
     </div>
   );
 };

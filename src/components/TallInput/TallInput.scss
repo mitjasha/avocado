@@ -3,10 +3,10 @@
 .tall-input {
   display: flex;
   justify-content: center;
-  gap: 10px;
   align-items: center;
-  margin: 100px 0;
-  width: 100%;
+  gap: 10px;
+  margin: 50px 0 100px 0;
+  width: fit-content;
   height: 155px;
 
   &__input {
@@ -17,13 +17,13 @@
       transform: scale(1.3);
       transition: 0.4s all ease;
       margin: 0 10px;
+      color: $dark-color;
     }
   }
 
   &__label {
     width: 92px;
     height: 118px;
-    padding: 0 10px;
     display: flex;
     background-color: $light-color;
     border-radius: 20px;
