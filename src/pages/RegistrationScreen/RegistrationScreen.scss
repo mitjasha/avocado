@@ -232,3 +232,28 @@ a {
     cursor: pointer;
   }
 }
+
+.unit {
+  background-color: $dark-color;
+  color: $bg-color;
+  border-radius: 20px;
+  width: 60px;
+  height: 23px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.triangle {
+  display: flex;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 18px solid $dark-green;
+}

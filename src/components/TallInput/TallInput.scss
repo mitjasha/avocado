@@ -1,0 +1,36 @@
+@import "../../variables";
+
+.tall-input {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  margin: 100px 0;
+
+  &__input {
+    display: none;
+
+    &:checked + label {
+      background-color: $middle-green;
+    }
+  }
+
+  &__label {
+    width: 92px;
+    height: 118px;
+    display: flex;
+    background-color: $light-color;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.35);
+    font-size: 30px;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.4s all ease;
+    }
+  }
+}

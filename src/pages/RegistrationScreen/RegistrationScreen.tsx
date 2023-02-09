@@ -7,6 +7,7 @@ import BackButton from "../../components/Buttons/BackButton/BackButton";
 import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
 import maleIcon from "../../assets/svg/male.svg";
 import femaleIcon from "../../assets/svg/female.svg";
+import TallInput from "../../components/TallInput/TallInput";
 import "./RegistrationScreen.scss";
 
 const RegistrationScreen: React.FC = () => {
@@ -157,6 +158,22 @@ const RegistrationScreen: React.FC = () => {
             onChange={displayAge}
           />
           <NextRegButton degree={210} disabled />
+        </div>
+      </div>
+      <div className="container questions-container">
+        <div className="questions__tall">
+          <BackButton />
+          <div className="process">3 / 6</div>
+          <h2 className="reg-title">
+            How <span className="reg-title__highlight">tall</span> are you?
+          </h2>
+          <p className="data-info">
+            We will use this data to give you a better diet type for you
+          </p>
+          <div className="unit">cm</div>
+          <div className="triangle" />
+          <TallInput />
+          <NextRegButton degree={270} disabled />
         </div>
       </div>
     </div>
