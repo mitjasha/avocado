@@ -71,7 +71,7 @@
 }
 
 .card__container__modal {
-  width: 90%;
+  width: 288px;
   height: 65%;
   border-radius: 5%;
   display: flex;
@@ -96,7 +96,7 @@
     width: 20px;
     height: 20px;
     top: 125px;
-    right: 25px;
+    margin-left: 270px;
     position: absolute;
     z-index: 10001;
   }
@@ -207,5 +207,98 @@
     font-size: 14px;
     text-align: center;
     color: $light-color;
+  }
+}
+
+.add {
+  &__containter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80%;
+  }
+
+  &__param {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 10px;
+  }
+
+  &__values {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 10px;
+    width: 60%;
+  }
+
+  &__text {
+    width: 95%;
+    ;
+  }
+
+  &__select {
+    background-color: $middle-green;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    color: $dark-color;
+    border: none;
+    position: relative;
+    outline: none;
+  }
+
+  &__input {
+    border: 2px solid $middle-green;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    text-indent: 10%;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    background: #fafdf8 !important;
+    outline: none;
+    height: 27px;
+    max-width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    color: #aeaeae;
+
+    &__container {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__number {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: $media-tab) {
+
+  .modal__close {
+    margin-left: 270px;
+
+  }
+}
+
+@media screen and (min-width: $media-tab-pt) {
+
+
+  .modal__close {
+    margin-left: 290px;
+
+  }
+}
+
+@media screen and (min-width: $media-desk) {
+
+
+  .modal__close {
+    margin-left: 260px;
+
   }
 }

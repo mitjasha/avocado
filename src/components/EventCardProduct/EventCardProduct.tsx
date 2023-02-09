@@ -26,7 +26,7 @@ const EventCardProduct: React.FC<ProductProps> = ({ data }) => {
   );
 };
 
-const EventCardProductModal: React.FC<ProductProps> = ({ data }) => {
+export const EventCardProductModal: React.FC<ProductProps> = ({ data }) => {
   return (
     <div className="card__container__modal__bg">
       <div className="card__container__modal container">
@@ -62,6 +62,68 @@ const EventCardProductModal: React.FC<ProductProps> = ({ data }) => {
               {data.carbs}
             </div>
             <span className="modal__span">g</span>
+          </div>
+        </div>
+        <button type="button" className="modal__button">
+          Add
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export const EventCardProductAdd: React.FC = () => {
+  return (
+    <div className="card__container__modal__bg">
+      <div className="card__container__modal container">
+        <div className="modal__close" />
+        <h2 className="modal__h2">Add new product</h2>
+        <div className="add__containter">
+          <div className="add__param">
+            <span>Category:</span>
+            <span>Name:</span>
+            <span>100 g:</span>
+            <span>Proteins:</span>
+            <span>Fats:</span>
+            <span>Carbs:</span>
+          </div>
+          <div className="add__values">
+            <select className="add__select">
+              <option>milk</option>
+              <option>bakery</option>
+              <option>oil/butter</option>
+              <option>porrige</option>
+              <option>vegetable</option>
+              <option>fruit</option>
+              <option>dried fruit</option>
+              <option>bean</option>
+              <option>meat</option>
+              <option>sausage</option>
+              <option>fish</option>
+              <option>nut</option>
+              <option>candy</option>
+            </select>
+            <input
+              className="add__input add__text"
+              type="text"
+              placeholder="enter a name"
+            />
+            <div className="add__input__container">
+              <input className="add__input add__number" type="number" />
+              <span>kcal</span>
+            </div>
+            <div className="add__input__container">
+              <input className="add__input add__number" type="number" />
+              <span>g</span>
+            </div>
+            <div className="add__input__container">
+              <input className="add__input add__number" type="number" />
+              <span>g</span>
+            </div>
+            <div className="add__input__container">
+              <input className="add__input add__number" type="number" />
+              <span>g</span>
+            </div>
           </div>
         </div>
         <button type="button" className="modal__button">
