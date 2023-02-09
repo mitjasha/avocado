@@ -32,6 +32,8 @@
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  border: none;
 
   &-icon {
     background: url(../../../assets//svg/arrow-light.svg) no-repeat;
@@ -42,5 +44,12 @@
 
   &:hover {
     transform: scale(1.1);
+    transition: 0.4s all ease;
+  }
+
+  &:disabled {
+    background-color: #6e6f6d;
+    cursor: default;
+    transform: scale(1);
   }
 }

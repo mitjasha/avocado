@@ -3,7 +3,6 @@ import React from "react";
 import RegInput from "../../components/RegInput/RegInput";
 import hideIcon from "../../assets/svg/reg-hide.svg";
 import showIcon from "../../assets/svg/reg-show.svg";
-import Button from "../../components/Buttons/Button/Button";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
 import maleIcon from "../../assets/svg/male.svg";
@@ -69,7 +68,9 @@ const RegistrationScreen: React.FC = () => {
             />
           </div>
         </div>
-        <Button className="continue-btn">Continue</Button>
+        <button type="submit" className="continue-btn" disabled>
+          Continue
+        </button>
         <p className="rights">
           By continuing, you agree to the <a href="/">Terms of Services</a> &{" "}
           <a href="/">Privacy Policy</a>
@@ -106,7 +107,7 @@ const RegistrationScreen: React.FC = () => {
             Female
           </label>
         </div>
-        <NextRegButton degree={150} />
+        <NextRegButton degree={150} disabled />
       </div>
     </div>
   );

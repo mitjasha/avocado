@@ -82,12 +82,20 @@
   font-size: 20px;
   font-weight: 500;
   box-sizing: border-box;
+  cursor: pointer;
 
   &:hover {
     background-color: $bg-color;
     color: $dark-color;
     border: solid 3px $dark-color;
     transition: 0.4s all ease;
+  }
+
+  &:disabled {
+    background-color: rgba(52, 54, 51, 0.35);
+    border: none;
+    color: $bg-color;
+    cursor: default;
   }
 }
 
