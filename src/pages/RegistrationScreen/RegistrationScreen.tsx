@@ -25,6 +25,14 @@ const RegistrationScreen: React.FC = () => {
       showBtn.style.backgroundImage = `url(${showIcon})`;
     }
   };
+  const displayAge = () => {
+    const ageInput = document.querySelector(".age-input") as HTMLInputElement;
+    const today = new Date().getTime();
+    const birth = new Date(ageInput.value).getTime();
+    const age = new Date(today - birth).getUTCFullYear() - 1970;
+    const ageDisplay = document.querySelector(".age-display") as HTMLElement;
+    ageDisplay.textContent = String(age);
+  };
   return (
     <div className="registration-screen">
       <div className="container registration-screen-container">
@@ -77,37 +85,63 @@ const RegistrationScreen: React.FC = () => {
         </p>
       </div>
       <div className="container questions-container">
-        <BackButton />
-        <div className="process">1 / 6</div>
-        <h2 className="reg-title">
-          What is your <span className="reg-title__highlight">gender</span>?
-        </h2>
-        <p className="data-info">
-          We will use this data to give you a better diet type for you
-        </p>
-        <div className="gender-input">
-          <input
-            type="radio"
-            id="male"
-            name="gender"
-            className="gender-input__input"
-          />
-          <label htmlFor="male" className="gender-input__label">
-            <img src={maleIcon} alt="male" className="gender-input__icon" />
-            Male
-          </label>
-          <input
-            type="radio"
-            id="female"
-            name="gender"
-            className="gender-input__input"
-          />
-          <label htmlFor="female" className="gender-input__label">
-            <img src={femaleIcon} alt="female" className="gender-input__icon" />
-            Female
-          </label>
+        <div className="questions__gender">
+          <BackButton />
+          <div className="process">1 / 6</div>
+          <h2 className="reg-title">
+            What is your <span className="reg-title__highlight">gender</span>?
+          </h2>
+          <p className="data-info">
+            We will use this data to give you a better diet type for you
+          </p>
+          <div className="gender-input">
+            <input
+              type="radio"
+              id="male"
+              name="gender"
+              className="gender-input__input"
+            />
+            <label htmlFor="male" className="gender-input__label">
+              <img src={maleIcon} alt="male" className="gender-input__icon" />
+              Male
+            </label>
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              className="gender-input__input"
+            />
+            <label htmlFor="female" className="gender-input__label">
+              <img
+                src={femaleIcon}
+                alt="female"
+                className="gender-input__icon"
+              />
+              Female
+            </label>
+          </div>
+          <NextRegButton degree={150} disabled />
         </div>
-        <NextRegButton degree={150} disabled />
+      </div>
+      <div className="container questions-container">
+        <div className="questions__age">
+          <BackButton />
+          <div className="process">2 / 6</div>
+          <h2 className="reg-title">
+            Your <span className="reg-title__highlight">date of birth</span>?
+          </h2>
+          <p className="data-info">
+            We will use this data to give you a better diet type for you
+          </p>
+          <div className="age-display">Age</div>
+          <input
+            type="date"
+            className="age-input"
+            required
+            onChange={displayAge}
+          />
+          <NextRegButton degree={210} disabled />
+        </div>
       </div>
     </div>
   );
