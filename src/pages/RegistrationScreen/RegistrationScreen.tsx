@@ -25,6 +25,7 @@ const RegistrationScreen: React.FC = () => {
       showBtn.style.backgroundImage = `url(${showIcon})`;
     }
   };
+
   const displayAge = () => {
     const ageInput = document.querySelector(".age-input") as HTMLInputElement;
     const today = new Date().getTime();
@@ -33,6 +34,19 @@ const RegistrationScreen: React.FC = () => {
     const ageDisplay = document.querySelector(".age-display") as HTMLElement;
     ageDisplay.textContent = String(age);
   };
+
+  const todaysDate =
+    new Date().getDate() < 10
+      ? `0${new Date().getDate()}`
+      : new Date().getDate();
+  const todaysMonth =
+    new Date().getMonth() < 10
+      ? `0${new Date().getMonth()}`
+      : new Date().getMonth();
+  const todaysYear = new Date().getFullYear();
+  const minAge = `${todaysYear - 18}-${todaysMonth}-${todaysDate}`;
+  const maxAge = `${todaysYear - 100}-${todaysMonth}-${todaysDate}`;
+
   return (
     <div className="registration-screen">
       <div className="container registration-screen-container">
@@ -137,6 +151,8 @@ const RegistrationScreen: React.FC = () => {
           <input
             type="date"
             className="age-input"
+            max={minAge}
+            min={maxAge}
             required
             onChange={displayAge}
           />

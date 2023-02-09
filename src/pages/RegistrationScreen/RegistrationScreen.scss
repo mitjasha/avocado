@@ -203,7 +203,6 @@ a {
   margin: 20px 0 100px 0;
   border: none;
   border-radius: 20px;
-  background-color: $light-color;
   padding: 20px 15px;
   box-sizing: border-box;
   cursor: pointer;
@@ -213,6 +212,14 @@ a {
   background: $light-color url(../../assets/svg/calendar.svg) no-repeat;
   background-size: 30px;
   background-position: 95%;
+
+  &::-webkit-datetime-edit-month-field,
+  &::-webkit-datetime-edit-day-field,
+  &::-webkit-datetime-edit-year-field {
+    font-size: 20px;
+    font-family: "Montserrat";
+    font-weight: 500;
+  }
 
   &:focus {
     outline: none;
