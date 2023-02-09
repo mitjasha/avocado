@@ -3,21 +3,27 @@
 .tall-input {
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
   align-items: center;
   margin: 100px 0;
+  width: 100%;
+  height: 155px;
 
   &__input {
     display: none;
 
     &:checked + label {
       background-color: $middle-green;
+      transform: scale(1.3);
+      transition: 0.4s all ease;
+      margin: 0 10px;
     }
   }
 
   &__label {
     width: 92px;
     height: 118px;
+    padding: 0 10px;
     display: flex;
     background-color: $light-color;
     border-radius: 20px;
