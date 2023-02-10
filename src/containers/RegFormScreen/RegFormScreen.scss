@@ -35,6 +35,11 @@
 .full-name {
   display: flex;
   gap: 10px;
+
+  &__first-name,
+  &__last-name {
+    width: 100%;
+  }
 }
 
 .input-title {
