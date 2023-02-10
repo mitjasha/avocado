@@ -21,7 +21,10 @@ const RegTallScreen: React.FC = () => {
         <div className="tall-input-wrapper">
           <TallInput />
         </div>
-        <NextRegButton degree={270} secDegree={90} disabled />
+        <NextRegButton
+          gradient="linear-gradient(270deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)"
+          disabled
+        />
       </div>
     </div>
   );

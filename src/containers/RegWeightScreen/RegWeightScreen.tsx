@@ -21,7 +21,10 @@ const RegWeightScreen: React.FC = () => {
         <div className="weight-input-wrapper">
           <WeightInput />
         </div>
-        <NextRegButton degree={270} secDegree={90} disabled />
+        <NextRegButton
+          gradient="linear-gradient(150deg, transparent 50%, #559c4f 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)"
+          disabled
+        />
       </div>
     </div>
   );

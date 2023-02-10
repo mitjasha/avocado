@@ -5,6 +5,7 @@ import WeightInput from "../../components/WeightInput/WeightInput";
 import "./RegTargetWeightScreen.scss";
 
 const RegTargetWeightScreen: React.FC = () => {
+  const userCurrentWeight = 67;
   return (
     <div className="container questions-container">
       <div className="questions__weight">
@@ -19,13 +20,14 @@ const RegTargetWeightScreen: React.FC = () => {
         <div className="unit">kg</div>
         <div className="triangle" />
         <div className="weight-wrapper">
-          <div className="weight-wrapper__current">67</div>
+          <div className="weight-wrapper__current">{userCurrentWeight}</div>
           <div className="weight-wrapper__arrow" />
           <div className="weight-wrapper__target">
             <WeightInput />
           </div>
         </div>
-        <NextRegButton degree={180} secDegree={0} disabled />
+        <p className="start-phrase">Let&apos;s Start!</p>
+        <NextRegButton gradient="none" disabled />
       </div>
     </div>
   );

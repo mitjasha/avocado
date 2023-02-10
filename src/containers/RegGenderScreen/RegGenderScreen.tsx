@@ -40,7 +40,10 @@ const RegGenderScreen: React.FC = () => {
             Female
           </label>
         </div>
-        <NextRegButton degree={150} secDegree={90} disabled />
+        <NextRegButton
+          gradient="linear-gradient(150deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)"
+          disabled
+        />
       </div>
     </div>
   );

@@ -44,7 +44,10 @@ const RegAgeScreen: React.FC = () => {
           required
           onChange={displayAge}
         />
-        <NextRegButton degree={210} secDegree={90} disabled />
+        <NextRegButton
+          gradient="linear-gradient(210deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)"
+          disabled
+        />
       </div>
     </div>
   );
