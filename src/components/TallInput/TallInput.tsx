@@ -26,7 +26,7 @@ const TallInput: React.FC = () => {
   };
   return (
     <ScrollContainer className="scroll-container">
-      {getTallInputs()};
+      {getTallInputs()}
     </ScrollContainer>
   );
 };

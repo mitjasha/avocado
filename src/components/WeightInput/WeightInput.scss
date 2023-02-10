@@ -1,13 +1,14 @@
 @import "../../variables";
 
-.tall-input {
+.weight-input {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
   margin: auto;
-  width: fit-content;
-  height: 155px;
+  height: 250px;
+  width: 130px;
 
   &__input {
     display: none;
@@ -16,14 +17,14 @@
       background-color: $middle-green;
       transform: scale(1.3);
       transition: 0.4s all ease;
-      margin: 0 10px;
+      margin: 10px 0;
       color: $dark-color;
     }
   }
 
   &__label {
-    width: 92px;
-    height: 118px;
+    width: 100px;
+    height: 100px;
     display: flex;
     background-color: $light-color;
     border-radius: 20px;
@@ -33,6 +34,7 @@
     color: rgba(0, 0, 0, 0.35);
     font-size: 30px;
     cursor: pointer;
+    padding: 32px 0;
 
     &:hover {
       transform: scale(1.1);

@@ -1,6 +1,7 @@
 import React from "react";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
+import WeightInput from "../../components/WeightInput/WeightInput";
 import "./RegWeightScreen.scss";
 
 const RegWeightScreen: React.FC = () => {
@@ -17,6 +18,9 @@ const RegWeightScreen: React.FC = () => {
         </p>
         <div className="unit">kg</div>
         <div className="triangle" />
+        <div className="weight-input-wrapper">
+          <WeightInput />
+        </div>
         <NextRegButton degree={270} secDegree={90} disabled />
       </div>
     </div>

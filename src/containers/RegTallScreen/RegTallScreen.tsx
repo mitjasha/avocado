@@ -2,6 +2,7 @@ import React from "react";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
 import TallInput from "../../components/TallInput/TallInput";
+import "./RegTallScreen.scss";
 
 const RegTallScreen: React.FC = () => {
   return (
@@ -17,7 +18,9 @@ const RegTallScreen: React.FC = () => {
         </p>
         <div className="unit">cm</div>
         <div className="triangle" />
-        <TallInput />
+        <div className="tall-input-wrapper">
+          <TallInput />
+        </div>
         <NextRegButton degree={270} secDegree={90} disabled />
       </div>
     </div>
