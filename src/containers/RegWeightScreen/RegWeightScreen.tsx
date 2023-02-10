@@ -19,7 +19,7 @@ const RegWeightScreen: React.FC = () => {
         <div className="unit">kg</div>
         <div className="triangle" />
         <div className="weight-input-wrapper">
-          <WeightInput />
+          <WeightInput idName="weight" name="weight" />
         </div>
         <NextRegButton
           gradient="linear-gradient(150deg, transparent 50%, #559c4f 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)"

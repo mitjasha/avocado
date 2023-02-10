@@ -23,7 +23,7 @@ const RegTargetWeightScreen: React.FC = () => {
           <div className="weight-wrapper__current">{userCurrentWeight}</div>
           <div className="weight-wrapper__arrow" />
           <div className="weight-wrapper__target">
-            <WeightInput />
+            <WeightInput idName="target-weight" name="target-weight" />
           </div>
         </div>
         <p className="start-phrase">Let&apos;s Start!</p>

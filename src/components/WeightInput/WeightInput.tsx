@@ -3,7 +3,12 @@ import React from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
 import "./WeightInput.scss";
 
-const WeightInput: React.FC = () => {
+interface WeightInputProps {
+  idName: string;
+  name: string;
+}
+
+const WeightInput: React.FC<WeightInputProps> = ({ idName, name }) => {
   const minWeight = 30;
   const maxWeight = 200;
   const getWeightInputs = () => {
@@ -14,10 +19,10 @@ const WeightInput: React.FC = () => {
           type="radio"
           className="weight-input__input"
           key={i}
-          id={`weight-${i}`}
-          name="weight"
+          id={`${idName}-${i}`}
+          name={name}
         />,
-        <label htmlFor={`weight-${i}`} className="weight-input__label">
+        <label htmlFor={`${idName}-${i}`} className="weight-input__label">
           {i}
         </label>,
       );
