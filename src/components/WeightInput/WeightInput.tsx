@@ -22,7 +22,11 @@ const WeightInput: React.FC<WeightInputProps> = ({ idName, name }) => {
           id={`${idName}-${i}`}
           name={name}
         />,
-        <label htmlFor={`${idName}-${i}`} className="weight-input__label">
+        <label
+          key={`label-${i}`}
+          htmlFor={`${idName}-${i}`}
+          className="weight-input__label"
+        >
           {i}
         </label>,
       );

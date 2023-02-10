@@ -17,7 +17,11 @@ const TallInput: React.FC = () => {
           id={`tall-${i}`}
           name="tall"
         />,
-        <label htmlFor={`tall-${i}`} className="tall-input__label">
+        <label
+          htmlFor={`tall-${i}`}
+          key={`label-${i}`}
+          className="tall-input__label"
+        >
           {i}
         </label>,
       );
