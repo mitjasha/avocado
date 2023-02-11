@@ -1,0 +1,78 @@
+@import "../../variables";
+
+.weight-wrapper {
+  display: flex;
+  width: 290px;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+
+  &__current {
+    width: 100px;
+    height: 100px;
+    margin: 0 15px;
+    display: flex;
+    background-color: $light-color;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: $dark-color;
+    font-size: 30px;
+  }
+
+  &__arrow {
+    width: 30px;
+    height: 30px;
+    background: url(../../assets/svg/arrow.svg) no-repeat;
+    background-position: 50%;
+    transform: rotate(180deg);
+  }
+
+  &__target {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        $bg-color 90%
+      );
+      width: 100%;
+      height: 4em;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background-image: linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0),
+        $bg-color 90%
+      );
+      width: 100%;
+      height: 4em;
+    }
+  }
+}
+
+.start-phrase {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
