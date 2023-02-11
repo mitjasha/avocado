@@ -8,6 +8,7 @@ import EventScreen from "./pages/EventScreen/EventScreen";
 import MainScreen from "./pages/MainScreen/MainScreen";
 import ProductCardScreen from "./pages/ProductCardScreen/ProductCardScreen";
 import ProfileScreen from "./pages/ProfileScreen/ProfieScreen";
+import ProgressScreen from "./pages/ProgressScreen/ProgressScreen";
 import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
 import CategoriesRecipesScreen from "./pages/CategoriesRecipesScreen/CategoriesRecipesScreen";
 import SettingScreen from "./pages/SettingScreen/SettingScreen";
@@ -19,13 +20,14 @@ const App: React.FC = () => {
       <main className="main-app">
         <AboutUsScreen />
         <MainScreen />
-        <EventScreen />
+        <EventScreen type="breakfast" />
         <RecipeScreen />
         <RecipesScreen />
         <SettingScreen />
         <CategoriesRecipesScreen />
         <ProductCardScreen />
-        <ProfileScreen /> 
+        <ProfileScreen />
+        <ProgressScreen />
         <RegistrationScreen />
       </main>
       <Footer />
