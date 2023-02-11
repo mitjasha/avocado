@@ -1,0 +1,51 @@
+@import "../../variables";
+
+.age-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  height: 100px;
+  background-color: $middle-green;
+  border-radius: 20px;
+  color: $dark-color;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 100px;
+}
+
+.age-input {
+  width: 100%;
+  margin: 20px 0 100px 0;
+  border: none;
+  border-radius: 20px;
+  padding: 20px 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: $dark-color;
+  font-size: 18px;
+  font-weight: 500;
+  background: $light-color url(../../assets/svg/calendar.svg) no-repeat;
+  background-size: 30px;
+  background-position: 95%;
+
+  &::-webkit-datetime-edit-month-field,
+  &::-webkit-datetime-edit-day-field,
+  &::-webkit-datetime-edit-year-field {
+    font-size: 20px;
+    font-family: "Montserrat";
+    font-weight: 500;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    width: 60px;
+    height: 30px;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
