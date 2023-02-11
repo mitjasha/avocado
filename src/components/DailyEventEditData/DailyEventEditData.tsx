@@ -2,7 +2,7 @@ import React from "react";
 import "./DailyEventEditData.scss";
 
 export interface DailyEventData {
-  data: string[];
+  data: string[][];
 }
 
 const DailyEventEditData: React.FC<DailyEventData> = ({ data }) => {
