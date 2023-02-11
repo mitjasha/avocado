@@ -13,11 +13,23 @@
         padding: 0px;
     }
 
+    &__text {
+        width: 240px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
+.input__container{
+    width: 100px;
 }
 
 .info {
     &__delete {
-        color: red;
+        color: #9da8c3;
         font-weight: 200;
     }
 
@@ -25,9 +37,35 @@
         font-size: 16px;
         font-weight: 600;
     }
+
+    &__input {
+        border: 2px solid #559c4f;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        text-indent: 10%;
+        -moz-border-radius: 15px;
+        -khtml-border-radius: 15px;
+        background: #fafdf8 !important;
+        outline: none;
+        height: 30px;
+        width: 50px;
+        font-weight: 400;
+        font-size: 15px;
+        color: #aeaeae;
+    }
 }
 
 .info__delete:hover {
+    color: red;
     cursor: pointer;
     font-weight: 500;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }

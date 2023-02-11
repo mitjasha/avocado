@@ -8,12 +8,20 @@ export interface DailyEventData {
 const DailyEventEditData: React.FC<DailyEventData> = ({ data }) => {
   return (
     <ul className="container__info__ul">
-      <span className="info__header__span">Your meal consisted of:</span>
       {data.map((item) => (
         <li className="container__info__li">
-          <span className="info__name">
-            {item[0]}({item[1]}g) - {item[2]}kcal
-          </span>
+          <div className="container__info__text">
+            <span className="info__name">{item[0]}</span>
+            <div className="input__container">
+              <input
+                className="info__input"
+                type="number"
+                placeholder={item[1]}
+              />
+              <span>g</span>
+            </div>
+            <span className="info__name">{item[2]}kcal</span>
+          </div>
           <span className="info__delete">delete</span>
         </li>
       ))}

@@ -112,12 +112,41 @@
   width: 270px;
   gap: 10px;
   margin-top: 10px;
+
+  &__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .glass {
   width: 26px;
   height: 44px;
   background-image: url(../../assets/png/glass.png);
+}
+
+.event__changes__btn {
+  width: 200px;
+  height: 40px;
+  background-color: $dark-color;
+  color: $light-color;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  bottom: 10px;
+}
+
+.event__changes__btn:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: 0.5s;
+  color: $middle-green;
+
 }
 
 @media screen and (min-width: $media-tab-pt) {
