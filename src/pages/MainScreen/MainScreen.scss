@@ -1,0 +1,153 @@
+@import "../../variables";
+
+.main-screen {
+  background-color: $bg-color;
+}
+
+.daily-data {
+  background-color: $middle-green;
+  padding-bottom: 20px;
+
+  &__status {
+    margin: auto;
+    width: 192px;
+    text-align: center;
+    background-color: $dark-color;
+    color: $bg-color;
+    border-radius: 20px;
+    padding: 10px;
+  }
+}
+
+.calories-chart {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  padding-top: 20px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+
+  &__chart {
+    position: relative;
+  }
+}
+
+.kcal-available {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  &__num {
+    font-size: 36px;
+    color: $dark-green;
+    margin: 0;
+  }
+}
+
+.goal-kcal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.chart-data-num {
+  margin: 0;
+  font-size: 26px;
+}
+
+.chart-data-title {
+  margin: 0;
+  font-weight: 300;
+  color: #9da8c3;
+}
+
+.nutrients-charts {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nutrients-num {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.daily-events {
+  display: grid;
+  padding-bottom: 30px;
+
+  &__meals,
+  &__water,
+  &__exercise,
+  &__weight {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 18px 0 0 0;
+  }
+}
+
+.glasses {
+  display: flex;
+  flex-wrap: wrap;
+  width: 270px;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.glass {
+  width: 26px;
+  height: 44px;
+  background-image: url(../../assets/png/glass.png);
+}
+
+@media screen and (min-width: $media-tab-pt) {
+  .nutrients-charts {
+    width: 500px;
+    margin: auto;
+  }
+
+  .daily-events {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "meals water"
+      "meals exercise"
+      "weight .";
+    gap: 10px 30px;
+
+    &__meals {
+      grid-area: meals;
+    }
+
+    &__water {
+      grid-area: water;
+    }
+
+    &__exercise {
+      grid-area: exercise;
+    }
+
+    &__weight {
+      grid-area: weight;
+    }
+  }
+}
