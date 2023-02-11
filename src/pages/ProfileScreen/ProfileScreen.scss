@@ -1,0 +1,186 @@
+@import "../../variables";
+
+.profile-screen {
+  background-color: $bg-color;
+  color: $dark-color;
+
+  &__title {
+    margin: 0 0 20px 0;
+    text-align: center;
+    font-weight: 500;
+  }
+}
+
+.user-data {
+  background-color: $light-color;
+  padding-bottom: 20px;
+  position: relative;
+
+  &__edit {
+    position: absolute;
+    top: -15px;
+    right: 10%;
+    z-index: 1;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: $light-color url(../../assets/svg/pencil.svg) no-repeat;
+    background-size: 30px;
+    background-position: 50%;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: $dark-color url(../../assets/svg/pencil-light.svg) no-repeat;
+      background-size: 30px;
+      background-position: 50%;
+      transition: 0.4s all ease;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    gap: 10px;
+    padding: 20px 0;
+
+    &__avatar {
+      width: 122px;
+      height: 122px;
+      border-radius: 50%;
+      border: solid 1px $dark-color;
+      background-color: $middle-green;
+    }
+
+    &__title {
+      font-size: 32px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+
+    &__titles p,
+    &__answers p {
+      margin: 10px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+}
+
+.profile-menu {
+  padding-bottom: 1px;
+
+  &__list {
+    background-color: $middle-green;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 80px;
+    border-top-left-radius: 80px;
+    padding: 20px 50px;
+    list-style: none;
+  }
+}
+
+.list-item {
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+
+    &:hover .list-item__name {
+      color: $dark-green;
+      font-weight: 500;
+      transition: 0.4s all ease;
+    }
+
+    &:hover .list-item__icon_progress {
+      background: $dark-color url(../../assets/svg/progress-light.svg) no-repeat;
+      transition: 0.4s all ease;
+      background-size: 25px;
+      background-position: 50%;
+    }
+
+    &:hover .list-item__icon_recipes {
+      background: $dark-color url(../../assets/svg/favorites-light.svg)
+        no-repeat;
+      transition: 0.4s all ease;
+      background-size: 25px;
+      background-position: 50%;
+    }
+
+    &:hover .list-item__icon_settings {
+      background: $dark-color url(../../assets/svg/settings-light.svg) no-repeat;
+      transition: 0.4s all ease;
+      background-size: 25px;
+      background-position: 50%;
+    }
+
+    &:hover .list-item__icon_about {
+      background: $dark-color url(../../assets/svg/about-us-light.svg) no-repeat;
+      transition: 0.4s all ease;
+      background-size: 25px;
+      background-position: 50%;
+    }
+  }
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    &_progress {
+      background: $light-color url(../../assets/svg/progress.svg) no-repeat;
+      background-size: 25px;
+      background-position: 50%;
+    }
+
+    &_recipes {
+      background: $light-color url(../../assets/svg/favorites.svg) no-repeat;
+      background-size: 25px;
+      background-position: 50%;
+    }
+
+    &_settings {
+      background: $light-color url(../../assets/svg/settings.svg) no-repeat;
+      background-size: 25px;
+      background-position: 50%;
+    }
+
+    &_about {
+      background: $light-color url(../../assets/svg/about-us.svg) no-repeat;
+      background-size: 25px;
+      background-position: 50%;
+    }
+  }
+
+  &__name {
+    font-weight: 400;
+  }
+}
+
+@media screen and (min-width: $media-tab) {
+  .user-data {
+    &__edit {
+      right: 30%;
+    }
+
+    &__heading {
+      width: 600px;
+      margin: auto;
+    }
+
+    &__info {
+      width: 400px;
+      margin: auto;
+    }
+  }
+
+  .profile-menu__list {
+    display: flex;
+    justify-content: space-between;
+  }
+}
