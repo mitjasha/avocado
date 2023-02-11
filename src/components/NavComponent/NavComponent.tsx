@@ -14,6 +14,7 @@ const NavComponent: React.FC = () => {
         <li className="nav-list__item">ABOUT US</li>
         <li className="nav-list__item">MAIN</li>
         <li className="nav-list__item">PROFILE</li>
+        <li className="nav-list__item">PROGRESS</li>
         <li className="nav-list__item">RECIPES</li>
       </ul>
       <button

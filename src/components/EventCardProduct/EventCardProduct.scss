@@ -1,0 +1,304 @@
+@import "../../variables.scss";
+
+.card__container {
+  width: 90%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-self: center;
+  align-items: center;
+  margin: 10px;
+  background-color: #fafdf8;
+  border-radius: 30px;
+
+  &__image {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__span {
+    font-weight: 400;
+    font-size: 15px;
+    padding-left: 20px;
+    color: $dark-color;
+  }
+}
+
+.card__container:hover {
+  cursor: pointer;
+  background-color: $middle-green;
+  transform: scaleX(1.01);
+  color: $light-color;
+}
+
+@media screen and (min-width: $media-tab-pt) {
+  .card__container {
+    width: 20%;
+    height: 120px;
+    display: flex;
+    padding: 0px;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    margin: 10px;
+    background-color: #fafdf8;
+    border-radius: 30px;
+
+    &__span {
+      margin-top: 20px;
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+}
+
+.card__container__modal__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(1, 1, 1, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.card__container__modal {
+  width: 288px;
+  height: 65%;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  background-color: #fafdf8;
+}
+
+.modal {
+  &__h2 {
+    font-weight: 400;
+    font-size: 24px;
+    color: $dark-color;
+    text-align: center;
+    margin: 20px 0px 10px;
+  }
+
+  &__close {
+    background-image: url("../../assets/svg/close.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    top: 125px;
+    margin-left: 270px;
+    position: absolute;
+    z-index: 10001;
+  }
+
+  &__image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  &__kcal {
+    width: 93%;
+    margin: 0px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+  }
+
+  &__to__image {
+    background: url("../../assets/svg/arrow_modal.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 12px;
+  }
+
+  &__input {
+    border: 2px solid #559c4f;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    text-indent: 10%;
+    -moz-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    background: #fafdf8 !important;
+    outline: none;
+    height: 20px;
+    width: 50px;
+    font-weight: 400;
+    font-size: 15px;
+    color: #aeaeae;
+  }
+
+  &__span {
+    font-weight: 400;
+    font-size: 14px;
+    color: $dark-color;
+
+    &__disabled {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      background-color: $middle-green;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -khtml-border-radius: 20px;
+      outline: none;
+      height: 26px;
+      width: 58px;
+      font-weight: 400;
+      font-size: 14px;
+      color: $dark-color;
+    }
+  }
+
+  &__proteins {
+    margin-left: 60px;
+  }
+
+  &__fats {
+    margin-left: 88px;
+  }
+
+  &__carbs {
+    margin-left: 76px;
+  }
+
+  &__main {
+    width: 93%;
+    height: 96px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__block {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-self: center;
+      align-items: center;
+    }
+  }
+
+  &__button {
+    background: $dark-color;
+    border-radius: 20px;
+    width: 80%;
+    height: 50px;
+    margin: 10px auto;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: $light-color;
+  }
+}
+
+.add {
+  &__containter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80%;
+  }
+
+  &__param {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 10px;
+  }
+
+  &__values {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 10px;
+    width: 60%;
+  }
+
+  &__text {
+    width: 95%;
+    ;
+  }
+
+  &__select {
+    background-color: $middle-green;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    color: $dark-color;
+    border: none;
+    position: relative;
+    outline: none;
+  }
+
+  &__input {
+    border: 2px solid $middle-green;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    text-indent: 10%;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    background: #fafdf8 !important;
+    outline: none;
+    height: 27px;
+    max-width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    color: #aeaeae;
+
+    &__container {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__number {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: $media-tab) {
+
+  .modal__close {
+    margin-left: 270px;
+
+  }
+}
+
+@media screen and (min-width: $media-tab-pt) {
+
+
+  .modal__close {
+    margin-left: 290px;
+
+  }
+}
+
+@media screen and (min-width: $media-desk) {
+
+
+  .modal__close {
+    margin-left: 260px;
+
+  }
+}
