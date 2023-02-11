@@ -2,10 +2,11 @@ import React from "react";
 import "./DailyEventEditData.scss";
 
 export interface DailyEventData {
+  type: string;
   data: string[][];
 }
 
-const DailyEventEditData: React.FC<DailyEventData> = ({ data }) => {
+const DailyEventEditData: React.FC<DailyEventData> = ({ type, data }) => {
   return (
     <ul className="container__info__ul">
       {data.map((item) => (
@@ -18,7 +19,7 @@ const DailyEventEditData: React.FC<DailyEventData> = ({ data }) => {
                 type="number"
                 placeholder={item[1]}
               />
-              <span>g</span>
+              <span>{type === "meal" ? "g" : "min"}</span>
             </div>
             <span className="info__name">{item[2]}kcal</span>
           </div>

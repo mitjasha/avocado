@@ -56,26 +56,26 @@ const EditEventScreen = () => {
             title="Breakfast"
             recommended="Recomended 447 Kcal"
             quantity="356 kcal"
-            content={<DailyEventEditData data={breakfast} />}
+            content={<DailyEventEditData type="meal" data={breakfast} />}
             className="daily-events__item daily-events__item_breakfast"
           />
           <DailyEventEditWrapper
             title="Lunch"
             recommended="Recomended 447 Kcal"
             className="daily-events__item daily-events__item_lunch"
-            content={<DailyEventEditData data={lunch} />}
+            content={<DailyEventEditData type="meal" data={lunch} />}
           />
           <DailyEventEditWrapper
             title="Dinner"
             recommended="Recomended 447 Kcal"
             className="daily-events__item daily-events__item_dinner"
-            content={<DailyEventEditData data={dinner} />}
+            content={<DailyEventEditData type="meal" data={dinner} />}
           />
           <DailyEventEditWrapper
             title="Snack"
             recommended="Recomended 447 Kcal"
             className="daily-events__item daily-events__item_snack"
-            content={<DailyEventEditData data={snaks} />}
+            content={<DailyEventEditData type="meal" data={snaks} />}
           />
         </div>
         <div className="daily-events__water">
@@ -94,7 +94,7 @@ const EditEventScreen = () => {
             title="Exercise"
             recommended="Last: Run 1 km"
             className="daily-events__item daily-events__item_exercise"
-            content={<DailyEventEditData data={activities} />}
+            content={<DailyEventEditData type="activity" data={activities} />}
           />
         </div>
       </div>
