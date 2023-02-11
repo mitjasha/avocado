@@ -1,0 +1,96 @@
+@import "../../variables";
+
+.daily-events__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  background-color: $light-color;
+  border-radius: 20px;
+  padding: 15px;
+
+  &_breakfast {
+    border-left: solid 10px rgba(46, 209, 46, 0.5);
+  }
+
+  &_lunch {
+    border-left: solid 10px rgba(255, 169, 53, 0.5);
+  }
+
+  &_dinner {
+    border-left: solid 10px rgba(18, 229, 176, 0.5);
+  }
+
+  &_snack {
+    border-left: solid 10px rgba(181, 117, 231, 0.5);
+  }
+
+  &_water {
+    border-left: solid 10px rgba(56, 209, 209, 0.5);
+  }
+
+  &_exercise {
+    border-left: solid 10px rgba(255, 101, 91, 0.5);
+  }
+
+  &_weight {
+    border-left: solid 10px rgba(85, 156, 79, 0.5);
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &_breakfast h4 {
+    color: #2ed12e;
+  }
+
+  &_lunch h4 {
+    color: #ffa935;
+  }
+
+  &_dinner h4 {
+    color: #12e5b0;
+  }
+
+  &_snack h4 {
+    color: #b575e7;
+  }
+
+  &_water h4 {
+    color: #38d1d1;
+  }
+
+  &_exercise h4 {
+    color: #ff655b;
+  }
+
+  &_weight h4 {
+    color: #559c4f;
+    margin: auto;
+  }
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+h4,
+.quantity {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.recom {
+  color: #9da8c3;
+  font-size: 14px;
+  margin: 0;
+}
+
+.add-remove-events {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 60px;
+}
