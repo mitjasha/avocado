@@ -1,0 +1,33 @@
+@import "../../variables.scss";
+
+.container__info {
+
+    &__li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0px;
+    }
+
+    &__ul {
+        padding: 0px;
+    }
+
+}
+
+.info {
+    &__delete {
+        color: red;
+        font-weight: 200;
+    }
+
+    &__header__span {
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+.info__delete:hover {
+    cursor: pointer;
+    font-weight: 500;
+}

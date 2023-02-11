@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "./containers/Footer/Footer";
 import Header from "./containers/Header/Header";
-import EditEventScreen from "./pages/EditEventsScreen/EventScreen/EditEventScreen";
+import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 // import RegistrationScreen from "./pages/RegistrationScreen/RegistrationScreen";
 // import AboutUsScreen from "./pages/AboutUsScreen/AboutUsScreen";
 // import EventScreen from "./pages/EventScreen/EventScreen";

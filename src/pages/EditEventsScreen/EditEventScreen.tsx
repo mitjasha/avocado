@@ -1,14 +1,15 @@
 import React from "react";
 import "./EditEventScreen.scss";
-import "../../../index.scss";
-import DailyEventWrapper from "../../../components/DailyEventWrapper/DailyEventWrapper";
-import PlusMinusButton from "../../../components/Buttons/PlusMinusButton/PlusMinusButton";
-import minus from "../../../assets/svg/minus-light.svg";
-import fire from "../../../assets/svg/fire.svg";
-import eaten from "../../../assets/svg/eaten.svg";
-import "../../MainScreen.scss";
-import DailyEventEditWrapper from "../../../components/DailyEventEditWrapper/DailyEventEditWrapper";
-import ChartComponent from "../../../components/ChartComponent/ChartComponent";
+import "../../index.scss";
+import DailyEventWrapper from "../../components/DailyEventWrapper/DailyEventWrapper";
+import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
+import minus from "../../assets/svg/minus-light.svg";
+import fire from "../../assets/svg/fire.svg";
+import eaten from "../../assets/svg/eaten.svg";
+import "../MainScreen/MainScreen.scss";
+import DailyEventEditWrapper from "../../components/DailyEventEditWrapper/DailyEventEditWrapper";
+import ChartComponent from "../../components/ChartComponent/ChartComponent";
+import DailyEventEditData from "../../components/DailyEventEditData/DailyEventEditData";
 
 const EditEventScreen = () => {
   const getWaterConsumed = () => {
@@ -22,10 +23,23 @@ const EditEventScreen = () => {
     return <div className="glasses">{content}</div>;
   };
 
-  const breakfast = ["orange", "porrige", "coffee"];
-  const lunch = ["soup", "tea"];
-  const dinner = ["fish", "potato"];
-  const snaks = ["apple", "nuts"];
+  const breakfast = [
+    ["orange", "150", "64,5"],
+    ["porrige", "275", "234"],
+    ["coffee", "160", "30"],
+  ]; // будем получать эти данные из бд
+  const lunch = [
+    ["soup", "350", "264,7"],
+    ["tea", "150", "4,5"],
+  ]; // будем получать эти данные из бд
+  const dinner = [
+    ["fish", "250", "320"],
+    ["potato", "150", "185"],
+  ]; // будем получать эти данные из бд
+  const snaks = [
+    ["apple", "134", "65"],
+    ["nuts", "83", "340"],
+  ]; // будем получать эти данные из бд
 
   const recomKcalPerDay = 2181;
   const burntKcal = 690;
@@ -128,30 +142,30 @@ const EditEventScreen = () => {
         <div className="daily-events">
           <div className="daily-events__meals">
             <h1 className="daily-events__title">Daily meals</h1>
-            <DailyEventWrapper
+            <DailyEventEditWrapper
               title="Breakfast"
               recommended="Recomended 447 Kcal"
               quantity="356 kcal"
-              content={<DailyEventEditWrapper data={breakfast} />}
+              content={<DailyEventEditData data={breakfast} />}
               className="daily-events__item daily-events__item_breakfast"
             />
-            <DailyEventWrapper
+            <DailyEventEditWrapper
               title="Lunch"
               recommended="Recomended 447 Kcal"
               className="daily-events__item daily-events__item_lunch"
-              content={<DailyEventEditWrapper data={lunch} />}
+              content={<DailyEventEditData data={lunch} />}
             />
-            <DailyEventWrapper
+            <DailyEventEditWrapper
               title="Dinner"
               recommended="Recomended 447 Kcal"
               className="daily-events__item daily-events__item_dinner"
-              content={<DailyEventEditWrapper data={dinner} />}
+              content={<DailyEventEditData data={dinner} />}
             />
-            <DailyEventWrapper
+            <DailyEventEditWrapper
               title="Snack"
               recommended="Recomended 447 Kcal"
               className="daily-events__item daily-events__item_snack"
-              content={<DailyEventEditWrapper data={snaks} />}
+              content={<DailyEventEditData data={snaks} />}
             />
           </div>
           <div className="daily-events__water">
