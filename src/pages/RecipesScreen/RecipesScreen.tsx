@@ -1,6 +1,6 @@
 import React from "react";
 import "./RecipesScreen.scss";
-import * as data from "../../assets/recipes.json";
+import recipes from "../../assets/recipes.json";
 import CardRecipe from "../../components/CardRecipe/CardRecipe";
 
 const RecipesScreen: React.FC = () => {
@@ -16,7 +16,7 @@ const RecipesScreen: React.FC = () => {
             <h3 className="category__h3">Breakfast</h3>
             <span className="category__span">
               {
-                data.recipes.filter((item) => item.category === "breakfast")
+                recipes.recipes.filter((item) => item.category === "breakfast")
                   .length
               }{" "}
               Recipes
@@ -26,7 +26,7 @@ const RecipesScreen: React.FC = () => {
             <h3 className="category__h3">Appetizers</h3>
             <span className="category__span">
               {
-                data.recipes.filter((item) => item.category === "appetizers")
+                recipes.recipes.filter((item) => item.category === "appetizers")
                   .length
               }{" "}
               Recipes
@@ -35,7 +35,10 @@ const RecipesScreen: React.FC = () => {
           <div className="category category__pasta">
             <h3 className="category__h3">Pasta</h3>
             <span className="category__span">
-              {data.recipes.filter((item) => item.category === "dinner").length}{" "}
+              {
+                recipes.recipes.filter((item) => item.category === "dinner")
+                  .length
+              }{" "}
               Recipes
             </span>
           </div>
@@ -56,7 +59,7 @@ const RecipesScreen: React.FC = () => {
         <div className="search__container__icon" />
       </div>
       <div className="recipes__container">
-        {data.recipes.map((item) => (
+        {recipes.recipes.map((item) => (
           <CardRecipe data={item} />
         ))}
       </div>

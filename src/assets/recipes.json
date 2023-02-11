@@ -1,4 +1,5 @@
-{"recipes": [
+{
+  "recipes": [
     {
       "id": 0,
       "name": "Crock Pot Roast",
@@ -7,8 +8,8 @@
       "proteins": "39 g",
       "carbs": "13 g",
       "fats": "11 g",
-      "author": "Emma Khan", 
-      "kitchen": "French", 
+      "author": "Emma Khan",
+      "kitchen": "French",
       "ingredients": [
         {
           "quantity": "1",
@@ -43,8 +44,7 @@
         "Cook on low for 7-9 hours."
       ],
       "time": 420,
-      "imageURL":
-        "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg"
+      "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg"
     },
     {
       "id": 1,
@@ -54,8 +54,8 @@
       "proteins": "3 g",
       "carbs": "5 g",
       "fats": "11 g",
-      "author": "Jhon Walter", 
-      "kitchen": "India", 
+      "author": "Jhon Walter",
+      "kitchen": "India",
       "ingredients": [
         {
           "quantity": "1 lb",
@@ -86,8 +86,7 @@
         "They are great plain, but sometimes I serve them with a light vinaigrette if we need something acidic to balance out our meal."
       ],
       "time": 10,
-      "imageURL":
-        "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg"
+      "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg"
     },
     {
       "id": 2,
@@ -97,8 +96,8 @@
       "proteins": "8.7 g",
       "carbs": "13.7 g",
       "fats": "1.7 g",
-      "author": "Jack Green", 
-      "kitchen": "Chinese", 
+      "author": "Jack Green",
+      "kitchen": "Chinese",
       "ingredients": [
         {
           "quantity": "1 quart",
@@ -134,8 +133,7 @@
         "Enjoy!"
       ],
       "time": 40,
-      "imageURL":
-        "http://dagzhsfg97k4.cloudfront.net/wp-content/uploads/2012/05/lentils3.jpg"
+      "imageURL": "http://dagzhsfg97k4.cloudfront.net/wp-content/uploads/2012/05/lentils3.jpg"
     },
     {
       "id": 3,
@@ -146,7 +144,7 @@
       "carbs": "35 g",
       "fats": "9 g",
       "author": "Micheal Krisp",
-      "kitchen": "American",  
+      "kitchen": "American",
       "ingredients": [
         {
           "quantity": "5 teaspoons",
@@ -199,8 +197,7 @@
         "Enjoy!"
       ],
       "time": 90,
-      "imageURL":
-        "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg"
+      "imageURL": "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg"
     },
     {
       "id": 4,
@@ -210,8 +207,8 @@
       "proteins": "6 g",
       "carbs": "15 g",
       "fats": "15 g",
-      "author": "Ann Baker", 
-      "kitchen": "American", 
+      "author": "Ann Baker",
+      "kitchen": "American",
       "ingredients": [
         {
           "quantity": "200g",
@@ -246,8 +243,7 @@
         "Bake for 30 minutes until well browned and risen."
       ],
       "time": 65,
-      "imageURL":
-        "http://upload.wikimedia.org/wikipedia/commons/f/f9/Yorkshire_Pudding.jpg"
+      "imageURL": "http://upload.wikimedia.org/wikipedia/commons/f/f9/Yorkshire_Pudding.jpg"
     },
     {
       "id": 5,
@@ -257,8 +253,8 @@
       "proteins": "6 g",
       "carbs": "72 g",
       "fats": "18 g",
-      "author": "Ben Parker", 
-      "kitchen": "German", 
+      "author": "Ben Parker",
+      "kitchen": "German",
       "ingredients": [
         {
           "quantity": "1 cup",
@@ -334,8 +330,7 @@
         "About 6 1/2 dozen cookies."
       ],
       "time": 23,
-      "imageURL":
-        "http://s3.amazonaws.com/gmi-digital-library/65caecf7-a8f7-4a09-8513-2659cf92871e.jpg"
+      "imageURL": "http://s3.amazonaws.com/gmi-digital-library/65caecf7-a8f7-4a09-8513-2659cf92871e.jpg"
     },
     {
       "id": 6,
@@ -345,8 +340,8 @@
       "proteins": "6 g",
       "carbs": "42 g",
       "fats": "12 g",
-      "author": "Kim Con", 
-      "kitchen": "American", 
+      "author": "Kim Con",
+      "kitchen": "American",
       "ingredients": [
         {
           "quantity": "2-1/2 cups",
@@ -410,8 +405,7 @@
         "(Make-ahead: Cover and refrigerate for up to 2 days or overwrap with heavy-duty foil and freeze for up to 2 weeks.)"
       ],
       "time": 116,
-      "imageURL":
-        "http://www.canadianliving.com/img/photos/biz/blueberry-oatmeal-squares5801359401371.jpg"
+      "imageURL": "http://www.canadianliving.com/img/photos/biz/blueberry-oatmeal-squares5801359401371.jpg"
     },
     {
       "id": 7,
@@ -421,8 +415,8 @@
       "proteins": "27 g",
       "carbs": "47 g",
       "fats": "24 g",
-      "author": "Alaster Franklin", 
-      "kitchen": "Chinese", 
+      "author": "Alaster Franklin",
+      "kitchen": "Chinese",
       "ingredients": [
         {
           "quantity": "3",
@@ -497,8 +491,7 @@
         "Sandwich with tops"
       ],
       "time": 6,
-      "imageURL":
-        "http://www.chatelaine.com/wp-content/uploads/2013/05/Curried-chicken-salad.jpg"
+      "imageURL": "http://www.chatelaine.com/wp-content/uploads/2013/05/Curried-chicken-salad.jpg"
     }
   ]
 }
