@@ -15,7 +15,7 @@ const App: React.FC = () => {
       <main className="main-app">
         <AboutUsScreen />
         <MainScreen />
-        <EventScreen />
+        <EventScreen type="Breakfast" />
         <RecipesScreen />
         <ProductCardScreen />
         <ProfileScreen />
