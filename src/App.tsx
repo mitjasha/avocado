@@ -19,7 +19,7 @@ const App: React.FC = () => {
         <EventScreen type="Breakfast" />
         <RecipesScreen />
         <ProductCardScreen />
-        <ProfileScreen /> */}
+        <ProfileScreen />
         <RegistrationScreen />
       </main>
       <Footer />
