@@ -38,12 +38,12 @@
 }
 
 .categories__container {
+    overflow-y: auto;
     width: 100%;
     height: 130px;
     margin: 0px;
 
     &__1 {
-        overflow-x: auto;
         width: 138%;
         height: 100%;
         display: flex;
