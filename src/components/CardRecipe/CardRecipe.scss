@@ -30,7 +30,7 @@
   }
 }
 
-.recipe__info {
+.recipe__data {
   width: 100%;
   height: fit-content;
   display: flex;
@@ -72,7 +72,7 @@
 }
 
 @media screen and (min-width: $media-tab) {
-  .recipe__info {
+  .recipe__data {
     width: 50%;
     justify-content: flex-start;
   }
