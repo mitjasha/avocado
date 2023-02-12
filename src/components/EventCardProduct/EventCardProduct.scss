@@ -1,16 +1,15 @@
 @import "../../variables.scss";
 
 .card__container {
-  width: 90%;
   height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-self: center;
   align-items: center;
-  margin: 10px;
   background-color: #fafdf8;
-  border-radius: 30px;
+  border-radius: 20px;
+  padding: 0 10px;
+  box-sizing: border-box;
 
   &__image {
     width: 50px;
@@ -21,8 +20,8 @@
 
   &__span {
     font-weight: 400;
-    font-size: 15px;
-    padding-left: 20px;
+    font-size: 18px;
+    padding-left: 10px;
     color: $dark-color;
   }
 }
@@ -34,19 +33,13 @@
   color: $light-color;
 }
 
-@media screen and (min-width: $media-tab-pt) {
+@media screen and (min-width: $media-tab) {
   .card__container {
-    width: 20%;
+    width: 30%;
     height: 120px;
     display: flex;
-    padding: 0px;
     justify-content: center;
     flex-direction: column;
-    align-self: center;
-    align-items: center;
-    margin: 10px;
-    background-color: #fafdf8;
-    border-radius: 30px;
 
     &__span {
       margin-top: 20px;
@@ -54,7 +47,6 @@
       text-align: center;
     }
   }
-
 }
 
 .card__container__modal__bg {
@@ -235,7 +227,6 @@
 
   &__text {
     width: 95%;
-    ;
   }
 
   &__select {
@@ -278,27 +269,19 @@
 }
 
 @media screen and (min-width: $media-tab) {
-
   .modal__close {
     margin-left: 270px;
-
   }
 }
 
 @media screen and (min-width: $media-tab-pt) {
-
-
   .modal__close {
     margin-left: 290px;
-
   }
 }
 
 @media screen and (min-width: $media-desk) {
-
-
   .modal__close {
     margin-left: 260px;
-
   }
 }
