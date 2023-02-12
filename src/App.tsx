@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "./containers/Footer/Footer";
 import Header from "./containers/Header/Header";
+import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 import RecipeScreen from "./pages/RecipeScreen/RecipeScreen";
 import RegistrationScreen from "./pages/RegistrationScreen/RegistrationScreen";
 import AboutUsScreen from "./pages/AboutUsScreen/AboutUsScreen";
@@ -18,6 +19,7 @@ const App: React.FC = () => {
     <>
       <Header />
       <main className="main-app">
+        <EditEventScreen />
         <AboutUsScreen />
         <MainScreen />
         <EventScreen type="breakfast" />
