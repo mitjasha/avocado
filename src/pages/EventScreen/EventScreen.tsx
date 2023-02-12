@@ -27,10 +27,10 @@ const EventScreen: React.FC<TypeOfMeal> = ({ type }) => {
           <div className="event__screen__close__icon" />
         </div>
         <h3 className="event__main__h3">Found:</h3>
-        {/* <div className="no__found">
+        <div className="no__found">
           <span className="no__found__text">No products found</span>
           <div className="no__found__image" />
-        </div> */}
+        </div>
         <div className="event__screen__main">
           {products.products.map((item) => (
             <EventCardProduct
