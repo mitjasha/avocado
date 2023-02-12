@@ -113,7 +113,7 @@
   gap: 10px;
   margin-top: 10px;
 
-  &__container{
+  &__container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -139,14 +139,13 @@
   margin: auto;
   position: relative;
   bottom: 10px;
-}
 
-.event__changes__btn:hover{
-  cursor: pointer;
-  transform: scale(1.05);
-  transition: 0.5s;
-  color: $middle-green;
-
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.5s;
+    color: $middle-green;
+  }
 }
 
 @media screen and (min-width: $media-tab-pt) {

@@ -23,7 +23,7 @@
 
 }
 
-.input__container{
+.input__container {
     width: 100px;
 }
 
@@ -55,14 +55,15 @@
     }
 }
 
-.info__delete:hover {
-    color: red;
-    cursor: pointer;
-    font-weight: 500;
-}
+.info {
+    &__delete {
+        &:hover {
+            color: red;
+            cursor: pointer;
+            font-weight: 500;
+        }
+    }
 
-input[type='number'] {
-    -moz-appearance: textfield;
 }
 
 input::-webkit-outer-spin-button,
