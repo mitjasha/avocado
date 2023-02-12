@@ -1,90 +1,99 @@
 @import "../../variables.scss";
 
 .about__us {
-    &__screen {
-        background-color: $bg-color;
+  &__screen {
+    background-color: $bg-color;
+  }
+
+  &__title {
+    margin: 0;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    color: $dark-color;
+  }
+
+  &__logo-wrapper {
+    display: flex;
+    position: relative;
+    margin-top: 30px;
+  }
+
+  &__logo {
+    background-image: url("../../assets/svg/logo.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 128px;
+    height: 162px;
+    top: 60px;
+    left: 10px;
+  }
+
+  &__top_h3 {
+    font-weight: 800;
+    margin: 0;
+    font-size: 50px;
+    color: $dark-color;
+    text-align: right;
+    width: 302px;
+    height: 120px;
+  }
+
+  &__container {
+    margin-top: 250px;
+    padding: 0 10px;
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 24px;
+    color: $dark-color;
+    line-height: 40px;
+
+    &__h3 {
+      font-weight: 800;
+      font-size: 30px;
+      line-height: 40px;
+      margin: 30px 0px 0px;
+      color: $dark-color;
     }
+  }
 
-    &__title {
-        margin: 0;
-        text-align: center;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 32px;
-        color: $dark-color
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+  }
+
+  &__ul li {
+    list-style-image: url("../../assets/svg/pionts_about.svg");
+  }
+
+  &__ul li::before {
+    content: "";
+    display: inline-block;
+    list-style-image: url("../../assets/svg/pionts_about.svg");
+  }
+
+  &__heart {
+    background-image: url("../../assets/svg/about_us.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 68px;
+    height: 74px;
+    margin: 20px auto 0px;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: $media-tab) {
+  .about__us {
+    &__logo-wrapper {
+      margin-left: 100px;
     }
-
-    &__logo {
-        background-image: url("../../assets/svg/logo.svg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: absolute;
-        width: 128px;
-        height: 162px;
-        left: 55px;
-        top: 175px;
-    }
-
-    &__top_h3 {
-        font-weight: 800;
-        margin: 0;
-        font-size: 50px;
-        color: $dark-color;
-        text-align: right;
-        position: absolute;
-        width: 302px;
-        height: 120px;
-        left: 15px;
-        top: 121px;
-    }
-
-    &__container {
-        margin-top: 250px;
-        padding: 0 10px;
-    }
-
-    &__text {
-        font-weight: 500;
-        font-size: 24px;
-        color: $dark-color;
-        line-height: 40px;
-
-        &__h3 {
-            font-weight: 800;
-            font-size: 30px;
-            line-height: 40px;
-            margin: 30px 0px 0px;
-            color: $dark-color;
-        }
-    }
-
-    &__ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        align-self: center;
-    }
-
-    &__ul li {
-        list-style-image: url("../../assets/svg/pionts_about.svg");
-    }
-
-    &__ul li::before {
-        content: '';
-        display: inline-block;
-        list-style-image: url("../../assets/svg/pionts_about.svg");
-    }
-
-
-    &__heart {
-        background-image: url("../../assets/svg/about_us.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 68px;
-        height: 74px;
-        margin: 20px auto 0px;
-        padding-bottom: 20px;
-    }
-
+  }
 }
