@@ -1,28 +1,28 @@
 import React from "react";
 import Footer from "./containers/Footer/Footer";
 import Header from "./containers/Header/Header";
-// import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
-// import RegistrationScreen from "./pages/RegistrationScreen/RegistrationScreen";
-// import AboutUsScreen from "./pages/AboutUsScreen/AboutUsScreen";
-// import EventScreen from "./pages/EventScreen/EventScreen";
+import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
+import RegistrationScreen from "./pages/RegistrationScreen/RegistrationScreen";
+import AboutUsScreen from "./pages/AboutUsScreen/AboutUsScreen";
+import EventScreen from "./pages/EventScreen/EventScreen";
 import MainScreen from "./pages/MainScreen/MainScreen";
-// import ProductCardScreen from "./pages/ProductCardScreen/ProductCardScreen";
-// import ProfileScreen from "./pages/ProfileScreen/ProfieScreen";
-// import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
+import ProductCardScreen from "./pages/ProductCardScreen/ProductCardScreen";
+import ProfileScreen from "./pages/ProfileScreen/ProfieScreen";
+import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
 
 const App: React.FC = () => {
   return (
     <>
       <Header />
       <main className="main-app">
-        {/* <EditEventScreen /> */}
-        {/* <AboutUsScreen /> */}
+        <EditEventScreen />
+        <AboutUsScreen />
         <MainScreen />
-        {/* <EventScreen type="Breakfast" />
+        <EventScreen type="Breakfast" />
         <RecipesScreen />
         <ProductCardScreen />
         <ProfileScreen />
-        <RegistrationScreen /> */}
+        <RegistrationScreen />
       </main>
       <Footer />
     </>

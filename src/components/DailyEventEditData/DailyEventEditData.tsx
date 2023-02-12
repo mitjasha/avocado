@@ -19,7 +19,7 @@ const DailyEventEditData: React.FC<DailyEventData> = ({ type, data }) => {
                 type="number"
                 placeholder={item[1]}
               />
-              <span>{type === "meal" ? "g" : "min"}</span>
+              <span>{type === "meal" ? "g" : "m"}</span>
             </div>
             <span className="info__name">{item[2]}kcal</span>
           </div>
