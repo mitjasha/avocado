@@ -114,7 +114,7 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
             Age:
             <input
               className="edit-profile__input"
-              style={{ width: "50px" }}
+              style={{ width: "50px", marginLeft: "10px" }}
               defaultValue={Number(data.age)}
               type="number"
               id="age"
