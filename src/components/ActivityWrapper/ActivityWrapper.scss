@@ -26,3 +26,9 @@
     font-weight: 400;
   }
 }
+
+@media screen and (min-width: $media-tab) {
+  .activity-wrapper {
+    width: calc(50% - 20px);
+  }
+}

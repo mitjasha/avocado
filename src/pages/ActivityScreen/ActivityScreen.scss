@@ -15,8 +15,19 @@
   }
 
   &__wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: $media-tab) {
+  .activity-screen__wrapper {
+    flex-direction: row;
+    gap: 20px;
+    width: 80%;
   }
 }
