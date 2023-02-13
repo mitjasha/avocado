@@ -16,7 +16,7 @@ interface ProductProps {
 
 const EventCardProduct: React.FC<ProductProps> = ({ data }) => {
   return (
-    <div className="card__container container">
+    <div className="card__container">
       <div
         style={{ backgroundImage: `url("${data.image}")` }}
         className="card__container__image"

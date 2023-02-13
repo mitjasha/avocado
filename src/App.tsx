@@ -4,6 +4,7 @@ import Header from "./containers/Header/Header";
 import EditProfileDataScreen, {
   UserDataExample,
 } from "./pages/EditProfileDataScreen/EditProfileDataScreen";
+import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 import RecipeScreen from "./pages/RecipeScreen/RecipeScreen";
 import RegistrationScreen from "./pages/RegistrationScreen/RegistrationScreen";
 import AboutUsScreen from "./pages/AboutUsScreen/AboutUsScreen";
@@ -15,6 +16,7 @@ import ProgressScreen from "./pages/ProgressScreen/ProgressScreen";
 import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
 import CategoriesRecipesScreen from "./pages/CategoriesRecipesScreen/CategoriesRecipesScreen";
 import SettingScreen from "./pages/SettingScreen/SettingScreen";
+import LoginScreen from "./pages/LoginScreen/LoginScreen";
 
 const App: React.FC = () => {
   return (
@@ -22,6 +24,7 @@ const App: React.FC = () => {
       <Header />
       <main className="main-app">
         <EditProfileDataScreen data={UserDataExample} />
+        <EditEventScreen />
         <AboutUsScreen />
         <MainScreen />
         <EventScreen type="breakfast" />
@@ -33,6 +36,7 @@ const App: React.FC = () => {
         <ProfileScreen />
         <ProgressScreen />
         <RegistrationScreen />
+        <LoginScreen />
       </main>
       <Footer />
     </>
