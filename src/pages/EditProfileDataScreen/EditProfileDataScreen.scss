@@ -3,7 +3,7 @@
 .edit-profile {
     &__screen {
         background-color: $bg-color;
-        padding-bottom: 10px;
+        padding-bottom: 30px;
         height: 100%;
     }
 
@@ -150,7 +150,7 @@ label {
 .accept__button {
     width: 220px;
     height: 50px;
-    margin: 10px auto;
+    margin: 30px auto 0px;
     display: flex;
     justify-content: center;
     align-items: center;
