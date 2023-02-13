@@ -1,9 +1,25 @@
 import React from "react";
-import ActivityWrapper from "../../components/ActivityWrapper/ActivityWrapper";
 import activities from "../../assets/activities.json";
+import ActivityWrapper from "../../components/ActivityWrapper/ActivityWrapper";
+import ActivityPopUpProps from "../../components/ActivityPopUp/ActivityPopUp";
 import "./ActivityScreen.scss";
 
+export interface ActivityItemProps {
+  name: string;
+  nameEng: string;
+  kcalPerMin: number;
+  image: string;
+}
+
 const ActivityScreen: React.FC = () => {
+  const openActivityPopUp = (item: ActivityItemProps) => {
+    const popUp = document.querySelector(
+      ".activity-popup",
+    ) as HTMLButtonElement;
+    popUp.style.opacity = "1";
+    popUp.style.visibility = "visible";
+    console.log(item.nameEng);
+  };
   return (
     <div className="activity-screen">
       <div className="container">
@@ -15,12 +31,14 @@ const ActivityScreen: React.FC = () => {
               <ActivityWrapper
                 name={item.nameEng}
                 image={item.image}
+                handleClick={() => openActivityPopUp(item)}
                 key={activities.activities.indexOf(item)}
               />
             );
           })}
         </div>
       </div>
+      <ActivityPopUpProps name="jogging" />
     </div>
   );
 };
