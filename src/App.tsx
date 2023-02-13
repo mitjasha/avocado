@@ -1,6 +1,9 @@
 import React from "react";
 import Footer from "./containers/Footer/Footer";
 import Header from "./containers/Header/Header";
+import EditProfileDataScreen, {
+  UserDataExample,
+} from "./pages/EditProfileDataScreen/EditProfileDataScreen";
 import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 import RecipeScreen from "./pages/RecipeScreen/RecipeScreen";
 import RegistrationScreen from "./pages/RegistrationScreen/RegistrationScreen";
@@ -20,6 +23,7 @@ const App: React.FC = () => {
     <>
       <Header />
       <main className="main-app">
+        <EditProfileDataScreen data={UserDataExample} />
         <EditEventScreen />
         <AboutUsScreen />
         <MainScreen />
