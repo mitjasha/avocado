@@ -13,6 +13,7 @@ import ProgressScreen from "./pages/ProgressScreen/ProgressScreen";
 import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
 import CategoriesRecipesScreen from "./pages/CategoriesRecipesScreen/CategoriesRecipesScreen";
 import SettingScreen from "./pages/SettingScreen/SettingScreen";
+import LoginScreen from "./pages/LoginScreen/LoginScreen";
 
 const App: React.FC = () => {
   return (
@@ -31,6 +32,7 @@ const App: React.FC = () => {
         <ProfileScreen />
         <ProgressScreen />
         <RegistrationScreen />
+        <LoginScreen />
       </main>
       <Footer />
     </>
