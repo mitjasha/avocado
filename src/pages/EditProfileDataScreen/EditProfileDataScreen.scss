@@ -7,7 +7,7 @@
         height: 100%;
     }
 
-    &__container{
+    &__container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -153,14 +153,16 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 2px solid $dark-color;
     background-color: $dark-color;
     color: $light-color;
 
     &:hover {
         cursor: pointer;
-        transform: scale(1.02);
-        transition: 3s;
-        color: $middle-green;
+        background: $light-color;
+        border: 2px solid $dark-color;
+        border-radius: 20px;
+        color: $dark-color;
     }
 }
