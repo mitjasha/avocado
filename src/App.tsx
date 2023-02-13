@@ -4,17 +4,17 @@ import Header from "./containers/Header/Header";
 import EditProfileDataScreen, {
   UserDataExample,
 } from "./pages/EditProfileDataScreen/EditProfileDataScreen";
-import RecipeScreen from "./pages/RecipeScreen/RecipeScreen";
-import RegistrationScreen from "./pages/RegistrationScreen/RegistrationScreen";
-import AboutUsScreen from "./pages/AboutUsScreen/AboutUsScreen";
-import EventScreen from "./pages/EventScreen/EventScreen";
-import MainScreen from "./pages/MainScreen/MainScreen";
-import ProductCardScreen from "./pages/ProductCardScreen/ProductCardScreen";
-import ProfileScreen from "./pages/ProfileScreen/ProfieScreen";
-import ProgressScreen from "./pages/ProgressScreen/ProgressScreen";
-import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
-import CategoriesRecipesScreen from "./pages/CategoriesRecipesScreen/CategoriesRecipesScreen";
-import SettingScreen from "./pages/SettingScreen/SettingScreen";
+// import RecipeScreen from "./pages/RecipeScreen/RecipeScreen";
+// import RegistrationScreen from "./pages/RegistrationScreen/RegistrationScreen";
+// import AboutUsScreen from "./pages/AboutUsScreen/AboutUsScreen";
+// import EventScreen from "./pages/EventScreen/EventScreen";
+// import MainScreen from "./pages/MainScreen/MainScreen";
+// import ProductCardScreen from "./pages/ProductCardScreen/ProductCardScreen";
+// import ProfileScreen from "./pages/ProfileScreen/ProfieScreen";
+// import ProgressScreen from "./pages/ProgressScreen/ProgressScreen";
+// import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
+// import CategoriesRecipesScreen from "./pages/CategoriesRecipesScreen/CategoriesRecipesScreen";
+// import SettingScreen from "./pages/SettingScreen/SettingScreen";
 
 const App: React.FC = () => {
   return (
@@ -22,7 +22,7 @@ const App: React.FC = () => {
       <Header />
       <main className="main-app">
         <EditProfileDataScreen data={UserDataExample} />
-        <AboutUsScreen />
+        {/* <AboutUsScreen />
         <MainScreen />
         <EventScreen type="breakfast" />
         <RecipeScreen />
@@ -32,7 +32,7 @@ const App: React.FC = () => {
         <ProductCardScreen />
         <ProfileScreen />
         <ProgressScreen />
-        <RegistrationScreen />
+        <RegistrationScreen /> */}
       </main>
       <Footer />
     </>

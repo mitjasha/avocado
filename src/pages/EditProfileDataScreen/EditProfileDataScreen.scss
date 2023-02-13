@@ -1,9 +1,17 @@
 @import "../../variables";
 
 .edit-profile {
-    &__container {
+    &__screen {
         background-color: $bg-color;
         padding-bottom: 10px;
+        height: 100%;
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
     &__h1 {
@@ -17,7 +25,7 @@
         position: relative;
         display: flex;
         flex-direction: row;
-        width: 360px;;
+        width: 360px;
         justify-content: space-around;
         align-items: center;
     }
@@ -73,44 +81,36 @@ label {
     padding: 5px 0px;
 }
 
-// .edit-profile__input__radio {
-//     margin: 0;
-//     visibility: hidden;
-// }
+.edit-profile__input__radio {
+    &::after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -5px;
+        left: -1px;
+        position: relative;
+        background-color: $bg-color;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid #559c4f;
+    }
 
-// .edit-profile__input__radio:checked+span {
-//     border: 2px solid $dark-green;
-// }
+    &:checked::after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -5px;
+        left: -1px;
+        position: relative;
+        background-color: $middle-green;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid $middle-green;
+    }
 
-// .edit-profile__input__radio:checked+span:after {
-//     opacity: 1;
-// }
-
-// .custom-radio {
-//     margin-right: 5px;
-//     cursor: pointer;
-//     width: 12px;
-//     height: 12px;
-//     border: 2px solid #9a9a9a;
-//     border-radius: 50%;
-//     display: inline-block;
-//     position: relative;
-// }
-
-// /* for inner filled circle */
-// .custom-radio::after {
-//     content: '';
-//     width: 9px;
-//     height: 9px;
-//     background-color: $dark-green;
-//     position: absolute;
-//     border-radius: 50%;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     opacity: 0;
-//     transition: opacity 0.2s;
-// }
+}
 
 .select__container {
     background-color: $middle-green;
@@ -125,7 +125,7 @@ label {
 }
 
 .age__container {
-    width: 70px;
+    width: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -140,7 +140,7 @@ label {
 }
 
 .body__container {
-    width: 190px;
+    width: 210px;
     display: flex;
     justify-content: space-between;
     align-items: center;
