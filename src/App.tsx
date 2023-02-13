@@ -1,4 +1,5 @@
 import React from "react";
+import { Routes } from "react-router-dom";
 import Footer from "./containers/Footer/Footer";
 import Header from "./containers/Header/Header";
 import ActivityScreen from "./pages/ActivityScreen/ActivityScreen";
@@ -24,21 +25,23 @@ const App: React.FC = () => {
     <>
       <Header />
       <main className="main-app">
-        <EditProfileDataScreen data={UserDataExample} />
-        <EditEventScreen />
-        <AboutUsScreen />
-        <MainScreen />
-        <EventScreen type="breakfast" />
-        <ActivityScreen />
-        <RecipeScreen />
-        <RecipesScreen />
-        <SettingScreen />
-        <CategoriesRecipesScreen />
-        <ProductCardScreen />
-        <ProfileScreen />
-        <ProgressScreen />
-        <RegistrationScreen />
-        <LoginScreen />
+        <Routes>
+          <EditProfileDataScreen data={UserDataExample} />
+          <EditEventScreen />
+          <AboutUsScreen />
+          <MainScreen />
+          <EventScreen type="breakfast" />
+          <ActivityScreen />
+          <RecipeScreen />
+          <RecipesScreen />
+          <SettingScreen />
+          <CategoriesRecipesScreen />
+          <ProductCardScreen />
+          <ProfileScreen />
+          <ProgressScreen />
+          <RegistrationScreen />
+          <LoginScreen />
+        </Routes>
       </main>
       <Footer />
     </>
