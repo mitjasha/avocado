@@ -17,6 +17,18 @@ interface UserProps {
   data: UserData;
 }
 
+export const UserDataExample = {
+  username: "alice23",
+  firstName: "Alice",
+  lastName: "Chang",
+  age: "24",
+  gender: "female",
+  currentWeight: "65",
+  height: "160",
+  goal: "Lose weight",
+  targetWeight: "54",
+};
+
 const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
   return (
     <div className="container edit-profile__container">
