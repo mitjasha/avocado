@@ -2,74 +2,74 @@
   "activities": [
     {
       "name": "Бег",
-      "name-eng": "Jogging",
-      "kcal-per-min": 8,
+      "nameEng": "Jogging",
+      "kcalPerMin": 8,
       "image": "https://ie.wampi.ru/2023/02/13/Group-12893.png"
     },
     {
       "name": "Ходьба",
-      "name-eng": "Walking",
-      "kcal-per-min": 3.5,
+      "nameEng": "Walking",
+      "kcalPerMin": 3.5,
       "image": "https://ie.wampi.ru/2023/02/13/Group-12898.png"
     },
     {
       "name": "Велосипед",
-      "name-eng": "Cycling",
-      "kcal-per-min": 5.3,
+      "nameEng": "Cycling",
+      "kcalPerMin": 5.3,
       "image": "https://ic.wampi.ru/2023/02/13/Group-12890.png"
     },
     {
       "name": "Велотренажер",
-      "name-eng": "Exercise bike",
-      "kcal-per-min": 7.5,
+      "nameEng": "Exercise bike",
+      "kcalPerMin": 7.5,
       "image": "https://ie.wampi.ru/2023/02/13/Group-12895.png"
     },
     {
       "name": "Беговая дорожка",
-      "name-eng": "Treadmill",
-      "kcal-per-min": 6.6,
+      "nameEng": "Treadmill",
+      "kcalPerMin": 6.6,
       "image": "https://ic.wampi.ru/2023/02/13/Group-12897.png"
     },
     {
       "name": "Пресс",
-      "name-eng": "Swing the press",
-      "kcal-per-min": 5,
+      "nameEng": "Situps",
+      "kcalPerMin": 5,
       "image": "https://im.wampi.ru/2023/02/13/Group-12889.png"
     },
     {
       "name": "Силовые тренажеры",
-      "name-eng": "Weight machines",
-      "kcal-per-min": 11.6,
+      "nameEng": "Weight machines",
+      "kcalPerMin": 11.6,
       "image": "https://im.wampi.ru/2023/02/13/Group-12899.png"
     },
     {
       "name": "Эллиптический тренажер",
-      "name-eng": "Elliptical trainer",
-      "kcal-per-min": 6.6,
+      "nameEng": "Elliptical trainer",
+      "kcalPerMin": 6.6,
       "image": "https://ie.wampi.ru/2023/02/13/Group-12891.png"
     },
     {
       "name": "Плавание",
-      "name-eng": "Swimming",
-      "kcal-per-min": 3.8,
+      "nameEng": "Swimming",
+      "kcalPerMin": 3.8,
       "image": "https://im.wampi.ru/2023/02/13/Group-12896.png"
     },
     {
       "name": "Поход",
-      "name-eng": "Hike",
-      "kcal-per-min": 3.9,
+      "nameEng": "Hike",
+      "kcalPerMin": 3.9,
       "image": "https://im.wampi.ru/2023/02/13/Group-12892.png"
     },
     {
       "name": "Приседания",
-      "name-eng": "Squats",
-      "kcal-per-min": 4.6,
+      "nameEng": "Squats",
+      "kcalPerMin": 4.6,
       "image": "https://ic.wampi.ru/2023/02/13/Group-12894.png"
     },
     {
       "name": "Танцы",
-      "name-eng": "Dancing",
-      "kcal-per-min": 7,
+      "nameEng": "Dancing",
+      "kcalPerMin": 7,
       "image": "https://ie.wampi.ru/2023/02/13/dance-1.png"
     }
   ]

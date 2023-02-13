@@ -1,1 +1,22 @@
 @import "../../variables.scss";
+
+.activity-screen {
+  background-color: $bg-color;
+  padding: 20px 0;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: #aeaeae;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
