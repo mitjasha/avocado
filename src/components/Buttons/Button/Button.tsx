@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Button.scss";
 
 export interface ButtonProps {
@@ -19,9 +20,9 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const classes = `${"button"} ${className}`;
   return (
-    <a href="/" rel="noopener noreferrer" className={classes} {...attrs}>
+    <Link to={to || "/404"} className={classes} {...attrs}>
       {children}
-    </a>
+    </Link>
   );
 };
 
