@@ -1,0 +1,38 @@
+@import "../../variables";
+
+.splash-screen {
+  display: flex;
+}
+
+.splash-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.figure {
+  margin: 38px 0 138px;
+  &__text {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: center;
+    color: $dark-color;
+    margin-top: 21px;
+  }
+}
+
+.button-container {
+  &__text {
+    margin: 49px 0 80px;
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: center;
+    color: $dark-green;
+  }
+}
