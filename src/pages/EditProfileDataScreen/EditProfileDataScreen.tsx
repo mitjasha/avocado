@@ -50,6 +50,7 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
               Username:
               <input
                 className="edit-profile__input"
+                style={{ marginTop: "10px" }}
                 type="text"
                 id="username"
                 placeholder={data.username}
@@ -59,6 +60,7 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
               First Name:
               <input
                 className="edit-profile__input"
+                style={{ marginTop: "10px" }}
                 type="text"
                 id="firstname"
                 placeholder={data.firstName}
@@ -68,6 +70,7 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
               Last Name:
               <input
                 className="edit-profile__input"
+                style={{ marginTop: "10px" }}
                 type="text"
                 id="lastname"
                 placeholder={data.lastName}
