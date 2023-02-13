@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "./containers/Footer/Footer";
 import Header from "./containers/Header/Header";
+import ActivityScreen from "./pages/ActivityScreen/ActivityScreen";
 import EditProfileDataScreen, {
   UserDataExample,
 } from "./pages/EditProfileDataScreen/EditProfileDataScreen";
@@ -28,6 +29,7 @@ const App: React.FC = () => {
         <AboutUsScreen />
         <MainScreen />
         <EventScreen type="breakfast" />
+        <ActivityScreen />
         <RecipeScreen />
         <RecipesScreen />
         <SettingScreen />

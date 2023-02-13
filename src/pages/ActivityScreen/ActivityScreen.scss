@@ -1,0 +1,33 @@
+@import "../../variables.scss";
+
+.activity-screen {
+  background-color: $bg-color;
+  padding: 20px 0;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: #aeaeae;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: $media-tab) {
+  .activity-screen__wrapper {
+    flex-direction: row;
+    gap: 20px;
+    width: 80%;
+  }
+}
