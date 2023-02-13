@@ -79,7 +79,7 @@
 }
 
 label {
-    padding: 5px 0px;
+    padding: 10px 0px;
 }
 
 .edit-profile__input__radio {
@@ -116,6 +116,7 @@ label {
 .select__container {
     background-color: $middle-green;
     height: 26px;
+    margin-left: 10px;
     cursor: pointer;
     border-radius: 10px;
     font-family: 'Montserrat';
@@ -134,7 +135,7 @@ label {
 
 
 .goal__container {
-    width: 180px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

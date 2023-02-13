@@ -124,18 +124,20 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
             />
           </label>
           <div className="goal__container">
-            Goal:
-            <select className="select__container">
-              <option defaultChecked={data.goal === "Lose weight"}>
-                Lose weight
-              </option>
-              <option defaultChecked={data.goal === "Maintain weight"}>
-                Maintain weight
-              </option>
-              <option defaultChecked={data.goal === "Gain weight"}>
-                Gain weight
-              </option>
-            </select>
+            <label htmlFor="goal">
+              Goal:
+              <select className="select__container" id="goal">
+                <option defaultChecked={data.goal === "Lose weight"}>
+                  Lose weight
+                </option>
+                <option defaultChecked={data.goal === "Maintain weight"}>
+                  Maintain weight
+                </option>
+                <option defaultChecked={data.goal === "Gain weight"}>
+                  Gain weight
+                </option>
+              </select>
+            </label>
           </div>
           <label htmlFor="currentWeight" className="body__container">
             Current weight:
