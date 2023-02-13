@@ -8,12 +8,12 @@ const RecipesScreen: React.FC = () => {
   return (
     <div className="recipes__screen">
       <div className="container">
-        <div className="main__header__container">
+        <div className="main-header__container">
           <span>Categories</span>
-          <span className="main__header__container__view">View All</span>
+          <span className="main-header__container__view">View All</span>
         </div>
-        <div className="categories__container">
-          <div className="categories__container__1">
+        <div className="categories-container">
+          <div className="categories-container__scroll">
             <div className="category category__breakfast">
               <h3 className="category__h3">Breakfast</h3>
               <span className="category__span">
