@@ -28,7 +28,9 @@ const CardRecipe: React.FC<CardRecipesProps> = ({ data }) => {
       <div
         className="recipe__card__img"
         style={{ backgroundImage: `url(${data.imageURL})` }}
-      />
+      >
+        <div className="recipe__card__like" />
+      </div>
       <div className="recipe__card__wrapper">
         <h3 className="recipe__card__h3">{data.name}</h3>
         <div className="recipe__data">

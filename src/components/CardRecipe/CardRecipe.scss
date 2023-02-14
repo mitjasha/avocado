@@ -12,6 +12,24 @@
     height: 130px;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+  }
+
+  &__like {
+    width: 35px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    margin-left: 10px;
+    background-image: url("../../assets/svg/heart_recipe-light.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:hover {
+      background-image: url("../../assets/svg/heart_recipe.svg");
+
+      cursor: pointer;
+    }
   }
 
   &__h3 {
