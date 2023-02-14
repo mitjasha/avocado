@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import female from "../../assets/png/female.png";
 import male from "../../assets/png/male.png";
 import "./ProfileScreen.scss";
@@ -50,28 +51,28 @@ const ProfileScreen: React.FC = () => {
       <div className="profile-menu container">
         <ul className="profile-menu__list">
           <li className="list-item">
-            <a href="/" className="list-item__link">
+            <Link to="/progress" className="list-item__link">
               <div className="list-item__icon list-item__icon_progress" />
               <p className="list-item__name">Your Progress</p>
-            </a>
+            </Link>
           </li>
           <li className="list-item">
-            <a href="/" className="list-item__link">
+            <Link to="/recipes" className="list-item__link">
               <div className="list-item__icon list-item__icon_recipes" />
               <p className="list-item__name">Favorite Recipes</p>
-            </a>
+            </Link>
           </li>
           <li className="list-item">
-            <a href="/" className="list-item__link">
+            <Link to="/settings" className="list-item__link">
               <div className="list-item__icon list-item__icon_settings" />
               <p className="list-item__name">Settings</p>
-            </a>
+            </Link>
           </li>
           <li className="list-item">
-            <a href="/" className="list-item__link">
+            <Link to="/about" className="list-item__link">
               <div className="list-item__icon list-item__icon_about" />
-              <p className="list-item__name">About Us</p>
-            </a>
+              <p className="list-item__name">About</p>
+            </Link>
           </li>
         </ul>
       </div>
