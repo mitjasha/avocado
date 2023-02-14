@@ -2,6 +2,7 @@ import React from "react";
 import plus from "../../assets/svg/plus-light.svg";
 import "./DailyEventWrapper.scss";
 import Button from "../Buttons/Button/Button";
+import PlusMinusButton from "../Buttons/PlusMinusButton/PlusMinusButton";
 
 export interface DailyEventWrapperProps {
   title: string;
@@ -35,9 +36,22 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
       <div className="add-remove-events">
         {minusButton}
         {curWeight}
-        <Button to="/event" className="add-event__button">
-          <img src={plus} alt="plus" className="plus-minus-img" />
-        </Button>
+        {title === "Exercise" && (
+          <Button to="/activity" className="add-event__button">
+            <img src={plus} alt="plus" className="plus-minus-img" />
+          </Button>
+        )}
+
+        {title === "Water" && (
+          <PlusMinusButton>
+            <img src={plus} alt="plus" className="plus-minus-img" />
+          </PlusMinusButton>
+        )}
+        {title !== "Exercise" && title !== "Water" && (
+          <Button to="/event" className="add-event__button">
+            <img src={plus} alt="plus" className="plus-minus-img" />
+          </Button>
+        )}
       </div>
     </div>
   );
