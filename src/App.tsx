@@ -6,23 +6,20 @@ import SplashScreen from "./pages/SplashScreen/SplashScreen";
 import LoginScreen from "./pages/LoginScreen/LoginScreen";
 import RegistrationScreen from "./pages/RegistrationScreen/RegistrationScreen";
 import MainScreen from "./pages/MainScreen/MainScreen";
-// import ActivityScreen from "./pages/ActivityScreen/ActivityScreen";
-// import EditProfileDataScreen, {
-//   UserDataExample,
-// } from "./pages/EditProfileDataScreen/EditProfileDataScreen";
-// import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
-// import RecipeScreen from "./pages/RecipeScreen/RecipeScreen";
-//
-// import AboutUsScreen from "./pages/AboutUsScreen/AboutUsScreen";
-// import EventScreen from "./pages/EventScreen/EventScreen";
-//
-// import ProductCardScreen from "./pages/ProductCardScreen/ProductCardScreen";
-// import ProfileScreen from "./pages/ProfileScreen/ProfieScreen";
-// import ProgressScreen from "./pages/ProgressScreen/ProgressScreen";
-// import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
-// import CategoriesRecipesScreen from "./pages/CategoriesRecipesScreen/CategoriesRecipesScreen";
-// import SettingScreen from "./pages/SettingScreen/SettingScreen";
-//
+import ProfileScreen from "./pages/ProfileScreen/ProfieScreen";
+import ProgressScreen from "./pages/ProgressScreen/ProgressScreen";
+import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
+import CategoriesRecipesScreen from "./pages/CategoriesRecipesScreen/CategoriesRecipesScreen";
+import RecipeScreen from "./pages/RecipeScreen/RecipeScreen";
+import ActivityScreen from "./pages/ActivityScreen/ActivityScreen";
+import ProductCardScreen from "./pages/ProductCardScreen/ProductCardScreen";
+import AboutUsScreen from "./pages/AboutUsScreen/AboutUsScreen";
+import SettingScreen from "./pages/SettingScreen/SettingScreen";
+import EventScreen from "./pages/EventScreen/EventScreen";
+import EditProfileDataScreen, {
+  UserDataExample,
+} from "./pages/EditProfileDataScreen/EditProfileDataScreen";
+import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 
 const App: React.FC = () => {
   return (
@@ -34,21 +31,24 @@ const App: React.FC = () => {
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/registration" element={<RegistrationScreen />} />
           <Route path="/main" element={<MainScreen />} />
-
-          {/* <EditProfileDataScreen data={UserDataExample} />
-          <EditEventScreen />
-          <AboutUsScreen />
-          
-          <EventScreen type="breakfast" />
-          <ActivityScreen />
-          <RecipeScreen />
-          <RecipesScreen />
-          <SettingScreen />
-          <CategoriesRecipesScreen />
-          <ProductCardScreen />
-          <ProfileScreen />
-          <ProgressScreen />
-           */}
+          <Route path="/profile" element={<ProfileScreen />} />
+          <Route path="/progress" element={<ProgressScreen />} />
+          <Route path="/recipes" element={<RecipesScreen />} />
+          <Route
+            path="/recipes/categories"
+            element={<CategoriesRecipesScreen />}
+          />
+          <Route path="/recipes/recipe" element={<RecipeScreen />} />
+          <Route path="/activity" element={<ActivityScreen />} />
+          <Route path="/product" element={<ProductCardScreen />} />
+          <Route path="/about" element={<AboutUsScreen />} />
+          <Route path="/settings" element={<SettingScreen />} />
+          <Route path="/event" element={<EventScreen type="breakfast" />} />
+          <Route
+            path="/edit-profile"
+            element={<EditProfileDataScreen data={UserDataExample} />}
+          />
+          <Route path="/edit-event" element={<EditEventScreen />} />
         </Routes>
       </main>
       <Footer />
