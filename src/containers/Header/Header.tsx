@@ -10,6 +10,18 @@ const Header: React.FC = () => {
     nav.classList.add("nav-active");
     burgerCloseBtn.style.display = "block";
   };
+
+  const todaysDate =
+    new Date().getDate() < 10
+      ? `0${new Date().getDate()}`
+      : new Date().getDate();
+  const todaysMonth =
+    new Date().getMonth() < 10
+      ? `0${new Date().getMonth()}`
+      : new Date().getMonth();
+  const todaysYear = new Date().getFullYear();
+  const max = `${todaysYear}-${todaysMonth}-${todaysDate}`;
+
   return (
     <header className="header">
       <div className="container header__container">
@@ -18,7 +30,7 @@ const Header: React.FC = () => {
           <NavComponent />
         </div>
         <div className="header_mob">
-          <input type="date" className="header__date-input" />
+          <input type="date" className="header__date-input" max={max} />
           <div className="header__date">30 January, Monday</div>
           <button
             type="button"
