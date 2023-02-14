@@ -47,7 +47,14 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
             <img src={plus} alt="plus" className="plus-minus-img" />
           </PlusMinusButton>
         )}
-        {title !== "Exercise" && title !== "Water" && (
+
+        {title === "Weight" && (
+          <PlusMinusButton>
+            <img src={plus} alt="plus" className="plus-minus-img" />
+          </PlusMinusButton>
+        )}
+
+        {title !== "Exercise" && title !== "Water" && title !== "Weight" && (
           <Button to="/event" className="add-event__button">
             <img src={plus} alt="plus" className="plus-minus-img" />
           </Button>
