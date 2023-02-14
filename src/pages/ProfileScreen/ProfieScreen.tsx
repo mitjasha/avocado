@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import female from "../../assets/png/female.png";
 import male from "../../assets/png/male.png";
+import ProfileNavButton from "../../components/Buttons/ProfileNavButton/ProfileNavButton";
 import "./ProfileScreen.scss";
 
 const ProfileScreen: React.FC = () => {
@@ -13,6 +13,9 @@ const ProfileScreen: React.FC = () => {
   const userWeight = 67 as number;
   const userGoal = "lose weight" as string;
   const userTargetWeight = 63 as number;
+
+  const profileNavNames = ["progress", "recipes", "settings", "about"];
+
   return (
     <div className="profile-screen">
       <h1 className="profile-screen__title">Your Profile</h1>
@@ -50,30 +53,16 @@ const ProfileScreen: React.FC = () => {
       </div>
       <div className="profile-menu container">
         <ul className="profile-menu__list">
-          <li className="list-item">
-            <Link to="/progress" className="list-item__link">
-              <div className="list-item__icon list-item__icon_progress" />
-              <p className="list-item__name">Your Progress</p>
-            </Link>
-          </li>
-          <li className="list-item">
-            <Link to="/recipes" className="list-item__link">
-              <div className="list-item__icon list-item__icon_recipes" />
-              <p className="list-item__name">Favorite Recipes</p>
-            </Link>
-          </li>
-          <li className="list-item">
-            <Link to="/settings" className="list-item__link">
-              <div className="list-item__icon list-item__icon_settings" />
-              <p className="list-item__name">Settings</p>
-            </Link>
-          </li>
-          <li className="list-item">
-            <Link to="/about" className="list-item__link">
-              <div className="list-item__icon list-item__icon_about" />
-              <p className="list-item__name">About</p>
-            </Link>
-          </li>
+          {profileNavNames.map((item) => {
+            const title = item[0].toUpperCase() + item.slice(1);
+            return (
+              <ProfileNavButton
+                to={`/${item}`}
+                title={title}
+                className={`list-item__icon_${item}`}
+              />
+            );
+          })}
         </ul>
       </div>
     </div>
