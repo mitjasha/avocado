@@ -10,6 +10,58 @@ const Header: React.FC = () => {
     nav.classList.add("nav-active");
     burgerCloseBtn.style.display = "block";
   };
+
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const weekDays = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
+  const todaysDate =
+    new Date().getDate() < 10
+      ? `0${new Date().getDate()}`
+      : new Date().getDate();
+  const todaysMonth =
+    new Date().getMonth() + 1 < 10
+      ? `0${new Date().getMonth() + 1}`
+      : new Date().getMonth() + 1;
+  const todaysYear = new Date().getFullYear();
+  const max = `${todaysYear}-${todaysMonth}-${todaysDate}`;
+
+  const month = months[new Date().getMonth()];
+  const date = new Date().getDate();
+  const weekDay = weekDays[new Date().getDay() - 1];
+
+  const changeDate = () => {
+    const dateInput = document.querySelector(
+      ".header__date-input",
+    ) as HTMLInputElement;
+    const newValue = new Date(dateInput.value);
+    const dataDisplay = document.querySelector(".header__date") as HTMLElement;
+    dataDisplay.textContent = `${newValue.getDate()} ${
+      months[newValue.getMonth()]
+    }, ${weekDays[newValue.getDay() - 1]}`;
+  };
+
   return (
     <header className="header">
       <div className="container header__container">
@@ -18,8 +70,15 @@ const Header: React.FC = () => {
           <NavComponent />
         </div>
         <div className="header_mob">
-          <input type="date" className="header__date-input" />
-          <div className="header__date">30 January, Monday</div>
+          <input
+            type="date"
+            className="header__date-input"
+            max={max}
+            onChange={changeDate}
+          />
+          <div className="header__date">
+            {date} {month}, {weekDay}
+          </div>
           <button
             type="button"
             className="header__menu-btn"
