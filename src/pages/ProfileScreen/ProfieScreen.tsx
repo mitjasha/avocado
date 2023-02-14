@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import female from "../../assets/png/female.png";
 import male from "../../assets/png/male.png";
+import EditButton from "../../components/Buttons/EditButton/EditButton";
 import "./ProfileScreen.scss";
 
 const ProfileScreen: React.FC = () => {
@@ -17,7 +18,7 @@ const ProfileScreen: React.FC = () => {
     <div className="profile-screen">
       <h1 className="profile-screen__title">Your Profile</h1>
       <div className="user-data container">
-        <button type="button" className="user-data__edit" aria-label="edit" />
+        <EditButton className="user-data__edit" />
         <div className="user-data__heading">
           <img
             src={userAvatar}

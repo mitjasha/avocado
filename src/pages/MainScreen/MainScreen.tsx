@@ -5,6 +5,7 @@ import ChartComponent from "../../components/ChartComponent/ChartComponent";
 import minus from "../../assets/svg/minus-light.svg";
 import fire from "../../assets/svg/fire.svg";
 import eaten from "../../assets/svg/eaten.svg";
+import EditButton from "../../components/Buttons/EditButton/EditButton";
 import "./MainScreen.scss";
 
 const MainScreen: React.FC = () => {
@@ -32,6 +33,7 @@ const MainScreen: React.FC = () => {
   const recomProtein = 68;
   const eatenProtein = 43;
   const availableProtein = recomProtein - eatenProtein;
+  const curWeight = 77.0;
 
   return (
     <div className="main-screen">
@@ -118,6 +120,7 @@ const MainScreen: React.FC = () => {
       </div>
       <div className="container">
         <div className="daily-events">
+          <EditButton className="daily-events__edit" />
           <div className="daily-events__meals">
             <h1 className="daily-events__title">Daily meals</h1>
             <DailyEventWrapper
@@ -171,7 +174,7 @@ const MainScreen: React.FC = () => {
                   <img src={minus} alt="minus" className="plus-minus-img" />
                 </PlusMinusButton>
               }
-              curWeight=<p style={{ fontSize: "26px" }}>77.0 kg</p>
+              curWeight=<p style={{ fontSize: "26px" }}>{curWeight} kg</p>
             />
           </div>
         </div>
