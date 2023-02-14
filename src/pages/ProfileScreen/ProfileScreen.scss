@@ -17,26 +17,8 @@
   position: relative;
 
   &__edit {
-    position: absolute;
     top: -15px;
     right: 10%;
-    z-index: 1;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background: $light-color url(../../assets/svg/pencil.svg) no-repeat;
-    background-size: 30px;
-    background-position: 50%;
-    border: none;
-    cursor: pointer;
-
-    &:hover {
-      background: $dark-color url(../../assets/svg/pencil-light.svg) no-repeat;
-      background-size: 30px;
-      background-position: 50%;
-      transition: 0.4s all ease;
-    }
   }
 
   &__heading {
