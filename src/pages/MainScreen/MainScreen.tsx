@@ -1,24 +1,23 @@
 import React from "react";
-// import DailyEventWrapper from "../../components/DailyEventWrapper/DailyEventWrapper";
-// import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
+import DailyEventWrapper from "../../components/DailyEventWrapper/DailyEventWrapper";
+import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
 import ChartComponent from "../../components/ChartComponent/ChartComponent";
-// import minus from "../../assets/svg/minus-light.svg";
+import minus from "../../assets/svg/minus-light.svg";
 import fire from "../../assets/svg/fire.svg";
 import eaten from "../../assets/svg/eaten.svg";
 import "./MainScreen.scss";
-import EditEventScreen from "../EditEventsScreen/EditEventScreen";
 
 const MainScreen: React.FC = () => {
-  // const getWaterConsumed = () => {
-  //   const content = [];
-  //   const litreConsumed = 0.75; // будем получать эти данные из бд
-  //   const oneGlass = 0.25;
-  //   const glasses = litreConsumed / oneGlass;
-  //   for (let i = 0; i < glasses; i += 1) {
-  //     content.push(<div className="glass" key={i} />);
-  //   }
-  //   return <div className="glasses">{content}</div>;
-  // };
+  const getWaterConsumed = () => {
+    const content = [];
+    const litreConsumed = 0.75; // будем получать эти данные из бд
+    const oneGlass = 0.25;
+    const glasses = litreConsumed / oneGlass;
+    for (let i = 0; i < glasses; i += 1) {
+      content.push(<div className="glass" key={i} />);
+    }
+    return <div className="glasses">{content}</div>;
+  };
 
   const recomKcalPerDay = 2181;
   const burntKcal = 690;
@@ -117,8 +116,7 @@ const MainScreen: React.FC = () => {
           <div className="daily-data__status">now: fasting</div>
         </div>
       </div>
-      <EditEventScreen />
-      {/* <div className="container">
+      <div className="container">
         <div className="daily-events">
           <div className="daily-events__meals">
             <h1 className="daily-events__title">Daily meals</h1>
@@ -177,7 +175,7 @@ const MainScreen: React.FC = () => {
             />
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
