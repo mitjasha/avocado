@@ -2,7 +2,7 @@
   "products": [
     {
       "name": "Брынза",
-      "name-eng": "Brinzen",
+      "namEng": "Brinzen",
       "proteins": "17.9",
       "fats": "20.1",
       "carbs": "0",
@@ -11,7 +11,7 @@
     },
     {
       "name": "Йогурт",
-      "name-eng": "Yoghurt",
+      "namEng": "Yoghurt",
       "proteins": "4.3",
       "fats": "2",
       "carbs": "6.2",
@@ -20,7 +20,7 @@
     },
     {
       "name": "Кефир 3,2% жирный",
-      "name-eng": "Kefir 3.2%",
+      "namEng": "Kefir 3.2%",
       "proteins": "2.8",
       "fats": "3.2",
       "carbs": "4.1",
@@ -29,7 +29,7 @@
     },
     {
       "name": "Кефир 1% нежирный",
-      "name-eng": "Kefir 1%",
+      "namEng": "Kefir 1%",
       "proteins": "2.8",
       "fats": "1",
       "carbs": "4",
@@ -38,7 +38,7 @@
     },
     {
       "name": "Молоко 3,2%",
-      "name-eng": "Milk 3.2%",
+      "namEng": "Milk 3.2%",
       "proteins": "2.9",
       "fats": "3.2",
       "carbs": "4.7",
@@ -47,7 +47,7 @@
     },
     {
       "name": "Молоко 2,5%",
-      "name-eng": "Milk 2.5%",
+      "namEng": "Milk 2.5%",
       "proteins": "2.8",
       "fats": "2.5",
       "carbs": "4.7",
@@ -56,7 +56,7 @@
     },
     {
       "name": "Молоко сгущенное без сахара",
-      "name-eng": "Condensed milk without sugar",
+      "namEng": "Condensed milk without sugar",
       "proteins": "6.6",
       "fats": "7.5",
       "carbs": "9.4",
@@ -65,7 +65,7 @@
     },
     {
       "name": "Молоко сгущённое с сахаром",
-      "name-eng": "Condensed milk with sugar",
+      "namEng": "Condensed milk with sugar",
       "proteins": "7.2",
       "fats": "8.5",
       "carbs": "56",
@@ -74,7 +74,7 @@
     },
     {
       "name": "Молоко сухое цельное",
-      "name-eng": "Dried whole milk",
+      "namEng": "Dried whole milk",
       "proteins": "26",
       "fats": "25",
       "carbs": "37.5",
@@ -83,7 +83,7 @@
     },
     {
       "name": "Простокваша 2,5%",
-      "name-eng": "Curdled milk 2.5%",
+      "namEng": "Curdled milk 2.5%",
       "proteins": "2.9",
       "fats": "2.5",
       "carbs": "4.1",
@@ -92,7 +92,7 @@
     },
     {
       "name": "Ряженка 2,5%",
-      "name-eng": "Ryazhenka 2.5%",
+      "namEng": "Ryazhenka 2.5%",
       "proteins": "2.9",
       "fats": "2.5",
       "carbs": "4.2",
@@ -101,7 +101,7 @@
     },
     {
       "name": "Сливки 10%",
-      "name-eng": "Creame 10%",
+      "namEng": "Creame 10%",
       "proteins": "3",
       "fats": "10",
       "carbs": "4",
@@ -110,7 +110,7 @@
     },
     {
       "name": "Сливки 20%",
-      "name-eng": "Creame 20%",
+      "namEng": "Creame 20%",
       "proteins": "2.8",
       "fats": "20",
       "carbs": "3.7",
@@ -119,7 +119,7 @@
     },
     {
       "name": "Сметана 10%",
-      "name-eng": "Sour creame 10%",
+      "namEng": "Sour creame 10%",
       "proteins": "3",
       "fats": "10",
       "carbs": "2.9",
@@ -128,7 +128,7 @@
     },
     {
       "name": "Сметана 20%",
-      "name-eng": "Sour creame 20%",
+      "namEng": "Sour creame 20%",
       "proteins": "2.8",
       "fats": "20",
       "carbs": "3.2",
@@ -137,7 +137,7 @@
     },
     {
       "name": "Сыр голландский",
-      "name-eng": "Dutch cheese",
+      "namEng": "Dutch cheese",
       "proteins": "26",
       "fats": "26.8",
       "carbs": "0",
@@ -146,7 +146,7 @@
     },
     {
       "name": "Сыр плавленый",
-      "name-eng": "Processed cheese",
+      "namEng": "Processed cheese",
       "proteins": "16.8",
       "fats": "11.2",
       "carbs": "23.8",
@@ -155,7 +155,7 @@
     },
     {
       "name": "Сыр пошехонский",
-      "name-eng": "Poshekhonskiy cheese",
+      "namEng": "Poshekhonskiy cheese",
       "proteins": "26",
       "fats": "26.5",
       "carbs": "0",
@@ -164,7 +164,7 @@
     },
     {
       "name": "Сыр российский",
-      "name-eng": "Russian cheese",
+      "namEng": "Russian cheese",
       "proteins": "24.1",
       "fats": "29.5",
       "carbs": "0.3",
@@ -173,7 +173,7 @@
     },
     {
       "name": "Сыр швейцарский",
-      "name-eng": "Swiss cheese",
+      "namEng": "Swiss cheese",
       "proteins": "24.9",
       "fats": "31.8",
       "carbs": "0",
@@ -182,7 +182,7 @@
     },
     {
       "name": "Творог обезжиренный",
-      "name-eng": "Skim cheese",
+      "namEng": "Skim cheese",
       "proteins": "16.5",
       "fats": "0",
       "carbs": "1.3",
@@ -191,7 +191,7 @@
     },
     {
       "name": "Творог 5%",
-      "name-eng": "Cottage cheese 5%",
+      "namEng": "Cottage cheese 5%",
       "proteins": "17.2",
       "fats": "5",
       "carbs": "1.8",
@@ -200,7 +200,7 @@
     },
     {
       "name": "Творог 9%",
-      "name-eng": "Cottage cheese 9%",
+      "namEng": "Cottage cheese 9%",
       "proteins": "16.7",
       "fats": "9",
       "carbs": "2",
@@ -209,7 +209,7 @@
     },
     {
       "name": "Сухари",
-      "name-eng": "Crackers",
+      "namEng": "Crackers",
       "proteins": "10",
       "fats": "2.3",
       "carbs": "73.8",
@@ -218,7 +218,7 @@
     },
     {
       "name": "Хлеб пшеничный",
-      "name-eng": "Wheat bread",
+      "namEng": "Wheat bread",
       "proteins": "8.1",
       "fats": "1",
       "carbs": "48.8",
@@ -227,7 +227,7 @@
     },
     {
       "name": "Хлеб ржаной",
-      "name-eng": "Rye bread",
+      "namEng": "Rye bread",
       "proteins": "13",
       "fats": "3",
       "carbs": "40",
@@ -236,7 +236,7 @@
     },
     {
       "name": "Батон",
-      "name-eng": "White bread",
+      "namEng": "White bread",
       "proteins": "7.5",
       "fats": "2.6",
       "carbs": "50.6",
@@ -245,7 +245,7 @@
     },
     {
       "name": "Майонез",
-      "name-eng": "Mayo",
+      "namEng": "Mayo",
       "proteins": "3.1",
       "fats": "67",
       "carbs": "2.6",
@@ -254,7 +254,7 @@
     },
     {
       "name": "Масло растительное",
-      "name-eng": "vegetable oil",
+      "namEng": "vegetable oil",
       "proteins": "0",
       "fats": "99",
       "carbs": "0",
@@ -263,7 +263,7 @@
     },
     {
       "name": "Масло сливочное 72,5%",
-      "name-eng": "Butter 72.5%",
+      "namEng": "Butter 72.5%",
       "proteins": "1",
       "fats": "72.5",
       "carbs": "1.4",
@@ -272,7 +272,7 @@
     },
     {
       "name": "Масло сливочное 82%",
-      "name-eng": "Butter 82%",
+      "namEng": "Butter 82%",
       "proteins": "0.7",
       "fats": "82",
       "carbs": "0.7",
@@ -281,7 +281,7 @@
     },
     {
       "name": "Масло пальмовое",
-      "name-eng": "Palm butter",
+      "namEng": "Palm butter",
       "proteins": "0",
       "fats": "99.9",
       "carbs": "0",
@@ -290,7 +290,7 @@
     },
     {
       "name": "Геркулес",
-      "name-eng": "Jumbo oats",
+      "namEng": "Jumbo oats",
       "proteins": "12.5",
       "fats": "6.2",
       "carbs": "61",
@@ -299,7 +299,7 @@
     },
     {
       "name": "Гречневая крупа",
-      "name-eng": "Buckwheat",
+      "namEng": "Buckwheat",
       "proteins": "9.5",
       "fats": "2.3",
       "carbs": "65.9",
@@ -308,7 +308,7 @@
     },
     {
       "name": "Кукурузная крупа",
-      "name-eng": "Corn grits",
+      "namEng": "Corn grits",
       "proteins": "8.3",
       "fats": "1.2",
       "carbs": "75",
@@ -317,7 +317,7 @@
     },
     {
       "name": "Манная крупа",
-      "name-eng": "Manna groats",
+      "namEng": "Manna groats",
       "proteins": "10.3",
       "fats": "1",
       "carbs": "67.4",
@@ -326,7 +326,7 @@
     },
     {
       "name": "Овсяная крупа",
-      "name-eng": "Oat groats",
+      "namEng": "Oat groats",
       "proteins": "12.3",
       "fats": "6.1",
       "carbs": "59.5",
@@ -335,7 +335,7 @@
     },
     {
       "name": "Перловая крупа",
-      "name-eng": "Barley grits",
+      "namEng": "Barley grits",
       "proteins": "9.3",
       "fats": "1.1",
       "carbs": "73.7",
@@ -344,7 +344,7 @@
     },
     {
       "name": "Пшеничная крупа",
-      "name-eng": "Wheat grits",
+      "namEng": "Wheat grits",
       "proteins": "11.5",
       "fats": "1.3",
       "carbs": "62",
@@ -353,7 +353,7 @@
     },
     {
       "name": "Рис белый",
-      "name-eng": "White rice",
+      "namEng": "White rice",
       "proteins": "6.7",
       "fats": "0.7",
       "carbs": "78.9",
@@ -362,7 +362,7 @@
     },
     {
       "name": "Баклажан",
-      "name-eng": "Eggplant",
+      "namEng": "Eggplant",
       "proteins": "1.2",
       "fats": "0.1",
       "carbs": "4.5",
@@ -371,7 +371,7 @@
     },
     {
       "name": "Брюква",
-      "name-eng": "Turnip",
+      "namEng": "Turnip",
       "proteins": "1.2",
       "fats": "0.1",
       "carbs": "7.7",
@@ -380,7 +380,7 @@
     },
     {
       "name": "Горошек зеленый",
-      "name-eng": "Green peas",
+      "namEng": "Green peas",
       "proteins": "5",
       "fats": "0.2",
       "carbs": "13.8",
@@ -389,7 +389,7 @@
     },
     {
       "name": "Зеленая фасоль",
-      "name-eng": "Green beans",
+      "namEng": "Green beans",
       "proteins": "4",
       "fats": "0",
       "carbs": "4.3",
@@ -398,7 +398,7 @@
     },
     {
       "name": "Кабачки",
-      "name-eng": "Zucchini",
+      "namEng": "Zucchini",
       "proteins": "0.6",
       "fats": "0.3",
       "carbs": "4.6",
@@ -407,7 +407,7 @@
     },
     {
       "name": "Капуста белокочанная",
-      "name-eng": "White cabbage",
+      "namEng": "White cabbage",
       "proteins": "1.8",
       "fats": "0.1",
       "carbs": "4.7",
@@ -416,7 +416,7 @@
     },
     {
       "name": "Капуста краснокочанная",
-      "name-eng": "Red cabbage",
+      "namEng": "Red cabbage",
       "proteins": "1.8",
       "fats": "0",
       "carbs": "7.6",
@@ -425,7 +425,7 @@
     },
     {
       "name": "Капуста цветная",
-      "name-eng": "Cauliflower",
+      "namEng": "Cauliflower",
       "proteins": "2.5",
       "fats": "0.3",
       "carbs": "5.4",
@@ -434,7 +434,7 @@
     },
     {
       "name": "Картофель",
-      "name-eng": "Potatos",
+      "namEng": "Potatos",
       "proteins": "2",
       "fats": "0.4",
       "carbs": "16.1",
@@ -443,7 +443,7 @@
     },
     {
       "name": "Лук зеленый",
-      "name-eng": "Spring onion",
+      "namEng": "Spring onion",
       "proteins": "1.3",
       "fats": "0",
       "carbs": "4.6",
@@ -452,7 +452,7 @@
     },
     {
       "name": "Лук порей",
-      "name-eng": "Leek",
+      "namEng": "Leek",
       "proteins": "2",
       "fats": "0",
       "carbs": "8.2",
@@ -461,7 +461,7 @@
     },
     {
       "name": "Лук репчатый",
-      "name-eng": "Yellow onion",
+      "namEng": "Yellow onion",
       "proteins": "1.4",
       "fats": "0",
       "carbs": "10.4",
@@ -470,7 +470,7 @@
     },
     {
       "name": "Морковь",
-      "name-eng": "Carrot",
+      "namEng": "Carrot",
       "proteins": "1.3",
       "fats": "0.1",
       "carbs": "6.9",
@@ -479,7 +479,7 @@
     },
     {
       "name": "Огурцы",
-      "name-eng": "Cucumbers",
+      "namEng": "Cucumbers",
       "proteins": "0.8",
       "fats": "0.1",
       "carbs": "2.8",
@@ -488,7 +488,7 @@
     },
     {
       "name": "Перец жёлтый сладкий",
-      "name-eng": "Yellow paprika",
+      "namEng": "Yellow paprika",
       "proteins": "1.3",
       "fats": "0",
       "carbs": "5.3",
@@ -497,7 +497,7 @@
     },
     {
       "name": "Перец зеленый сладкий",
-      "name-eng": "Green paprika",
+      "namEng": "Green paprika",
       "proteins": "1.3",
       "fats": "0",
       "carbs": "6.9",
@@ -506,7 +506,7 @@
     },
     {
       "name": "Перец красный сладкий",
-      "name-eng": "Red paprika",
+      "namEng": "Red paprika",
       "proteins": "1.3",
       "fats": "0",
       "carbs": "5.3",
@@ -515,7 +515,7 @@
     },
     {
       "name": "Петрушка",
-      "name-eng": "Parsley",
+      "namEng": "Parsley",
       "proteins": "3.7",
       "fats": "0",
       "carbs": "8.1",
@@ -524,7 +524,7 @@
     },
     {
       "name": "Ревень",
-      "name-eng": "Rheum",
+      "namEng": "Rheum",
       "proteins": "0.7",
       "fats": "0",
       "carbs": "2.9",
@@ -533,7 +533,7 @@
     },
     {
       "name": "Редис",
-      "name-eng": "Кadish",
+      "namEng": "Кadish",
       "proteins": "1.2",
       "fats": "0.1",
       "carbs": "3.4",
@@ -542,7 +542,7 @@
     },
     {
       "name": "Салат",
-      "name-eng": "Lettuce",
+      "namEng": "Lettuce",
       "proteins": "1.5",
       "fats": "0",
       "carbs": "2.2",
@@ -551,7 +551,7 @@
     },
     {
       "name": "Свекла",
-      "name-eng": "Beet",
+      "namEng": "Beet",
       "proteins": "1.5",
       "fats": "0.1",
       "carbs": "8.8",
@@ -560,7 +560,7 @@
     },
     {
       "name": "Томаты",
-      "name-eng": "Tomatoes",
+      "namEng": "Tomatoes",
       "proteins": "1.1",
       "fats": "0.2",
       "carbs": "3.7",
@@ -569,7 +569,7 @@
     },
     {
       "name": "Черемша",
-      "name-eng": "Wild leek",
+      "namEng": "Wild leek",
       "proteins": "2.4",
       "fats": "0.1",
       "carbs": "6.5",
@@ -578,7 +578,7 @@
     },
     {
       "name": "Чеснок",
-      "name-eng": "Garlic",
+      "namEng": "Garlic",
       "proteins": "6.5",
       "fats": "0.5",
       "carbs": "29.9",
@@ -587,7 +587,7 @@
     },
     {
       "name": "Шпинат",
-      "name-eng": "Spinach",
+      "namEng": "Spinach",
       "proteins": "2.9",
       "fats": "0.3",
       "carbs": "2",
@@ -596,7 +596,7 @@
     },
     {
       "name": "Щавель",
-      "name-eng": "Dock",
+      "namEng": "Dock",
       "proteins": "1.5",
       "fats": "0",
       "carbs": "2.9",
@@ -605,7 +605,7 @@
     },
     {
       "name": "Абрикосы",
-      "name-eng": "Apricots",
+      "namEng": "Apricots",
       "proteins": "0.9",
       "fats": "0",
       "carbs": "9",
@@ -614,7 +614,7 @@
     },
     {
       "name": "Айва",
-      "name-eng": "Quince",
+      "namEng": "Quince",
       "proteins": "0.6",
       "fats": "0",
       "carbs": "9.8",
@@ -623,7 +623,7 @@
     },
     {
       "name": "Алыча",
-      "name-eng": "Alycha",
+      "namEng": "Alycha",
       "proteins": "0.2",
       "fats": "0",
       "carbs": "6.9",
@@ -632,7 +632,7 @@
     },
     {
       "name": "Ананас",
-      "name-eng": "Ananas",
+      "namEng": "Ananas",
       "proteins": "0.4",
       "fats": "0",
       "carbs": "10.6",
@@ -641,7 +641,7 @@
     },
     {
       "name": "Бананы",
-      "name-eng": "Bananas",
+      "namEng": "Bananas",
       "proteins": "1.5",
       "fats": "0",
       "carbs": "21.8",
@@ -650,7 +650,7 @@
     },
     {
       "name": "Вишня",
-      "name-eng": "Cherry",
+      "namEng": "Cherry",
       "proteins": "0.8",
       "fats": "0",
       "carbs": "11.3",
@@ -659,7 +659,7 @@
     },
     {
       "name": "Гранат",
-      "name-eng": "Pomegranate",
+      "namEng": "Pomegranate",
       "proteins": "0.9",
       "fats": "0",
       "carbs": "11.8",
@@ -668,7 +668,7 @@
     },
     {
       "name": "Груша",
-      "name-eng": "Pear",
+      "namEng": "Pear",
       "proteins": "0.4",
       "fats": "0",
       "carbs": "10.7",
@@ -677,7 +677,7 @@
     },
     {
       "name": "Инжир",
-      "name-eng": "Fig",
+      "namEng": "Fig",
       "proteins": "0.7",
       "fats": "0",
       "carbs": "13.9",
@@ -686,7 +686,7 @@
     },
     {
       "name": "Персики",
-      "name-eng": "Peach",
+      "namEng": "Peach",
       "proteins": "0.9",
       "fats": "0",
       "carbs": "10.4",
@@ -695,7 +695,7 @@
     },
     {
       "name": "Слива",
-      "name-eng": "Plum",
+      "namEng": "Plum",
       "proteins": "0.8",
       "fats": "0",
       "carbs": "9.9",
@@ -704,7 +704,7 @@
     },
     {
       "name": "Финики",
-      "name-eng": "Date",
+      "namEng": "Date",
       "proteins": "2.5",
       "fats": "0",
       "carbs": "72.1",
@@ -713,7 +713,7 @@
     },
     {
       "name": "Хурма",
-      "name-eng": "Persimmon",
+      "namEng": "Persimmon",
       "proteins": "0.5",
       "fats": "0",
       "carbs": "15.9",
@@ -722,7 +722,7 @@
     },
     {
       "name": "Черешня",
-      "name-eng": "Black cherry",
+      "namEng": "Black cherry",
       "proteins": "1.1",
       "fats": "0",
       "carbs": "12.3",
@@ -731,7 +731,7 @@
     },
     {
       "name": "Яблоки",
-      "name-eng": "Apples",
+      "namEng": "Apples",
       "proteins": "0.4",
       "fats": "0",
       "carbs": "11.3",
@@ -740,7 +740,7 @@
     },
     {
       "name": "Апельсин",
-      "name-eng": "Orange",
+      "namEng": "Orange",
       "proteins": "0.9",
       "fats": "0",
       "carbs": "8.4",
@@ -749,7 +749,7 @@
     },
     {
       "name": "Грейпфрут",
-      "name-eng": "Grapefruit",
+      "namEng": "Grapefruit",
       "proteins": "0.9",
       "fats": "0",
       "carbs": "7.3",
@@ -758,7 +758,7 @@
     },
     {
       "name": "Лимон",
-      "name-eng": "Limon",
+      "namEng": "Limon",
       "proteins": "0.9",
       "fats": "0",
       "carbs": "3.6",
@@ -767,7 +767,7 @@
     },
     {
       "name": "Мандарин",
-      "name-eng": "Tangerine",
+      "namEng": "Tangerine",
       "proteins": "0.8",
       "fats": "0",
       "carbs": "8.6",
@@ -776,7 +776,7 @@
     },
     {
       "name": "Виноград",
-      "name-eng": "Grapes",
+      "namEng": "Grapes",
       "proteins": "0.4",
       "fats": "0",
       "carbs": "17.5",
@@ -785,7 +785,7 @@
     },
     {
       "name": "Ежевика",
-      "name-eng": "Blackberry",
+      "namEng": "Blackberry",
       "proteins": "2",
       "fats": "0",
       "carbs": "5.3",
@@ -794,7 +794,7 @@
     },
     {
       "name": "Земляника",
-      "name-eng": "Wild strawberry",
+      "namEng": "Wild strawberry",
       "proteins": "1.8",
       "fats": "0",
       "carbs": "8.1",
@@ -803,7 +803,7 @@
     },
     {
       "name": "Клюква",
-      "name-eng": "Cranberry",
+      "namEng": "Cranberry",
       "proteins": "0.5",
       "fats": "0",
       "carbs": "4.8",
@@ -812,7 +812,7 @@
     },
     {
       "name": "Крыжовник",
-      "name-eng": "Gooseberry",
+      "namEng": "Gooseberry",
       "proteins": "0.7",
       "fats": "0",
       "carbs": "9.9",
@@ -821,7 +821,7 @@
     },
     {
       "name": "Малина",
-      "name-eng": "Raspberry",
+      "namEng": "Raspberry",
       "proteins": "0.8",
       "fats": "0",
       "carbs": "9",
@@ -830,7 +830,7 @@
     },
     {
       "name": "Смородина белая",
-      "name-eng": "White currant",
+      "namEng": "White currant",
       "proteins": "0.3",
       "fats": "0",
       "carbs": "8.7",
@@ -839,7 +839,7 @@
     },
     {
       "name": "Смородина черная",
-      "name-eng": "Black currant",
+      "namEng": "Black currant",
       "proteins": "1",
       "fats": "0",
       "carbs": "8",
@@ -848,7 +848,7 @@
     },
     {
       "name": "Черника",
-      "name-eng": "Blueberry",
+      "namEng": "Blueberry",
       "proteins": "1.1",
       "fats": "0",
       "carbs": "8.6",
@@ -857,7 +857,7 @@
     },
     {
       "name": "Шиповник",
-      "name-eng": "Brier",
+      "namEng": "Brier",
       "proteins": "1.6",
       "fats": "0",
       "carbs": "24",
@@ -866,7 +866,7 @@
     },
     {
       "name": "Курага",
-      "name-eng": "Dried apricot",
+      "namEng": "Dried apricot",
       "proteins": "5.2",
       "fats": "0",
       "carbs": "65.9",
@@ -875,7 +875,7 @@
     },
     {
       "name": "Изюм",
-      "name-eng": "Dried grapes",
+      "namEng": "Dried grapes",
       "proteins": "1.8",
       "fats": "0",
       "carbs": "70.9",
@@ -884,7 +884,7 @@
     },
     {
       "name": "Чернослив",
-      "name-eng": "Dried plum",
+      "namEng": "Dried plum",
       "proteins": "2.3",
       "fats": "0",
       "carbs": "65.6",
@@ -893,7 +893,7 @@
     },
     {
       "name": "Соя",
-      "name-eng": "Soy",
+      "namEng": "Soy",
       "proteins": "34.9",
       "fats": "17.3",
       "carbs": "26.5",
@@ -902,7 +902,7 @@
     },
     {
       "name": "Фасоль",
-      "name-eng": "Beans",
+      "namEng": "Beans",
       "proteins": "22.3",
       "fats": "1.7",
       "carbs": "54.5",
@@ -911,7 +911,7 @@
     },
     {
       "name": "Чечевица",
-      "name-eng": "Lens",
+      "namEng": "Lens",
       "proteins": "24.8",
       "fats": "1.1",
       "carbs": "53.7",
@@ -920,7 +920,7 @@
     },
     {
       "name": "Белые грибы",
-      "name-eng": "Porcini mushroom",
+      "namEng": "Porcini mushroom",
       "proteins": "3.2",
       "fats": "0.7",
       "carbs": "1.6",
@@ -929,7 +929,7 @@
     },
     {
       "name": "Подберезовики",
-      "name-eng": "Rough boletus",
+      "namEng": "Rough boletus",
       "proteins": "2.3",
       "fats": "0.9",
       "carbs": "3.7",
@@ -938,7 +938,7 @@
     },
     {
       "name": "Подосиновики",
-      "name-eng": "Aspen mushroom",
+      "namEng": "Aspen mushroom",
       "proteins": "3.3",
       "fats": "0.5",
       "carbs": "3.4",
@@ -947,7 +947,7 @@
     },
     {
       "name": "Баранина",
-      "name-eng": "Lamb",
+      "namEng": "Lamb",
       "proteins": "16.3",
       "fats": "15.3",
       "carbs": "0",
@@ -956,7 +956,7 @@
     },
     {
       "name": "Говядина",
-      "name-eng": "Beef",
+      "namEng": "Beef",
       "proteins": "18.9",
       "fats": "12.4",
       "carbs": "0",
@@ -965,7 +965,7 @@
     },
     {
       "name": "Кролик",
-      "name-eng": "Rabbit",
+      "namEng": "Rabbit",
       "proteins": "20.7",
       "fats": "12.9",
       "carbs": "0",
@@ -974,7 +974,7 @@
     },
     {
       "name": "Свинина",
-      "name-eng": "Pork",
+      "namEng": "Pork",
       "proteins": "16.4",
       "fats": "27.8",
       "carbs": "0",
@@ -983,7 +983,7 @@
     },
     {
       "name": "Телятина",
-      "name-eng": "Veal",
+      "namEng": "Veal",
       "proteins": "19.7",
       "fats": "1.2",
       "carbs": "0",
@@ -992,7 +992,7 @@
     },
     {
       "name": "Индейка",
-      "name-eng": "Turkey",
+      "namEng": "Turkey",
       "proteins": "21.6",
       "fats": "12",
       "carbs": "0.8",
@@ -1001,7 +1001,7 @@
     },
     {
       "name": "Курица",
-      "name-eng": "Chicken",
+      "namEng": "Chicken",
       "proteins": "20.8",
       "fats": "8.8",
       "carbs": "0.6",
@@ -1010,7 +1010,7 @@
     },
     {
       "name": "Утка",
-      "name-eng": "Duck",
+      "namEng": "Duck",
       "proteins": "16.5",
       "fats": "61.2",
       "carbs": "0",
@@ -1019,7 +1019,7 @@
     },
     {
       "name": "Вареная колбаса",
-      "name-eng": "Cooked sausage",
+      "namEng": "Cooked sausage",
       "proteins": "12.1",
       "fats": "22.8",
       "carbs": "0",
@@ -1028,7 +1028,7 @@
     },
     {
       "name": "Сардельки",
-      "name-eng": "Knackwurst",
+      "namEng": "Knackwurst",
       "proteins": "10.1",
       "fats": "31.6",
       "carbs": "1.9",
@@ -1037,7 +1037,7 @@
     },
     {
       "name": "Сосиски",
-      "name-eng": "Sausages",
+      "namEng": "Sausages",
       "proteins": "12.3",
       "fats": "25.3",
       "carbs": "0",
@@ -1046,7 +1046,7 @@
     },
     {
       "name": "Варено-копченая колбаса",
-      "name-eng": "Cooked smoked sausage",
+      "namEng": "Cooked smoked sausage",
       "proteins": "17.3",
       "fats": "39",
       "carbs": "0",
@@ -1055,7 +1055,7 @@
     },
     {
       "name": "Сырокопченая колбаса",
-      "name-eng": "Uncooked smoked sausage",
+      "namEng": "Uncooked smoked sausage",
       "proteins": "20.9",
       "fats": "47.8",
       "carbs": "0",
@@ -1064,7 +1064,7 @@
     },
     {
       "name": "Говядина тушеная",
-      "name-eng": "Stewed beef",
+      "namEng": "Stewed beef",
       "proteins": "16.8",
       "fats": "18.3",
       "carbs": "0",
@@ -1073,7 +1073,7 @@
     },
     {
       "name": "Свинина тушеная",
-      "name-eng": "Stewed pork",
+      "namEng": "Stewed pork",
       "proteins": "14.9",
       "fats": "32.2",
       "carbs": "0",
@@ -1082,7 +1082,7 @@
     },
     {
       "name": "Грудинка сырокопченая",
-      "name-eng": "Brisket",
+      "namEng": "Brisket",
       "proteins": "7.6",
       "fats": "66.8",
       "carbs": "0",
@@ -1091,7 +1091,7 @@
     },
     {
       "name": "Ветчина",
-      "name-eng": "Ham",
+      "namEng": "Ham",
       "proteins": "22.6",
       "fats": "20.9",
       "carbs": "0",
@@ -1100,7 +1100,7 @@
     },
     {
       "name": "Яйцо куриное",
-      "name-eng": "Egg",
+      "namEng": "Egg",
       "proteins": "12.7",
       "fats": "10.9",
       "carbs": "0.7",
@@ -1109,7 +1109,7 @@
     },
     {
       "name": "Яйцо перепелиное",
-      "name-eng": "Quail egg",
+      "namEng": "Quail egg",
       "proteins": "11.9",
       "fats": "13.1",
       "carbs": "0.6",
@@ -1118,7 +1118,7 @@
     },
     {
       "name": "Горбуша",
-      "name-eng": "Humpback salmon",
+      "namEng": "Humpback salmon",
       "proteins": "20.5",
       "fats": "6.5",
       "carbs": "0",
@@ -1127,7 +1127,7 @@
     },
     {
       "name": "Камбала",
-      "name-eng": "Flatfish",
+      "namEng": "Flatfish",
       "proteins": "16.5",
       "fats": "1.8",
       "carbs": "0",
@@ -1136,7 +1136,7 @@
     },
     {
       "name": "Карась",
-      "name-eng": "Crucian carp ",
+      "namEng": "Crucian carp ",
       "proteins": "17.7",
       "fats": "1.8",
       "carbs": "0",
@@ -1145,7 +1145,7 @@
     },
     {
       "name": "Карп",
-      "name-eng": "Carp",
+      "namEng": "Carp",
       "proteins": "16",
       "fats": "5.6",
       "carbs": "0",
@@ -1154,7 +1154,7 @@
     },
     {
       "name": "Кета",
-      "name-eng": "Chum salmon",
+      "namEng": "Chum salmon",
       "proteins": "22",
       "fats": "5.6",
       "carbs": "0",
@@ -1163,7 +1163,7 @@
     },
     {
       "name": "Корюшка",
-      "name-eng": "Smelt",
+      "namEng": "Smelt",
       "proteins": "15.4",
       "fats": "4.5",
       "carbs": "0",
@@ -1172,7 +1172,7 @@
     },
     {
       "name": "Лещ",
-      "name-eng": "Bream",
+      "namEng": "Bream",
       "proteins": "17.1",
       "fats": "4.1",
       "carbs": "0",
@@ -1181,7 +1181,7 @@
     },
     {
       "name": "Семга",
-      "name-eng": "Salmon",
+      "namEng": "Salmon",
       "proteins": "20.8",
       "fats": "15.1",
       "carbs": "0",
@@ -1190,7 +1190,7 @@
     },
     {
       "name": "Минтай",
-      "name-eng": "Walleye pollock",
+      "namEng": "Walleye pollock",
       "proteins": "15.9",
       "fats": "0.7",
       "carbs": "0",
@@ -1199,7 +1199,7 @@
     },
     {
       "name": "Мойва",
-      "name-eng": "Capelin",
+      "namEng": "Capelin",
       "proteins": "13.4",
       "fats": "11.5",
       "carbs": "0",
@@ -1208,7 +1208,7 @@
     },
     {
       "name": "Навага",
-      "name-eng": "Navaga",
+      "namEng": "Navaga",
       "proteins": "16.1",
       "fats": "1",
       "carbs": "0",
@@ -1217,7 +1217,7 @@
     },
     {
       "name": "Налим",
-      "name-eng": "Burbot",
+      "namEng": "Burbot",
       "proteins": "18.8",
       "fats": "0.6",
       "carbs": "0",
@@ -1226,7 +1226,7 @@
     },
     {
       "name": "Окунь морской",
-      "name-eng": "Grouper",
+      "namEng": "Grouper",
       "proteins": "17.1",
       "fats": "5.2",
       "carbs": "0",
@@ -1235,7 +1235,7 @@
     },
     {
       "name": "Окунь речной",
-      "name-eng": "Perch",
+      "namEng": "Perch",
       "proteins": "18.5",
       "fats": "0.9",
       "carbs": "0",
@@ -1244,7 +1244,7 @@
     },
     {
       "name": "Осетр",
-      "name-eng": "Sturgeon",
+      "namEng": "Sturgeon",
       "proteins": "16.4",
       "fats": "10.9",
       "carbs": "0",
@@ -1253,7 +1253,7 @@
     },
     {
       "name": "Палтус",
-      "name-eng": "Halibut",
+      "namEng": "Halibut",
       "proteins": "18.9",
       "fats": "3",
       "carbs": "0",
@@ -1262,7 +1262,7 @@
     },
     {
       "name": "Сельдь",
-      "name-eng": "Herring",
+      "namEng": "Herring",
       "proteins": "17.7",
       "fats": "19.5",
       "carbs": "0",
@@ -1271,7 +1271,7 @@
     },
     {
       "name": "Скумбрия",
-      "name-eng": "Mackerel",
+      "namEng": "Mackerel",
       "proteins": "18",
       "fats": "9",
       "carbs": "0",
@@ -1280,7 +1280,7 @@
     },
     {
       "name": "Сом",
-      "name-eng": "Catfish",
+      "namEng": "Catfish",
       "proteins": "16.8",
       "fats": "8.5",
       "carbs": "0",
@@ -1289,7 +1289,7 @@
     },
     {
       "name": "Стерлядь",
-      "name-eng": "Sterlet",
+      "namEng": "Sterlet",
       "proteins": "17",
       "fats": "6.1",
       "carbs": "0",
@@ -1298,7 +1298,7 @@
     },
     {
       "name": "Судак",
-      "name-eng": "Pikeperch",
+      "namEng": "Pikeperch",
       "proteins": "19",
       "fats": "0.8",
       "carbs": "0",
@@ -1307,7 +1307,7 @@
     },
     {
       "name": "Треска",
-      "name-eng": "Cod",
+      "namEng": "Cod",
       "proteins": "17-May",
       "fats": "0.6",
       "carbs": "0",
@@ -1316,7 +1316,7 @@
     },
     {
       "name": "Тунец",
-      "name-eng": "Tuna",
+      "namEng": "Tuna",
       "proteins": "22.7",
       "fats": "0.7",
       "carbs": "0",
@@ -1325,7 +1325,7 @@
     },
     {
       "name": "Угорь",
-      "name-eng": "Eel",
+      "namEng": "Eel",
       "proteins": "14.5",
       "fats": "30.5",
       "carbs": "0",
@@ -1334,7 +1334,7 @@
     },
     {
       "name": "Хек",
-      "name-eng": "Hake",
+      "namEng": "Hake",
       "proteins": "16.6",
       "fats": "2.2",
       "carbs": "0",
@@ -1343,7 +1343,7 @@
     },
     {
       "name": "Щука",
-      "name-eng": "Pike",
+      "namEng": "Pike",
       "proteins": "18.3",
       "fats": "0.8",
       "carbs": "0",
@@ -1352,7 +1352,7 @@
     },
     {
       "name": "Язь",
-      "name-eng": "Ide",
+      "namEng": "Ide",
       "proteins": "18.2",
       "fats": "1",
       "carbs": "0",
@@ -1361,7 +1361,7 @@
     },
     {
       "name": "Печень трески",
-      "name-eng": "Cod liver",
+      "namEng": "Cod liver",
       "proteins": "4.2",
       "fats": "65.7",
       "carbs": "0",
@@ -1370,7 +1370,7 @@
     },
     {
       "name": "Кальмар",
-      "name-eng": "Squids",
+      "namEng": "Squids",
       "proteins": "18",
       "fats": "0.3",
       "carbs": "0",
@@ -1379,7 +1379,7 @@
     },
     {
       "name": "Краб",
-      "name-eng": "Crab",
+      "namEng": "Crab",
       "proteins": "16",
       "fats": "0.5",
       "carbs": "0",
@@ -1388,7 +1388,7 @@
     },
     {
       "name": "Креветка",
-      "name-eng": "Shrimps",
+      "namEng": "Shrimps",
       "proteins": "18",
       "fats": "0.8",
       "carbs": "0",
@@ -1397,7 +1397,7 @@
     },
     {
       "name": "Морская капуста",
-      "name-eng": "Seaweed",
+      "namEng": "Seaweed",
       "proteins": "0.8",
       "fats": "0.2",
       "carbs": "3",
@@ -1406,7 +1406,7 @@
     },
     {
       "name": "Фундук",
-      "name-eng": "Hazel-nut",
+      "namEng": "Hazel-nut",
       "proteins": "16.1",
       "fats": "66.9",
       "carbs": "9.9",
@@ -1415,7 +1415,7 @@
     },
     {
       "name": "Миндаль",
-      "name-eng": "Almond",
+      "namEng": "Almond",
       "proteins": "18.6",
       "fats": "57.7",
       "carbs": "13.6",
@@ -1424,7 +1424,7 @@
     },
     {
       "name": "Грецкий орех",
-      "name-eng": "Walnut",
+      "namEng": "Walnut",
       "proteins": "15.2",
       "fats": "61.3",
       "carbs": "10.2",
@@ -1433,7 +1433,7 @@
     },
     {
       "name": "Арахис",
-      "name-eng": "Peanut",
+      "namEng": "Peanut",
       "proteins": "26.3",
       "fats": "45.2",
       "carbs": "9.7",
@@ -1442,7 +1442,7 @@
     },
     {
       "name": "Семена подсолнечника",
-      "name-eng": "Sunflower seeds",
+      "namEng": "Sunflower seeds",
       "proteins": "20.7",
       "fats": "52.9",
       "carbs": "5",
@@ -1451,7 +1451,7 @@
     },
     {
       "name": "Мед",
-      "name-eng": "Honey",
+      "namEng": "Honey",
       "proteins": "0.8",
       "fats": "0",
       "carbs": "80.3",
@@ -1460,7 +1460,7 @@
     },
     {
       "name": "Зефир",
-      "name-eng": "Zephyrus",
+      "namEng": "Zephyrus",
       "proteins": "0.8",
       "fats": "0",
       "carbs": "78.3",
@@ -1469,7 +1469,7 @@
     },
     {
       "name": "Мармелад",
-      "name-eng": "Fruit jelly",
+      "namEng": "Fruit jelly",
       "proteins": "4.3",
       "fats": "0.1",
       "carbs": "77.7",
@@ -1478,7 +1478,7 @@
     },
     {
       "name": "Карамель",
-      "name-eng": "Caramel",
+      "namEng": "Caramel",
       "proteins": "0",
       "fats": "0.1",
       "carbs": "77.7",
@@ -1487,7 +1487,7 @@
     },
     {
       "name": "Конфеты шоколадные",
-      "name-eng": "Chocolates",
+      "namEng": "Chocolates",
       "proteins": "4.3",
       "fats": "39.5",
       "carbs": "54.2",
@@ -1496,7 +1496,7 @@
     },
     {
       "name": "Сахар-песок",
-      "name-eng": "Sugar",
+      "namEng": "Sugar",
       "proteins": "0",
       "fats": "0",
       "carbs": "99.5",
@@ -1505,7 +1505,7 @@
     },
     {
       "name": "Халва",
-      "name-eng": "Halva",
+      "namEng": "Halva",
       "proteins": "11.6",
       "fats": "29.7",
       "carbs": "54",
@@ -1514,7 +1514,7 @@
     },
     {
       "name": "Шоколад темный",
-      "name-eng": "Dark chocolate",
+      "namEng": "Dark chocolate",
       "proteins": "6.9",
       "fats": "35.3",
       "carbs": "52.6",
@@ -1523,7 +1523,7 @@
     },
     {
       "name": "Шоколад молочный",
-      "name-eng": "Milk chocolate",
+      "namEng": "Milk chocolate",
       "proteins": "6.9",
       "fats": "35.7",
       "carbs": "52.4",
@@ -1532,7 +1532,7 @@
     },
     {
       "name": "Вафли",
-      "name-eng": "Waffles",
+      "namEng": "Waffles",
       "proteins": "3.2",
       "fats": "2.8",
       "carbs": "80.9",
@@ -1541,7 +1541,7 @@
     },
     {
       "name": "Пирожное трубочка с кремом",
-      "name-eng": "Cookie straw with creame",
+      "namEng": "Cookie straw with creame",
       "proteins": "1.7",
       "fats": "25.2",
       "carbs": "50.9",
@@ -1550,7 +1550,7 @@
     },
     {
       "name": "Торт",
-      "name-eng": "Cake",
+      "namEng": "Cake",
       "proteins": "4.7",
       "fats": "15",
       "carbs": "36",
@@ -1559,7 +1559,7 @@
     },
     {
       "name": "Паста карбонара",
-      "name-eng": "Pasta Carbonara",
+      "namEng": "Pasta Carbonara",
       "proteins": "16.4",
       "fats": "18.7",
       "carbs": "26.8",
@@ -1568,7 +1568,7 @@
     },
     {
       "name": "Паста болоньезе",
-      "name-eng": "Pasta Bolognese",
+      "namEng": "Pasta Bolognese",
       "proteins": "7.3",
       "fats": "8.8",
       "carbs": "19.1",
@@ -1577,7 +1577,7 @@
     },
     {
       "name": "Паста альфредо",
-      "name-eng": "Pasta Alfredo",
+      "namEng": "Pasta Alfredo",
       "proteins": "13",
       "fats": "9",
       "carbs": "24",
@@ -1586,7 +1586,7 @@
     },
     {
       "name": "Борщ",
-      "name-eng": "Borshch",
+      "namEng": "Borshch",
       "proteins": "3.2",
       "fats": "4.5",
       "carbs": "3.8",
@@ -1595,7 +1595,7 @@
     },
     {
       "name": "Томатный суп",
-      "name-eng": "Tomato soup",
+      "namEng": "Tomato soup",
       "proteins": "1.1",
       "fats": "4.7",
       "carbs": "6",
@@ -1604,7 +1604,7 @@
     },
     {
       "name": "Куриный суп",
-      "name-eng": "Chicken soup",
+      "namEng": "Chicken soup",
       "proteins": "45",
       "fats": "1.3",
       "carbs": "3.1",
@@ -1613,7 +1613,7 @@
     },
     {
       "name": "Щи",
-      "name-eng": "Cabbage soup",
+      "namEng": "Cabbage soup",
       "proteins": "0.4",
       "fats": "0",
       "carbs": "2.2",
@@ -1622,7 +1622,7 @@
     },
     {
       "name": "Грибной крем-суп",
-      "name-eng": "Mashroom cream soup",
+      "namEng": "Mashroom cream soup",
       "proteins": "2.2",
       "fats": "1.1",
       "carbs": "3.6",
@@ -1631,7 +1631,7 @@
     },
     {
       "name": "Сырный крем-суп",
-      "name-eng": "Cheese cream soup",
+      "namEng": "Cheese cream soup",
       "proteins": "2.1",
       "fats": "3.7",
       "carbs": "3.1",
@@ -1640,7 +1640,7 @@
     },
     {
       "name": "Салат Цезарь",
-      "name-eng": "Caesar",
+      "namEng": "Caesar",
       "proteins": "7.6",
       "fats": "7.1",
       "carbs": "3.7",
@@ -1649,7 +1649,7 @@
     },
     {
       "name": "Салат Оливье",
-      "name-eng": "Russian salade",
+      "namEng": "Russian salade",
       "proteins": "5.6",
       "fats": "8.9",
       "carbs": "6.6",
@@ -1658,7 +1658,7 @@
     },
     {
       "name": "Греческий салат",
-      "name-eng": "Greek salade",
+      "namEng": "Greek salade",
       "proteins": "2.8",
       "fats": "7.5",
       "carbs": "3.6",
@@ -1667,7 +1667,7 @@
     },
     {
       "name": "Салат Нисуаз",
-      "name-eng": "Nicoise",
+      "namEng": "Nicoise",
       "proteins": "5.3",
       "fats": "7.6",
       "carbs": "4.6",
@@ -1676,7 +1676,7 @@
     },
     {
       "name": "Салат Коул Слоу",
-      "name-eng": "Cole slaw",
+      "namEng": "Cole slaw",
       "proteins": "1.2",
       "fats": "0.2",
       "carbs": "5.6",

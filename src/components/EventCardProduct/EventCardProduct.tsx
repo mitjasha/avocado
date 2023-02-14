@@ -3,6 +3,7 @@ import "./EventCardProduct.scss";
 
 interface Product {
   name: string;
+  namEng: string;
   proteins: string;
   fats: string;
   carbs: string;
@@ -21,7 +22,7 @@ const EventCardProduct: React.FC<ProductProps> = ({ data }) => {
         style={{ backgroundImage: `url("${data.image}")` }}
         className="card__container__image"
       />
-      <span className="card__container__span">{data.name}</span>
+      <span className="card__container__span">{data.namEng}</span>
     </div>
   );
 };
@@ -31,7 +32,7 @@ export const EventCardProductModal: React.FC<ProductProps> = ({ data }) => {
     <div className="card__container__modal__bg">
       <div className="card__container__modal container">
         <div className="modal__close" />
-        <h2 className="modal__h2">{data.name}</h2>
+        <h2 className="modal__h2">{data.namEng}</h2>
         <div
           className="modal__image"
           style={{ backgroundImage: `url("${data.image}")` }}
