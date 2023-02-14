@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./NavComponent.scss";
 
 const NavComponent: React.FC = () => {
@@ -8,14 +9,23 @@ const NavComponent: React.FC = () => {
     const burgerCloseBtn = document.querySelector(".nav-close") as HTMLElement;
     burgerCloseBtn.style.display = "none";
   };
+
+  const menuItems = ["main", "profile", "progress", "recipes", "about"];
+
+  const menuItemCreate = (text: string, index: number) => {
+    return (
+      <li className="nav-list__item" key={text}>
+        <Link className="nav-list__link" to={text} key={text + index}>
+          {text}
+        </Link>
+      </li>
+    );
+  };
+
   return (
     <nav>
       <ul className="nav-list">
-        <li className="nav-list__item">ABOUT US</li>
-        <li className="nav-list__item">MAIN</li>
-        <li className="nav-list__item">PROFILE</li>
-        <li className="nav-list__item">PROGRESS</li>
-        <li className="nav-list__item">RECIPES</li>
+        {menuItems.map((menuItem, index) => menuItemCreate(menuItem, index))}
       </ul>
       <button
         type="button"
