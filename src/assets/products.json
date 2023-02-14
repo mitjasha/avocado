@@ -1,7 +1,8 @@
 {
   "products": [
     {
-      "name": "Брынза (сыр из коровьего молока)",
+      "name": "Брынза",
+      "namEng": "Brinzen",
       "proteins": "17.9",
       "fats": "20.1",
       "carbs": "0",
@@ -9,7 +10,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/milk.png"
     },
     {
-      "name": "Йогурт натуральный. 2% жир.",
+      "name": "Йогурт",
+      "namEng": "Yoghurt",
       "proteins": "4.3",
       "fats": "2",
       "carbs": "6.2",
@@ -18,6 +20,7 @@
     },
     {
       "name": "Кефир 3,2% жирный",
+      "namEng": "Kefir 3.2%",
       "proteins": "2.8",
       "fats": "3.2",
       "carbs": "4.1",
@@ -26,6 +29,7 @@
     },
     {
       "name": "Кефир 1% нежирный",
+      "namEng": "Kefir 1%",
       "proteins": "2.8",
       "fats": "1",
       "carbs": "4",
@@ -34,6 +38,7 @@
     },
     {
       "name": "Молоко 3,2%",
+      "namEng": "Milk 3.2%",
       "proteins": "2.9",
       "fats": "3.2",
       "carbs": "4.7",
@@ -42,6 +47,7 @@
     },
     {
       "name": "Молоко 2,5%",
+      "namEng": "Milk 2.5%",
       "proteins": "2.8",
       "fats": "2.5",
       "carbs": "4.7",
@@ -50,6 +56,7 @@
     },
     {
       "name": "Молоко сгущенное без сахара",
+      "namEng": "Condensed milk without sugar",
       "proteins": "6.6",
       "fats": "7.5",
       "carbs": "9.4",
@@ -58,6 +65,7 @@
     },
     {
       "name": "Молоко сгущённое с сахаром",
+      "namEng": "Condensed milk with sugar",
       "proteins": "7.2",
       "fats": "8.5",
       "carbs": "56",
@@ -66,6 +74,7 @@
     },
     {
       "name": "Молоко сухое цельное",
+      "namEng": "Dried whole milk",
       "proteins": "26",
       "fats": "25",
       "carbs": "37.5",
@@ -74,6 +83,7 @@
     },
     {
       "name": "Простокваша 2,5%",
+      "namEng": "Curdled milk 2.5%",
       "proteins": "2.9",
       "fats": "2.5",
       "carbs": "4.1",
@@ -82,6 +92,7 @@
     },
     {
       "name": "Ряженка 2,5%",
+      "namEng": "Ryazhenka 2.5%",
       "proteins": "2.9",
       "fats": "2.5",
       "carbs": "4.2",
@@ -89,7 +100,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/milk.png"
     },
     {
-      "name": "Сливки 10% (нежирные)",
+      "name": "Сливки 10%",
+      "namEng": "Creame 10%",
       "proteins": "3",
       "fats": "10",
       "carbs": "4",
@@ -97,7 +109,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/milk.png"
     },
     {
-      "name": "Сливки 20% (средней жирности)",
+      "name": "Сливки 20%",
+      "namEng": "Creame 20%",
       "proteins": "2.8",
       "fats": "20",
       "carbs": "3.7",
@@ -105,7 +118,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/milk.png"
     },
     {
-      "name": "Сметана 10% (нежирная)",
+      "name": "Сметана 10%",
+      "namEng": "Sour creame 10%",
       "proteins": "3",
       "fats": "10",
       "carbs": "2.9",
@@ -113,7 +127,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/milk.png"
     },
     {
-      "name": "Сметана 20% (средней жирности)",
+      "name": "Сметана 20%",
+      "namEng": "Sour creame 20%",
       "proteins": "2.8",
       "fats": "20",
       "carbs": "3.2",
@@ -122,6 +137,7 @@
     },
     {
       "name": "Сыр голландский",
+      "namEng": "Dutch cheese",
       "proteins": "26",
       "fats": "26.8",
       "carbs": "0",
@@ -130,6 +146,7 @@
     },
     {
       "name": "Сыр плавленый",
+      "namEng": "Processed cheese",
       "proteins": "16.8",
       "fats": "11.2",
       "carbs": "23.8",
@@ -138,6 +155,7 @@
     },
     {
       "name": "Сыр пошехонский",
+      "namEng": "Poshekhonskiy cheese",
       "proteins": "26",
       "fats": "26.5",
       "carbs": "0",
@@ -146,6 +164,7 @@
     },
     {
       "name": "Сыр российский",
+      "namEng": "Russian cheese",
       "proteins": "24.1",
       "fats": "29.5",
       "carbs": "0.3",
@@ -154,6 +173,7 @@
     },
     {
       "name": "Сыр швейцарский",
+      "namEng": "Swiss cheese",
       "proteins": "24.9",
       "fats": "31.8",
       "carbs": "0",
@@ -161,15 +181,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/milk.png"
     },
     {
-      "name": "Творожная масса",
-      "proteins": "7.1",
-      "fats": "23",
-      "carbs": "27.5",
-      "kcal": "341",
-      "image": "https://ie.wampi.ru/2023/02/08/milk.png"
-    },
-    {
       "name": "Творог обезжиренный",
+      "namEng": "Skim cheese",
       "proteins": "16.5",
       "fats": "0",
       "carbs": "1.3",
@@ -177,7 +190,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/milk.png"
     },
     {
-      "name": "Творог 5% нежирный",
+      "name": "Творог 5%",
+      "namEng": "Cottage cheese 5%",
       "proteins": "17.2",
       "fats": "5",
       "carbs": "1.8",
@@ -185,7 +199,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/milk.png"
     },
     {
-      "name": "Творог 9% полужирный",
+      "name": "Творог 9%",
+      "namEng": "Cottage cheese 9%",
       "proteins": "16.7",
       "fats": "9",
       "carbs": "2",
@@ -193,47 +208,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/milk.png"
     },
     {
-      "name": "Баранки",
-      "proteins": "16",
-      "fats": "1",
-      "carbs": "70",
-      "kcal": "366",
-      "image": "https://ie.wampi.ru/2023/02/08/bread.png"
-    },
-    {
-      "name": "Мука пшеничная 1-го сорта",
-      "proteins": "10.6",
-      "fats": "1.3",
-      "carbs": "67.6",
-      "kcal": "331",
-      "image": "https://ie.wampi.ru/2023/02/08/bread.png"
-    },
-    {
-      "name": "Мука пшеничная 2-го сорта",
-      "proteins": "11.7",
-      "fats": "1.8",
-      "carbs": "63.7",
-      "kcal": "324",
-      "image": "https://ie.wampi.ru/2023/02/08/bread.png"
-    },
-    {
-      "name": "Мука пшеничная высш. сорт",
-      "proteins": "10.3",
-      "fats": "1.1",
-      "carbs": "68.9",
-      "kcal": "334",
-      "image": "https://ie.wampi.ru/2023/02/08/bread.png"
-    },
-    {
-      "name": "Мука ржаная сеяная",
-      "proteins": "6.9",
-      "fats": "1.4",
-      "carbs": "67.3",
-      "kcal": "304",
-      "image": "https://ie.wampi.ru/2023/02/08/bread.png"
-    },
-    {
-      "name": "Сухари к чаю",
+      "name": "Сухари",
+      "namEng": "Crackers",
       "proteins": "10",
       "fats": "2.3",
       "carbs": "73.8",
@@ -241,15 +217,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/bread.png"
     },
     {
-      "name": "Сушки маковые",
-      "proteins": "11.3",
-      "fats": "4.4",
-      "carbs": "70.5",
-      "kcal": "372",
-      "image": "https://ie.wampi.ru/2023/02/08/bread.png"
-    },
-    {
       "name": "Хлеб пшеничный",
+      "namEng": "Wheat bread",
       "proteins": "8.1",
       "fats": "1",
       "carbs": "48.8",
@@ -258,6 +227,7 @@
     },
     {
       "name": "Хлеб ржаной",
+      "namEng": "Rye bread",
       "proteins": "13",
       "fats": "3",
       "carbs": "40",
@@ -265,15 +235,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/bread.png"
     },
     {
-      "name": "Батон нарезной",
-      "proteins": "7.5",
-      "fats": "2.9",
-      "carbs": "50.9",
-      "kcal": "264",
-      "image": "https://ie.wampi.ru/2023/02/08/bread.png"
-    },
-    {
-      "name": "Батон подмосковный",
+      "name": "Батон",
+      "namEng": "White bread",
       "proteins": "7.5",
       "fats": "2.6",
       "carbs": "50.6",
@@ -281,15 +244,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/bread.png"
     },
     {
-      "name": "Жир кондитерский",
-      "proteins": "0",
-      "fats": "99.8",
-      "carbs": "0",
-      "kcal": "897",
-      "image": "https://ic.wampi.ru/2023/02/08/fats.png"
-    },
-    {
-      "name": "Майонез провансаль",
+      "name": "Майонез",
+      "namEng": "Mayo",
       "proteins": "3.1",
       "fats": "67",
       "carbs": "2.6",
@@ -297,23 +253,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/fats.png"
     },
     {
-      "name": "Маргарин столовый 40%",
-      "proteins": "0",
-      "fats": "40",
-      "carbs": "0",
-      "kcal": "360",
-      "image": "https://ic.wampi.ru/2023/02/08/fats.png"
-    },
-    {
-      "name": "Маргарин молочный",
-      "proteins": "0.3",
-      "fats": "82",
-      "carbs": "1",
-      "kcal": "743",
-      "image": "https://ic.wampi.ru/2023/02/08/fats.png"
-    },
-    {
       "name": "Масло растительное",
+      "namEng": "vegetable oil",
       "proteins": "0",
       "fats": "99",
       "carbs": "0",
@@ -322,6 +263,7 @@
     },
     {
       "name": "Масло сливочное 72,5%",
+      "namEng": "Butter 72.5%",
       "proteins": "1",
       "fats": "72.5",
       "carbs": "1.4",
@@ -330,6 +272,7 @@
     },
     {
       "name": "Масло сливочное 82%",
+      "namEng": "Butter 82%",
       "proteins": "0.7",
       "fats": "82",
       "carbs": "0.7",
@@ -338,6 +281,7 @@
     },
     {
       "name": "Масло пальмовое",
+      "namEng": "Palm butter",
       "proteins": "0",
       "fats": "99.9",
       "carbs": "0",
@@ -346,6 +290,7 @@
     },
     {
       "name": "Геркулес",
+      "namEng": "Jumbo oats",
       "proteins": "12.5",
       "fats": "6.2",
       "carbs": "61",
@@ -353,7 +298,8 @@
       "image": "https://im.wampi.ru/2023/02/08/porrige4c87ca52a5960c1a.png"
     },
     {
-      "name": "Гречневая крупа (продел)",
+      "name": "Гречневая крупа",
+      "namEng": "Buckwheat",
       "proteins": "9.5",
       "fats": "2.3",
       "carbs": "65.9",
@@ -361,15 +307,8 @@
       "image": "https://im.wampi.ru/2023/02/08/porrige4c87ca52a5960c1a.png"
     },
     {
-      "name": "Гречневая крупа ядрица (гречка)",
-      "proteins": "12.6",
-      "fats": "3.3",
-      "carbs": "62.1",
-      "kcal": "313",
-      "image": "https://im.wampi.ru/2023/02/08/porrige4c87ca52a5960c1a.png"
-    },
-    {
       "name": "Кукурузная крупа",
+      "namEng": "Corn grits",
       "proteins": "8.3",
       "fats": "1.2",
       "carbs": "75",
@@ -378,6 +317,7 @@
     },
     {
       "name": "Манная крупа",
+      "namEng": "Manna groats",
       "proteins": "10.3",
       "fats": "1",
       "carbs": "67.4",
@@ -386,6 +326,7 @@
     },
     {
       "name": "Овсяная крупа",
+      "namEng": "Oat groats",
       "proteins": "12.3",
       "fats": "6.1",
       "carbs": "59.5",
@@ -394,6 +335,7 @@
     },
     {
       "name": "Перловая крупа",
+      "namEng": "Barley grits",
       "proteins": "9.3",
       "fats": "1.1",
       "carbs": "73.7",
@@ -402,6 +344,7 @@
     },
     {
       "name": "Пшеничная крупа",
+      "namEng": "Wheat grits",
       "proteins": "11.5",
       "fats": "1.3",
       "carbs": "62",
@@ -409,15 +352,8 @@
       "image": "https://im.wampi.ru/2023/02/08/porrige4c87ca52a5960c1a.png"
     },
     {
-      "name": "Пшенная крупа",
-      "proteins": "11.5",
-      "fats": "3.3",
-      "carbs": "69.3",
-      "kcal": "348",
-      "image": "https://im.wampi.ru/2023/02/08/porrige4c87ca52a5960c1a.png"
-    },
-    {
       "name": "Рис белый",
+      "namEng": "White rice",
       "proteins": "6.7",
       "fats": "0.7",
       "carbs": "78.9",
@@ -425,23 +361,8 @@
       "image": "https://im.wampi.ru/2023/02/08/porrige4c87ca52a5960c1a.png"
     },
     {
-      "name": "Толокно",
-      "proteins": "12.5",
-      "fats": "6",
-      "carbs": "64.9",
-      "kcal": "363",
-      "image": "https://im.wampi.ru/2023/02/08/porrige4c87ca52a5960c1a.png"
-    },
-    {
-      "name": "Ячневая",
-      "proteins": "10.4",
-      "fats": "1.3",
-      "carbs": "66.3",
-      "kcal": "32",
-      "image": "https://im.wampi.ru/2023/02/08/porrige4c87ca52a5960c1a.png"
-    },
-    {
       "name": "Баклажан",
+      "namEng": "Eggplant",
       "proteins": "1.2",
       "fats": "0.1",
       "carbs": "4.5",
@@ -450,6 +371,7 @@
     },
     {
       "name": "Брюква",
+      "namEng": "Turnip",
       "proteins": "1.2",
       "fats": "0.1",
       "carbs": "7.7",
@@ -458,6 +380,7 @@
     },
     {
       "name": "Горошек зеленый",
+      "namEng": "Green peas",
       "proteins": "5",
       "fats": "0.2",
       "carbs": "13.8",
@@ -466,6 +389,7 @@
     },
     {
       "name": "Зеленая фасоль",
+      "namEng": "Green beans",
       "proteins": "4",
       "fats": "0",
       "carbs": "4.3",
@@ -474,6 +398,7 @@
     },
     {
       "name": "Кабачки",
+      "namEng": "Zucchini",
       "proteins": "0.6",
       "fats": "0.3",
       "carbs": "4.6",
@@ -482,6 +407,7 @@
     },
     {
       "name": "Капуста белокочанная",
+      "namEng": "White cabbage",
       "proteins": "1.8",
       "fats": "0.1",
       "carbs": "4.7",
@@ -490,6 +416,7 @@
     },
     {
       "name": "Капуста краснокочанная",
+      "namEng": "Red cabbage",
       "proteins": "1.8",
       "fats": "0",
       "carbs": "7.6",
@@ -498,6 +425,7 @@
     },
     {
       "name": "Капуста цветная",
+      "namEng": "Cauliflower",
       "proteins": "2.5",
       "fats": "0.3",
       "carbs": "5.4",
@@ -506,6 +434,7 @@
     },
     {
       "name": "Картофель",
+      "namEng": "Potatos",
       "proteins": "2",
       "fats": "0.4",
       "carbs": "16.1",
@@ -513,7 +442,8 @@
       "image": "https://im.wampi.ru/2023/02/08/vegetables.png"
     },
     {
-      "name": "Лук зеленый (перо)",
+      "name": "Лук зеленый",
+      "namEng": "Spring onion",
       "proteins": "1.3",
       "fats": "0",
       "carbs": "4.6",
@@ -522,6 +452,7 @@
     },
     {
       "name": "Лук порей",
+      "namEng": "Leek",
       "proteins": "2",
       "fats": "0",
       "carbs": "8.2",
@@ -530,6 +461,7 @@
     },
     {
       "name": "Лук репчатый",
+      "namEng": "Yellow onion",
       "proteins": "1.4",
       "fats": "0",
       "carbs": "10.4",
@@ -538,6 +470,7 @@
     },
     {
       "name": "Морковь",
+      "namEng": "Carrot",
       "proteins": "1.3",
       "fats": "0.1",
       "carbs": "6.9",
@@ -545,7 +478,8 @@
       "image": "https://im.wampi.ru/2023/02/08/vegetables.png"
     },
     {
-      "name": "Огурцы грунтовые",
+      "name": "Огурцы",
+      "namEng": "Cucumbers",
       "proteins": "0.8",
       "fats": "0.1",
       "carbs": "2.8",
@@ -553,15 +487,8 @@
       "image": "https://im.wampi.ru/2023/02/08/vegetables.png"
     },
     {
-      "name": "Огурцы парниковые",
-      "proteins": "0.7",
-      "fats": "0",
-      "carbs": "1.8",
-      "kcal": "10",
-      "image": "https://im.wampi.ru/2023/02/08/vegetables.png"
-    },
-    {
       "name": "Перец жёлтый сладкий",
+      "namEng": "Yellow paprika",
       "proteins": "1.3",
       "fats": "0",
       "carbs": "5.3",
@@ -570,6 +497,7 @@
     },
     {
       "name": "Перец зеленый сладкий",
+      "namEng": "Green paprika",
       "proteins": "1.3",
       "fats": "0",
       "carbs": "6.9",
@@ -578,6 +506,7 @@
     },
     {
       "name": "Перец красный сладкий",
+      "namEng": "Red paprika",
       "proteins": "1.3",
       "fats": "0",
       "carbs": "5.3",
@@ -585,7 +514,8 @@
       "image": "https://im.wampi.ru/2023/02/08/vegetables.png"
     },
     {
-      "name": "Петрушка (зелень)",
+      "name": "Петрушка",
+      "namEng": "Parsley",
       "proteins": "3.7",
       "fats": "0",
       "carbs": "8.1",
@@ -593,15 +523,8 @@
       "image": "https://im.wampi.ru/2023/02/08/vegetables.png"
     },
     {
-      "name": "Петрушка (корень)",
-      "proteins": "1.5",
-      "fats": "0",
-      "carbs": "11",
-      "kcal": "47",
-      "image": "https://im.wampi.ru/2023/02/08/vegetables.png"
-    },
-    {
-      "name": "Ревень (черешковый)",
+      "name": "Ревень",
+      "namEng": "Rheum",
       "proteins": "0.7",
       "fats": "0",
       "carbs": "2.9",
@@ -610,6 +533,7 @@
     },
     {
       "name": "Редис",
+      "namEng": "Кadish",
       "proteins": "1.2",
       "fats": "0.1",
       "carbs": "3.4",
@@ -617,15 +541,8 @@
       "image": "https://im.wampi.ru/2023/02/08/vegetables.png"
     },
     {
-      "name": "Редька",
-      "proteins": "1.9",
-      "fats": "0",
-      "carbs": "7",
-      "kcal": "34",
-      "image": "https://im.wampi.ru/2023/02/08/vegetables.png"
-    },
-    {
       "name": "Салат",
+      "namEng": "Lettuce",
       "proteins": "1.5",
       "fats": "0",
       "carbs": "2.2",
@@ -634,6 +551,7 @@
     },
     {
       "name": "Свекла",
+      "namEng": "Beet",
       "proteins": "1.5",
       "fats": "0.1",
       "carbs": "8.8",
@@ -641,7 +559,8 @@
       "image": "https://im.wampi.ru/2023/02/08/vegetables.png"
     },
     {
-      "name": "Томаты (помидоры)",
+      "name": "Томаты",
+      "namEng": "Tomatoes",
       "proteins": "1.1",
       "fats": "0.2",
       "carbs": "3.7",
@@ -650,6 +569,7 @@
     },
     {
       "name": "Черемша",
+      "namEng": "Wild leek",
       "proteins": "2.4",
       "fats": "0.1",
       "carbs": "6.5",
@@ -658,6 +578,7 @@
     },
     {
       "name": "Чеснок",
+      "namEng": "Garlic",
       "proteins": "6.5",
       "fats": "0.5",
       "carbs": "29.9",
@@ -666,6 +587,7 @@
     },
     {
       "name": "Шпинат",
+      "namEng": "Spinach",
       "proteins": "2.9",
       "fats": "0.3",
       "carbs": "2",
@@ -674,6 +596,7 @@
     },
     {
       "name": "Щавель",
+      "namEng": "Dock",
       "proteins": "1.5",
       "fats": "0",
       "carbs": "2.9",
@@ -682,6 +605,7 @@
     },
     {
       "name": "Абрикосы",
+      "namEng": "Apricots",
       "proteins": "0.9",
       "fats": "0",
       "carbs": "9",
@@ -690,6 +614,7 @@
     },
     {
       "name": "Айва",
+      "namEng": "Quince",
       "proteins": "0.6",
       "fats": "0",
       "carbs": "9.8",
@@ -698,6 +623,7 @@
     },
     {
       "name": "Алыча",
+      "namEng": "Alycha",
       "proteins": "0.2",
       "fats": "0",
       "carbs": "6.9",
@@ -706,6 +632,7 @@
     },
     {
       "name": "Ананас",
+      "namEng": "Ananas",
       "proteins": "0.4",
       "fats": "0",
       "carbs": "10.6",
@@ -714,6 +641,7 @@
     },
     {
       "name": "Бананы",
+      "namEng": "Bananas",
       "proteins": "1.5",
       "fats": "0",
       "carbs": "21.8",
@@ -722,6 +650,7 @@
     },
     {
       "name": "Вишня",
+      "namEng": "Cherry",
       "proteins": "0.8",
       "fats": "0",
       "carbs": "11.3",
@@ -730,6 +659,7 @@
     },
     {
       "name": "Гранат",
+      "namEng": "Pomegranate",
       "proteins": "0.9",
       "fats": "0",
       "carbs": "11.8",
@@ -738,6 +668,7 @@
     },
     {
       "name": "Груша",
+      "namEng": "Pear",
       "proteins": "0.4",
       "fats": "0",
       "carbs": "10.7",
@@ -746,6 +677,7 @@
     },
     {
       "name": "Инжир",
+      "namEng": "Fig",
       "proteins": "0.7",
       "fats": "0",
       "carbs": "13.9",
@@ -754,6 +686,7 @@
     },
     {
       "name": "Персики",
+      "namEng": "Peach",
       "proteins": "0.9",
       "fats": "0",
       "carbs": "10.4",
@@ -761,7 +694,8 @@
       "image": "https://im.wampi.ru/2023/02/08/fruit.png"
     },
     {
-      "name": "Слива садовая",
+      "name": "Слива",
+      "namEng": "Plum",
       "proteins": "0.8",
       "fats": "0",
       "carbs": "9.9",
@@ -770,6 +704,7 @@
     },
     {
       "name": "Финики",
+      "namEng": "Date",
       "proteins": "2.5",
       "fats": "0",
       "carbs": "72.1",
@@ -778,6 +713,7 @@
     },
     {
       "name": "Хурма",
+      "namEng": "Persimmon",
       "proteins": "0.5",
       "fats": "0",
       "carbs": "15.9",
@@ -786,6 +722,7 @@
     },
     {
       "name": "Черешня",
+      "namEng": "Black cherry",
       "proteins": "1.1",
       "fats": "0",
       "carbs": "12.3",
@@ -794,6 +731,7 @@
     },
     {
       "name": "Яблоки",
+      "namEng": "Apples",
       "proteins": "0.4",
       "fats": "0",
       "carbs": "11.3",
@@ -802,6 +740,7 @@
     },
     {
       "name": "Апельсин",
+      "namEng": "Orange",
       "proteins": "0.9",
       "fats": "0",
       "carbs": "8.4",
@@ -810,6 +749,7 @@
     },
     {
       "name": "Грейпфрут",
+      "namEng": "Grapefruit",
       "proteins": "0.9",
       "fats": "0",
       "carbs": "7.3",
@@ -818,6 +758,7 @@
     },
     {
       "name": "Лимон",
+      "namEng": "Limon",
       "proteins": "0.9",
       "fats": "0",
       "carbs": "3.6",
@@ -826,6 +767,7 @@
     },
     {
       "name": "Мандарин",
+      "namEng": "Tangerine",
       "proteins": "0.8",
       "fats": "0",
       "carbs": "8.6",
@@ -834,6 +776,7 @@
     },
     {
       "name": "Виноград",
+      "namEng": "Grapes",
       "proteins": "0.4",
       "fats": "0",
       "carbs": "17.5",
@@ -842,6 +785,7 @@
     },
     {
       "name": "Ежевика",
+      "namEng": "Blackberry",
       "proteins": "2",
       "fats": "0",
       "carbs": "5.3",
@@ -850,6 +794,7 @@
     },
     {
       "name": "Земляника",
+      "namEng": "Wild strawberry",
       "proteins": "1.8",
       "fats": "0",
       "carbs": "8.1",
@@ -858,6 +803,7 @@
     },
     {
       "name": "Клюква",
+      "namEng": "Cranberry",
       "proteins": "0.5",
       "fats": "0",
       "carbs": "4.8",
@@ -866,6 +812,7 @@
     },
     {
       "name": "Крыжовник",
+      "namEng": "Gooseberry",
       "proteins": "0.7",
       "fats": "0",
       "carbs": "9.9",
@@ -874,6 +821,7 @@
     },
     {
       "name": "Малина",
+      "namEng": "Raspberry",
       "proteins": "0.8",
       "fats": "0",
       "carbs": "9",
@@ -882,6 +830,7 @@
     },
     {
       "name": "Смородина белая",
+      "namEng": "White currant",
       "proteins": "0.3",
       "fats": "0",
       "carbs": "8.7",
@@ -890,6 +839,7 @@
     },
     {
       "name": "Смородина черная",
+      "namEng": "Black currant",
       "proteins": "1",
       "fats": "0",
       "carbs": "8",
@@ -898,6 +848,7 @@
     },
     {
       "name": "Черника",
+      "namEng": "Blueberry",
       "proteins": "1.1",
       "fats": "0",
       "carbs": "8.6",
@@ -905,7 +856,8 @@
       "image": "https://im.wampi.ru/2023/02/08/fruit.png"
     },
     {
-      "name": "Шиповник свежий",
+      "name": "Шиповник",
+      "namEng": "Brier",
       "proteins": "1.6",
       "fats": "0",
       "carbs": "24",
@@ -913,23 +865,8 @@
       "image": "https://im.wampi.ru/2023/02/08/fruit.png"
     },
     {
-      "name": "Шиповник сушеный",
-      "proteins": "4",
-      "fats": "0",
-      "carbs": "60",
-      "kcal": "253",
-      "image": "https://im.wampi.ru/2023/02/08/fruit.png"
-    },
-    {
-      "name": "Урюк",
-      "proteins": "5",
-      "fats": "0",
-      "carbs": "67.5",
-      "kcal": "278",
-      "image": "https://im.wampi.ru/2023/02/08/driedFruits.png"
-    },
-    {
       "name": "Курага",
+      "namEng": "Dried apricot",
       "proteins": "5.2",
       "fats": "0",
       "carbs": "65.9",
@@ -937,7 +874,8 @@
       "image": "https://im.wampi.ru/2023/02/08/driedFruits.png"
     },
     {
-      "name": "Изюм с косточкой",
+      "name": "Изюм",
+      "namEng": "Dried grapes",
       "proteins": "1.8",
       "fats": "0",
       "carbs": "70.9",
@@ -945,39 +883,8 @@
       "image": "https://im.wampi.ru/2023/02/08/driedFruits.png"
     },
     {
-      "name": "Изюм кишмиш",
-      "proteins": "2.3",
-      "fats": "0",
-      "carbs": "71.2",
-      "kcal": "279",
-      "image": "https://im.wampi.ru/2023/02/08/driedFruits.png"
-    },
-    {
-      "name": "Вишня",
-      "proteins": "1.5",
-      "fats": "0",
-      "carbs": "73",
-      "kcal": "292",
-      "image": "https://im.wampi.ru/2023/02/08/driedFruits.png"
-    },
-    {
-      "name": "Груша",
-      "proteins": "2.3",
-      "fats": "0",
-      "carbs": "62.1",
-      "kcal": "246",
-      "image": "https://im.wampi.ru/2023/02/08/driedFruits.png"
-    },
-    {
-      "name": "Персики",
-      "proteins": "3",
-      "fats": "0",
-      "carbs": "68.5",
-      "kcal": "275",
-      "image": "https://im.wampi.ru/2023/02/08/driedFruits.png"
-    },
-    {
       "name": "Чернослив",
+      "namEng": "Dried plum",
       "proteins": "2.3",
       "fats": "0",
       "carbs": "65.6",
@@ -985,39 +892,8 @@
       "image": "https://im.wampi.ru/2023/02/08/driedFruits.png"
     },
     {
-      "name": "Яблоки",
-      "proteins": "3.2",
-      "fats": "0",
-      "carbs": "68",
-      "kcal": "273",
-      "image": "https://im.wampi.ru/2023/02/08/driedFruits.png"
-    },
-    {
-      "name": "Бобы",
-      "proteins": "6",
-      "fats": "0.1",
-      "carbs": "8.3",
-      "kcal": "58",
-      "image": "https://ie.wampi.ru/2023/02/08/peae773e1454aadb289.png"
-    },
-    {
-      "name": "Горох лущеный",
-      "proteins": "23",
-      "fats": "1.6",
-      "carbs": "57.7",
-      "kcal": "323",
-      "image": "https://ie.wampi.ru/2023/02/08/peae773e1454aadb289.png"
-    },
-    {
-      "name": "Горох цельный",
-      "proteins": "23",
-      "fats": "1.2",
-      "carbs": "53.3",
-      "kcal": "303",
-      "image": "https://ie.wampi.ru/2023/02/08/peae773e1454aadb289.png"
-    },
-    {
       "name": "Соя",
+      "namEng": "Soy",
       "proteins": "34.9",
       "fats": "17.3",
       "carbs": "26.5",
@@ -1026,6 +902,7 @@
     },
     {
       "name": "Фасоль",
+      "namEng": "Beans",
       "proteins": "22.3",
       "fats": "1.7",
       "carbs": "54.5",
@@ -1034,6 +911,7 @@
     },
     {
       "name": "Чечевица",
+      "namEng": "Lens",
       "proteins": "24.8",
       "fats": "1.1",
       "carbs": "53.7",
@@ -1041,7 +919,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/peae773e1454aadb289.png"
     },
     {
-      "name": "Белые свежие",
+      "name": "Белые грибы",
+      "namEng": "Porcini mushroom",
       "proteins": "3.2",
       "fats": "0.7",
       "carbs": "1.6",
@@ -1049,15 +928,8 @@
       "image": "https://im.wampi.ru/2023/02/08/mushrooms.png"
     },
     {
-      "name": "Белые сушеные",
-      "proteins": "27.6",
-      "fats": "6.8",
-      "carbs": "10",
-      "kcal": "209",
-      "image": "https://im.wampi.ru/2023/02/08/mushrooms.png"
-    },
-    {
-      "name": "Подберезовики свежие",
+      "name": "Подберезовики",
+      "namEng": "Rough boletus",
       "proteins": "2.3",
       "fats": "0.9",
       "carbs": "3.7",
@@ -1065,7 +937,8 @@
       "image": "https://im.wampi.ru/2023/02/08/mushrooms.png"
     },
     {
-      "name": "Подосиновики свежие",
+      "name": "Подосиновики",
+      "namEng": "Aspen mushroom",
       "proteins": "3.3",
       "fats": "0.5",
       "carbs": "3.4",
@@ -1074,6 +947,7 @@
     },
     {
       "name": "Баранина",
+      "namEng": "Lamb",
       "proteins": "16.3",
       "fats": "15.3",
       "carbs": "0",
@@ -1082,6 +956,7 @@
     },
     {
       "name": "Говядина",
+      "namEng": "Beef",
       "proteins": "18.9",
       "fats": "12.4",
       "carbs": "0",
@@ -1089,15 +964,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/meat.png"
     },
     {
-      "name": "Конина",
-      "proteins": "20.2",
-      "fats": "7",
-      "carbs": "0",
-      "kcal": "143",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
       "name": "Кролик",
+      "namEng": "Rabbit",
       "proteins": "20.7",
       "fats": "12.9",
       "carbs": "0",
@@ -1105,7 +973,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/meat.png"
     },
     {
-      "name": "Свинина нежирная",
+      "name": "Свинина",
+      "namEng": "Pork",
       "proteins": "16.4",
       "fats": "27.8",
       "carbs": "0",
@@ -1113,15 +982,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/meat.png"
     },
     {
-      "name": "Свинина жирная",
-      "proteins": "11.4",
-      "fats": "49.3",
-      "carbs": "0",
-      "kcal": "489",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
       "name": "Телятина",
+      "namEng": "Veal",
       "proteins": "19.7",
       "fats": "1.2",
       "carbs": "0",
@@ -1129,87 +991,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/meat.png"
     },
     {
-      "name": "Говяжья Печень",
-      "proteins": "17.4",
-      "fats": "3.1",
-      "carbs": "0",
-      "kcal": "98",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
-      "name": "Говяжьи Почки",
-      "proteins": "12.5",
-      "fats": "1.8",
-      "carbs": "0",
-      "kcal": "66",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
-      "name": "Говяжье Вымя",
-      "proteins": "12.3",
-      "fats": "13.7",
-      "carbs": "0",
-      "kcal": "173",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
-      "name": "Говяжье Сердце",
-      "proteins": "15",
-      "fats": "3",
-      "carbs": "0",
-      "kcal": "87",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
-      "name": "Говяжий Язык",
-      "proteins": "13.6",
-      "fats": "12.1",
-      "carbs": "0",
-      "kcal": "163",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
-      "name": "Почки свиные",
-      "proteins": "13",
-      "fats": "3.1",
-      "carbs": "0",
-      "kcal": "80",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
-      "name": "Печень свиная",
-      "proteins": "18.8",
-      "fats": "3.6",
-      "carbs": "0",
-      "kcal": "108",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
-      "name": "Сердце свиное",
-      "proteins": "15.1",
-      "fats": "3.2",
-      "carbs": "0",
-      "kcal": "89",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
-      "name": "Язык свиной",
-      "proteins": "14.2",
-      "fats": "16.8",
-      "carbs": "0",
-      "kcal": "208",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
-      "name": "Гуси",
-      "proteins": "16.1",
-      "fats": "33.3",
-      "carbs": "0",
-      "kcal": "364",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
       "name": "Индейка",
+      "namEng": "Turkey",
       "proteins": "21.6",
       "fats": "12",
       "carbs": "0.8",
@@ -1217,7 +1000,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/meat.png"
     },
     {
-      "name": "Куры",
+      "name": "Курица",
+      "namEng": "Chicken",
       "proteins": "20.8",
       "fats": "8.8",
       "carbs": "0.6",
@@ -1225,15 +1009,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/meat.png"
     },
     {
-      "name": "Цыплята",
-      "proteins": "18.7",
-      "fats": "7.8",
-      "carbs": "0.4",
-      "kcal": "156",
-      "image": "https://ic.wampi.ru/2023/02/08/meat.png"
-    },
-    {
-      "name": "Утки",
+      "name": "Утка",
+      "namEng": "Duck",
       "proteins": "16.5",
       "fats": "61.2",
       "carbs": "0",
@@ -1241,7 +1018,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/meat.png"
     },
     {
-      "name": "Вареная колбаса Диабетическая",
+      "name": "Вареная колбаса",
+      "namEng": "Cooked sausage",
       "proteins": "12.1",
       "fats": "22.8",
       "carbs": "0",
@@ -1249,55 +1027,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
     },
     {
-      "name": "Вареная колбаса Диетическая",
-      "proteins": "12.1",
-      "fats": "13.5",
-      "carbs": "0",
-      "kcal": "170",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Вареная колбаса Докторская",
-      "proteins": "13.7",
-      "fats": "22.8",
-      "carbs": "0",
-      "kcal": "260",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Вареная колбаса Любительская",
-      "proteins": "12.2",
-      "fats": "28",
-      "carbs": "0",
-      "kcal": "301",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Вареная колбаса Молочная",
-      "proteins": "11.7",
-      "fats": "22.8",
-      "carbs": "0",
-      "kcal": "252",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Вареная колбаса Отдельная",
-      "proteins": "10.1",
-      "fats": "20.1",
-      "carbs": "1.8",
-      "kcal": "228",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Вареная колбаса Телячья",
-      "proteins": "12.5",
-      "fats": "29.6",
-      "carbs": "0",
-      "kcal": "316",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Сардельки Свиные",
+      "name": "Сардельки",
+      "namEng": "Knackwurst",
       "proteins": "10.1",
       "fats": "31.6",
       "carbs": "1.9",
@@ -1305,7 +1036,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
     },
     {
-      "name": "Сосиски Молочные",
+      "name": "Сосиски",
+      "namEng": "Sausages",
       "proteins": "12.3",
       "fats": "25.3",
       "carbs": "0",
@@ -1313,23 +1045,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
     },
     {
-      "name": "Сосиски Русские",
-      "proteins": "12",
-      "fats": "19.1",
-      "carbs": "0",
-      "kcal": "220",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Сосиски Свиные",
-      "proteins": "11.8",
-      "fats": "30.8",
-      "carbs": "0",
-      "kcal": "324",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Варено-копченая Любительская",
+      "name": "Варено-копченая колбаса",
+      "namEng": "Cooked smoked sausage",
       "proteins": "17.3",
       "fats": "39",
       "carbs": "0",
@@ -1337,47 +1054,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
     },
     {
-      "name": "Варено-копченая Сервелат",
-      "proteins": "28.2",
-      "fats": "27.5",
-      "carbs": "0",
-      "kcal": "360",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Полукопченая Краковская",
-      "proteins": "16.2",
-      "fats": "44.6",
-      "carbs": "0",
-      "kcal": "466",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Полукопченая Минская",
-      "proteins": "23",
-      "fats": "17.4",
-      "carbs": "2.7",
-      "kcal": "259",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Полукопченая Полтавская",
-      "proteins": "16.4",
-      "fats": "39",
-      "carbs": "0",
-      "kcal": "417",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Полукопченая Украинская",
-      "proteins": "16.5",
-      "fats": "34.4",
-      "carbs": "0",
-      "kcal": "376",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
-      "name": "Сырокопченая Любительская",
+      "name": "Сырокопченая колбаса",
+      "namEng": "Uncooked smoked sausage",
       "proteins": "20.9",
       "fats": "47.8",
       "carbs": "0",
@@ -1385,15 +1063,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
     },
     {
-      "name": "Сырокопченая Московская",
-      "proteins": "24.8",
-      "fats": "41.5",
-      "carbs": "0",
-      "kcal": "473",
-      "image": "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png"
-    },
-    {
       "name": "Говядина тушеная",
+      "namEng": "Stewed beef",
       "proteins": "16.8",
       "fats": "18.3",
       "carbs": "0",
@@ -1402,6 +1073,7 @@
     },
     {
       "name": "Свинина тушеная",
+      "namEng": "Stewed pork",
       "proteins": "14.9",
       "fats": "32.2",
       "carbs": "0",
@@ -1410,6 +1082,7 @@
     },
     {
       "name": "Грудинка сырокопченая",
+      "namEng": "Brisket",
       "proteins": "7.6",
       "fats": "66.8",
       "carbs": "0",
@@ -1417,15 +1090,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/smokedMeatsc8fdaf57fba243fa.png"
     },
     {
-      "name": "Корейка сырокопченая",
-      "proteins": "10.5",
-      "fats": "47.2",
-      "carbs": "0",
-      "kcal": "467",
-      "image": "https://ie.wampi.ru/2023/02/08/smokedMeatsc8fdaf57fba243fa.png"
-    },
-    {
       "name": "Ветчина",
+      "namEng": "Ham",
       "proteins": "22.6",
       "fats": "20.9",
       "carbs": "0",
@@ -1434,6 +1100,7 @@
     },
     {
       "name": "Яйцо куриное",
+      "namEng": "Egg",
       "proteins": "12.7",
       "fats": "10.9",
       "carbs": "0.7",
@@ -1441,31 +1108,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/egg.png"
     },
     {
-      "name": "Яичный порошок",
-      "proteins": "45",
-      "fats": "37.3",
-      "carbs": "7.1",
-      "kcal": "542",
-      "image": "https://ic.wampi.ru/2023/02/08/egg.png"
-    },
-    {
-      "name": "Сухой белок",
-      "proteins": "73.3",
-      "fats": "1.8",
-      "carbs": "7",
-      "kcal": "336",
-      "image": "https://ic.wampi.ru/2023/02/08/egg.png"
-    },
-    {
-      "name": "Сухой желток",
-      "proteins": "34.2",
-      "fats": "52.2",
-      "carbs": "4.4",
-      "kcal": "623",
-      "image": "https://ic.wampi.ru/2023/02/08/egg.png"
-    },
-    {
       "name": "Яйцо перепелиное",
+      "namEng": "Quail egg",
       "proteins": "11.9",
       "fats": "13.1",
       "carbs": "0.6",
@@ -1474,6 +1118,7 @@
     },
     {
       "name": "Горбуша",
+      "namEng": "Humpback salmon",
       "proteins": "20.5",
       "fats": "6.5",
       "carbs": "0",
@@ -1482,6 +1127,7 @@
     },
     {
       "name": "Камбала",
+      "namEng": "Flatfish",
       "proteins": "16.5",
       "fats": "1.8",
       "carbs": "0",
@@ -1490,6 +1136,7 @@
     },
     {
       "name": "Карась",
+      "namEng": "Crucian carp ",
       "proteins": "17.7",
       "fats": "1.8",
       "carbs": "0",
@@ -1498,6 +1145,7 @@
     },
     {
       "name": "Карп",
+      "namEng": "Carp",
       "proteins": "16",
       "fats": "5.6",
       "carbs": "0",
@@ -1506,6 +1154,7 @@
     },
     {
       "name": "Кета",
+      "namEng": "Chum salmon",
       "proteins": "22",
       "fats": "5.6",
       "carbs": "0",
@@ -1514,6 +1163,7 @@
     },
     {
       "name": "Корюшка",
+      "namEng": "Smelt",
       "proteins": "15.4",
       "fats": "4.5",
       "carbs": "0",
@@ -1522,6 +1172,7 @@
     },
     {
       "name": "Лещ",
+      "namEng": "Bream",
       "proteins": "17.1",
       "fats": "4.1",
       "carbs": "0",
@@ -1530,6 +1181,7 @@
     },
     {
       "name": "Семга",
+      "namEng": "Salmon",
       "proteins": "20.8",
       "fats": "15.1",
       "carbs": "0",
@@ -1537,15 +1189,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/fish.png"
     },
     {
-      "name": "Макрурус",
-      "proteins": "13.2",
-      "fats": "0.8",
-      "carbs": "0",
-      "kcal": "60",
-      "image": "https://ie.wampi.ru/2023/02/08/fish.png"
-    },
-    {
       "name": "Минтай",
+      "namEng": "Walleye pollock",
       "proteins": "15.9",
       "fats": "0.7",
       "carbs": "0",
@@ -1554,6 +1199,7 @@
     },
     {
       "name": "Мойва",
+      "namEng": "Capelin",
       "proteins": "13.4",
       "fats": "11.5",
       "carbs": "0",
@@ -1562,6 +1208,7 @@
     },
     {
       "name": "Навага",
+      "namEng": "Navaga",
       "proteins": "16.1",
       "fats": "1",
       "carbs": "0",
@@ -1570,6 +1217,7 @@
     },
     {
       "name": "Налим",
+      "namEng": "Burbot",
       "proteins": "18.8",
       "fats": "0.6",
       "carbs": "0",
@@ -1578,6 +1226,7 @@
     },
     {
       "name": "Окунь морской",
+      "namEng": "Grouper",
       "proteins": "17.1",
       "fats": "5.2",
       "carbs": "0",
@@ -1586,6 +1235,7 @@
     },
     {
       "name": "Окунь речной",
+      "namEng": "Perch",
       "proteins": "18.5",
       "fats": "0.9",
       "carbs": "0",
@@ -1594,6 +1244,7 @@
     },
     {
       "name": "Осетр",
+      "namEng": "Sturgeon",
       "proteins": "16.4",
       "fats": "10.9",
       "carbs": "0",
@@ -1602,6 +1253,7 @@
     },
     {
       "name": "Палтус",
+      "namEng": "Halibut",
       "proteins": "18.9",
       "fats": "3",
       "carbs": "0",
@@ -1609,47 +1261,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/fish.png"
     },
     {
-      "name": "Путассу",
-      "proteins": "16.1",
-      "fats": "0.9",
-      "carbs": "0",
-      "kcal": "72",
-      "image": "https://ie.wampi.ru/2023/02/08/fish.png"
-    },
-    {
-      "name": "Сазан",
-      "proteins": "18.4",
-      "fats": "5.3",
-      "carbs": "0",
-      "kcal": "121",
-      "image": "https://ie.wampi.ru/2023/02/08/fish.png"
-    },
-    {
-      "name": "Сайра крупная",
-      "proteins": "18.1",
-      "fats": "20.8",
-      "carbs": "0",
-      "kcal": "262",
-      "image": "https://ie.wampi.ru/2023/02/08/fish.png"
-    },
-    {
-      "name": "Сайра мелкая",
-      "proteins": "20.4",
-      "fats": "0.8",
-      "carbs": "0",
-      "kcal": "143",
-      "image": "https://ie.wampi.ru/2023/02/08/fish.png"
-    },
-    {
-      "name": "Салака",
-      "proteins": "17.3",
-      "fats": "5.6",
-      "carbs": "0",
-      "kcal": "121",
-      "image": "https://ie.wampi.ru/2023/02/08/fish.png"
-    },
-    {
       "name": "Сельдь",
+      "namEng": "Herring",
       "proteins": "17.7",
       "fats": "19.5",
       "carbs": "0",
@@ -1657,15 +1270,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/fish.png"
     },
     {
-      "name": "Сиг",
-      "proteins": "19",
-      "fats": "7.5",
-      "carbs": "0",
-      "kcal": "144",
-      "image": "https://ie.wampi.ru/2023/02/08/fish.png"
-    },
-    {
       "name": "Скумбрия",
+      "namEng": "Mackerel",
       "proteins": "18",
       "fats": "9",
       "carbs": "0",
@@ -1674,6 +1280,7 @@
     },
     {
       "name": "Сом",
+      "namEng": "Catfish",
       "proteins": "16.8",
       "fats": "8.5",
       "carbs": "0",
@@ -1681,15 +1288,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/fish.png"
     },
     {
-      "name": "Ставрида",
-      "proteins": "18.5",
-      "fats": "5",
-      "carbs": "0",
-      "kcal": "119",
-      "image": "https://ie.wampi.ru/2023/02/08/fish.png"
-    },
-    {
       "name": "Стерлядь",
+      "namEng": "Sterlet",
       "proteins": "17",
       "fats": "6.1",
       "carbs": "0",
@@ -1698,6 +1298,7 @@
     },
     {
       "name": "Судак",
+      "namEng": "Pikeperch",
       "proteins": "19",
       "fats": "0.8",
       "carbs": "0",
@@ -1706,6 +1307,7 @@
     },
     {
       "name": "Треска",
+      "namEng": "Cod",
       "proteins": "17-May",
       "fats": "0.6",
       "carbs": "0",
@@ -1714,6 +1316,7 @@
     },
     {
       "name": "Тунец",
+      "namEng": "Tuna",
       "proteins": "22.7",
       "fats": "0.7",
       "carbs": "0",
@@ -1721,23 +1324,8 @@
       "image": "https://ie.wampi.ru/2023/02/08/fish.png"
     },
     {
-      "name": "Угольная рыба",
-      "proteins": "13.2",
-      "fats": "11.6",
-      "carbs": "0",
-      "kcal": "158",
-      "image": "https://ie.wampi.ru/2023/02/08/fish.png"
-    },
-    {
-      "name": "Угорь морской",
-      "proteins": "19.1",
-      "fats": "1.9",
-      "carbs": "0",
-      "kcal": "94",
-      "image": "https://ie.wampi.ru/2023/02/08/fish.png"
-    },
-    {
       "name": "Угорь",
+      "namEng": "Eel",
       "proteins": "14.5",
       "fats": "30.5",
       "carbs": "0",
@@ -1746,6 +1334,7 @@
     },
     {
       "name": "Хек",
+      "namEng": "Hake",
       "proteins": "16.6",
       "fats": "2.2",
       "carbs": "0",
@@ -1754,6 +1343,7 @@
     },
     {
       "name": "Щука",
+      "namEng": "Pike",
       "proteins": "18.3",
       "fats": "0.8",
       "carbs": "0",
@@ -1762,6 +1352,7 @@
     },
     {
       "name": "Язь",
+      "namEng": "Ide",
       "proteins": "18.2",
       "fats": "1",
       "carbs": "0",
@@ -1770,6 +1361,7 @@
     },
     {
       "name": "Печень трески",
+      "namEng": "Cod liver",
       "proteins": "4.2",
       "fats": "65.7",
       "carbs": "0",
@@ -1778,6 +1370,7 @@
     },
     {
       "name": "Кальмар",
+      "namEng": "Squids",
       "proteins": "18",
       "fats": "0.3",
       "carbs": "0",
@@ -1786,6 +1379,7 @@
     },
     {
       "name": "Краб",
+      "namEng": "Crab",
       "proteins": "16",
       "fats": "0.5",
       "carbs": "0",
@@ -1794,6 +1388,7 @@
     },
     {
       "name": "Креветка",
+      "namEng": "Shrimps",
       "proteins": "18",
       "fats": "0.8",
       "carbs": "0",
@@ -1802,6 +1397,7 @@
     },
     {
       "name": "Морская капуста",
+      "namEng": "Seaweed",
       "proteins": "0.8",
       "fats": "0.2",
       "carbs": "3",
@@ -1810,6 +1406,7 @@
     },
     {
       "name": "Фундук",
+      "namEng": "Hazel-nut",
       "proteins": "16.1",
       "fats": "66.9",
       "carbs": "9.9",
@@ -1818,6 +1415,7 @@
     },
     {
       "name": "Миндаль",
+      "namEng": "Almond",
       "proteins": "18.6",
       "fats": "57.7",
       "carbs": "13.6",
@@ -1826,6 +1424,7 @@
     },
     {
       "name": "Грецкий орех",
+      "namEng": "Walnut",
       "proteins": "15.2",
       "fats": "61.3",
       "carbs": "10.2",
@@ -1834,6 +1433,7 @@
     },
     {
       "name": "Арахис",
+      "namEng": "Peanut",
       "proteins": "26.3",
       "fats": "45.2",
       "carbs": "9.7",
@@ -1841,7 +1441,8 @@
       "image": "https://ic.wampi.ru/2023/02/08/nuts.png"
     },
     {
-      "name": "Семя подсолнечника",
+      "name": "Семена подсолнечника",
+      "namEng": "Sunflower seeds",
       "proteins": "20.7",
       "fats": "52.9",
       "carbs": "5",
@@ -1850,6 +1451,7 @@
     },
     {
       "name": "Мед",
+      "namEng": "Honey",
       "proteins": "0.8",
       "fats": "0",
       "carbs": "80.3",
@@ -1858,6 +1460,7 @@
     },
     {
       "name": "Зефир",
+      "namEng": "Zephyrus",
       "proteins": "0.8",
       "fats": "0",
       "carbs": "78.3",
@@ -1866,6 +1469,7 @@
     },
     {
       "name": "Мармелад",
+      "namEng": "Fruit jelly",
       "proteins": "4.3",
       "fats": "0.1",
       "carbs": "77.7",
@@ -1874,6 +1478,7 @@
     },
     {
       "name": "Карамель",
+      "namEng": "Caramel",
       "proteins": "0",
       "fats": "0.1",
       "carbs": "77.7",
@@ -1882,6 +1487,7 @@
     },
     {
       "name": "Конфеты шоколадные",
+      "namEng": "Chocolates",
       "proteins": "4.3",
       "fats": "39.5",
       "carbs": "54.2",
@@ -1889,15 +1495,8 @@
       "image": "https://im.wampi.ru/2023/02/08/sweetse245d476ff1ac324.png"
     },
     {
-      "name": "Пастила",
-      "proteins": "0.5",
-      "fats": "0",
-      "carbs": "80.4",
-      "kcal": "305",
-      "image": "https://im.wampi.ru/2023/02/08/sweetse245d476ff1ac324.png"
-    },
-    {
       "name": "Сахар-песок",
+      "namEng": "Sugar",
       "proteins": "0",
       "fats": "0",
       "carbs": "99.5",
@@ -1905,7 +1504,8 @@
       "image": "https://im.wampi.ru/2023/02/08/sweetse245d476ff1ac324.png"
     },
     {
-      "name": "Халва подсолнечная",
+      "name": "Халва",
+      "namEng": "Halva",
       "proteins": "11.6",
       "fats": "29.7",
       "carbs": "54",
@@ -1914,6 +1514,7 @@
     },
     {
       "name": "Шоколад темный",
+      "namEng": "Dark chocolate",
       "proteins": "6.9",
       "fats": "35.3",
       "carbs": "52.6",
@@ -1922,6 +1523,7 @@
     },
     {
       "name": "Шоколад молочный",
+      "namEng": "Milk chocolate",
       "proteins": "6.9",
       "fats": "35.7",
       "carbs": "52.4",
@@ -1929,7 +1531,8 @@
       "image": "https://im.wampi.ru/2023/02/08/sweetse245d476ff1ac324.png"
     },
     {
-      "name": "Вафли с фр-ми начинками",
+      "name": "Вафли",
+      "namEng": "Waffles",
       "proteins": "3.2",
       "fats": "2.8",
       "carbs": "80.9",
@@ -1937,15 +1540,8 @@
       "image": "https://im.wampi.ru/2023/02/08/sweetse245d476ff1ac324.png"
     },
     {
-      "name": "Вафли с жировыми начинками",
-      "proteins": "3.4",
-      "fats": "30.2",
-      "carbs": "64.7",
-      "kcal": "539",
-      "image": "https://im.wampi.ru/2023/02/08/sweetse245d476ff1ac324.png"
-    },
-    {
       "name": "Пирожное трубочка с кремом",
+      "namEng": "Cookie straw with creame",
       "proteins": "1.7",
       "fats": "25.2",
       "carbs": "50.9",
@@ -1953,23 +1549,8 @@
       "image": "https://im.wampi.ru/2023/02/08/sweetse245d476ff1ac324.png"
     },
     {
-      "name": "Пирожное воздушное",
-      "proteins": "3.1",
-      "fats": "16.3",
-      "carbs": "68.5",
-      "kcal": "419",
-      "image": "https://im.wampi.ru/2023/02/08/sweetse245d476ff1ac324.png"
-    },
-    {
-      "name": "Пряники",
-      "proteins": "5.8",
-      "fats": "6.5",
-      "carbs": "71.6",
-      "kcal": "364",
-      "image": "https://im.wampi.ru/2023/02/08/sweetse245d476ff1ac324.png"
-    },
-    {
-      "name": "Торт ассорти",
+      "name": "Торт",
+      "namEng": "Cake",
       "proteins": "4.7",
       "fats": "15",
       "carbs": "36",
@@ -1977,14 +1558,130 @@
       "image": "https://im.wampi.ru/2023/02/08/sweetse245d476ff1ac324.png"
     },
     {
-      "name": "Торт Прага",
-      "proteins": "4.6",
-      "fats": "26.5",
-      "carbs": "65.1",
-      "kcal": "517",
-      "image": "https://im.wampi.ru/2023/02/08/sweetse245d476ff1ac324.png"
+      "name": "Паста карбонара",
+      "namEng": "Pasta Carbonara",
+      "proteins": "16.4",
+      "fats": "18.7",
+      "carbs": "26.8",
+      "kcal": "346.5",
+      "image": "https://ic.wampi.ru/2023/02/13/pasta.png"
+    },
+    {
+      "name": "Паста болоньезе",
+      "namEng": "Pasta Bolognese",
+      "proteins": "7.3",
+      "fats": "8.8",
+      "carbs": "19.1",
+      "kcal": "190.7",
+      "image": "https://ic.wampi.ru/2023/02/13/pasta.png"
+    },
+    {
+      "name": "Паста альфредо",
+      "namEng": "Pasta Alfredo",
+      "proteins": "13",
+      "fats": "9",
+      "carbs": "24",
+      "kcal": "370",
+      "image": "https://ic.wampi.ru/2023/02/13/pasta.png"
+    },
+    {
+      "name": "Борщ",
+      "namEng": "Borshch",
+      "proteins": "3.2",
+      "fats": "4.5",
+      "carbs": "3.8",
+      "kcal": "68",
+      "image": "https://ic.wampi.ru/2023/02/13/soup.png"
+    },
+    {
+      "name": "Томатный суп",
+      "namEng": "Tomato soup",
+      "proteins": "1.1",
+      "fats": "4.7",
+      "carbs": "6",
+      "kcal": "75",
+      "image": "https://ic.wampi.ru/2023/02/13/soup.png"
+    },
+    {
+      "name": "Куриный суп",
+      "namEng": "Chicken soup",
+      "proteins": "45",
+      "fats": "1.3",
+      "carbs": "3.1",
+      "kcal": "42.8",
+      "image": "https://ic.wampi.ru/2023/02/13/soup.png"
+    },
+    {
+      "name": "Щи",
+      "namEng": "Cabbage soup",
+      "proteins": "0.4",
+      "fats": "0",
+      "carbs": "2.2",
+      "kcal": "10.6",
+      "image": "https://ic.wampi.ru/2023/02/13/soup.png"
+    },
+    {
+      "name": "Грибной крем-суп",
+      "namEng": "Mashroom cream soup",
+      "proteins": "2.2",
+      "fats": "1.1",
+      "carbs": "3.6",
+      "kcal": "33.7",
+      "image": "https://ic.wampi.ru/2023/02/13/soup.png"
+    },
+    {
+      "name": "Сырный крем-суп",
+      "namEng": "Cheese cream soup",
+      "proteins": "2.1",
+      "fats": "3.7",
+      "carbs": "3.1",
+      "kcal": "55.1",
+      "image": "https://ic.wampi.ru/2023/02/13/soup.png"
+    },
+    {
+      "name": "Салат Цезарь",
+      "namEng": "Caesar",
+      "proteins": "7.6",
+      "fats": "7.1",
+      "carbs": "3.7",
+      "kcal": "109.7",
+      "image": "https://ic.wampi.ru/2023/02/13/salade.png"
+    },
+    {
+      "name": "Салат Оливье",
+      "namEng": "Russian salade",
+      "proteins": "5.6",
+      "fats": "8.9",
+      "carbs": "6.6",
+      "kcal": "129",
+      "image": "https://ic.wampi.ru/2023/02/13/salade.png"
+    },
+    {
+      "name": "Греческий салат",
+      "namEng": "Greek salade",
+      "proteins": "2.8",
+      "fats": "7.5",
+      "carbs": "3.6",
+      "kcal": "93",
+      "image": "https://ic.wampi.ru/2023/02/13/salade.png"
+    },
+    {
+      "name": "Салат Нисуаз",
+      "namEng": "Nicoise",
+      "proteins": "5.3",
+      "fats": "7.6",
+      "carbs": "4.6",
+      "kcal": "109.2",
+      "image": "https://ic.wampi.ru/2023/02/13/salade.png"
+    },
+    {
+      "name": "Салат Коул Слоу",
+      "namEng": "Cole slaw",
+      "proteins": "1.2",
+      "fats": "0.2",
+      "carbs": "5.6",
+      "kcal": "28.7",
+      "image": "https://ic.wampi.ru/2023/02/13/salade.png"
     }
   ]
 }
-
-
