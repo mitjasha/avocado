@@ -2,6 +2,7 @@ import React from "react";
 import activities from "../../assets/activities.json";
 import ActivityWrapper from "../../components/ActivityWrapper/ActivityWrapper";
 import ActivityPopUpProps from "../../components/ActivityPopUp/ActivityPopUp";
+import BackButton from "../../components/Buttons/BackButton/BackButton";
 import "./ActivityScreen.scss";
 
 export interface ActivityItemProps {
@@ -23,7 +24,10 @@ const ActivityScreen: React.FC = () => {
   return (
     <div className="activity-screen">
       <div className="container">
-        <h1 className="activity-screen__title">Activities</h1>
+        <div className="activity-screen__title-wrapper">
+          <BackButton />
+          <h1 className="activity-screen__title">Activities</h1>
+        </div>
         <p className="activity-screen__subtitle">What did you do today?</p>
         <div className="activity-screen__wrapper">
           {activities.activities.map((item) => {

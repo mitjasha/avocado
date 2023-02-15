@@ -4,7 +4,19 @@
   background-color: $bg-color;
   padding: 20px 0;
 
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    position: relative;
+  }
+
   &__title {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
   }
 
@@ -25,9 +37,15 @@
 }
 
 @media screen and (min-width: $media-tab) {
-  .activity-screen__wrapper {
-    flex-direction: row;
-    gap: 20px;
-    width: 80%;
+  .activity-screen {
+    &__title-wrapper {
+      width: 80%;
+    }
+
+    &__wrapper {
+      flex-direction: row;
+      gap: 20px;
+      width: 80%;
+    }
   }
 }
