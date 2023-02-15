@@ -4,6 +4,7 @@ import BarChartComponent from "../../components/BarChartComponent/BarChartCompon
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
 import minus from "../../assets/svg/minus-light.svg";
 import plus from "../../assets/svg/plus-light.svg";
+import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./ProgressScreen.scss";
 
 const ProgressScreen: React.FC = () => {
@@ -76,13 +77,7 @@ const ProgressScreen: React.FC = () => {
               chartData={Object.values(eatenKcalPerDay)}
               size={200}
             />
-            <button
-              type="button"
-              className="daily-data__btn"
-              onClick={openPopUp}
-            >
-              Update Weight
-            </button>
+            <ButtonTemplate onClick={openPopUp}>Update Weight</ButtonTemplate>
           </div>
         </div>
       </div>
