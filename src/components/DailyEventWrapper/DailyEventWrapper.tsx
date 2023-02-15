@@ -1,8 +1,8 @@
 import React from "react";
 import plus from "../../assets/svg/plus-light.svg";
-import "./DailyEventWrapper.scss";
 import Button from "../Buttons/Button/Button";
 import PlusMinusButton from "../Buttons/PlusMinusButton/PlusMinusButton";
+import "./DailyEventWrapper.scss";
 
 export interface DailyEventWrapperProps {
   title: string;
@@ -54,8 +54,26 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
           </PlusMinusButton>
         )}
 
-        {title !== "Exercise" && title !== "Water" && title !== "Weight" && (
-          <Button to="/event" className="add-event__button">
+        {title === "Breakfast" && (
+          <Button to="/event/breakfast" className="add-event__button">
+            <img src={plus} alt="plus" className="plus-minus-img" />
+          </Button>
+        )}
+
+        {title === "Lunch" && (
+          <Button to="/event/lunch" className="add-event__button">
+            <img src={plus} alt="plus" className="plus-minus-img" />
+          </Button>
+        )}
+
+        {title === "Dinner" && (
+          <Button to="/event/dinner" className="add-event__button">
+            <img src={plus} alt="plus" className="plus-minus-img" />
+          </Button>
+        )}
+
+        {title === "Snack" && (
+          <Button to="/event/snack" className="add-event__button">
             <img src={plus} alt="plus" className="plus-minus-img" />
           </Button>
         )}
