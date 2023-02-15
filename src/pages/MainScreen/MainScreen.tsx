@@ -115,7 +115,7 @@ const MainScreen: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="daily-data__status">now: fasting</div>
+          {/* <div className="daily-data__status">now: fasting</div> */}
         </div>
       </div>
       <div className="container">
