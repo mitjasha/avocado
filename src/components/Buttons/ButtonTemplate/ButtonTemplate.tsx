@@ -16,7 +16,7 @@ const ButtonTemplate: React.FC<ButtonTemplateProps> = ({
   onClick,
   ...attrs
 }) => {
-  const classes = `${"button"} ${className}`;
+  const classes = `${"basic-button"} ${className}`;
   return (
     <button type="button" className={classes} {...attrs}>
       {children}
