@@ -20,7 +20,7 @@ const EventScreen: React.FC<TypeOfMeal> = ({ type }) => {
         <div className="event__screen__search">
           <div className="event__screen__search__icon" />
           <RegInput
-            type="text"
+            type="search"
             placeholder="What have you eaten?"
             className="event__screen__input"
           />
