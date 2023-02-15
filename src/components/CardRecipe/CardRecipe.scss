@@ -17,8 +17,8 @@
 
   &__bg__like {
     background-color: rgba(255, 255, 255, 0.5);
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     position: absolute;
     border-radius: 7px;
     top: 10px;
@@ -30,15 +30,14 @@
   }
 
   &__like {
-    width: 21px;
-    height: 18px;
+    width: 18px;
+    height: 16px;
     background-image: url("../../assets/svg/heart_recipe-light.svg");
     background-repeat: no-repeat;
     background-size: cover;
 
     &:hover {
       background-image: url("../../assets/svg/heart_recipe.svg");
-
       cursor: pointer;
     }
   }
