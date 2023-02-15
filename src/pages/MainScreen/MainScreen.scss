@@ -130,6 +130,13 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  &__control-btn {
+    display: flex;
+    width: 70px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .glass {
