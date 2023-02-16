@@ -12,6 +12,7 @@ export interface DailyEventWrapperProps {
   className?: string;
   minusButton?: JSX.Element;
   curWeight?: JSX.Element;
+  handleClick?: () => void;
 }
 
 const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
@@ -22,6 +23,7 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
   className,
   minusButton,
   curWeight,
+  handleClick,
 }) => {
   const events = ["activity", "breakfast", "lunch", "dinner", "snack"];
   return (
@@ -41,7 +43,11 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
           const itemTitle = item[0].toUpperCase() + item.slice(1);
           return (
             title === itemTitle && (
-              <Button to={`/event/${item}`} className="add-event__button">
+              <Button
+                to={`/event/${item}`}
+                className="add-event__button"
+                key={item}
+              >
                 <img src={plus} alt="plus" className="plus-minus-img" />
               </Button>
             )
@@ -55,7 +61,7 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
         )}
 
         {title === "Weight" && (
-          <PlusMinusButton>
+          <PlusMinusButton onClick={handleClick}>
             <img src={plus} alt="plus" className="plus-minus-img" />
           </PlusMinusButton>
         )}

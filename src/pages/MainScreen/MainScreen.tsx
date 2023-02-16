@@ -33,7 +33,23 @@ const MainScreen: React.FC = () => {
   const recomProtein = 68;
   const eatenProtein = 43;
   const availableProtein = recomProtein - eatenProtein;
-  const curWeight = 77.0;
+  let curWeight = 77.0;
+
+  const upWeight = () => {
+    curWeight += 0.1;
+    const weightDisplay = document.querySelector(
+      ".curr-weight-display",
+    ) as HTMLElement;
+    weightDisplay.textContent = `${curWeight.toFixed(1).toString()} kg`;
+  };
+
+  const downWeight = () => {
+    curWeight -= 0.1;
+    const weightDisplay = document.querySelector(
+      ".curr-weight-display",
+    ) as HTMLElement;
+    weightDisplay.textContent = `${curWeight.toFixed(1).toString()} kg`;
+  };
 
   return (
     <div className="main-screen">
@@ -169,12 +185,13 @@ const MainScreen: React.FC = () => {
               title="Weight"
               recommended="Target: 70.0 kg"
               className="daily-events__item daily-events__item_weight"
+              handleClick={upWeight}
               minusButton={
-                <PlusMinusButton>
+                <PlusMinusButton onClick={downWeight}>
                   <img src={minus} alt="minus" className="plus-minus-img" />
                 </PlusMinusButton>
               }
-              curWeight=<p style={{ fontSize: "26px" }}>{curWeight} kg</p>
+              curWeight=<p className="curr-weight-display">{curWeight} kg</p>
             />
           </div>
         </div>
