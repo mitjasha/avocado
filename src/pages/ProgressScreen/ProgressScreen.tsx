@@ -1,6 +1,7 @@
 import React from "react";
 import ChartComponent from "../../components/ChartComponent/ChartComponent";
 import BarChartComponent from "../../components/BarChartComponent/BarChartComponent";
+import BasicModalComponent from "../../components/Modals/BasicModalComponent/BasicModalComponent";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
 import minus from "../../assets/svg/minus-light.svg";
 import plus from "../../assets/svg/plus-light.svg";
@@ -25,18 +26,12 @@ const ProgressScreen: React.FC = () => {
   };
   const openPopUp = () => {
     const popUp = document.querySelector(
-      ".update-weight-pop-up",
+      ".pop-up-wrapper",
     ) as HTMLButtonElement;
     popUp.style.opacity = "1";
     popUp.style.visibility = "visible";
   };
-  const closePopUp = () => {
-    const popUp = document.querySelector(
-      ".update-weight-pop-up",
-    ) as HTMLButtonElement;
-    popUp.style.opacity = "0";
-    popUp.style.visibility = "hidden";
-  };
+
   return (
     <div className="progress-screen">
       <h1 className="progress-screen__title">Your Progress</h1>
@@ -86,26 +81,17 @@ const ProgressScreen: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="update-weight-pop-up">
-        <div className="pop-up">
-          <button
-            type="button"
-            className="pop-up__close"
-            aria-label="close"
-            onClick={closePopUp}
-          />
-          <h3 className="pop-up__title">Current Weight</h3>
-          <div className="pop-up__update">
-            <PlusMinusButton>
-              <img src={minus} alt="minus" className="plus-minus-img" />
-            </PlusMinusButton>
-            <div className="pop-up__weight">67 kg</div>
-            <PlusMinusButton>
-              <img src={plus} alt="plus" className="plus-minus-img" />
-            </PlusMinusButton>
-          </div>
+      <BasicModalComponent title="Current Weight">
+        <div className="pop-up__update">
+          <PlusMinusButton>
+            <img src={minus} alt="minus" className="plus-minus-img" />
+          </PlusMinusButton>
+          <div className="pop-up__weight">67 kg</div>
+          <PlusMinusButton>
+            <img src={plus} alt="plus" className="plus-minus-img" />
+          </PlusMinusButton>
         </div>
-      </div>
+      </BasicModalComponent>
     </div>
   );
 };
