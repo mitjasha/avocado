@@ -78,5 +78,12 @@ export interface Event {
   name: string;
   startTime: string;
   description: string;
+}
+
+export interface EventResponse extends Event {
+  id: string;
+}
+
+export interface EventRequest extends Event {
   id: string;
 }
