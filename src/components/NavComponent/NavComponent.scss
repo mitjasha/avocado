@@ -22,11 +22,13 @@
     &__item {
       cursor: pointer;
       padding-left: 30px;
-      text-transform: uppercase;
-    }
-
-    &__link {
       font-weight: 300;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $dark-green;
+        transition: 0.4s all ease;
+      }
     }
   }
 
