@@ -49,6 +49,31 @@ export interface UserProfileResponse {
   id: "367646dd-0b02-4787-bf32-335ad602baa8";
 }
 
+export interface Recipe {
+  name: string;
+  calories: number;
+  proteins: number;
+  carbs: number;
+  fats: number;
+  author: string;
+  ingredients: object[];
+  steps: string | (() => string);
+  time: 90;
+  category: string[];
+  kitchen: string;
+  favorite: boolean;
+  vegetarian: boolean;
+  imageURL: string;
+}
+
+export interface RecipeResponse extends Recipe {
+  id: string;
+}
+
+export interface RecipeRequest extends Recipe {
+  id: string;
+}
+
 export interface Event {
   name: string;
   startTime: string;
