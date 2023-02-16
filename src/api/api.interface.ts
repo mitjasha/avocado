@@ -130,3 +130,17 @@ export interface EventMealResponse extends Event {
 export interface EventMealRequest extends Event {
   id: string;
 }
+
+export interface EventActivity {
+  startTime: Date;
+  endTime: Date;
+  description: string;
+}
+
+export interface EventActivityResponse extends Event {
+  id: string;
+}
+
+export interface EventActivityRequest extends Event {
+  id: string;
+}
