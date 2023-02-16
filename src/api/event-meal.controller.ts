@@ -3,15 +3,17 @@ import {
   EventMeal,
   EventMealResponse,
   EventMealRequest,
+  ProductRequest,
 } from "./api.interface";
 
 const eventMealController = {
-  addEvent: (eventMeal: EventMeal) =>
-    post<EventMealResponse>("/event-meal", JSON.stringify(eventMeal)),
+  addEvent: (eventMeal: EventMeal, product: ProductRequest) =>
+    post<EventMealResponse>(
+      `/event-meal/addEvent/${product.id}`,
+      JSON.stringify(eventMeal),
+    ),
   delEvent: (eventMeal: EventMealRequest) => del(`/event-meal/${eventMeal.id}`),
   getAllEvents: () => get<EventMealResponse[]>("/event-meal"),
-  getEventById: (eventMealID: string) =>
-    get<EventMealResponse>(`/event-meal/${eventMealID}`),
   updateEvent: (eventMeal: EventMealRequest) =>
     put(`/event-meal/${eventMeal.id}`, JSON.stringify(eventMeal)),
 };
