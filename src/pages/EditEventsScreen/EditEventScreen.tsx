@@ -2,7 +2,6 @@ import React from "react";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
 import minus from "../../assets/svg/minus-light.svg";
 import plus from "../../assets/svg/plus-light.svg";
-import "../MainScreen/MainScreen.scss";
 import DailyEventEditWrapper from "../../components/DailyEventEditWrapper/DailyEventEditWrapper";
 import DailyEventEditData from "../../components/DailyEventEditData/DailyEventEditData";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
