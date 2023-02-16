@@ -22,17 +22,6 @@ import EditProfileDataScreen, {
 import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 
 const App: React.FC = () => {
-  const UserData = {
-    username: "string",
-    firstName: "string",
-    lastName: "string",
-    age: "23",
-    gender: "string",
-    currentWeight: "string",
-    height: "string",
-    goal: "string",
-    targetWeight: "string",
-  };
   return (
     <>
       <Header />
@@ -67,7 +56,6 @@ const App: React.FC = () => {
           />
           <Route path="/edit-event" element={<EditEventScreen />} />
         </Routes>
-        <EditProfileDataScreen data={UserData} />
       </main>
       <Footer />
     </>
