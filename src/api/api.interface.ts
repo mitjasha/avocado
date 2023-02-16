@@ -74,6 +74,35 @@ export interface RecipeRequest extends Recipe {
   id: string;
 }
 
+export interface Product {
+  name: string;
+  calories_100g: number;
+  proteins_100g: number;
+  carbs_100g: number;
+  fat_100g: number;
+}
+
+export interface ProductRequest extends Product {
+  id: string;
+}
+
+export interface ProductResponse extends Product {
+  id: string;
+}
+
+export interface Activity {
+  name: string;
+  calories_per_min: number;
+}
+
+export interface ActivityRequest extends Activity {
+  id: string;
+}
+
+export interface ActivityResponse extends Activity {
+  id: string;
+}
+
 export interface Event {
   name: string;
   startTime: string;
