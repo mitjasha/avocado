@@ -87,3 +87,17 @@ export interface EventResponse extends Event {
 export interface EventRequest extends Event {
   id: string;
 }
+
+export interface EventMeal {
+  startTime: string;
+  weight: number;
+  description: string;
+}
+
+export interface EventMealResponse extends Event {
+  id: string;
+}
+
+export interface EventMealRequest extends Event {
+  id: string;
+}
