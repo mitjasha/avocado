@@ -39,17 +39,11 @@ const App: React.FC = () => {
             element={<CategoriesRecipesScreen />}
           />
           <Route path="/recipes/recipe" element={<RecipeScreen />} />
-          <Route path="/activity" element={<ActivityScreen />} />
+          <Route path="/event/activity" element={<ActivityScreen />} />
           <Route path="/product" element={<ProductCardScreen />} />
           <Route path="/about" element={<AboutUsScreen />} />
           <Route path="/settings" element={<SettingScreen />} />
-          <Route
-            path="/event/breakfast"
-            element={<EventScreen type="Breakfast" />}
-          />
-          <Route path="/event/lunch" element={<EventScreen type="Lunch" />} />
-          <Route path="/event/dinner" element={<EventScreen type="Dinner" />} />
-          <Route path="/event/snack" element={<EventScreen type="Snack" />} />
+          <Route path="/event/:type" element={<EventScreen />} />
           <Route
             path="/edit-profile"
             element={<EditProfileDataScreen data={UserDataExample} />}

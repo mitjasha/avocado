@@ -23,6 +23,7 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
   minusButton,
   curWeight,
 }) => {
+  const events = ["activity", "breakfast", "lunch", "dinner", "snack"];
   return (
     <div className={className}>
       <div className="item-info">
@@ -36,11 +37,16 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
       <div className="add-remove-events">
         {minusButton}
         {curWeight}
-        {title === "Exercise" && (
-          <Button to="/activity" className="add-event__button">
-            <img src={plus} alt="plus" className="plus-minus-img" />
-          </Button>
-        )}
+        {events.map((item) => {
+          const itemTitle = item[0].toUpperCase() + item.slice(1);
+          return (
+            title === itemTitle && (
+              <Button to={`/event/${item}`} className="add-event__button">
+                <img src={plus} alt="plus" className="plus-minus-img" />
+              </Button>
+            )
+          );
+        })}
 
         {title === "Water" && (
           <PlusMinusButton>
@@ -52,30 +58,6 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
           <PlusMinusButton>
             <img src={plus} alt="plus" className="plus-minus-img" />
           </PlusMinusButton>
-        )}
-
-        {title === "Breakfast" && (
-          <Button to="/event/breakfast" className="add-event__button">
-            <img src={plus} alt="plus" className="plus-minus-img" />
-          </Button>
-        )}
-
-        {title === "Lunch" && (
-          <Button to="/event/lunch" className="add-event__button">
-            <img src={plus} alt="plus" className="plus-minus-img" />
-          </Button>
-        )}
-
-        {title === "Dinner" && (
-          <Button to="/event/dinner" className="add-event__button">
-            <img src={plus} alt="plus" className="plus-minus-img" />
-          </Button>
-        )}
-
-        {title === "Snack" && (
-          <Button to="/event/snack" className="add-event__button">
-            <img src={plus} alt="plus" className="plus-minus-img" />
-          </Button>
         )}
       </div>
     </div>

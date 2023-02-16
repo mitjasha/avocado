@@ -158,7 +158,7 @@ const MainScreen: React.FC = () => {
           <div className="daily-events__exercise">
             <h3 className="daily-events__title">Daily exercise</h3>
             <DailyEventWrapper
-              title="Exercise"
+              title="Activity"
               recommended="Last: Run 1 km"
               className="daily-events__item daily-events__item_exercise"
             />
