@@ -51,6 +51,7 @@ export interface Product {
   proteins_100g: number;
   carbs_100g: number;
   fat_100g: number;
+  category: string;
 }
 
 export interface ProductRequest extends Product {
