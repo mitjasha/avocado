@@ -12,7 +12,7 @@ import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
 import CategoriesRecipesScreen from "./pages/CategoriesRecipesScreen/CategoriesRecipesScreen";
 import RecipeScreen from "./pages/RecipeScreen/RecipeScreen";
 import ActivityScreen from "./pages/ActivityScreen/ActivityScreen";
-import ProductCardScreen from "./pages/ProductCardScreen/ProductCardScreen";
+import { EventCardProductModal } from "./components/EventCardProduct/EventCardProduct";
 import AboutUsScreen from "./pages/AboutUsScreen/AboutUsScreen";
 import SettingScreen from "./pages/SettingScreen/SettingScreen";
 import EventScreen from "./pages/EventScreen/EventScreen";
@@ -22,6 +22,15 @@ import EditProfileDataScreen, {
 import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 
 const App: React.FC = () => {
+  const Product = {
+    name: "Лук",
+    namEng: "Onion",
+    proteins: "25",
+    fats: "36",
+    carbs: "14",
+    kcal: "458",
+    image: "url",
+  };
   return (
     <>
       <Header />
@@ -40,7 +49,6 @@ const App: React.FC = () => {
           />
           <Route path="/recipes/recipe" element={<RecipeScreen />} />
           <Route path="/activity" element={<ActivityScreen />} />
-          <Route path="/product" element={<ProductCardScreen />} />
           <Route path="/about" element={<AboutUsScreen />} />
           <Route path="/settings" element={<SettingScreen />} />
           <Route path="/event" element={<EventScreen type="breakfast" />} />
@@ -50,6 +58,7 @@ const App: React.FC = () => {
           />
           <Route path="/edit-event" element={<EditEventScreen />} />
         </Routes>
+        <EventCardProductModal data={Product} />
       </main>
       <Footer />
     </>

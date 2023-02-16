@@ -1,4 +1,6 @@
 import React from "react";
+import BasicModalComponent from "../Modals/BasicModalComponent/BasicModalComponent";
+import RegInput from "../RegInput/RegInput";
 import "./EventCardProduct.scss";
 
 interface Product {
@@ -29,47 +31,39 @@ const EventCardProduct: React.FC<ProductProps> = ({ data }) => {
 
 export const EventCardProductModal: React.FC<ProductProps> = ({ data }) => {
   return (
-    <div className="card__container__modal__bg">
-      <div className="card__container__modal container">
-        <div className="modal__close" />
-        <h2 className="modal__h2">{data.namEng}</h2>
-        <div
-          className="modal__image"
-          style={{ backgroundImage: `url("${data.image}")` }}
-        />
-        <div className="modal__kcal">
-          <input className="modal__input" type="number" placeholder="100" />
-          <span className="modal__span">g</span>
-          <div className="modal__to__image" />
-          <div className="modal__span__disabled">{data.kcal}</div>
-          <span className="modal__span">kcal</span>
+    <BasicModalComponent title={data.namEng}>
+      <div className="modal__kcal">
+        <div>
+          <RegInput className="modal__input" type="number" placeholder="100" />
+          <span className="modal__span">&nbsp;g</span>
         </div>
-        <div className="modal__main">
-          <div className="modal__main__block">
-            <span className="modal__span">Proteins</span>
-            <div className="modal__span__disabled modal__proteins">
-              {data.proteins}
-            </div>
-            <span className="modal__span">g</span>
-          </div>
-          <div className="modal__main__block">
-            <span className="modal__span">Fats</span>
-            <div className="modal__span__disabled modal__fats">{data.fats}</div>
-            <span className="modal__span">g</span>
-          </div>
-          <div className="modal__main__block">
-            <span className="modal__span">Carbs</span>
-            <div className="modal__span__disabled modal__carbs">
-              {data.carbs}
-            </div>
-            <span className="modal__span">g</span>
-          </div>
-        </div>
-        <button type="button" className="modal__button">
-          Add
-        </button>
+        <div className="modal__to__image" />
+        <div className="modal__span__disabled">{data.kcal}</div>
+        <span className="modal__span">kcal</span>
       </div>
-    </div>
+      <div className="modal__main">
+        <div className="modal__main__block">
+          <span className="modal__span">Proteins</span>
+          <div className="modal__span__disabled modal__proteins">
+            {data.proteins}
+          </div>
+          <span className="modal__span">g</span>
+        </div>
+        <div className="modal__main__block">
+          <span className="modal__span">Fats</span>
+          <div className="modal__span__disabled modal__fats">{data.fats}</div>
+          <span className="modal__span">g</span>
+        </div>
+        <div className="modal__main__block">
+          <span className="modal__span">Carbs</span>
+          <div className="modal__span__disabled modal__carbs">{data.carbs}</div>
+          <span className="modal__span">g</span>
+        </div>
+      </div>
+      <button type="button" className="modal__button">
+        Add
+      </button>
+    </BasicModalComponent>
   );
 };
 
