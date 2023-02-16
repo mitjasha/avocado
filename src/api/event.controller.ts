@@ -3,10 +3,9 @@ import { Event, EventResponse, EventRequest } from "./api.interface";
 
 const eventsController = {
   addEvent: (event: Event) =>
-    post<EventResponse>("/event", JSON.stringify(event)),
+    post<EventResponse>("/event/addEvent", JSON.stringify(event)),
   delEvent: (event: EventRequest) => del(`/event/${event.id}`),
-  getAllEvents: () => get<EventResponse[]>("/event"),
-  getEventById: (eventID: string) => get<EventResponse>(`/event/${eventID}`),
+  getAllEvents: () => get<EventResponse[]>("/event/getAllEvents"),
   updateEvent: (event: EventRequest) =>
     put(`/event/${event.id}`, JSON.stringify(event)),
 };
