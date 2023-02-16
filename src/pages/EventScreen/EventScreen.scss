@@ -38,6 +38,13 @@
     width: 100%;
     font-weight: 400;
     font-size: 15px;
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
   }
 
   &__main {
@@ -90,6 +97,7 @@
     width: 500px;
     margin: auto;
   }
+
   .event__screen__main {
     width: 100%;
     display: flex;

@@ -13,28 +13,23 @@
       "ingredients": [
         {
           "quantity": "1",
-          "name": "beef roast",
-          "type": "Meat"
+          "name": "beef roast"
         },
         {
           "quantity": "1 package",
-          "name": "brown gravy mix",
-          "type": "Baking"
+          "name": "brown gravy mix"
         },
         {
           "quantity": "1 package",
-          "name": "dried Italian salad dressing mix",
-          "type": "Condiments"
+          "name": "dried Italian salad dressing mix"
         },
         {
           "quantity": "1 package",
-          "name": "dry ranch dressing mix",
-          "type": "Condiments"
+          "name": "dry ranch dressing mix"
         },
         {
           "quantity": "1/2 cup",
-          "name": "water",
-          "type": "Drinks"
+          "name": "water"
         }
       ],
       "steps": [
@@ -59,18 +54,15 @@
       "ingredients": [
         {
           "quantity": "1 lb",
-          "name": " asparagus",
-          "type": "Produce"
+          "name": " asparagus"
         },
         {
           "quantity": "1 1/2 tbsp",
-          "name": "olive oil",
-          "type": "Condiments"
+          "name": "olive oil"
         },
         {
           "quantity": "1/2 tsp",
-          "name": "kosher salt",
-          "type": "Baking"
+          "name": "kosher salt"
         }
       ],
       "steps": [
@@ -101,28 +93,23 @@
       "ingredients": [
         {
           "quantity": "1 quart",
-          "name": "beef broth",
-          "type": "Misc"
+          "name": "beef broth"
         },
         {
           "quantity": "1 cup",
-          "name": "dried green lentils",
-          "type": "Misc"
+          "name": "dried green lentils"
         },
         {
           "quantity": "1/2 cup",
-          "name": "basmati rice",
-          "type": "Misc"
+          "name": "basmati rice"
         },
         {
           "quantity": "1 tsp",
-          "name": "curry powder",
-          "type": "Condiments"
+          "name": "curry powder"
         },
         {
           "quantity": "1 tsp",
-          "name": "salt",
-          "type": "Condiments"
+          "name": "salt"
         }
       ],
       "steps": [
@@ -148,43 +135,35 @@
       "ingredients": [
         {
           "quantity": "5 teaspoons",
-          "name": "yeast",
-          "type": "Baking"
+          "name": "yeast"
         },
         {
           "quantity": "5 cups",
-          "name": "flour",
-          "type": "Baking"
+          "name": "flour"
         },
         {
           "quantity": "4 tablespoons",
-          "name": "vegetable oil",
-          "type": "Baking"
+          "name": "vegetable oil"
         },
         {
           "quantity": "2 tablespoons",
-          "name": "sugar",
-          "type": "Baking"
+          "name": "sugar"
         },
         {
           "quantity": "2 teaspoons",
-          "name": "salt",
-          "type": "Baking"
+          "name": "salt"
         },
         {
           "quantity": "2 cups",
-          "name": "hot water",
-          "type": "Misc"
+          "name": "hot water"
         },
         {
           "quantity": "1/4 cup",
-          "name": "pizza sauce",
-          "type": "Misc"
+          "name": "pizza sauce"
         },
         {
           "quantity": "3/4 cup",
-          "name": "mozzarella cheese",
-          "type": "Dairy"
+          "name": "mozzarella cheese"
         }
       ],
       "steps": [
@@ -212,23 +191,19 @@
       "ingredients": [
         {
           "quantity": "200g",
-          "name": "plain flour",
-          "type": "Baking"
+          "name": "plain flour"
         },
         {
           "quantity": "3",
-          "name": "eggs",
-          "type": "Dairy"
+          "name": "eggs"
         },
         {
           "quantity": "300ml",
-          "name": "milk",
-          "type": "Dairy"
+          "name": "milk"
         },
         {
           "quantity": "3 tbsp",
-          "name": "vegetable oil",
-          "type": "Condiments"
+          "name": "vegetable oil"
         }
       ],
       "steps": [
@@ -258,63 +233,51 @@
       "ingredients": [
         {
           "quantity": "1 cup",
-          "name": "raisins",
-          "type": "Produce"
+          "name": "raisins"
         },
         {
           "quantity": "1",
-          "name": "cup water",
-          "type": "Drinks"
+          "name": "cup water"
         },
         {
           "quantity": "3/4 cup",
-          "name": "shortening",
-          "type": "Baking"
+          "name": "shortening"
         },
         {
           "quantity": "1 1/2 cups",
-          "name": "sugar",
-          "type": "Baking"
+          "name": "sugar"
         },
         {
           "quantity": "2 1/2 cups",
-          "name": "flour",
-          "type": "Baking"
+          "name": "flour"
         },
         {
           "quantity": "1 tsp.",
-          "name": "soda",
-          "type": "Baking"
+          "name": "soda"
         },
         {
           "quantity": "1 tsp.",
-          "name": "salt",
-          "type": "Baking"
+          "name": "salt"
         },
         {
           "quantity": "1 tsp.",
-          "name": "cinnamon",
-          "type": "Baking"
+          "name": "cinnamon"
         },
         {
           "quantity": "1/2 tsp.",
-          "name": "baking powder",
-          "type": "Baking"
+          "name": "baking powder"
         },
         {
           "quantity": "1/2 tsp.",
-          "name": "cloves",
-          "type": "Baking"
+          "name": "cloves"
         },
         {
           "quantity": "2 cups",
-          "name": "oats",
-          "type": "Baking"
+          "name": "oats"
         },
         {
           "quantity": "1/2 cup",
-          "name": "chopped nuts",
-          "type": "Baking"
+          "name": "chopped nuts"
         }
       ],
       "steps": [
@@ -345,53 +308,43 @@
       "ingredients": [
         {
           "quantity": "2-1/2 cups",
-          "name": "rolled oats, (not instant)",
-          "type": "Baking"
+          "name": "rolled oats, (not instant)"
         },
         {
           "quantity": "1-1/4 cups",
-          "name": "all-purpose flour",
-          "type": "Baking"
+          "name": "all-purpose flour"
         },
         {
           "quantity": "1 tbsp",
-          "name": "grated orange rind",
-          "type": "Produce"
+          "name": "grated orange rind"
         },
         {
           "quantity": "1/4 tsp",
-          "name": "salt",
-          "type": "Baking"
+          "name": "salt"
         },
         {
           "quantity": "1 cup",
-          "name": "cold butter, cubed",
-          "type": "Baking"
+          "name": "cold butter, cubed"
         },
         {
           "quantity": "3/4 cup",
-          "name": "packed brown sugar",
-          "type": "Baking"
+          "name": "packed brown sugar"
         },
         {
           "quantity": "3 cups",
-          "name": "fresh blueberries",
-          "type": "Produce"
+          "name": "fresh blueberries"
         },
         {
           "quantity": "1/2 cup",
-          "name": "granulated sugar",
-          "type": "Baking"
+          "name": "granulated sugar"
         },
         {
           "quantity": "1/3 cup",
-          "name": "orange juice",
-          "type": "Produce"
+          "name": "orange juice"
         },
         {
           "quantity": "4 tsp",
-          "name": "cornstarch",
-          "type": "Baking"
+          "name": "cornstarch"
         }
       ],
       "steps": [
@@ -420,63 +373,51 @@
       "ingredients": [
         {
           "quantity": "3",
-          "name": "skinless, boneless chicken breasts, halved lengthwise",
-          "type": "Meat"
+          "name": "skinless, boneless chicken breasts, halved lengthwise"
         },
         {
           "quantity": "1/2 cup",
-          "name": "mayonnaise",
-          "type": "Baking"
+          "name": "mayonnaise"
         },
         {
           "quantity": "1 tbsp",
-          "name": "lemon zest",
-          "type": "Produce"
+          "name": "lemon zest"
         },
         {
           "quantity": "1 tbsp ",
-          "name": "lemon juice",
-          "type": "Produce"
+          "name": "lemon juice"
         },
         {
           "quantity": "1 1/2 tsp",
-          "name": "curry powder",
-          "type": "Baking"
+          "name": "curry powder"
         },
         {
           "quantity": "1/4 tsp",
-          "name": "salt",
-          "type": "Baking"
+          "name": "salt"
         },
         {
           "quantity": "2",
-          "name": "ripe mangoes, diced",
-          "type": "Produce"
+          "name": "ripe mangoes, diced"
         },
         {
           "quantity": "1/4 cup",
-          "name": "dried cranberries",
-          "type": "Produce"
+          "name": "dried cranberries"
         },
         {
           "quantity": "2",
-          "name": "green onions, thinly sliced",
-          "type": "Produce"
+          "name": "green onions, thinly sliced"
         },
         {
           "quantity": "1",
-          "name": "celery stalk, finely chopped",
-          "type": "Produce"
+          "name": "celery stalk, finely chopped"
         },
         {
           "quantity": "6 leaves",
-          "name": "Boston lettuce",
-          "type": "Produce"
+          "name": "Boston lettuce"
         },
         {
           "quantity": "6",
-          "name": "English muffins, toasted",
-          "type": "Misc"
+          "name": "English muffins, toasted"
         }
       ],
       "steps": [
@@ -492,6 +433,457 @@
       ],
       "time": 6,
       "imageURL": "https://thecozyapron.com/wp-content/uploads/2013/05/curried-chicken-salad_05-03-13_1_ca.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Vegetable Latkes",
+      "category": "breakfast",
+      "calories": "405.2",
+      "proteins": "9.1 g",
+      "carbs": "45.4 g",
+      "fats": "22.1 g",
+      "author": "Ben Robertson",
+      "kitchen": "French",
+      "ingredients": [
+        {
+          "quantity": "3/16 dash",
+          "name": "salt"
+        },
+        {
+          "quantity": "3/16 dash",
+          "name": "pepper"
+        },
+        {
+          "quantity": "1/3",
+          "name": "large carrots"
+        },
+        {
+          "quantity": "2 tbsp",
+          "name": "wheat flour"
+        },
+        {
+          "quantity": "3/16 cup slices",
+          "name": "parsnips"
+        },
+        {
+          "quantity": "1/2 leek",
+          "name": "leeks"
+        },
+        {
+          "quantity": "1/3 tbsp",
+          "name": "vegetable"
+        },
+        {
+          "quantity": "",
+          "name": "oil"
+        },
+        {
+          "quantity": "1/2 extra large",
+          "name": "egg"
+        },
+        {
+          "quantity": "3/16 tsp",
+          "name": "baking powder"
+        },
+        {
+          "quantity": "1/3",
+          "name": "Potato large"
+        }
+      ],
+      "steps": [
+        "Peel and shred carrots, parsnip and potatoes.",
+        "Finely chop leeks using only the white and pale green parts.",
+        "Break eggs into bowl and beat well.",
+        "In a colander, rinse the parsnip and potatoes under cold water.",
+        "Pat dry thoroughly with paper towels; transfer to a mixing bowl.",
+        "Stir in the carrots, leeks (or onion), flour, baking powder, eggs, salt, and pepper.",
+        "Heat the oil in a large skillet over medium-high heat.",
+        "Drop in large spoonfuls of the batter, flattening each with the back of the spoon.",
+        "Cook, turning once, until brown and crisp, 2 to 3 minutes a side.",
+        "Transfer the latkes to a paper towellined baking sheet in a 200F oven until serving. "
+      ],
+      "time": 50,
+      "imageURL": "https://ic.wampi.ru/2023/02/15/image0098da2508f45d9e.png"
+    },
+    {
+      "id": 9,
+      "name": "Peach Pesto and Mozzarella Quesadilla",
+      "category": "dinner",
+      "calories": "339.5",
+      "proteins": "41.3 g",
+      "carbs": "58.5 g",
+      "fats": "20.6 g",
+      "author": "Cara Linch",
+      "kitchen": "Mexican",
+      "ingredients": [
+        {
+          "quantity": "1",
+          "name": "tortilla"
+        },
+        {
+          "quantity": "1 tbsp",
+          "name": "Basil Pesto"
+        },
+        {
+          "quantity": "1/2",
+          "name": "medium Peaches"
+        },
+        {
+          "quantity": "1 oz",
+          "name": "Mozzarella cheese"
+        },
+        {
+          "quantity": "3/4 tsp",
+          "name": "Vegetable oil"
+        }
+      ],
+      "steps": [
+        "Preheat the skillet on stovetop to medium heat.",
+        "Pour a little of the oil into the pan.",
+        "Spread the pesto evenly on one side of the tortilla.",
+        "Slice peaches and mozzarella thin and add them on top of the pesto.",
+        "Top each with remaining tortilla and press together.",
+        "Place quesadillas in pan (one at a time if cooking more than one).",
+        "Cook for 6-8 minutes, carefully flipping once halfway thorough until cheese is melted.",
+        "Remove from grill and cut the quesadillas into quarters."
+      ],
+      "time": 43,
+      "imageURL": "https://ie.wampi.ru/2023/02/15/peach-pesto-quesadilla.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Avocado Pesto Pasta",
+      "category": "dinner",
+      "calories": "938",
+      "proteins": "25 g",
+      "carbs": "112 g",
+      "fats": "52 g",
+      "author": "Scott Davison",
+      "kitchen": "Itailan",
+      "ingredients": [
+        {
+          "quantity": "4oz",
+          "name": "Whole wheat pasta"
+        },
+        {
+          "quantity": "1",
+          "name": "Avocado"
+        },
+        {
+          "quantity": "2 cloves, minced",
+          "name": "Garlic"
+        },
+        {
+          "quantity": "1 cup",
+          "name": "Spinach"
+        },
+        {
+          "quantity": "1 oz (19 halves per)",
+          "name": "Pecans"
+        },
+        {
+          "quantity": "1/4 cup leaves, whole",
+          "name": "Basil"
+        },
+        {
+          "quantity": "1 tbsp",
+          "name": "Lemon juice"
+        },
+        {
+          "quantity": "1 tsp",
+          "name": "Salt"
+        },
+        {
+          "quantity": "1 tsp",
+          "name": "Pepper"
+        }
+      ],
+      "steps": [
+        "Cook the pasta according to package instructions. Drain and reserve 1-2 cups pasta water.",
+        "While pasta is cooking, add the rest of the ingredients to your blender and blend until it turns into a smooth sauce. Start with ¾ cup of pasta water and add more as needed to get the consistency you want.",
+        "Toss the pasta with the sauce in a bowl and serve immediately.",
+        "This sauce is best served the day it is made, as it uses avocados which begin to brown. Enjoy!"
+      ],
+      "time": 40,
+      "imageURL": "https://ie.wampi.ru/2023/02/15/avo_pesto_pasta.png"
+    },
+    {
+      "id": 11,
+      "name": "Spicy Tempeh Hash",
+      "category": "breakfast",
+      "calories": "396",
+      "proteins": "24 g",
+      "carbs": "36 g",
+      "fats": "20 g",
+      "author": "Kira Flinn",
+      "kitchen": "American",
+      "ingredients": [
+        {
+          "quantity": "4oz",
+          "name": "Tempeh"
+        },
+        {
+          "quantity": "1/2 tbsp",
+          "name": "Vegetable oil"
+        },
+        {
+          "quantity": "1/2 cup, chopped",
+          "name": "Onion"
+        },
+        {
+          "quantity": "1/2 cup, sliced",
+          "name": "Red bell pepper"
+        },
+        {
+          "quantity": "1/2 cup, diced",
+          "name": "Potato"
+        },
+        {
+          "quantity": "1 tsp",
+          "name": "Paprika"
+        },
+        {
+          "quantity": "1/4 tsp",
+          "name": "Garlic powder"
+        },
+        {
+          "quantity": "1/4 tsp",
+          "name": "Onion powder"
+        },
+        {
+          "quantity": "1/2 pinch",
+          "name": "Cayenne pepper"
+        }
+      ],
+      "steps": [
+        "Crumble tempeh and spread in bottom of large nonstick skillet.",
+        "Add 1/2 cup water, cover, and bring to a boil. Reduce heat to medium-low, and simmer 5 minutes. Drain in colander, and wipe out skillet.",
+        "Add oil to skillet, and heat over medium-high heat. Return tempeh to pan along with onion, bell pepper, and potatoes. Sauté 5 to 7 minutes, or until beginning to brown.",
+        "Sprinkle with paprika, garlic powder, onion powder, and cayenne pepper. Sauté 7 to 8 minutes, or until potatoes are browned and tender."
+      ],
+      "time": 30,
+      "imageURL": "https://im.wampi.ru/2023/02/15/spicy-tempeh-hash.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Apple Granola Cookies",
+      "category": "lunch",
+      "calories": "146",
+      "proteins": "4 g",
+      "carbs": "16 g",
+      "fats": "8 g",
+      "author": "Carl Fillips",
+      "kitchen": "American",
+      "ingredients": [
+        {
+          "quantity": "1/3 large",
+          "name": "Apples"
+        },
+        {
+          "quantity": "2/3 tbsp",
+          "name": "Peanut butter"
+        },
+        {
+          "quantity": "2/3 tbsp",
+          "name": "Granola"
+        },
+        {
+          "quantity": "1/3 tbsp, whole",
+          "name": "Flaxseed"
+        }
+      ],
+      "steps": [
+        "Slice your apple into cookie shapes.",
+        "Put peanut butter on one flat side of the apple slice.",
+        "Add granola with flax seeds on top. Enjoy!"
+      ],
+      "time": 20,
+      "imageURL": "https://im.wampi.ru/2023/02/15/Apple-Raisin-Oatmeal-Cookies.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Cheese On Toast",
+      "category": "lunch",
+      "calories": "257",
+      "proteins": "12 g",
+      "carbs": "18 g",
+      "fats": "15 g",
+      "author": "Den Wagner",
+      "kitchen": "American",
+      "ingredients": [
+        {
+          "quantity": "1 slice large",
+          "name": "Multi-grain bread"
+        },
+        {
+          "quantity": "1 slice (1 oz)",
+          "name": "Cheddar cheese"
+        },
+        {
+          "quantity": "1 tsp",
+          "name": "Butter"
+        }
+      ],
+      "steps": [
+        "Preheat oven to 450 degrees F.",
+        "Butter bread and place in a baking tray.",
+        "Bake for 3 minutes.",
+        "Top with slices of cheese and completely cover bread.",
+        "Bake for another 5 minutes. Bring halves together to form a sandwich and enjoy!"
+      ],
+      "time": 15,
+      "imageURL": "https://ie.wampi.ru/2023/02/15/cheese-on-toast.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Baked Eggs in Ham",
+      "category": "breakfast",
+      "calories": "272",
+      "proteins": "32 g",
+      "carbs": "2 g",
+      "fats": "14 g",
+      "author": "Jane Corner",
+      "kitchen": "American",
+      "ingredients": [
+        {
+          "quantity": "4 slice oval",
+          "name": "Sliced ham"
+        },
+        {
+          "quantity": "2 extra large",
+          "name": "Egg"
+        },
+        {
+          "quantity": "2 dash",
+          "name": "Salt"
+        },
+        {
+          "quantity": "2 dash",
+          "name": "Pepper"
+        },
+        {
+          "quantity": "1/4 tsp",
+          "name": "Paprika"
+        }
+      ],
+      "steps": [
+        "Preheat oven to 375 degrees F.",
+        "Line a muffin tin with thick slices of ham. ",
+        "Crack an egg into each muffin spot, and season with salt, pepper, and paprika.",
+        "Bake for 20 minutes.",
+        " Allow to cool for two to three minutes, remove slowly from muffin tin."
+      ],
+      "time": 30,
+      "imageURL": "https://im.wampi.ru/2023/02/15/delish-ham-and-egg-cups.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Chicken Parmesan",
+      "category": "dinner",
+      "calories": "748",
+      "proteins": "72 g",
+      "carbs": "62 g",
+      "fats": "21 g",
+      "author": "Nora Cambel",
+      "kitchen": "Itailan",
+      "ingredients": [
+        {
+          "quantity": "1 breast, bone and skin removed",
+          "name": "Chicken breast"
+        },
+        {
+          "quantity": "1/4 dash",
+          "name": "Salt"
+        },
+        {
+          "quantity": "1/4 dash",
+          "name": "Pepper"
+        },
+        {
+          "quantity": "2 tbsp",
+          "name": "Bread crumbs"
+        },
+        {
+          "quantity": "1/4 large",
+          "name": "Egg"
+        },
+        {
+          "quantity": "1 tsp",
+          "name": "Butter"
+        },
+        {
+          "quantity": "1/2 cup",
+          "name": "Pasta sauce"
+        },
+        {
+          "quantity": "1 oz",
+          "name": "Mozzarella cheese"
+        },
+        {
+          "quantity": "1/4 tsp",
+          "name": "Parmesan cheese"
+        },
+        {
+          "quantity": "2 oz",
+          "name": "Spaghetti"
+        }
+      ],
+      "steps": [
+        "Bring water to a boil and cook spaghetti according to box directions.",
+        "Pound chicken to flatten. Salt and pepper to taste.",
+        "Dip chicken in egg; then in bread crumbs.",
+        "Fry in butter in hot skillet, turning and browning for 10 minutes or until chicken is done. Remove from skillet.",
+        "Add spaghetti sauce to skillet. Heat thoroughly.",
+        "Add chicken. Place slices of mozzarella on top of chicken. Sprinkle with parmesan.",
+        "Cover and cook until cheese is melted. Serve with spaghetti."
+      ],
+      "time": 40,
+      "imageURL": "https://im.wampi.ru/2023/02/15/delish-chicken-parm.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Tuna Patties",
+      "category": "dinner",
+      "calories": "355",
+      "proteins": "43 g",
+      "carbs": "21 g",
+      "fats": "8 g",
+      "author": "Alice Flakers",
+      "kitchen": "Russian",
+      "ingredients": [
+        {
+          "quantity": "1/4 tsp",
+          "name": "Garlic powder"
+        },
+        {
+          "quantity": "1/4 dash",
+          "name": "Salt"
+        },
+        {
+          "quantity": "1 tbsp chopped",
+          "name": "Onions"
+        },
+        {
+          "quantity": "1 can",
+          "name": "Tuna"
+        },
+        {
+          "quantity": "1/4 cup",
+          "name": "Bread crumbs"
+        },
+        {
+          "quantity": "1 extra large",
+          "name": "Egg"
+        }
+      ],
+      "steps": [
+        "Spray skillet with cooking spray and heat on medium.",
+        "Mix all ingredients together well.",
+        "Spoon mixture onto heated skillet. Divide the mixture to make six patties or a size that makes it easy to flip them over with a spatula without breaking.",
+        "Cook patties until both sides are a light brown, firm and there is no egg flowing out of patty."
+      ],
+      "time": 30,
+      "imageURL": "https://ic.wampi.ru/2023/02/15/tuna--patties.jpg"
     }
   ]
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import RegInput from "../RegInput/RegInput";
 import "./DailyEventEditData.scss";
 
 export interface DailyEventData {
@@ -14,12 +15,12 @@ const DailyEventEditData: React.FC<DailyEventData> = ({ type, data }) => {
           <div className="container__info__text">
             <span className="info__name">{item[0]}</span>
             <div className="input__container">
-              <input
-                className="info__input"
+              <RegInput
                 type="number"
                 placeholder={item[1]}
+                className="info__input"
               />
-              <span>{type === "meal" ? "g" : "m"}</span>
+              <span>{type === "meal" ? "g" : "min"}</span>
             </div>
             <span className="info__name">{item[2]}kcal</span>
           </div>
