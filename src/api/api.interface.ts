@@ -94,11 +94,23 @@ export interface EventMeal {
   description: string;
 }
 
-export interface EventMealResponse extends Event {
+export interface EventMealResponse extends EventMeal {
   id: string;
+  user: {
+    id: string;
+    username: string;
+  };
+  product: {
+    id: string;
+    name: string;
+    calories_100g: number;
+    proteins_100g: number;
+    carbs_100g: number;
+    fat_100g: number;
+  };
 }
 
-export interface EventMealRequest extends Event {
+export interface EventMealRequest extends EventMeal {
   id: string;
 }
 
@@ -108,11 +120,20 @@ export interface EventActivity {
   description: string;
 }
 
-export interface EventActivityResponse extends Event {
+export interface EventActivityResponse extends EventActivity {
   id: string;
+  user: {
+    id: string;
+    username: string;
+  };
+  activity: {
+    id: string;
+    name: string;
+    calories_per_min: 7;
+  };
 }
 
-export interface EventActivityRequest extends Event {
+export interface EventActivityRequest extends EventActivity {
   id: string;
 }
 
