@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./EditProfileDataScreen.scss";
 
 interface UserData {
@@ -186,8 +187,7 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
           </label>
         </div>
       </div>
-
-      <div className="accept__button">Save changes</div>
+      <ButtonTemplate>Save changes</ButtonTemplate>
     </div>
   );
 };

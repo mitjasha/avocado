@@ -1,10 +1,11 @@
 import React from "react";
-import "../../index.scss";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
 import minus from "../../assets/svg/minus-light.svg";
-import "../MainScreen/MainScreen.scss";
 import DailyEventEditWrapper from "../../components/DailyEventEditWrapper/DailyEventEditWrapper";
 import DailyEventEditData from "../../components/DailyEventEditData/DailyEventEditData";
+import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
+import "../MainScreen/MainScreen.scss";
+import "../../index.scss";
 
 const EditEventScreen = () => {
   const getWaterConsumed = () => {
@@ -98,7 +99,10 @@ const EditEventScreen = () => {
           />
         </div>
       </div>
-      <div className="event__changes__btn">Save changes</div>
+      <ButtonTemplate className="event__changes__btn">
+        Save changes
+      </ButtonTemplate>
+      {/* <div className="event__changes__btn">Save changes</div> */}
     </div>
   );
 };

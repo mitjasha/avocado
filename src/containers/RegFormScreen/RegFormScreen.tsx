@@ -2,6 +2,7 @@ import React from "react";
 import RegInput from "../../components/RegInput/RegInput";
 import hideIcon from "../../assets/svg/reg-hide.svg";
 import showIcon from "../../assets/svg/reg-show.svg";
+import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./RegFormScreen.scss";
 
 const RegFormScreen: React.FC = () => {
@@ -62,9 +63,7 @@ const RegFormScreen: React.FC = () => {
           />
         </div>
       </div>
-      <button type="submit" className="continue-btn" disabled>
-        Continue
-      </button>
+      <ButtonTemplate disabled>Continue</ButtonTemplate>
       <p className="rights">
         By continuing, you agree to the <a href="/">Terms of Services</a> &{" "}
         <a href="/">Privacy Policy</a>

@@ -134,24 +134,7 @@
 }
 
 .event__changes__btn {
-  width: 200px;
-  height: 40px;
-  background-color: $dark-color;
-  color: $light-color;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  position: relative;
-  bottom: 10px;
-
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    transition: 0.5s;
-    color: $middle-green;
-  }
+  margin-bottom: 20px;
 }
 
 @media screen and (min-width: $media-tab-pt) {
