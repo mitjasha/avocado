@@ -10,6 +10,8 @@
       "fats": "11 g",
       "author": "Emma Khan",
       "kitchen": "French",
+      "favourites": "false",
+      "vegetarian": "false",
       "ingredients": [
         {
           "quantity": "1",
@@ -56,6 +58,8 @@
       "fats": "11 g",
       "author": "Jhon Walter",
       "kitchen": "India",
+      "favourites": "false",
+      "vegetarian": "true",
       "ingredients": [
         {
           "quantity": "1 lb",
@@ -86,7 +90,7 @@
         "They are great plain, but sometimes I serve them with a light vinaigrette if we need something acidic to balance out our meal."
       ],
       "time": 10,
-      "imageURL": "https://www.twopeasandtheirpod.com/wp-content/uploads/2021/03/roasted-asparagus-6-650x975.jpg"
+      "imageURL": "https://ie.wampi.ru/2023/02/16/imageab88fe9069b0a5cd.png"
     },
     {
       "id": 2,
@@ -98,6 +102,8 @@
       "fats": "1.7 g",
       "author": "Jack Green",
       "kitchen": "Chinese",
+      "favourites": "false",
+      "vegetarian": "false",
       "ingredients": [
         {
           "quantity": "1 quart",
@@ -145,6 +151,8 @@
       "fats": "9 g",
       "author": "Micheal Krisp",
       "kitchen": "American",
+      "favourites": "false",
+      "vegetarian": "false",
       "ingredients": [
         {
           "quantity": "5 teaspoons",
@@ -209,6 +217,8 @@
       "fats": "15 g",
       "author": "Ann Baker",
       "kitchen": "American",
+      "favourites": "false",
+      "vegetarian": "false",
       "ingredients": [
         {
           "quantity": "200g",
@@ -255,6 +265,8 @@
       "fats": "18 g",
       "author": "Ben Parker",
       "kitchen": "German",
+      "favourites": "false",
+      "vegetarian": "true",
       "ingredients": [
         {
           "quantity": "1 cup",
@@ -330,7 +342,7 @@
         "About 6 1/2 dozen cookies."
       ],
       "time": 23,
-      "imageURL": "https://copykat.com/wp-content/uploads/2021/12/Old-Fashioned-Oatmeal-Cookies-Photo-1.jpg"
+      "imageURL": "https://im.wampi.ru/2023/02/16/image388bbbfed292826d.png"
     },
     {
       "id": 6,
@@ -342,6 +354,8 @@
       "fats": "12 g",
       "author": "Kim Con",
       "kitchen": "American",
+      "favourites": "false",
+      "vegetarian": "true",
       "ingredients": [
         {
           "quantity": "2-1/2 cups",
@@ -417,6 +431,8 @@
       "fats": "24 g",
       "author": "Alaster Franklin",
       "kitchen": "Chinese",
+      "favourites": "false",
+      "vegetarian": "false",
       "ingredients": [
         {
           "quantity": "3",
