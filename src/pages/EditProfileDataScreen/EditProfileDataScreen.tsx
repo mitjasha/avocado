@@ -1,4 +1,6 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
+import RegInput from "../../components/RegInput/RegInput";
 import "./EditProfileDataScreen.scss";
 
 interface UserData {
@@ -48,32 +50,29 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
           <div className="edit-profile__info">
             <label htmlFor="username">
               Username:
-              <input
-                className="edit-profile__input"
-                style={{ marginTop: "10px" }}
+              <RegInput
                 type="text"
-                id="username"
                 placeholder={data.username}
+                className="edit-profile__input"
+                id="username"
               />
             </label>
             <label htmlFor="firstname">
               First Name:
-              <input
-                className="edit-profile__input"
-                style={{ marginTop: "10px" }}
+              <RegInput
                 type="text"
-                id="firstname"
                 placeholder={data.firstName}
+                className="edit-profile__input"
+                id="firstName"
               />
             </label>
             <label htmlFor="lastname">
               Last Name:
-              <input
-                className="edit-profile__input"
-                style={{ marginTop: "10px" }}
+              <RegInput
                 type="text"
-                id="lastname"
                 placeholder={data.lastName}
+                className="edit-profile__input"
+                id="lastName"
               />
             </label>
           </div>
@@ -82,12 +81,12 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
           className="edit-profile__info"
           style={{ width: "360px", flexDirection: "row" }}
         >
-          <div className="gender__container">
+          <div className="item__container">
             Gender:
-            <div className="radio__container">
+            <div className="item__container">
               <label
                 htmlFor="gender"
-                className="gender__container"
+                className="item__container"
                 style={{ width: "65px" }}
               >
                 <input
@@ -100,8 +99,8 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                 Male
               </label>
             </div>
-            <div className="radio__container">
-              <label htmlFor="gender" className="gender__container">
+            <div className="item__container">
+              <label htmlFor="gender" className="item__container">
                 <input
                   className="edit-profile__input__radio"
                   name="gender"
@@ -113,20 +112,18 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
               </label>
             </div>
           </div>
-          <label htmlFor="age" className="age__container">
+          <label htmlFor="age" className="item__container">
             Age:
-            <input
-              className="edit-profile__input"
-              style={{ width: "50px", marginLeft: "10px" }}
-              defaultValue={Number(data.age)}
+            <RegInput
               type="number"
-              id="age"
               placeholder={data.age}
+              className="edit-profile__input"
+              id="age"
               maxLength={3}
               minLength={1}
             />
           </label>
-          <div className="goal__container">
+          <div className="item__container">
             <label htmlFor="goal">
               Goal:
               <select className="select__container" id="goal">
@@ -142,46 +139,46 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
               </select>
             </label>
           </div>
-          <label htmlFor="currentWeight" className="body__container">
+          <label htmlFor="currentWeight" className="item__container">
             Current weight:
             <div>
-              <input
+              <RegInput
                 type="number"
-                style={{ width: "50px" }}
-                className="edit-profile__input"
                 placeholder={data.currentWeight}
-                defaultValue={Number(data.currentWeight)}
+                className="edit-profile__input"
                 id="currentWeight"
+                maxLength={3}
+                minLength={2}
               />
-              kg
+              &nbsp;kg
             </div>
           </label>
-          <label htmlFor="targetWeight" className="body__container">
+          <label htmlFor="targetWeight" className="item__container">
             Target weight:
             <div>
-              <input
+              <RegInput
                 type="number"
-                style={{ width: "50px" }}
-                className="edit-profile__input"
                 placeholder={data.targetWeight}
-                defaultValue={Number(data.targetWeight)}
+                className="edit-profile__input"
                 id="targetWeight"
+                maxLength={3}
+                minLength={2}
               />
-              kg
+              &nbsp;kg
             </div>
           </label>
-          <label htmlFor="height" className="body__container">
-            Current height:
+          <label htmlFor="height" className="item__container">
+            Height:
             <div>
-              <input
+              <RegInput
                 type="number"
-                style={{ width: "50px" }}
-                className="edit-profile__input"
                 placeholder={data.height}
-                defaultValue={Number(data.height)}
+                className="edit-profile__input"
                 id="height"
+                maxLength={3}
+                minLength={2}
               />
-              cm
+              &nbsp;cm
             </div>
           </label>
         </div>
