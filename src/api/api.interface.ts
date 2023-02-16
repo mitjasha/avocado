@@ -20,35 +20,6 @@ export interface UserRegistrationResponse {
   };
 }
 
-export interface UserProfileCreate {
-  firstName: string;
-  lastName: string;
-  gender: "MALE";
-  birth: "2021-09-10";
-  weight: string;
-  height: number;
-  goal: "Lose weight";
-  targetWeight: string;
-  photo: string;
-}
-
-export interface UserProfileResponse {
-  ffirstName: string;
-  lastName: string;
-  gender: "MALE";
-  birth: "2021-09-10";
-  weight: string;
-  height: number;
-  goal: "Lose weight";
-  targetWeight: string;
-  photo: "";
-  user: {
-    id: "c01f6231-c510-4952-981e-bccc0e05eb94";
-    username: "mitjasha";
-  };
-  id: "367646dd-0b02-4787-bf32-335ad602baa8";
-}
-
 export interface Recipe {
   name: string;
   calories: number;
@@ -58,7 +29,7 @@ export interface Recipe {
   author: string;
   ingredients: object[];
   steps: string | (() => string);
-  time: 90;
+  time: number;
   category: string[];
   kitchen: string;
   favorite: boolean;
@@ -143,4 +114,40 @@ export interface EventActivityResponse extends Event {
 
 export interface EventActivityRequest extends Event {
   id: string;
+}
+
+export interface Profile {
+  firstName: string;
+  lastName: string;
+  gender: EGender;
+  birth: string;
+  weight: string;
+  height: number;
+  goal: EGoal;
+  targetWeight: string;
+  photo: string;
+}
+
+export interface ProfileRequest extends Profile {
+  id: string;
+}
+
+export interface ProfileResponse extends Profile {
+  id: string;
+  user: {
+    id: string;
+    username: string;
+  };
+}
+
+export enum EGoal {
+  LOSE = "Lose weight",
+  MAINTAIN = "Maintain weight",
+  GAIN = "Gain weight",
+}
+
+export enum EGender {
+  MALE = "MALE",
+  FEMALE = "FEMALE",
+  NAN = "NaN",
 }
