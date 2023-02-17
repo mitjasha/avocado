@@ -4,6 +4,11 @@
   background-color: $bg-color;
 }
 
+.edit-event__screen {
+  background-color: $bg-color;
+  width: 100%;
+}
+
 .daily-data {
   background-color: $middle-green;
   padding-bottom: 20px;
@@ -125,6 +130,13 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  &__control-btn {
+    display: flex;
+    width: 70px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .glass {
@@ -134,24 +146,7 @@
 }
 
 .event__changes__btn {
-  width: 200px;
-  height: 40px;
-  background-color: $dark-color;
-  color: $light-color;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  position: relative;
-  bottom: 10px;
-
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    transition: 0.5s;
-    color: $middle-green;
-  }
+  margin-bottom: 20px;
 }
 
 .curr-weight-display {

@@ -5,6 +5,7 @@ import BackButton from "../../components/Buttons/BackButton/BackButton";
 import "./CategoriesRecipesScreen.scss";
 
 const CategoriesRecipesScreen: React.FC = () => {
+  const sortingList = ["Popular", "Recent", "Veg", "Quick"];
   return (
     <div className="categories__recipes__screen">
       <div className="container">
@@ -21,10 +22,13 @@ const CategoriesRecipesScreen: React.FC = () => {
               Recipes
             </span>
             <ul className="categories__header__ul">
-              <li className="categories__header__li">Popular</li>
-              <li className="categories__header__li">Recent</li>
-              <li className="categories__header__li">Veg</li>
-              <li className="categories__header__li">Quick</li>
+              {sortingList.map((item) => {
+                return (
+                  <li className="categories__header__li" key={item}>
+                    {item}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </header>

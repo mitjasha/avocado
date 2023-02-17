@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
 import RegInput from "../../components/RegInput/RegInput";
+import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./EditProfileDataScreen.scss";
 
 interface UserData {
@@ -184,9 +185,8 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
             </label>
           </div>
         </div>
-
-        <div className="accept__button">Save changes</div>
       </div>
+      <ButtonTemplate>Save changes</ButtonTemplate>
     </div>
   );
 };
