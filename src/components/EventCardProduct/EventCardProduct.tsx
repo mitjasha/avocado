@@ -68,80 +68,92 @@ export const EventCardProductModal: React.FC<ProductProps> = ({ data }) => {
 };
 
 export const EventCardProductAdd: React.FC = () => {
+  const addProdutFields = [
+    "Category",
+    "Name",
+    "100 g",
+    "Proteins",
+    "Fats",
+    "Carbs",
+  ];
+  const productCategories = [
+    "dairy",
+    "pastries",
+    "oils",
+    "sauces",
+    "grains",
+    "vegetables",
+    "fruits and berries",
+    "dried fruits",
+    "beans",
+    "mushrooms",
+    "meat",
+    "sausages",
+    "smoked meat",
+    "fish and seafood",
+    "nuts",
+    "sweets",
+    "pasta",
+    "soup",
+    "salad",
+  ];
   return (
-    <div className="card__container__modal__bg">
-      <div className="card__container__modal container">
-        <div className="modal__close" />
-        <h2 className="modal__h2">Add new product</h2>
-        <div className="add__containter">
-          <div className="add__param">
-            <span>Category:</span>
-            <span>Name:</span>
-            <span>100 g:</span>
-            <span>Proteins:</span>
-            <span>Fats:</span>
-            <span>Carbs:</span>
-          </div>
-          <div className="add__values">
-            <select className="add__select">
-              <option>milk</option>
-              <option>bakery</option>
-              <option>oil/butter</option>
-              <option>porrige</option>
-              <option>vegetable</option>
-              <option>fruit</option>
-              <option>dried fruit</option>
-              <option>bean</option>
-              <option>meat</option>
-              <option>sausage</option>
-              <option>fish</option>
-              <option>nut</option>
-              <option>candy</option>
-            </select>
-            <input
-              className="add__input add__text"
-              type="text"
-              placeholder="enter a name"
+    <BasicModalComponent title="Add new product">
+      <div className="add__containter">
+        <div className="add__param">
+          {addProdutFields.map((item) => {
+            return <p key={item}>{`${item}:`}</p>;
+          })}
+        </div>
+        <div className="add__values">
+          <select className="add__select">
+            {productCategories.map((item) => {
+              return <option key={item}>{item}</option>;
+            })}
+          </select>
+          <RegInput
+            className="add__input"
+            type="text"
+            placeholder="Enter a name"
+          />
+          <div className="add__input__container">
+            <RegInput
+              className="add__input"
+              type="number"
+              placeholder="Kcal per 100 g"
             />
-            <div className="add__input__container">
-              <input
-                className="add__input add__number"
-                type="number"
-                placeholder="kcal per 100 g"
-              />
-              <span>kcal</span>
-            </div>
-            <div className="add__input__container">
-              <input
-                className="add__input add__number"
-                type="number"
-                placeholder="proteins per 100 g"
-              />
-              <span>g</span>
-            </div>
-            <div className="add__input__container">
-              <input
-                className="add__input add__number"
-                type="number"
-                placeholder="fats per 100 g"
-              />
-              <span>g</span>
-            </div>
-            <div className="add__input__container">
-              <input
-                className="add__input add__number"
-                type="number"
-                placeholder="carbs per 100 g"
-              />
-              <span>g</span>
-            </div>
+            <span>&nbsp;kcal</span>
+          </div>
+          <div className="add__input__container">
+            <RegInput
+              className="add__input"
+              type="number"
+              placeholder="Proteins per 100 g"
+            />
+            <span>&nbsp;g</span>
+          </div>
+          <div className="add__input__container">
+            <RegInput
+              className="add__input"
+              type="number"
+              placeholder="Fats per 100 g"
+            />
+            <span>&nbsp;g</span>
+          </div>
+          <div className="add__input__container">
+            <RegInput
+              className="add__input"
+              type="number"
+              placeholder="Carbs per 100 g"
+            />
+            <span>&nbsp;g</span>
           </div>
         </div>
-        <button type="button" className="modal__button">
-          Add
-        </button>
       </div>
-    </div>
+      <button type="button" className="modal__button">
+        Add
+      </button>
+    </BasicModalComponent>
   );
 };
 

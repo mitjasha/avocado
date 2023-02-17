@@ -136,24 +136,28 @@
 .add {
   &__containter {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    height: 80%;
+    width: 300px;
+    margin: auto;
+    padding-bottom: 20px;
   }
 
   &__param {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-left: 10px;
+    align-items: flex-start;
+
+    & p {
+      margin: 0;
+    }
   }
 
   &__values {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     padding-right: 10px;
-    width: 60%;
+    gap: 10px;
   }
 
   &__text {
@@ -174,27 +178,15 @@
   }
 
   &__input {
-    border: 2px solid $middle-green;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    text-indent: 10%;
-    -moz-border-radius: 10px;
-    -khtml-border-radius: 10px;
-    background: #fafdf8 !important;
-    outline: none;
     height: 27px;
-    max-width: 100%;
-    font-weight: 400;
-    font-size: 15px;
-    color: #aeaeae;
+    width: 130px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
 
     &__container {
       display: flex;
       align-items: center;
     }
-  }
-
-  &__number {
-    width: 80%;
   }
 }
