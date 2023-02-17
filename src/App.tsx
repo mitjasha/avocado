@@ -39,11 +39,11 @@ const App: React.FC = () => {
             element={<CategoriesRecipesScreen />}
           />
           <Route path="/recipes/recipe" element={<RecipeScreen />} />
-          <Route path="/activity" element={<ActivityScreen />} />
+          <Route path="/event/activity" element={<ActivityScreen />} />
           <Route path="/product" element={<ProductCardScreen />} />
           <Route path="/about" element={<AboutUsScreen />} />
           <Route path="/settings" element={<SettingScreen />} />
-          <Route path="/event" element={<EventScreen type="Breakfast" />} />
+          <Route path="/event/:type" element={<EventScreen />} />
           <Route
             path="/edit-profile"
             element={<EditProfileDataScreen data={UserDataExample} />}

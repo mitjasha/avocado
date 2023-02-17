@@ -1,8 +1,8 @@
 import React from "react";
 import plus from "../../assets/svg/plus-light.svg";
-import "./DailyEventWrapper.scss";
 import Button from "../Buttons/Button/Button";
 import PlusMinusButton from "../Buttons/PlusMinusButton/PlusMinusButton";
+import "./DailyEventWrapper.scss";
 
 export interface DailyEventWrapperProps {
   title: string;
@@ -12,6 +12,7 @@ export interface DailyEventWrapperProps {
   className?: string;
   minusButton?: JSX.Element;
   curWeight?: JSX.Element;
+  handleClick?: () => void;
 }
 
 const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
@@ -22,7 +23,9 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
   className,
   minusButton,
   curWeight,
+  handleClick,
 }) => {
+  const events = ["activity", "breakfast", "lunch", "dinner", "snack"];
   return (
     <div className={className}>
       <div className="item-info">
@@ -36,11 +39,20 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
       <div className="add-remove-events">
         {minusButton}
         {curWeight}
-        {title === "Exercise" && (
-          <Button to="/activity" className="add-event__button">
-            <img src={plus} alt="plus" className="plus-minus-img" />
-          </Button>
-        )}
+        {events.map((item) => {
+          const itemTitle = item[0].toUpperCase() + item.slice(1);
+          return (
+            title === itemTitle && (
+              <Button
+                to={`/event/${item}`}
+                className="add-event__button"
+                key={item}
+              >
+                <img src={plus} alt="plus" className="plus-minus-img" />
+              </Button>
+            )
+          );
+        })}
 
         {title === "Water" && (
           <PlusMinusButton>
@@ -49,15 +61,9 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
         )}
 
         {title === "Weight" && (
-          <PlusMinusButton>
+          <PlusMinusButton onClick={handleClick}>
             <img src={plus} alt="plus" className="plus-minus-img" />
           </PlusMinusButton>
-        )}
-
-        {title !== "Exercise" && title !== "Water" && title !== "Weight" && (
-          <Button to="/event" className="add-event__button">
-            <img src={plus} alt="plus" className="plus-minus-img" />
-          </Button>
         )}
       </div>
     </div>

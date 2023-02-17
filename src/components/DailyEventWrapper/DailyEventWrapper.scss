@@ -104,8 +104,7 @@ h4,
   cursor: pointer;
 
   &:hover {
-    width: 35px;
-    height: 35px;
+    transform: scale(1.1);
     transition: 0.4s all ease;
   }
 }
