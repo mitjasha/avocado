@@ -29,44 +29,6 @@ const EventCardProduct: React.FC<ProductProps> = ({ data }) => {
   );
 };
 
-export const EventCardProductModal: React.FC<ProductProps> = ({ data }) => {
-  return (
-    <BasicModalComponent title={data.namEng}>
-      <div className="modal__kcal">
-        <div>
-          <RegInput className="modal__input" type="number" placeholder="100" />
-          <span className="modal__span">&nbsp;g</span>
-        </div>
-        <div className="modal__to__image" />
-        <div className="modal__span__disabled">{data.kcal}</div>
-        <span className="modal__span">kcal</span>
-      </div>
-      <div className="modal__main">
-        <div className="modal__main__block">
-          <span className="modal__span">Proteins</span>
-          <div className="modal__span__disabled modal__proteins">
-            {data.proteins}
-          </div>
-          <span className="modal__span">g</span>
-        </div>
-        <div className="modal__main__block">
-          <span className="modal__span">Fats</span>
-          <div className="modal__span__disabled modal__fats">{data.fats}</div>
-          <span className="modal__span">g</span>
-        </div>
-        <div className="modal__main__block">
-          <span className="modal__span">Carbs</span>
-          <div className="modal__span__disabled modal__carbs">{data.carbs}</div>
-          <span className="modal__span">g</span>
-        </div>
-      </div>
-      <button type="button" className="modal__button">
-        Add
-      </button>
-    </BasicModalComponent>
-  );
-};
-
 export const EventCardProductAdd: React.FC = () => {
   const addProdutFields = [
     "Category",
