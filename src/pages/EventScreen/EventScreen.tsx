@@ -2,14 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import products from "../../assets/products.json";
 import RegInput from "../../components/RegInput/RegInput";
-import EventCardProduct from "../../components/EventCardProduct/EventCardProduct";
+import ProductCard from "../../components/ProductCard/ProductCard";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import "./EventScreen.scss";
 import "../../index.scss";
-
-// interface TypeOfMeal {
-//   type: string;
-// }
 
 const EventScreen: React.FC = () => {
   const { type } = useParams();
@@ -37,10 +33,7 @@ const EventScreen: React.FC = () => {
         </div>
         <div className="event__screen__main">
           {products.products.map((item) => (
-            <EventCardProduct
-              data={item}
-              key={products.products.indexOf(item)}
-            />
+            <ProductCard data={item} key={products.products.indexOf(item)} />
           ))}
         </div>
       </div>

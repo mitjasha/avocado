@@ -1,11 +1,11 @@
 import React from "react";
-import "./ActivityPopUp.scss";
+import "./ActivityModal.scss";
 
-interface ActivityPopUpProps {
+interface ActivityModalProps {
   name: string;
 }
 
-const ActivityPopUp: React.FC<ActivityPopUpProps> = ({ name }) => {
+const ActivityModal: React.FC<ActivityModalProps> = ({ name }) => {
   const closeActivityPopUp = () => {
     const popUp = document.querySelector(
       ".activity-popup",
@@ -27,4 +27,4 @@ const ActivityPopUp: React.FC<ActivityPopUpProps> = ({ name }) => {
     </div>
   );
 };
-export default ActivityPopUp;
+export default ActivityModal;
