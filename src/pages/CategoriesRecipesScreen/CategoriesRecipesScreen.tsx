@@ -8,235 +8,86 @@ import "./CategoriesRecipesScreen.scss";
 
 const CategoriesRecipesScreen: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const filter = searchParams.get("filter");
-  const sortBy = searchParams.get("sortBy");
+  // setSearchParams({
+  //   favourite: "false",
+  //   vegetarian: "false",
+  //   time: "false",
+  //   kcal: "false",
+  // });
 
-  const vegFilter = () => {
-    if (searchParams.get("sortBy") === "kcal") {
-      setSearchParams({ filter: "vegetarian", sortBy: "kcal" });
-      const newContainer = (
-        <div className="container categories__main">
-          {recipes.recipes
-            .filter(
-              (item) =>
-                item.category === "appetizers" && item.vegetarian === "true",
-            )
-            .sort(
-              (item_1, item_2) =>
-                Number(item_1.calories) - Number(item_2.calories),
-            )
-            .map((item) => (
-              <CardCategory data={item} />
-            ))}
-        </div>
-      );
-      ReactDOM.render(newContainer, document.querySelector(".main"));
-    } else if (searchParams.get("sortBy") === "time") {
-      setSearchParams({ filter: "vegetarian", sortBy: "time" });
-      const newContainer = (
-        <div className="container categories__main">
-          {recipes.recipes
-            .filter(
-              (item) =>
-                item.category === "appetizers" && item.vegetarian === "true",
-            )
-            .sort((item_1, item_2) => Number(item_1.time) - Number(item_2.time))
-            .map((item) => (
-              <CardCategory data={item} />
-            ))}
-        </div>
-      );
-      ReactDOM.render(newContainer, document.querySelector(".main"));
-    } else {
-      setSearchParams({ filter: "vegetarian" });
-      const newContainer = (
-        <div className="container categories__main">
-          {recipes.recipes
-            .filter(
-              (item) =>
-                item.category === "appetizers" && item.vegetarian === "true",
-            )
-            .map((item) => (
-              <CardCategory data={item} />
-            ))}
-        </div>
-      );
-      ReactDOM.render(newContainer, document.querySelector(".main"));
-    }
-  };
+  const sortAndFilter = (
+    veg: string | null,
+    fav: string | null,
+    time: string | null,
+    kcal: string | null,
+    data: {
+      id: number;
+      name: string;
+      category: string;
+      calories: string;
+      proteins: string;
+      carbs: string;
+      fats: string;
+      author: string;
+      kitchen: string;
+      favourites: boolean;
+      vegetarian: boolean;
+      ingredients: { quantity: string; name: string; type: string }[];
+      steps: string[];
+      time: number;
+      imageURL: string;
+    }[],
+  ) => {
+    const queryFavourite = searchParams.get("favourite");
+    const queryVegetarian = searchParams.get("vegetarian");
+    const queryTime = searchParams.get("time");
+    const queryKcal = searchParams.get("kcal");
 
-  const favFilter = () => {
-    if (searchParams.get("sortBy") === "kcal") {
-      setSearchParams({ filter: "favourites", sortBy: "kcal" });
-      const newContainer = (
-        <div className="container categories__main">
-          {recipes.recipes
-            .filter(
-              (item) =>
-                item.category === "appetizers" && item.favourites === "true",
-            )
-            .sort(
-              (item_1, item_2) =>
-                Number(item_1.calories) - Number(item_2.calories),
-            )
-            .map((item) => (
-              <CardCategory data={item} />
-            ))}
-        </div>
-      );
-      ReactDOM.render(newContainer, document.querySelector(".main"));
-    } else if (searchParams.get("sortBy") === "time") {
-      setSearchParams({ filter: "favourites", sortBy: "time" });
-      const newContainer = (
-        <div className="container categories__main">
-          {recipes.recipes
-            .filter(
-              (item) =>
-                item.category === "appetizers" && item.favourites === "true",
-            )
-            .sort((item_1, item_2) => Number(item_1.time) - Number(item_2.time))
-            .map((item) => (
-              <CardCategory data={item} />
-            ))}
-        </div>
-      );
-      ReactDOM.render(newContainer, document.querySelector(".main"));
-    } else {
-      setSearchParams({ filter: "favourites" });
-      const newContainer = (
-        <div className="container categories__main">
-          {recipes.recipes
-            .filter(
-              (item) =>
-                item.category === "appetizers" && item.favourites === "true",
-            )
-            .map((item) => (
-              <CardCategory data={item} />
-            ))}
-        </div>
-      );
-      ReactDOM.render(newContainer, document.querySelector(".main"));
-    }
-  };
+    console.log(queryFavourite, queryVegetarian, queryTime, queryKcal);
 
-  const kcalSort = () => {
-    if (searchParams.get("filter") === "vegetarian") {
-      setSearchParams({ filter: "vegetarian", sortBy: "kcal" });
-      const newContainer = (
-        <div className="container categories__main">
-          {recipes.recipes
-            .filter(
-              (item) =>
-                item.category === "appetizers" && item.vegetarian === "true",
-            )
-            .sort(
-              (item_1, item_2) =>
-                Number(item_1.calories) - Number(item_2.calories),
-            )
-            .map((item) => (
-              <CardCategory data={item} />
-            ))}
-        </div>
-      );
-      ReactDOM.render(newContainer, document.querySelector(".main"));
-    } else if (searchParams.get("filter") === "favourites") {
-      setSearchParams({ filter: "favourites", sortBy: "kcal" });
-      const newContainer = (
-        <div className="container categories__main">
-          {recipes.recipes
-            .filter(
-              (item) =>
-                item.category === "appetizers" && item.favourites === "true",
-            )
-            .sort(
-              (item_1, item_2) =>
-                Number(item_1.calories) - Number(item_2.calories),
-            )
-            .map((item) => (
-              <CardCategory data={item} />
-            ))}
-        </div>
-      );
-      ReactDOM.render(newContainer, document.querySelector(".main"));
-    } else {
-      setSearchParams({ sortBy: "kcal" });
-      const newContainer = (
-        <div className="container categories__main">
-          {recipes.recipes
-            .filter((item) => item.category === "appetizers")
-            .sort(
-              (item1, item2) => Number(item1.calories) - Number(item2.calories),
-            )
-            .map((item) => (
-              <CardCategory data={item} />
-            ))}
-        </div>
-      );
-      ReactDOM.render(newContainer, document.querySelector(".main"));
+    let categoryData = data.filter((item) => item.category === "appetizers");
+    if (queryFavourite === "true") {
+      categoryData = categoryData.filter((item) => item.favourites);
     }
-  };
+    if (queryVegetarian === "true") {
+      categoryData = categoryData.filter((item) => item.vegetarian);
+    }
+    if (queryKcal === "true") {
+      categoryData = categoryData.sort(
+        (a, b) => Number(a.calories) - Number(b.calories),
+      );
+    }
+    if (queryTime === "true") {
+      categoryData = categoryData.sort(
+        (a, b) => Number(a.time) - Number(b.time),
+      );
+    }
 
-  const timeSort = () => {
-    if (searchParams.get("filter") === "vegetarian") {
-      setSearchParams({ filter: "vegetarian", sortBy: "time" });
-      const newContainer = (
-        <div className="container categories__main">
-          {recipes.recipes
-            .filter(
-              (item) =>
-                item.category === "appetizers" && item.vegetarian === "true",
-            )
-            .sort((item_1, item_2) => Number(item_1.time) - Number(item_2.time))
-            .map((item) => (
-              <CardCategory data={item} />
-            ))}
-        </div>
-      );
-      ReactDOM.render(newContainer, document.querySelector(".main"));
-    } else if (searchParams.get("filter") === "favourites") {
-      setSearchParams({ filter: "favourites", sortBy: "time" });
-      const newContainer = (
-        <div className="container categories__main">
-          {recipes.recipes
-            .filter(
-              (item) =>
-                item.category === "appetizers" && item.favourites === "true",
-            )
-            .sort((item_1, item_2) => Number(item_1.time) - Number(item_2.time))
-            .map((item) => (
-              <CardCategory data={item} />
-            ))}
-        </div>
-      );
-      ReactDOM.render(newContainer, document.querySelector(".main"));
-    } else {
-      setSearchParams({ sortBy: "time" });
-      const newContainer = (
-        <div className="container categories__main">
-          {recipes.recipes
-            .filter((item) => item.category === "appetizers")
-            .sort((item1, item2) => Number(item1.time) - Number(item2.time))
-            .map((item) => (
-              <CardCategory data={item} />
-            ))}
-        </div>
-      );
-      ReactDOM.render(newContainer, document.querySelector(".main"));
-    }
+    const newContainer = (
+      <div className="container categories__main">
+        {categoryData.map((item) => (
+          <CardCategory data={item} />
+        ))}
+      </div>
+    );
+    ReactDOM.render(newContainer, document.querySelector(".main"));
   };
 
   useEffect(() => {
-    if (searchParams.get("filter") === "favourites") {
-      vegFilter();
-    } else if (searchParams.get("filter") === "vegetarian") {
-      favFilter();
-    }
-    if (searchParams.get("sortBy") === "kcal") {
-      kcalSort();
-    } else if (searchParams.get("sortBy") === "time") {
-      timeSort();
-    }
-  }, [filter, sortBy]);
+    sortAndFilter(
+      searchParams.get("vegetarian"),
+      searchParams.get("favourite"),
+      searchParams.get("time"),
+      searchParams.get("kcal"),
+      recipes.recipes,
+    );
+  }, [
+    searchParams.get("vegetarian"),
+    searchParams.get("favourite"),
+    searchParams.get("time"),
+    searchParams.get("kcal"),
+    recipes.recipes,
+  ]);
 
   return (
     <div className="categories__recipes__screen">
@@ -258,7 +109,16 @@ const CategoriesRecipesScreen: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    vegFilter();
+                    setSearchParams({
+                      vegetarian: "true",
+                    });
+                    sortAndFilter(
+                      searchParams.get("vegetarian"),
+                      searchParams.get("favourite"),
+                      searchParams.get("time"),
+                      searchParams.get("kcal"),
+                      recipes.recipes,
+                    );
                   }}
                 >
                   Veg
@@ -268,7 +128,14 @@ const CategoriesRecipesScreen: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    kcalSort();
+                    setSearchParams({ favourite: "true" });
+                    sortAndFilter(
+                      searchParams.get("vegetarian"),
+                      searchParams.get("favourite"),
+                      searchParams.get("time"),
+                      searchParams.get("kcal"),
+                      recipes.recipes,
+                    );
                   }}
                 >
                   Low-fat
@@ -278,7 +145,14 @@ const CategoriesRecipesScreen: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    timeSort();
+                    setSearchParams({ time: "true" });
+                    sortAndFilter(
+                      searchParams.get("vegetarian"),
+                      searchParams.get("favourite"),
+                      searchParams.get("time"),
+                      searchParams.get("kcal"),
+                      recipes.recipes,
+                    );
                   }}
                 >
                   Quick
@@ -288,7 +162,20 @@ const CategoriesRecipesScreen: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    favFilter();
+                    setSearchParams({ kcal: "true" });
+                    console.log(
+                      searchParams.get("vegetarian"),
+                      searchParams.get("favourite"),
+                      searchParams.get("time"),
+                      searchParams.get("kcal"),
+                    );
+                    sortAndFilter(
+                      searchParams.get("vegetarian"),
+                      searchParams.get("favourite"),
+                      searchParams.get("time"),
+                      searchParams.get("kcal"),
+                      recipes.recipes,
+                    );
                   }}
                 >
                   Favourites
