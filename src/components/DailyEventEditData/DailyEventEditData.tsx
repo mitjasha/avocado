@@ -1,5 +1,5 @@
 import React from "react";
-import RegInput from "../RegInput/RegInput";
+import RegInput from "../Inputs/BaseInput/BaseInput";
 import "./DailyEventEditData.scss";
 
 export interface DailyEventData {

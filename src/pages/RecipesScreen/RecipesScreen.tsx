@@ -1,7 +1,7 @@
 import React from "react";
 import recipes from "../../assets/recipes.json";
 import CardRecipe from "../../components/CardRecipe/CardRecipe";
-import RegInput from "../../components/RegInput/RegInput";
+import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import "./RecipesScreen.scss";
 
 const RecipesScreen: React.FC = () => {

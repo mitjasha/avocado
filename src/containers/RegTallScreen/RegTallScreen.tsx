@@ -1,7 +1,7 @@
 import React from "react";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
-import TallInput from "../../components/TallInput/TallInput";
+import TallInput from "../../components/Inputs/TallInput/TallInput";
 import "./RegTallScreen.scss";
 
 const RegTallScreen: React.FC = () => {

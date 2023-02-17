@@ -1,5 +1,5 @@
 import React from "react";
-import RegInput from "../../components/RegInput/RegInput";
+import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import hideIcon from "../../assets/svg/reg-hide.svg";
 import showIcon from "../../assets/svg/reg-show.svg";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
