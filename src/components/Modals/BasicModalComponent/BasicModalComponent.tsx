@@ -4,11 +4,13 @@ import "./BasicModalComponent.scss";
 export interface BasicModalComponentProps {
   children?: React.ReactNode;
   title?: string;
+  className?: string;
 }
 
 const BasicModalComponent: React.FC<BasicModalComponentProps> = ({
   children,
   title,
+  className,
 }) => {
   const closePopUp = () => {
     const popUp = document.querySelector(
@@ -18,8 +20,10 @@ const BasicModalComponent: React.FC<BasicModalComponentProps> = ({
     popUp.style.visibility = "hidden";
   };
 
+  const classes = `${"pop-up-wrapper"} ${className}`;
+
   return (
-    <div className="pop-up-wrapper">
+    <div className={classes}>
       <div className="pop-up">
         <button
           type="button"

@@ -35,7 +35,7 @@ const AddProductModal: React.FC = () => {
     "salad",
   ];
   return (
-    <BasicModalComponent title="Add new product">
+    <BasicModalComponent title="Add new product" className="add-product-modal">
       <div className="add__containter">
         <div className="add__param">
           {addProdutFields.map((item) => {
