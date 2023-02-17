@@ -10,8 +10,8 @@
       "fats": "11 g",
       "author": "Emma Khan",
       "kitchen": "French",
-      "favourites": "false",
-      "vegetarian": "false",
+      "favourites": false,
+      "vegetarian": false,
       "ingredients": [
         {
           "quantity": "1",
@@ -58,8 +58,8 @@
       "fats": "11 g",
       "author": "Jhon Walter",
       "kitchen": "India",
-      "favourites": "false",
-      "vegetarian": "true",
+      "favourites": false,
+      "vegetarian": true,
       "ingredients": [
         {
           "quantity": "1 lb",
@@ -102,8 +102,8 @@
       "fats": "1.7 g",
       "author": "Jack Green",
       "kitchen": "Chinese",
-      "favourites": "false",
-      "vegetarian": "false",
+      "favourites": false,
+      "vegetarian": false,
       "ingredients": [
         {
           "quantity": "1 quart",
@@ -151,8 +151,8 @@
       "fats": "9 g",
       "author": "Micheal Krisp",
       "kitchen": "American",
-      "favourites": "false",
-      "vegetarian": "false",
+      "favourites": false,
+      "vegetarian": false,
       "ingredients": [
         {
           "quantity": "5 teaspoons",
@@ -217,8 +217,8 @@
       "fats": "15 g",
       "author": "Ann Baker",
       "kitchen": "American",
-      "favourites": "false",
-      "vegetarian": "false",
+      "favourites": false,
+      "vegetarian": false,
       "ingredients": [
         {
           "quantity": "200g",
@@ -265,8 +265,8 @@
       "fats": "18 g",
       "author": "Ben Parker",
       "kitchen": "German",
-      "favourites": "false",
-      "vegetarian": "true",
+      "favourites": false,
+      "vegetarian": true,
       "ingredients": [
         {
           "quantity": "1 cup",
@@ -354,8 +354,8 @@
       "fats": "12 g",
       "author": "Kim Con",
       "kitchen": "American",
-      "favourites": "false",
-      "vegetarian": "true",
+      "favourites": false,
+      "vegetarian": true,
       "ingredients": [
         {
           "quantity": "2-1/2 cups",
@@ -431,8 +431,8 @@
       "fats": "24 g",
       "author": "Alaster Franklin",
       "kitchen": "Chinese",
-      "favourites": "false",
-      "vegetarian": "false",
+      "favourites": false,
+      "vegetarian": false,
       "ingredients": [
         {
           "quantity": "3",
