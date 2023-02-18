@@ -1,14 +1,15 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
+import { UseFormRegisterReturn } from "react-hook-form";
 import ScrollContainer from "react-indiana-drag-scroll";
 import "./WeightInput.scss";
 
 interface WeightInputProps {
   idName: string;
-  name: string;
+  register: UseFormRegisterReturn;
 }
 
-const WeightInput: React.FC<WeightInputProps> = ({ idName, name }) => {
+const WeightInput: React.FC<WeightInputProps> = ({ idName, register }) => {
   const minWeight = 30;
   const maxWeight = 200;
   const getWeightInputs = () => {
@@ -20,7 +21,7 @@ const WeightInput: React.FC<WeightInputProps> = ({ idName, name }) => {
           className="weight-input__input"
           key={i}
           id={`${idName}-${i}`}
-          name={name}
+          {...register}
         />,
         <label
           key={`label-${i}`}

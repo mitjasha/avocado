@@ -1,9 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
+import { UseFormRegisterReturn } from "react-hook-form";
 import ScrollContainer from "react-indiana-drag-scroll";
 import "./TallInput.scss";
 
-const TallInput: React.FC = () => {
+interface TallInputProps {
+  register: UseFormRegisterReturn;
+}
+
+const TallInput: React.FC<TallInputProps> = ({ register }) => {
   const minTall = 150;
   const maxTall = 250;
   const getTallInputs = () => {
@@ -15,7 +20,7 @@ const TallInput: React.FC = () => {
           className="tall-input__input"
           key={i}
           id={`tall-${i}`}
-          name="tall"
+          {...register}
         />,
         <label
           htmlFor={`tall-${i}`}
