@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { validationUserName, validationPassword } from "./RegFormUser.const";
 import hideIcon from "../../assets/svg/reg-hide.svg";
 import showIcon from "../../assets/svg/reg-show.svg";
@@ -15,6 +16,8 @@ interface RegFormUserProps {
 }
 
 const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
+  const navigate = useNavigate();
+
   const {
     register,
     formState: { errors },
@@ -30,6 +33,7 @@ const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
       console.log(accessToken);
       localStorage.setItem("accessToken", JSON.stringify(accessToken));
     }
+    navigate("/registration/profile");
     reset();
   };
 
