@@ -93,6 +93,13 @@
   }
 }
 
+.no-found {
+  display: none;
+  margin: auto;
+  font-size: 24px;
+  padding: 30px 0;
+}
+
 @media screen and (min-width: $media-tab-pt) {
   .categories__main {
     padding: 30px 0;

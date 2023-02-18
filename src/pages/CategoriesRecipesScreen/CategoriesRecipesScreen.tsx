@@ -34,6 +34,8 @@ const CategoriesRecipesScreen: React.FC = () => {
     },
   };
   const { category } = useParams();
+  // const foundRecipes = document.querySelectorAll(".card__category");
+
   return (
     <div className="categories__recipes__screen">
       <div className="container">
@@ -89,6 +91,18 @@ const CategoriesRecipesScreen: React.FC = () => {
                   <CardCategory data={item} key={`${item.id}`} />
                 </Link>
               ))}
+            <div
+              className="no-found"
+              style={{
+                display: `${
+                  document.querySelectorAll(".card__category").length > 0
+                    ? "none"
+                    : "block"
+                }`,
+              }}
+            >
+              No recipes found
+            </div>
           </div>
         </main>
       </div>
