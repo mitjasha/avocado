@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import recipes from "../../assets/recipes.json";
 import CardCategory from "../../components/CardCategory/CardRecipe/CardCategory";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
@@ -81,7 +81,13 @@ const CategoriesRecipesScreen: React.FC = () => {
             {recipes.recipes
               .filter((item) => item.category === category)
               .map((item) => (
-                <CardCategory data={item} key={`${item.id}`} />
+                <Link
+                  to={`/recipe/${item.id}`}
+                  className="card__category"
+                  key={item.id}
+                >
+                  <CardCategory data={item} key={`${item.id}`} />
+                </Link>
               ))}
           </div>
         </main>
