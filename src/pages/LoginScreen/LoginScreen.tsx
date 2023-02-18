@@ -1,6 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { validationLogin, validationPassword } from "./LoginScreen.const";
+import { useNavigate } from "react-router-dom";
+import {
+  loginScreen,
+  validationLogin,
+  validationPassword,
+} from "./LoginScreen.const";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import hideIcon from "../../assets/svg/reg-hide.svg";
 import showIcon from "../../assets/svg/reg-show.svg";
@@ -12,6 +17,8 @@ import userController from "../../api/user.controller";
 import ToolTip from "../../components/ToolTip/ToolTip";
 
 const LoginScreen: React.FC = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     formState: { errors },
@@ -20,12 +27,14 @@ const LoginScreen: React.FC = () => {
   } = useForm<User>({ mode: "onChange" });
 
   const onSubmit = async (data: User) => {
+    console.log(data);
+
     const result = await userController.signIn(data);
     if (result) {
       const accessToken = result.user.token;
       console.log(accessToken);
       localStorage.setItem("accessToken", JSON.stringify(accessToken));
-      window.location.href = "#/main/";
+      navigate("/main");
     }
     reset();
   };
@@ -45,6 +54,7 @@ const LoginScreen: React.FC = () => {
       showBtn.style.backgroundImage = `url(${showIcon})`;
     }
   };
+
   return (
     <div className="login-screen">
       <form
@@ -57,8 +67,8 @@ const LoginScreen: React.FC = () => {
         <div className="login-screen__email-address">
           <div className="input-wrapper input-wrapper_email">
             <FormInput
-              type="email"
-              placeholder="Email Address"
+              type="text"
+              placeholder="Username"
               register={register("username", { ...validationLogin })}
             />
             {errors?.username && <ToolTip text={validationLogin.message} />}
@@ -81,9 +91,12 @@ const LoginScreen: React.FC = () => {
             />
           </div>
         </div>
-        <ButtonTemplate className="submit-btn" disabled>
-          Submit
-        </ButtonTemplate>
+        <ButtonTemplate className="submit-btn">Submit</ButtonTemplate>
+        <div className="error">
+          {errors?.username && errors?.password && (
+            <p>{loginScreen.TEXT_ERROR_LOGIN}</p>
+          )}
+        </div>
       </form>
     </div>
   );

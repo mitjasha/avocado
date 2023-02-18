@@ -7,6 +7,8 @@ export interface ButtonTemplateProps {
   className?: string;
   disabled?: boolean;
   onClick?: () => void;
+  type?: JSX.IntrinsicElements["button"]["type"];
+  form?: string;
 }
 
 const ButtonTemplate: React.FC<ButtonTemplateProps> = ({
@@ -14,11 +16,20 @@ const ButtonTemplate: React.FC<ButtonTemplateProps> = ({
   className,
   disabled,
   onClick,
+  form,
+  type,
   ...attrs
 }) => {
   const classes = `${"basic-button"} ${className}`;
   return (
-    <button type="button" onClick={onClick} className={classes} {...attrs}>
+    <button
+      onClick={onClick}
+      className={classes}
+      // eslint-disable-next-line react/button-has-type
+      type={type}
+      form={form}
+      {...attrs}
+    >
       {children}
     </button>
   );

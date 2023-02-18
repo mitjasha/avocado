@@ -1,5 +1,5 @@
-const BASE_URL = "https://avocado-backend.onrender.com";
-// const BASE_URL = "http://localhost:3030";
+// const BASE_URL = "https://avocado-backend.onrender.com";
+const BASE_URL = "http://localhost:3300";
 
 export async function fetchAsync(
   method: "GET" | "POST" | "DELETE" | "PUT",
@@ -14,8 +14,9 @@ export async function fetchAsync(
   );
   if (accessToken) {
     headers.Authorization = `Token ${accessToken}`;
-    // console.log(headers);
+    console.log(headers);
   }
+  console.log(method, headers, body);
 
   const response = await fetch(`${BASE_URL}${url}`, {
     method,
@@ -23,6 +24,7 @@ export async function fetchAsync(
     headers,
     body,
   });
+
   if (response.status === 422) {
     // eslint-disable-next-line no-alert
     alert("Введены неверные данные");
@@ -32,7 +34,7 @@ export async function fetchAsync(
   if (!response.ok) {
     throw result;
   }
-  // console.log(result);
+  console.log(result);
 
   return result;
 }

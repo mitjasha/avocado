@@ -8,13 +8,12 @@ import LogoComponent from "../../components/LogoComponent/LogoComponent";
 
 const SplashScreen: React.FC = () => {
   const navigate = useNavigate();
-  // const loginStatus = localStorage.getItem("loginStatus");
-  const loginStatus = true;
+  const accessToken = localStorage.getItem("accessToken");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
-      if (loginStatus) {
+      if (accessToken) {
         navigate("/main");
       } else {
         setLoading(false);
