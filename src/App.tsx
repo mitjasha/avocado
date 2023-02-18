@@ -35,7 +35,7 @@ const App: React.FC = () => {
           <Route path="/progress" element={<ProgressScreen />} />
           <Route path="/recipes" element={<RecipesScreen />} />
           <Route
-            path="/recipes/categories"
+            path="/recipes/:category"
             element={<CategoriesRecipesScreen />}
           />
           <Route path="/recipes/recipe" element={<RecipeScreen />} />

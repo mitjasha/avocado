@@ -1,22 +1,66 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import recipes from "../../assets/recipes.json";
 import CardCategory from "../../components/CardCategory/CardRecipe/CardCategory";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
+import breakfastImg from "../../assets/png/breakfast-category.png";
+import appetizersImg from "../../assets/png/appetizers-category.png";
+import pastaImg from "../../assets/png/pasta-category.png";
+import favImg from "../../assets/png/fav-category.png";
 import "./CategoriesRecipesScreen.scss";
 
 const CategoriesRecipesScreen: React.FC = () => {
   const sortingList = ["Popular", "Recent", "Veg", "Quick"];
+  const categories = {
+    breakfast: {
+      title: "Breakfast",
+      image: breakfastImg,
+      color: "rgba(234, 167, 15, 0.5)",
+    },
+    appetizers: {
+      title: "Appetizers",
+      image: appetizersImg,
+      color: "rgba(85, 156, 79, 0.5)",
+    },
+    pasta: {
+      title: "Pasta",
+      image: pastaImg,
+      color: "rgba(218, 38, 2, 0.5)",
+    },
+    favorites: {
+      title: "Favorites",
+      image: favImg,
+      color: "rgba(2, 50, 218, 0.5)",
+    },
+  };
+  const { category } = useParams();
   return (
     <div className="categories__recipes__screen">
       <div className="container">
-        <header className="categories__header">
-          <div className="categories__header__image" />
+        <header
+          className="categories__header"
+          style={{
+            background: `${
+              categories[category as keyof typeof categories].color
+            }`,
+          }}
+        >
+          <div
+            className="categories__header__image"
+            style={{
+              backgroundImage: `url(${
+                categories[category as keyof typeof categories].image
+              })`,
+            }}
+          />
           <BackButton />
           <div className="categories__header__nav">
-            <h1 className="categories__header__h1">Appetizers</h1>
+            <h1 className="categories__header__h1">
+              {categories[category as keyof typeof categories].title}
+            </h1>
             <span className="categories__header__span">
               {
-                recipes.recipes.filter((item) => item.category === "appetizers")
+                recipes.recipes.filter((item) => item.category === category)
                   .length
               }{" "}
               Recipes
@@ -35,9 +79,9 @@ const CategoriesRecipesScreen: React.FC = () => {
         <main>
           <div className="container categories__main">
             {recipes.recipes
-              .filter((item) => item.category === "appetizers")
+              .filter((item) => item.category === category)
               .map((item) => (
-                <CardCategory data={item} />
+                <CardCategory data={item} key={`${item.id}`} />
               ))}
           </div>
         </main>
