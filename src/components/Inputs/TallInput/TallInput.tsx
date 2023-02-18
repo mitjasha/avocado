@@ -19,6 +19,7 @@ const TallInput: React.FC<TallInputProps> = ({ register }) => {
           type="radio"
           className="tall-input__input"
           key={i}
+          value={i}
           id={`tall-${i}`}
           {...register}
         />,

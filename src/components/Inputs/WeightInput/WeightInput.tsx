@@ -20,6 +20,7 @@ const WeightInput: React.FC<WeightInputProps> = ({ idName, register }) => {
           type="radio"
           className="weight-input__input"
           key={i}
+          value={i}
           id={`${idName}-${i}`}
           {...register}
         />,
