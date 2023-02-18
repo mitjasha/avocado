@@ -10,6 +10,7 @@ interface RegInputProps {
   id?: string;
   defaultValue?: number;
   disabled?: boolean;
+  onChange?: () => void;
 }
 
 const RegInput: React.FC<RegInputProps> = ({
@@ -21,6 +22,7 @@ const RegInput: React.FC<RegInputProps> = ({
   id,
   defaultValue,
   disabled,
+  onChange,
 }) => {
   const classes = `${"reg-input"} ${className}`;
   return (
@@ -34,6 +36,7 @@ const RegInput: React.FC<RegInputProps> = ({
       defaultValue={defaultValue}
       required
       disabled={disabled}
+      onChange={onChange}
     />
   );
 };

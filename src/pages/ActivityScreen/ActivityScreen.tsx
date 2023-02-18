@@ -42,7 +42,7 @@ const ActivityScreen: React.FC = () => {
           })}
         </div>
       </div>
-      <ActivityModal name="jogging" />
+      <ActivityModal name="jogging" kcalPerMin={8} />
     </div>
   );
 };
