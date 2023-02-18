@@ -1,5 +1,5 @@
-// const BASE_URL = "https://avocado-backend.onrender.com";
-const BASE_URL = "http://localhost:3300";
+const BASE_URL = "https://avocado-backend.onrender.com";
+// const BASE_URL = "http://localhost:3300";
 
 export async function fetchAsync(
   method: "GET" | "POST" | "DELETE" | "PUT",
