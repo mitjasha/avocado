@@ -2,11 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import RegAgeScreen from "../../containers/RegAgeScreen/RegAgeScreen";
-import RegTallScreen from "../../containers/RegTallScreen/RegTallScreen";
-import RegWeightScreen from "../../containers/RegWeightScreen/RegWeightScreen";
-import RegGoalScreen from "../../containers/RegGoalScreen/RegGoalScreen";
-import RegTargetWeightScreen from "../../containers/RegTargetWeightScreen/RegTargetWeightScreen";
 import RegBackButton from "../../components/Buttons/RegBackButton/RegBackButton";
 import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
@@ -14,16 +9,25 @@ import {
   validationGender,
   validationName,
 } from "./ProfileRegistrationScreen.const";
-import { EGender, Profile } from "../../api/api.interface";
+import { EGender, EGoal, Profile } from "../../api/api.interface";
 import profileController from "../../api/profile.controller";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import FormInput from "../../components/Inputs/FormInput/FormInput";
 import ToolTip from "../../components/ToolTip/ToolTip";
+import TallInput from "../../components/Inputs/TallInput/TallInput";
+import WeightInput from "../../components/Inputs/WeightInput/WeightInput";
 import maleIcon from "../../assets/svg/male.svg";
 import femaleIcon from "../../assets/svg/female.svg";
+import loseIcon from "../../assets/svg/lose-weight.svg";
+import maintainIcon from "../../assets/svg/maintain-weight.svg";
+import gainIcon from "../../assets/svg/gain-weight.svg";
 import "../../containers/RegFormScreen/RegFormScreen.scss";
 import "../../containers/RegGenderScreen/RegGenderScreen.scss";
 import "../../containers/RegAgeScreen/RegAgeScreen.scss";
+import "../../containers/RegTallScreen/RegTallScreen.scss";
+import "../../containers/RegWeightScreen/RegWeightScreen.scss";
+import "../../containers/RegGoalScreen/RegGoalScreen.scss";
+import "../../containers/RegTargetWeightScreen/RegTargetWeightScreen.scss";
 import "./ProfileRegistrationScreen.scss";
 
 const RegistrationScreen: React.FC = () => {
@@ -37,6 +41,7 @@ const RegistrationScreen: React.FC = () => {
     reset,
     register,
     formState: { errors },
+    getValues,
   } = useForm<Profile>({ mode: "onChange" });
 
   const onSubmit = async (data: Profile) => {
@@ -78,6 +83,28 @@ const RegistrationScreen: React.FC = () => {
       setCounter(processCount - 1);
     }
   };
+
+  const displayAge = () => {
+    const ageInput = document.querySelector(".age-input") as HTMLInputElement;
+    const today = new Date().getTime();
+    const birth = new Date(ageInput.value).getTime();
+    const age = new Date(today - birth).getUTCFullYear() - 1970;
+    const ageDisplay = document.querySelector(".age-display") as HTMLElement;
+    ageDisplay.textContent = String(age);
+  };
+
+  const todaysDate =
+    new Date().getDate() < 10
+      ? `0${new Date().getDate()}`
+      : new Date().getDate();
+  const todaysMonth =
+    new Date().getMonth() < 10
+      ? `0${new Date().getMonth()}`
+      : new Date().getMonth();
+  const todaysYear = new Date().getFullYear();
+  const minAge = `${todaysYear - 18}-${todaysMonth}-${todaysDate}`;
+  const maxAge = `${todaysYear - 100}-${todaysMonth}-${todaysDate}`;
+  const birthField = register("birth", { required: true });
 
   useEffect(() => {
     setGradientValue(gradients[processCount]);
@@ -175,11 +202,146 @@ const RegistrationScreen: React.FC = () => {
             </div>
           </div>
         )}
-        {processCount === 3 && <RegAgeScreen />}
-        {processCount === 4 && <RegTallScreen />}
-        {processCount === 5 && <RegWeightScreen />}
-        {processCount === 6 && <RegGoalScreen />}
-        {processCount === 7 && <RegTargetWeightScreen />}
+        {processCount === 3 && (
+          <div className="container questions-container">
+            <div className="questions__age">
+              <h2 className="reg-title">
+                Your <span className="reg-title__highlight">date of birth</span>
+                ?
+              </h2>
+              <p className="data-info">
+                We will use this data to give you a better diet type for you
+              </p>
+              <div className="age-display">Age</div>
+              <input
+                type="date"
+                className="age-input"
+                max={minAge}
+                min={maxAge}
+                required
+                {...birthField}
+                onChange={displayAge}
+              />
+            </div>
+          </div>
+        )}
+        {processCount === 4 && (
+          <div className="container questions-container">
+            <div className="questions__tall">
+              <h2 className="reg-title">
+                How <span className="reg-title__highlight">tall</span> are you?
+              </h2>
+              <p className="data-info">
+                We will use this data to give you a better diet type for you
+              </p>
+              <div className="unit">cm</div>
+              <div className="triangle" />
+              <div className="tall-input-wrapper">
+                <TallInput register={register("height", { required: true })} />
+              </div>
+            </div>
+          </div>
+        )}
+        {processCount === 5 && (
+          <div className="container questions-container">
+            <div className="questions__weight">
+              <h2 className="reg-title">
+                Your{" "}
+                <span className="reg-title__highlight">current weight</span>?
+              </h2>
+              <p className="data-info">
+                We will use this data to give you a better diet type for you
+              </p>
+              <div className="unit">kg</div>
+              <div className="triangle" />
+              <div className="weight-input-wrapper">
+                <WeightInput
+                  idName="weight"
+                  register={register("weight", { required: true })}
+                />
+              </div>
+            </div>
+          </div>
+        )}
+        {processCount === 6 && (
+          <div className="container questions-container">
+            <div className="questions__goal">
+              <h2 className="reg-title">
+                Your is your <span className="reg-title__highlight">goal</span>?
+              </h2>
+              <p className="data-info">
+                We will use this data to give you a better diet type for you
+              </p>
+              <div className="goal-input">
+                <input
+                  type="radio"
+                  id="lose"
+                  value={EGoal.LOSE}
+                  className="goal-input__input"
+                  {...register("goal", { required: true })}
+                />
+                <label htmlFor="lose" className="goal-input__label">
+                  <img src={loseIcon} alt="lose" className="goal-input__icon" />
+                  Lose weight
+                </label>
+                <input
+                  type="radio"
+                  id="maintain"
+                  value={EGoal.MAINTAIN}
+                  className="goal-input__input"
+                  {...register("goal", { required: true })}
+                />
+                <label htmlFor="maintain" className="goal-input__label">
+                  <img
+                    src={maintainIcon}
+                    alt="maintain"
+                    className="goal-input__icon"
+                  />
+                  Maintain weight
+                </label>
+                <input
+                  type="radio"
+                  id="gain"
+                  value={EGoal.GAIN}
+                  className="goal-input__input"
+                  {...register("goal", { required: true })}
+                />
+                <label htmlFor="gain" className="goal-input__label">
+                  <img src={gainIcon} alt="gain" className="goal-input__icon" />
+                  Gain weight
+                </label>
+              </div>
+            </div>
+          </div>
+        )}
+        {processCount === 7 && (
+          <div className="container questions-container">
+            <div className="questions__weight">
+              <h2 className="reg-title">
+                Your <span className="reg-title__highlight">target weight</span>
+                ?
+              </h2>
+              <p className="data-info">
+                We will use this data to give you a better diet type for you
+              </p>
+              <div className="unit">kg</div>
+              <div className="triangle" />
+              <div className="weight-wrapper">
+                <div className="weight-wrapper__current">
+                  {getValues("weight")}
+                </div>
+                <div className="weight-wrapper__arrow" />
+                <div className="weight-wrapper__target">
+                  <WeightInput
+                    idName="target-weight"
+                    register={register("targetWeight", { required: true })}
+                  />
+                </div>
+              </div>
+              <p className="start-phrase">Let&apos;s Start!</p>
+            </div>
+          </div>
+        )}
         <div className="profile-form__btn_container">
           {processCount >= 1 && processCount < 7 && (
             <NextRegButton gradient={gradientValue} onClick={increase} />

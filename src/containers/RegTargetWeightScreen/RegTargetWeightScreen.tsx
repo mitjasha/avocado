@@ -1,5 +1,5 @@
 import React from "react";
-import WeightInput from "../../components/WeightInput/WeightInput";
+// import WeightInput from "../../components/Inputs/WeightInput/WeightInput";
 import "./RegTargetWeightScreen.scss";
 
 const RegTargetWeightScreen: React.FC = () => {
@@ -19,7 +19,7 @@ const RegTargetWeightScreen: React.FC = () => {
           <div className="weight-wrapper__current">{userCurrentWeight}</div>
           <div className="weight-wrapper__arrow" />
           <div className="weight-wrapper__target">
-            <WeightInput idName="target-weight" name="target-weight" />
+            {/* <WeightInput idName="target-weight" name="target-weight" /> */}
           </div>
         </div>
         <p className="start-phrase">Let&apos;s Start!</p>

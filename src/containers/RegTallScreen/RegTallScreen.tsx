@@ -1,5 +1,5 @@
 import React from "react";
-import TallInput from "../../components/Inputs/TallInput/TallInput";
+// import TallInput from "../../components/Inputs/TallInput/TallInput";
 import "./RegTallScreen.scss";
 
 const RegTallScreen: React.FC = () => {
@@ -14,9 +14,7 @@ const RegTallScreen: React.FC = () => {
         </p>
         <div className="unit">cm</div>
         <div className="triangle" />
-        <div className="tall-input-wrapper">
-          <TallInput />
-        </div>
+        <div className="tall-input-wrapper">{/* <TallInput /> */}</div>
       </div>
     </div>
   );
