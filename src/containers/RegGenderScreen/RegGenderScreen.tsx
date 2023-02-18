@@ -1,7 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
-import BackButton from "../../components/Buttons/BackButton/BackButton";
-import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
 import maleIcon from "../../assets/svg/male.svg";
 import femaleIcon from "../../assets/svg/female.svg";
 import "./RegGenderScreen.scss";
@@ -10,8 +8,6 @@ const RegGenderScreen: React.FC = () => {
   return (
     <div className="container questions-container">
       <div className="questions__gender">
-        <BackButton />
-        <div className="process">1 / 6</div>
         <h2 className="reg-title">
           What is your <span className="reg-title__highlight">gender</span>?
         </h2>
@@ -40,10 +36,6 @@ const RegGenderScreen: React.FC = () => {
             Female
           </label>
         </div>
-        <NextRegButton
-          gradient="linear-gradient(150deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)"
-          disabled
-        />
       </div>
     </div>
   );

@@ -1,6 +1,4 @@
 import React from "react";
-import BackButton from "../../components/Buttons/BackButton/BackButton";
-import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
 import "./RegAgeScreen.scss";
 
 const RegAgeScreen: React.FC = () => {
@@ -27,8 +25,6 @@ const RegAgeScreen: React.FC = () => {
   return (
     <div className="container questions-container">
       <div className="questions__age">
-        <BackButton />
-        <div className="process">2 / 6</div>
         <h2 className="reg-title">
           Your <span className="reg-title__highlight">date of birth</span>?
         </h2>
@@ -43,10 +39,6 @@ const RegAgeScreen: React.FC = () => {
           min={maxAge}
           required
           onChange={displayAge}
-        />
-        <NextRegButton
-          gradient="linear-gradient(210deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)"
-          disabled
         />
       </div>
     </div>
