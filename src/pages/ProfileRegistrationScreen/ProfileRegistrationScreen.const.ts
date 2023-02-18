@@ -1,8 +1,8 @@
 export interface IValidation {
   required: boolean;
-  pattern: RegExp;
+  pattern?: RegExp;
   message: string;
-  maxLength: number;
+  maxLength?: number;
 }
 
 export const validationName: IValidation = {
@@ -17,5 +17,10 @@ export const validationEmail: IValidation = {
   required: true,
   maxLength: 15,
   pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+  message: "Invalid email address",
+};
+
+export const validationGender: IValidation = {
+  required: true,
   message: "Invalid email address",
 };

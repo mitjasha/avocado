@@ -4,7 +4,7 @@ import { Profile } from "../../api/api.interface";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import FormInput from "../../components/Inputs/FormInput/FormInput";
 import ToolTip from "../../components/ToolTip/ToolTip";
-import { IValidation } from "../../pages/ProfileRegistrationScreen/ProfileRegistrationScreen.const.";
+import { IValidation } from "../../pages/ProfileRegistrationScreen/ProfileRegistrationScreen.const";
 import "./RegFormScreen.scss";
 
 interface RegFormScreenProps {

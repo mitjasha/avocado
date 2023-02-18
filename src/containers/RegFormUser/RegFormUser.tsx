@@ -45,7 +45,10 @@ const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
         photo: "",
       });
       console.log(profile);
+      const profileID = profile.id;
+      localStorage.setItem("profileID", JSON.stringify(profileID));
     }
+
     navigate("/registration/profile");
     reset();
   };
