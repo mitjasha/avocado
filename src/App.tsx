@@ -4,7 +4,7 @@ import Footer from "./containers/Footer/Footer";
 import Header from "./containers/Header/Header";
 import SplashScreen from "./pages/SplashScreen/SplashScreen";
 import LoginScreen from "./pages/LoginScreen/LoginScreen";
-import RegistrationScreen from "./pages/RegistrationScreen/RegistrationScreen";
+import UserRegistrationScreen from "./pages/UserRegistrationScreen/UserRegistrationScreen";
 import MainScreen from "./pages/MainScreen/MainScreen";
 import ProfileScreen from "./pages/ProfileScreen/ProfieScreen";
 import ProgressScreen from "./pages/ProgressScreen/ProgressScreen";
@@ -20,6 +20,7 @@ import EditProfileDataScreen, {
   UserDataExample,
 } from "./pages/EditProfileDataScreen/EditProfileDataScreen";
 import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
+import ProfileRegistrationScreen from "./pages/ProfileRegistrationScreen/ProfileRegistrationScreen";
 
 const routesWithoutHeader: string[] = ["/", "/registration", "/login"];
 
@@ -39,7 +40,14 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<SplashScreen />} />
           <Route path="/login" element={<LoginScreen />} />
-          <Route path="/registration" element={<RegistrationScreen />} />
+          <Route
+            path="/registration/user"
+            element={<UserRegistrationScreen />}
+          />
+          <Route
+            path="/registration/profile"
+            element={<ProfileRegistrationScreen />}
+          />
           <Route path="/main" element={<MainScreen />} />
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/progress" element={<ProgressScreen />} />

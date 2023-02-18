@@ -6,14 +6,13 @@ import RegTallScreen from "../../containers/RegTallScreen/RegTallScreen";
 import RegWeightScreen from "../../containers/RegWeightScreen/RegWeightScreen";
 import RegGoalScreen from "../../containers/RegGoalScreen/RegGoalScreen";
 import RegTargetWeightScreen from "../../containers/RegTargetWeightScreen/RegTargetWeightScreen";
-import "./RegistrationScreen.scss";
-import RegFormUser from "../../containers/RegFormUser/RegFormUser";
 import RegBackButton from "../../components/Buttons/RegBackButton/RegBackButton";
 import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
+import "./ProfileRegistrationScreen.scss";
 
 const RegistrationScreen: React.FC = () => {
-  const [processCount, setCounter] = useState<number>(0);
+  const [processCount, setCounter] = useState<number>(1);
   const [gradientValue, setGradientValue] = useState<string>("");
 
   const gradients = [
@@ -43,7 +42,6 @@ const RegistrationScreen: React.FC = () => {
 
   return (
     <div className="registration-screen">
-      {processCount === 0 && <RegFormUser onClick={increase} />}
       {processCount >= 1 && (
         <div>
           <RegBackButton onClick={decrease} />

@@ -11,7 +11,7 @@ import ToolTip from "../../components/ToolTip/ToolTip";
 import "./RegFormUser.scss";
 
 interface RegFormUserProps {
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
@@ -51,7 +51,7 @@ const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
 
   return (
     <div className="container registration-screen-container">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} id="userRegistration">
         <div className="username">
           <h2 className="input-title">Username</h2>
           <div className="input-wrapper input-wrapper_username">
@@ -81,7 +81,9 @@ const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
             />
           </div>
         </div>
-        <ButtonTemplate onClick={onClick}>Continue</ButtonTemplate>
+        <ButtonTemplate onClick={onClick} type="submit" form="userRegistration">
+          Continue
+        </ButtonTemplate>
       </form>
       <p className="rights">
         By continuing, you agree to the <a href="/">Terms of Services</a> &{" "}
