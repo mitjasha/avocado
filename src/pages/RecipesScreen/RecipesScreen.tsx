@@ -43,8 +43,8 @@ const RecipesScreen: React.FC = () => {
                 Recipes
               </span>
             </Link>
-            <Link to="/recipes/pasta" className="category category__pasta">
-              <h3 className="category__h3">Pasta</h3>
+            <Link to="/recipes/dinner" className="category category__pasta">
+              <h3 className="category__h3">Dinner</h3>
               <span className="category__span">
                 {
                   recipes.recipes.filter((item) => item.category === "dinner")

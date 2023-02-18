@@ -22,8 +22,8 @@ const CategoriesRecipesScreen: React.FC = () => {
       image: appetizersImg,
       color: "rgba(85, 156, 79, 0.5)",
     },
-    pasta: {
-      title: "Pasta",
+    dinner: {
+      title: "Dinner",
       image: pastaImg,
       color: "rgba(218, 38, 2, 0.5)",
     },
@@ -53,7 +53,7 @@ const CategoriesRecipesScreen: React.FC = () => {
               })`,
             }}
           />
-          <BackButton />
+          <BackButton to="/recipes" />
           <div className="categories__header__nav">
             <h1 className="categories__header__h1">
               {categories[category as keyof typeof categories].title}
