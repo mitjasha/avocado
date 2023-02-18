@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import plus from "../../assets/svg/plus-light.svg";
-// import Button from "../Buttons/Button/Button";
 import PlusMinusButton from "../Buttons/PlusMinusButton/PlusMinusButton";
 import "./DailyEventWrapper.scss";
 
