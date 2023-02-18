@@ -25,7 +25,7 @@ const NextRegButton: React.FC<NextRegButtonProps> = ({
       >
         <button
           className="next-btn"
-          type="button"
+          type="submit"
           disabled={disabled}
           onClick={onClick}
           {...attrs}
