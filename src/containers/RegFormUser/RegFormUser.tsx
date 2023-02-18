@@ -5,11 +5,12 @@ import { validationUserName, validationPassword } from "./RegFormUser.const";
 import hideIcon from "../../assets/svg/reg-hide.svg";
 import showIcon from "../../assets/svg/reg-show.svg";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
-import { User } from "../../api/api.interface";
+import { EGender, EGoal, User } from "../../api/api.interface";
 import userController from "../../api/user.controller";
 import FormInput from "../../components/Inputs/FormInput/FormInput";
 import ToolTip from "../../components/ToolTip/ToolTip";
 import "./RegFormUser.scss";
+import profileController from "../../api/profile.controller";
 
 interface RegFormUserProps {
   onClick?: () => void;
@@ -32,6 +33,18 @@ const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
       const accessToken = result.user.token;
       console.log(accessToken);
       localStorage.setItem("accessToken", JSON.stringify(accessToken));
+      const profile = await profileController.addProfile({
+        firstName: "",
+        lastName: "",
+        gender: EGender.NAN,
+        birth: "2021-09-10",
+        weight: "77",
+        height: 170,
+        goal: EGoal.MAINTAIN,
+        targetWeight: "70",
+        photo: "",
+      });
+      console.log(profile);
     }
     navigate("/registration/profile");
     reset();
