@@ -38,7 +38,7 @@ const App: React.FC = () => {
             path="/recipes/:category"
             element={<CategoriesRecipesScreen />}
           />
-          <Route path="/recipes/recipe" element={<RecipeScreen />} />
+          <Route path="/recipe/:id" element={<RecipeScreen />} />
           <Route path="/event/activity" element={<ActivityScreen />} />
           <Route path="/product" element={<ProductCardScreen />} />
           <Route path="/about" element={<AboutUsScreen />} />

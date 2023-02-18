@@ -24,7 +24,7 @@ export interface CardRecipesProps {
 
 const CardRecipe: React.FC<CardRecipesProps> = ({ data }) => {
   return (
-    <div className="recipe__card">
+    <div>
       <div
         className="recipe__card__img"
         style={{ backgroundImage: `url(${data.imageURL})` }}
