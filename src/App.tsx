@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./containers/Footer/Footer";
 import Header from "./containers/Header/Header";
 import SplashScreen from "./pages/SplashScreen/SplashScreen";
@@ -21,10 +21,20 @@ import EditProfileDataScreen, {
 } from "./pages/EditProfileDataScreen/EditProfileDataScreen";
 import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 
+const routesWithoutHeader: string[] = ["/", "/registration", "/login"];
+
 const App: React.FC = () => {
+  const location = useLocation();
+  const [isHeader, setHeader] = useState<boolean>(true);
+  const [isFooter, setFooter] = useState<boolean>(false);
+
+  useEffect(() => {
+    setHeader(routesWithoutHeader.includes(location.pathname));
+    setFooter(routesWithoutHeader.includes(location.pathname));
+  }, [location.pathname]);
   return (
     <>
-      <Header />
+      {!isHeader && <Header />}
       <main className="main-app">
         <Routes>
           <Route path="/" element={<SplashScreen />} />
@@ -51,7 +61,7 @@ const App: React.FC = () => {
           <Route path="/edit-event" element={<EditEventScreen />} />
         </Routes>
       </main>
-      <Footer />
+      {!isFooter && <Footer />}
     </>
   );
 };
