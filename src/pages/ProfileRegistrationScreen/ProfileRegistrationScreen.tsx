@@ -57,7 +57,7 @@ const RegistrationScreen: React.FC = () => {
       console.log(result);
     }
 
-    if (processCount > 7) {
+    if (processCount >= 7) {
       navigate("/main");
     }
 
