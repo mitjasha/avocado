@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import RegFormScreen from "../../containers/RegFormScreen/RegFormScreen";
 import RegGenderScreen from "../../containers/RegGenderScreen/RegGenderScreen";
 import RegAgeScreen from "../../containers/RegAgeScreen/RegAgeScreen";
@@ -10,10 +12,28 @@ import RegBackButton from "../../components/Buttons/RegBackButton/RegBackButton"
 import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./ProfileRegistrationScreen.scss";
+import { validationName } from "./ProfileRegistrationScreen.const.";
+import { Profile } from "../../api/api.interface";
+import profileController from "../../api/profile.controller";
 
 const RegistrationScreen: React.FC = () => {
   const [processCount, setCounter] = useState<number>(1);
   const [gradientValue, setGradientValue] = useState<string>("");
+
+  const navigate = useNavigate();
+
+  const { handleSubmit, reset } = useForm<Profile>({ mode: "onChange" });
+
+  const onSubmit = async (data: Profile) => {
+    console.log(data);
+
+    const result = await profileController.addProfile(data);
+    console.log(result);
+
+    navigate("/main");
+
+    reset();
+  };
 
   const gradients = [
     "",
@@ -27,7 +47,6 @@ const RegistrationScreen: React.FC = () => {
 
   const increase = () => {
     setCounter(processCount + 1);
-    console.log(processCount);
   };
 
   const decrease = () => {
@@ -48,8 +67,10 @@ const RegistrationScreen: React.FC = () => {
           <div className="process">{processCount}/ 7</div>
         </div>
       )}
-      <form className="profile-form">
-        {processCount === 1 && <RegFormScreen />}
+      <form className="profile-form" onSubmit={handleSubmit(onSubmit)}>
+        {processCount === 1 && (
+          <RegFormScreen validationName={validationName} />
+        )}
         {processCount === 2 && <RegGenderScreen />}
         {processCount === 3 && <RegAgeScreen />}
         {processCount === 4 && <RegTallScreen />}
@@ -60,7 +81,9 @@ const RegistrationScreen: React.FC = () => {
           {processCount >= 1 && processCount < 7 && (
             <NextRegButton gradient={gradientValue} onClick={increase} />
           )}
-          {processCount === 7 && <ButtonTemplate>Submit</ButtonTemplate>}
+          {processCount === 7 && (
+            <ButtonTemplate type="submit">Submit</ButtonTemplate>
+          )}
         </div>
       </form>
     </div>
