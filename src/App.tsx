@@ -22,7 +22,12 @@ import EditProfileDataScreen, {
 import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 import ProfileRegistrationScreen from "./pages/ProfileRegistrationScreen/ProfileRegistrationScreen";
 
-const routesWithoutHeader: string[] = ["/", "/registration", "/login"];
+const routesWithoutHeader: string[] = [
+  "/",
+  "/registration/user",
+  "/registration/profile",
+  "/login",
+];
 
 const App: React.FC = () => {
   const location = useLocation();
