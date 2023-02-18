@@ -94,17 +94,3 @@ h4,
   align-items: center;
   height: 60px;
 }
-
-.add-event__button {
-  width: 30px;
-  height: 30px;
-  border: 0;
-  border-radius: 50px;
-  background-color: $dark-color;
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.1);
-    transition: 0.4s all ease;
-  }
-}
