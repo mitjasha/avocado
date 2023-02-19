@@ -12,7 +12,6 @@ import RecipesScreen from "./pages/RecipesScreen/RecipesScreen";
 import CategoriesRecipesScreen from "./pages/CategoriesRecipesScreen/CategoriesRecipesScreen";
 import RecipeScreen from "./pages/RecipeScreen/RecipeScreen";
 import ActivityScreen from "./pages/ActivityScreen/ActivityScreen";
-import ProductCardScreen from "./pages/ProductCardScreen/ProductCardScreen";
 import AboutUsScreen from "./pages/AboutUsScreen/AboutUsScreen";
 import SettingScreen from "./pages/SettingScreen/SettingScreen";
 import EventScreen from "./pages/EventScreen/EventScreen";
@@ -58,12 +57,11 @@ const App: React.FC = () => {
           <Route path="/progress" element={<ProgressScreen />} />
           <Route path="/recipes" element={<RecipesScreen />} />
           <Route
-            path="/recipes/categories"
+            path="/recipes/:category"
             element={<CategoriesRecipesScreen />}
           />
-          <Route path="/recipes/recipe" element={<RecipeScreen />} />
+          <Route path="/recipe/:id" element={<RecipeScreen />} />
           <Route path="/event/activity" element={<ActivityScreen />} />
-          <Route path="/product" element={<ProductCardScreen />} />
           <Route path="/about" element={<AboutUsScreen />} />
           <Route path="/settings" element={<SettingScreen />} />
           <Route path="/event/:type" element={<EventScreen />} />

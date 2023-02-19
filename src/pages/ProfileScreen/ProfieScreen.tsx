@@ -21,7 +21,7 @@ const ProfileScreen: React.FC = () => {
     <div className="profile-screen">
       <h1 className="profile-screen__title">Your Profile</h1>
       <div className="user-data container">
-        <EditButton className="user-data__edit" />
+        <EditButton className="user-data__edit" to="/edit-profile" />
         <div className="user-data__heading">
           <img
             src={userAvatar}

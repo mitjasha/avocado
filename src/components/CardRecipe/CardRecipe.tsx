@@ -11,6 +11,8 @@ export interface DataRecipes {
   fats: string;
   author: string;
   kitchen: string;
+  favourites: boolean;
+  vegetarian: boolean;
   ingredients: { quantity: string; name: string }[];
   steps: string[];
   time: number;
@@ -24,7 +26,7 @@ export interface CardRecipesProps {
 
 const CardRecipe: React.FC<CardRecipesProps> = ({ data }) => {
   return (
-    <div className="recipe__card">
+    <div>
       <div
         className="recipe__card__img"
         style={{ backgroundImage: `url(${data.imageURL})` }}

@@ -10,8 +10,8 @@ export interface DailyEventData {
 const DailyEventEditData: React.FC<DailyEventData> = ({ type, data }) => {
   return (
     <ul className="container__info__ul">
-      {data.map((item) => (
-        <li className="container__info__li">
+      {data.map((item, index) => (
+        <li className="container__info__li" key={item[index]}>
           <div className="container__info__text">
             <span className="info__name">{item[0]}</span>
             <div className="input__container">

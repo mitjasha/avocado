@@ -136,7 +136,7 @@ const MainScreen: React.FC = () => {
       </div>
       <div className="container">
         <div className="daily-events">
-          <EditButton className="daily-events__edit" />
+          <EditButton className="daily-events__edit" to="/edit-event" />
           <div className="daily-events__meals">
             <h1 className="daily-events__title">Daily meals</h1>
             <DailyEventWrapper

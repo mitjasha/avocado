@@ -15,6 +15,12 @@
     transition: 0.4s all ease;
   }
 
+  &__wrapper {
+    background-size: cover;
+    height: 100%;
+    border-radius: 10px;
+  }
+
   &__bg {
     width: 100%;
     height: 100%;

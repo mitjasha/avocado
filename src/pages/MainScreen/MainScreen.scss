@@ -7,6 +7,7 @@
 .edit-event__screen {
   background-color: $bg-color;
   width: 100%;
+  padding-bottom: 20px;
 }
 
 .daily-data {
@@ -143,10 +144,6 @@
   width: 26px;
   height: 44px;
   background-image: url(../../assets/png/glass.png);
-}
-
-.event__changes__btn {
-  margin-bottom: 20px;
 }
 
 .curr-weight-display {

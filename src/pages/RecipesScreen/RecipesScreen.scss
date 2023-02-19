@@ -77,19 +77,35 @@
   }
 
   &__breakfast {
-    background-image: url("../../assets/svg/breakfast_category.svg");
+    background: rgba(234, 167, 15, 0.5)
+      url("../../assets/png/breakfast-category.png") no-repeat;
+    background-size: 70%;
+    background-position: top right;
+    border-radius: 10px;
   }
 
   &__appetizers {
-    background-image: url("../../assets/svg/apper_category.svg");
+    background: rgba(85, 156, 79, 0.5)
+      url("../../assets/png/appetizers-category.png") no-repeat;
+    background-size: 80%;
+    background-position: top right;
+    border-radius: 10px;
   }
 
   &__pasta {
-    background-image: url("../../assets/svg/pasta_category.svg");
+    background: rgba(218, 38, 2, 0.5) url("../../assets/png/pasta-category.png")
+      no-repeat;
+    background-size: 80%;
+    background-position: top right;
+    border-radius: 10px;
   }
 
   &__favourites {
-    background-image: url("../../assets/svg/fav_category.svg");
+    background: rgba(2, 50, 218, 0.5) url("../../assets/png/fav-category.png")
+      no-repeat;
+    background-size: 70%;
+    background-position: top right;
+    border-radius: 10px;
   }
 }
 
@@ -135,6 +151,24 @@
   .search__container {
     width: 500px;
     margin: auto;
+  }
+
+  .category {
+    &__breakfast {
+      background-size: 50%;
+    }
+
+    &__appetizers {
+      background-size: 60%;
+    }
+
+    &__pasta {
+      background-size: 60%;
+    }
+
+    &__favourites {
+      background-size: 50%;
+    }
   }
 }
 

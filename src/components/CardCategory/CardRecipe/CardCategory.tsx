@@ -5,8 +5,10 @@ import "./CardCategory.scss";
 const CardCategory: React.FC<CardRecipesProps> = ({ data }) => {
   return (
     <div
-      className="card__category"
-      style={{ backgroundImage: `url(${data.imageURL})` }}
+      className="card__category__wrapper"
+      style={{
+        backgroundImage: `url(${data.imageURL})`,
+      }}
     >
       <div className="card__category__bg">
         <div className="category__recipe__container">

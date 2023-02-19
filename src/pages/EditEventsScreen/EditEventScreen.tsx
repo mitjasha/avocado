@@ -106,7 +106,6 @@ const EditEventScreen = () => {
             />
           </div>
         </div>
-        <div className="event__changes__btn">Save changes</div>
       </div>
       <ButtonTemplate className="event__changes__btn">
         Save changes
