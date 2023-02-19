@@ -4,24 +4,14 @@ import DailyEventWrapper from "../../components/DailyEventWrapper/DailyEventWrap
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
 import ChartComponent from "../../components/ChartComponent/ChartComponent";
 import minus from "../../assets/svg/minus-light.svg";
-import fire from "../../assets/svg/fire.svg";
-import eaten from "../../assets/svg/eaten.svg";
+import fireImg from "../../assets/svg/fire.svg";
+import eatenImg from "../../assets/svg/eaten.svg";
 import EditButton from "../../components/Buttons/EditButton/EditButton";
 import "./MainScreen.scss";
 
 const MainScreen: React.FC = () => {
-  const getWaterConsumed = () => {
-    const content = [];
-    const litreConsumed = 0.75; // будем получать эти данные из бд
-    const oneGlass = 0.25;
-    const glasses = litreConsumed / oneGlass;
-    for (let i = 0; i < glasses; i += 1) {
-      content.push(<div className="glass" key={i} />);
-    }
-    return <div className="glasses">{content}</div>;
-  };
-
-  const [recomKcalPerDay, setrRecomKcalPerDay] = useState<number>(0);
+  const [recomKcalPerDay, setRecomKcalPerDay] = useState<number>(0);
+  const [availableKcal, setAvailableKcal] = useState<number>(recomKcalPerDay);
   const profileID = JSON.parse(localStorage.getItem("profileID") as string);
 
   const getRecommendedKcal = async () => {
@@ -47,29 +37,48 @@ const MainScreen: React.FC = () => {
       );
       if (profile.gender === "MALE") {
         if (profile.goal === "Lose weight") {
-          setrRecomKcalPerDay(Math.round(maleRecomKcal - maleRecomKcal * 0.2));
+          setRecomKcalPerDay(Math.round(maleRecomKcal - maleRecomKcal * 0.2));
         } else if (profile.goal === "Gain weight") {
-          setrRecomKcalPerDay(Math.round(maleRecomKcal * 1.2));
-        } else setrRecomKcalPerDay(maleRecomKcal);
+          setRecomKcalPerDay(Math.round(maleRecomKcal * 1.2));
+        } else setRecomKcalPerDay(maleRecomKcal);
       } else if (profile.gender === "FEMALE") {
         if (profile.goal === "Lose weight") {
-          setrRecomKcalPerDay(
+          setRecomKcalPerDay(
             Math.round(femaleRecomKcal - femaleRecomKcal * 0.2),
           );
         } else if (profile.goal === "Gain weight") {
-          setrRecomKcalPerDay(Math.round(femaleRecomKcal * 1.2));
-        } else setrRecomKcalPerDay(femaleRecomKcal);
+          setRecomKcalPerDay(Math.round(femaleRecomKcal * 1.2));
+        } else setRecomKcalPerDay(femaleRecomKcal);
       }
     }
   };
 
+  const drawGlasses = (litreConsumed: number) => {
+    const content = [];
+    const oneGlass = 0.25;
+    const glasses = litreConsumed / oneGlass;
+    for (let i = 0; i < glasses; i += 1) {
+      content.push(<div className="glass" key={i} />);
+    }
+    return <div className="glasses">{content}</div>;
+  };
+
+  const getWaterConsumed = async () => {};
+
+  const getAvailableKcal = (total: number, eaten: number) => {
+    setAvailableKcal(total - eaten);
+  };
+
+  const eatenKcal = 536;
+
   useEffect(() => {
     getRecommendedKcal();
+    getWaterConsumed();
+    getAvailableKcal(recomKcalPerDay, eatenKcal);
   }, []);
 
   const burntKcal = 690;
-  const eatenKcal = 536;
-  const availableKcal = recomKcalPerDay - eatenKcal;
+  // const availableKcal = recomKcalPerDay - eatenKcal;
   const recomCarbs = 250;
   const eatenCarbs = 150;
   const availableCarbs = recomCarbs - eatenCarbs;
@@ -103,7 +112,7 @@ const MainScreen: React.FC = () => {
         <div className="container">
           <div className="calories-chart">
             <div className="calories-chart__info">
-              <img src={fire} alt="fire" />
+              <img src={fireImg} alt="fire" />
               <p className="chart-data-num">{burntKcal}</p>
               <h5 className="chart-data-title">Burnt</h5>
             </div>
@@ -121,7 +130,7 @@ const MainScreen: React.FC = () => {
               </div>
             </div>
             <div className="calories-chart__info">
-              <img src={eaten} alt="fire" />
+              <img src={eatenImg} alt="fire" />
               <p className="chart-data-num">{eatenKcal}</p>
               <h5 className="chart-data-title">Eaten</h5>
             </div>
@@ -214,7 +223,7 @@ const MainScreen: React.FC = () => {
               quantity="0.75L (40%)"
               recommended="Recomended 2.0L (8 gls)"
               className="daily-events__item daily-events__item_water"
-              content={getWaterConsumed()}
+              content={drawGlasses(0.75)}
             />
           </div>
           <div className="daily-events__exercise">
