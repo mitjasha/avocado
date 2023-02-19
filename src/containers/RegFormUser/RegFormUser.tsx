@@ -38,10 +38,10 @@ const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
         lastName: "",
         gender: EGender.NAN,
         birth: "2021-09-10",
-        weight: "77",
+        weight: 0,
         height: 170,
         goal: EGoal.MAINTAIN,
-        targetWeight: "70",
+        targetWeight: 0,
         photo: "",
       });
       console.log(profile);
