@@ -19,6 +19,8 @@ const MainScreen: React.FC = () => {
   const [availableFats, setAvailableFats] = useState<number>(recomFats);
   const [recomCarbs, setRecomCarbs] = useState<number>(0);
   const [availableCarbs, setAvailableCarbs] = useState<number>(recomCarbs);
+  const [recomWater, setRecomWater] = useState<number>(0);
+  const [waterConsumed, setWaterConsumed] = useState<number>(0);
   const [currentWeight, setCurrentWeight] = useState<number>(0);
   const [targetWeight, setTargetWeight] = useState<number>(0);
 
@@ -69,6 +71,13 @@ const MainScreen: React.FC = () => {
     setRecomCarbs(Math.round((recomKcalPerDay * 0.4) / 4));
   };
 
+  const getRecomWater = async () => {
+    if (profileID) {
+      const profile = await profileController.getProfileById(profileID);
+      setRecomWater((Number(profile.weight) * 30) / 1000);
+    }
+  };
+
   const getAvailable = (
     total: number,
     eaten: number,
@@ -77,17 +86,19 @@ const MainScreen: React.FC = () => {
     setState(total - eaten);
   };
 
-  const drawGlasses = (litreConsumed: number) => {
+  const addWater = () => {
+    setWaterConsumed(waterConsumed + 0.25);
+  };
+
+  const drawGlasses = () => {
     const content = [];
     const oneGlass = 0.25;
-    const glasses = litreConsumed / oneGlass;
+    const glasses = waterConsumed / oneGlass;
     for (let i = 0; i < glasses; i += 1) {
       content.push(<div className="glass" key={i} />);
     }
     return <div className="glasses">{content}</div>;
   };
-
-  const getWaterConsumed = async () => {};
 
   const getCurrentWeight = async () => {
     if (profileID) {
@@ -127,12 +138,12 @@ const MainScreen: React.FC = () => {
 
   useEffect(() => {
     getRecommendedKcal();
-    getWaterConsumed();
     getAvailable(recomKcalPerDay, eatenKcal, setAvailableKcal);
     getRecomNutritions();
     getAvailable(recomProteins, eatenProtein, setAvailableProteins);
     getAvailable(recomFats, eatenFats, setAvailableFats);
     getAvailable(recomCarbs, eatenCarbs, setAvailableCarbs);
+    getRecomWater();
     getCurrentWeight();
     getTargetWeight();
   }, []);
@@ -251,10 +262,15 @@ const MainScreen: React.FC = () => {
             <h3 className="daily-events__title">Water consumed</h3>
             <DailyEventWrapper
               title="Water"
-              quantity="0.75L (40%)"
-              recommended="Recomended 2.0L (8 gls)"
+              quantity={`${waterConsumed}L (${Math.round(
+                (waterConsumed / recomWater) * 100,
+              )}%)`}
+              recommended={`Recomended ${recomWater}L (${Math.ceil(
+                recomWater / 0.25,
+              )} glasses)`}
               className="daily-events__item daily-events__item_water"
-              content={drawGlasses(0.75)}
+              content={drawGlasses()}
+              handleClick={addWater}
             />
           </div>
           <div className="daily-events__exercise">
