@@ -20,6 +20,7 @@ const MainScreen: React.FC = () => {
   const [recomCarbs, setRecomCarbs] = useState<number>(0);
   const [availableCarbs, setAvailableCarbs] = useState<number>(recomCarbs);
   const [currentWeight, setCurrentWeight] = useState<number>(0);
+  const [targetWeight, setTargetWeight] = useState<number>(0);
 
   const profileID = JSON.parse(localStorage.getItem("profileID") as string);
 
@@ -95,23 +96,12 @@ const MainScreen: React.FC = () => {
     }
   };
 
-  const eatenKcal = 536;
-  const eatenProtein = 43;
-  const eatenFats = 15;
-  const eatenCarbs = 150;
-
-  useEffect(() => {
-    getRecommendedKcal();
-    getWaterConsumed();
-    getAvailable(recomKcalPerDay, eatenKcal, setAvailableKcal);
-    getRecomNutritions();
-    getAvailable(recomProteins, eatenProtein, setAvailableProteins);
-    getAvailable(recomFats, eatenFats, setAvailableFats);
-    getAvailable(recomCarbs, eatenCarbs, setAvailableCarbs);
-    getCurrentWeight();
-  }, []);
-
-  const burntKcal = 690;
+  const getTargetWeight = async () => {
+    if (profileID) {
+      const profile = await profileController.getProfileById(profileID);
+      setTargetWeight(Number(profile.targetWeight));
+    }
+  };
 
   const upWeight = () => {
     setCurrentWeight(currentWeight + 0.1);
@@ -128,6 +118,24 @@ const MainScreen: React.FC = () => {
     ) as HTMLElement;
     weightDisplay.textContent = `${currentWeight.toFixed(1).toString()} kg`;
   };
+
+  const eatenKcal = 536;
+  const eatenProtein = 43;
+  const eatenFats = 15;
+  const eatenCarbs = 150;
+  const burntKcal = 690;
+
+  useEffect(() => {
+    getRecommendedKcal();
+    getWaterConsumed();
+    getAvailable(recomKcalPerDay, eatenKcal, setAvailableKcal);
+    getRecomNutritions();
+    getAvailable(recomProteins, eatenProtein, setAvailableProteins);
+    getAvailable(recomFats, eatenFats, setAvailableFats);
+    getAvailable(recomCarbs, eatenCarbs, setAvailableCarbs);
+    getCurrentWeight();
+    getTargetWeight();
+  }, []);
 
   return (
     <div className="main-screen">
@@ -219,23 +227,23 @@ const MainScreen: React.FC = () => {
             <h1 className="daily-events__title">Daily meals</h1>
             <DailyEventWrapper
               title="Breakfast"
-              recommended="Recomended 447 Kcal"
+              recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
               quantity="356 kcal"
               className="daily-events__item daily-events__item_breakfast"
             />
             <DailyEventWrapper
               title="Lunch"
-              recommended="Recomended 447 Kcal"
+              recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
               className="daily-events__item daily-events__item_lunch"
             />
             <DailyEventWrapper
               title="Dinner"
-              recommended="Recomended 447 Kcal"
+              recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
               className="daily-events__item daily-events__item_dinner"
             />
             <DailyEventWrapper
               title="Snack"
-              recommended="Recomended 447 Kcal"
+              recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
               className="daily-events__item daily-events__item_snack"
             />
           </div>
@@ -261,7 +269,7 @@ const MainScreen: React.FC = () => {
             <h3 className="daily-events__title">Body control</h3>
             <DailyEventWrapper
               title="Weight"
-              recommended="Target: 70.0 kg"
+              recommended={`Target: ${targetWeight} kg`}
               className="daily-events__item daily-events__item_weight"
               handleClick={upWeight}
               minusButton={
