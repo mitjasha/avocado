@@ -143,10 +143,10 @@ export interface Profile {
   lastName: string;
   gender: EGender;
   birth: string;
-  weight: string;
+  weight: number;
   height: number;
   goal: EGoal;
-  targetWeight: string;
+  targetWeight: number;
   photo: string;
 }
 
@@ -154,8 +154,17 @@ export interface ProfileRequest extends Profile {
   id: string;
 }
 
-export interface ProfileResponse extends Profile {
+export interface ProfileResponse {
   id: string;
+  firstName: string;
+  lastName: string;
+  gender: string;
+  birth: string;
+  weight: number;
+  height: number;
+  goal: string;
+  targetWeight: number;
+  photo: string;
   user: {
     id: string;
     username: string;
