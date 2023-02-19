@@ -1,22 +1,22 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import {
-  loginScreen,
-  validationLogin,
-  validationPassword,
-} from "./LoginScreen.const";
-import BackButton from "../../components/Buttons/BackButton/BackButton";
+import { validationUserName, validationPassword } from "./RegFormUser.const";
 import hideIcon from "../../assets/svg/reg-hide.svg";
 import showIcon from "../../assets/svg/reg-show.svg";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
-import "./LoginScreen.scss";
-import FormInput from "../../components/Inputs/FormInput/FormInput";
-import { User } from "../../api/api.interface";
+import { EGender, EGoal, User } from "../../api/api.interface";
 import userController from "../../api/user.controller";
+import FormInput from "../../components/Inputs/FormInput/FormInput";
 import ToolTip from "../../components/ToolTip/ToolTip";
+import "./RegFormUser.scss";
+import profileController from "../../api/profile.controller";
 
-const LoginScreen: React.FC = () => {
+interface RegFormUserProps {
+  onClick?: () => void;
+}
+
+const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
   const navigate = useNavigate();
 
   const {
@@ -28,14 +28,28 @@ const LoginScreen: React.FC = () => {
 
   const onSubmit = async (data: User) => {
     console.log(data);
-
-    const result = await userController.signIn(data);
+    const result = await userController.signUp(data);
     if (result) {
       const accessToken = result.user.token;
       console.log(accessToken);
       localStorage.setItem("accessToken", JSON.stringify(accessToken));
-      navigate("/main");
+      const profile = await profileController.addProfile({
+        firstName: "",
+        lastName: "",
+        gender: EGender.NAN,
+        birth: "2021-09-10",
+        weight: "77",
+        height: 170,
+        goal: EGoal.MAINTAIN,
+        targetWeight: "70",
+        photo: "",
+      });
+      console.log(profile);
+      const profileID = profile.id;
+      localStorage.setItem("profileID", JSON.stringify(profileID));
     }
+
+    navigate("/registration/profile");
     reset();
   };
 
@@ -56,25 +70,21 @@ const LoginScreen: React.FC = () => {
   };
 
   return (
-    <div className="login-screen">
-      <form
-        className="container login-screen-container"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <BackButton />
-        <h1 className="login-screen__title">Welcome Back</h1>
-        <h3 className="login-screen__subtitle">Hi there, you’ve been missed</h3>
-        <div className="login-screen__email-address">
-          <div className="input-wrapper input-wrapper_email">
+    <div className="container registration-screen-container">
+      <form onSubmit={handleSubmit(onSubmit)} id="userRegistration">
+        <div className="username">
+          <h2 className="input-title">Username</h2>
+          <div className="input-wrapper input-wrapper_username">
             <FormInput
               type="text"
               placeholder="Username"
-              register={register("username", { ...validationLogin })}
+              register={register("username", { ...validationUserName })}
             />
-            {errors?.username && <ToolTip text={validationLogin.message} />}
+            {errors?.username && <ToolTip text={validationUserName.message} />}
           </div>
         </div>
-        <div className="login-screen__password">
+        <div className="password">
+          <h2 className="input-title">Password</h2>
           <div className="input-wrapper input-wrapper_password">
             <FormInput
               type="password"
@@ -91,14 +101,16 @@ const LoginScreen: React.FC = () => {
             />
           </div>
         </div>
-        <ButtonTemplate className="submit-btn">Submit</ButtonTemplate>
-        <div className="error">
-          {errors?.username && errors?.password && (
-            <p>{loginScreen.TEXT_ERROR_LOGIN}</p>
-          )}
-        </div>
+        <ButtonTemplate onClick={onClick} type="submit" form="userRegistration">
+          Continue
+        </ButtonTemplate>
       </form>
+      <p className="rights">
+        By continuing, you agree to the <a href="/">Terms of Services</a> &{" "}
+        <a href="/">Privacy Policy</a>
+      </p>
     </div>
   );
 };
-export default LoginScreen;
+
+export default RegFormUser;

@@ -3,6 +3,8 @@
 .registration-screen {
   background-color: $bg-color;
 
+  max-height: 100vh;
+
   &-container {
     display: flex;
     flex-direction: column;
@@ -12,16 +14,21 @@
   }
 }
 
-.questions-container {
-  padding-bottom: 30px;
-  padding-top: 30px;
+// .questions-container {
+//   padding-bottom: 30px;
+//   padding-top: 30px;
+// }
+
+.profile-form {
+  height: 100%;
+  background-color: $bg-color;
 }
 
 .process {
   width: 100%;
   text-align: center;
   font-weight: 600;
-  margin-top: 45px;
+  margin-top: 15px;
 }
 
 .reg-title {

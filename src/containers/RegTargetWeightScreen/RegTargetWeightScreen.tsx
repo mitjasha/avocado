@@ -1,7 +1,5 @@
 import React from "react";
-import BackButton from "../../components/Buttons/BackButton/BackButton";
-import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
-import WeightInput from "../../components/WeightInput/WeightInput";
+// import WeightInput from "../../components/Inputs/WeightInput/WeightInput";
 import "./RegTargetWeightScreen.scss";
 
 const RegTargetWeightScreen: React.FC = () => {
@@ -9,8 +7,6 @@ const RegTargetWeightScreen: React.FC = () => {
   return (
     <div className="container questions-container">
       <div className="questions__weight">
-        <BackButton />
-        <div className="process">6 / 6</div>
         <h2 className="reg-title">
           Your <span className="reg-title__highlight">target weight</span>?
         </h2>
@@ -23,11 +19,10 @@ const RegTargetWeightScreen: React.FC = () => {
           <div className="weight-wrapper__current">{userCurrentWeight}</div>
           <div className="weight-wrapper__arrow" />
           <div className="weight-wrapper__target">
-            <WeightInput idName="target-weight" name="target-weight" />
+            {/* <WeightInput idName="target-weight" name="target-weight" /> */}
           </div>
         </div>
         <p className="start-phrase">Let&apos;s Start!</p>
-        <NextRegButton gradient="none" disabled />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import products from "../../assets/products.json";
-import RegInput from "../../components/RegInput/RegInput";
+import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import AddProductModal from "../../containers/AddProductModal/AddProductModal";

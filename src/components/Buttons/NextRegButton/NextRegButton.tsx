@@ -27,6 +27,7 @@ const NextRegButton: React.FC<NextRegButtonProps> = ({
           className="next-btn"
           type="submit"
           disabled={disabled}
+          onClick={onClick}
           {...attrs}
         >
           <div className="next-btn-icon" />

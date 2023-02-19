@@ -1,7 +1,7 @@
 import React from "react";
-import "./RegInput.scss";
+import "./BaseInput.scss";
 
-interface RegInputProps {
+export interface BaseInputProps {
   type: string;
   placeholder?: string;
   className?: string;
@@ -13,7 +13,7 @@ interface RegInputProps {
   onChange?: () => void;
 }
 
-const RegInput: React.FC<RegInputProps> = ({
+const RegInput: React.FC<BaseInputProps> = ({
   type,
   placeholder,
   className,

@@ -1,6 +1,6 @@
 import React from "react";
 import BasicModalComponent from "../../components/Modals/BasicModalComponent/BasicModalComponent";
-import RegInput from "../../components/RegInput/RegInput";
+import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./ProductModal.scss";
 

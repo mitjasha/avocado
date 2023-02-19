@@ -59,7 +59,7 @@ const CategoriesRecipesScreen: React.FC = () => {
       kitchen: string;
       favourites: boolean;
       vegetarian: boolean;
-      ingredients: { quantity: string; name: string; type: string }[];
+      ingredients: { quantity: string; name: string }[];
       steps: string[];
       time: number;
       imageURL: string;
@@ -226,7 +226,6 @@ const CategoriesRecipesScreen: React.FC = () => {
                   Favourites
                 </button>
               </li>
-
             </ul>
           </div>
         </header>
