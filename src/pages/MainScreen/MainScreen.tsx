@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import profileController from "../../api/profile.controller";
 import DailyEventWrapper from "../../components/DailyEventWrapper/DailyEventWrapper";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
 import ChartComponent from "../../components/ChartComponent/ChartComponent";
@@ -20,7 +21,44 @@ const MainScreen: React.FC = () => {
     return <div className="glasses">{content}</div>;
   };
 
-  const recomKcalPerDay = 2181;
+  const [recomKcalPerDay, setrRecomKcalPerDay] = useState<number>(0);
+
+  const getProfileData = async () => {
+    const profileID = JSON.parse(localStorage.getItem("profileID") as string);
+
+    if (profileID) {
+      const profile = await profileController.getProfileById(profileID);
+      console.log(profile.goal);
+      const userAge = Math.floor(
+        (new Date().getTime() - new Date(profile.birth).getTime()) /
+          (24 * 3600 * 365.25 * 1000),
+      );
+      if (profile.gender === "MALE") {
+        setrRecomKcalPerDay(
+          Math.round(
+            66 +
+              13.7 * Number(profile.weight) +
+              5 * Number(profile.height) -
+              6.76 * userAge,
+          ),
+        );
+      } else {
+        setrRecomKcalPerDay(
+          Math.round(
+            655 +
+              9.6 * Number(profile.weight) +
+              1.8 * Number(profile.height) -
+              4.7 * userAge,
+          ),
+        );
+      }
+    }
+  };
+
+  useEffect(() => {
+    getProfileData();
+  }, []);
+
   const burntKcal = 690;
   const eatenKcal = 536;
   const availableKcal = recomKcalPerDay - eatenKcal;
