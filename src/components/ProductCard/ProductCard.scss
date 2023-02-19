@@ -1,0 +1,48 @@
+@import "../../variables.scss";
+
+.card__container {
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $light-color;
+  border-radius: 20px;
+  padding: 0 10px;
+  box-sizing: border-box;
+
+  &__image {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__span {
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 10px;
+    color: $dark-color;
+  }
+}
+
+.card__container:hover {
+  cursor: pointer;
+  background-color: $middle-green;
+  color: $light-color;
+}
+
+@media screen and (min-width: $media-tab) {
+  .card__container {
+    width: 30%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &__span {
+      margin-top: 20px;
+      padding: 0;
+      text-align: center;
+    }
+  }
+}

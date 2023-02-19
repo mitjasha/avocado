@@ -1,0 +1,54 @@
+@import "../../variables.scss";
+
+.activity-popup {
+  &__title {
+    text-align: center;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    // gap: 10px;
+    margin: auto;
+    padding-bottom: 20px;
+  }
+
+  &__input-wrapper {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    width: 40%;
+  }
+
+  &__input {
+    width: 80%;
+    height: 40px;
+    padding: 10px;
+  }
+
+  &__arrow {
+    background: url(../../assets/svg/arrow_modal.svg) no-repeat;
+    background-position: 50%;
+    width: 20%;
+  }
+
+  &__kcal {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $middle-green;
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (min-width: $media-tab) {
+  .activity-popup {
+    &__wrapper {
+      width: 450px;
+    }
+  }
+}

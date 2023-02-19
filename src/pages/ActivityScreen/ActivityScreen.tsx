@@ -1,7 +1,7 @@
 import React from "react";
 import activities from "../../assets/activities.json";
 import ActivityWrapper from "../../components/ActivityWrapper/ActivityWrapper";
-import ActivityPopUpProps from "../../components/ActivityPopUp/ActivityPopUp";
+import ActivityModal from "../../containers/ActivityModal/ActivityModal";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import "./ActivityScreen.scss";
 
@@ -42,7 +42,7 @@ const ActivityScreen: React.FC = () => {
           })}
         </div>
       </div>
-      <ActivityPopUpProps name="jogging" />
+      <ActivityModal name="jogging" kcalPerMin={8} />
     </div>
   );
 };

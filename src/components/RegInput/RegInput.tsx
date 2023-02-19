@@ -9,6 +9,8 @@ interface RegInputProps {
   maxLength?: number;
   id?: string;
   defaultValue?: number;
+  disabled?: boolean;
+  onChange?: () => void;
 }
 
 const RegInput: React.FC<RegInputProps> = ({
@@ -19,6 +21,8 @@ const RegInput: React.FC<RegInputProps> = ({
   maxLength,
   id,
   defaultValue,
+  disabled,
+  onChange,
 }) => {
   const classes = `${"reg-input"} ${className}`;
   return (
@@ -31,6 +35,8 @@ const RegInput: React.FC<RegInputProps> = ({
       id={id}
       defaultValue={defaultValue}
       required
+      disabled={disabled}
+      onChange={onChange}
     />
   );
 };
