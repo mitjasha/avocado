@@ -13,6 +13,8 @@ const eventMealController = {
       JSON.stringify(eventMeal),
     ),
   delEvent: (eventMeal: EventMealRequest) => del(`/event-meal/${eventMeal.id}`),
+  getEventsByDate: (date: string) =>
+    get<EventMealResponse[]>(`/event-meal/getAllEvents/byDate/${date}`),
   getAllEvents: () => get<EventMealResponse[]>("/event-meal"),
   updateEvent: (eventMeal: EventMealRequest) =>
     put(`/event-meal/${eventMeal.id}`, JSON.stringify(eventMeal)),
