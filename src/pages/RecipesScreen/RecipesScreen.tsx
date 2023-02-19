@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import recipes from "../../assets/recipes.json";
 import CardRecipe from "../../components/CardRecipe/CardRecipe";
 import RegInput from "../../components/RegInput/RegInput";
@@ -14,7 +15,10 @@ const RecipesScreen: React.FC = () => {
         </div>
         <div className="categories-container">
           <div className="categories-container__scroll">
-            <div className="category category__breakfast">
+            <Link
+              to="/recipes/breakfast"
+              className="category category__breakfast"
+            >
               <h3 className="category__h3">Breakfast</h3>
               <span className="category__span">
                 {
@@ -24,8 +28,11 @@ const RecipesScreen: React.FC = () => {
                 }{" "}
                 Recipes
               </span>
-            </div>
-            <div className="category category__appetizers">
+            </Link>
+            <Link
+              to="/recipes/appetizers"
+              className="category category__appetizers"
+            >
               <h3 className="category__h3">Appetizers</h3>
               <span className="category__span">
                 {
@@ -35,9 +42,9 @@ const RecipesScreen: React.FC = () => {
                 }{" "}
                 Recipes
               </span>
-            </div>
-            <div className="category category__pasta">
-              <h3 className="category__h3">Pasta</h3>
+            </Link>
+            <Link to="/recipes/dinner" className="category category__pasta">
+              <h3 className="category__h3">Dinner</h3>
               <span className="category__span">
                 {
                   recipes.recipes.filter((item) => item.category === "dinner")
@@ -45,11 +52,14 @@ const RecipesScreen: React.FC = () => {
                 }{" "}
                 Recipes
               </span>
-            </div>
-            <div className="category category__favourites">
+            </Link>
+            <Link
+              to="/recipes/favorites"
+              className="category category__favourites"
+            >
               <h3 className="category__h3">Favourites</h3>
               <span className="category__span">0 Recipes</span>
-            </div>
+            </Link>
           </div>
         </div>
         <h1 className="recipes__screen__h1">What is in your kitchen?</h1>
@@ -64,7 +74,13 @@ const RecipesScreen: React.FC = () => {
         </div>
         <div className="recipes__container">
           {recipes.recipes.map((item) => (
-            <CardRecipe data={item} key={item.id} />
+            <Link
+              to={`/recipe/${item.id}`}
+              className="recipe__card"
+              key={item.id}
+            >
+              <CardRecipe data={item} />
+            </Link>
           ))}
         </div>
       </div>

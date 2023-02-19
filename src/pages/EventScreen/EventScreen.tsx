@@ -7,10 +7,6 @@ import BackButton from "../../components/Buttons/BackButton/BackButton";
 import "./EventScreen.scss";
 import "../../index.scss";
 
-// interface TypeOfMeal {
-//   type: string;
-// }
-
 const EventScreen: React.FC = () => {
   const { type } = useParams();
   return (
