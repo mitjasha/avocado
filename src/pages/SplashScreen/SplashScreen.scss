@@ -3,6 +3,7 @@
 .splash-screen {
   background-color: $bg-color;
   display: flex;
+  min-height: 100vh;
 }
 
 .splash-container {
@@ -28,6 +29,10 @@
 .button-container {
   width: 100%;
 
+  &__spiner {
+    margin: auto;
+  }
+
   &__button {
     display: flex;
     margin: auto;
@@ -52,5 +57,11 @@
       color: $middle-green;
       transition: 0.4s all ease;
     }
+  }
+}
+
+@media screen and (min-width: $media-tab-pt) {
+  .splash-container {
+    width: 500px;
   }
 }

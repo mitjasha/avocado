@@ -28,7 +28,7 @@ import "../../containers/RegTallScreen/RegTallScreen.scss";
 import "../../containers/RegWeightScreen/RegWeightScreen.scss";
 import "../../containers/RegGoalScreen/RegGoalScreen.scss";
 import "../../containers/RegTargetWeightScreen/RegTargetWeightScreen.scss";
-import "./ProfileRegistrationScreen.scss";
+import "../UserRegistrationScreen/UserRegistrationScreen.scss";
 
 const RegistrationScreen: React.FC = () => {
   const [processCount, setCounter] = useState<number>(1);
