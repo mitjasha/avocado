@@ -115,7 +115,7 @@ const RegistrationScreen: React.FC = () => {
       {processCount >= 2 && (
         <div>
           <RegBackButton onClick={decrease} />
-          <div className="process">{processCount}/ 7</div>
+          <div className="process">{processCount} / 7</div>
         </div>
       )}
       <form className="profile-form" onSubmit={handleSubmit(onSubmit)}>
