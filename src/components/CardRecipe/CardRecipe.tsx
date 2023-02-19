@@ -11,6 +11,8 @@ export interface DataRecipes {
   fats: string;
   author: string;
   kitchen: string;
+  favourites: boolean;
+  vegetarian: boolean;
   ingredients: { quantity: string; name: string }[];
   steps: string[];
   time: number;
