@@ -1,6 +1,7 @@
 @import "../../variables";
 
 .splash-screen {
+  background-color: $bg-color;
   display: flex;
 }
 
@@ -9,10 +10,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 30px 0;
 }
 
 .figure {
-  margin: 38px 0 138px;
+  margin: 30px 0 70px;
   &__text {
     font-weight: 700;
     font-size: 24px;
@@ -24,10 +26,19 @@
 }
 
 .button-container {
-  height: 275px;
+  width: 100%;
+
+  &__button {
+    display: flex;
+    margin: auto;
+  }
 
   &__text {
-    margin: 49px 0 80px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin: 50px 0;
+    gap: 5px;
   }
 
   &__link {
@@ -36,5 +47,10 @@
     line-height: 1.2;
     text-align: center;
     color: $dark-green;
+
+    &:hover {
+      color: $middle-green;
+      transition: 0.4s all ease;
+    }
   }
 }

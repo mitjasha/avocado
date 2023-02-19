@@ -66,7 +66,7 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="container header__container">
         <div className="header_desk">
-          <LogoComponent className="logo" />
+          <LogoComponent className="header__logo" />
           <NavComponent />
         </div>
         <div className="header_mob">

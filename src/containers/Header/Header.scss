@@ -17,6 +17,10 @@
     width: 100%;
   }
 
+  &__logo {
+    display: none;
+  }
+
   &__date-input {
     width: 44px;
     height: 44px;
@@ -89,6 +93,10 @@
 @media screen and (min-width: $media-tab-pt) {
   .header {
     height: 140px;
+
+    &__logo {
+      display: block;
+    }
 
     &__menu-btn {
       display: none;

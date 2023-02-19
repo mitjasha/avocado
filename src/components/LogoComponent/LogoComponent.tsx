@@ -6,7 +6,8 @@ interface LogoProps {
 }
 
 const LogoComponent: React.FC<LogoProps> = ({ className }) => {
-  return <h1 className={className}>AVOCADO</h1>;
+  const classes = `${"logo"} ${className}`;
+  return <h1 className={classes}>AVOCADO</h1>;
 };
 
 export default LogoComponent;
