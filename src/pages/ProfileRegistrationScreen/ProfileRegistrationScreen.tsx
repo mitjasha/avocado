@@ -120,7 +120,7 @@ const RegistrationScreen: React.FC = () => {
       )}
       <form className="profile-form" onSubmit={handleSubmit(onSubmit)}>
         {processCount === 1 && (
-          <div className="container registration-screen-container">
+          <div className="container profile-reg-container">
             <div className="full-name">
               <div className="full-name__first-name">
                 <h2 className="input-title">First Name</h2>

@@ -1,5 +1,12 @@
 @import "../../variables";
 
+.profile-reg-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 150px;
+}
+
 .input-wrapper {
   position: relative;
   width: 100%;
