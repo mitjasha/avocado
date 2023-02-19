@@ -19,6 +19,7 @@ const MainScreen: React.FC = () => {
   const [availableFats, setAvailableFats] = useState<number>(recomFats);
   const [recomCarbs, setRecomCarbs] = useState<number>(0);
   const [availableCarbs, setAvailableCarbs] = useState<number>(recomCarbs);
+  const [currentWeight, setCurrentWeight] = useState<number>(0);
 
   const profileID = JSON.parse(localStorage.getItem("profileID") as string);
 
@@ -70,8 +71,7 @@ const MainScreen: React.FC = () => {
   const getAvailable = (
     total: number,
     eaten: number,
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    setState: Function,
+    setState: React.Dispatch<React.SetStateAction<number>>,
   ) => {
     setState(total - eaten);
   };
@@ -88,6 +88,13 @@ const MainScreen: React.FC = () => {
 
   const getWaterConsumed = async () => {};
 
+  const getCurrentWeight = async () => {
+    if (profileID) {
+      const profile = await profileController.getProfileById(profileID);
+      setCurrentWeight(Number(profile.weight));
+    }
+  };
+
   const eatenKcal = 536;
   const eatenProtein = 43;
   const eatenFats = 15;
@@ -101,25 +108,25 @@ const MainScreen: React.FC = () => {
     getAvailable(recomProteins, eatenProtein, setAvailableProteins);
     getAvailable(recomFats, eatenFats, setAvailableFats);
     getAvailable(recomCarbs, eatenCarbs, setAvailableCarbs);
+    getCurrentWeight();
   }, []);
 
   const burntKcal = 690;
-  let curWeight = 77.0;
 
   const upWeight = () => {
-    curWeight += 0.1;
+    setCurrentWeight(currentWeight + 0.1);
     const weightDisplay = document.querySelector(
       ".curr-weight-display",
     ) as HTMLElement;
-    weightDisplay.textContent = `${curWeight.toFixed(1).toString()} kg`;
+    weightDisplay.textContent = `${currentWeight.toFixed(1).toString()} kg`;
   };
 
   const downWeight = () => {
-    curWeight -= 0.1;
+    setCurrentWeight(currentWeight - 0.1);
     const weightDisplay = document.querySelector(
       ".curr-weight-display",
     ) as HTMLElement;
-    weightDisplay.textContent = `${curWeight.toFixed(1).toString()} kg`;
+    weightDisplay.textContent = `${currentWeight.toFixed(1).toString()} kg`;
   };
 
   return (
@@ -262,7 +269,9 @@ const MainScreen: React.FC = () => {
                   <img src={minus} alt="minus" className="plus-minus-img" />
                 </PlusMinusButton>
               }
-              curWeight=<p className="curr-weight-display">{curWeight} kg</p>
+              curWeight=<p className="curr-weight-display">
+                {currentWeight} kg
+              </p>
             />
           </div>
         </div>
