@@ -22,41 +22,49 @@ const MainScreen: React.FC = () => {
   };
 
   const [recomKcalPerDay, setrRecomKcalPerDay] = useState<number>(0);
+  const profileID = JSON.parse(localStorage.getItem("profileID") as string);
 
-  const getProfileData = async () => {
-    const profileID = JSON.parse(localStorage.getItem("profileID") as string);
-
+  const getRecommendedKcal = async () => {
     if (profileID) {
       const profile = await profileController.getProfileById(profileID);
-      console.log(profile.goal);
       const userAge = Math.floor(
         (new Date().getTime() - new Date(profile.birth).getTime()) /
           (24 * 3600 * 365.25 * 1000),
       );
+      const maleRecomKcal = Math.round(
+        (66 +
+          13.7 * Number(profile.weight) +
+          5 * Number(profile.height) -
+          6.76 * userAge) *
+          1.2,
+      );
+      const femaleRecomKcal = Math.round(
+        (655 +
+          9.6 * Number(profile.weight) +
+          1.8 * Number(profile.height) -
+          4.7 * userAge) *
+          1.2,
+      );
       if (profile.gender === "MALE") {
-        setrRecomKcalPerDay(
-          Math.round(
-            66 +
-              13.7 * Number(profile.weight) +
-              5 * Number(profile.height) -
-              6.76 * userAge,
-          ),
-        );
-      } else {
-        setrRecomKcalPerDay(
-          Math.round(
-            655 +
-              9.6 * Number(profile.weight) +
-              1.8 * Number(profile.height) -
-              4.7 * userAge,
-          ),
-        );
+        if (profile.goal === "Lose weight") {
+          setrRecomKcalPerDay(Math.round(maleRecomKcal - maleRecomKcal * 0.2));
+        } else if (profile.goal === "Gain weight") {
+          setrRecomKcalPerDay(Math.round(maleRecomKcal * 1.2));
+        } else setrRecomKcalPerDay(maleRecomKcal);
+      } else if (profile.gender === "FEMALE") {
+        if (profile.goal === "Lose weight") {
+          setrRecomKcalPerDay(
+            Math.round(femaleRecomKcal - femaleRecomKcal * 0.2),
+          );
+        } else if (profile.goal === "Gain weight") {
+          setrRecomKcalPerDay(Math.round(femaleRecomKcal * 1.2));
+        } else setrRecomKcalPerDay(femaleRecomKcal);
       }
     }
   };
 
   useEffect(() => {
-    getProfileData();
+    getRecommendedKcal();
   }, []);
 
   const burntKcal = 690;
