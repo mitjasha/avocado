@@ -89,6 +89,8 @@ const CategoriesRecipesScreen: React.FC = () => {
     recipes.recipes,
   ]);
 
+  // const sortingList = ["Popular", "Recent", "Veg", "Quick"];
+
   return (
     <div className="categories__recipes__screen">
       <div className="container">
@@ -181,6 +183,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                   Favourites
                 </button>
               </li>
+
             </ul>
           </div>
         </header>

@@ -58,6 +58,7 @@ const ProfileScreen: React.FC = () => {
             const title = item[0].toUpperCase() + item.slice(1);
             return (
               <ProfileNavButton
+                key={item}
                 to={`/${item}`}
                 title={title}
                 className={`list-item__icon_${item}`}

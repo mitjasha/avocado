@@ -3,6 +3,7 @@ import BackButton from "../../components/Buttons/BackButton/BackButton";
 import RegInput from "../../components/RegInput/RegInput";
 import hideIcon from "../../assets/svg/reg-hide.svg";
 import showIcon from "../../assets/svg/reg-show.svg";
+import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./LoginScreen.scss";
 
 const LoginScreen: React.FC = () => {
@@ -48,9 +49,9 @@ const LoginScreen: React.FC = () => {
             />
           </div>
         </div>
-        <button type="submit" className="submit-btn" disabled>
+        <ButtonTemplate className="submit-btn" disabled>
           Submit
-        </button>
+        </ButtonTemplate>
       </div>
     </div>
   );

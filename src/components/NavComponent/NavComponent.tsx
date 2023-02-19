@@ -15,7 +15,12 @@ const NavComponent: React.FC = () => {
   const menuItemCreate = (text: string, index: number) => {
     return (
       <li className="nav-list__item" key={text}>
-        <Link className="nav-list__link" to={text} key={text + index}>
+        <Link
+          className="nav-list__link"
+          to={text}
+          key={text + index}
+          onClick={closeBurger}
+        >
           {text}
         </Link>
       </li>

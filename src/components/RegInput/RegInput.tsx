@@ -6,6 +6,9 @@ interface RegInputProps {
   placeholder?: string;
   className?: string;
   minLength?: number;
+  maxLength?: number;
+  id?: string;
+  defaultValue?: number;
 }
 
 const RegInput: React.FC<RegInputProps> = ({
@@ -13,6 +16,9 @@ const RegInput: React.FC<RegInputProps> = ({
   placeholder,
   className,
   minLength,
+  maxLength,
+  id,
+  defaultValue,
 }) => {
   const classes = `${"reg-input"} ${className}`;
   return (
@@ -21,6 +27,9 @@ const RegInput: React.FC<RegInputProps> = ({
       className={classes}
       placeholder={placeholder}
       minLength={minLength}
+      maxLength={maxLength}
+      id={id}
+      defaultValue={defaultValue}
       required
     />
   );

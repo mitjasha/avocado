@@ -1,170 +1,147 @@
 @import "../../variables";
 
 .edit-profile {
-    &__screen {
-        background-color: $bg-color;
-        padding-bottom: 30px;
-        height: 100%;
-    }
+  &__screen {
+    background-color: $bg-color;
+    padding-bottom: 30px;
+    height: 100%;
+  }
 
-    &__container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    &__h1 {
-        margin: 0;
-        color: $dark-color;
-        padding: 20px 0px;
-        text-align: center;
-    }
-
-    &__header {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        width: 360px;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    &__icon {
-        height: 130px;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    &__info {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-
-    &__input {
-        border: 2px solid #559c4f;
-        border-radius: 10px;
-        -webkit-border-radius: 10px;
-        text-indent: 5%;
-        -moz-border-radius: 10px;
-        -khtml-border-radius: 10px;
-        background: $light-color !important;
-        outline: none;
-        height: 20px;
-        width: 180px;
-        font-weight: 400;
-        font-size: 15px;
-        color: #808080;
-    }
-}
-
-.radio__container {
-    width: 100px;
+  &__container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 
-.gender__container {
+  &__h1 {
+    margin: 0;
+    margin-bottom: 30px;
+    color: $dark-color;
+    padding: 20px 0px;
+    text-align: center;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
     width: 360px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
-    gap: 10px;
+  }
+
+  &__icon {
+    height: 180px;
+    background-color: $light-color;
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: 50%;
+  }
+
+  &__info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__input {
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+
+    &[type="text"] {
+      width: 180px;
+    }
+
+    &[type="number"] {
+      width: 80px;
+    }
+  }
+}
+
+.item__container {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 label {
-    padding: 5px 0px;
+  padding: 5px 0px;
 }
 
 .edit-profile__input__radio {
-    &::after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        top: -5px;
-        left: -1px;
-        position: relative;
-        background-color: $bg-color;
-        content: '';
-        display: inline-block;
-        visibility: visible;
-        border: 2px solid #559c4f;
-    }
+  cursor: pointer;
 
-    &:checked::after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        top: -5px;
-        left: -1px;
-        position: relative;
-        background-color: $middle-green;
-        content: '';
-        display: inline-block;
-        visibility: visible;
-        border: 2px solid $middle-green;
-    }
+  &::after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -5px;
+    left: -1px;
+    position: relative;
+    background-color: $bg-color;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #559c4f;
+  }
 
+  &:checked::after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -5px;
+    left: -1px;
+    position: relative;
+    background-color: $middle-green;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid $middle-green;
+  }
 }
 
 .select__container {
-    background-color: $middle-green;
-    height: 26px;
-    margin-left: 10px;
-    cursor: pointer;
-    border-radius: 10px;
-    font-family: 'Montserrat';
-    color: $dark-color;
-    border: none;
-    position: relative;
-    outline: none;
-}
-
-.age__container {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-
-.goal__container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.body__container {
-    width: 210px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: $middle-green;
+  height: 40px;
+  width: 200px;
+  margin-left: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Montserrat";
+  color: $dark-color;
 }
 
 .accept__button {
-    width: 220px;
-    height: 50px;
-    margin: 30px auto 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    border: 2px solid $dark-color;
-    background-color: $dark-color;
-    color: $light-color;
+  width: 220px;
+  height: 50px;
+  margin: 30px auto 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 2px solid $dark-color;
+  background-color: $dark-color;
+  color: $light-color;
 
-    &:hover {
-        cursor: pointer;
-        background: $light-color;
-        border: 2px solid $dark-color;
-        border-radius: 20px;
-        color: $dark-color;
-    }
+  &:hover {
+    cursor: pointer;
+    background: $light-color;
+    border: 2px solid $dark-color;
+    border-radius: 20px;
+    color: $dark-color;
+  }
 }

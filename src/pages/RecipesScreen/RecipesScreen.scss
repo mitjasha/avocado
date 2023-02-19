@@ -137,3 +137,34 @@
     margin: auto;
   }
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 4px;
+  background-color: $middle-green;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $middle-green;
+  border-radius: 9em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $dark-green;
+}
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+  display: none;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+  display: none;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  display: none;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+  display: none;
+}

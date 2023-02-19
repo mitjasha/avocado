@@ -1,26 +1,30 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import products from "../../assets/products.json";
 import RegInput from "../../components/RegInput/RegInput";
 import EventCardProduct from "../../components/EventCardProduct/EventCardProduct";
+import BackButton from "../../components/Buttons/BackButton/BackButton";
 import "./EventScreen.scss";
 import "../../index.scss";
 
-interface TypeOfMeal {
-  type: string;
-}
+// interface TypeOfMeal {
+//   type: string;
+// }
 
-const EventScreen: React.FC<TypeOfMeal> = ({ type }) => {
+const EventScreen: React.FC = () => {
+  const { type } = useParams();
   return (
     <div className="event__screen">
       <div className="container">
         <div className="event__screen__header">
+          <BackButton />
           <h1 className="event__screen__h1">{type}</h1>
           <div className="event__screen__header__add" />
         </div>
         <div className="event__screen__search">
           <div className="event__screen__search__icon" />
           <RegInput
-            type="text"
+            type="search"
             placeholder="What have you eaten?"
             className="event__screen__input"
           />
