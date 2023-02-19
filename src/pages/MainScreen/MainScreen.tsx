@@ -12,6 +12,14 @@ import "./MainScreen.scss";
 const MainScreen: React.FC = () => {
   const [recomKcalPerDay, setRecomKcalPerDay] = useState<number>(0);
   const [availableKcal, setAvailableKcal] = useState<number>(recomKcalPerDay);
+  const [recomProteins, setRecomProteins] = useState<number>(0);
+  const [availableProteins, setAvailableProteins] =
+    useState<number>(recomProteins);
+  const [recomFats, setRecomFats] = useState<number>(0);
+  const [availableFats, setAvailableFats] = useState<number>(recomFats);
+  const [recomCarbs, setRecomCarbs] = useState<number>(0);
+  const [availableCarbs, setAvailableCarbs] = useState<number>(recomCarbs);
+
   const profileID = JSON.parse(localStorage.getItem("profileID") as string);
 
   const getRecommendedKcal = async () => {
@@ -53,6 +61,21 @@ const MainScreen: React.FC = () => {
     }
   };
 
+  const getRecomNutritions = () => {
+    setRecomProteins(Math.round((recomKcalPerDay * 0.3) / 4));
+    setRecomFats(Math.round((recomKcalPerDay * 0.3) / 9));
+    setRecomCarbs(Math.round((recomKcalPerDay * 0.4) / 4));
+  };
+
+  const getAvailable = (
+    total: number,
+    eaten: number,
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    setState: Function,
+  ) => {
+    setState(total - eaten);
+  };
+
   const drawGlasses = (litreConsumed: number) => {
     const content = [];
     const oneGlass = 0.25;
@@ -65,29 +88,22 @@ const MainScreen: React.FC = () => {
 
   const getWaterConsumed = async () => {};
 
-  const getAvailableKcal = (total: number, eaten: number) => {
-    setAvailableKcal(total - eaten);
-  };
-
   const eatenKcal = 536;
+  const eatenProtein = 43;
+  const eatenFats = 15;
+  const eatenCarbs = 150;
 
   useEffect(() => {
     getRecommendedKcal();
     getWaterConsumed();
-    getAvailableKcal(recomKcalPerDay, eatenKcal);
+    getAvailable(recomKcalPerDay, eatenKcal, setAvailableKcal);
+    getRecomNutritions();
+    getAvailable(recomProteins, eatenProtein, setAvailableProteins);
+    getAvailable(recomFats, eatenFats, setAvailableFats);
+    getAvailable(recomCarbs, eatenCarbs, setAvailableCarbs);
   }, []);
 
   const burntKcal = 690;
-  // const availableKcal = recomKcalPerDay - eatenKcal;
-  const recomCarbs = 250;
-  const eatenCarbs = 150;
-  const availableCarbs = recomCarbs - eatenCarbs;
-  const recomFats = 40;
-  const eatenFats = 15;
-  const availableFats = recomFats - eatenFats;
-  const recomProtein = 68;
-  const eatenProtein = 43;
-  const availableProtein = recomProtein - eatenProtein;
   let curWeight = 77.0;
 
   const upWeight = () => {
@@ -173,7 +189,7 @@ const MainScreen: React.FC = () => {
             <div className="nutrients-charts__item">
               <div>
                 <ChartComponent
-                  chartData={[eatenProtein, availableProtein]}
+                  chartData={[eatenProtein, availableProteins]}
                   colors={["#559C4F", "#fafdf8"]}
                   size={60}
                   cutout={15}
