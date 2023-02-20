@@ -114,20 +114,31 @@ const MainScreen: React.FC = () => {
     }
   };
 
-  const upWeight = () => {
-    setCurrentWeight(currentWeight + 0.1);
-    const weightDisplay = document.querySelector(
-      ".curr-weight-display",
-    ) as HTMLElement;
-    weightDisplay.textContent = `${currentWeight.toFixed(1).toString()} kg`;
-  };
-
-  const downWeight = () => {
-    setCurrentWeight(currentWeight - 0.1);
-    const weightDisplay = document.querySelector(
-      ".curr-weight-display",
-    ) as HTMLElement;
-    weightDisplay.textContent = `${currentWeight.toFixed(1).toString()} kg`;
+  const changeWeight = async (up: boolean) => {
+    if (profileID) {
+      const profile = await profileController.getProfileById(profileID);
+      if (up === true) {
+        setCurrentWeight(currentWeight + 0.1);
+      } else {
+        setCurrentWeight(currentWeight - 0.1);
+      }
+      await profileController.updateProfile({
+        firstName: profile.firstName,
+        lastName: profile.lastName,
+        gender: profile.gender,
+        birth: profile.birth,
+        weight: String(currentWeight),
+        height: profile.height,
+        goal: profile.goal,
+        targetWeight: profile.targetWeight,
+        photo: "",
+        id: profileID,
+      });
+      const weightDisplay = document.querySelector(
+        ".curr-weight-display",
+      ) as HTMLElement;
+      weightDisplay.textContent = `${currentWeight.toFixed(1).toString()} kg`;
+    }
   };
 
   const eatenKcal = 536;
@@ -265,9 +276,9 @@ const MainScreen: React.FC = () => {
               quantity={`${waterConsumed}L (${Math.round(
                 (waterConsumed / recomWater) * 100,
               )}%)`}
-              recommended={`Recomended ${recomWater}L (${Math.ceil(
-                recomWater / 0.25,
-              )} glasses)`}
+              recommended={`Recomended ${recomWater
+                .toFixed(2)
+                .toString()}L (${Math.ceil(recomWater / 0.25)} glasses)`}
               className="daily-events__item daily-events__item_water"
               content={drawGlasses()}
               handleClick={addWater}
@@ -287,14 +298,14 @@ const MainScreen: React.FC = () => {
               title="Weight"
               recommended={`Target: ${targetWeight} kg`}
               className="daily-events__item daily-events__item_weight"
-              handleClick={upWeight}
+              handleClick={() => changeWeight(true)}
               minusButton={
-                <PlusMinusButton onClick={downWeight}>
+                <PlusMinusButton onClick={() => changeWeight(false)}>
                   <img src={minus} alt="minus" className="plus-minus-img" />
                 </PlusMinusButton>
               }
               curWeight=<p className="curr-weight-display">
-                {currentWeight} kg
+                {currentWeight.toFixed(1).toString()} kg
               </p>
             />
           </div>
