@@ -10,13 +10,6 @@ import "./ProgressScreen.scss";
 import profileController from "../../api/profile.controller";
 
 const ProgressScreen: React.FC = () => {
-  const userDailyKcalRecom = 1563 as number;
-  const eatenKcalPerDay = {
-    "27 Jan": 1217,
-    "28 Jan": 1734,
-    "29 Jan": 1578,
-    "30 Jan": 1601,
-  };
   const openPopUp = () => {
     const popUp = document.querySelector(
       ".pop-up-wrapper",
@@ -30,6 +23,29 @@ const ProgressScreen: React.FC = () => {
   const [currentWeight, setCurrentWeight] = useState<number>(0);
   const [targetWeight, setTargetWeight] = useState<number>(0);
   const [kgLeft, setKgLeft] = useState<number>(0);
+  // const [eatenKcalPerDay, setEatenKcalPerDay] = useState<object>({
+  //   "27 Jan": 1217,
+  //   "28 Jan": 1734,
+  //   "29 Jan": 1578,
+  //   "30 Jan": 1601,
+  // });
+  const [averageKcal, setAverageKcal] = useState<number>(0);
+
+  const eatenKcalPerDay = {
+    "27 Jan": 1217,
+    "28 Jan": 1734,
+    "29 Jan": 1578,
+    "30 Jan": 1601,
+  };
+
+  const getAverageKcal = () => {
+    const kcalValuesArr = Object.values(eatenKcalPerDay);
+    setAverageKcal(
+      kcalValuesArr.reduce((sum, elem) => {
+        return sum + elem;
+      }, 0) / kcalValuesArr.length,
+    );
+  };
 
   const getCurrentWeight = async () => {
     if (profileID) {
@@ -45,7 +61,7 @@ const ProgressScreen: React.FC = () => {
     }
   };
 
-  const getKgLeft = async () => {
+  const getKgLeft = () => {
     if (profileID) {
       if (targetWeight < currentWeight) {
         setKgLeft(currentWeight - targetWeight);
@@ -55,10 +71,14 @@ const ProgressScreen: React.FC = () => {
     }
   };
 
-  const upWeight = async () => {
+  const changeWeight = async (up: boolean) => {
     if (profileID) {
       const profile = await profileController.getProfileById(profileID);
-      setCurrentWeight(currentWeight + 0.1);
+      if (up === true) {
+        setCurrentWeight(currentWeight + 0.1);
+      } else {
+        setCurrentWeight(currentWeight - 0.1);
+      }
       await profileController.updateProfile({
         firstName: profile.firstName,
         lastName: profile.lastName,
@@ -71,25 +91,7 @@ const ProgressScreen: React.FC = () => {
         photo: "",
         id: profileID,
       });
-    }
-  };
-
-  const downWeight = async () => {
-    if (profileID) {
-      const profile = await profileController.getProfileById(profileID);
-      setCurrentWeight(currentWeight - 0.1);
-      await profileController.updateProfile({
-        firstName: profile.firstName,
-        lastName: profile.lastName,
-        gender: profile.gender,
-        birth: profile.birth,
-        weight: String(currentWeight),
-        height: profile.height,
-        goal: profile.goal,
-        targetWeight: profile.targetWeight,
-        photo: "",
-        id: profileID,
-      });
+      getKgLeft();
     }
   };
 
@@ -97,6 +99,7 @@ const ProgressScreen: React.FC = () => {
     getCurrentWeight();
     getTargetWeight();
     getKgLeft();
+    getAverageKcal();
   }, []);
 
   return (
@@ -133,7 +136,7 @@ const ProgressScreen: React.FC = () => {
           <div className="calories__daily-data">
             <h3 className="daily-data__title">
               <span style={{ fontWeight: "200" }}>Average</span> <br />{" "}
-              {userDailyKcalRecom} kcal
+              {averageKcal.toFixed(1).toString()} kcal
             </h3>
             <BarChartComponent
               labels={Object.keys(eatenKcalPerDay)}
@@ -146,13 +149,13 @@ const ProgressScreen: React.FC = () => {
       </div>
       <BasicModalComponent title="Current Weight">
         <div className="pop-up__update">
-          <PlusMinusButton onClick={downWeight}>
+          <PlusMinusButton onClick={() => changeWeight(false)}>
             <img src={minus} alt="minus" className="plus-minus-img" />
           </PlusMinusButton>
           <div className="pop-up__weight">
             {currentWeight.toFixed(1).toString()} kg
           </div>
-          <PlusMinusButton onClick={upWeight}>
+          <PlusMinusButton onClick={() => changeWeight(true)}>
             <img src={plus} alt="plus" className="plus-minus-img" />
           </PlusMinusButton>
         </div>
