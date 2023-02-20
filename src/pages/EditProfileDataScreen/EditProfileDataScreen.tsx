@@ -6,34 +6,6 @@ import "./EditProfileDataScreen.scss";
 import profileController from "../../api/profile.controller";
 import { EGender, EGoal } from "../../api/api.interface";
 
-// interface UserData {
-//   username: string;
-//   firstName: string;
-//   lastName: string;
-//   age: string;
-//   gender: string;
-//   currentWeight: string;
-//   height: string;
-//   goal: string;
-//   targetWeight: string;
-// }
-
-// interface UserProps {
-//   data: UserData;
-// }
-
-export const UserDataExample = {
-  username: "alice23",
-  firstName: "Alice",
-  lastName: "Chang",
-  age: "24",
-  gender: "female",
-  currentWeight: "65",
-  height: "160",
-  goal: "Lose weight",
-  targetWeight: "54",
-};
-
 const getAge = (birth: string) => {
   const userAge = Math.floor(
     (new Date().getTime() - new Date(birth).getTime()) /
@@ -51,23 +23,21 @@ const EditProfileDataScreen: React.FC = () => {
   const [height, setHeight] = useState("");
   const [goal, setGoal] = useState("");
   const [targetWeight, setTargetWeight] = useState("");
-  // const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState("");
 
   const getProfileData = async () => {
     const profileID = JSON.parse(localStorage.getItem("profileID") as string);
     if (profileID) {
-      const profile = await profileController.getProfileById(profileID);
-      setFirstName(profile.firstName);
-      setLastName(profile.lastName);
-      setGender(profile.gender);
-      setBirth(profile.birth);
-      setWeight(profile.weight);
-      setHeight(String(profile.height));
-      setGoal(profile.goal);
-      setTargetWeight(profile.targetWeight);
-      // setUserName(profile.user.username);
-
-      console.log(profile);
+      const profile = await profileController.getProfile();
+      setFirstName(profile[0].firstName);
+      setLastName(profile[0].lastName);
+      setGender(profile[0].gender);
+      setBirth(profile[0].birth);
+      setWeight(String(profile[0].weight));
+      setHeight(String(profile[0].height));
+      setGoal(profile[0].goal);
+      setTargetWeight(String(profile[0].targetWeight));
+      setUserName(profile[0].user.username);
     }
   };
 
@@ -76,10 +46,10 @@ const EditProfileDataScreen: React.FC = () => {
     lastNameState: string,
     genderState: EGender,
     birthState: string,
-    weightState: string,
+    weightState: number,
     heightState: number,
     goalState: EGoal,
-    targetWeightState: string,
+    targetWeightState: number,
   ) => {
     const profileID = JSON.parse(localStorage.getItem("profileID") as string);
     await profileController.updateProfile({
@@ -121,8 +91,8 @@ const EditProfileDataScreen: React.FC = () => {
                 Username:
                 <RegInput
                   type="text"
-                  // placeholder={userName}
-                  // value={userName}
+                  placeholder={userName}
+                  value={userName}
                   disabled
                   className="edit-profile__input"
                   id="username"
@@ -174,7 +144,6 @@ const EditProfileDataScreen: React.FC = () => {
                     type="radio"
                     onChange={() => setGender("MALE")}
                     id="gender"
-                    // defaultChecked={gender === "MALE"}
                     checked={gender === "MALE"}
                   />
                   Male
@@ -188,7 +157,6 @@ const EditProfileDataScreen: React.FC = () => {
                     type="radio"
                     onChange={() => setGender("FEMALE")}
                     id="gender"
-                    // defaultChecked={gender === "FEMALE"}
                     checked={gender === "FEMALE"}
                   />
                   Female
@@ -201,9 +169,6 @@ const EditProfileDataScreen: React.FC = () => {
                 type="text"
                 placeholder={getAge(birth)}
                 value={getAge(birth)}
-                // onChange={(event) =>
-                //   setBirth((event.target as HTMLInputElement).value)
-                // }
                 disabled
                 className="edit-profile__input"
                 id="age"
@@ -309,7 +274,7 @@ const EditProfileDataScreen: React.FC = () => {
             lastName,
             gender === "FEMALE" ? EGender.FEMALE : EGender.MALE,
             birth,
-            weight,
+            Number(weight),
             Number(height),
             // eslint-disable-next-line no-nested-ternary
             goal === "Lose weight"
@@ -317,7 +282,7 @@ const EditProfileDataScreen: React.FC = () => {
               : goal === "Gain weight"
               ? EGoal.GAIN
               : EGoal.MAINTAIN,
-            targetWeight,
+            Number(targetWeight),
           );
         }}
       >
