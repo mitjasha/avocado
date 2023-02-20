@@ -47,21 +47,31 @@
 }
 
 .switch {
-  transition: all 0.5s;
-  left: 8%;
-  text-align: center;
-  z-index: 0;
-  background-color: $middle-green;
-  width: 42%;
-  height: 80%;
-  color: $middle-green;
-  font-weight: 800;
-  position: absolute;
-  top: 10%;
-  border-radius: 100px;
+  &_theme,
+  &_sound {
+    transition: all 0.5s;
+    left: 8%;
+    text-align: center;
+    z-index: 0;
+    background-color: $middle-green;
+    width: 42%;
+    height: 80%;
+    color: $middle-green;
+    font-weight: 800;
+    position: absolute;
+    top: 10%;
+    border-radius: 100px;
+    cursor: pointer;
+    border: none;
 
-  &:hover {
-    transform: scale(1.2);
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &_active {
+    right: 8%;
+    left: auto;
   }
 
   &__container {
@@ -75,10 +85,11 @@
   }
 }
 
-.select__container {
+.select-lang__container {
   background-color: $middle-green;
-  width: 58px;
-  height: 30px;
+  width: 80px;
+  height: 40px;
+  padding: 5px;
   cursor: pointer;
   border-radius: 100px;
   font-family: "Montserrat";

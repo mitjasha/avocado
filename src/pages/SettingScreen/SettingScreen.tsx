@@ -2,6 +2,11 @@ import React from "react";
 import "./SettingScreen.scss";
 
 const SettingScreen = () => {
+  const pressSwitcher = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const target = event.target as HTMLButtonElement;
+    target.classList.toggle("switch_active");
+  };
+
   return (
     <div className="setting__screen">
       <div className="container">
@@ -10,18 +15,28 @@ const SettingScreen = () => {
           <div className="setting__container__child">
             <span className="setting__container__span">Dark theme</span>
             <div className="switch__container">
-              <div className="switch switch_theme" />
+              <button
+                type="button"
+                aria-label="theme switcher"
+                className="switch_theme"
+                onClick={(event) => pressSwitcher(event)}
+              />
             </div>
           </div>
           <div className="setting__container__child">
             <span className="setting__container__span">Sound</span>
             <div className="switch__container">
-              <div className="switch switch_sound" />
+              <button
+                type="button"
+                aria-label="sound switcher"
+                className="switch_sound"
+                onClick={(event) => pressSwitcher(event)}
+              />
             </div>
           </div>
           <div className="setting__container__child">
             <span className="setting__container__span">Language</span>
-            <select className="select__container">
+            <select className="select-lang__container">
               <option value="ru">ru</option>
               <option value="en" defaultChecked>
                 en
