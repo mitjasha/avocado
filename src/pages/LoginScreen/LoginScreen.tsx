@@ -15,6 +15,7 @@ import FormInput from "../../components/Inputs/FormInput/FormInput";
 import { User } from "../../api/api.interface";
 import userController from "../../api/user.controller";
 import ToolTip from "../../components/ToolTip/ToolTip";
+import profileController from "../../api/profile.controller";
 
 const LoginScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -27,15 +28,21 @@ const LoginScreen: React.FC = () => {
   } = useForm<User>({ mode: "onChange" });
 
   const onSubmit = async (data: User) => {
-    console.log(data);
-
     const result = await userController.signIn(data);
     if (result) {
       const accessToken = result.user.token;
-      console.log(accessToken);
       localStorage.setItem("accessToken", JSON.stringify(accessToken));
-      navigate("/main");
+
+      const profile = await profileController.getProfile();
+
+      if (profile) {
+        const profileID = profile[0].id;
+        console.log("ID", profileID);
+        localStorage.setItem("profileID", JSON.stringify(profileID));
+        navigate("/main");
+      }
     }
+
     reset();
   };
 
