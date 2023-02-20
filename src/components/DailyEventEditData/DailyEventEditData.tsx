@@ -13,16 +13,18 @@ const DailyEventEditData: React.FC<DailyEventData> = ({ type, data }) => {
       {data.map((item, index) => (
         <li className="container__info__li" key={item[index]}>
           <div className="container__info__text">
-            <span className="info__name">{item[0]}</span>
-            <div className="input__container">
-              <RegInput
-                type="number"
-                placeholder={item[1]}
-                className="info__input"
-              />
-              <span>{type === "meal" ? "g" : "min"}</span>
+            <div style={{ display: "flex", gap: "5px" }}>
+              <span className="info__name">{item[0]}</span>
+              <div className="input__container">
+                <RegInput
+                  type="number"
+                  placeholder={item[1]}
+                  className="info__input"
+                />
+                <span>{type === "meal" ? " g" : " min"}</span>
+              </div>
             </div>
-            <span className="info__name">{item[2]}kcal</span>
+            <span className="info__name">{item[2]} kcal</span>
           </div>
           <span className="info__delete">delete</span>
         </li>
