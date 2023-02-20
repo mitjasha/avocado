@@ -93,7 +93,7 @@
 }
 
 .daily-events {
-  display: grid;
+  display: block;
   padding-bottom: 30px;
   position: relative;
 
@@ -157,6 +157,7 @@
   }
 
   .daily-events {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
       "meals water"
