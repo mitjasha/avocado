@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import RegBackButton from "../../components/Buttons/RegBackButton/RegBackButton";
 import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
-import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import {
   validationGender,
   validationName,
@@ -66,16 +65,19 @@ const RegistrationScreen: React.FC = () => {
 
   const gradients = [
     "",
-    "linear-gradient(150deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)",
-    "linear-gradient(210deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)",
-    "linear-gradient(270deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)",
-    "linear-gradient(150deg, transparent 50%, #559c4f 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)",
-    "linear-gradient(210deg, transparent 50%, #559c4f 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)",
+    "linear-gradient(141.4deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)",
+    "linear-gradient(192.8deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)",
+    "linear-gradient(244.2deg, transparent 50%, #e8f2e1 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)",
+    "linear-gradient(141.4deg, transparent 50%, #559c4f 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)",
+    "linear-gradient(192.8deg, transparent 50%, #559c4f 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)",
+    "linear-gradient(244.2deg, transparent 50%, #559c4f 50%), linear-gradient(90deg, #e8f2e1 50%, transparent 50%)",
     "none",
   ];
 
   const increase = () => {
-    setCounter(processCount + 1);
+    if (processCount < 7) {
+      setCounter(processCount + 1);
+    }
   };
 
   const decrease = () => {
@@ -343,11 +345,8 @@ const RegistrationScreen: React.FC = () => {
           </div>
         )}
         <div className="profile-form__btn_container">
-          {processCount >= 1 && processCount < 7 && (
+          {processCount >= 1 && processCount <= 7 && (
             <NextRegButton gradient={gradientValue} onClick={increase} />
-          )}
-          {processCount === 7 && (
-            <ButtonTemplate type="submit">Submit</ButtonTemplate>
           )}
         </div>
       </form>
