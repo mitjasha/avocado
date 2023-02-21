@@ -4,7 +4,7 @@ import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./ProductModal.scss";
 
-interface Product {
+export interface Product {
   name: string;
   namEng: string;
   proteins: string;
@@ -20,7 +20,7 @@ interface ProductProps {
 
 const ProductModal: React.FC<ProductProps> = ({ data }) => {
   return (
-    <BasicModalComponent title={data.namEng}>
+    <BasicModalComponent title={data.namEng} className="product-modal">
       <div className="modal__container">
         <div>
           <RegInput className="modal__input" type="number" placeholder="100" />

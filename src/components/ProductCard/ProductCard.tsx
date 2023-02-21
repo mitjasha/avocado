@@ -13,17 +13,18 @@ interface Product {
 
 interface ProductProps {
   data: Product;
+  onClick?: () => void;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ data }) => {
+const ProductCard: React.FC<ProductProps> = ({ data, onClick }) => {
   return (
-    <div className="card__container">
+    <button type="button" className="card__container" onClick={onClick}>
       <div
         style={{ backgroundImage: `url("${data.image}")` }}
         className="card__container__image"
       />
       <span className="card__container__span">{data.namEng}</span>
-    </div>
+    </button>
   );
 };
 
