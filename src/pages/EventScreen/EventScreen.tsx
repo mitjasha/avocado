@@ -60,7 +60,7 @@ const EventScreen: React.FC = () => {
           <RegInput
             type="search"
             placeholder="What have you eaten?"
-            value={String(text)}
+            value={text !== null ? text : ""}
             className="event__screen__input"
             onChange={(event) => {
               textSearch((event.target as HTMLInputElement).value);
@@ -76,11 +76,7 @@ const EventScreen: React.FC = () => {
           <span className="no__found__text">No products found</span>
           <div className="no__found__image" />
         </div>
-        <div className="event__screen__main">
-          {products.products.map((item) => (
-            <ProductCard data={item} key={products.products.indexOf(item)} />
-          ))}
-        </div>
+        <div className="event__screen__main" />
       </div>
       <AddProductModal />
     </div>
