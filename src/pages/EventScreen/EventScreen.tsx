@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
@@ -21,15 +23,47 @@ const EventScreen: React.FC = () => {
     modal.style.visibility = "visible";
   };
 
-  const textSearch = (currentText: string) => {
-    const filterProducts = products.products.filter(
-      (item) =>
-        item.categoryEn.toLowerCase().includes(currentText.toLowerCase()) ||
-        item.categoryRu.toLowerCase().includes(currentText.toLowerCase()) ||
-        item.name.toLowerCase().includes(currentText.toLowerCase()) ||
-        item.namEng.toLowerCase().includes(currentText.toLowerCase()),
-    );
+  const openNoFound = () => {
+    const noFound = document.querySelector(".no__found") as HTMLElement;
+    noFound.style.display = "flex";
+  };
 
+  const closeNoFound = () => {
+    const noFound = document.querySelector(".no__found") as HTMLElement;
+    noFound.style.display = "none";
+  };
+
+  const removeInputText = () => {
+    const searchInput = document.querySelector(
+      ".event__screen__input",
+    ) as HTMLInputElement;
+    searchInput.value = "";
+    setSearchQuery({
+      search: "",
+    });
+  };
+
+  const textSearch = (currentText: string) => {
+    const filterProducts =
+      currentText !== ""
+        ? products.products.filter(
+            (item) =>
+              item.categoryEn
+                .toLowerCase()
+                .includes(currentText.toLowerCase()) ||
+              item.categoryRu
+                .toLowerCase()
+                .includes(currentText.toLowerCase()) ||
+              item.name.toLowerCase().includes(currentText.toLowerCase()) ||
+              item.namEng.toLowerCase().includes(currentText.toLowerCase()),
+          )
+        : [];
+
+    if (filterProducts.length === 0) {
+      openNoFound();
+    } else {
+      closeNoFound();
+    }
     ReactDOM.render(
       filterProducts.map((item) => (
         <ProductCard data={item} key={filterProducts.indexOf(item)} />
@@ -39,7 +73,7 @@ const EventScreen: React.FC = () => {
   };
 
   useEffect(() => {
-    text ? textSearch(text) : textSearch("");
+    text ? textSearch(text) : textSearch("  ");
   }, [text]);
 
   return (
@@ -60,7 +94,7 @@ const EventScreen: React.FC = () => {
           <RegInput
             type="search"
             placeholder="What have you eaten?"
-            value={text !== null ? text : ""}
+            value={text !== null ? text : "  "}
             className="event__screen__input"
             onChange={(event) => {
               textSearch((event.target as HTMLInputElement).value);
@@ -69,7 +103,10 @@ const EventScreen: React.FC = () => {
               });
             }}
           />
-          <div className="event__screen__close__icon" />
+          <div
+            className="event__screen__close__icon"
+            onClick={() => removeInputText()}
+          />
         </div>
         <h3 className="event__main__h3">Found:</h3>
         <div className="no__found">
