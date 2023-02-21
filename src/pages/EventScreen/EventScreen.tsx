@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import products from "../../assets/products.json";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import AddProductModal from "../../containers/AddProductModal/AddProductModal";
+import ProductModal, {
+  Product,
+} from "../../containers/ProductModal/ProductModal";
 import "./EventScreen.scss";
 import "../../index.scss";
 
@@ -13,6 +16,23 @@ const EventScreen: React.FC = () => {
 
   const openAddProductModal = () => {
     const modal = document.querySelector(".add-product-modal") as HTMLElement;
+    modal.style.opacity = "1";
+    modal.style.visibility = "visible";
+  };
+
+  const [productData, setProductData] = useState<Product>({
+    name: "имя",
+    namEng: "name",
+    proteins: "0",
+    fats: "0",
+    carbs: "0",
+    kcal: "0",
+    image: "url",
+  });
+
+  const openProductModal = (item: Product) => {
+    setProductData(item);
+    const modal = document.querySelector(".product-modal") as HTMLElement;
     modal.style.opacity = "1";
     modal.style.visibility = "visible";
   };
@@ -46,11 +66,16 @@ const EventScreen: React.FC = () => {
         </div>
         <div className="event__screen__main">
           {products.products.map((item) => (
-            <ProductCard data={item} key={products.products.indexOf(item)} />
+            <ProductCard
+              data={item}
+              key={products.products.indexOf(item)}
+              onClick={() => openProductModal(item)}
+            />
           ))}
         </div>
       </div>
       <AddProductModal />
+      <ProductModal data={productData} />
     </div>
   );
 };
