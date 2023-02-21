@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import products from "../../assets/products.json";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ProductCard from "../../components/ProductCard/ProductCard";
@@ -12,6 +12,8 @@ import "../../index.scss";
 
 const EventScreen: React.FC = () => {
   const { type } = useParams();
+  const [searchQuery, setSearchQuery] = useSearchParams("");
+  const text = searchQuery.get("search");
 
   const openAddProductModal = () => {
     const modal = document.querySelector(".add-product-modal") as HTMLElement;
@@ -36,6 +38,10 @@ const EventScreen: React.FC = () => {
     );
   };
 
+  useEffect(() => {
+    text ? textSearch(text) : textSearch("");
+  }, [text]);
+
   return (
     <div className="event__screen">
       <div className="container">
@@ -54,9 +60,13 @@ const EventScreen: React.FC = () => {
           <RegInput
             type="search"
             placeholder="What have you eaten?"
+            value={String(text)}
             className="event__screen__input"
             onChange={(event) => {
               textSearch((event.target as HTMLInputElement).value);
+              setSearchQuery({
+                search: (event.target as HTMLInputElement).value,
+              });
             }}
           />
           <div className="event__screen__close__icon" />
