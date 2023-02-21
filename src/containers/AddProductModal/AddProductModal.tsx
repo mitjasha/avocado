@@ -59,7 +59,7 @@ const AddProductModal: React.FC = () => {
   const [proteins, setProteins] = useState("");
   const [fats, setFats] = useState("");
   const [carbs, setCarbs] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("dairy");
 
   return (
     <BasicModalComponent title="Add new product" className="add-product-modal">
