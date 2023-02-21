@@ -8,6 +8,7 @@
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+  border: none;
 
   &-icon {
     background: url(../../../assets//svg/arrow.svg) no-repeat;
@@ -17,6 +18,8 @@
 
   &:hover {
     background-color: $dark-color;
+    transition: 0.4s all ease;
+    cursor: pointer;
   }
 
   &:hover .back-btn-icon {

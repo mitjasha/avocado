@@ -70,45 +70,55 @@ const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
   };
 
   return (
-    <div className="container registration-screen-container">
-      <form onSubmit={handleSubmit(onSubmit)} id="userRegistration">
-        <div className="username">
-          <h2 className="input-title">Username</h2>
-          <div className="input-wrapper input-wrapper_username">
-            <FormInput
-              type="text"
-              placeholder="Username"
-              register={register("username", { ...validationUserName })}
-            />
-            {errors?.username && <ToolTip text={validationUserName.message} />}
+    <div className="registration-screen">
+      <div className="container registration-screen-container">
+        <form onSubmit={handleSubmit(onSubmit)} id="userRegistration">
+          <div className="username">
+            <h2 className="input-title">Username</h2>
+            <div className="input-wrapper input-wrapper_username">
+              <FormInput
+                type="text"
+                placeholder="Username"
+                register={register("username", { ...validationUserName })}
+              />
+              {errors?.username && (
+                <ToolTip text={validationUserName.message} />
+              )}
+            </div>
           </div>
-        </div>
-        <div className="password">
-          <h2 className="input-title">Password</h2>
-          <div className="input-wrapper input-wrapper_password">
-            <FormInput
-              type="password"
-              className="reg-input_password"
-              placeholder="Password"
-              register={register("password", { ...validationPassword })}
-            />
-            {errors?.password && <ToolTip text={validationPassword.message} />}
-            <button
-              type="button"
-              className="password__show-btn"
-              aria-label="show"
-              onClick={toggleVisibility}
-            />
+          <div className="password">
+            <h2 className="input-title">Password</h2>
+            <div className="input-wrapper input-wrapper_password">
+              <FormInput
+                type="password"
+                className="reg-input_password"
+                placeholder="Password"
+                register={register("password", { ...validationPassword })}
+              />
+              {errors?.password && (
+                <ToolTip text={validationPassword.message} />
+              )}
+              <button
+                type="button"
+                className="password__show-btn"
+                aria-label="show"
+                onClick={toggleVisibility}
+              />
+            </div>
           </div>
-        </div>
-        <ButtonTemplate onClick={onClick} type="submit" form="userRegistration">
-          Continue
-        </ButtonTemplate>
-      </form>
-      <p className="rights">
-        By continuing, you agree to the <a href="/">Terms of Services</a> &{" "}
-        <a href="/">Privacy Policy</a>
-      </p>
+          <ButtonTemplate
+            onClick={onClick}
+            type="submit"
+            form="userRegistration"
+          >
+            Continue
+          </ButtonTemplate>
+        </form>
+        <p className="rights">
+          By continuing, you agree to the <a href="/">Terms of Services</a> &{" "}
+          <a href="/">Privacy Policy</a>
+        </p>
+      </div>
     </div>
   );
 };

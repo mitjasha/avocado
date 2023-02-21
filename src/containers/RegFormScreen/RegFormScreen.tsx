@@ -17,35 +17,37 @@ const RegFormScreen: React.FC<RegFormScreenProps> = ({ validationName }) => {
     formState: { errors },
   } = useForm<Profile>({ mode: "onChange" });
   return (
-    <div className="container registration-screen-container">
-      <div className="full-name">
-        <div className="full-name__first-name">
-          <h2 className="input-title">First Name</h2>
-          <div className="input-wrapper input-wrapper_username">
-            <FormInput
-              type="text"
-              placeholder="First Name"
-              register={register("firstName", { ...validationName })}
-            />
-            {errors?.firstName && <ToolTip text={validationName.message} />}
+    <div className="registration-screen">
+      <div className="container profile-reg-container">
+        <div className="full-name">
+          <div className="full-name__first-name">
+            <h2 className="input-title">First Name</h2>
+            <div className="input-wrapper input-wrapper_username">
+              <FormInput
+                type="text"
+                placeholder="First Name"
+                register={register("firstName", { ...validationName })}
+              />
+              {errors?.firstName && <ToolTip text={validationName.message} />}
+            </div>
+          </div>
+          <div className="full-name__last-name">
+            <h2 className="input-title">Last Name</h2>
+            <div className="input-wrapper input-wrapper_username">
+              <FormInput
+                type="text"
+                placeholder="Last Name"
+                register={register("lastName", { ...validationName })}
+              />
+              {errors?.lastName && <ToolTip text={validationName.message} />}
+            </div>
           </div>
         </div>
-        <div className="full-name__last-name">
-          <h2 className="input-title">Last Name</h2>
-          <div className="input-wrapper input-wrapper_username">
-            <FormInput
-              type="text"
-              placeholder="Last Name"
-              register={register("lastName", { ...validationName })}
-            />
-            {errors?.lastName && <ToolTip text={validationName.message} />}
+        <div className="email-address">
+          <h2 className="input-title">Email Address</h2>
+          <div className="input-wrapper input-wrapper_email">
+            <RegInput type="email" placeholder="Email Address" />
           </div>
-        </div>
-      </div>
-      <div className="email-address">
-        <h2 className="input-title">Email Address</h2>
-        <div className="input-wrapper input-wrapper_email">
-          <RegInput type="email" placeholder="Email Address" />
         </div>
       </div>
     </div>

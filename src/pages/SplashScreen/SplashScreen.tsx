@@ -39,9 +39,15 @@ const SplashScreen: React.FC = () => {
           />
           {!loading && (
             <>
-              <Button to="/registration/user"> Get Started!</Button>
+              <Button
+                to="/registration/user"
+                className="button-container__button"
+              >
+                {" "}
+                Get Started!
+              </Button>
               <div className="button-container__text">
-                Already have an account?{" "}
+                Already have an account?
                 <Link className="button-container__link" to="/login">
                   Log In
                 </Link>
