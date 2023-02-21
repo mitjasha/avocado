@@ -2,42 +2,39 @@ import React, { useState } from "react";
 import BasicModalComponent from "../../components/Modals/BasicModalComponent/BasicModalComponent";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
+import { Product } from "../../api/api.interface";
 import "./ProductModal.scss";
-
-export interface Product {
-  name: string;
-  namEng: string;
-  proteins: string;
-  fats: string;
-  carbs: string;
-  kcal: string;
-  image: string;
-}
 
 interface ProductProps {
   data: Product;
 }
 
 const ProductModal: React.FC<ProductProps> = ({ data }) => {
-  const [kcal, setKcal] = useState<number>(Number(data.kcal));
-  const [proteins, setProteins] = useState<number>(Number(data.proteins));
-  const [fats, setFats] = useState<number>(Number(data.fats));
-  const [carbs, setCarbs] = useState<number>(Number(data.carbs));
+  const [kcal, setKcal] = useState<number>(Number(data.calories_100g));
+  const [proteins, setProteins] = useState<number>(Number(data.proteins_100g));
+  const [fats, setFats] = useState<number>(Number(data.fat_100g));
+  const [carbs, setCarbs] = useState<number>(Number(data.carbs_100g));
 
   const updateModalData = () => {
     const modalInput = document.querySelector(
       ".modal__input",
     ) as HTMLInputElement;
-    setKcal(Math.round((Number(modalInput.value) / 100) * Number(data.kcal)));
-    setProteins(
-      Math.round((Number(modalInput.value) / 100) * Number(data.proteins)),
+    setKcal(
+      Math.round((Number(modalInput.value) / 100) * Number(data.calories_100g)),
     );
-    setFats(Math.round((Number(modalInput.value) / 100) * Number(data.fats)));
-    setCarbs(Math.round((Number(modalInput.value) / 100) * Number(data.carbs)));
+    setProteins(
+      Math.round((Number(modalInput.value) / 100) * Number(data.proteins_100g)),
+    );
+    setFats(
+      Math.round((Number(modalInput.value) / 100) * Number(data.fat_100g)),
+    );
+    setCarbs(
+      Math.round((Number(modalInput.value) / 100) * Number(data.carbs_100g)),
+    );
   };
 
   return (
-    <BasicModalComponent title={data.namEng} className="product-modal">
+    <BasicModalComponent title={data.name} className="product-modal">
       <div className="modal__container">
         <div>
           <RegInput
