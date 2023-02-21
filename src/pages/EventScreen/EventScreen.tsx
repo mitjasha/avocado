@@ -1,18 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import products from "../../assets/products.json";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import AddProductModal from "../../containers/AddProductModal/AddProductModal";
-import ProductModal, {
-  Product,
-} from "../../containers/ProductModal/ProductModal";
+import ProductModal from "../../containers/ProductModal/ProductModal";
 import "./EventScreen.scss";
 import "../../index.scss";
+import productsController from "../../api/product.controller";
+import { ProductResponse } from "../../api/api.interface";
 
 const EventScreen: React.FC = () => {
   const { type } = useParams();
+
+  const [products, setProducts] = useState<ProductResponse[]>([]);
+
+  const getAllProducts = async () => {
+    const result = await productsController.getAllproduct();
+    if (result) {
+      setProducts(result);
+    }
+  };
+
+  useEffect(() => {
+    getAllProducts();
+  }, []);
 
   const openAddProductModal = () => {
     const modal = document.querySelector(".add-product-modal") as HTMLElement;
@@ -20,17 +32,17 @@ const EventScreen: React.FC = () => {
     modal.style.visibility = "visible";
   };
 
-  const [productData, setProductData] = useState<Product>({
-    name: "имя",
-    namEng: "name",
-    proteins: "0",
-    fats: "0",
-    carbs: "0",
-    kcal: "0",
-    image: "url",
+  const [productData, setProductData] = useState<ProductResponse>({
+    name: "name",
+    calories_100g: 0,
+    proteins_100g: 0,
+    carbs_100g: 0,
+    fat_100g: 0,
+    category: "",
+    id: "",
   });
 
-  const openProductModal = (item: Product) => {
+  const openProductModal = (item: ProductResponse) => {
     setProductData(item);
     const modal = document.querySelector(".product-modal") as HTMLElement;
     modal.style.opacity = "1";
@@ -65,10 +77,10 @@ const EventScreen: React.FC = () => {
           <div className="no__found__image" />
         </div>
         <div className="event__screen__main">
-          {products.products.map((item) => (
+          {products.map((item) => (
             <ProductCard
               data={item}
-              key={products.products.indexOf(item)}
+              key={products.indexOf(item)}
               onClick={() => openProductModal(item)}
             />
           ))}
