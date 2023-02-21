@@ -13,11 +13,12 @@ const BasicModalComponent: React.FC<BasicModalComponentProps> = ({
   className,
 }) => {
   const closePopUp = () => {
-    const popUp = document.querySelector(
-      ".pop-up-wrapper",
-    ) as HTMLButtonElement;
-    popUp.style.opacity = "0";
-    popUp.style.visibility = "hidden";
+    const popUps = document.querySelectorAll<HTMLElement>(".pop-up-wrapper");
+    popUps.forEach((elem) => {
+      const popUp = elem;
+      popUp.style.opacity = "0";
+      popUp.style.visibility = "hidden";
+    });
   };
 
   const classes = `${"pop-up-wrapper"} ${className}`;
