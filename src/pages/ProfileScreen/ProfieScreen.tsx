@@ -1,21 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import female from "../../assets/png/female.png";
 import male from "../../assets/png/male.png";
 import ProfileNavButton from "../../components/Buttons/ProfileNavButton/ProfileNavButton";
 import EditButton from "../../components/Buttons/EditButton/EditButton";
 import "./ProfileScreen.scss";
+import profileController from "../../api/profile.controller";
 
 const ProfileScreen: React.FC = () => {
-  const userName = "Amanda" as string;
-  const userGender = "female" as string;
-  const userAvatar = userGender === "female" ? female : male;
-  const userAge = 25 as number;
-  const userHeight = 167 as number;
-  const userWeight = 67 as number;
-  const userGoal = "lose weight" as string;
-  const userTargetWeight = 63 as number;
+  const [firstName, setFirstName] = useState("");
+  const [gender, setGender] = useState("");
+  const [birth, setBirth] = useState("");
+  const [weight, setWeight] = useState(0);
+  const [height, setHeight] = useState("");
+  const [goal, setGoal] = useState("");
+  const [targetWeight, setTargetWeight] = useState(0);
+
+  const getProfileData = async () => {
+    const profile = await profileController.getProfile();
+    setFirstName(profile[0].firstName);
+    setGender(profile[0].gender);
+    setBirth(profile[0].birth);
+    setWeight(profile[0].weight);
+    setHeight(String(profile[0].height));
+    setGoal(profile[0].goal);
+    setTargetWeight(profile[0].targetWeight);
+  };
 
   const profileNavNames = ["progress", "recipes", "settings", "about"];
+
+  const getAge = (birthUser: string) => {
+    const userAge = Math.floor(
+      (new Date().getTime() - new Date(birthUser).getTime()) /
+        (24 * 3600 * 365.25 * 1000),
+    );
+    return String(userAge);
+  };
+
+  useEffect(() => {
+    getProfileData();
+  }, []);
 
   return (
     <div className="profile-screen">
@@ -24,13 +47,13 @@ const ProfileScreen: React.FC = () => {
         <EditButton className="user-data__edit" to="/edit-profile" />
         <div className="user-data__heading">
           <img
-            src={userAvatar}
+            src={gender === "MALE" ? male : female}
             alt="user avatar"
             className="user-data__heading__avatar"
           />
           <h2 className="user-data__heading__title">
             Hello,
-            <br /> <span style={{ color: "#559c4f" }}>{userName}</span>!
+            <br /> <span style={{ color: "#559c4f" }}>{firstName}</span>!
           </h2>
         </div>
         <div className="user-data__info">
@@ -43,12 +66,12 @@ const ProfileScreen: React.FC = () => {
             <p>Target weight:</p>
           </div>
           <div className="user-data__info__answers">
-            <p>{userGender}</p>
-            <p>{userAge}</p>
-            <p>{userHeight} cm</p>
-            <p>{userWeight} kg</p>
-            <p>{userGoal}</p>
-            <p>{userTargetWeight} kg</p>
+            <p>{gender[0] + gender.slice(1).toLowerCase()}</p>
+            <p>{getAge(birth)}</p>
+            <p>{Number(height).toFixed()} cm</p>
+            <p>{Number(weight).toFixed()} kg</p>
+            <p>{goal}</p>
+            <p>{Number(targetWeight).toFixed()} kg</p>
           </div>
         </div>
       </div>
