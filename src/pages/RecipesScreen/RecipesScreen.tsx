@@ -93,7 +93,7 @@ const RecipesScreen: React.FC = () => {
               className="recipe__card"
               key={item.id}
             >
-              <CardRecipe data={item} />
+              <CardRecipe data={item} key={item.id} />
             </Link>
           ))}
         </div>

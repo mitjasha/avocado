@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams, useParams, Link } from "react-router-dom";
-import ReactDOM from "react-dom";
 import CardCategory from "../../components/CardCategory/CardRecipe/CardCategory";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import breakfastImg from "../../assets/png/breakfast-category.png";
@@ -12,20 +11,6 @@ import { RecipeResponse } from "../../api/api.interface";
 import recipesController from "../../api/recipes.controller";
 
 const CategoriesRecipesScreen: React.FC = () => {
-  const [recipes, setRecipes] = useState<RecipeResponse[]>([]);
-
-  const getRcipes = async () => {
-    const result = await recipesController.getAllRecipes();
-    if (result) {
-      setRecipes(result);
-      console.log(recipes);
-    }
-  };
-
-  useEffect(() => {
-    getRcipes();
-  }, []);
-
   const categories = {
     breakfast: {
       title: "Breakfast",
@@ -48,6 +33,9 @@ const CategoriesRecipesScreen: React.FC = () => {
       color: "rgba(2, 50, 218, 0.5)",
     },
   };
+
+  const [recipes, setRecipes] = useState<RecipeResponse[]>([]);
+
   const { category } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
   // setSearchParams({
@@ -56,6 +44,14 @@ const CategoriesRecipesScreen: React.FC = () => {
   //   time: "false",
   //   kcal: "false",
   // });
+
+  const getRcipes = async () => {
+    const result = await recipesController.getAllRecipes();
+    if (result) {
+      setRecipes(result);
+      console.log(recipes);
+    }
+  };
 
   const sortAndFilter = (
     veg: string | null,
@@ -90,16 +86,13 @@ const CategoriesRecipesScreen: React.FC = () => {
         (a, b) => Number(a.time) - Number(b.time),
       );
     }
-
-    const newContainer = (
-      <div className="container categories__main">
-        {categoryData.map((item) => (
-          <CardCategory data={item} />
-        ))}
-      </div>
-    );
-    ReactDOM.render(newContainer, document.querySelector(".main"));
+    setRecipes(categoryData);
+    console.log(recipes.length);
   };
+
+  useEffect(() => {
+    getRcipes();
+  }, []);
 
   useEffect(() => {
     sortAndFilter(
@@ -114,7 +107,7 @@ const CategoriesRecipesScreen: React.FC = () => {
     searchParams.get("favourite"),
     searchParams.get("time"),
     searchParams.get("kcal"),
-    recipes,
+    // recipes,
   ]);
 
   // const sortingList = ["Popular", "Recent", "Veg", "Quick"];
@@ -185,7 +178,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                     );
                   }}
                 >
-                  Low-fat
+                  Favorites
                 </button>
               </li>
               <li className="categories__header__li">
@@ -225,39 +218,37 @@ const CategoriesRecipesScreen: React.FC = () => {
                     );
                   }}
                 >
-                  Favourites
+                  Calories
                 </button>
               </li>
             </ul>
           </div>
         </header>
-        <main className="main">
-          <div className="container categories__main">
-            {recipes
-              .filter((item) => item.category.includes(category as string))
-              .map((item) => (
-                <Link
-                  to={`/recipe/${item.id}`}
-                  className="card__category"
-                  key={item.id}
-                >
-                  <CardCategory data={item} key={`${item.id}`} />
-                </Link>
-              ))}
-            <div
-              className="no-found"
-              style={{
-                display: `${
-                  document.querySelectorAll(".card__category").length > 0
-                    ? "none"
-                    : "block"
-                }`,
-              }}
-            >
-              No recipes found
-            </div>
+        <div className="container categories__main">
+          {recipes
+            .filter((item) => item.category.includes(category as string))
+            .map((item) => (
+              <Link
+                to={`/recipe/${item.id}`}
+                className="card__category"
+                key={item.id}
+              >
+                <CardCategory data={item} key={item.id} />
+              </Link>
+            ))}
+          <div
+            className="no-found"
+            style={{
+              display: `${
+                document.querySelectorAll(".card__category").length > 0
+                  ? "none"
+                  : "block"
+              }`,
+            }}
+          >
+            No recipes found
           </div>
-        </main>
+        </div>
       </div>
     </div>
   );
