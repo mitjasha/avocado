@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React from "react";
+import ReactDOM from "react-dom";
 import { useParams } from "react-router-dom";
 import products from "../../assets/products.json";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
@@ -15,6 +17,23 @@ const EventScreen: React.FC = () => {
     const modal = document.querySelector(".add-product-modal") as HTMLElement;
     modal.style.opacity = "1";
     modal.style.visibility = "visible";
+  };
+
+  const textSearch = (currentText: string) => {
+    const filterProducts = products.products.filter(
+      (item) =>
+        item.categoryEn.includes(currentText) ||
+        item.categoryRu.includes(currentText) ||
+        item.name.includes(currentText) ||
+        item.namEng.includes(currentText),
+    );
+
+    ReactDOM.render(
+      filterProducts.map((item) => (
+        <ProductCard data={item} key={filterProducts.indexOf(item)} />
+      )),
+      document.querySelector(".event__screen__main"),
+    );
   };
 
   return (
@@ -36,6 +55,9 @@ const EventScreen: React.FC = () => {
             type="search"
             placeholder="What have you eaten?"
             className="event__screen__input"
+            onChange={(event) => {
+              textSearch((event.target as HTMLInputElement).value);
+            }}
           />
           <div className="event__screen__close__icon" />
         </div>
