@@ -182,3 +182,26 @@ export enum EGender {
   FEMALE = "FEMALE",
   NAN = "NaN",
 }
+
+export enum EProductCategory {
+  dairy = "https://ie.wampi.ru/2023/02/08/milk.png",
+  pastries = "https://ie.wampi.ru/2023/02/08/bread.png",
+  oils = "https://ie.wampi.ru/2023/02/08/fats.png",
+  sauces = "https://ic.wampi.ru/2023/02/16/sauce.png",
+  grains = "https://im.wampi.ru/2023/02/08/porrige4c87ca52a5960c1a.png",
+  vegetables = "https://im.wampi.ru/2023/02/08/vegetables.png",
+  fruitsBerries = "https://im.wampi.ru/2023/02/08/fruit.png",
+  driedFruits = "https://im.wampi.ru/2023/02/08/driedFruits.png",
+  beans = "https://ie.wampi.ru/2023/02/08/peae773e1454aadb289.png",
+  mushrooms = "https://im.wampi.ru/2023/02/08/mushrooms.png",
+  meat = "https://ic.wampi.ru/2023/02/08/meat.png",
+  sausages = "https://ic.wampi.ru/2023/02/08/sausage22d6a6ad1152d09c.png",
+  smokedMeat = "https://ie.wampi.ru/2023/02/08/smokedMeatsc8fdaf57fba243fa.png",
+  fishSeafood = "https://ie.wampi.ru/2023/02/08/fish.png",
+  eggs = "https://ic.wampi.ru/2023/02/08/egg.png",
+  nuts = "https://ic.wampi.ru/2023/02/08/nuts.png",
+  sweets = "https://im.wampi.ru/2023/02/08/sweetse245d476ff1ac324.png",
+  pasta = "https://ic.wampi.ru/2023/02/13/pasta.png",
+  soup = "https://ic.wampi.ru/2023/02/13/soup.png",
+  salad = "https://ic.wampi.ru/2023/02/13/salade.png",
+}

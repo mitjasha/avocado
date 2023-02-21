@@ -27,6 +27,7 @@ const AddProductModal: React.FC = () => {
     "meat",
     "sausages",
     "smoked meat",
+    "eggs",
     "fish and seafood",
     "nuts",
     "sweets",
