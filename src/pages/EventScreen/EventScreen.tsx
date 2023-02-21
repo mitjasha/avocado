@@ -24,10 +24,10 @@ const EventScreen: React.FC = () => {
   const textSearch = (currentText: string) => {
     const filterProducts = products.products.filter(
       (item) =>
-        item.categoryEn.includes(currentText) ||
-        item.categoryRu.includes(currentText) ||
-        item.name.includes(currentText) ||
-        item.namEng.includes(currentText),
+        item.categoryEn.toLowerCase().includes(currentText.toLowerCase()) ||
+        item.categoryRu.toLowerCase().includes(currentText.toLowerCase()) ||
+        item.name.toLowerCase().includes(currentText.toLowerCase()) ||
+        item.namEng.toLowerCase().includes(currentText.toLowerCase()),
     );
 
     ReactDOM.render(
