@@ -43,6 +43,8 @@ const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
         goal: EGoal.MAINTAIN,
         targetWeight: 0,
         photo: "",
+        favorites: [],
+        recentRecipes: [],
       });
       console.log(profile);
       const profileID = profile.id;
