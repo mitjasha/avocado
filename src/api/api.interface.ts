@@ -27,8 +27,11 @@ export interface Recipe {
   carbs: number;
   fats: number;
   author: string;
-  ingredients: object[];
-  steps: string | (() => string);
+  ingredients: {
+    name: string;
+    quantity: string;
+  }[];
+  steps: [];
   time: number;
   category: string[];
   kitchen: string;
