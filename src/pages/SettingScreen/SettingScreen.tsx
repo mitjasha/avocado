@@ -1,10 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./SettingScreen.scss";
 
 const SettingScreen = () => {
+  const navigate = useNavigate();
+
   const pressSwitcher = (event: React.MouseEvent<HTMLButtonElement>) => {
     const target = event.target as HTMLButtonElement;
     target.classList.toggle("switch_active");
+  };
+
+  const pressExit = () => {
+    localStorage.clear();
+    navigate("/");
   };
 
   return (
@@ -45,6 +54,9 @@ const SettingScreen = () => {
           </div>
         </div>
         <div className="setting__screen__logo" />
+        <div className="setting__container__child">
+          <ButtonTemplate onClick={pressExit}>EXIT</ButtonTemplate>
+        </div>
       </div>
     </div>
   );
