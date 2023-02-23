@@ -15,15 +15,15 @@ const getAge = (birth: string) => {
 };
 
 const EditProfileDataScreen: React.FC = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [gender, setGender] = useState("");
-  const [birth, setBirth] = useState("");
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
-  const [goal, setGoal] = useState("");
-  const [targetWeight, setTargetWeight] = useState("");
-  const [userName, setUserName] = useState("");
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [gender, setGender] = useState<string>("");
+  const [birth, setBirth] = useState<string>("");
+  const [weight, setWeight] = useState<number>();
+  const [height, setHeight] = useState<number>();
+  const [goal, setGoal] = useState<string>("");
+  const [targetWeight, setTargetWeight] = useState<number>();
+  const [userName, setUserName] = useState<string>("");
 
   const getProfileData = async () => {
     const profileID = JSON.parse(localStorage.getItem("profileID") as string);
@@ -33,10 +33,10 @@ const EditProfileDataScreen: React.FC = () => {
       setLastName(profile[0].lastName);
       setGender(profile[0].gender);
       setBirth(profile[0].birth);
-      setWeight(String(profile[0].weight));
-      setHeight(String(profile[0].height));
+      setWeight(profile[0].weight);
+      setHeight(profile[0].height);
       setGoal(profile[0].goal);
-      setTargetWeight(String(profile[0].targetWeight));
+      setTargetWeight(profile[0].targetWeight);
       setUserName(profile[0].user.username);
     }
   };
@@ -215,10 +215,10 @@ const EditProfileDataScreen: React.FC = () => {
               <div>
                 <RegInput
                   type="number"
-                  placeholder={weight}
+                  placeholder={String(weight)}
                   value={Number(weight).toFixed()}
                   onChange={(event) =>
-                    setWeight((event.target as HTMLInputElement).value)
+                    setWeight(Number((event.target as HTMLInputElement).value))
                   }
                   className="edit-profile__input"
                   id="currentWeight"
@@ -233,10 +233,12 @@ const EditProfileDataScreen: React.FC = () => {
               <div>
                 <RegInput
                   type="number"
-                  placeholder={targetWeight}
+                  placeholder={String(targetWeight)}
                   value={Number(targetWeight).toFixed()}
                   onChange={(event) =>
-                    setTargetWeight((event.target as HTMLInputElement).value)
+                    setTargetWeight(
+                      Number((event.target as HTMLInputElement).value),
+                    )
                   }
                   className="edit-profile__input"
                   id="targetWeight"
@@ -251,10 +253,10 @@ const EditProfileDataScreen: React.FC = () => {
               <div>
                 <RegInput
                   type="number"
-                  placeholder={height}
+                  placeholder={String(height)}
                   value={Number(height).toFixed()}
                   onChange={(event) =>
-                    setHeight((event.target as HTMLInputElement).value)
+                    setHeight(Number((event.target as HTMLInputElement).value))
                   }
                   className="edit-profile__input"
                   id="height"
