@@ -56,12 +56,12 @@ const AddProductModal: React.FC = () => {
     });
   };
 
-  const [name, setName] = useState("");
-  const [kcal, setKcal] = useState("");
-  const [proteins, setProteins] = useState("");
-  const [fats, setFats] = useState("");
-  const [carbs, setCarbs] = useState("");
-  const [category, setCategory] = useState("");
+  const [name, setName] = useState<string>("");
+  const [kcal, setKcal] = useState<number>();
+  const [proteins, setProteins] = useState<number>();
+  const [fats, setFats] = useState<number>();
+  const [carbs, setCarbs] = useState<number>();
+  const [category, setCategory] = useState<string>("");
 
   return (
     <BasicModalComponent title="Add new product" className="add-product-modal">
@@ -105,9 +105,9 @@ const AddProductModal: React.FC = () => {
                 className="add__input"
                 type="number"
                 placeholder="Kcal per 100 g"
-                value={kcal}
+                value={String(kcal)}
                 onChange={(event) =>
-                  setKcal((event.target as HTMLInputElement).value)
+                  setKcal(Number((event.target as HTMLInputElement).value))
                 }
               />
               <span>&nbsp;kcal</span>
@@ -117,9 +117,9 @@ const AddProductModal: React.FC = () => {
                 className="add__input"
                 type="number"
                 placeholder="Proteins per 100 g"
-                value={proteins}
+                value={String(proteins)}
                 onChange={(event) =>
-                  setProteins((event.target as HTMLInputElement).value)
+                  setProteins(Number((event.target as HTMLInputElement).value))
                 }
               />
               <span>&nbsp;g</span>
@@ -129,9 +129,9 @@ const AddProductModal: React.FC = () => {
                 className="add__input"
                 type="number"
                 placeholder="Fats per 100 g"
-                value={fats}
+                value={String(fats)}
                 onChange={(event) =>
-                  setFats((event.target as HTMLInputElement).value)
+                  setFats(Number((event.target as HTMLInputElement).value))
                 }
               />
               <span>&nbsp;g</span>
@@ -141,9 +141,9 @@ const AddProductModal: React.FC = () => {
                 className="add__input"
                 type="number"
                 placeholder="Carbs per 100 g"
-                value={carbs}
+                value={String(carbs)}
                 onChange={(event) =>
-                  setCarbs((event.target as HTMLInputElement).value)
+                  setCarbs(Number((event.target as HTMLInputElement).value))
                 }
               />
               <span>&nbsp;g</span>
@@ -155,10 +155,10 @@ const AddProductModal: React.FC = () => {
             onClick={() => {
               if (
                 name !== "" &&
-                kcal !== "" &&
-                proteins !== "" &&
-                carbs !== "" &&
-                fats !== "" &&
+                String(kcal) !== "" &&
+                String(proteins) !== "" &&
+                String(carbs) !== "" &&
+                String(fats) !== "" &&
                 category !== ""
               )
                 addProductRequest(
