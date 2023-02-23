@@ -25,7 +25,7 @@ const ActivityScreen: React.FC = () => {
     <div className="activity-screen">
       <div className="container">
         <div className="activity-screen__title-wrapper">
-          <BackButton />
+          <BackButton to="/main" />
           <h1 className="activity-screen__title">Activities</h1>
         </div>
         <p className="activity-screen__subtitle">What did you do today?</p>

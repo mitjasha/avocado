@@ -53,7 +53,7 @@ const EventScreen: React.FC = () => {
     <div className="event__screen">
       <div className="container">
         <div className="event__screen__header">
-          <BackButton />
+          <BackButton to="/main" />
           <h1 className="event__screen__h1">{type}</h1>
           <button
             type="button"
