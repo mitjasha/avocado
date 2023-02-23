@@ -9,6 +9,7 @@ import eatenImg from "../../assets/svg/eaten.svg";
 import EditButton from "../../components/Buttons/EditButton/EditButton";
 import "./MainScreen.scss";
 import eventMealController from "../../api/event-meal.controller";
+import eventsController from "../../api/event.controller";
 
 const MainScreen: React.FC = () => {
   const [recomKcalPerDay, setRecomKcalPerDay] = useState<number>(0);
@@ -41,6 +42,7 @@ const MainScreen: React.FC = () => {
       : `0${new Date().getMonth() + 1}`;
 
   const date = `${new Date().getFullYear()}-${month}-${new Date().getDate()}`;
+  const time = `${new Date().getFullYear()}-${month}-${new Date().getDate()} ${new Date().getHours()}:${new Date().getMinutes()}`;
 
   const getEventKcal = async () => {
     const event = await eventMealController.getEventsByDate(date);
@@ -143,10 +145,17 @@ const MainScreen: React.FC = () => {
     eaten: number,
     setState: React.Dispatch<React.SetStateAction<number>>,
   ) => {
-    return total > eaten ? setState(total - eaten) : setState(0);
+    if (total > eaten) {
+      setState(total - eaten);
+    } else setState(0);
   };
 
-  const addWater = () => {
+  const addWater = async () => {
+    await eventsController.addEvent({
+      name: "Drink",
+      startTime: time,
+      description: "",
+    });
     setWaterConsumed(waterConsumed + 0.25);
   };
 
@@ -216,6 +225,7 @@ const MainScreen: React.FC = () => {
     getCurrentWeight();
     getTargetWeight();
     getEventKcal();
+    addWater();
   }, []);
 
   return (
