@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
 import minus from "../../assets/svg/minus-light.svg";
 import plus from "../../assets/svg/plus-light.svg";
@@ -7,6 +7,8 @@ import DailyEventEditData from "../../components/DailyEventEditData/DailyEventEd
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "../MainScreen/MainScreen.scss";
 import "../../index.scss";
+import { EventMealResponse } from "../../api/api.interface";
+import eventMealController from "../../api/event-meal.controller";
 
 const EditEventScreen = () => {
   const getWaterConsumed = () => {
@@ -31,6 +33,27 @@ const EditEventScreen = () => {
       </div>
     );
   };
+
+  const [breakfast, setBreakfast] = useState<EventMealResponse[]>([]);
+  const [lunch, setLunch] = useState<EventMealResponse[]>([]);
+  const [dinner, setDinner] = useState<EventMealResponse[]>([]);
+  const [snack, setSnack] = useState<EventMealResponse[]>([]);
+
+  const getMealEvents = async () => {
+    const allMealEvents = await eventMealController.getEventsByDate(
+      String(new Date()),
+    );
+    setBreakfast(
+      allMealEvents.filter((item) => item.description === "breakfast"),
+    );
+    setLunch(allMealEvents.filter((item) => item.description === "lunch"));
+    setDinner(allMealEvents.filter((item) => item.description === "dinner"));
+    setSnack(allMealEvents.filter((item) => item.description === "snack"));
+  };
+
+  useEffect(() => {
+    getMealEvents();
+  }, []);
 
   return (
     <div className="edit-event__screen">
@@ -61,7 +84,7 @@ const EditEventScreen = () => {
               title="Snack"
               recommended="Recomended 447 Kcal"
               className="daily-events__item daily-events__item_snack"
-              content={<DailyEventEditData type="meal" data={snaks} />}
+              content={<DailyEventEditData type="meal" data={snack} />}
             />
           </div>
           <div className="daily-events__water">
@@ -74,7 +97,7 @@ const EditEventScreen = () => {
               content={getWaterConsumed()}
             />
           </div>
-          <div className="daily-events__exercise">
+          {/* <div className="daily-events__exercise">
             <h3 className="daily-events__title">Daily exercise</h3>
             <DailyEventEditWrapper
               title="Exercise"
@@ -82,7 +105,7 @@ const EditEventScreen = () => {
               className="daily-events__item daily-events__item_exercise"
               content={<DailyEventEditData type="activity" data={activities} />}
             />
-          </div>
+          </div> */}
         </div>
       </div>
       <ButtonTemplate className="event__changes__btn">
