@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import recipes from "../../assets/recipes.json";
+import { RecipeResponse } from "../../api/api.interface";
+import recipesController from "../../api/recipes.controller";
 import CardRecipe from "../../components/CardRecipe/CardRecipe";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import "./RecipesScreen.scss";
 
 const RecipesScreen: React.FC = () => {
+  const [recipes, setRecipes] = useState<RecipeResponse[]>();
+
+  const getRcipes = async () => {
+    const result = await recipesController.getAllRecipes();
+    if (result) {
+      setRecipes(result);
+      console.log(recipes);
+    }
+  };
+
+  useEffect(() => {
+    getRcipes();
+  }, []);
+
   return (
     <div className="recipes__screen">
       <div className="container">
@@ -22,9 +37,8 @@ const RecipesScreen: React.FC = () => {
               <h3 className="category__h3">Breakfast</h3>
               <span className="category__span">
                 {
-                  recipes.recipes.filter(
-                    (item) => item.category === "breakfast",
-                  ).length
+                  recipes?.filter((item) => item.category.includes("breakfast"))
+                    .length
                 }{" "}
                 Recipes
               </span>
@@ -36,8 +50,8 @@ const RecipesScreen: React.FC = () => {
               <h3 className="category__h3">Appetizers</h3>
               <span className="category__span">
                 {
-                  recipes.recipes.filter(
-                    (item) => item.category === "appetizers",
+                  recipes?.filter((item) =>
+                    item.category.includes("appetizers"),
                   ).length
                 }{" "}
                 Recipes
@@ -47,7 +61,7 @@ const RecipesScreen: React.FC = () => {
               <h3 className="category__h3">Dinner</h3>
               <span className="category__span">
                 {
-                  recipes.recipes.filter((item) => item.category === "dinner")
+                  recipes?.filter((item) => item.category.includes("dinner"))
                     .length
                 }{" "}
                 Recipes
@@ -73,13 +87,13 @@ const RecipesScreen: React.FC = () => {
           <div className="search__container__icon" />
         </div>
         <div className="recipes__container">
-          {recipes.recipes.map((item) => (
+          {recipes?.map((item) => (
             <Link
               to={`/recipe/${item.id}`}
               className="recipe__card"
               key={item.id}
             >
-              <CardRecipe data={item} />
+              <CardRecipe data={item} key={item.id} />
             </Link>
           ))}
         </div>

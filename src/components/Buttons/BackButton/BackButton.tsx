@@ -1,22 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./BackButton.scss";
 
 export interface BackButtonProps {
   children?: React.ReactNode;
   to?: string;
-  onClick?: () => void;
 }
 
-const BackButton: React.FC<BackButtonProps> = ({
-  to,
-  children,
-  onClick,
-  ...attrs
-}) => {
+const BackButton: React.FC<BackButtonProps> = ({ to, children, ...attrs }) => {
   return (
-    <a href="/" rel="noopener noreferrer" className="back-btn" {...attrs}>
+    <Link to={to as string} className="back-btn" {...attrs}>
       <div className="back-btn-icon" />
-    </a>
+    </Link>
   );
 };
 

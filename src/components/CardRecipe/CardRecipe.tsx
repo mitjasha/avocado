@@ -1,26 +1,9 @@
 import React from "react";
+import { RecipeResponse } from "../../api/api.interface";
 import "./CardRecipe.scss";
 
-export interface DataRecipes {
-  id: number;
-  name: string;
-  category: string;
-  calories: string;
-  proteins: string;
-  carbs: string;
-  fats: string;
-  author: string;
-  kitchen: string;
-  favourites: boolean;
-  vegetarian: boolean;
-  ingredients: { quantity: string; name: string }[];
-  steps: string[];
-  time: number;
-  imageURL: string;
-}
-
 export interface CardRecipesProps {
-  data: DataRecipes;
+  data: RecipeResponse;
   // className?: string;
 }
 

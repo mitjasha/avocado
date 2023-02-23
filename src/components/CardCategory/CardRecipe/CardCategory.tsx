@@ -9,6 +9,7 @@ const CardCategory: React.FC<CardRecipesProps> = ({ data }) => {
       style={{
         backgroundImage: `url(${data.imageURL})`,
       }}
+      key={data.id}
     >
       <div className="card__category__bg">
         <div className="category__recipe__container">

@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams, useParams, Link } from "react-router-dom";
-import ReactDOM from "react-dom";
-import recipes from "../../assets/recipes.json";
 import CardCategory from "../../components/CardCategory/CardRecipe/CardCategory";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import breakfastImg from "../../assets/png/breakfast-category.png";
@@ -9,6 +7,8 @@ import appetizersImg from "../../assets/png/appetizers-category.png";
 import pastaImg from "../../assets/png/pasta-category.png";
 import favImg from "../../assets/png/fav-category.png";
 import "./CategoriesRecipesScreen.scss";
+import { RecipeResponse } from "../../api/api.interface";
+import recipesController from "../../api/recipes.controller";
 
 const CategoriesRecipesScreen: React.FC = () => {
   const categories = {
@@ -33,6 +33,9 @@ const CategoriesRecipesScreen: React.FC = () => {
       color: "rgba(2, 50, 218, 0.5)",
     },
   };
+
+  const [recipes, setRecipes] = useState<RecipeResponse[]>([]);
+
   const { category } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
   // setSearchParams({
@@ -42,28 +45,20 @@ const CategoriesRecipesScreen: React.FC = () => {
   //   kcal: "false",
   // });
 
+  const getRcipes = async () => {
+    const result = await recipesController.getAllRecipes();
+    if (result) {
+      setRecipes(result);
+      console.log(recipes);
+    }
+  };
+
   const sortAndFilter = (
     veg: string | null,
     fav: string | null,
     time: string | null,
     kcal: string | null,
-    data: {
-      id: number;
-      name: string;
-      category: string;
-      calories: string;
-      proteins: string;
-      carbs: string;
-      fats: string;
-      author: string;
-      kitchen: string;
-      favourites: boolean;
-      vegetarian: boolean;
-      ingredients: { quantity: string; name: string }[];
-      steps: string[];
-      time: number;
-      imageURL: string;
-    }[],
+    data: RecipeResponse[],
   ) => {
     const queryFavourite = searchParams.get("favourite");
     const queryVegetarian = searchParams.get("vegetarian");
@@ -72,9 +67,11 @@ const CategoriesRecipesScreen: React.FC = () => {
 
     console.log(queryFavourite, queryVegetarian, queryTime, queryKcal);
 
-    let categoryData = data.filter((item) => item.category === "appetizers");
+    let categoryData = data.filter((item) =>
+      item.category.includes("appetizers"),
+    );
     if (queryFavourite === "true") {
-      categoryData = categoryData.filter((item) => item.favourites);
+      categoryData = categoryData.filter((item) => item.favorite);
     }
     if (queryVegetarian === "true") {
       categoryData = categoryData.filter((item) => item.vegetarian);
@@ -89,16 +86,13 @@ const CategoriesRecipesScreen: React.FC = () => {
         (a, b) => Number(a.time) - Number(b.time),
       );
     }
-
-    const newContainer = (
-      <div className="container categories__main">
-        {categoryData.map((item) => (
-          <CardCategory data={item} />
-        ))}
-      </div>
-    );
-    ReactDOM.render(newContainer, document.querySelector(".main"));
+    setRecipes(categoryData);
+    console.log(recipes.length);
   };
+
+  useEffect(() => {
+    getRcipes();
+  }, []);
 
   useEffect(() => {
     sortAndFilter(
@@ -106,14 +100,14 @@ const CategoriesRecipesScreen: React.FC = () => {
       searchParams.get("favourite"),
       searchParams.get("time"),
       searchParams.get("kcal"),
-      recipes.recipes,
+      recipes,
     );
   }, [
     searchParams.get("vegetarian"),
     searchParams.get("favourite"),
     searchParams.get("time"),
     searchParams.get("kcal"),
-    recipes.recipes,
+    // recipes,
   ]);
 
   // const sortingList = ["Popular", "Recent", "Veg", "Quick"];
@@ -144,8 +138,9 @@ const CategoriesRecipesScreen: React.FC = () => {
             </h1>
             <span className="categories__header__span">
               {
-                recipes.recipes.filter((item) => item.category === category)
-                  .length
+                recipes.filter((item) =>
+                  item.category.includes(category as string),
+                ).length
               }{" "}
               Recipes
             </span>
@@ -162,7 +157,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                       searchParams.get("favourite"),
                       searchParams.get("time"),
                       searchParams.get("kcal"),
-                      recipes.recipes,
+                      recipes,
                     );
                   }}
                 >
@@ -179,11 +174,11 @@ const CategoriesRecipesScreen: React.FC = () => {
                       searchParams.get("favourite"),
                       searchParams.get("time"),
                       searchParams.get("kcal"),
-                      recipes.recipes,
+                      recipes,
                     );
                   }}
                 >
-                  Low-fat
+                  Favorites
                 </button>
               </li>
               <li className="categories__header__li">
@@ -196,7 +191,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                       searchParams.get("favourite"),
                       searchParams.get("time"),
                       searchParams.get("kcal"),
-                      recipes.recipes,
+                      recipes,
                     );
                   }}
                 >
@@ -219,43 +214,41 @@ const CategoriesRecipesScreen: React.FC = () => {
                       searchParams.get("favourite"),
                       searchParams.get("time"),
                       searchParams.get("kcal"),
-                      recipes.recipes,
+                      recipes,
                     );
                   }}
                 >
-                  Favourites
+                  Calories
                 </button>
               </li>
             </ul>
           </div>
         </header>
-        <main className="main">
-          <div className="container categories__main">
-            {recipes.recipes
-              .filter((item) => item.category === category)
-              .map((item) => (
-                <Link
-                  to={`/recipe/${item.id}`}
-                  className="card__category"
-                  key={item.id}
-                >
-                  <CardCategory data={item} key={`${item.id}`} />
-                </Link>
-              ))}
-            <div
-              className="no-found"
-              style={{
-                display: `${
-                  document.querySelectorAll(".card__category").length > 0
-                    ? "none"
-                    : "block"
-                }`,
-              }}
-            >
-              No recipes found
-            </div>
+        <div className="container categories__main">
+          {recipes
+            .filter((item) => item.category.includes(category as string))
+            .map((item) => (
+              <Link
+                to={`/recipe/${item.id}`}
+                className="card__category"
+                key={item.id}
+              >
+                <CardCategory data={item} key={item.id} />
+              </Link>
+            ))}
+          <div
+            className="no-found"
+            style={{
+              display: `${
+                document.querySelectorAll(".card__category").length > 0
+                  ? "none"
+                  : "block"
+              }`,
+            }}
+          >
+            No recipes found
           </div>
-        </main>
+        </div>
       </div>
     </div>
   );
