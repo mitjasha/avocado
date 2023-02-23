@@ -32,28 +32,6 @@ const EditEventScreen = () => {
     );
   };
 
-  const breakfast = [
-    ["orange", "150", "64,5"],
-    ["porrige", "275", "234"],
-    ["coffee", "160", "30"],
-  ]; // будем получать эти данные из бд
-  const lunch = [
-    ["soup", "350", "264,7"],
-    ["tea", "150", "4,5"],
-  ]; // будем получать эти данные из бд
-  const dinner = [
-    ["fish", "250", "320"],
-    ["potato", "150", "185"],
-  ]; // будем получать эти данные из бд
-  const snaks = [
-    ["apple", "134", "65"],
-    ["nuts", "83", "340"],
-  ]; // будем получать эти данные из бд
-  const activities = [
-    ["running", "30", "265"],
-    ["swimming", "60", "440"],
-  ]; // будем получать эти данные из бд
-
   return (
     <div className="edit-event__screen">
       <div className="container">
