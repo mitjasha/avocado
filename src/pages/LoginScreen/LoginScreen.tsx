@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   loginScreen,
   validationLogin,
@@ -19,6 +20,7 @@ import profileController from "../../api/profile.controller";
 
 const LoginScreen: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const {
     register,
@@ -68,14 +70,14 @@ const LoginScreen: React.FC = () => {
         className="container login-screen-container"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <BackButton />
-        <h1 className="login-screen__title">Welcome Back</h1>
-        <h3 className="login-screen__subtitle">Hi there, you’ve been missed</h3>
+        <BackButton to="/" />
+        <h1 className="login-screen__title">{t("login_phrase_1")}</h1>
+        <h3 className="login-screen__subtitle">{t("login_phrase_2")}</h3>
         <div className="login-screen__email-address">
           <div className="input-wrapper input-wrapper_email">
             <FormInput
               type="text"
-              placeholder="Username"
+              placeholder={t("username") as string}
               register={register("username", { ...validationLogin })}
             />
             {errors?.username && <ToolTip text={validationLogin.message} />}
@@ -86,7 +88,7 @@ const LoginScreen: React.FC = () => {
             <FormInput
               type="password"
               className="reg-input_password"
-              placeholder="Password"
+              placeholder={t("password") as string}
               register={register("password", { ...validationPassword })}
             />
             {errors?.password && <ToolTip text={validationPassword.message} />}
@@ -98,7 +100,7 @@ const LoginScreen: React.FC = () => {
             />
           </div>
         </div>
-        <ButtonTemplate className="submit-btn">Submit</ButtonTemplate>
+        <ButtonTemplate className="submit-btn">{t("login_btn")}</ButtonTemplate>
         <div className="error">
           {errors?.username && errors?.password && (
             <p>{loginScreen.TEXT_ERROR_LOGIN}</p>
