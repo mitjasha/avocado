@@ -40,6 +40,29 @@ const updateActivityEvent = async (
   });
 };
 
+const deleteMealEvent = async (
+  id: string,
+  startTime: string,
+  weight: number,
+  description: string,
+) => {
+  await eventMealController.delEvent({ id, startTime, weight, description });
+};
+
+const deleteActivityEvent = async (
+  id: string,
+  startTime: Date,
+  endTime: Date,
+  description: string,
+) => {
+  await eventActivityController.delEvent({
+    id,
+    startTime,
+    endTime,
+    description,
+  });
+};
+
 export const getMinutes = (start: Date, end: Date) =>
   new Date(end).getMinutes() - new Date(start).getMinutes();
 
@@ -94,7 +117,19 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
                   kcal
                 </span>
               </div>
-              <span className="info__delete">delete</span>
+              <span
+                className="info__delete"
+                onClick={() =>
+                  deleteMealEvent(
+                    item.product.id,
+                    item.startTime,
+                    weight ? weight : item.weight,
+                    item.description,
+                  )
+                }
+              >
+                delete
+              </span>
             </li>
           ))
         : dataActivity?.map((item) => (
@@ -140,7 +175,19 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
                   min
                 </span>
               </div>
-              <span className="info__delete">delete</span>
+              <span
+                className="info__delete"
+                onClick={() =>
+                  deleteActivityEvent(
+                    item.activity.id,
+                    item.startTime,
+                    timeEnd ? timeEnd : item.endTime,
+                    item.description,
+                  )
+                }
+              >
+                delete
+              </span>
             </li>
           ))}
     </ul>
