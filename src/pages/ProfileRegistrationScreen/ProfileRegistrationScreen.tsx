@@ -32,6 +32,7 @@ import "../UserRegistrationScreen/UserRegistrationScreen.scss";
 const RegistrationScreen: React.FC = () => {
   const [processCount, setCounter] = useState<number>(1);
   const [gradientValue, setGradientValue] = useState<string>("");
+  const [isDisabled, setDisabled] = useState(true);
 
   const navigate = useNavigate();
 
@@ -41,7 +42,15 @@ const RegistrationScreen: React.FC = () => {
     register,
     formState: { errors },
     getValues,
-  } = useForm<Profile>({ mode: "onChange" });
+  } = useForm<Profile>({
+    mode: "onChange",
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      gender: EGender.NAN,
+      weight: 0,
+    },
+  });
 
   const onSubmit = async (data: Profile) => {
     const profileID = JSON.parse(localStorage.getItem("profileID") as string);
@@ -78,12 +87,14 @@ const RegistrationScreen: React.FC = () => {
     if (processCount < 7) {
       setCounter(processCount + 1);
     }
+    setDisabled(true);
   };
 
   const decrease = () => {
     if (processCount > 0) {
       setCounter(processCount - 1);
     }
+    setDisabled(true);
   };
 
   const displayAge = () => {
@@ -93,6 +104,7 @@ const RegistrationScreen: React.FC = () => {
     const age = new Date(today - birth).getUTCFullYear() - 1970;
     const ageDisplay = document.querySelector(".age-display") as HTMLElement;
     ageDisplay.textContent = String(age);
+    setDisabled(false);
   };
 
   const todaysDate =
@@ -176,6 +188,7 @@ const RegistrationScreen: React.FC = () => {
                   value={EGender.MALE}
                   className="gender-input__input"
                   {...register("gender", { ...validationGender })}
+                  onInput={() => setDisabled(false)}
                 />
                 <label htmlFor="male" className="gender-input__label">
                   <img
@@ -191,6 +204,7 @@ const RegistrationScreen: React.FC = () => {
                   value={EGender.FEMALE}
                   className="gender-input__input"
                   {...register("gender", { ...validationGender })}
+                  onInput={() => setDisabled(false)}
                 />
                 <label htmlFor="female" className="gender-input__label">
                   <img
@@ -222,7 +236,7 @@ const RegistrationScreen: React.FC = () => {
                 min={maxAge}
                 required
                 {...birthField}
-                onChange={displayAge}
+                onInput={displayAge}
               />
             </div>
           </div>
@@ -239,7 +253,10 @@ const RegistrationScreen: React.FC = () => {
               <div className="unit">cm</div>
               <div className="triangle" />
               <div className="tall-input-wrapper">
-                <TallInput register={register("height", { required: true })} />
+                <TallInput
+                  register={register("height", { required: true })}
+                  onChange={() => setDisabled(false)}
+                />
               </div>
             </div>
           </div>
@@ -260,6 +277,7 @@ const RegistrationScreen: React.FC = () => {
                 <WeightInput
                   idName="weight"
                   register={register("weight", { required: true })}
+                  onChange={() => setDisabled(false)}
                 />
               </div>
             </div>
@@ -281,6 +299,7 @@ const RegistrationScreen: React.FC = () => {
                   value={EGoal.LOSE}
                   className="goal-input__input"
                   {...register("goal", { required: true })}
+                  onInput={() => setDisabled(false)}
                 />
                 <label htmlFor="lose" className="goal-input__label">
                   <img src={loseIcon} alt="lose" className="goal-input__icon" />
@@ -292,6 +311,7 @@ const RegistrationScreen: React.FC = () => {
                   value={EGoal.MAINTAIN}
                   className="goal-input__input"
                   {...register("goal", { required: true })}
+                  onInput={() => setDisabled(false)}
                 />
                 <label htmlFor="maintain" className="goal-input__label">
                   <img
@@ -307,6 +327,7 @@ const RegistrationScreen: React.FC = () => {
                   value={EGoal.GAIN}
                   className="goal-input__input"
                   {...register("goal", { required: true })}
+                  onInput={() => setDisabled(false)}
                 />
                 <label htmlFor="gain" className="goal-input__label">
                   <img src={gainIcon} alt="gain" className="goal-input__icon" />
@@ -337,6 +358,7 @@ const RegistrationScreen: React.FC = () => {
                   <WeightInput
                     idName="target-weight"
                     register={register("targetWeight", { required: true })}
+                    onChange={() => setDisabled(false)}
                   />
                 </div>
               </div>
@@ -344,10 +366,23 @@ const RegistrationScreen: React.FC = () => {
             </div>
           </div>
         )}
+
         <div className="profile-form__btn_container">
-          {processCount >= 1 && processCount <= 7 && (
-            <NextRegButton gradient={gradientValue} onClick={increase} />
-          )}
+          <NextRegButton
+            gradient={gradientValue}
+            onClick={increase}
+            disabled={
+              // eslint-disable-next-line no-nested-ternary
+              processCount === 1
+                ? !!errors.firstName ||
+                  !!errors.lastName ||
+                  getValues("firstName") === "" ||
+                  getValues("lastName") === ""
+                : processCount === 7
+                ? false
+                : isDisabled
+            }
+          />
         </div>
       </form>
     </div>
