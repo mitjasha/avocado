@@ -31,6 +31,7 @@ const MainScreen: React.FC = () => {
   const [eatenProteins, setEatenProteins] = useState<number>(0);
   const [eatenFats, setEatenFats] = useState<number>(0);
   const [eatenCarbs, setEatenCarbs] = useState<number>(0);
+  const [eatenKcal, setEatenKcal] = useState<number>(0);
 
   const profileID = JSON.parse(localStorage.getItem("profileID") as string);
 
@@ -67,6 +68,7 @@ const MainScreen: React.FC = () => {
         return acc + (item.weight / 100) * item.product.calories_100g;
       }, 0),
     );
+    setEatenKcal(breakfastKcal + lunchKcal + dinnerKcal + snackKcal);
     setEatenProteins(
       event.reduce((acc, item) => {
         return acc + (item.weight / 100) * item.product.proteins_100g;
@@ -82,7 +84,6 @@ const MainScreen: React.FC = () => {
         return acc + (item.weight / 100) * item.product.carbs_100g;
       }, 0),
     );
-    console.log(event);
   };
 
   const getRecommendedKcal = async () => {
@@ -142,7 +143,7 @@ const MainScreen: React.FC = () => {
     eaten: number,
     setState: React.Dispatch<React.SetStateAction<number>>,
   ) => {
-    setState(total - eaten);
+    return total > eaten ? setState(total - eaten) : setState(0);
   };
 
   const addWater = () => {
@@ -202,8 +203,7 @@ const MainScreen: React.FC = () => {
     }
   };
 
-  const eatenKcal = 536;
-  const burntKcal = 690;
+  const burntKcal = 0;
 
   useEffect(() => {
     getRecommendedKcal();
@@ -237,18 +237,24 @@ const MainScreen: React.FC = () => {
                 spacing={6}
               />
               <div className="kcal-available">
-                <p className="kcal-available__num">{availableKcal}</p>
+                <p className="kcal-available__num">
+                  {availableKcal.toFixed(1).toString()}
+                </p>
                 <h5 className="chart-data-title">Kcal available</h5>
               </div>
             </div>
             <div className="calories-chart__info">
               <img src={eatenImg} alt="fire" />
-              <p className="chart-data-num">{eatenKcal}</p>
+              <p className="chart-data-num">
+                {eatenKcal.toFixed(1).toString()}
+              </p>
               <h5 className="chart-data-title">Eaten</h5>
             </div>
           </div>
           <div className="goal-kcal">
-            <p className="chart-data-num">{recomKcalPerDay}</p>
+            <p className="chart-data-num">
+              {recomKcalPerDay.toFixed(1).toString()}
+            </p>
             <h5 className="chart-data-title">Kcal goal</h5>
           </div>
           <div className="nutrients-charts">
@@ -315,25 +321,25 @@ const MainScreen: React.FC = () => {
             <DailyEventWrapper
               title="Breakfast"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity={`${breakfastKcal.toFixed(2).toString()} kcal`}
+              quantity={`${breakfastKcal.toFixed(1).toString()} kcal`}
               className="daily-events__item daily-events__item_breakfast"
             />
             <DailyEventWrapper
               title="Lunch"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity={`${lunchKcal.toFixed(2).toString()} kcal`}
+              quantity={`${lunchKcal.toFixed(1).toString()} kcal`}
               className="daily-events__item daily-events__item_lunch"
             />
             <DailyEventWrapper
               title="Dinner"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity={`${dinnerKcal.toFixed(2).toString()} kcal`}
+              quantity={`${dinnerKcal.toFixed(1).toString()} kcal`}
               className="daily-events__item daily-events__item_dinner"
             />
             <DailyEventWrapper
               title="Snack"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity={`${snackKcal.toFixed(2).toString()} kcal`}
+              quantity={`${snackKcal.toFixed(1).toString()} kcal`}
               className="daily-events__item daily-events__item_snack"
             />
           </div>
