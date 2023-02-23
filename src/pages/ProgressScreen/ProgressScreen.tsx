@@ -80,16 +80,18 @@ const ProgressScreen: React.FC = () => {
         setCurrentWeight(currentWeight - 0.1);
       }
       await profileController.updateProfile({
+        id: profileID,
         firstName: profile.firstName,
         lastName: profile.lastName,
         gender: profile.gender,
         birth: profile.birth,
-        weight: String(currentWeight),
+        weight: currentWeight,
         height: profile.height,
         goal: profile.goal,
         targetWeight: profile.targetWeight,
         photo: "",
-        id: profileID,
+        favorites: profile.favorites,
+        recentRecipes: profile.recentRecipes,
       });
       getKgLeft();
     }

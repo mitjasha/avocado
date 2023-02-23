@@ -7,9 +7,14 @@ import "./WeightInput.scss";
 interface WeightInputProps {
   idName: string;
   register: UseFormRegisterReturn;
+  onChange?: () => void;
 }
 
-const WeightInput: React.FC<WeightInputProps> = ({ idName, register }) => {
+const WeightInput: React.FC<WeightInputProps> = ({
+  idName,
+  register,
+  onChange,
+}) => {
   const minWeight = 30;
   const maxWeight = 200;
   const getWeightInputs = () => {
@@ -23,6 +28,7 @@ const WeightInput: React.FC<WeightInputProps> = ({ idName, register }) => {
           value={i}
           id={`${idName}-${i}`}
           {...register}
+          onInput={onChange}
         />,
         <label
           key={`label-${i}`}

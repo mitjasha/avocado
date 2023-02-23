@@ -6,9 +6,10 @@ import "./TallInput.scss";
 
 interface TallInputProps {
   register: UseFormRegisterReturn;
+  onChange?: () => void;
 }
 
-const TallInput: React.FC<TallInputProps> = ({ register }) => {
+const TallInput: React.FC<TallInputProps> = ({ register, onChange }) => {
   const minTall = 150;
   const maxTall = 250;
   const getTallInputs = () => {
@@ -22,6 +23,7 @@ const TallInput: React.FC<TallInputProps> = ({ register }) => {
           value={i}
           id={`tall-${i}`}
           {...register}
+          onInput={onChange}
         />,
         <label
           htmlFor={`tall-${i}`}

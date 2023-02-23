@@ -8,9 +8,9 @@ export interface IValidation {
 export const validationName: IValidation = {
   required: true,
   maxLength: 32,
-  pattern: /[a-zA-Z\d]{4,32}$/,
+  pattern: /[a-zA-Z\d]{3,32}$/,
   message:
-    "Имя должно содержать только буквы и цифры и быть не менее 4 и не более 32 символов",
+    "Имя должно содержать только буквы и цифры и быть не менее 3 и не более 32 символов",
 };
 
 export const validationEmail: IValidation = {
@@ -22,5 +22,5 @@ export const validationEmail: IValidation = {
 
 export const validationGender: IValidation = {
   required: true,
-  message: "Invalid email address",
+  message: "Please specify your gender",
 };

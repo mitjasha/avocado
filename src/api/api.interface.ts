@@ -151,10 +151,23 @@ export interface Profile {
   goal: EGoal;
   targetWeight: number;
   photo: string;
+  favorites: string[];
+  recentRecipes: string[];
 }
 
-export interface ProfileRequest extends Profile {
+export interface ProfileRequest {
   id: string;
+  firstName: string;
+  lastName: string;
+  gender: string;
+  birth: string;
+  weight: number;
+  height: number;
+  goal: string;
+  targetWeight: number;
+  photo: string;
+  favorites: string[];
+  recentRecipes: string[];
 }
 
 export interface ProfileResponse {
@@ -168,6 +181,8 @@ export interface ProfileResponse {
   goal: string;
   targetWeight: number;
   photo: string;
+  favorites: string[];
+  recentRecipes: string[];
   user: {
     id: string;
     username: string;
