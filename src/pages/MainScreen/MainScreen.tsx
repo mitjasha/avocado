@@ -8,6 +8,7 @@ import fireImg from "../../assets/svg/fire.svg";
 import eatenImg from "../../assets/svg/eaten.svg";
 import EditButton from "../../components/Buttons/EditButton/EditButton";
 import "./MainScreen.scss";
+import eventMealController from "../../api/event-meal.controller";
 
 const MainScreen: React.FC = () => {
   const [recomKcalPerDay, setRecomKcalPerDay] = useState<number>(0);
@@ -23,19 +24,66 @@ const MainScreen: React.FC = () => {
   const [waterConsumed, setWaterConsumed] = useState<number>(0);
   const [currentWeight, setCurrentWeight] = useState<number>(0);
   const [targetWeight, setTargetWeight] = useState<number>(0);
-  // const [breakfastKcal, setBreakfastKcal] = useState<number>(0);
-  // const [lunchKcal, setLunchKcal] = useState<number>(0);
-  // const [dinnerKcal, setDinnerKcal] = useState<number>(0);
-  // const [snackKcal, setShackKcal] = useState<number>(0);
-
-  const timly = 0;
-
-  // setBreakfastKcal(1);
-  // setLunchKcal(1);
-  // setDinnerKcal(1);
-  // setShackKcal(1);
+  const [breakfastKcal, setBreakfastKcal] = useState<number>(0);
+  const [lunchKcal, setLunchKcal] = useState<number>(0);
+  const [dinnerKcal, setDinnerKcal] = useState<number>(0);
+  const [snackKcal, setSnackKcal] = useState<number>(0);
+  const [eatenProteins, setEatenProteins] = useState<number>(0);
+  const [eatenFats, setEatenFats] = useState<number>(0);
+  const [eatenCarbs, setEatenCarbs] = useState<number>(0);
 
   const profileID = JSON.parse(localStorage.getItem("profileID") as string);
+
+  const month =
+    new Date().getMonth() > 9
+      ? `${new Date().getMonth() + 1}`
+      : `0${new Date().getMonth() + 1}`;
+
+  const date = `${new Date().getFullYear()}-${month}-${new Date().getDate()}`;
+
+  const getEventKcal = async () => {
+    const event = await eventMealController.getEventsByDate(date);
+    const breakfast = event.filter((item) => item.name === "breakfast");
+    const lunch = event.filter((item) => item.name === "lunch");
+    const dinner = event.filter((item) => item.name === "dinner");
+    const snack = event.filter((item) => item.name === "snack");
+    setBreakfastKcal(
+      breakfast.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.calories_100g;
+      }, 0),
+    );
+    setLunchKcal(
+      lunch.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.calories_100g;
+      }, 0),
+    );
+    setDinnerKcal(
+      dinner.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.calories_100g;
+      }, 0),
+    );
+    setSnackKcal(
+      snack.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.calories_100g;
+      }, 0),
+    );
+    setEatenProteins(
+      event.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.proteins_100g;
+      }, 0),
+    );
+    setEatenFats(
+      event.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.fat_100g;
+      }, 0),
+    );
+    setEatenCarbs(
+      event.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.carbs_100g;
+      }, 0),
+    );
+    console.log(event);
+  };
 
   const getRecommendedKcal = async () => {
     if (profileID) {
@@ -155,21 +203,19 @@ const MainScreen: React.FC = () => {
   };
 
   const eatenKcal = 536;
-  const eatenProtein = 43;
-  const eatenFats = 15;
-  const eatenCarbs = 150;
   const burntKcal = 690;
 
   useEffect(() => {
     getRecommendedKcal();
     getAvailable(recomKcalPerDay, eatenKcal, setAvailableKcal);
     getRecomNutritions();
-    getAvailable(recomProteins, eatenProtein, setAvailableProteins);
+    getAvailable(recomProteins, eatenProteins, setAvailableProteins);
     getAvailable(recomFats, eatenFats, setAvailableFats);
     getAvailable(recomCarbs, eatenCarbs, setAvailableCarbs);
     getRecomWater();
     getCurrentWeight();
     getTargetWeight();
+    getEventKcal();
   }, []);
 
   return (
@@ -217,7 +263,9 @@ const MainScreen: React.FC = () => {
                 />
               </div>
               <div className="chart-info">
-                <p className="chart-data-num nutrients-num">{eatenCarbs}g</p>
+                <p className="chart-data-num nutrients-num">
+                  {eatenCarbs.toFixed(1).toString()}g
+                </p>
                 <h5 className="chart-data-title">Carbs</h5>
               </div>
             </div>
@@ -232,14 +280,16 @@ const MainScreen: React.FC = () => {
                 />
               </div>
               <div className="chart-info">
-                <p className="chart-data-num nutrients-num">{eatenFats}g</p>
+                <p className="chart-data-num nutrients-num">
+                  {eatenFats.toFixed(1).toString()}g
+                </p>
                 <h5 className="chart-data-title">Fats</h5>
               </div>
             </div>
             <div className="nutrients-charts__item">
               <div>
                 <ChartComponent
-                  chartData={[eatenProtein, availableProteins]}
+                  chartData={[eatenProteins, availableProteins]}
                   colors={["#559C4F", "#fafdf8"]}
                   size={60}
                   cutout={15}
@@ -247,7 +297,9 @@ const MainScreen: React.FC = () => {
                 />
               </div>
               <div className="chart-info">
-                <p className="chart-data-num nutrients-num">{eatenProtein}g</p>
+                <p className="chart-data-num nutrients-num">
+                  {eatenProteins.toFixed(1).toString()}g
+                </p>
                 <h5 className="chart-data-title">Protein</h5>
               </div>
             </div>
@@ -263,25 +315,25 @@ const MainScreen: React.FC = () => {
             <DailyEventWrapper
               title="Breakfast"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity={`${timly} kcal`}
+              quantity={`${breakfastKcal.toFixed(2).toString()} kcal`}
               className="daily-events__item daily-events__item_breakfast"
             />
             <DailyEventWrapper
               title="Lunch"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity={`${timly} kcal`}
+              quantity={`${lunchKcal.toFixed(2).toString()} kcal`}
               className="daily-events__item daily-events__item_lunch"
             />
             <DailyEventWrapper
               title="Dinner"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity={`${timly} kcal`}
+              quantity={`${dinnerKcal.toFixed(2).toString()} kcal`}
               className="daily-events__item daily-events__item_dinner"
             />
             <DailyEventWrapper
               title="Snack"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity={`${timly} kcal`}
+              quantity={`${snackKcal.toFixed(2).toString()} kcal`}
               className="daily-events__item daily-events__item_snack"
             />
           </div>
