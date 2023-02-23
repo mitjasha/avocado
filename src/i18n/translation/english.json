@@ -1,0 +1,15 @@
+{
+  "splash_phrase": "You are what you eat",
+  "splash_button": "Get started!",
+  "splash_login_text": "Already have an account?",
+  "splash_login": "Log In",
+  "login_phrase_1": "Welcome Back",
+  "login_phrase_2": "Hi there, you’ve been missed",
+  "login_btn": "Login",
+  "username": "Username",
+  "password": "Password",
+  "registration_btn_text": "Continue",
+  "registration_terms_1": "By continuing, you agree to the",
+  "registration_terms_2": "Terms of Services",
+  "registration_terms_3": "Privacy Policy"
+}

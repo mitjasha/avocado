@@ -1,0 +1,15 @@
+{
+  "splash_phrase": "Вы - то, что вы едите",
+  "splash_button": "Начнем!",
+  "splash_login_text": "У вас уже есть учетная запись?",
+  "splash_login": "Войти",
+  "login_phrase_1": "С возвращением",
+  "login_phrase_2": "Привет, мы скучали по тебе",
+  "login_btn": "Войти",
+  "username": "Имя пользователя",
+  "password": "Пароль",
+  "registration_btn_text": "Продолжить",
+  "registration_terms_1": "Продолжая, вы соглашаетесь с",
+  "registration_terms_2": "Условиями предоставления услуг",
+  "registration_terms_3": "Политикой конфиденциальности"
+}
