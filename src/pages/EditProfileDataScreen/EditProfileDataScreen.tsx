@@ -215,7 +215,7 @@ const EditProfileDataScreen: React.FC = () => {
               <div>
                 <RegInput
                   type="number"
-                  placeholder={String(weight)}
+                  defaultValue={weight}
                   value={Number(weight).toFixed()}
                   onChange={(event) =>
                     setWeight(Number((event.target as HTMLInputElement).value))
@@ -233,7 +233,7 @@ const EditProfileDataScreen: React.FC = () => {
               <div>
                 <RegInput
                   type="number"
-                  placeholder={String(targetWeight)}
+                  defaultValue={targetWeight}
                   value={Number(targetWeight).toFixed()}
                   onChange={(event) =>
                     setTargetWeight(
@@ -253,7 +253,7 @@ const EditProfileDataScreen: React.FC = () => {
               <div>
                 <RegInput
                   type="number"
-                  placeholder={String(height)}
+                  defaultValue={height}
                   value={Number(height).toFixed()}
                   onChange={(event) =>
                     setHeight(Number((event.target as HTMLInputElement).value))
