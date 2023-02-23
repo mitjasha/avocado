@@ -3,6 +3,7 @@ import BasicModalComponent from "../../components/Modals/BasicModalComponent/Bas
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./AddProductModal.scss";
+import { Product } from "../../api/api.interface";
 import productsController from "../../api/product.controller";
 
 const AddProductModal: React.FC = () => {
@@ -38,12 +39,12 @@ const AddProductModal: React.FC = () => {
   ];
 
   const addProductRequest = async (
-    name: string,
-    calories_100g: number,
-    proteins_100g: number,
-    carbs_100g: number,
-    fat_100g: number,
-    category: string,
+    name: Product["name"],
+    calories_100g: Product["calories_100g"],
+    proteins_100g: Product["proteins_100g"],
+    carbs_100g: Product["carbs_100g"],
+    fat_100g: Product["fat_100g"],
+    category: Product["category"],
   ) => {
     await productsController.addProduct({
       name,
