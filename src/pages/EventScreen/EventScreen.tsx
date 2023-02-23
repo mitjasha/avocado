@@ -87,7 +87,7 @@ const EventScreen: React.FC = () => {
         </div>
       </div>
       <AddProductModal />
-      <ProductModal data={productData} />
+      <ProductModal data={productData} mealType={type as string} />
     </div>
   );
 };

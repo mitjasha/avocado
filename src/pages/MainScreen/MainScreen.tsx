@@ -23,6 +23,17 @@ const MainScreen: React.FC = () => {
   const [waterConsumed, setWaterConsumed] = useState<number>(0);
   const [currentWeight, setCurrentWeight] = useState<number>(0);
   const [targetWeight, setTargetWeight] = useState<number>(0);
+  // const [breakfastKcal, setBreakfastKcal] = useState<number>(0);
+  // const [lunchKcal, setLunchKcal] = useState<number>(0);
+  // const [dinnerKcal, setDinnerKcal] = useState<number>(0);
+  // const [snackKcal, setShackKcal] = useState<number>(0);
+
+  const timly = 0;
+
+  // setBreakfastKcal(1);
+  // setLunchKcal(1);
+  // setDinnerKcal(1);
+  // setShackKcal(1);
 
   const profileID = JSON.parse(localStorage.getItem("profileID") as string);
 
@@ -252,22 +263,25 @@ const MainScreen: React.FC = () => {
             <DailyEventWrapper
               title="Breakfast"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity="356 kcal"
+              quantity={`${timly} kcal`}
               className="daily-events__item daily-events__item_breakfast"
             />
             <DailyEventWrapper
               title="Lunch"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
+              quantity={`${timly} kcal`}
               className="daily-events__item daily-events__item_lunch"
             />
             <DailyEventWrapper
               title="Dinner"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
+              quantity={`${timly} kcal`}
               className="daily-events__item daily-events__item_dinner"
             />
             <DailyEventWrapper
               title="Snack"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
+              quantity={`${timly} kcal`}
               className="daily-events__item daily-events__item_snack"
             />
           </div>

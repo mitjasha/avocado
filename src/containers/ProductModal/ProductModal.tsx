@@ -1,37 +1,66 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BasicModalComponent from "../../components/Modals/BasicModalComponent/BasicModalComponent";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
-import { Product } from "../../api/api.interface";
+import { ProductRequest } from "../../api/api.interface";
 import "./ProductModal.scss";
+import eventMealController from "../../api/event-meal.controller";
 
 interface ProductProps {
-  data: Product;
+  data: ProductRequest;
+  mealType: string;
 }
 
-const ProductModal: React.FC<ProductProps> = ({ data }) => {
-  const [kcal, setKcal] = useState<number>(Number(data.calories_100g));
-  const [proteins, setProteins] = useState<number>(Number(data.proteins_100g));
-  const [fats, setFats] = useState<number>(Number(data.fat_100g));
-  const [carbs, setCarbs] = useState<number>(Number(data.carbs_100g));
+const ProductModal: React.FC<ProductProps> = ({ data, mealType }) => {
+  const [kcal, setKcal] = useState<number>(Math.round(data.calories_100g));
+  const [proteins, setProteins] = useState<number>(
+    Math.round(data.proteins_100g),
+  );
+  const [fats, setFats] = useState<number>(Math.round(data.fat_100g));
+  const [carbs, setCarbs] = useState<number>(Math.round(data.carbs_100g));
 
   const updateModalData = () => {
     const modalInput = document.querySelector(
       ".modal__input",
     ) as HTMLInputElement;
-    setKcal(
-      Math.round((Number(modalInput.value) / 100) * Number(data.calories_100g)),
-    );
+    setKcal(Math.round((Number(modalInput.value) / 100) * data.calories_100g));
     setProteins(
-      Math.round((Number(modalInput.value) / 100) * Number(data.proteins_100g)),
+      Math.round((Number(modalInput.value) / 100) * data.proteins_100g),
     );
-    setFats(
-      Math.round((Number(modalInput.value) / 100) * Number(data.fat_100g)),
-    );
-    setCarbs(
-      Math.round((Number(modalInput.value) / 100) * Number(data.carbs_100g)),
-    );
+    setFats(Math.round((Number(modalInput.value) / 100) * data.fat_100g));
+    setCarbs(Math.round((Number(modalInput.value) / 100) * data.carbs_100g));
   };
+
+  const month =
+    new Date().getMonth() > 9
+      ? `${new Date().getMonth() + 1}`
+      : `0${new Date().getMonth() + 1}`;
+
+  const time = `${new Date().getFullYear()}-${month}-${new Date().getDate()} ${new Date().getHours()}:${new Date().getMinutes()}`;
+
+  const addEventMeal = async () => {
+    const modalInput = document.querySelector(
+      ".modal__input",
+    ) as HTMLInputElement;
+    if (modalInput.value.length > 0) {
+      await eventMealController.addEvent(
+        {
+          name: mealType,
+          startTime: time,
+          weight: Number(modalInput.value),
+          description: "",
+        },
+        data,
+      );
+      const modal = document.querySelector(".product-modal") as HTMLElement;
+      modal.style.visibility = "hidden";
+      modal.style.opacity = "0";
+    }
+  };
+
+  useEffect(() => {
+    setKcal(data.calories_100g);
+  }, []);
 
   return (
     <BasicModalComponent title={data.name} className="product-modal">
@@ -63,7 +92,9 @@ const ProductModal: React.FC<ProductProps> = ({ data }) => {
           <div className="modal__span__disabled">{carbs} g</div>
         </div>
       </div>
-      <ButtonTemplate className="modal__button">Add</ButtonTemplate>
+      <ButtonTemplate className="modal__button" onClick={addEventMeal}>
+        Add
+      </ButtonTemplate>
     </BasicModalComponent>
   );
 };

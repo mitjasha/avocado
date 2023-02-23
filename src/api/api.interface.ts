@@ -93,6 +93,7 @@ export interface EventRequest extends Event {
 }
 
 export interface EventMeal {
+  name: string;
   startTime: string;
   weight: number;
   description: string;
