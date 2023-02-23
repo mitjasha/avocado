@@ -7,8 +7,12 @@ import DailyEventEditData from "../../components/DailyEventEditData/DailyEventEd
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "../MainScreen/MainScreen.scss";
 import "../../index.scss";
-import { EventMealResponse } from "../../api/api.interface";
+import {
+  EventActivityResponse,
+  EventMealResponse,
+} from "../../api/api.interface";
 import eventMealController from "../../api/event-meal.controller";
+import eventActivityController from "../../api/event-activity.controller";
 
 const EditEventScreen = () => {
   const getWaterConsumed = () => {
@@ -39,6 +43,8 @@ const EditEventScreen = () => {
   const [dinner, setDinner] = useState<EventMealResponse[]>([]);
   const [snack, setSnack] = useState<EventMealResponse[]>([]);
 
+  const [activity, setActivity] = useState<EventActivityResponse[]>([]);
+
   const getMealEvents = async () => {
     const allMealEvents = await eventMealController.getEventsByDate(
       String(new Date()),
@@ -51,8 +57,16 @@ const EditEventScreen = () => {
     setSnack(allMealEvents.filter((item) => item.description === "snack"));
   };
 
+  const getActivityEvents = async () => {
+    const allActivityEvents = await eventActivityController.getEventsByDate(
+      String(new Date()),
+    );
+    setActivity(allActivityEvents);
+  };
+
   useEffect(() => {
     getMealEvents();
+    getActivityEvents();
   }, []);
 
   return (
@@ -65,26 +79,26 @@ const EditEventScreen = () => {
               title="Breakfast"
               recommended="Recomended 447 Kcal"
               quantity="356 kcal"
-              content={<DailyEventEditData type="meal" data={breakfast} />}
+              content={<DailyEventEditData type="meal" dataMeal={breakfast} />}
               className="daily-events__item daily-events__item_breakfast"
             />
             <DailyEventEditWrapper
               title="Lunch"
               recommended="Recomended 447 Kcal"
               className="daily-events__item daily-events__item_lunch"
-              content={<DailyEventEditData type="meal" data={lunch} />}
+              content={<DailyEventEditData type="meal" dataMeal={lunch} />}
             />
             <DailyEventEditWrapper
               title="Dinner"
               recommended="Recomended 447 Kcal"
               className="daily-events__item daily-events__item_dinner"
-              content={<DailyEventEditData type="meal" data={dinner} />}
+              content={<DailyEventEditData type="meal" dataMeal={dinner} />}
             />
             <DailyEventEditWrapper
               title="Snack"
               recommended="Recomended 447 Kcal"
               className="daily-events__item daily-events__item_snack"
-              content={<DailyEventEditData type="meal" data={snack} />}
+              content={<DailyEventEditData type="meal" dataMeal={snack} />}
             />
           </div>
           <div className="daily-events__water">
@@ -97,18 +111,20 @@ const EditEventScreen = () => {
               content={getWaterConsumed()}
             />
           </div>
-          {/* <div className="daily-events__exercise">
+          <div className="daily-events__exercise">
             <h3 className="daily-events__title">Daily exercise</h3>
             <DailyEventEditWrapper
               title="Exercise"
               recommended="Last: Run 1 km"
               className="daily-events__item daily-events__item_exercise"
-              content={<DailyEventEditData type="activity" data={activities} />}
+              content={
+                <DailyEventEditData type="activity" dataActivity={activity} />
+              }
             />
-          </div> */}
+          </div>
         </div>
       </div>
-      <ButtonTemplate className="event__changes__btn">
+      <ButtonTemplate className="event__changes__btn" onClick={getMealEvents}>
         Save changes
       </ButtonTemplate>
     </div>
