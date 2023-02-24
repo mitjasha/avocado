@@ -68,6 +68,7 @@ export interface ProductResponse extends Product {
 export interface Activity {
   name: string;
   calories_per_min: number;
+  image: string;
 }
 
 export interface ActivityRequest extends Activity {
@@ -199,4 +200,19 @@ export enum EGender {
   MALE = "MALE",
   FEMALE = "FEMALE",
   NAN = "NaN",
+}
+
+export enum EActivities {
+  Jogging = "https://ie.wampi.ru/2023/02/13/Group-12893.png",
+  Walking = "https://ie.wampi.ru/2023/02/13/Group-12898.png",
+  Cycling = "https://ic.wampi.ru/2023/02/13/Group-12890.png",
+  ExerciseBike = "https://ie.wampi.ru/2023/02/13/Group-12895.png",
+  Treadmill = "https://ic.wampi.ru/2023/02/13/Group-12897.png",
+  Situps = "https://im.wampi.ru/2023/02/13/Group-12889.png",
+  WeightMachines = "https://im.wampi.ru/2023/02/13/Group-12899.png",
+  EllipticalTrainer = "https://ie.wampi.ru/2023/02/13/Group-12891.png",
+  Swimming = "https://im.wampi.ru/2023/02/13/Group-12896.png",
+  Hike = "https://im.wampi.ru/2023/02/13/Group-12892.png",
+  Squats = "https://ic.wampi.ru/2023/02/13/Group-12894.png",
+  Dancing = "https://ie.wampi.ru/2023/02/13/dance-1.png",
 }

@@ -16,7 +16,8 @@ const eventActivityController = {
     del(`/event-activity/${eventActivity.id}`),
   getEventsByDate: (date: string) =>
     get<EventActivityResponse[]>(`/event-activity/getAllEvents/byDate/${date}`),
-  getAllEvents: () => get<EventActivityResponse[]>("/event-activity"),
+  getAllEvents: () =>
+    get<EventActivityResponse[]>("/event-activity/getAllEvents"),
   updateEvent: (eventActivity: EventActivityRequest) =>
     put(`/event-activity/${eventActivity.id}`, JSON.stringify(eventActivity)),
 };

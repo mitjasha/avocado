@@ -1,26 +1,40 @@
-import React from "react";
-import activities from "../../assets/activities.json";
+import React, { useEffect, useState } from "react";
 import ActivityWrapper from "../../components/ActivityWrapper/ActivityWrapper";
 import ActivityModal from "../../containers/ActivityModal/ActivityModal";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import "./ActivityScreen.scss";
-
-export interface ActivityItemProps {
-  name: string;
-  nameEng: string;
-  kcalPerMin: number;
-  image: string;
-}
+import { ActivityResponse } from "../../api/api.interface";
+import activitiesController from "../../api/activity.controller";
 
 const ActivityScreen: React.FC = () => {
-  const openActivityPopUp = (item: ActivityItemProps) => {
+  const [activities, setActivities] = useState<ActivityResponse[]>([]);
+  const [activityData, setActivityData] = useState<ActivityResponse>({
+    id: "",
+    name: "",
+    calories_per_min: 0,
+    image: "",
+  });
+
+  const openActivityPopUp = (item: ActivityResponse) => {
     const popUp = document.querySelector(
       ".activity-popup",
     ) as HTMLButtonElement;
     popUp.style.opacity = "1";
     popUp.style.visibility = "visible";
-    console.log(item.nameEng);
+    setActivityData(item);
   };
+
+  const getAllActivities = async () => {
+    const result = await activitiesController.getAllActivity();
+    if (result) {
+      setActivities(result);
+    }
+  };
+
+  useEffect(() => {
+    getAllActivities();
+  }, []);
+
   return (
     <div className="activity-screen">
       <div className="container">
@@ -30,19 +44,22 @@ const ActivityScreen: React.FC = () => {
         </div>
         <p className="activity-screen__subtitle">What did you do today?</p>
         <div className="activity-screen__wrapper">
-          {activities.activities.map((item) => {
+          {activities.map((item) => {
             return (
               <ActivityWrapper
-                name={item.nameEng}
+                name={item.name}
                 image={item.image}
                 handleClick={() => openActivityPopUp(item)}
-                key={activities.activities.indexOf(item)}
+                key={activities.indexOf(item)}
               />
             );
           })}
         </div>
       </div>
-      <ActivityModal name="jogging" kcalPerMin={8} />
+      <ActivityModal
+        name={activityData.name}
+        kcalPerMin={activityData.calories_per_min}
+      />
     </div>
   );
 };
