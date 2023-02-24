@@ -104,5 +104,8 @@
   "recipes_resipes": "Recipes",
   "recipes_header_1": "What is in your kitchen?",
   "recipes_header_2": "Enter some ingredient",
-  "recipes_placeholder": "Type your ingredient"
+  "recipes_placeholder": "Type your ingredient",
+  "recipe_ingredients": "INGREDIENTS",
+  "recipe_method": "METHOD",
+  "recipe_min": "MIN"
 }

@@ -104,5 +104,8 @@
   "recipes_resipes": "шт. рецептов",
   "recipes_header_1": "Что есть на вашей кухне?",
   "recipes_header_2": "Введите какой-нибудь ингридиент",
-  "recipes_placeholder": "Введите свой ингридиент"
+  "recipes_placeholder": "Введите свой ингридиент",
+  "recipe_ingredients": "Ингридиенты",
+  "recipe_method": "Шаги",
+  "recipe_min": "мин."
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { RecipeResponse } from "../../api/api.interface";
 import recipesController from "../../api/recipes.controller";
@@ -19,6 +20,8 @@ const RecipeScreen: React.FC = () => {
     getRecipe();
   }, []);
 
+  const { t } = useTranslation();
+
   // const recipe = recipes.recipes[Number(id as keyof typeof recipes)];
   return (
     <div className="recipe__screen">
@@ -34,26 +37,26 @@ const RecipeScreen: React.FC = () => {
         <div className="recipe__info">
           <ul className="recipe__info__ul">
             <li className="recipe__info__li">
-              <span className="recipe__info__span">Kcal:</span>
+              <span className="recipe__info__span">{t("main_kcal")}:</span>
               <span>{recipe?.calories}</span>
             </li>
             <li className="recipe__info__li">
-              <span className="recipe__info__span">Protein:</span>
+              <span className="recipe__info__span">{t("main_proteins")}:</span>
               <span>{recipe?.proteins}</span>
             </li>
             <li className="recipe__info__li">
-              <span className="recipe__info__span">Fat:</span>
+              <span className="recipe__info__span">{t("main_fats")}:</span>
               <span>{recipe?.fats}</span>
             </li>
             <li className="recipe__info__li">
-              <span className="recipe__info__span">Carbs:</span>
+              <span className="recipe__info__span">{t("main_carbs")}:</span>
               <span>{recipe?.carbs}</span>
             </li>
           </ul>
         </div>
         <div className="recipe__cook container">
           <h2 className="recipe__cook__h2">{recipe?.name}</h2>
-          <span className="recipe__cook__span">INGREDIENTS:</span>
+          <span className="recipe__cook__span">{t("recipe_ingredients")}:</span>
           <ul className="ingredients">
             {recipe?.ingredients.map((item) => (
               <li className="ingredients__li" key={item.name}>
@@ -61,7 +64,7 @@ const RecipeScreen: React.FC = () => {
               </li>
             ))}
           </ul>
-          <span className="recipe__cook__span">METHOD:</span>
+          <span className="recipe__cook__span">{t("recipe_method")}:</span>
           <ul className="steps">
             {recipe?.steps.map((item) => (
               <li className="steps__li" key={item}>
@@ -72,7 +75,9 @@ const RecipeScreen: React.FC = () => {
         </div>
         <div className="recipe__time container">
           <div className="recipe__time__icon" />
-          <span className="recipe__time__text">{recipe?.time} MIN</span>
+          <span className="recipe__time__text">
+            {recipe?.time} {t("recipe_min")}
+          </span>
         </div>
       </div>
     </div>
