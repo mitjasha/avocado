@@ -134,7 +134,7 @@ export interface EventActivityResponse extends EventActivity {
   activity: {
     id: string;
     name: string;
-    calories_per_min: 7;
+    calories_per_min: number;
   };
 }
 
