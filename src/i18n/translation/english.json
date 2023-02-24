@@ -82,5 +82,10 @@
   "header_day_4": "Thursday",
   "header_day_5": "Friday",
   "header_day_6": "Saturday",
-  "header_day_7": "Sunday"
+  "header_day_7": "Sunday",
+  "nav_menu_1": "main",
+  "nav_menu_2": "profile",
+  "nav_menu_3": "progress",
+  "nav_menu_4": "recipes",
+  "nav_menu_5": "about"
 }

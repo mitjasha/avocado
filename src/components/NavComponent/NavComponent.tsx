@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import "./NavComponent.scss";
 
@@ -10,7 +11,15 @@ const NavComponent: React.FC = () => {
     burgerCloseBtn.style.display = "none";
   };
 
-  const menuItems = ["main", "profile", "progress", "recipes", "about"];
+  const { t } = useTranslation();
+
+  const menuItems = [
+    t("nav_menu_1"),
+    t("nav_menu_2"),
+    t("nav_menu_3"),
+    t("nav_menu_4"),
+    t("nav_menu_5"),
+  ];
 
   const menuItemCreate = (text: string, index: number) => {
     return (
