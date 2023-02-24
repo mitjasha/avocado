@@ -56,10 +56,7 @@ const ActivityScreen: React.FC = () => {
           })}
         </div>
       </div>
-      <ActivityModal
-        name={activityData.name}
-        kcalPerMin={activityData.calories_per_min}
-      />
+      <ActivityModal data={activityData} />
     </div>
   );
 };

@@ -120,8 +120,8 @@ export interface EventMealRequest extends EventMeal {
 }
 
 export interface EventActivity {
-  startTime: Date;
-  endTime: Date;
+  startTime: string;
+  endTime: string;
   description: string;
 }
 
