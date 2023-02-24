@@ -36,5 +36,15 @@
   "main_body_control": "Body control",
   "main_weight": "Weight",
   "main_kg": "kg",
-  "main_target_weight": "Target"
+  "main_target_weight": "Target",
+  "about_us_title": "About us",
+  "about_us_header": "WHO WE ARE?",
+  "about_us_text": "Our team is a big friendly family, which is pleased to present our project that improves people’s lives. We know how difficult it is to change your lifestyle. That’s why it was important for us to create such an application, opening which you would like to come back again.",
+  "about_us_question": "WHAT WILL YOU GET USING OUR APP?",
+  "about_us_li_1": "Control of calories consumed",
+  "about_us_li_2": "Control of consumed proteins, fats and carbs",
+  "about_us_li_3": "Recipes for proper nutrition",
+  "about_us_li_4": "Control of the water consumed",
+  "about_us_li_5": "Monitoring activity for the day",
+  "about_us_end_text": "Start today! Taking care of yourself is easier than it seems. We wish you success in achieving your goal on the path of a healthy lifestyle!"
 }
