@@ -26,7 +26,7 @@ const RecipesScreen: React.FC = () => {
       <div className="container">
         <div className="main-header__container">
           <span>Categories</span>
-          <span className="main-header__container__view">View All</span>
+          {/* <span className="main-header__container__view">View All</span> */}
         </div>
         <div className="categories-container">
           <div className="categories-container__scroll">
