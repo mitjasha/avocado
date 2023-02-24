@@ -88,5 +88,8 @@
   "nav_menu_3": "progress",
   "nav_menu_4": "recipes",
   "nav_menu_5": "about",
-  "footer_text": "Creators"
+  "footer_text": "Creators",
+  "edit_event_delete": "delete",
+  "g": "g",
+  "min": "min"
 }

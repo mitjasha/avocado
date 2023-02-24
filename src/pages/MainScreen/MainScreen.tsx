@@ -212,7 +212,9 @@ const MainScreen: React.FC = () => {
                 />
               </div>
               <div className="chart-info">
-                <p className="chart-data-num nutrients-num">{eatenCarbs}g</p>
+                <p className="chart-data-num nutrients-num">
+                  {eatenCarbs} {t("g")}
+                </p>
                 <h5 className="chart-data-title">{t("main_carbs")}</h5>
               </div>
             </div>
@@ -227,7 +229,9 @@ const MainScreen: React.FC = () => {
                 />
               </div>
               <div className="chart-info">
-                <p className="chart-data-num nutrients-num">{eatenFats}g</p>
+                <p className="chart-data-num nutrients-num">
+                  {eatenFats} {t("g")}
+                </p>
                 <h5 className="chart-data-title">{t("main_fats")}</h5>
               </div>
             </div>
@@ -242,7 +246,9 @@ const MainScreen: React.FC = () => {
                 />
               </div>
               <div className="chart-info">
-                <p className="chart-data-num nutrients-num">{eatenProtein}g</p>
+                <p className="chart-data-num nutrients-num">
+                  {eatenProtein} {t("g")}
+                </p>
                 <h5 className="chart-data-title">{t("main_proteins")}</h5>
               </div>
             </div>

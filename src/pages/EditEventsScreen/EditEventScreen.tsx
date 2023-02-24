@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
 import minus from "../../assets/svg/minus-light.svg";
 import plus from "../../assets/svg/plus-light.svg";
@@ -9,6 +10,7 @@ import "../MainScreen/MainScreen.scss";
 import "../../index.scss";
 
 const EditEventScreen = () => {
+  const { t } = useTranslation();
   const getWaterConsumed = () => {
     const content = [];
     const litreConsumed = 0.75; // будем получать эти данные из бд
@@ -59,48 +61,50 @@ const EditEventScreen = () => {
       <div className="container">
         <div className="daily-events">
           <div className="daily-events__meals">
-            <h1 className="daily-events__title">Daily meals</h1>
+            <h1 className="daily-events__title">{t("main_daily_meals")}</h1>
             <DailyEventEditWrapper
-              title="Breakfast"
-              recommended="Recomended 447 Kcal"
-              quantity="356 kcal"
+              title={t("main_breakfast")}
+              recommended={`${t("main_recommended")} 447 ${t("main_kcal")}`}
+              quantity={`356 ${t("main_kcal")}`}
               content={<DailyEventEditData type="meal" data={breakfast} />}
               className="daily-events__item daily-events__item_breakfast"
             />
             <DailyEventEditWrapper
-              title="Lunch"
-              recommended="Recomended 447 Kcal"
+              title={t("main_lunch")}
+              recommended={`${t("main_recommended")} 447 ${t("main_kcal")}`}
               className="daily-events__item daily-events__item_lunch"
               content={<DailyEventEditData type="meal" data={lunch} />}
             />
             <DailyEventEditWrapper
-              title="Dinner"
-              recommended="Recomended 447 Kcal"
+              title={t("main_dinner")}
+              recommended={`${t("main_recommended")} 447 ${t("main_kcal")}`}
               className="daily-events__item daily-events__item_dinner"
               content={<DailyEventEditData type="meal" data={dinner} />}
             />
             <DailyEventEditWrapper
-              title="Snack"
-              recommended="Recomended 447 Kcal"
+              title={t("main_snack")}
+              recommended={`${t("main_recommended")} 447 ${t("main_kcal")}`}
               className="daily-events__item daily-events__item_snack"
               content={<DailyEventEditData type="meal" data={snaks} />}
             />
           </div>
           <div className="daily-events__water">
-            <h3 className="daily-events__title">Water consumed</h3>
+            <h3 className="daily-events__title">{t("main_water_consumed")}</h3>
             <DailyEventEditWrapper
-              title="Water"
-              quantity="0.75L (40%)"
-              recommended="Recomended 2.0L (8 gls)"
+              title={t("main_water")}
+              quantity={`0.75${t("main_liter")} (40%)`}
+              recommended={`${t("main_recommended")} 2${t("main_liter")} (8 ${t(
+                "main_glasses",
+              )})`}
               className="daily-events__item daily-events__item_water"
               content={getWaterConsumed()}
             />
           </div>
           <div className="daily-events__exercise">
-            <h3 className="daily-events__title">Daily exercise</h3>
+            <h3 className="daily-events__title">{t("main_daily_exercise")}</h3>
             <DailyEventEditWrapper
-              title="Exercise"
-              recommended="Last: Run 1 km"
+              title={t("main_activity")}
+              recommended={`${t("main_last_activity")}: Run 1 km`}
               className="daily-events__item daily-events__item_exercise"
               content={<DailyEventEditData type="activity" data={activities} />}
             />
@@ -108,7 +112,7 @@ const EditEventScreen = () => {
         </div>
       </div>
       <ButtonTemplate className="event__changes__btn">
-        Save changes
+        {t("edit_profile_save")}
       </ButtonTemplate>
     </div>
   );
