@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./EditProfileDataScreen.scss";
@@ -24,6 +25,8 @@ const EditProfileDataScreen: React.FC = () => {
   const [goal, setGoal] = useState<string>("");
   const [targetWeight, setTargetWeight] = useState<number>();
   const [userName, setUserName] = useState<string>("");
+
+  const navigate = useNavigate();
 
   const getProfileData = async () => {
     const profileID = JSON.parse(localStorage.getItem("profileID") as string);
@@ -286,6 +289,7 @@ const EditProfileDataScreen: React.FC = () => {
               : EGoal.MAINTAIN,
             Number(targetWeight),
           );
+          navigate("/profile");
         }}
       >
         Save changes
