@@ -44,7 +44,6 @@ const ActivityModal: React.FC<ActivityModalProps> = ({ data }) => {
       )}-${correctData(endMin.getDate())} ${correctData(
         endMin.getHours(),
       )}:${correctData(endMin.getMinutes())}`;
-      console.log(endDate);
       await eventActivityController.addEvent(
         {
           startTime: date,

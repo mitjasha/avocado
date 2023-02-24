@@ -28,7 +28,7 @@ const MainScreen: React.FC = () => {
   const [lastActivity, setLastActivity] = useState({
     calories_per_min: 0,
     id: "",
-    name: "",
+    name: "No data",
   });
 
   const profileID = JSON.parse(localStorage.getItem("profileID") as string);
@@ -44,9 +44,23 @@ const MainScreen: React.FC = () => {
   const getActivityKcal = async () => {
     const activity = await eventActivityController.getEventsByDate(date);
     if (activity.length > 0) {
-      setBurntKcal(0);
+      setBurntKcal(
+        activity.reduce((acc, item) => {
+          const duration =
+            Date.parse(item.endTime) - Date.parse(item.startTime);
+          let minutes = 0;
+          if (duration < 3600000) {
+            minutes = Math.floor((duration / (1000 * 60)) % 60);
+          } else {
+            minutes =
+              Math.floor((duration / (1000 * 60 * 60)) % 24) * 60 +
+              Math.floor((duration / (1000 * 60)) % 60);
+          }
+          const res = minutes * item.activity.calories_per_min;
+          return acc + res;
+        }, 0),
+      );
     }
-    console.log(activity);
   };
 
   const getLastActivity = async () => {
@@ -323,6 +337,7 @@ const MainScreen: React.FC = () => {
             <h3 className="daily-events__title">Daily exercise</h3>
             <DailyEventWrapper
               title="Activity"
+              quantity={`${burntKcal.toFixed(1).toString()} kcal burnt`}
               recommended={`Last: ${lastActivity.name}`}
               className="daily-events__item daily-events__item_exercise"
             />
