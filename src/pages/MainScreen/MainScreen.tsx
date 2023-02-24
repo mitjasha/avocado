@@ -7,6 +7,7 @@ import minus from "../../assets/svg/minus-light.svg";
 import fireImg from "../../assets/svg/fire.svg";
 import eatenImg from "../../assets/svg/eaten.svg";
 import EditButton from "../../components/Buttons/EditButton/EditButton";
+import eventActivityController from "../../api/event-activity.controller";
 import "./MainScreen.scss";
 
 const MainScreen: React.FC = () => {
@@ -23,8 +24,51 @@ const MainScreen: React.FC = () => {
   const [waterConsumed, setWaterConsumed] = useState<number>(0);
   const [currentWeight, setCurrentWeight] = useState<number>(0);
   const [targetWeight, setTargetWeight] = useState<number>(0);
+  const [burntKcal, setBurntKcal] = useState<number>(0);
+  const [lastActivity, setLastActivity] = useState({
+    calories_per_min: 0,
+    id: "",
+    name: "No data",
+  });
 
   const profileID = JSON.parse(localStorage.getItem("profileID") as string);
+
+  const correctData = (date: number) => {
+    return date > 9 ? `${date}` : `0${date}`;
+  };
+
+  const date = `${new Date().getFullYear()}-${correctData(
+    new Date().getMonth() + 1,
+  )}-${correctData(new Date().getDate())}`;
+
+  const getActivityKcal = async () => {
+    const activity = await eventActivityController.getEventsByDate(date);
+    if (activity.length > 0) {
+      setBurntKcal(
+        activity.reduce((acc, item) => {
+          const duration =
+            Date.parse(item.endTime) - Date.parse(item.startTime);
+          let minutes = 0;
+          if (duration < 3600000) {
+            minutes = Math.floor((duration / (1000 * 60)) % 60);
+          } else {
+            minutes =
+              Math.floor((duration / (1000 * 60 * 60)) % 24) * 60 +
+              Math.floor((duration / (1000 * 60)) % 60);
+          }
+          const res = minutes * item.activity.calories_per_min;
+          return acc + res;
+        }, 0),
+      );
+    }
+  };
+
+  const getLastActivity = async () => {
+    const allActivities = await eventActivityController.getAllEvents();
+    if (allActivities.length > 0) {
+      setLastActivity(allActivities[allActivities.length - 1].activity);
+    }
+  };
 
   const getRecommendedKcal = async () => {
     if (profileID) {
@@ -147,7 +191,6 @@ const MainScreen: React.FC = () => {
   const eatenProtein = 43;
   const eatenFats = 15;
   const eatenCarbs = 150;
-  const burntKcal = 690;
 
   useEffect(() => {
     getRecommendedKcal();
@@ -159,6 +202,8 @@ const MainScreen: React.FC = () => {
     getRecomWater();
     getCurrentWeight();
     getTargetWeight();
+    getActivityKcal();
+    getLastActivity();
   }, []);
 
   return (
@@ -168,7 +213,9 @@ const MainScreen: React.FC = () => {
           <div className="calories-chart">
             <div className="calories-chart__info">
               <img src={fireImg} alt="fire" />
-              <p className="chart-data-num">{burntKcal}</p>
+              <p className="chart-data-num">
+                {burntKcal.toFixed(1).toString()}
+              </p>
               <h5 className="chart-data-title">Burnt</h5>
             </div>
             <div className="calories-chart__chart">
@@ -290,7 +337,8 @@ const MainScreen: React.FC = () => {
             <h3 className="daily-events__title">Daily exercise</h3>
             <DailyEventWrapper
               title="Activity"
-              recommended="Last: Run 1 km"
+              quantity={`${burntKcal.toFixed(1).toString()} kcal burnt`}
+              recommended={`Last: ${lastActivity.name}`}
               className="daily-events__item daily-events__item_exercise"
             />
           </div>
