@@ -1,38 +1,78 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./EditProfileDataScreen.scss";
+import profileController from "../../api/profile.controller";
+import { EGender, EGoal } from "../../api/api.interface";
 
-interface UserData {
-  username: string;
-  firstName: string;
-  lastName: string;
-  age: string;
-  gender: string;
-  currentWeight: string;
-  height: string;
-  goal: string;
-  targetWeight: string;
-}
-
-interface UserProps {
-  data: UserData;
-}
-
-export const UserDataExample = {
-  username: "alice23",
-  firstName: "Alice",
-  lastName: "Chang",
-  age: "24",
-  gender: "female",
-  currentWeight: "65",
-  height: "160",
-  goal: "Lose weight",
-  targetWeight: "54",
+const getAge = (birth: string) => {
+  const userAge = Math.floor(
+    (new Date().getTime() - new Date(birth).getTime()) /
+      (24 * 3600 * 365.25 * 1000),
+  );
+  return String(userAge);
 };
 
-const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
+const EditProfileDataScreen: React.FC = () => {
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [gender, setGender] = useState<string>("");
+  const [birth, setBirth] = useState<string>("");
+  const [weight, setWeight] = useState<number>();
+  const [height, setHeight] = useState<number>();
+  const [goal, setGoal] = useState<string>("");
+  const [targetWeight, setTargetWeight] = useState<number>();
+  const [userName, setUserName] = useState<string>("");
+
+  const navigate = useNavigate();
+
+  const getProfileData = async () => {
+    const profileID = JSON.parse(localStorage.getItem("profileID") as string);
+    if (profileID) {
+      const profile = await profileController.getProfile();
+      setFirstName(profile[0].firstName);
+      setLastName(profile[0].lastName);
+      setGender(profile[0].gender);
+      setBirth(profile[0].birth);
+      setWeight(profile[0].weight);
+      setHeight(profile[0].height);
+      setGoal(profile[0].goal);
+      setTargetWeight(profile[0].targetWeight);
+      setUserName(profile[0].user.username);
+    }
+  };
+
+  const updateProfileData = async (
+    firstNameState: string,
+    lastNameState: string,
+    genderState: EGender,
+    birthState: string,
+    weightState: number,
+    heightState: number,
+    goalState: EGoal,
+    targetWeightState: number,
+  ) => {
+    const profileID = JSON.parse(localStorage.getItem("profileID") as string);
+    await profileController.updateProfile({
+      firstName: firstNameState,
+      lastName: lastNameState,
+      gender: genderState,
+      birth: birthState,
+      weight: weightState,
+      height: heightState,
+      goal: goalState,
+      targetWeight: targetWeightState,
+      photo: "",
+      id: profileID,
+    });
+  };
+
+  useEffect(() => {
+    getProfileData();
+  }, []);
+
   return (
     <div className="edit-profile__screen">
       <div className="container">
@@ -43,10 +83,10 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
               className="edit-profile__icon"
               style={{
                 backgroundImage:
-                  data.gender === "male"
+                  gender === "MALE"
                     ? "url(https://im.wampi.ru/2023/02/13/male.png)"
                     : "url(https://ie.wampi.ru/2023/02/13/female.png)",
-                width: data.gender === "male" ? "104px" : "130px",
+                width: gender === "MALE" ? "104px" : "130px",
               }}
             />
             <div className="edit-profile__info">
@@ -54,7 +94,9 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                 Username:
                 <RegInput
                   type="text"
-                  placeholder={data.username}
+                  placeholder={userName}
+                  value={userName}
+                  disabled
                   className="edit-profile__input"
                   id="username"
                 />
@@ -63,7 +105,11 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                 First Name:
                 <RegInput
                   type="text"
-                  placeholder={data.firstName}
+                  placeholder={firstName}
+                  value={firstName}
+                  onChange={(event) =>
+                    setFirstName((event.target as HTMLInputElement).value)
+                  }
                   className="edit-profile__input"
                   id="firstName"
                 />
@@ -72,7 +118,11 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                 Last Name:
                 <RegInput
                   type="text"
-                  placeholder={data.lastName}
+                  placeholder={lastName}
+                  value={lastName}
+                  onChange={(event) =>
+                    setLastName((event.target as HTMLInputElement).value)
+                  }
                   className="edit-profile__input"
                   id="lastName"
                 />
@@ -95,8 +145,9 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                     className="edit-profile__input__radio"
                     name="gender"
                     type="radio"
+                    onChange={() => setGender("MALE")}
                     id="gender"
-                    defaultChecked={data.gender === "male"}
+                    checked={gender === "MALE"}
                   />
                   Male
                 </label>
@@ -107,8 +158,9 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                     className="edit-profile__input__radio"
                     name="gender"
                     type="radio"
+                    onChange={() => setGender("FEMALE")}
                     id="gender"
-                    defaultChecked={data.gender === "female"}
+                    checked={gender === "FEMALE"}
                   />
                   Female
                 </label>
@@ -117,25 +169,45 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
             <label htmlFor="age" className="item__container">
               Age:
               <RegInput
-                type="number"
-                placeholder={data.age}
+                type="text"
+                placeholder={getAge(birth)}
+                value={getAge(birth)}
+                disabled
                 className="edit-profile__input"
                 id="age"
-                maxLength={3}
-                minLength={1}
+              />
+            </label>
+            <label htmlFor="birth" className="item__container">
+              Birth:
+              <RegInput
+                type="date"
+                placeholder={birth.slice(0, 10)}
+                value={birth.slice(0, 10)}
+                onChange={(event) =>
+                  setBirth((event.target as HTMLInputElement).value)
+                }
+                className="edit-profile__input"
+                id="birth"
               />
             </label>
             <div className="item__container">
               <label htmlFor="goal">
                 Goal:
-                <select className="select__container" id="goal">
-                  <option defaultChecked={data.goal === "Lose weight"}>
+                <select
+                  className="select__container"
+                  id="goal"
+                  value={goal}
+                  onChange={(event) =>
+                    setGoal((event.target as HTMLSelectElement).value)
+                  }
+                >
+                  <option defaultChecked={goal === "Lose weight"}>
                     Lose weight
                   </option>
-                  <option defaultChecked={data.goal === "Maintain weight"}>
+                  <option defaultChecked={goal === "Maintain weight"}>
                     Maintain weight
                   </option>
-                  <option defaultChecked={data.goal === "Gain weight"}>
+                  <option defaultChecked={goal === "Gain weight"}>
                     Gain weight
                   </option>
                 </select>
@@ -146,7 +218,11 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
               <div>
                 <RegInput
                   type="number"
-                  placeholder={data.currentWeight}
+                  defaultValue={weight}
+                  value={Number(weight).toFixed()}
+                  onChange={(event) =>
+                    setWeight(Number((event.target as HTMLInputElement).value))
+                  }
                   className="edit-profile__input"
                   id="currentWeight"
                   maxLength={3}
@@ -160,7 +236,13 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
               <div>
                 <RegInput
                   type="number"
-                  placeholder={data.targetWeight}
+                  defaultValue={targetWeight}
+                  value={Number(targetWeight).toFixed()}
+                  onChange={(event) =>
+                    setTargetWeight(
+                      Number((event.target as HTMLInputElement).value),
+                    )
+                  }
                   className="edit-profile__input"
                   id="targetWeight"
                   maxLength={3}
@@ -174,7 +256,11 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
               <div>
                 <RegInput
                   type="number"
-                  placeholder={data.height}
+                  defaultValue={height}
+                  value={Number(height).toFixed()}
+                  onChange={(event) =>
+                    setHeight(Number((event.target as HTMLInputElement).value))
+                  }
                   className="edit-profile__input"
                   id="height"
                   maxLength={3}
@@ -186,7 +272,28 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
           </div>
         </div>
       </div>
-      <ButtonTemplate>Save changes</ButtonTemplate>
+      <ButtonTemplate
+        onClick={() => {
+          updateProfileData(
+            firstName,
+            lastName,
+            gender === "FEMALE" ? EGender.FEMALE : EGender.MALE,
+            birth,
+            Number(weight),
+            Number(height),
+            // eslint-disable-next-line no-nested-ternary
+            goal === "Lose weight"
+              ? EGoal.LOSE
+              : goal === "Gain weight"
+              ? EGoal.GAIN
+              : EGoal.MAINTAIN,
+            Number(targetWeight),
+          );
+          navigate("/profile");
+        }}
+      >
+        Save changes
+      </ButtonTemplate>
     </div>
   );
 };

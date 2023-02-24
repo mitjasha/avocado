@@ -43,5 +43,4 @@ const RegInput: React.FC<BaseInputProps> = ({
     />
   );
 };
-
 export default RegInput;
