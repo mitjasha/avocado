@@ -13,13 +13,13 @@ const NavComponent: React.FC = () => {
 
   const { t } = useTranslation();
 
-  const menuItems = [
-    t("nav_menu_1"),
-    t("nav_menu_2"),
-    t("nav_menu_3"),
-    t("nav_menu_4"),
-    t("nav_menu_5"),
-  ];
+  const menuItems = {
+    main: t("nav_menu_1"),
+    profile: t("nav_menu_2"),
+    progress: t("nav_menu_3"),
+    recipes: t("nav_menu_4"),
+    about: t("nav_menu_5"),
+  };
 
   const menuItemCreate = (text: string, index: number) => {
     return (
@@ -39,7 +39,9 @@ const NavComponent: React.FC = () => {
   return (
     <nav>
       <ul className="nav-list">
-        {menuItems.map((menuItem, index) => menuItemCreate(menuItem, index))}
+        {Object.keys(menuItems).map((menuItem, index) =>
+          menuItemCreate(menuItem, index),
+        )}
       </ul>
       <button
         type="button"
