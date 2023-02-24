@@ -143,7 +143,9 @@ const MainScreen: React.FC = () => {
       const weightDisplay = document.querySelector(
         ".curr-weight-display",
       ) as HTMLElement;
-      weightDisplay.textContent = `${currentWeight.toFixed(1).toString()} kg`;
+      weightDisplay.textContent = `${currentWeight.toFixed(1).toString()} ${t(
+        "kg",
+      )}`;
     }
   };
 
@@ -313,7 +315,7 @@ const MainScreen: React.FC = () => {
             <DailyEventWrapper
               title={t("main_weight")}
               recommended={`${t("main_target_weight")}: ${targetWeight} ${t(
-                "main_kg",
+                "kg",
               )}`}
               className="daily-events__item daily-events__item_weight"
               handleClick={() => changeWeight(true)}
@@ -323,7 +325,7 @@ const MainScreen: React.FC = () => {
                 </PlusMinusButton>
               }
               curWeight=<p className="curr-weight-display">
-                {currentWeight.toFixed(1).toString()} {t("main_kg")}
+                {currentWeight.toFixed(1).toString()} {t("kg")}
               </p>
             />
           </div>

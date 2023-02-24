@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
+import { useTranslation } from "react-i18next";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./EditProfileDataScreen.scss";
@@ -33,10 +34,11 @@ export const UserDataExample = {
 };
 
 const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
+  const { t } = useTranslation();
   return (
     <div className="edit-profile__screen">
       <div className="container">
-        <h1 className="edit-profile__h1">Edit your data</h1>
+        <h1 className="edit-profile__h1">{t("edit_profile_header")}</h1>
         <div className="edit-profile__container">
           <div className="edit-profile__header">
             <div
@@ -51,7 +53,7 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
             />
             <div className="edit-profile__info">
               <label htmlFor="username">
-                Username:
+                {t("edit_profile_username")}
                 <RegInput
                   type="text"
                   placeholder={data.username}
@@ -60,7 +62,7 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                 />
               </label>
               <label htmlFor="firstname">
-                First Name:
+                {t("edit_profile_first_name")}
                 <RegInput
                   type="text"
                   placeholder={data.firstName}
@@ -69,7 +71,7 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                 />
               </label>
               <label htmlFor="lastname">
-                Last Name:
+                {t("edit_profile_last_name")}
                 <RegInput
                   type="text"
                   placeholder={data.lastName}
@@ -84,7 +86,7 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
             style={{ width: "360px", flexDirection: "row" }}
           >
             <div className="item__container">
-              Gender:
+              {t("edit_profile_gender")}
               <div className="item__container">
                 <label
                   htmlFor="gender"
@@ -98,7 +100,7 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                     id="gender"
                     defaultChecked={data.gender === "male"}
                   />
-                  Male
+                  {t("edit_profile_male")}
                 </label>
               </div>
               <div className="item__container">
@@ -110,12 +112,12 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                     id="gender"
                     defaultChecked={data.gender === "female"}
                   />
-                  Female
+                  {t("edit_profile_female")}
                 </label>
               </div>
             </div>
             <label htmlFor="age" className="item__container">
-              Age:
+              {t("edit_profile_age")}
               <RegInput
                 type="number"
                 placeholder={data.age}
@@ -127,22 +129,22 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
             </label>
             <div className="item__container">
               <label htmlFor="goal">
-                Goal:
+                {t("edit_profile_goal")}
                 <select className="select__container" id="goal">
                   <option defaultChecked={data.goal === "Lose weight"}>
-                    Lose weight
+                    {t("edit_profile_lose_weight")}
                   </option>
                   <option defaultChecked={data.goal === "Maintain weight"}>
-                    Maintain weight
+                    {t("edit_profile_maintain_weight")}
                   </option>
                   <option defaultChecked={data.goal === "Gain weight"}>
-                    Gain weight
+                    {t("edit_profile_gain_weight")}
                   </option>
                 </select>
               </label>
             </div>
             <label htmlFor="currentWeight" className="item__container">
-              Current weight:
+              {t("edit_profile_current_weight")}
               <div>
                 <RegInput
                   type="number"
@@ -152,11 +154,11 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                   maxLength={3}
                   minLength={2}
                 />
-                &nbsp;kg
+                &nbsp;{t("kg")}
               </div>
             </label>
             <label htmlFor="targetWeight" className="item__container">
-              Target weight:
+              {t("edit_profile_target_weight")}
               <div>
                 <RegInput
                   type="number"
@@ -166,11 +168,11 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                   maxLength={3}
                   minLength={2}
                 />
-                &nbsp;kg
+                &nbsp;{t("kg")}
               </div>
             </label>
             <label htmlFor="height" className="item__container">
-              Height:
+              {t("edit_profile_height")}
               <div>
                 <RegInput
                   type="number"
@@ -180,13 +182,13 @@ const EditProfileDataScreen: React.FC<UserProps> = ({ data }) => {
                   maxLength={3}
                   minLength={2}
                 />
-                &nbsp;cm
+                &nbsp;{t("cm")}
               </div>
             </label>
           </div>
         </div>
       </div>
-      <ButtonTemplate>Save changes</ButtonTemplate>
+      <ButtonTemplate>{t("edit_profile_save")}</ButtonTemplate>
     </div>
   );
 };

@@ -46,5 +46,22 @@
   "about_us_li_3": "Рецепты правильного питания",
   "about_us_li_4": "Контроль потребляемой воды",
   "about_us_li_5": "Мониторинг активности за день",
-  "about_us_end_text": "Начните сегодня! Позаботиться о себе проще, чем кажется. Мы желаем вам успехов в достижении вашей цели на пути здорового образа жизни!"
+  "about_us_end_text": "Начните сегодня! Позаботиться о себе проще, чем кажется. Мы желаем вам успехов в достижении вашей цели на пути здорового образа жизни!",
+  "edit_profile_header": "Редактируй свои данные",
+  "edit_profile_username": "Имя пользователя:",
+  "edit_profile_first_name": "Имя:",
+  "edit_profile_last_name": "Фамилия:",
+  "edit_profile_gender": " Пол:",
+  "edit_profile_male": "Муж",
+  "edit_profile_female": "Жен",
+  "edit_profile_age": "Возраст:",
+  "edit_profile_goal": "Цель:",
+  "edit_profile_lose_weight": "Похудеть",
+  "edit_profile_maintain_weight": "Поддерживать вес",
+  "edit_profile_gain_weight": "Набрать вес",
+  "edit_profile_current_weight": "Текущий вес:",
+  "edit_profile_target_weight": "Желаемый вес:",
+  "edit_profile_height": "Рост:",
+  "cm": "см",
+  "edit_profile_save": "Сохранить изменения"
 }
