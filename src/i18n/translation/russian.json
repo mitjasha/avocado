@@ -97,5 +97,12 @@
   "progress_current_weight": "Текущий вес состовляет",
   "progress_calories": "Калории",
   "progress_average": "В среднем",
-  "progress_update": "Обновить вес"
+  "progress_update": "Обновить вес",
+  "recipes_categories": "Категории",
+  "recipes_appetizers": "Закуски",
+  "recipes_favourites": "Избранное",
+  "recipes_resipes": "шт. рецептов",
+  "recipes_header_1": "Что есть на вашей кухне?",
+  "recipes_header_2": "Введите какой-нибудь ингридиент",
+  "recipes_placeholder": "Введите свой ингридиент"
 }

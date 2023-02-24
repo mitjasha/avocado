@@ -97,5 +97,12 @@
   "progress_current_weight": "Current weight is",
   "progress_calories": "Calories",
   "progress_average": "Average",
-  "progress_update": "Update Weight"
+  "progress_update": "Update Weight",
+  "recipes_categories": "Categories",
+  "recipes_appetizers": "Appetizers",
+  "recipes_favourites": "Favourites",
+  "recipes_resipes": "Recipes",
+  "recipes_header_1": "What is in your kitchen?",
+  "recipes_header_2": "Enter some ingredient",
+  "recipes_placeholder": "Type your ingredient"
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { RecipeResponse } from "../../api/api.interface";
 import recipesController from "../../api/recipes.controller";
@@ -21,11 +22,13 @@ const RecipesScreen: React.FC = () => {
     getRcipes();
   }, []);
 
+  const { t } = useTranslation();
+
   return (
     <div className="recipes__screen">
       <div className="container">
         <div className="main-header__container">
-          <span>Categories</span>
+          <span>{t("recipes_categories")}</span>
           {/* <span className="main-header__container__view">View All</span> */}
         </div>
         <div className="categories-container">
@@ -34,54 +37,54 @@ const RecipesScreen: React.FC = () => {
               to="/recipes/breakfast"
               className="category category__breakfast"
             >
-              <h3 className="category__h3">Breakfast</h3>
+              <h3 className="category__h3">{t("main_breakfast")}</h3>
               <span className="category__span">
                 {
                   recipes?.filter((item) => item.category.includes("breakfast"))
                     .length
                 }{" "}
-                Recipes
+                {t("recipes_resipes")}
               </span>
             </Link>
             <Link
               to="/recipes/appetizers"
               className="category category__appetizers"
             >
-              <h3 className="category__h3">Appetizers</h3>
+              <h3 className="category__h3">{t("recipes_appetizers")}</h3>
               <span className="category__span">
                 {
                   recipes?.filter((item) =>
                     item.category.includes("appetizers"),
                   ).length
                 }{" "}
-                Recipes
+                {t("recipes_resipes")}
               </span>
             </Link>
             <Link to="/recipes/dinner" className="category category__pasta">
-              <h3 className="category__h3">Dinner</h3>
+              <h3 className="category__h3">{t("main_dinner")}</h3>
               <span className="category__span">
                 {
                   recipes?.filter((item) => item.category.includes("dinner"))
                     .length
                 }{" "}
-                Recipes
+                {t("recipes_resipes")}
               </span>
             </Link>
             <Link
               to="/recipes/favorites"
               className="category category__favourites"
             >
-              <h3 className="category__h3">Favourites</h3>
-              <span className="category__span">0 Recipes</span>
+              <h3 className="category__h3">{t("recipes_favourites")}</h3>
+              <span className="category__span">0 {t("recipes_resipes")}</span>
             </Link>
           </div>
         </div>
-        <h1 className="recipes__screen__h1">What is in your kitchen?</h1>
-        <h3 className="recipes__screen__h3">Enter some ingredient</h3>
+        <h1 className="recipes__screen__h1">{t("recipes_header_1")}</h1>
+        <h3 className="recipes__screen__h3">{t("recipes_header_2")}</h3>
         <div className="search__container">
           <RegInput
             type="text"
-            placeholder="Type your ingredient"
+            placeholder={String(t("recipes_placeholder"))}
             className="search__container__input"
           />
           <div className="search__container__icon" />
