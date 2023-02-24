@@ -36,13 +36,18 @@ const MainScreen: React.FC = () => {
 
   const profileID = JSON.parse(localStorage.getItem("profileID") as string);
 
-  const month =
-    new Date().getMonth() > 9
-      ? `${new Date().getMonth() + 1}`
-      : `0${new Date().getMonth() + 1}`;
+  const correctData = (date: number) => {
+    return date > 9 ? `${date}` : `0${date}`;
+  };
 
-  const date = `${new Date().getFullYear()}-${month}-${new Date().getDate()}`;
-  const time = `${new Date().getFullYear()}-${month}-${new Date().getDate()} ${new Date().getHours()}:${new Date().getMinutes()}`;
+  const date = `${new Date().getFullYear()}-${correctData(
+    new Date().getMonth() + 1,
+  )}-${correctData(new Date().getDate())}`;
+  const time = `${new Date().getFullYear()}-${correctData(
+    new Date().getMonth() + 1,
+  )}-${correctData(new Date().getDate())} ${correctData(
+    new Date().getHours(),
+  )}:${correctData(new Date().getMinutes())}`;
 
   const getEventKcal = async () => {
     const event = await eventMealController.getEventsByDate(date);
