@@ -16,12 +16,12 @@ const ActivityScreen: React.FC = () => {
   });
 
   const openActivityPopUp = (item: ActivityResponse) => {
+    setActivityData(item);
     const popUp = document.querySelector(
       ".activity-popup",
     ) as HTMLButtonElement;
     popUp.style.opacity = "1";
     popUp.style.visibility = "visible";
-    setActivityData(item);
   };
 
   const getAllActivities = async () => {

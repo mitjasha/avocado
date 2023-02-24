@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BasicModalComponent from "../../components/Modals/BasicModalComponent/BasicModalComponent";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
@@ -10,20 +10,17 @@ interface ActivityModalProps {
 }
 
 const ActivityModal: React.FC<ActivityModalProps> = ({ name, kcalPerMin }) => {
+  const [kcalBurned, setKcalBurned] = useState<number>(Math.round(kcalPerMin));
+
   const calcKcalBurned = () => {
     const input = document.querySelector(
       ".activity-popup__input",
     ) as HTMLInputElement;
-    const kcalBurnedDisplay = document.querySelector(
-      ".activity-popup__kcal",
-    ) as HTMLElement;
-    const kcalBurned = Number(input.value) * kcalPerMin;
-    kcalBurnedDisplay.textContent = `kcal burned: ${kcalBurned}`;
+    setKcalBurned(Number(input.value) * kcalPerMin);
   };
 
   return (
-    <BasicModalComponent>
-      <h2 className="activity-popup__title">{name}</h2>
+    <BasicModalComponent title={name} className="activity-popup">
       <div className="activity-popup__wrapper">
         <div className="activity-popup__input-wrapper">
           <RegInput
@@ -36,7 +33,7 @@ const ActivityModal: React.FC<ActivityModalProps> = ({ name, kcalPerMin }) => {
           min
         </div>
         <div className="activity-popup__arrow" />
-        <div className="activity-popup__kcal">kcal burned: {kcalPerMin}</div>
+        <div className="activity-popup__kcal">kcal burned: {kcalBurned}</div>
       </div>
       <ButtonTemplate>Save</ButtonTemplate>
     </BasicModalComponent>
