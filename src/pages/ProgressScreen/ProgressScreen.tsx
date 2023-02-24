@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import ChartComponent from "../../components/ChartComponent/ChartComponent";
 import BarChartComponent from "../../components/BarChartComponent/BarChartComponent";
 import BasicModalComponent from "../../components/Modals/BasicModalComponent/BasicModalComponent";
@@ -32,10 +33,10 @@ const ProgressScreen: React.FC = () => {
   const [averageKcal, setAverageKcal] = useState<number>(0);
 
   const eatenKcalPerDay = {
-    "27 Jan": 1217,
-    "28 Jan": 1734,
-    "29 Jan": 1578,
-    "30 Jan": 1601,
+    "27.01": 1217,
+    "28.01": 1734,
+    "29.01": 1578,
+    "30.01": 1601,
   };
 
   const getAverageKcal = () => {
@@ -104,9 +105,11 @@ const ProgressScreen: React.FC = () => {
     getAverageKcal();
   }, []);
 
+  const { t } = useTranslation();
+
   return (
     <div className="progress-screen">
-      <h1 className="progress-screen__title">Your Progress</h1>
+      <h1 className="progress-screen__title">{t("progress_title")}</h1>
       <div className="container">
         <div className="progress-screen__progress">
           <div style={{ position: "relative" }}>
@@ -120,32 +123,34 @@ const ProgressScreen: React.FC = () => {
               />
             </div>
             <div className="progress-screen_kg-left">
-              {kgLeft.toFixed(1).toString()} kg left
+              {kgLeft.toFixed(1).toString()} {t("progress_kg_left")}
             </div>
           </div>
           <div className="progress-screen__slash" />
           <div className="progress-screen__curr-weight">
-            Current weight is{" "}
+            {t("progress_current_weight")}{" "}
             <span className="progress-screen__curr-weight_bg">
               {currentWeight.toFixed(1).toString()}
             </span>{" "}
-            kg
+            {t("kg")}
           </div>
         </div>
 
         <div className="calories">
-          <h2 className="calories__title">Calories</h2>
+          <h2 className="calories__title">{t("progress_calories")}</h2>
           <div className="calories__daily-data">
             <h3 className="daily-data__title">
-              <span style={{ fontWeight: "200" }}>Average</span> <br />{" "}
-              {averageKcal.toFixed(1).toString()} kcal
+              <span style={{ fontWeight: "200" }}>{t("progress_average")}</span>{" "}
+              <br /> {averageKcal.toFixed(1).toString()} {t("main_kcal")}
             </h3>
             <BarChartComponent
               labels={Object.keys(eatenKcalPerDay)}
               chartData={Object.values(eatenKcalPerDay)}
               size={200}
             />
-            <ButtonTemplate onClick={openPopUp}>Update Weight</ButtonTemplate>
+            <ButtonTemplate onClick={openPopUp}>
+              {t("progress_update")}
+            </ButtonTemplate>
           </div>
         </div>
       </div>
@@ -155,7 +160,7 @@ const ProgressScreen: React.FC = () => {
             <img src={minus} alt="minus" className="plus-minus-img" />
           </PlusMinusButton>
           <div className="pop-up__weight">
-            {currentWeight.toFixed(1).toString()} kg
+            {currentWeight.toFixed(1).toString()} {t("kg")}
           </div>
           <PlusMinusButton onClick={() => changeWeight(true)}>
             <img src={plus} alt="plus" className="plus-minus-img" />

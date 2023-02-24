@@ -35,7 +35,7 @@
   "main_last_activity": "Недавнее",
   "main_body_control": "Контроль тела",
   "main_weight": "Вес",
-  "main_kg": "кг",
+  "kg": "кг",
   "main_target_weight": "Цель",
   "about_us_title": "О нас",
   "about_us_header": "",
@@ -91,5 +91,11 @@
   "footer_text": "Разработчики",
   "edit_event_delete": "удалить",
   "g": "гр.",
-  "min": "мин."
+  "min": "мин.",
+  "progress_title": "Твой прогресс",
+  "progress_kg_left": "кг осталось",
+  "progress_current_weight": "Текущий вес состовляет",
+  "progress_calories": "Калории",
+  "progress_average": "В среднем",
+  "progress_update": "Обновить вес"
 }

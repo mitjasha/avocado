@@ -91,5 +91,11 @@
   "footer_text": "Creators",
   "edit_event_delete": "delete",
   "g": "g",
-  "min": "min"
+  "min": "min",
+  "progress_title": "Your Progress",
+  "progress_kg_left": "kg left",
+  "progress_current_weight": "Current weight is",
+  "progress_calories": "Calories",
+  "progress_average": "Average",
+  "progress_update": "Update Weight"
 }
