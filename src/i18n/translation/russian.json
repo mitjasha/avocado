@@ -114,5 +114,11 @@
   "categories_calories": "Ккал",
   "event_input": "Что вы съели?",
   "evenr_found": "Найдено",
-  "event_no_found": "Продукты не найдены"
+  "event_no_found": "Продукты не найдены",
+  "profile_progress": "прогресс",
+  "profile_recipes": "рецепты",
+  "profile_settings": "настройки",
+  "profile_about": "о нас",
+  "profile_title": "Твой профиль",
+  "profile_hello": "Привет"
 }
