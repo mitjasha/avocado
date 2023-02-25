@@ -112,6 +112,12 @@ const RecipesScreen: React.FC = () => {
           <div className="search__container__icon" />
         </div>
         <div className="recipes__container">
+          {!filtredRecipes.length && (
+            <div className="no__found">
+              <span className="no__found__text">Not found</span>
+              <div className="no__found__image" />
+            </div>
+          )}
           {filtredRecipes?.map((item) => (
             <Link
               to={`/recipe/${item.id}`}
