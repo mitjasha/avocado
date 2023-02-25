@@ -14,14 +14,6 @@ import eventsController from "../../api/event.controller";
 
 const MainScreen: React.FC = () => {
   const [recomKcalPerDay, setRecomKcalPerDay] = useState<number>(0);
-  // const [availableKcal, setAvailableKcal] = useState<number>(recomKcalPerDay);
-  const [recomProteins, setRecomProteins] = useState<number>(0);
-  // const [availableProteins, setAvailableProteins] =
-  //   useState<number>(recomProteins);
-  const [recomFats, setRecomFats] = useState<number>(0);
-  // const [availableFats, setAvailableFats] = useState<number>(recomFats);
-  const [recomCarbs, setRecomCarbs] = useState<number>(0);
-  // const [availableCarbs, setAvailableCarbs] = useState<number>(recomCarbs);
   const [recomWater, setRecomWater] = useState<number>(0);
   const [waterConsumed, setWaterConsumed] = useState<number>(0);
   const [currentWeight, setCurrentWeight] = useState<number>(0);
@@ -173,12 +165,6 @@ const MainScreen: React.FC = () => {
     }
   };
 
-  const getRecomNutritions = () => {
-    setRecomProteins(Math.round((recomKcalPerDay * 0.3) / 4));
-    setRecomFats(Math.round((recomKcalPerDay * 0.3) / 9));
-    setRecomCarbs(Math.round((recomKcalPerDay * 0.4) / 4));
-  };
-
   const getRecomWater = async () => {
     if (profileID) {
       const profile = await profileController.getProfileById(profileID);
@@ -257,7 +243,7 @@ const MainScreen: React.FC = () => {
 
   useEffect(() => {
     getRecommendedKcal();
-    getRecomNutritions();
+
     getRecomWater();
     getCurrentWeight();
     getTargetWeight();
@@ -318,7 +304,13 @@ const MainScreen: React.FC = () => {
             <div className="nutrients-charts__item">
               <div>
                 <ChartComponent
-                  chartData={[eatenCarbs, getAvailable(recomCarbs, eatenCarbs)]}
+                  chartData={[
+                    eatenCarbs,
+                    getAvailable(
+                      Math.round((recomKcalPerDay * 0.4) / 4),
+                      eatenCarbs,
+                    ),
+                  ]}
                   colors={["#559C4F", "#fafdf8"]}
                   size={60}
                   cutout={15}
@@ -335,7 +327,13 @@ const MainScreen: React.FC = () => {
             <div className="nutrients-charts__item">
               <div>
                 <ChartComponent
-                  chartData={[eatenFats, getAvailable(recomFats, eatenFats)]}
+                  chartData={[
+                    eatenFats,
+                    getAvailable(
+                      Math.round((recomKcalPerDay * 0.3) / 9),
+                      eatenFats,
+                    ),
+                  ]}
                   colors={["#559C4F", "#fafdf8"]}
                   size={60}
                   cutout={15}
@@ -354,7 +352,10 @@ const MainScreen: React.FC = () => {
                 <ChartComponent
                   chartData={[
                     eatenProteins,
-                    getAvailable(recomProteins, eatenProteins),
+                    getAvailable(
+                      Math.round((recomKcalPerDay * 0.3) / 4),
+                      eatenProteins,
+                    ),
                   ]}
                   colors={["#559C4F", "#fafdf8"]}
                   size={60}
