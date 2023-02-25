@@ -144,5 +144,8 @@
   "registration_target_weight_2": "целевой вес",
   "registration_start": "Давайте начнём!",
   "registration_male": "Мужчина",
-  "registration_female": "Женщина"
+  "registration_female": "Женщина",
+  "reg_form_user_username": "Имя пользователя",
+  "reg_form_user_password": "Пароль",
+  "reg_form_user_continue": "Продолжить"
 }

@@ -144,5 +144,8 @@
   "registration_target_weight_2": "target weight",
   "registration_start": "Let's Start!",
   "registration_male": "Male",
-  "registration_female": "Female"
+  "registration_female": "Female",
+  "reg_form_user_username": "Username",
+  "reg_form_user_password": "Password",
+  "reg_form_user_continue": "Continue"
 }
