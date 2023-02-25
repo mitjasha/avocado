@@ -100,6 +100,7 @@ const MainScreen: React.FC = () => {
       }, 0),
     );
   };
+
   const getActivityKcal = async () => {
     const activity = await eventActivityController.getEventsByDate(date);
     if (activity.length > 0) {
