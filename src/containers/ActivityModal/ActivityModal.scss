@@ -1,15 +1,10 @@
 @import "../../variables.scss";
 
 .activity-popup {
-  &__title {
-    text-align: center;
-  }
-
   &__wrapper {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    // gap: 10px;
     margin: auto;
     padding-bottom: 20px;
   }

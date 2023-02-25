@@ -68,6 +68,7 @@ export interface ProductResponse extends Product {
 export interface Activity {
   name: string;
   calories_per_min: number;
+  image: string;
 }
 
 export interface ActivityRequest extends Activity {
@@ -120,8 +121,8 @@ export interface EventMealRequest extends EventMeal {
 }
 
 export interface EventActivity {
-  startTime: Date;
-  endTime: Date;
+  startTime: string;
+  endTime: string;
   description: string;
 }
 
@@ -134,7 +135,7 @@ export interface EventActivityResponse extends EventActivity {
   activity: {
     id: string;
     name: string;
-    calories_per_min: 7;
+    calories_per_min: number;
   };
 }
 
@@ -158,17 +159,17 @@ export interface Profile {
 
 export interface ProfileRequest {
   id: string;
-  firstName: string;
-  lastName: string;
+  firstName?: string;
+  lastName?: string;
   gender: string;
   birth: string;
-  weight: number;
-  height: number;
+  weight?: number;
+  height?: number;
   goal: string;
-  targetWeight: number;
-  photo: string;
-  favorites: string[];
-  recentRecipes: string[];
+  targetWeight?: number;
+  photo?: string;
+  favorites?: string[];
+  recentRecipes?: string[];
 }
 
 export interface ProfileResponse {

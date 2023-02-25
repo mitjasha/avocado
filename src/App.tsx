@@ -15,9 +15,7 @@ import ActivityScreen from "./pages/ActivityScreen/ActivityScreen";
 import AboutUsScreen from "./pages/AboutUsScreen/AboutUsScreen";
 import SettingScreen from "./pages/SettingScreen/SettingScreen";
 import EventScreen from "./pages/EventScreen/EventScreen";
-import EditProfileDataScreen, {
-  UserDataExample,
-} from "./pages/EditProfileDataScreen/EditProfileDataScreen";
+import EditProfileDataScreen from "./pages/EditProfileDataScreen/EditProfileDataScreen";
 import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 import ProfileRegistrationScreen from "./pages/ProfileRegistrationScreen/ProfileRegistrationScreen";
 
@@ -65,10 +63,7 @@ const App: React.FC = () => {
           <Route path="/about" element={<AboutUsScreen />} />
           <Route path="/settings" element={<SettingScreen />} />
           <Route path="/event/:type" element={<EventScreen />} />
-          <Route
-            path="/edit-profile"
-            element={<EditProfileDataScreen data={UserDataExample} />}
-          />
+          <Route path="/edit-profile" element={<EditProfileDataScreen />} />
           <Route path="/edit-event" element={<EditEventScreen />} />
         </Routes>
       </main>

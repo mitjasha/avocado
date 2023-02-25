@@ -4,18 +4,20 @@ import "./BaseInput.scss";
 export interface BaseInputProps {
   type: string;
   placeholder?: string;
+  value?: string;
   className?: string;
   minLength?: number;
   maxLength?: number;
   id?: string;
   defaultValue?: number;
   disabled?: boolean;
-  onChange?: () => void;
+  onChange?: (e: React.ChangeEvent) => void | undefined;
 }
 
 const RegInput: React.FC<BaseInputProps> = ({
   type,
   placeholder,
+  value,
   className,
   minLength,
   maxLength,
@@ -30,6 +32,7 @@ const RegInput: React.FC<BaseInputProps> = ({
       type={type}
       className={classes}
       placeholder={placeholder}
+      value={value}
       minLength={minLength}
       maxLength={maxLength}
       id={id}
@@ -40,5 +43,4 @@ const RegInput: React.FC<BaseInputProps> = ({
     />
   );
 };
-
 export default RegInput;
