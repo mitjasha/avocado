@@ -118,7 +118,14 @@
   "profile_progress": "progress",
   "profile_recipes": "recipes",
   "profile_settings": "settings",
-  "profile_about":"about",
+  "profile_about": "about",
   "profile_title": "Your Profile",
-  "profile_hello": "Hello"
+  "profile_hello": "Hello",
+  "settings_title": "Settings",
+  "settings_theme": "Dark theme",
+  "settings_sound": "Sound",
+  "settings_lang": "Language",
+  "settings_exit": "EXIT",
+  "settings_ru": "ru",
+  "settings_en": "en"
 }

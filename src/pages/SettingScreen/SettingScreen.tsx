@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./SettingScreen.scss";
@@ -16,13 +17,17 @@ const SettingScreen = () => {
     navigate("/");
   };
 
+  const { t } = useTranslation();
+
   return (
     <div className="setting__screen">
       <div className="container">
-        <h1 className="setting__screen__h1">Settings</h1>
+        <h1 className="setting__screen__h1">{t("settings_title")}</h1>
         <div className="setting__container">
           <div className="setting__container__child">
-            <span className="setting__container__span">Dark theme</span>
+            <span className="setting__container__span">
+              {t("settings_theme")}
+            </span>
             <div className="switch__container">
               <button
                 type="button"
@@ -33,7 +38,9 @@ const SettingScreen = () => {
             </div>
           </div>
           <div className="setting__container__child">
-            <span className="setting__container__span">Sound</span>
+            <span className="setting__container__span">
+              {t("settings_sound")}
+            </span>
             <div className="switch__container">
               <button
                 type="button"
@@ -44,18 +51,22 @@ const SettingScreen = () => {
             </div>
           </div>
           <div className="setting__container__child">
-            <span className="setting__container__span">Language</span>
+            <span className="setting__container__span">
+              {t("settings_lang")}
+            </span>
             <select className="select-lang__container">
-              <option value="ru">ru</option>
+              <option value="ru">{t("settings_ru")}</option>
               <option value="en" defaultChecked>
-                en
+                {t("settings_en")}
               </option>
             </select>
           </div>
         </div>
         <div className="setting__screen__logo" />
         <div className="setting__container__child">
-          <ButtonTemplate onClick={pressExit}>EXIT</ButtonTemplate>
+          <ButtonTemplate onClick={pressExit}>
+            {t("settings_exit")}
+          </ButtonTemplate>
         </div>
       </div>
     </div>

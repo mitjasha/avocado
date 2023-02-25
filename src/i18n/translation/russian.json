@@ -120,5 +120,12 @@
   "profile_settings": "настройки",
   "profile_about": "о нас",
   "profile_title": "Твой профиль",
-  "profile_hello": "Привет"
+  "profile_hello": "Привет",
+  "settings_title": "Настройки",
+  "settings_theme": "Тёмная тема",
+  "settings_sound": "Звук",
+  "settings_lang": "Язык",
+  "settings_exit": "ВЫХОД",
+  "settings_ru": "рус",
+  "settings_en": "англ"
 }
