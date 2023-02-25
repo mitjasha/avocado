@@ -107,5 +107,9 @@
   "recipes_placeholder": "Введите свой ингридиент",
   "recipe_ingredients": "Ингридиенты",
   "recipe_method": "Шаги",
-  "recipe_min": "мин."
+  "recipe_min": "мин.",
+  "categories_veg": "Веганское",
+  "categories_quick": "Время",
+  "categories_no_found": "Рецепты не найдены",
+  "categories_calories": "Калории"
 }
