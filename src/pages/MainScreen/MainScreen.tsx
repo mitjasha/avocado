@@ -9,6 +9,8 @@ import eatenImg from "../../assets/svg/eaten.svg";
 import EditButton from "../../components/Buttons/EditButton/EditButton";
 import eventActivityController from "../../api/event-activity.controller";
 import "./MainScreen.scss";
+import eventMealController from "../../api/event-meal.controller";
+import eventsController from "../../api/event.controller";
 
 const MainScreen: React.FC = () => {
   const [recomKcalPerDay, setRecomKcalPerDay] = useState<number>(0);
@@ -24,6 +26,14 @@ const MainScreen: React.FC = () => {
   const [waterConsumed, setWaterConsumed] = useState<number>(0);
   const [currentWeight, setCurrentWeight] = useState<number>(0);
   const [targetWeight, setTargetWeight] = useState<number>(0);
+  const [breakfastKcal, setBreakfastKcal] = useState<number>(0);
+  const [lunchKcal, setLunchKcal] = useState<number>(0);
+  const [dinnerKcal, setDinnerKcal] = useState<number>(0);
+  const [snackKcal, setSnackKcal] = useState<number>(0);
+  const [eatenProteins, setEatenProteins] = useState<number>(0);
+  const [eatenFats, setEatenFats] = useState<number>(0);
+  const [eatenCarbs, setEatenCarbs] = useState<number>(0);
+  const [eatenKcal, setEatenKcal] = useState<number>(0);
   const [burntKcal, setBurntKcal] = useState<number>(0);
   const [lastActivity, setLastActivity] = useState({
     calories_per_min: 0,
@@ -41,6 +51,55 @@ const MainScreen: React.FC = () => {
     new Date().getMonth() + 1,
   )}-${correctData(new Date().getDate())}`;
 
+  const time = `${new Date().getFullYear()}-${correctData(
+    new Date().getMonth() + 1,
+  )}-${correctData(new Date().getDate())} ${correctData(
+    new Date().getHours(),
+  )}:${correctData(new Date().getMinutes())}`;
+
+  const getEventKcal = async () => {
+    const event = await eventMealController.getEventsByDate(date);
+    const breakfast = event.filter((item) => item.name === "breakfast");
+    const lunch = event.filter((item) => item.name === "lunch");
+    const dinner = event.filter((item) => item.name === "dinner");
+    const snack = event.filter((item) => item.name === "snack");
+    setBreakfastKcal(
+      breakfast.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.calories_100g;
+      }, 0),
+    );
+    setLunchKcal(
+      lunch.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.calories_100g;
+      }, 0),
+    );
+    setDinnerKcal(
+      dinner.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.calories_100g;
+      }, 0),
+    );
+    setSnackKcal(
+      snack.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.calories_100g;
+      }, 0),
+    );
+    setEatenKcal(breakfastKcal + lunchKcal + dinnerKcal + snackKcal);
+    setEatenProteins(
+      event.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.proteins_100g;
+      }, 0),
+    );
+    setEatenFats(
+      event.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.fat_100g;
+      }, 0),
+    );
+    setEatenCarbs(
+      event.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.carbs_100g;
+      }, 0),
+    );
+  };
   const getActivityKcal = async () => {
     const activity = await eventActivityController.getEventsByDate(date);
     if (activity.length > 0) {
@@ -127,10 +186,17 @@ const MainScreen: React.FC = () => {
     eaten: number,
     setState: React.Dispatch<React.SetStateAction<number>>,
   ) => {
-    setState(total - eaten);
+    if (total > eaten) {
+      setState(total - eaten);
+    } else setState(0);
   };
 
-  const addWater = () => {
+  const addWater = async () => {
+    await eventsController.addEvent({
+      name: "Drink",
+      startTime: time,
+      description: "",
+    });
     setWaterConsumed(waterConsumed + 0.25);
   };
 
@@ -187,21 +253,18 @@ const MainScreen: React.FC = () => {
     }
   };
 
-  const eatenKcal = 536;
-  const eatenProtein = 43;
-  const eatenFats = 15;
-  const eatenCarbs = 150;
-
   useEffect(() => {
     getRecommendedKcal();
     getAvailable(recomKcalPerDay, eatenKcal, setAvailableKcal);
     getRecomNutritions();
-    getAvailable(recomProteins, eatenProtein, setAvailableProteins);
+    getAvailable(recomProteins, eatenProteins, setAvailableProteins);
     getAvailable(recomFats, eatenFats, setAvailableFats);
     getAvailable(recomCarbs, eatenCarbs, setAvailableCarbs);
     getRecomWater();
     getCurrentWeight();
     getTargetWeight();
+    getEventKcal();
+    addWater();
     getActivityKcal();
     getLastActivity();
   }, []);
@@ -227,18 +290,24 @@ const MainScreen: React.FC = () => {
                 spacing={6}
               />
               <div className="kcal-available">
-                <p className="kcal-available__num">{availableKcal}</p>
+                <p className="kcal-available__num">
+                  {availableKcal.toFixed(1).toString()}
+                </p>
                 <h5 className="chart-data-title">Kcal available</h5>
               </div>
             </div>
             <div className="calories-chart__info">
               <img src={eatenImg} alt="fire" />
-              <p className="chart-data-num">{eatenKcal}</p>
+              <p className="chart-data-num">
+                {eatenKcal.toFixed(1).toString()}
+              </p>
               <h5 className="chart-data-title">Eaten</h5>
             </div>
           </div>
           <div className="goal-kcal">
-            <p className="chart-data-num">{recomKcalPerDay}</p>
+            <p className="chart-data-num">
+              {recomKcalPerDay.toFixed(1).toString()}
+            </p>
             <h5 className="chart-data-title">Kcal goal</h5>
           </div>
           <div className="nutrients-charts">
@@ -253,7 +322,9 @@ const MainScreen: React.FC = () => {
                 />
               </div>
               <div className="chart-info">
-                <p className="chart-data-num nutrients-num">{eatenCarbs}g</p>
+                <p className="chart-data-num nutrients-num">
+                  {eatenCarbs.toFixed(1).toString()}g
+                </p>
                 <h5 className="chart-data-title">Carbs</h5>
               </div>
             </div>
@@ -268,14 +339,16 @@ const MainScreen: React.FC = () => {
                 />
               </div>
               <div className="chart-info">
-                <p className="chart-data-num nutrients-num">{eatenFats}g</p>
+                <p className="chart-data-num nutrients-num">
+                  {eatenFats.toFixed(1).toString()}g
+                </p>
                 <h5 className="chart-data-title">Fats</h5>
               </div>
             </div>
             <div className="nutrients-charts__item">
               <div>
                 <ChartComponent
-                  chartData={[eatenProtein, availableProteins]}
+                  chartData={[eatenProteins, availableProteins]}
                   colors={["#559C4F", "#fafdf8"]}
                   size={60}
                   cutout={15}
@@ -283,7 +356,9 @@ const MainScreen: React.FC = () => {
                 />
               </div>
               <div className="chart-info">
-                <p className="chart-data-num nutrients-num">{eatenProtein}g</p>
+                <p className="chart-data-num nutrients-num">
+                  {eatenProteins.toFixed(1).toString()}g
+                </p>
                 <h5 className="chart-data-title">Protein</h5>
               </div>
             </div>
@@ -299,22 +374,25 @@ const MainScreen: React.FC = () => {
             <DailyEventWrapper
               title="Breakfast"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity="356 kcal"
+              quantity={`${breakfastKcal.toFixed(1).toString()} kcal`}
               className="daily-events__item daily-events__item_breakfast"
             />
             <DailyEventWrapper
               title="Lunch"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
+              quantity={`${lunchKcal.toFixed(1).toString()} kcal`}
               className="daily-events__item daily-events__item_lunch"
             />
             <DailyEventWrapper
               title="Dinner"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
+              quantity={`${dinnerKcal.toFixed(1).toString()} kcal`}
               className="daily-events__item daily-events__item_dinner"
             />
             <DailyEventWrapper
               title="Snack"
               recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
+              quantity={`${snackKcal.toFixed(1).toString()} kcal`}
               className="daily-events__item daily-events__item_snack"
             />
           </div>
@@ -354,9 +432,11 @@ const MainScreen: React.FC = () => {
                   <img src={minus} alt="minus" className="plus-minus-img" />
                 </PlusMinusButton>
               }
-              curWeight=<p className="curr-weight-display">
-                {currentWeight.toFixed(1).toString()} kg
-              </p>
+              curWeight={
+                <p className="curr-weight-display">
+                  {currentWeight.toFixed(1).toString()} kg
+                </p>
+              }
             />
           </div>
         </div>

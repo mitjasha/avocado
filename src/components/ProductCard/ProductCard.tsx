@@ -1,29 +1,25 @@
 import React from "react";
+import { Product, EProductCategory } from "../../api/api.interface";
 import "./ProductCard.scss";
-
-interface Product {
-  name: string;
-  namEng: string;
-  proteins: string;
-  fats: string;
-  carbs: string;
-  kcal: string;
-  image: string;
-}
 
 interface ProductProps {
   data: Product;
+  onClick?: () => void;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ data }) => {
+const ProductCard: React.FC<ProductProps> = ({ data, onClick }) => {
   return (
-    <div className="card__container">
+    <button type="button" className="card__container" onClick={onClick}>
       <div
-        style={{ backgroundImage: `url("${data.image}")` }}
+        style={{
+          backgroundImage: `url("${
+            EProductCategory[data.category as keyof typeof EProductCategory]
+          }")`,
+        }}
         className="card__container__image"
       />
-      <span className="card__container__span">{data.namEng}</span>
-    </div>
+      <span className="card__container__span">{data.name}</span>
+    </button>
   );
 };
 

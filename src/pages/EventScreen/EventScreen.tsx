@@ -1,21 +1,35 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-import React, { useEffect } from "react";
-import ReactDOM from "react-dom";
+import React, { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import products from "../../assets/products.json";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import AddProductModal from "../../containers/AddProductModal/AddProductModal";
+import ProductModal from "../../containers/ProductModal/ProductModal";
 import "./EventScreen.scss";
 import "../../index.scss";
+import productsController from "../../api/product.controller";
+import { ProductResponse } from "../../api/api.interface";
 
 const EventScreen: React.FC = () => {
   const { type } = useParams();
   const [searchQuery, setSearchQuery] = useSearchParams("");
   const text = searchQuery.get("search");
+
+  const [products, setProducts] = useState<ProductResponse[]>([]);
+
+  const [filtredProducts, setFiltedProducts] = useState<ProductResponse[]>([]);
+
+  const getAllProducts = async () => {
+    const result = await productsController.getAllproduct();
+    if (result) {
+      setProducts(result);
+      setFiltedProducts(products);
+    }
+  };
+
+  useEffect(() => {
+    getAllProducts();
+  }, []);
 
   const openAddProductModal = () => {
     const modal = document.querySelector(".add-product-modal") as HTMLElement;
@@ -23,14 +37,21 @@ const EventScreen: React.FC = () => {
     modal.style.visibility = "visible";
   };
 
-  const openNoFound = () => {
-    const noFound = document.querySelector(".no__found") as HTMLElement;
-    noFound.style.display = "flex";
-  };
+  const [productData, setProductData] = useState<ProductResponse>({
+    name: "name",
+    calories_100g: 0,
+    proteins_100g: 0,
+    carbs_100g: 0,
+    fat_100g: 0,
+    category: "",
+    id: "",
+  });
 
-  const closeNoFound = () => {
-    const noFound = document.querySelector(".no__found") as HTMLElement;
-    noFound.style.display = "none";
+  const openProductModal = (item: ProductResponse) => {
+    setProductData(item);
+    const modal = document.querySelector(".product-modal") as HTMLElement;
+    modal.style.opacity = "1";
+    modal.style.visibility = "visible";
   };
 
   const removeInputText = () => {
@@ -44,43 +65,26 @@ const EventScreen: React.FC = () => {
   };
 
   const textSearch = (currentText: string) => {
-    const filterProducts =
-      currentText !== ""
-        ? products.products.filter(
-            (item) =>
-              item.categoryEn
-                .toLowerCase()
-                .includes(currentText.toLowerCase()) ||
-              item.categoryRu
-                .toLowerCase()
-                .includes(currentText.toLowerCase()) ||
-              item.name.toLowerCase().includes(currentText.toLowerCase()) ||
-              item.namEng.toLowerCase().includes(currentText.toLowerCase()),
-          )
-        : [];
-
-    if (filterProducts.length === 0) {
-      openNoFound();
-    } else {
-      closeNoFound();
-    }
-    ReactDOM.render(
-      filterProducts.map((item) => (
-        <ProductCard data={item} key={filterProducts.indexOf(item)} />
-      )),
-      document.querySelector(".event__screen__main"),
+    const filtred = products.filter(
+      (item) =>
+        item.category.toLowerCase().includes(currentText.toLowerCase()) ||
+        item.name.toLowerCase().includes(currentText.toLowerCase()),
     );
+
+    setFiltedProducts(filtred);
   };
 
   useEffect(() => {
-    text ? textSearch(text) : textSearch("  ");
+    if (text) {
+      textSearch(text);
+    }
   }, [text]);
 
   return (
     <div className="event__screen">
       <div className="container">
         <div className="event__screen__header">
-          <BackButton />
+          <BackButton to="/main" />
           <h1 className="event__screen__h1">{type}</h1>
           <button
             type="button"
@@ -94,7 +98,7 @@ const EventScreen: React.FC = () => {
           <RegInput
             type="search"
             placeholder="What have you eaten?"
-            value={text !== null ? text : "  "}
+            value={text !== null ? text : ""}
             className="event__screen__input"
             onChange={(event) => {
               textSearch((event.target as HTMLInputElement).value);
@@ -103,19 +107,32 @@ const EventScreen: React.FC = () => {
               });
             }}
           />
-          <div
+          <button
+            type="button"
+            aria-label="clear"
             className="event__screen__close__icon"
             onClick={() => removeInputText()}
           />
         </div>
         <h3 className="event__main__h3">Found:</h3>
-        <div className="no__found">
-          <span className="no__found__text">No products found</span>
-          <div className="no__found__image" />
+        {!filtredProducts.length && (
+          <div className="no__found">
+            <span className="no__found__text">No products found</span>
+            <div className="no__found__image" />
+          </div>
+        )}
+        <div className="event__screen__main">
+          {filtredProducts.map((item) => (
+            <ProductCard
+              data={item}
+              key={products.indexOf(item)}
+              onClick={() => openProductModal(item)}
+            />
+          ))}
         </div>
-        <div className="event__screen__main" />
       </div>
       <AddProductModal />
+      <ProductModal data={productData} mealType={type as string} />
     </div>
   );
 };

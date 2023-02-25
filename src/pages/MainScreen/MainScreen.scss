@@ -27,7 +27,7 @@
 
 .calories-chart {
   display: flex;
-  gap: 25px;
+  gap: 15px;
   justify-content: center;
   padding-top: 20px;
 
@@ -36,6 +36,7 @@
     flex-direction: column;
     align-items: center;
     gap: 3px;
+    min-width: 100px;
   }
 
   &__chart {
@@ -154,6 +155,10 @@
   .nutrients-charts {
     width: 500px;
     margin: auto;
+  }
+
+  .calories-chart {
+    gap: 25px;
   }
 
   .daily-events {
