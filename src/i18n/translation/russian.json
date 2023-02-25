@@ -127,5 +127,22 @@
   "settings_lang": "Язык",
   "settings_exit": "ВЫХОД",
   "settings_ru": "рус",
-  "settings_en": "англ"
+  "settings_en": "англ",
+  "registration_email": "Почта",
+  "registration_gender_1": "Укажите ваш",
+  "registration_gender_2": "пол",
+  "registration_info_1": "Мы будем использовать эти данные, чтобы подобрать опитмальную диету для вас",
+  "registration_birth_1": "Ваш",
+  "registration_birth_2": "день рождения",
+  "registration_height_1": "Какого",
+  "registration_height_2": "вы",
+  "registration_height_3": "роста?",
+  "registration_current_weight": "текущий вес",
+  "registration_goal_1": "Какая у вас",
+  "registration_goal_2": "цель",
+  "registration_target_weight_1": "Ваш",
+  "registration_target_weight_2": "целевой вес",
+  "registration_start": "Давайте начнём!",
+  "registration_male": "Мужчина",
+  "registration_female": "Женщина"
 }

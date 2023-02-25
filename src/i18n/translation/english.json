@@ -127,5 +127,22 @@
   "settings_lang": "Language",
   "settings_exit": "EXIT",
   "settings_ru": "ru",
-  "settings_en": "en"
+  "settings_en": "en",
+  "registration_email": "Email Address",
+  "registration_gender_1": "What is your",
+  "registration_gender_2": "gender",
+  "registration_info_1": "We will use this data to give you a better diet type for you",
+  "registration_birth_1": "Your",
+  "registration_birth_2": "date of birth",
+  "registration_height_1": "How",
+  "registration_height_2": "tall",
+  "registration_height_3": "are you?",
+  "registration_current_weight": "current weight",
+  "registration_goal_1": "What is your",
+  "registration_goal_2": "goal",
+  "registration_target_weight_1": "Your",
+  "registration_target_weight_2": "target weight",
+  "registration_start": "Let's Start!",
+  "registration_male": "Male",
+  "registration_female": "Female"
 }
