@@ -185,6 +185,8 @@ const MainScreen: React.FC = () => {
       startTime: time,
       description: "",
     });
+    console.log("Drink");
+
     setWaterConsumed(waterConsumed + 0.25);
   };
 
@@ -243,12 +245,10 @@ const MainScreen: React.FC = () => {
 
   useEffect(() => {
     getRecommendedKcal();
-
     getRecomWater();
     getCurrentWeight();
     getTargetWeight();
     getEatenKcal();
-    addWater();
     getActivityKcal();
     getLastActivity();
   }, []);
