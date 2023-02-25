@@ -14,6 +14,13 @@ const EventScreen: React.FC = () => {
   const { t } = useTranslation();
   const { type } = useParams();
 
+  const title = [
+    ["breakfast", t("main_breakfast")],
+    ["lunch", t("main_lunch")],
+    ["dinner", t("main_dinner")],
+    ["snack", t("main_snack")],
+  ];
+
   const openAddProductModal = () => {
     const modal = document.querySelector(".add-product-modal") as HTMLElement;
     modal.style.opacity = "1";
@@ -25,7 +32,9 @@ const EventScreen: React.FC = () => {
       <div className="container">
         <div className="event__screen__header">
           <BackButton />
-          <h1 className="event__screen__h1">{type}</h1>
+          <h1 className="event__screen__h1">
+            {title.filter((item) => item[0] === type)[0][1]}
+          </h1>
           <button
             type="button"
             className="event__screen__header__add"
