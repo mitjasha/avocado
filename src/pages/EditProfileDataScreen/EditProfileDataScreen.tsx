@@ -29,9 +29,8 @@ const EditProfileDataScreen: React.FC = () => {
   const navigate = useNavigate();
 
   const getProfileData = async () => {
-    const profileID = JSON.parse(localStorage.getItem("profileID") as string);
-    if (profileID) {
-      const profile = await profileController.getProfile();
+    const profile = await profileController.getProfile();
+    if (profile) {
       setFirstName(profile[0].firstName);
       setLastName(profile[0].lastName);
       setGender(profile[0].gender);
@@ -47,11 +46,11 @@ const EditProfileDataScreen: React.FC = () => {
   const updateProfileData = async (
     firstNameState: string,
     lastNameState: string,
-    genderState: EGender,
+    genderState: string,
     birthState: string,
     weightState: number,
     heightState: number,
-    goalState: EGoal,
+    goalState: string,
     targetWeightState: number,
   ) => {
     const profileID = JSON.parse(localStorage.getItem("profileID") as string);
@@ -64,7 +63,6 @@ const EditProfileDataScreen: React.FC = () => {
       height: heightState,
       goal: goalState,
       targetWeight: targetWeightState,
-      photo: "",
       id: profileID,
     });
   };
