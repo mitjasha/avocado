@@ -111,5 +111,8 @@
   "categories_veg": "Веганское",
   "categories_quick": "Время",
   "categories_no_found": "Рецепты не найдены",
-  "categories_calories": "Ккал"
+  "categories_calories": "Ккал",
+  "event_input": "Что вы съели?",
+  "evenr_found": "Найдено",
+  "event_no_found": "Продукты не найдены"
 }
