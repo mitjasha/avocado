@@ -50,7 +50,7 @@ const MainScreen: React.FC = () => {
   const date = `${new Date().getFullYear()}-${correctData(
     new Date().getMonth() + 1,
   )}-${correctData(new Date().getDate())}`;
-  
+
   const time = `${new Date().getFullYear()}-${correctData(
     new Date().getMonth() + 1,
   )}-${correctData(new Date().getDate())} ${correctData(
@@ -99,7 +99,7 @@ const MainScreen: React.FC = () => {
         return acc + (item.weight / 100) * item.product.carbs_100g;
       }, 0),
     );
-
+  };
   const getActivityKcal = async () => {
     const activity = await eventActivityController.getEventsByDate(date);
     if (activity.length > 0) {
@@ -252,12 +252,6 @@ const MainScreen: React.FC = () => {
       weightDisplay.textContent = `${currentWeight.toFixed(1).toString()} kg`;
     }
   };
-
-  const burntKcal = 0;
-  const eatenKcal = 536;
-  const eatenProtein = 43;
-  const eatenFats = 15;
-  const eatenCarbs = 150;
 
   useEffect(() => {
     getRecommendedKcal();
@@ -438,9 +432,11 @@ const MainScreen: React.FC = () => {
                   <img src={minus} alt="minus" className="plus-minus-img" />
                 </PlusMinusButton>
               }
-              curWeight=<p className="curr-weight-display">
-                {currentWeight.toFixed(1).toString()} kg
-              </p>
+              curWeight={
+                <p className="curr-weight-display">
+                  {currentWeight.toFixed(1).toString()} kg
+                </p>
+              }
             />
           </div>
         </div>
