@@ -158,17 +158,17 @@ export interface Profile {
 
 export interface ProfileRequest {
   id: string;
-  firstName: string;
-  lastName: string;
+  firstName?: string;
+  lastName?: string;
   gender: string;
   birth: string;
-  weight: number;
-  height: number;
+  weight?: number;
+  height?: number;
   goal: string;
-  targetWeight: number;
-  photo: string;
-  favorites: string[];
-  recentRecipes: string[];
+  targetWeight?: number;
+  photo?: string;
+  favorites?: string[];
+  recentRecipes?: string[];
 }
 
 export interface ProfileResponse {
