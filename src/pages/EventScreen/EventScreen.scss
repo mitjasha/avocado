@@ -80,9 +80,11 @@
   &__close__icon {
     width: 20px;
     height: 20px;
+    background: none;
     background-image: url("../../assets/svg/close.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    border: none;
     position: absolute;
     margin: 0;
     top: 50%;

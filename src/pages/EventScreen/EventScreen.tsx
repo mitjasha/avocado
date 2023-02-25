@@ -51,7 +51,7 @@ const EventScreen: React.FC = () => {
     modal.style.opacity = "1";
     modal.style.visibility = "visible";
   };
-  
+
   const openNoFound = () => {
     const noFound = document.querySelector(".no__found") as HTMLElement;
     noFound.style.display = "flex";
@@ -75,16 +75,10 @@ const EventScreen: React.FC = () => {
   const textSearch = (currentText: string) => {
     const filterProducts =
       currentText !== ""
-        ? products.products.filter(
+        ? products.filter(
             (item) =>
-              item.categoryEn
-                .toLowerCase()
-                .includes(currentText.toLowerCase()) ||
-              item.categoryRu
-                .toLowerCase()
-                .includes(currentText.toLowerCase()) ||
-              item.name.toLowerCase().includes(currentText.toLowerCase()) ||
-              item.namEng.toLowerCase().includes(currentText.toLowerCase()),
+              item.category.toLowerCase().includes(currentText.toLowerCase()) ||
+              item.name.toLowerCase().includes(currentText.toLowerCase()),
           )
         : [];
 
@@ -102,9 +96,13 @@ const EventScreen: React.FC = () => {
   };
 
   useEffect(() => {
-    text ? textSearch(text) : textSearch("  ");
+    if (text) {
+      textSearch(text);
+    } else {
+      textSearch("  ");
+    }
   }, [text]);
-  
+
   return (
     <div className="event__screen">
       <div className="container">
@@ -132,7 +130,9 @@ const EventScreen: React.FC = () => {
               });
             }}
           />
-          <div
+          <button
+            type="button"
+            aria-label="clear"
             className="event__screen__close__icon"
             onClick={() => removeInputText()}
           />
