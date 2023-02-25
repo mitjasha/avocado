@@ -22,6 +22,16 @@ const RecipesScreen: React.FC = () => {
     }
   };
 
+  const removeInputText = () => {
+    const searchInput = document.querySelector(
+      ".search__container__input",
+    ) as HTMLInputElement;
+    searchInput.value = "";
+    setSearchQuery({
+      search: "",
+    });
+  };
+
   const textSearch = (currentText: string) => {
     const filtred = recipes.filter((item) =>
       item.name.toLowerCase().includes(currentText.toLowerCase()),
@@ -108,6 +118,12 @@ const RecipesScreen: React.FC = () => {
                 search: (event.target as HTMLInputElement).value,
               });
             }}
+          />
+          <button
+            type="button"
+            aria-label="clear"
+            className="event__screen__close__icon"
+            onClick={() => removeInputText()}
           />
           <div className="search__container__icon" />
         </div>
