@@ -15,6 +15,10 @@ const SettingScreen = () => {
     localStorage.getItem("theme") || "light",
   );
 
+  const [language, setLanguage] = useState<string>(
+    localStorage.getItem("language") || "en",
+  );
+
   const setSwitcherClass = () => {
     if (theme === "light") {
       return "switch_theme";
@@ -38,6 +42,10 @@ const SettingScreen = () => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  useEffect(() => {
+    localStorage.setItem("language", language);
+  }, [language]);
+
   return (
     <div className="setting__screen">
       <div className="container">
@@ -57,11 +65,15 @@ const SettingScreen = () => {
 
           <div className="setting__container__child">
             <span className="setting__container__span">Language</span>
-            <select className="select-lang__container">
-              <option value="ru">ru</option>
+            <select
+              className="select-lang__container"
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
+            >
               <option value="en" defaultChecked>
                 en
               </option>
+              <option value="ru">ru</option>
             </select>
           </div>
           <div className="setting__container__child">
