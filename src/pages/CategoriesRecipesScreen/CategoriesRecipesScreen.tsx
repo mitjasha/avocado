@@ -9,6 +9,7 @@ import favImg from "../../assets/png/fav-category.png";
 import "./CategoriesRecipesScreen.scss";
 import { RecipeResponse } from "../../api/api.interface";
 import recipesController from "../../api/recipes.controller";
+import profileController from "../../api/profile.controller";
 
 const CategoriesRecipesScreen: React.FC = () => {
   const categories = {
@@ -35,6 +36,7 @@ const CategoriesRecipesScreen: React.FC = () => {
   };
 
   const [recipes, setRecipes] = useState<RecipeResponse[]>([]);
+  const [favourites, setFavourites] = useState<string[]>([]);
 
   const { category } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -50,6 +52,15 @@ const CategoriesRecipesScreen: React.FC = () => {
     if (result) {
       setRecipes(result);
       console.log(recipes);
+    }
+  };
+
+  const getFavourites = async () => {
+    const profile = await profileController.getProfile();
+    if (profile) {
+      if (profile[0].favorites != null) {
+        setFavourites(profile[0].favorites);
+      } else setFavourites([]);
     }
   };
 
@@ -92,6 +103,7 @@ const CategoriesRecipesScreen: React.FC = () => {
 
   useEffect(() => {
     getRcipes();
+    getFavourites();
   }, []);
 
   useEffect(() => {
@@ -137,11 +149,15 @@ const CategoriesRecipesScreen: React.FC = () => {
               {categories[category as keyof typeof categories].title}
             </h1>
             <span className="categories__header__span">
-              {
+              {categories[category as keyof typeof categories].title !==
+                "Favorites" &&
                 recipes.filter((item) =>
                   item.category.includes(category as string),
-                ).length
-              }{" "}
+                ).length}{" "}
+              {categories[category as keyof typeof categories].title ===
+                "Favorites" &&
+                recipes.filter((item) => favourites.includes(item.id))
+                  .length}{" "}
               Recipes
             </span>
             <ul className="categories__header__ul">
@@ -225,17 +241,29 @@ const CategoriesRecipesScreen: React.FC = () => {
           </div>
         </header>
         <div className="container categories__main">
-          {recipes
-            .filter((item) => item.category.includes(category as string))
-            .map((item) => (
-              <Link
-                to={`/recipe/${item.id}`}
-                className="card__category"
-                key={item.id}
-              >
-                <CardCategory data={item} key={item.id} />
-              </Link>
-            ))}
+          {categories[category as keyof typeof categories].title !== "Favorites"
+            ? recipes
+                .filter((item) => item.category.includes(category as string))
+                .map((item) => (
+                  <Link
+                    to={`/recipe/${item.id}`}
+                    className="card__category"
+                    key={item.id}
+                  >
+                    <CardCategory data={item} key={item.id} />
+                  </Link>
+                ))
+            : recipes
+                .filter((item) => favourites.includes(item.id))
+                .map((item) => (
+                  <Link
+                    to={`/recipe/${item.id}`}
+                    className="card__category"
+                    key={item.id}
+                  >
+                    <CardCategory data={item} key={item.id} />
+                  </Link>
+                ))}
           <div
             className="no-found"
             style={{
