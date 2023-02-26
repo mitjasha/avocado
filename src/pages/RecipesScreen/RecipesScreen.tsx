@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RecipeResponse } from "../../api/api.interface";
+import profileController from "../../api/profile.controller";
 import recipesController from "../../api/recipes.controller";
 import CardRecipe from "../../components/CardRecipe/CardRecipe";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
@@ -8,6 +9,7 @@ import "./RecipesScreen.scss";
 
 const RecipesScreen: React.FC = () => {
   const [recipes, setRecipes] = useState<RecipeResponse[]>();
+  const [favourites, setFavourites] = useState<string[]>([]);
 
   const getRcipes = async () => {
     const result = await recipesController.getAllRecipes();
@@ -17,8 +19,18 @@ const RecipesScreen: React.FC = () => {
     }
   };
 
+  const getFavourites = async () => {
+    const profile = await profileController.getProfile();
+    if (profile) {
+      if (profile[0].favorites != null) {
+        setFavourites(profile[0].favorites);
+      } else setFavourites([]);
+    }
+  };
+
   useEffect(() => {
     getRcipes();
+    getFavourites();
   }, []);
 
   return (
@@ -72,7 +84,9 @@ const RecipesScreen: React.FC = () => {
               className="category category__favourites"
             >
               <h3 className="category__h3">Favourites</h3>
-              <span className="category__span">0 Recipes</span>
+              <span className="category__span">
+                {favourites.length} Recipes
+              </span>
             </Link>
           </div>
         </div>
