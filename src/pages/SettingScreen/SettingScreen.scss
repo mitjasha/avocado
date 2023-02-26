@@ -9,7 +9,7 @@
     margin: 0;
     font-weight: 600;
     font-size: 32px;
-    color: $dark-color;
+    color: var(--color-text);
   }
 
   &__logo {
@@ -42,7 +42,7 @@
   &__span {
     font-weight: 500;
     font-size: 24px;
-    color: $dark-color;
+    color: var(--color-text);
   }
 }
 
@@ -96,7 +96,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
-  color: $dark-color;
+  color: var(--color-text);
   border: none;
   position: relative;
   outline: none;

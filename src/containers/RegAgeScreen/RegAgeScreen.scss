@@ -9,7 +9,7 @@
   height: 100px;
   background-color: $middle-green;
   border-radius: 20px;
-  color: $dark-color;
+  color: var(--color-text);
   font-size: 36px;
   font-weight: 600;
   margin-top: 100px;
@@ -23,7 +23,7 @@
   padding: 20px 15px;
   box-sizing: border-box;
   cursor: pointer;
-  color: $dark-color;
+  color: var(--color-text);
   font-size: 18px;
   font-weight: 500;
   background: $light-color url(../../assets/svg/calendar.svg) no-repeat;

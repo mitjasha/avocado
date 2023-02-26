@@ -17,7 +17,7 @@
   &__h1 {
     margin: 0;
     margin-bottom: 30px;
-    color: $dark-color;
+    color: var(--color-text);
     padding: 20px 0px;
     text-align: center;
   }
@@ -122,7 +122,7 @@ label {
   box-sizing: border-box;
   font-size: 18px;
   font-family: "Montserrat";
-  color: $dark-color;
+  color: var(--color-text);
 }
 
 .accept__button {
@@ -133,15 +133,15 @@ label {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  border: 2px solid $dark-color;
-  background-color: $dark-color;
+  border: 2px solid var(--color-text);
+  background-color: var(--color-text);
   color: $light-color;
 
   &:hover {
     cursor: pointer;
     background: $light-color;
-    border: 2px solid $dark-color;
+    border: 2px solid var(--color-text);
     border-radius: 20px;
-    color: $dark-color;
+    color: var(--color-text);
   }
 }

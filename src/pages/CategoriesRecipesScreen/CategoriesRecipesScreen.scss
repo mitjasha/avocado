@@ -92,7 +92,7 @@
       &:hover {
         background-color: $light-color;
         border: 1px solid #c5c6ca;
-        color: $dark-color;
+        color: var(--color-text);
         transition: 0.4s all ease;
         cursor: pointer;
       }

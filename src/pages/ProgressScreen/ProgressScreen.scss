@@ -34,7 +34,7 @@
     content: "";
     display: block;
     height: 173px;
-    border-left: 3px solid $dark-color;
+    border-left: 3px solid var(--color-text);
   }
 
   &__curr-weight {

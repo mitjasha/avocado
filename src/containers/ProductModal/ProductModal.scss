@@ -27,7 +27,7 @@
   &__span {
     font-weight: 400;
     font-size: 14px;
-    color: $dark-color;
+    color: var(--color-text);
 
     &__disabled {
       background-color: $middle-green;

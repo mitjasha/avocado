@@ -32,6 +32,6 @@
 
   &:disabled {
     background-color: rgba(52, 54, 51, 0.1);
-    border: 3px solid $dark-color;
+    border: 3px solid var(--color-text);
   }
 }

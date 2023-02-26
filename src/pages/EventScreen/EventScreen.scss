@@ -7,7 +7,7 @@
   &__h1 {
     font-weight: 600;
     font-size: 32px;
-    color: $dark-color;
+    color: var(--color-text);
     text-transform: capitalize;
   }
 
@@ -131,7 +131,7 @@
   &__text {
     font-weight: 400;
     font-size: 24px;
-    color: $dark-color;
+    color: var(--color-text);
   }
 
   &__image {

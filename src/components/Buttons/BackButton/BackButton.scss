@@ -17,7 +17,7 @@
   }
 
   &:hover {
-    background-color: $dark-color;
+    background-color: var(--color-text);
     transition: 0.4s all ease;
     cursor: pointer;
   }

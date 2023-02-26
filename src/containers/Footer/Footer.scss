@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .footer {
-  background-color: $dark-color;
+  background-color: var(--color-text);
   height: 179px;
   color: var(--color-background);
 
@@ -51,7 +51,7 @@
   }
 
   &__media-icon:hover {
-    background-color: $dark-color;
+    background-color: var(--color-text);
     transition: 0.4s all ease;
 
     &.footer__media-icon_fb {

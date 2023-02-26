@@ -8,7 +8,7 @@
     display: flex;
     line-height: 2;
     letter-spacing: 0.5px;
-    color: $dark-color;
+    color: var(--color-text);
     align-items: center;
   }
 
@@ -51,7 +51,8 @@
 
   &__date-input:hover {
     transition: 0.4s all ease;
-    background: $dark-color url(../../assets/svg/calendar-light.svg) no-repeat;
+    background: var(--color-text) url(../../assets/svg/calendar-light.svg)
+      no-repeat;
     background-size: 30px;
     background-position: 50%;
   }
@@ -75,7 +76,7 @@
 
   &__menu-btn:hover {
     transition: 0.4s all ease;
-    background-color: $dark-color;
+    background-color: var(--color-text);
   }
 
   &__menu-btn:hover .dot {
@@ -87,7 +88,7 @@
   width: 4.5px;
   height: 4.5px;
   border-radius: 50px;
-  background-color: $dark-color;
+  background-color: var(--color-text);
 }
 
 @media screen and (min-width: $media-tab-pt) {

@@ -12,7 +12,7 @@
   padding: 10px;
   border-radius: 20px;
   border: none;
-  background-color: $dark-color;
+  background-color: var(--color-text);
   color: var(--color-background);
   font-size: 20px;
   font-weight: 500;
@@ -20,8 +20,8 @@
 
   &:hover {
     background-color: transparent;
-    border: 1px solid $dark-color;
-    color: $dark-color;
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
     transition: 0.4s all ease;
   }
 

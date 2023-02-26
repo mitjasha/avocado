@@ -16,7 +16,7 @@
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: 50%;
-  background-color: $dark-color;
+  background-color: var(--color-text);
   opacity: 0.5;
   border-radius: 20%;
   height: 40px;
@@ -91,7 +91,7 @@
   list-style-type: disc;
   font-weight: 400;
   font-size: 16px;
-  color: $dark-color;
+  color: var(--color-text);
   padding: 0px;
   margin: 10px 35px 20px;
 
