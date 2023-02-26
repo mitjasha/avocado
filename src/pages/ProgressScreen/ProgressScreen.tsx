@@ -8,7 +8,7 @@ import plus from "../../assets/svg/plus-light.svg";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./ProgressScreen.scss";
 import profileController from "../../api/profile.controller";
-// import eventMealController from "../../api/event-meal.controller";
+import eventMealController from "../../api/event-meal.controller";
 
 const ProgressScreen: React.FC = () => {
   const openPopUp = () => {
@@ -24,18 +24,34 @@ const ProgressScreen: React.FC = () => {
   const [currentWeight, setCurrentWeight] = useState<number>(0);
   const [targetWeight, setTargetWeight] = useState<number>(0);
   const [kgLeft, setKgLeft] = useState<number>(0);
-  // const [eatenKcalPerDay, setEatenKcalPerDay] = useState<object>({
-  //   "27 Jan": 1217,
-  //   "28 Jan": 1734,
-  //   "29 Jan": 1578,
-  //   "30 Jan": 1601,
-  // });
   const [averageKcal, setAverageKcal] = useState<number>(0);
 
-  // const getEatenKcalPerDay = async (date) => {
-  //   const events = await eventMealController.getEventsByDate(date);
-  //   console.log(events);
-  // };
+  const correctData = (date: number) => {
+    return date > 9 ? `${date}` : `0${date}`;
+  };
+
+  const getEatenKcalPerDay = async (date: Date) => {
+    const day = `${date.getFullYear()}-${correctData(
+      date.getMonth() + 1,
+    )}-${correctData(date.getDate())}`;
+
+    const events = await eventMealController.getEventsByDate(day);
+    return events.reduce((acc, item) => {
+      return acc + (item.weight / 100) * item.product.calories_100g;
+    }, 0);
+  };
+
+  // const [eatenKcalPerDay, setEatenKcalPerDay] = useState<object>({
+  //   Mon: 1217,
+  //   Tue: 1734,
+  //   Wed: 1578,
+  //   Thu: 1601,
+  //   Fri: 1000,
+  //   Sat: 1000,
+  //   Sun: 1000,
+  // });
+
+  getEatenKcalPerDay(new Date());
 
   const eatenKcalPerDay = {
     "27 Jan": 1217,
