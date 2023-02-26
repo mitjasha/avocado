@@ -54,7 +54,7 @@
     color: $dark-green;
 
     &:hover {
-      color: $middle-green;
+      color: var(--choosen-input-color);
       transition: 0.4s all ease;
     }
   }

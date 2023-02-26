@@ -176,11 +176,11 @@
 ::-webkit-scrollbar {
   width: 8px;
   height: 4px;
-  background-color: $middle-green;
+  background-color: var(--choosen-input-color);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $middle-green;
+  background-color: var(--choosen-input-color);
   border-radius: 9em;
 }
 

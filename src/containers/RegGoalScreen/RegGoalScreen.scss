@@ -13,7 +13,7 @@
     display: none;
 
     &:checked + label {
-      background-color: $middle-green;
+      background-color: var(--choosen-input-color);
       transition: 0.4s all ease;
     }
   }

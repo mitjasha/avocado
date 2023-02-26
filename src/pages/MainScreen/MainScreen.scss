@@ -11,7 +11,7 @@
 }
 
 .daily-data {
-  background-color: $middle-green;
+  background-color: var(--choosen-input-color);
   padding-bottom: 20px;
 
   &__status {

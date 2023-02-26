@@ -53,10 +53,10 @@
     left: 8%;
     text-align: center;
     z-index: 0;
-    background-color: $middle-green;
+    background-color: var(--choosen-input-color);
     width: 42%;
     height: 80%;
-    color: $middle-green;
+    color: var(--choosen-input-color);
     font-weight: 800;
     position: absolute;
     top: 10%;
@@ -86,7 +86,7 @@
 }
 
 .select-lang__container {
-  background-color: $middle-green;
+  background-color: var(--choosen-input-color);
   width: 80px;
   height: 40px;
   padding: 5px;

@@ -28,7 +28,7 @@
 
 .card__container:hover {
   cursor: pointer;
-  background-color: $middle-green;
+  background-color: var(--choosen-input-color);
   color: var(--input-color);
 }
 

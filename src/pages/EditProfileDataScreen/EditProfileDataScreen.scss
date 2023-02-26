@@ -101,16 +101,16 @@ label {
     top: -5px;
     left: -1px;
     position: relative;
-    background-color: $middle-green;
+    background-color: var(--choosen-input-color);
     content: "";
     display: inline-block;
     visibility: visible;
-    border: 2px solid $middle-green;
+    border: 2px solid var(--choosen-input-color);
   }
 }
 
 .select__container {
-  background-color: $middle-green;
+  background-color: var(--choosen-input-color);
   height: 40px;
   width: 200px;
   margin-left: 10px;

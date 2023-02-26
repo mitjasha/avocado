@@ -14,7 +14,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: $middle-green;
+    background-color: var(--choosen-input-color);
     transition: 0.4s all ease;
   }
 

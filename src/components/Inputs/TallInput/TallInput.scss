@@ -13,7 +13,7 @@
     display: none;
 
     &:checked + label {
-      background-color: $middle-green;
+      background-color: var(--choosen-input-color);
       transform: scale(1.3);
       transition: 0.4s all ease;
       margin: 0 10px;
