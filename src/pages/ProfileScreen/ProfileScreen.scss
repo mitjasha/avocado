@@ -3,6 +3,7 @@
 .profile-screen {
   background-color: $bg-color;
   color: $dark-color;
+  min-height: 100vh;
 
   &__title {
     margin: 0 0 20px 0;
@@ -13,7 +14,7 @@
 
 .user-data {
   background-color: $light-color;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   position: relative;
 
   &__edit {

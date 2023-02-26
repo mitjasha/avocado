@@ -3,6 +3,7 @@
 .setting__screen {
   padding: 20px 0;
   background-color: $bg-color;
+  min-height: 100vh;
 
   &__h1 {
     text-align: center;

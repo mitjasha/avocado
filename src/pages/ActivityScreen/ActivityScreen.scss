@@ -2,6 +2,7 @@
 
 .activity-screen {
   background-color: $bg-color;
+  min-height: 100vh;
   padding: 20px 0;
 
   &__title-wrapper {

@@ -2,6 +2,8 @@
 
 .recipe__screen {
   background-color: $bg-color;
+  min-height: 100vh;
+  padding-bottom: 30px;
 }
 
 .recipe__image {

@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  min-height: 100vh;
 }
 
 .categories__recipes__screen {
@@ -121,7 +122,6 @@
   }
 
   .categories__header {
-
     &__h1,
     &__span {
       margin: 5px 50px;
