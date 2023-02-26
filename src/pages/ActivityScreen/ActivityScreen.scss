@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .activity-screen {
-  background-color: $bg-color;
+  background-color: var(--color-background);
   padding: 20px 0;
 
   &__title-wrapper {

@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .recipe__screen {
-  background-color: $bg-color;
+  background-color: var(--color-background);
 }
 
 .recipe__image {

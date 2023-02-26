@@ -16,7 +16,13 @@ const SettingScreen = () => {
     navigate("/");
   };
 
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [theme, setTheme] = useState<string>(
+    localStorage.getItem("theme") || "light",
+  );
+
+  if (theme === "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
 
   const toggleTheme = (event: React.MouseEvent<HTMLButtonElement>) => {
     const target = event.target as HTMLButtonElement;

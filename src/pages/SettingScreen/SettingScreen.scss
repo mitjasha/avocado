@@ -2,7 +2,7 @@
 
 .setting__screen {
   padding: 20px 0;
-  background-color: $bg-color;
+  background-color: var(--color-background);
 
   &__h1 {
     text-align: center;

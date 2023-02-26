@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .registration-screen {
-  background-color: $bg-color;
+  background-color: var(--color-background);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  background-color: $bg-color;
+  background-color: var(--color-background);
 }
 
 .process {
@@ -53,7 +53,7 @@
 
 .unit {
   background-color: $dark-color;
-  color: $bg-color;
+  color: var(--color-background);
   border-radius: 20px;
   width: 60px;
   height: 23px;

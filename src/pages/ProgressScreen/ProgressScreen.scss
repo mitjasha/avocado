@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .progress-screen {
-  background-color: $bg-color;
+  background-color: var(--color-background);
 
   &__title {
     margin: 0 0 20px 0;

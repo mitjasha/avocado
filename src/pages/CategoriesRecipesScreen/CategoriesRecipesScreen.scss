@@ -7,7 +7,7 @@
 }
 
 .categories__recipes__screen {
-  background-color: $bg-color;
+  background-color: var(--color-background);
 }
 
 .categories__header {
@@ -121,7 +121,6 @@
   }
 
   .categories__header {
-
     &__h1,
     &__span {
       margin: 5px 50px;

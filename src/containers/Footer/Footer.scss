@@ -3,7 +3,7 @@
 .footer {
   background-color: $dark-color;
   height: 179px;
-  color: $bg-color;
+  color: var(--color-background);
 
   &__container {
     margin: auto;

@@ -2,7 +2,7 @@
 
 .about__us {
   &__screen {
-    background-color: $bg-color;
+    background-color: var(--color-background);
   }
 
   &__title {
