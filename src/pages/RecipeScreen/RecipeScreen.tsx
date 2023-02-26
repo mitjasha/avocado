@@ -35,19 +35,19 @@ const RecipeScreen: React.FC = () => {
           <ul className="recipe__info__ul">
             <li className="recipe__info__li">
               <span className="recipe__info__span">Kcal:</span>
-              <span>{recipe?.calories}</span>
+              <span className="recipe__info__num">{recipe?.calories}</span>
             </li>
             <li className="recipe__info__li">
               <span className="recipe__info__span">Protein:</span>
-              <span>{recipe?.proteins}</span>
+              <span className="recipe__info__num">{recipe?.proteins}</span>
             </li>
             <li className="recipe__info__li">
               <span className="recipe__info__span">Fat:</span>
-              <span>{recipe?.fats}</span>
+              <span className="recipe__info__num">{recipe?.fats}</span>
             </li>
             <li className="recipe__info__li">
               <span className="recipe__info__span">Carbs:</span>
-              <span>{recipe?.carbs}</span>
+              <span className="recipe__info__num">{recipe?.carbs}</span>
             </li>
           </ul>
         </div>

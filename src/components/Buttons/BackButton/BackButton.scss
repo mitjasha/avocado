@@ -4,7 +4,7 @@
   display: flex;
   width: 55px;
   height: 55px;
-  background-color: $light-color;
+  background-color: var(--input-color);
   border-radius: 50%;
   justify-content: center;
   align-items: center;

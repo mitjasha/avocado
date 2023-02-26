@@ -5,7 +5,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: $light-color;
+  background-color: var(--input-color);
   border-radius: 20px;
   padding: 0 10px;
   box-sizing: border-box;
@@ -29,7 +29,7 @@
 .card__container:hover {
   cursor: pointer;
   background-color: $middle-green;
-  color: $light-color;
+  color: var(--input-color);
 }
 
 @media screen and (min-width: $media-tab) {

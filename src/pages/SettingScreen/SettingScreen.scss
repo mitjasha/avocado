@@ -79,7 +79,7 @@
     position: relative;
     height: 30px;
     float: right;
-    background-color: $light-color;
+    background-color: var(--input-color);
     border-radius: 100px;
     cursor: pointer;
   }

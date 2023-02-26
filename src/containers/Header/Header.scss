@@ -27,7 +27,7 @@
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    background: $light-color url(../../assets/svg/calendar.svg) no-repeat;
+    background: var(--input-color) url(../../assets/svg/calendar.svg) no-repeat;
     background-size: 30px;
     background-position: 50%;
 
@@ -64,7 +64,7 @@
   &__menu-btn {
     width: 44px;
     height: 44px;
-    background-color: $light-color;
+    background-color: var(--input-color);
     border-radius: 50px;
     display: flex;
     border: none;
@@ -80,7 +80,7 @@
   }
 
   &__menu-btn:hover .dot {
-    background-color: $light-color;
+    background-color: var(--input-color);
   }
 }
 

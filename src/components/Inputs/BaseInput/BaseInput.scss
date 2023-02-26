@@ -10,10 +10,11 @@
   font-weight: 400;
   border: 3px solid $dark-green;
   border-radius: 20px;
-  background-color: $light-color;
+  background-color: var(--input-color);
+  color: var(--color-text);
 
   &::placeholder {
-    color: rgba(0, 0, 0, 0.27);
+    color: var(--color-text);
   }
 
   &:focus {
@@ -26,7 +27,7 @@
   }
 
   &:placeholder-shown {
-    background-color: $light-color;
+    background-color: var(--input-color);
     border: 3px solid $dark-green;
   }
 

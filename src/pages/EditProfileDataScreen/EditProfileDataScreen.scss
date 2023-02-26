@@ -33,7 +33,7 @@
 
   &__icon {
     height: 180px;
-    background-color: $light-color;
+    background-color: var(--input-color);
     padding: 20px;
     border-radius: 20px;
     box-sizing: border-box;
@@ -135,11 +135,11 @@ label {
   border-radius: 20px;
   border: 2px solid var(--color-text);
   background-color: var(--color-text);
-  color: $light-color;
+  color: var(--input-color);
 
   &:hover {
     cursor: pointer;
-    background: $light-color;
+    background: var(--input-color);
     border: 2px solid var(--color-text);
     border-radius: 20px;
     color: var(--color-text);

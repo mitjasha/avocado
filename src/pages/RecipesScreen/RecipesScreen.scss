@@ -8,12 +8,13 @@
     font-size: 20px;
     margin: 20px 0px;
     width: 100%;
+    color: var(--color-text);
   }
 
   &__h3 {
     font-weight: 400;
     font-size: 15px;
-    color: #424242;
+    color: var(--color-text);
     margin: 0px;
     width: 100%;
   }
@@ -29,10 +30,10 @@
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
+  color: var(--color-text);
 
   &__view {
     font-weight: 600;
-    color: #c4c4c4;
     cursor: pointer;
   }
 }

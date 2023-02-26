@@ -26,7 +26,7 @@
   color: var(--color-text);
   font-size: 18px;
   font-weight: 500;
-  background: $light-color url(../../assets/svg/calendar.svg) no-repeat;
+  background: var(--input-color) url(../../assets/svg/calendar.svg) no-repeat;
   background-size: 30px;
   background-position: 95%;
 

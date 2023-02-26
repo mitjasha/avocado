@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .activity-wrapper {
-  background-color: $light-color;
+  background-color: var(--input-color);
   border-radius: 20px;
   width: 100%;
   padding: 10px 20px;

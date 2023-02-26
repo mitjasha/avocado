@@ -13,19 +13,18 @@ $light-color: #fafdf8;
 $middle-green: #c6e8aa;
 $dark-green: #559c4f;
 $brown: #874e3d;
+$dark-theme-light-color: #97b27a;
 
 html[data-theme="light"] {
   --color-text: #{$dark-color};
   --color-background: #{$bg-color};
   --input-color: #{$light-color};
   --choosen-input-color: #{$middle-green};
-  --active-color: #{$dark-green};
 }
 
 html[data-theme="dark"] {
   --color-text: #{$bg-color};
   --color-background: #{$dark-color};
-  --input-color: #{$light-color};
+  --input-color: #{$dark-theme-light-color};
   --choosen-input-color: #{$middle-green};
-  --active-color: #{$dark-green};
 }

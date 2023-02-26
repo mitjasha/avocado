@@ -7,6 +7,7 @@
     margin: 0 0 20px 0;
     text-align: center;
     font-weight: 500;
+    color: var(--color-text);
   }
 
   &__progress {
@@ -28,6 +29,7 @@
     text-align: center;
     font-size: 18px;
     font-weight: 500;
+    color: var(--color-text);
   }
 
   &__slash:before {
@@ -40,6 +42,7 @@
   &__curr-weight {
     width: 125px;
     font-size: 24px;
+    color: var(--color-text);
 
     &_bg {
       background-color: #c6e8aa;
@@ -52,8 +55,12 @@
 .calories {
   padding: 20px 0;
 
+  &__title {
+    color: var(--color-text);
+  }
+
   &__daily-data {
-    background-color: $light-color;
+    background-color: var(--input-color);
     padding: 15px;
     border-radius: 20px;
   }
@@ -63,6 +70,7 @@
   &__title {
     text-align: center;
     font-size: 30px;
+    color: var(--color-text);
   }
 }
 
