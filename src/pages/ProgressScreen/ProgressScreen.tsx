@@ -36,28 +36,64 @@ const ProgressScreen: React.FC = () => {
     )}-${correctData(date.getDate())}`;
 
     const events = await eventMealController.getEventsByDate(day);
-    return events.reduce((acc, item) => {
-      return acc + (item.weight / 100) * item.product.calories_100g;
-    }, 0);
+    if (events.length > 0) {
+      return events.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.calories_100g;
+      }, 0);
+    }
+    return 0;
   };
 
-  // const [eatenKcalPerDay, setEatenKcalPerDay] = useState<object>({
-  //   Mon: 1217,
-  //   Tue: 1734,
-  //   Wed: 1578,
-  //   Thu: 1601,
-  //   Fri: 1000,
-  //   Sat: 1000,
-  //   Sun: 1000,
-  // });
+  const month = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
 
-  getEatenKcalPerDay(new Date());
+  const today = new Date();
+  const oneDayEarlier = new Date(new Date().getTime() - 86400000);
+  const twoDaysEarlier = new Date(new Date().getTime() - 172800000);
+  const threeDaysEarlier = new Date(new Date().getTime() - 259200000);
+  const fourDaysEarlier = new Date(new Date().getTime() - 345600000);
+  const fiveDaysEarlier = new Date(new Date().getTime() - 432000000);
+  const sixDaysEarlier = new Date(new Date().getTime() - 518400000);
 
-  const eatenKcalPerDay = {
-    "27 Jan": 1217,
-    "28 Jan": 1734,
-    "29 Jan": 1578,
-    "30 Jan": 1601,
+  const [eatenKcalPerDay, setEatenKcalPerDay] = useState<object>({
+    [`${sixDaysEarlier.getDate()} ${month[sixDaysEarlier.getMonth()]}`]: 0,
+    [`${fiveDaysEarlier.getDate()} ${month[fiveDaysEarlier.getMonth()]}`]: 0,
+    [`${fourDaysEarlier.getDate()} ${month[fourDaysEarlier.getMonth()]}`]: 0,
+    [`${threeDaysEarlier.getDate()} ${month[threeDaysEarlier.getMonth()]}`]: 0,
+    [`${twoDaysEarlier.getDate()} ${month[twoDaysEarlier.getMonth()]}`]: 0,
+    [`${oneDayEarlier.getDate()} ${month[oneDayEarlier.getMonth()]}`]: 0,
+    [`${today.getDate()} ${month[today.getMonth()]}`]: 0,
+  });
+
+  const getEatenKcalObject = async () => {
+    setEatenKcalPerDay({
+      [`${sixDaysEarlier.getDate()} ${month[sixDaysEarlier.getMonth()]}`]:
+        await getEatenKcalPerDay(sixDaysEarlier),
+      [`${fiveDaysEarlier.getDate()} ${month[fiveDaysEarlier.getMonth()]}`]:
+        await getEatenKcalPerDay(fiveDaysEarlier),
+      [`${fourDaysEarlier.getDate()} ${month[fourDaysEarlier.getMonth()]}`]:
+        await getEatenKcalPerDay(fourDaysEarlier),
+      [`${threeDaysEarlier.getDate()} ${month[threeDaysEarlier.getMonth()]}`]:
+        await getEatenKcalPerDay(threeDaysEarlier),
+      [`${twoDaysEarlier.getDate()} ${month[twoDaysEarlier.getMonth()]}`]:
+        await getEatenKcalPerDay(twoDaysEarlier),
+      [`${oneDayEarlier.getDate()} ${month[oneDayEarlier.getMonth()]}`]:
+        await getEatenKcalPerDay(oneDayEarlier),
+      [`${today.getDate()} ${month[today.getMonth()]}`]:
+        await getEatenKcalPerDay(today),
+    });
   };
 
   const getAverageKcal = () => {
@@ -124,6 +160,7 @@ const ProgressScreen: React.FC = () => {
     getTargetWeight();
     getKgLeft();
     getAverageKcal();
+    getEatenKcalObject();
   }, []);
 
   return (
