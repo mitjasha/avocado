@@ -14,7 +14,7 @@ export interface ProductInputProps {
   onChange?: (e: React.ChangeEvent) => void | undefined;
 }
 
-const RegInput: React.FC<ProductInputProps> = ({
+const ProductInput: React.FC<ProductInputProps> = ({
   type,
   placeholder,
   value,
@@ -43,4 +43,4 @@ const RegInput: React.FC<ProductInputProps> = ({
     />
   );
 };
-export default RegInput;
+export default ProductInput;
