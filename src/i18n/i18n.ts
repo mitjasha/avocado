@@ -12,9 +12,17 @@ const resources = {
   },
 };
 
+const getLanguage = (): string => {
+  const lang = localStorage.getItem("language");
+  if (lang) {
+    return lang as string;
+  }
+  return "ru";
+};
+
 i18next.use(initReactI18next).init({
   resources,
-  lng: "ru", // default language
+  lng: getLanguage(), // default language
 });
 
 export default i18next;
