@@ -20,9 +20,12 @@ const SettingScreen = () => {
     localStorage.getItem("theme") || "light",
   );
 
-  if (theme === "light") {
-    document.documentElement.setAttribute("data-theme", "light");
-  }
+  const setSwitcherClass = () => {
+    if (theme === "light") {
+      return "switch_theme";
+    }
+    return "switch_theme switch_active";
+  };
 
   const toggleTheme = (event: React.MouseEvent<HTMLButtonElement>) => {
     const target = event.target as HTMLButtonElement;
@@ -51,7 +54,7 @@ const SettingScreen = () => {
               <button
                 type="button"
                 aria-label="theme switcher"
-                className="switch_theme"
+                className={setSwitcherClass()}
                 onClick={(event) => toggleTheme(event)}
               />
             </div>
