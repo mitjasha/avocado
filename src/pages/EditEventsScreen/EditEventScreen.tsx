@@ -78,25 +78,48 @@ const EditEventScreen = () => {
             <DailyEventEditWrapper
               title="Breakfast"
               recommended="Recomended 447 Kcal"
-              quantity="356 kcal"
+              quantity={`${breakfast
+                .reduce((acc, item) => {
+                  return acc + (item.weight / 100) * item.product.calories_100g;
+                }, 0)
+                .toFixed(1)
+                .toString()} kcal`}
               content={<DailyEventEditData type="meal" dataMeal={breakfast} />}
               className="daily-events__item daily-events__item_breakfast"
             />
             <DailyEventEditWrapper
               title="Lunch"
               recommended="Recomended 447 Kcal"
+              quantity={`${lunch
+                .reduce((acc, item) => {
+                  return acc + (item.weight / 100) * item.product.calories_100g;
+                }, 0)
+                .toFixed(1)
+                .toString()} kcal`}
               className="daily-events__item daily-events__item_lunch"
               content={<DailyEventEditData type="meal" dataMeal={lunch} />}
             />
             <DailyEventEditWrapper
               title="Dinner"
               recommended="Recomended 447 Kcal"
+              quantity={`${dinner
+                .reduce((acc, item) => {
+                  return acc + (item.weight / 100) * item.product.calories_100g;
+                }, 0)
+                .toFixed(1)
+                .toString()} kcal`}
               className="daily-events__item daily-events__item_dinner"
               content={<DailyEventEditData type="meal" dataMeal={dinner} />}
             />
             <DailyEventEditWrapper
               title="Snack"
               recommended="Recomended 447 Kcal"
+              quantity={`${snack
+                .reduce((acc, item) => {
+                  return acc + (item.weight / 100) * item.product.calories_100g;
+                }, 0)
+                .toFixed(1)
+                .toString()} kcal`}
               className="daily-events__item daily-events__item_snack"
               content={<DailyEventEditData type="meal" dataMeal={snack} />}
             />

@@ -77,11 +77,24 @@ const deleteActivityEvent = async (
   });
 };
 
-export const getMinutes = (start: Date, end: Date) =>
+const getMinutes = (start: Date, end: Date) =>
   new Date(end).getMinutes() - new Date(start).getMinutes();
 
-export const getEndTime = (start: Date, minutes: number) =>
-  new Date(new Date(start).getMinutes() + minutes);
+const getEndTime = (start: Date, minutes: number) =>
+  new Date(Date.parse(String(start)) + minutes).toISOString();
+
+const getBurned = (start: string, end: string, cal: number) => {
+  const duration = Date.parse(end) - Date.parse(start);
+  let minutes = 0;
+  if (duration < 3600000) {
+    minutes = Math.floor((duration / (1000 * 60)) % 60);
+  } else {
+    minutes =
+      Math.floor((duration / (1000 * 60 * 60)) % 24) * 60 +
+      Math.floor((duration / (1000 * 60)) % 60);
+  }
+  return minutes * cal;
+};
 
 const DailyEventEditData: React.FC<DailyEventData> = ({
   type,
@@ -89,7 +102,7 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
   dataActivity,
 }) => {
   const [weight, setWeight] = useState<number>();
-  const [timeEnd, setEndTime] = useState<Date>();
+  const [timeEnd, setEndTime] = useState<string>();
 
   useEffect(() => {}, [
     [weight, setWeight],
@@ -172,7 +185,7 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
                         updateActivityEvent(
                           item.activity.id,
                           item.startTime,
-                          timeEnd ? String(timeEnd) : String(item.endTime),
+                          timeEnd ? timeEnd : item.endTime,
                           item.description,
                         );
                       }}
@@ -181,25 +194,24 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
                   </div>
                 </div>
                 <span className="info__name">
-                  {(timeEnd
-                    ? getMinutes(new Date(item.startTime), timeEnd)
-                    : getMinutes(
-                        new Date(item.startTime),
-                        new Date(item.endTime),
-                      )) * item.activity.calories_per_min}{" "}
+                  {getBurned(
+                    item.startTime,
+                    item.endTime,
+                    item.activity.calories_per_min,
+                  )}{" "}
                   kcal
                 </span>
               </div>
               <span
                 className="info__delete"
-                onClick={() =>
+                onClick={() => {
                   deleteActivityEvent(
                     item.activity.id,
                     item.startTime,
-                    timeEnd ? String(timeEnd) : String(item.endTime),
+                    timeEnd ? timeEnd : item.endTime,
                     item.description,
-                  )
-                }
+                  );
+                }}
               >
                 delete
               </span>
