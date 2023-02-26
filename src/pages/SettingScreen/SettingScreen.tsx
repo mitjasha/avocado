@@ -6,11 +6,6 @@ import "./SettingScreen.scss";
 const SettingScreen = () => {
   const navigate = useNavigate();
 
-  const pressSwitcher = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const target = event.target as HTMLButtonElement;
-    target.classList.toggle("switch_active");
-  };
-
   const pressExit = () => {
     localStorage.clear();
     navigate("/");
