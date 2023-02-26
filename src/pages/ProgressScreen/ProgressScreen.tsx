@@ -8,6 +8,7 @@ import plus from "../../assets/svg/plus-light.svg";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./ProgressScreen.scss";
 import profileController from "../../api/profile.controller";
+// import eventMealController from "../../api/event-meal.controller";
 
 const ProgressScreen: React.FC = () => {
   const openPopUp = () => {
@@ -30,6 +31,11 @@ const ProgressScreen: React.FC = () => {
   //   "30 Jan": 1601,
   // });
   const [averageKcal, setAverageKcal] = useState<number>(0);
+
+  // const getEatenKcalPerDay = async (date) => {
+  //   const events = await eventMealController.getEventsByDate(date);
+  //   console.log(events);
+  // };
 
   const eatenKcalPerDay = {
     "27 Jan": 1217,
