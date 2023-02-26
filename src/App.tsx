@@ -18,6 +18,7 @@ import EventScreen from "./pages/EventScreen/EventScreen";
 import EditProfileDataScreen from "./pages/EditProfileDataScreen/EditProfileDataScreen";
 import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 import ProfileRegistrationScreen from "./pages/ProfileRegistrationScreen/ProfileRegistrationScreen";
+import Screen404 from "./pages/404Screen/404Screen";
 
 const routesWithoutHeader: string[] = [
   "/",
@@ -65,6 +66,7 @@ const App: React.FC = () => {
           <Route path="/event/:type" element={<EventScreen />} />
           <Route path="/edit-profile" element={<EditProfileDataScreen />} />
           <Route path="/edit-event" element={<EditEventScreen />} />
+          <Route path="/404" element={<Screen404 />} />
         </Routes>
       </main>
       {!isFooter && <Footer />}
