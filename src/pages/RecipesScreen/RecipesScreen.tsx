@@ -8,7 +8,7 @@ import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import "./RecipesScreen.scss";
 
 const RecipesScreen: React.FC = () => {
-  const [recipes, setRecipes] = useState<RecipeResponse[]>();
+  const [recipes, setRecipes] = useState<RecipeResponse[]>([]);
   const [favourites, setFavourites] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useSearchParams("");
   const text = searchQuery.get("search");
@@ -23,7 +23,6 @@ const RecipesScreen: React.FC = () => {
     }
   };
 
-
   const getFavourites = async () => {
     const profile = await profileController.getProfile();
     if (profile) {
@@ -31,8 +30,8 @@ const RecipesScreen: React.FC = () => {
         setFavourites(profile[0].favorites);
       } else setFavourites([]);
     }
-  }
-  
+  };
+
   const removeInputText = () => {
     const searchInput = document.querySelector(
       ".search__container__input",
