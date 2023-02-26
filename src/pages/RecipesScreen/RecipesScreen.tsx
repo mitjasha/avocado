@@ -102,7 +102,7 @@ const RecipesScreen: React.FC = () => {
         </div>
         <div className="recipes__container">
           {recipes?.map((item) => (
-            <div className="recipe__card">
+            <div className="recipe__card" key={item.id}>
               <CardRecipe data={item} key={item.id} />
             </div>
           ))}
