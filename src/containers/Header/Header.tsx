@@ -27,13 +27,13 @@ const Header: React.FC = () => {
   ];
 
   const weekDays = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
 
   const todaysDate =
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
 
   const month = months[new Date().getMonth()];
   const date = new Date().getDate();
-  const weekDay = weekDays[new Date().getDay() - 1];
+  const weekDay = weekDays[new Date().getDay()];
 
   const changeDate = () => {
     const dateInput = document.querySelector(
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
     const dataDisplay = document.querySelector(".header__date") as HTMLElement;
     dataDisplay.textContent = `${newValue.getDate()} ${
       months[newValue.getMonth()]
-    }, ${weekDays[newValue.getDay() - 1]}`;
+    }, ${weekDays[newValue.getDay()]}`;
   };
 
   return (
