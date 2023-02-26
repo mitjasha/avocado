@@ -3,6 +3,7 @@
 .about__us {
   &__screen {
     background-color: var(--color-background);
+    min-height: 100vh;
   }
 
   &__title {

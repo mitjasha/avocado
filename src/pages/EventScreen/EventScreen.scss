@@ -3,6 +3,7 @@
 .event__screen {
   background-color: var(--color-background);
   padding-bottom: 30px;
+  min-height: 100vh;
 
   &__h1 {
     font-weight: 600;
