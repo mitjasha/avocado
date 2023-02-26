@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { validationUserName, validationPassword } from "./RegFormUser.const";
@@ -18,6 +19,8 @@ interface RegFormUserProps {
 
 const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
 
   const {
     register,
@@ -76,7 +79,7 @@ const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
       <div className="container registration-screen-container">
         <form onSubmit={handleSubmit(onSubmit)} id="userRegistration">
           <div className="username">
-            <h2 className="input-title">Username</h2>
+            <h2 className="input-title">{t("reg_form_user_username")}</h2>
             <div className="input-wrapper input-wrapper_username">
               <FormInput
                 type="text"
@@ -89,7 +92,7 @@ const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
             </div>
           </div>
           <div className="password">
-            <h2 className="input-title">Password</h2>
+            <h2 className="input-title">{t("reg_form_user_password")}</h2>
             <div className="input-wrapper input-wrapper_password">
               <FormInput
                 type="password"
@@ -113,12 +116,13 @@ const RegFormUser: React.FC<RegFormUserProps> = ({ onClick }) => {
             type="submit"
             form="userRegistration"
           >
-            Continue
+            {t("reg_form_user_continue")}
           </ButtonTemplate>
         </form>
         <p className="rights">
-          By continuing, you agree to the <a href="/">Terms of Services</a> &{" "}
-          <a href="/">Privacy Policy</a>
+          {t("registration_terms_1")}{" "}
+          <a href="/">{t("registration_terms_2")}</a> &{" "}
+          <a href="/">{t("registration_terms_3")}</a>
         </p>
       </div>
     </div>
