@@ -2,7 +2,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-unneeded-ternary */
 import React, { useEffect, useState } from "react";
-import RegInput from "../Inputs/BaseInput/BaseInput";
 import {
   EventActivityResponse,
   EventMealResponse,
@@ -10,6 +9,7 @@ import {
 import "./DailyEventEditData.scss";
 import eventMealController from "../../api/event-meal.controller";
 import eventActivityController from "../../api/event-activity.controller";
+import ProductInput from "../Inputs/ProductInput/ProductInput";
 
 export interface DailyEventData {
   type: string;
@@ -23,13 +23,19 @@ const updateMealEvent = async (
   weight: number,
   description: string,
 ) => {
-  await eventMealController.updateEvent({ id, startTime, weight, description });
+  await eventMealController.updateEvent({
+    id,
+    startTime,
+    weight,
+    description,
+    name: "",
+  });
 };
 
 const updateActivityEvent = async (
   id: string,
-  startTime: Date,
-  endTime: Date,
+  startTime: string,
+  endTime: string,
   description: string,
 ) => {
   await eventActivityController.updateEvent({
@@ -46,13 +52,19 @@ const deleteMealEvent = async (
   weight: number,
   description: string,
 ) => {
-  await eventMealController.delEvent({ id, startTime, weight, description });
+  await eventMealController.delEvent({
+    id,
+    startTime,
+    weight,
+    description,
+    name: "",
+  });
 };
 
 const deleteActivityEvent = async (
   id: string,
-  startTime: Date,
-  endTime: Date,
+  startTime: string,
+  endTime: string,
   description: string,
 ) => {
   await eventActivityController.delEvent({
@@ -91,7 +103,7 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
                 <div style={{ display: "flex", gap: "5px" }}>
                   <span className="info__name">{item.product.name}</span>
                   <div className="input__container">
-                    <RegInput
+                    <ProductInput
                       type="number"
                       placeholder={String(item.weight)}
                       value={weight ? String(weight) : String(item.weight)}
@@ -138,28 +150,34 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
                 <div style={{ display: "flex", gap: "5px" }}>
                   <span className="info__name">{item.activity.name}</span>
                   <div className="input__container">
-                    <RegInput
+                    <ProductInput
                       type="number"
                       placeholder={String(
-                        getMinutes(item.startTime, item.endTime),
+                        getMinutes(
+                          new Date(item.startTime),
+                          new Date(item.endTime),
+                        ),
                       )}
                       value={String(
                         timeEnd
-                          ? getMinutes(item.startTime, timeEnd)
-                          : getMinutes(item.startTime, item.endTime),
+                          ? getMinutes(new Date(item.startTime), timeEnd)
+                          : getMinutes(
+                              new Date(item.startTime),
+                              new Date(item.endTime),
+                            ),
                       )}
                       className="info__input"
                       onChange={(event) => {
                         setEndTime(
                           getEndTime(
-                            item.startTime,
+                            new Date(item.startTime),
                             Number((event.target as HTMLSelectElement).value),
                           ),
                         );
                         updateActivityEvent(
                           item.activity.id,
                           item.startTime,
-                          timeEnd ? timeEnd : item.endTime,
+                          timeEnd ? String(timeEnd) : String(item.endTime),
                           item.description,
                         );
                       }}
@@ -169,9 +187,11 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
                 </div>
                 <span className="info__name">
                   {(timeEnd
-                    ? getMinutes(item.startTime, timeEnd)
-                    : getMinutes(item.startTime, item.endTime)) *
-                    item.activity.calories_per_min}{" "}
+                    ? getMinutes(new Date(item.startTime), timeEnd)
+                    : getMinutes(
+                        new Date(item.startTime),
+                        new Date(item.endTime),
+                      )) * item.activity.calories_per_min}{" "}
                   min
                 </span>
               </div>
@@ -181,7 +201,7 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
                   deleteActivityEvent(
                     item.activity.id,
                     item.startTime,
-                    timeEnd ? timeEnd : item.endTime,
+                    timeEnd ? String(timeEnd) : String(item.endTime),
                     item.description,
                   )
                 }

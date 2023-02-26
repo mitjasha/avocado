@@ -1,21 +1,23 @@
 import React from "react";
-import "./BaseInput.scss";
+import "../BaseInput/BaseInput.scss";
 
-export interface BaseInputProps {
+export interface ProductInputProps {
   type: string;
   placeholder?: string;
+  value?: string;
   className?: string;
   minLength?: number;
   maxLength?: number;
   id?: string;
   defaultValue?: number;
   disabled?: boolean;
-  onChange?: () => void;
+  onChange?: (e: React.ChangeEvent) => void | undefined;
 }
 
-const RegInput: React.FC<BaseInputProps> = ({
+const RegInput: React.FC<ProductInputProps> = ({
   type,
   placeholder,
+  value,
   className,
   minLength,
   maxLength,
@@ -30,6 +32,7 @@ const RegInput: React.FC<BaseInputProps> = ({
       type={type}
       className={classes}
       placeholder={placeholder}
+      value={value}
       minLength={minLength}
       maxLength={maxLength}
       id={id}
