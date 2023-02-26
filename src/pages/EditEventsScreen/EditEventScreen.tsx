@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
 import minus from "../../assets/svg/minus-light.svg";
 import plus from "../../assets/svg/plus-light.svg";
@@ -15,6 +16,7 @@ import eventMealController from "../../api/event-meal.controller";
 import eventActivityController from "../../api/event-activity.controller";
 
 const EditEventScreen = () => {
+  const navigate = useNavigate();
   const getWaterConsumed = () => {
     const content = [];
     const litreConsumed = 0.75; // будем получать эти данные из бд
@@ -49,12 +51,10 @@ const EditEventScreen = () => {
     const allMealEvents = await eventMealController.getEventsByDate(
       String(new Date()),
     );
-    setBreakfast(
-      allMealEvents.filter((item) => item.description === "breakfast"),
-    );
-    setLunch(allMealEvents.filter((item) => item.description === "lunch"));
-    setDinner(allMealEvents.filter((item) => item.description === "dinner"));
-    setSnack(allMealEvents.filter((item) => item.description === "snack"));
+    setBreakfast(allMealEvents.filter((item) => item.name === "breakfast"));
+    setLunch(allMealEvents.filter((item) => item.name === "lunch"));
+    setDinner(allMealEvents.filter((item) => item.name === "dinner"));
+    setSnack(allMealEvents.filter((item) => item.name === "snack"));
   };
 
   const getActivityEvents = async () => {
@@ -124,7 +124,10 @@ const EditEventScreen = () => {
           </div>
         </div>
       </div>
-      <ButtonTemplate className="event__changes__btn" onClick={getMealEvents}>
+      <ButtonTemplate
+        className="event__changes__btn"
+        onClick={() => navigate("/main")}
+      >
         Save changes
       </ButtonTemplate>
     </div>

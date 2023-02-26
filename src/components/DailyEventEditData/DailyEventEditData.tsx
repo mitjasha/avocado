@@ -19,16 +19,17 @@ export interface DailyEventData {
 
 const updateMealEvent = async (
   id: string,
+  name: string,
   startTime: string,
   weight: number,
   description: string,
 ) => {
   await eventMealController.updateEvent({
     id,
+    name,
     startTime,
     weight,
     description,
-    name: "",
   });
 };
 
@@ -48,16 +49,17 @@ const updateActivityEvent = async (
 
 const deleteMealEvent = async (
   id: string,
+  name: string,
   startTime: string,
   weight: number,
   description: string,
 ) => {
   await eventMealController.delEvent({
     id,
+    name,
     startTime,
     weight,
     description,
-    name: "",
   });
 };
 
@@ -106,16 +108,16 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
                     <ProductInput
                       type="number"
                       placeholder={String(item.weight)}
-                      value={weight ? String(weight) : String(item.weight)}
                       className="info__input"
                       onChange={(event) => {
                         setWeight(
                           Number((event.target as HTMLSelectElement).value),
                         );
                         updateMealEvent(
-                          item.product.id,
+                          item.id,
+                          item.product.name,
                           item.startTime,
-                          weight ? weight : item.weight,
+                          Number((event.target as HTMLSelectElement).value),
                           item.description,
                         );
                       }}
@@ -133,7 +135,8 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
                 className="info__delete"
                 onClick={() =>
                   deleteMealEvent(
-                    item.product.id,
+                    item.id,
+                    item.product.name,
                     item.startTime,
                     weight ? weight : item.weight,
                     item.description,
@@ -157,14 +160,6 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
                           new Date(item.startTime),
                           new Date(item.endTime),
                         ),
-                      )}
-                      value={String(
-                        timeEnd
-                          ? getMinutes(new Date(item.startTime), timeEnd)
-                          : getMinutes(
-                              new Date(item.startTime),
-                              new Date(item.endTime),
-                            ),
                       )}
                       className="info__input"
                       onChange={(event) => {
@@ -192,7 +187,7 @@ const DailyEventEditData: React.FC<DailyEventData> = ({
                         new Date(item.startTime),
                         new Date(item.endTime),
                       )) * item.activity.calories_per_min}{" "}
-                  min
+                  kcal
                 </span>
               </div>
               <span
