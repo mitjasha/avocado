@@ -3,6 +3,7 @@
 .about__us {
   &__screen {
     background-color: $bg-color;
+    min-height: 100vh;
   }
 
   &__title {

@@ -2,6 +2,7 @@
 
 .recipes__screen {
   background-color: $bg-color;
+  min-height: 100vh;
 
   &__h1 {
     font-weight: 600;

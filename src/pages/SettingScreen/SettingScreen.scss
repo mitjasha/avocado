@@ -3,6 +3,7 @@
 .setting__screen {
   padding: 20px 0;
   background-color: $bg-color;
+  min-height: 100vh;
 
   &__h1 {
     text-align: center;
@@ -102,10 +103,29 @@
   outline: none;
 }
 
+.leave-acc-btn {
+  border: none;
+  font-size: 24px;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    color: $middle-green;
+    transition: 0.4s all ease;
+  }
+}
+
 @media screen and (min-width: $media-tab-pt) {
   .setting__container {
     width: 500px;
     margin: auto;
     padding: 40px 0;
+  }
+}
+
+@media screen and (min-width: $media-tab) {
+  .settings__save-btn {
+    width: 500px;
+    margin: auto;
   }
 }

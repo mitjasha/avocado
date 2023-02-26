@@ -43,52 +43,54 @@ const ProfileScreen: React.FC = () => {
   return (
     <div className="profile-screen">
       <h1 className="profile-screen__title">Your Profile</h1>
-      <div className="user-data container">
-        <EditButton className="user-data__edit" to="/edit-profile" />
-        <div className="user-data__heading">
-          <img
-            src={gender === "MALE" ? male : female}
-            alt="user avatar"
-            className="user-data__heading__avatar"
-          />
-          <h2 className="user-data__heading__title">
-            Hello,
-            <br /> <span style={{ color: "#559c4f" }}>{firstName}</span>!
-          </h2>
-        </div>
-        <div className="user-data__info">
-          <div className="user-data__info__titles">
-            <p>Gender:</p>
-            <p>Age:</p>
-            <p>Height:</p>
-            <p>Weight:</p>
-            <p>Goal:</p>
-            <p>Target weight:</p>
+      <div className="container">
+        <div className="user-data">
+          <EditButton className="user-data__edit" to="/edit-profile" />
+          <div className="user-data__heading">
+            <img
+              src={gender === "MALE" ? male : female}
+              alt="user avatar"
+              className="user-data__heading__avatar"
+            />
+            <h2 className="user-data__heading__title">
+              Hello,
+              <br /> <span style={{ color: "#559c4f" }}>{firstName}</span>!
+            </h2>
           </div>
-          <div className="user-data__info__answers">
-            <p>{gender[0] + gender.slice(1).toLowerCase()}</p>
-            <p>{getAge(birth)}</p>
-            <p>{Number(height).toFixed()} cm</p>
-            <p>{Number(weight).toFixed()} kg</p>
-            <p>{goal}</p>
-            <p>{Number(targetWeight).toFixed()} kg</p>
+          <div className="user-data__info">
+            <div className="user-data__info__titles">
+              <p>Gender:</p>
+              <p>Age:</p>
+              <p>Height:</p>
+              <p>Weight:</p>
+              <p>Goal:</p>
+              <p>Target weight:</p>
+            </div>
+            <div className="user-data__info__answers">
+              <p>{gender[0] + gender.slice(1).toLowerCase()}</p>
+              <p>{getAge(birth)}</p>
+              <p>{Number(height).toFixed()} cm</p>
+              <p>{Number(weight).toFixed()} kg</p>
+              <p>{goal}</p>
+              <p>{Number(targetWeight).toFixed()} kg</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="profile-menu container">
-        <ul className="profile-menu__list">
-          {profileNavNames.map((item) => {
-            const title = item[0].toUpperCase() + item.slice(1);
-            return (
-              <ProfileNavButton
-                key={item}
-                to={`/${item}`}
-                title={title}
-                className={`list-item__icon_${item}`}
-              />
-            );
-          })}
-        </ul>
+        <div className="profile-menu">
+          <ul className="profile-menu__list">
+            {profileNavNames.map((item) => {
+              const title = item[0].toUpperCase() + item.slice(1);
+              return (
+                <ProfileNavButton
+                  key={item}
+                  to={`/${item}`}
+                  title={title}
+                  className={`list-item__icon_${item}`}
+                />
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
+import Button from "../../components/Buttons/Button/Button";
 import "./SettingScreen.scss";
 
 const SettingScreen = () => {
@@ -42,10 +42,20 @@ const SettingScreen = () => {
               </option>
             </select>
           </div>
+          <div className="setting__container__child">
+            <span className="setting__container__span">
+              Want to leave an account?
+            </span>
+            <button className="leave-acc-btn" type="button" onClick={pressExit}>
+              Yes
+            </button>
+          </div>
         </div>
         <div className="setting__screen__logo" />
         <div className="setting__container__child">
-          <ButtonTemplate onClick={pressExit}>EXIT</ButtonTemplate>
+          <Button className="settings__save-btn" to="/profile">
+            SAVE
+          </Button>
         </div>
       </div>
     </div>
