@@ -70,7 +70,6 @@ const ProductModal: React.FC<ProductProps> = ({ data, mealType }) => {
             className="modal__input"
             type="number"
             placeholder="100"
-            defaultValue={100}
             onChange={updateModalData}
           />
           <span className="modal__span">&nbsp;g</span>

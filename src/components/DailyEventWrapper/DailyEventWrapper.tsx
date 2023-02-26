@@ -53,7 +53,7 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
         })}
 
         {title === "Water" && (
-          <PlusMinusButton>
+          <PlusMinusButton onClick={handleClick}>
             <img src={plus} alt="plus" className="plus-minus-img" />
           </PlusMinusButton>
         )}
