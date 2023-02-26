@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { RecipeResponse } from "../../api/api.interface";
+import profileController from "../../api/profile.controller";
 import recipesController from "../../api/recipes.controller";
 import "./RecipeScreen.scss";
 
@@ -8,18 +9,67 @@ const RecipeScreen: React.FC = () => {
   const [recipe, setRecipe] = useState<RecipeResponse>();
   const { id } = useParams();
 
+  const setLike = async () => {
+    const profile = await profileController.getProfile();
+
+    if (profile) {
+      if (
+        profile[0].favorites != null &&
+        profile[0].favorites.includes(id as string)
+      ) {
+        document.querySelector(".recipe__favorite")?.classList.add("like");
+      } else {
+        document.querySelector(".recipe__favorite")?.classList.remove("like");
+      }
+    }
+  };
+
   const getRecipe = async () => {
     const result = await recipesController.getRecipeById(id as string);
     if (result) {
       setRecipe(result);
     }
+
+    await setLike();
   };
 
   useEffect(() => {
     getRecipe();
   }, []);
 
-  // const recipe = recipes.recipes[Number(id as keyof typeof recipes)];
+  const addFavorite = async () => {
+    const profile = await profileController.getProfile();
+    let { favorites } = profile[0];
+    if (favorites == null) {
+      favorites = [];
+    }
+    if (favorites.includes(id as string)) {
+      const index = favorites.indexOf(id as string);
+      favorites.splice(index, 1);
+    } else {
+      favorites.push(id as string);
+    }
+
+    if (profile) {
+      if (
+        profile[0].favorites != null &&
+        profile[0].favorites.includes(id as string)
+      ) {
+        document.querySelector(".recipe__favorite")?.classList.add("like");
+      } else {
+        document.querySelector(".recipe__favorite")?.classList.remove("like");
+      }
+    }
+
+    await profileController.updateProfile({
+      id: profile[0].id,
+      gender: profile[0].gender,
+      goal: profile[0].goal,
+      birth: profile[0].birth,
+      favorites,
+    });
+  };
+
   return (
     <div className="recipe__screen">
       <div className="container">
@@ -29,7 +79,12 @@ const RecipeScreen: React.FC = () => {
             backgroundImage: `url(${recipe?.imageURL})`,
           }}
         >
-          <div className="recipe__favorite" />
+          <button
+            type="button"
+            className="recipe__favorite"
+            aria-label="like"
+            onClick={addFavorite}
+          />
         </div>
         <div className="recipe__info">
           <ul className="recipe__info__ul">

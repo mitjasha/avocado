@@ -133,6 +133,11 @@
   }
 }
 
+.like {
+  filter: invert(90%) sepia(75%) saturate(7259%) hue-rotate(359deg)
+    brightness(88%) contrast(110%);
+}
+
 @media screen and (min-width: $media-tab) {
   .recipe__image {
     background-position: 50%;
