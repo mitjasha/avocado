@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .recipe__screen {
-  background-color: $bg-color;
+  background-color: var(--color-background);
   min-height: 100vh;
   padding-bottom: 30px;
 }
@@ -13,9 +13,13 @@
   position: relative;
 }
 
+.recipe__info__num {
+  color: var(--color-text);
+}
+
 .recipe {
   &__bg__like {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--color-text);
     width: 60px;
     height: 60px;
     position: absolute;
@@ -42,7 +46,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: $light-color;
+      background-color: var(--input-color);
       background-image: url("../../assets/svg/heart_recipe.svg");
       transition: 0.4s all ease;
     }
@@ -52,7 +56,7 @@
 .recipe__info {
   width: 100%;
   height: 80px;
-  background: $light-color;
+  background: var(--input-color);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -107,7 +111,7 @@
   list-style-type: disc;
   font-weight: 400;
   font-size: 16px;
-  color: $dark-color;
+  color: var(--color-text);
   padding: 0px;
   margin: 10px 35px 20px;
 
@@ -123,6 +127,7 @@
 
   &__li {
     padding: 5px 0px;
+    color: var(--color-text);
   }
 }
 

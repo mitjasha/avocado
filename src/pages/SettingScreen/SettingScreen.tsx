@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Buttons/Button/Button";
 import "./SettingScreen.scss";
@@ -6,15 +6,37 @@ import "./SettingScreen.scss";
 const SettingScreen = () => {
   const navigate = useNavigate();
 
-  const pressSwitcher = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const target = event.target as HTMLButtonElement;
-    target.classList.toggle("switch_active");
-  };
-
   const pressExit = () => {
     localStorage.clear();
     navigate("/");
   };
+
+  const [theme, setTheme] = useState<string>(
+    localStorage.getItem("theme") || "light",
+  );
+
+  const setSwitcherClass = () => {
+    if (theme === "light") {
+      return "switch_theme";
+    }
+    return "switch_theme switch_active";
+  };
+
+  const toggleTheme = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const target = event.target as HTMLButtonElement;
+    target.classList.toggle("switch_active");
+    if (theme === "light") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      setTheme("dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   return (
     <div className="setting__screen">
@@ -27,8 +49,8 @@ const SettingScreen = () => {
               <button
                 type="button"
                 aria-label="theme switcher"
-                className="switch_theme"
-                onClick={(event) => pressSwitcher(event)}
+                className={setSwitcherClass()}
+                onClick={(event) => toggleTheme(event)}
               />
             </div>
           </div>

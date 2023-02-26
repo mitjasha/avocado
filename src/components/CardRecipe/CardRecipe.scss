@@ -5,7 +5,7 @@
 }
 
 .recipe__card {
-  background: $light-color;
+  background: var(--input-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   height: 200px;
   width: calc(50% - 10px);
@@ -54,6 +54,7 @@
     font-size: 13px;
     padding: 5px;
     margin: 0;
+    color: var(--color-text);
   }
 
   &__wrapper {
@@ -86,7 +87,7 @@
     font-weight: 500;
     font-size: 9px;
     line-height: 11px;
-    color: #868686;
+    color: var(--color-text);
   }
 
   &__img__calories {

@@ -1,8 +1,9 @@
 @import "../../variables";
 
 .profile-screen {
-  background-color: $bg-color;
-  color: $dark-color;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  padding-bottom: 20px;
   min-height: 100vh;
 
   &__title {
@@ -13,8 +14,8 @@
 }
 
 .user-data {
-  background-color: $light-color;
-  padding-bottom: 40px;
+  background-color: var(--input-color);
+  padding-bottom: 20px;
   position: relative;
 
   &__edit {
@@ -31,8 +32,8 @@
       width: 122px;
       height: 122px;
       border-radius: 50%;
-      border: solid 1px $dark-color;
-      background-color: $middle-green;
+      border: solid 1px var(--color-text);
+      background-color: var(--choosen-input-color);
     }
 
     &__title {
@@ -57,13 +58,15 @@
   padding-bottom: 1px;
 
   &__list {
-    background-color: $middle-green;
+    background-color: var(--choosen-input-color);
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 80px;
     border-top-left-radius: 80px;
     padding: 20px 50px;
     list-style: none;
+    margin: 0;
+    margin-top: 20px;
   }
 }
 
@@ -81,14 +84,15 @@
     }
 
     &:hover .list-item__icon_progress {
-      background: $dark-color url(../../assets/svg/progress-light.svg) no-repeat;
+      background: var(--color-text) url(../../assets/svg/progress-light.svg)
+        no-repeat;
       transition: 0.4s all ease;
       background-size: 25px;
       background-position: 50%;
     }
 
     &:hover .list-item__icon_recipes {
-      background: $dark-color url(../../assets/svg/favorites-light.svg)
+      background: var(--color-text) url(../../assets/svg/favorites-light.svg)
         no-repeat;
       transition: 0.4s all ease;
       background-size: 25px;
@@ -96,14 +100,16 @@
     }
 
     &:hover .list-item__icon_settings {
-      background: $dark-color url(../../assets/svg/settings-light.svg) no-repeat;
+      background: var(--color-text) url(../../assets/svg/settings-light.svg)
+        no-repeat;
       transition: 0.4s all ease;
       background-size: 25px;
       background-position: 50%;
     }
 
     &:hover .list-item__icon_about {
-      background: $dark-color url(../../assets/svg/about-us-light.svg) no-repeat;
+      background: var(--color-text) url(../../assets/svg/about-us-light.svg)
+        no-repeat;
       transition: 0.4s all ease;
       background-size: 25px;
       background-position: 50%;
@@ -116,25 +122,29 @@
     border-radius: 50%;
 
     &_progress {
-      background: $light-color url(../../assets/svg/progress.svg) no-repeat;
+      background: var(--input-color) url(../../assets/svg/progress.svg)
+        no-repeat;
       background-size: 25px;
       background-position: 50%;
     }
 
     &_recipes {
-      background: $light-color url(../../assets/svg/favorites.svg) no-repeat;
+      background: var(--input-color) url(../../assets/svg/favorites.svg)
+        no-repeat;
       background-size: 25px;
       background-position: 50%;
     }
 
     &_settings {
-      background: $light-color url(../../assets/svg/settings.svg) no-repeat;
+      background: var(--input-color) url(../../assets/svg/settings.svg)
+        no-repeat;
       background-size: 25px;
       background-position: 50%;
     }
 
     &_about {
-      background: $light-color url(../../assets/svg/about-us.svg) no-repeat;
+      background: var(--input-color) url(../../assets/svg/about-us.svg)
+        no-repeat;
       background-size: 25px;
       background-position: 50%;
     }

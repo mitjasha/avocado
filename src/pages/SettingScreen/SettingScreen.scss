@@ -2,7 +2,7 @@
 
 .setting__screen {
   padding: 20px 0;
-  background-color: $bg-color;
+  background-color: var(--color-background);
   min-height: 100vh;
 
   &__h1 {
@@ -10,7 +10,7 @@
     margin: 0;
     font-weight: 600;
     font-size: 32px;
-    color: $dark-color;
+    color: var(--color-text);
   }
 
   &__logo {
@@ -43,7 +43,7 @@
   &__span {
     font-weight: 500;
     font-size: 24px;
-    color: $dark-color;
+    color: var(--color-text);
   }
 }
 
@@ -54,10 +54,10 @@
     left: 8%;
     text-align: center;
     z-index: 0;
-    background-color: $middle-green;
+    background-color: var(--choosen-input-color);
     width: 42%;
     height: 80%;
-    color: $middle-green;
+    color: var(--choosen-input-color);
     font-weight: 800;
     position: absolute;
     top: 10%;
@@ -80,14 +80,14 @@
     position: relative;
     height: 30px;
     float: right;
-    background-color: $light-color;
+    background-color: var(--input-color);
     border-radius: 100px;
     cursor: pointer;
   }
 }
 
 .select-lang__container {
-  background-color: $middle-green;
+  background-color: var(--choosen-input-color);
   width: 80px;
   height: 40px;
   padding: 5px;
@@ -97,7 +97,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
-  color: $dark-color;
+  color: var(--color-text);
   border: none;
   position: relative;
   outline: none;

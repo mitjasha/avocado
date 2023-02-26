@@ -1,9 +1,9 @@
 @import "../../variables";
 
 .footer {
-  background-color: $dark-color;
+  background-color: var(--color-text);
   height: 179px;
-  color: $bg-color;
+  color: var(--color-background);
 
   &__container {
     margin: auto;
@@ -30,7 +30,7 @@
   }
 
   &__media-icon {
-    background-color: $light-color;
+    background-color: var(--input-color);
     width: 40px;
     height: 40px;
     border-radius: 50px;
@@ -51,7 +51,7 @@
   }
 
   &__media-icon:hover {
-    background-color: $dark-color;
+    background-color: var(--color-text);
     transition: 0.4s all ease;
 
     &.footer__media-icon_fb {
@@ -83,7 +83,7 @@
 }
 
 .creators__item:hover {
-  color: $middle-green;
+  color: var(--choosen-input-color);
   transition: 0.4s all ease;
 }
 
@@ -100,7 +100,7 @@ a {
   }
 
   .school-link:hover {
-    color: $middle-green;
+    color: var(--choosen-input-color);
     transition: 0.4s all ease;
   }
 }

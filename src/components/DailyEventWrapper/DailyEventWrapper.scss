@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   height: fit-content;
-  background-color: $light-color;
+  background-color: var(--input-color);
   border-radius: 20px;
   padding: 15px;
 
@@ -80,10 +80,11 @@ h4,
   font-size: 18px;
   line-height: 1.5;
   margin: 0;
+  color: var(--color-text);
 }
 
 .recom {
-  color: #9da8c3;
+  color: var(--color-text);
   font-size: 14px;
   margin: 0;
 }

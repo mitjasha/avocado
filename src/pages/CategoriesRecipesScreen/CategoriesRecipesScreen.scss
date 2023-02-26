@@ -8,14 +8,14 @@
 }
 
 .categories__recipes__screen {
-  background-color: $bg-color;
+  background-color: var(--color-background);
 }
 
 .categories__header {
   width: 100%;
   border-radius: 0 0 5% 5%;
   background: rgba(85, 156, 79, 0.5);
-  color: $light-color;
+  color: var(--input-color);
   position: relative;
   padding: 20px;
   box-sizing: border-box;
@@ -80,7 +80,7 @@
       font-weight: 600;
       font-size: 17px;
       padding: 5px;
-      color: $light-color;
+      color: var(--input-color);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -91,9 +91,9 @@
       border-radius: 59px;
 
       &:hover {
-        background-color: $light-color;
+        background-color: var(--input-color);
         border: 1px solid #c5c6ca;
-        color: $dark-color;
+        color: var(--color-text);
         transition: 0.4s all ease;
         cursor: pointer;
       }

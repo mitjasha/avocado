@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .activity-screen {
-  background-color: $bg-color;
+  background-color: var(--color-background);
   min-height: 100vh;
   padding: 20px 0;
 
@@ -19,6 +19,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    color: var(--color-text);
   }
 
   &__subtitle {

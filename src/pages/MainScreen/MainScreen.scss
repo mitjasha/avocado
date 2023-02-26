@@ -1,26 +1,26 @@
 @import "../../variables";
 
 .main-screen {
-  background-color: $bg-color;
+  background-color: var(--color-background);
   min-height: 100vh;
 }
 
 .edit-event__screen {
-  background-color: $bg-color;
+  background-color: var(--color-background);
   width: 100%;
   padding-bottom: 20px;
 }
 
 .daily-data {
-  background-color: $middle-green;
+  background-color: var(--choosen-input-color);
   padding-bottom: 20px;
 
   &__status {
     margin: auto;
     width: 192px;
     text-align: center;
-    background-color: $dark-color;
-    color: $bg-color;
+    background-color: var(--color-text);
+    color: var(--color-background);
     border-radius: 20px;
     padding: 10px;
   }
@@ -70,6 +70,7 @@
 .chart-data-num {
   margin: 0;
   font-size: 26px;
+  color: var(--color-text);
 }
 
 .chart-data-title {
@@ -117,6 +118,7 @@
     font-size: 18px;
     font-weight: 300;
     margin: 25px 0 0 0;
+    color: var(--color-text);
   }
 }
 
@@ -150,6 +152,7 @@
 
 .curr-weight-display {
   font-size: 26px;
+  color: var(--color-text);
 }
 
 @media screen and (min-width: $media-tab-pt) {
