@@ -14,14 +14,6 @@ import eventsController from "../../api/event.controller";
 
 const MainScreen: React.FC = () => {
   const [recomKcalPerDay, setRecomKcalPerDay] = useState<number>(0);
-  const [availableKcal, setAvailableKcal] = useState<number>(recomKcalPerDay);
-  const [recomProteins, setRecomProteins] = useState<number>(0);
-  const [availableProteins, setAvailableProteins] =
-    useState<number>(recomProteins);
-  const [recomFats, setRecomFats] = useState<number>(0);
-  const [availableFats, setAvailableFats] = useState<number>(recomFats);
-  const [recomCarbs, setRecomCarbs] = useState<number>(0);
-  const [availableCarbs, setAvailableCarbs] = useState<number>(recomCarbs);
   const [recomWater, setRecomWater] = useState<number>(0);
   const [waterConsumed, setWaterConsumed] = useState<number>(0);
   const [currentWeight, setCurrentWeight] = useState<number>(0);
@@ -57,12 +49,12 @@ const MainScreen: React.FC = () => {
     new Date().getHours(),
   )}:${correctData(new Date().getMinutes())}`;
 
-  const getEventKcal = async () => {
-    const event = await eventMealController.getEventsByDate(date);
-    const breakfast = event.filter((item) => item.name === "breakfast");
-    const lunch = event.filter((item) => item.name === "lunch");
-    const dinner = event.filter((item) => item.name === "dinner");
-    const snack = event.filter((item) => item.name === "snack");
+  const getEatenKcal = async () => {
+    const eaten = await eventMealController.getEventsByDate(date);
+    const breakfast = eaten.filter((item) => item.name === "breakfast");
+    const lunch = eaten.filter((item) => item.name === "lunch");
+    const dinner = eaten.filter((item) => item.name === "dinner");
+    const snack = eaten.filter((item) => item.name === "snack");
     setBreakfastKcal(
       breakfast.reduce((acc, item) => {
         return acc + (item.weight / 100) * item.product.calories_100g;
@@ -83,23 +75,28 @@ const MainScreen: React.FC = () => {
         return acc + (item.weight / 100) * item.product.calories_100g;
       }, 0),
     );
-    setEatenKcal(breakfastKcal + lunchKcal + dinnerKcal + snackKcal);
+    setEatenKcal(
+      eaten.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.calories_100g;
+      }, 0),
+    );
     setEatenProteins(
-      event.reduce((acc, item) => {
+      eaten.reduce((acc, item) => {
         return acc + (item.weight / 100) * item.product.proteins_100g;
       }, 0),
     );
     setEatenFats(
-      event.reduce((acc, item) => {
+      eaten.reduce((acc, item) => {
         return acc + (item.weight / 100) * item.product.fat_100g;
       }, 0),
     );
     setEatenCarbs(
-      event.reduce((acc, item) => {
+      eaten.reduce((acc, item) => {
         return acc + (item.weight / 100) * item.product.carbs_100g;
       }, 0),
     );
   };
+
   const getActivityKcal = async () => {
     const activity = await eventActivityController.getEventsByDate(date);
     if (activity.length > 0) {
@@ -168,12 +165,6 @@ const MainScreen: React.FC = () => {
     }
   };
 
-  const getRecomNutritions = () => {
-    setRecomProteins(Math.round((recomKcalPerDay * 0.3) / 4));
-    setRecomFats(Math.round((recomKcalPerDay * 0.3) / 9));
-    setRecomCarbs(Math.round((recomKcalPerDay * 0.4) / 4));
-  };
-
   const getRecomWater = async () => {
     if (profileID) {
       const profile = await profileController.getProfileById(profileID);
@@ -181,14 +172,11 @@ const MainScreen: React.FC = () => {
     }
   };
 
-  const getAvailable = (
-    total: number,
-    eaten: number,
-    setState: React.Dispatch<React.SetStateAction<number>>,
-  ) => {
+  const getAvailable = (total: number, eaten: number) => {
     if (total > eaten) {
-      setState(total - eaten);
-    } else setState(0);
+      return total - eaten;
+    }
+    return 0;
   };
 
   const addWater = async () => {
@@ -197,6 +185,8 @@ const MainScreen: React.FC = () => {
       startTime: time,
       description: "",
     });
+    console.log("Drink");
+
     setWaterConsumed(waterConsumed + 0.25);
   };
 
@@ -255,16 +245,10 @@ const MainScreen: React.FC = () => {
 
   useEffect(() => {
     getRecommendedKcal();
-    getAvailable(recomKcalPerDay, eatenKcal, setAvailableKcal);
-    getRecomNutritions();
-    getAvailable(recomProteins, eatenProteins, setAvailableProteins);
-    getAvailable(recomFats, eatenFats, setAvailableFats);
-    getAvailable(recomCarbs, eatenCarbs, setAvailableCarbs);
     getRecomWater();
     getCurrentWeight();
     getTargetWeight();
-    getEventKcal();
-    addWater();
+    getEatenKcal();
     getActivityKcal();
     getLastActivity();
   }, []);
@@ -283,7 +267,11 @@ const MainScreen: React.FC = () => {
             </div>
             <div className="calories-chart__chart">
               <ChartComponent
-                chartData={[eatenKcal, availableKcal, burntKcal]}
+                chartData={[
+                  eatenKcal,
+                  getAvailable(recomKcalPerDay, eatenKcal),
+                  burntKcal,
+                ]}
                 colors={["#559C4F", "#fafdf8", "#FFA935"]}
                 size={158}
                 cutout={60}
@@ -291,7 +279,9 @@ const MainScreen: React.FC = () => {
               />
               <div className="kcal-available">
                 <p className="kcal-available__num">
-                  {availableKcal.toFixed(1).toString()}
+                  {getAvailable(recomKcalPerDay, eatenKcal)
+                    .toFixed(1)
+                    .toString()}
                 </p>
                 <h5 className="chart-data-title">Kcal available</h5>
               </div>
@@ -314,7 +304,13 @@ const MainScreen: React.FC = () => {
             <div className="nutrients-charts__item">
               <div>
                 <ChartComponent
-                  chartData={[eatenCarbs, availableCarbs]}
+                  chartData={[
+                    eatenCarbs,
+                    getAvailable(
+                      Math.round((recomKcalPerDay * 0.4) / 4),
+                      eatenCarbs,
+                    ),
+                  ]}
                   colors={["#559C4F", "#fafdf8"]}
                   size={60}
                   cutout={15}
@@ -331,7 +327,13 @@ const MainScreen: React.FC = () => {
             <div className="nutrients-charts__item">
               <div>
                 <ChartComponent
-                  chartData={[eatenFats, availableFats]}
+                  chartData={[
+                    eatenFats,
+                    getAvailable(
+                      Math.round((recomKcalPerDay * 0.3) / 9),
+                      eatenFats,
+                    ),
+                  ]}
                   colors={["#559C4F", "#fafdf8"]}
                   size={60}
                   cutout={15}
@@ -348,7 +350,13 @@ const MainScreen: React.FC = () => {
             <div className="nutrients-charts__item">
               <div>
                 <ChartComponent
-                  chartData={[eatenProteins, availableProteins]}
+                  chartData={[
+                    eatenProteins,
+                    getAvailable(
+                      Math.round((recomKcalPerDay * 0.3) / 4),
+                      eatenProteins,
+                    ),
+                  ]}
                   colors={["#559C4F", "#fafdf8"]}
                   size={60}
                   cutout={15}

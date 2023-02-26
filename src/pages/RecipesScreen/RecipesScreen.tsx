@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { RecipeResponse } from "../../api/api.interface";
 import profileController from "../../api/profile.controller";
 import recipesController from "../../api/recipes.controller";
@@ -10,14 +10,19 @@ import "./RecipesScreen.scss";
 const RecipesScreen: React.FC = () => {
   const [recipes, setRecipes] = useState<RecipeResponse[]>();
   const [favourites, setFavourites] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useSearchParams("");
+  const text = searchQuery.get("search");
+  const [filtredRecipes, setFiltredRecipes] =
+    useState<RecipeResponse[]>(recipes);
 
   const getRcipes = async () => {
     const result = await recipesController.getAllRecipes();
     if (result) {
       setRecipes(result);
-      console.log(recipes);
+      setFiltredRecipes(result);
     }
   };
+
 
   const getFavourites = async () => {
     const profile = await profileController.getProfile();
@@ -26,12 +31,36 @@ const RecipesScreen: React.FC = () => {
         setFavourites(profile[0].favorites);
       } else setFavourites([]);
     }
+  }
+  
+  const removeInputText = () => {
+    const searchInput = document.querySelector(
+      ".search__container__input",
+    ) as HTMLInputElement;
+    searchInput.value = "";
+    setSearchQuery({
+      search: "",
+    });
+  };
+
+  const textSearch = (currentText: string) => {
+    const filtred = recipes.filter((item) =>
+      item.name.toLowerCase().includes(currentText.toLowerCase()),
+    );
+
+    setFiltredRecipes(filtred);
   };
 
   useEffect(() => {
     getRcipes();
     getFavourites();
   }, []);
+
+  useEffect(() => {
+    if (text) {
+      textSearch(text);
+    }
+  }, [text]);
 
   return (
     <div className="recipes__screen">
@@ -97,14 +126,36 @@ const RecipesScreen: React.FC = () => {
             type="text"
             placeholder="Type your ingredient"
             className="search__container__input"
+            onChange={(event) => {
+              textSearch((event.target as HTMLInputElement).value);
+              setSearchQuery({
+                search: (event.target as HTMLInputElement).value,
+              });
+            }}
+          />
+          <button
+            type="button"
+            aria-label="clear"
+            className="event__screen__close__icon"
+            onClick={() => removeInputText()}
           />
           <div className="search__container__icon" />
         </div>
         <div className="recipes__container">
-          {recipes?.map((item) => (
-            <div className="recipe__card" key={item.id}>
-              <CardRecipe data={item} key={item.id} />
+          {!filtredRecipes.length && (
+            <div className="no__found">
+              <span className="no__found__text">Not found</span>
+              <div className="no__found__image" />
             </div>
+          )}
+          {filtredRecipes?.map((item) => (
+            <Link
+              to={`/recipe/${item.id}`}
+              className="recipe__card"
+              key={item.id}
+            >
+              <CardRecipe data={item} key={item.id} />
+            </Link>
           ))}
         </div>
       </div>

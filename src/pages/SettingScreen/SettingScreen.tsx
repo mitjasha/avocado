@@ -32,17 +32,7 @@ const SettingScreen = () => {
               />
             </div>
           </div>
-          <div className="setting__container__child">
-            <span className="setting__container__span">Sound</span>
-            <div className="switch__container">
-              <button
-                type="button"
-                aria-label="sound switcher"
-                className="switch_sound"
-                onClick={(event) => pressSwitcher(event)}
-              />
-            </div>
-          </div>
+
           <div className="setting__container__child">
             <span className="setting__container__span">Language</span>
             <select className="select-lang__container">
