@@ -79,12 +79,14 @@ const RecipeScreen: React.FC = () => {
             backgroundImage: `url(${recipe?.imageURL})`,
           }}
         >
-          <button
-            type="button"
-            className="recipe__favorite"
-            aria-label="like"
-            onClick={addFavorite}
-          />
+          <div className="recipe__bg__like">
+            <button
+              type="button"
+              className="recipe__favorite"
+              aria-label="like"
+              onClick={addFavorite}
+            />
+          </div>
         </div>
         <div className="recipe__info">
           <ul className="recipe__info__ul">
