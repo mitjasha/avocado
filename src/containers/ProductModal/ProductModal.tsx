@@ -36,7 +36,17 @@ const ProductModal: React.FC<ProductProps> = ({ data, mealType }) => {
       ? `${new Date().getMonth() + 1}`
       : `0${new Date().getMonth() + 1}`;
 
-  const time = `${new Date().getFullYear()}-${month}-${new Date().getDate()} ${new Date().getHours()}:${new Date().getMinutes()}`;
+  const hours =
+    new Date().getHours() > 9
+      ? `${new Date().getHours()}`
+      : `0${new Date().getHours()}`;
+
+  const minutes =
+    new Date().getMinutes() > 9
+      ? `${new Date().getMinutes()}`
+      : `0${new Date().getMinutes()}`;
+
+  const time = `${new Date().getFullYear()}-${month}-${new Date().getDate()} ${hours}:${minutes}`;
 
   const addEventMeal = async () => {
     const modalInput = document.querySelector(

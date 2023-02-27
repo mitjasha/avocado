@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import female from "../../assets/png/female.png";
 import male from "../../assets/png/male.png";
 import ProfileNavButton from "../../components/Buttons/ProfileNavButton/ProfileNavButton";
@@ -7,6 +8,7 @@ import "./ProfileScreen.scss";
 import profileController from "../../api/profile.controller";
 
 const ProfileScreen: React.FC = () => {
+  const { t } = useTranslation();
   const [firstName, setFirstName] = useState("");
   const [gender, setGender] = useState("");
   const [birth, setBirth] = useState("");
@@ -26,7 +28,12 @@ const ProfileScreen: React.FC = () => {
     setTargetWeight(profile[0].targetWeight);
   };
 
-  const profileNavNames = ["progress", "recipes", "settings", "about"];
+  const profileNavNames = [
+    ["progress", t("profile_progress")],
+    ["recipes", t("profile_recipes")],
+    ["settings", t("profile_settings")],
+    ["about", t("profile_about")],
+  ];
 
   const getAge = (birthUser: string) => {
     const userAge = Math.floor(
@@ -42,7 +49,7 @@ const ProfileScreen: React.FC = () => {
 
   return (
     <div className="profile-screen">
-      <h1 className="profile-screen__title">Your Profile</h1>
+      <h1 className="profile-screen__title">{t("profile_title")}</h1>
       <div className="container">
         <div className="user-data">
           <EditButton className="user-data__edit" to="/edit-profile" />
@@ -53,39 +60,45 @@ const ProfileScreen: React.FC = () => {
               className="user-data__heading__avatar"
             />
             <h2 className="user-data__heading__title">
-              Hello,
+              {t("profile_hello")},
               <br /> <span style={{ color: "#559c4f" }}>{firstName}</span>!
             </h2>
           </div>
           <div className="user-data__info">
             <div className="user-data__info__titles">
-              <p>Gender:</p>
-              <p>Age:</p>
-              <p>Height:</p>
-              <p>Weight:</p>
-              <p>Goal:</p>
-              <p>Target weight:</p>
+              <p>{t("edit_profile_gender")}</p>
+              <p>{t("edit_profile_age")}</p>
+              <p>{t("edit_profile_height")}</p>
+              <p>{t("edit_profile_current_weight")}</p>
+              <p>{t("edit_profile_goal")}</p>
+              <p>{t("edit_profile_target_weight")}</p>
             </div>
             <div className="user-data__info__answers">
               <p>{gender[0] + gender.slice(1).toLowerCase()}</p>
               <p>{getAge(birth)}</p>
-              <p>{Number(height).toFixed()} cm</p>
-              <p>{Number(weight).toFixed(1)} kg</p>
+              <p>
+                {Number(height).toFixed()} {t("cm")}
+              </p>
+              <p>
+                {Number(weight).toFixed()} {t("kg")}
+              </p>
               <p>{goal}</p>
-              <p>{Number(targetWeight).toFixed(1)} kg</p>
+              <p>
+                {Number(targetWeight).toFixed()} {t("kg")}
+              </p>
             </div>
           </div>
         </div>
         <div className="profile-menu">
           <ul className="profile-menu__list">
             {profileNavNames.map((item) => {
-              const title = item[0].toUpperCase() + item.slice(1);
+              const title = item[1].toUpperCase();
               return (
                 <ProfileNavButton
-                  key={item}
-                  to={`/${item}`}
+                  key={item[0]}
+                  to={`/${item[0]}`}
                   title={title}
-                  className={`list-item__icon_${item}`}
+                  className={`list-item__icon_${item[0]}`}
                 />
               );
             })}

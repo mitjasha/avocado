@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import RegBackButton from "../../components/Buttons/RegBackButton/RegBackButton";
 import NextRegButton from "../../components/Buttons/NextRegButton/NextRegButton";
 import {
@@ -33,6 +34,7 @@ const RegistrationScreen: React.FC = () => {
   const [processCount, setCounter] = useState<number>(1);
   const [gradientValue, setGradientValue] = useState<string>("");
   const [isDisabled, setDisabled] = useState(true);
+  const { t } = useTranslation();
 
   const navigate = useNavigate();
 
@@ -137,11 +139,11 @@ const RegistrationScreen: React.FC = () => {
           <div className="container profile-reg-container">
             <div className="full-name">
               <div className="full-name__first-name">
-                <h2 className="input-title">First Name</h2>
+                <h2 className="input-title">{t("edit_profile_first_name")}</h2>{" "}
                 <div className="input-wrapper input-wrapper_username">
                   <FormInput
                     type="text"
-                    placeholder="First Name"
+                    placeholder={t("edit_profile_first_name") as string}
                     register={register("firstName", { ...validationName })}
                   />
                   {errors?.firstName && (
@@ -150,11 +152,11 @@ const RegistrationScreen: React.FC = () => {
                 </div>
               </div>
               <div className="full-name__last-name">
-                <h2 className="input-title">Last Name</h2>
+                <h2 className="input-title">{t("edit_profile_last_name")}</h2>
                 <div className="input-wrapper input-wrapper_username">
                   <FormInput
                     type="text"
-                    placeholder="Last Name"
+                    placeholder={t("edit_profile_last_name") as string}
                     register={register("lastName", { ...validationName })}
                   />
                   {errors?.lastName && (
@@ -164,9 +166,12 @@ const RegistrationScreen: React.FC = () => {
               </div>
             </div>
             <div className="email-address">
-              <h2 className="input-title">Email Address</h2>
+              <h2 className="input-title">{t("registration_email")}</h2>
               <div className="input-wrapper input-wrapper_email">
-                <RegInput type="email" placeholder="Email Address" />
+                <RegInput
+                  type="email"
+                  placeholder={t("registration_email") as string}
+                />
               </div>
             </div>
           </div>
@@ -175,12 +180,13 @@ const RegistrationScreen: React.FC = () => {
           <div className="container questions-container">
             <div className="questions__gender">
               <h2 className="reg-title">
-                What is your{" "}
-                <span className="reg-title__highlight">gender</span>?
+                {t("registration_gender_1")}{" "}
+                <span className="reg-title__highlight">
+                  {t("registration_gender_2")}
+                </span>
+                ?
               </h2>
-              <p className="data-info">
-                We will use this data to give you a better diet type for you
-              </p>
+              <p className="data-info">{t("registration_info_1")}</p>
               <div className="gender-input">
                 <input
                   type="radio"
@@ -196,7 +202,7 @@ const RegistrationScreen: React.FC = () => {
                     alt="male"
                     className="gender-input__icon"
                   />
-                  Male
+                  {t("registration_male")}
                 </label>
                 <input
                   type="radio"
@@ -212,7 +218,7 @@ const RegistrationScreen: React.FC = () => {
                     alt="female"
                     className="gender-input__icon"
                   />
-                  Female
+                  {t("registration_female")}
                 </label>
               </div>
             </div>
@@ -222,13 +228,14 @@ const RegistrationScreen: React.FC = () => {
           <div className="container questions-container">
             <div className="questions__age">
               <h2 className="reg-title">
-                Your <span className="reg-title__highlight">date of birth</span>
+                {t("registration_birth_1")}{" "}
+                <span className="reg-title__highlight">
+                  {t("registration_birth_2")}
+                </span>
                 ?
               </h2>
-              <p className="data-info">
-                We will use this data to give you a better diet type for you
-              </p>
-              <div className="age-display">Age</div>
+              <p className="data-info">{t("registration_info_1")}</p>
+              <div className="age-display">{t("edit_profile_age")}</div>
               <input
                 type="date"
                 className="age-input"
@@ -245,12 +252,14 @@ const RegistrationScreen: React.FC = () => {
           <div className="container questions-container">
             <div className="questions__tall">
               <h2 className="reg-title">
-                How <span className="reg-title__highlight">tall</span> are you?
+                {t("registration_height_1")}{" "}
+                <span className="reg-title__highlight">
+                  {t("registration_height_2")}
+                </span>{" "}
+                {t("registration_height_3")}
               </h2>
-              <p className="data-info">
-                We will use this data to give you a better diet type for you
-              </p>
-              <div className="unit">cm</div>
+              <p className="data-info">{t("registration_info_1")}</p>
+              <div className="unit">{t("cm")}</div>
               <div className="triangle" />
               <div className="tall-input-wrapper">
                 <TallInput
@@ -265,13 +274,14 @@ const RegistrationScreen: React.FC = () => {
           <div className="container questions-container">
             <div className="questions__weight">
               <h2 className="reg-title">
-                Your{" "}
-                <span className="reg-title__highlight">current weight</span>?
+                {t("registration_birth_1")}{" "}
+                <span className="reg-title__highlight">
+                  {t("registration_current_weight")}
+                </span>
+                ?
               </h2>
-              <p className="data-info">
-                We will use this data to give you a better diet type for you
-              </p>
-              <div className="unit">kg</div>
+              <p className="data-info">{t("registration_info_1")}</p>
+              <div className="unit">{t("kg")}</div>
               <div className="triangle" />
               <div className="weight-input-wrapper">
                 <WeightInput
@@ -287,11 +297,13 @@ const RegistrationScreen: React.FC = () => {
           <div className="container questions-container">
             <div className="questions__goal">
               <h2 className="reg-title">
-                Your is your <span className="reg-title__highlight">goal</span>?
+                {t("registration_goal_1")}{" "}
+                <span className="reg-title__highlight">
+                  {t("registration_goal_2")}
+                </span>
+                ?
               </h2>
-              <p className="data-info">
-                We will use this data to give you a better diet type for you
-              </p>
+              <p className="data-info">{t("registration_info_1")}</p>
               <div className="goal-input">
                 <input
                   type="radio"
@@ -303,7 +315,7 @@ const RegistrationScreen: React.FC = () => {
                 />
                 <label htmlFor="lose" className="goal-input__label">
                   <img src={loseIcon} alt="lose" className="goal-input__icon" />
-                  Lose weight
+                  {t("edit_profile_lose_weight")}
                 </label>
                 <input
                   type="radio"
@@ -319,7 +331,7 @@ const RegistrationScreen: React.FC = () => {
                     alt="maintain"
                     className="goal-input__icon"
                   />
-                  Maintain weight
+                  {t("edit_profile_maintain_weight")}
                 </label>
                 <input
                   type="radio"
@@ -331,7 +343,7 @@ const RegistrationScreen: React.FC = () => {
                 />
                 <label htmlFor="gain" className="goal-input__label">
                   <img src={gainIcon} alt="gain" className="goal-input__icon" />
-                  Gain weight
+                  {t("edit_profile_gain_weight")}
                 </label>
               </div>
             </div>
@@ -341,13 +353,14 @@ const RegistrationScreen: React.FC = () => {
           <div className="container questions-container">
             <div className="questions__weight">
               <h2 className="reg-title">
-                Your <span className="reg-title__highlight">target weight</span>
-                ?
+                {t("registration_target_weight_1")}{" "}
+                <span className="reg-title__highlight">
+                  {t("registration_target_weight_2")}
+                </span>
+                ?{" "}
               </h2>
-              <p className="data-info">
-                We will use this data to give you a better diet type for you
-              </p>
-              <div className="unit">kg</div>
+              <p className="data-info">{t("registration_info_1")}</p>
+              <div className="unit">{t("kg")}</div>
               <div className="triangle" />
               <div className="weight-wrapper">
                 <div className="weight-wrapper__current">
@@ -362,7 +375,7 @@ const RegistrationScreen: React.FC = () => {
                   />
                 </div>
               </div>
-              <p className="start-phrase">Let&apos;s Start!</p>
+              <p className="start-phrase">{t("registration_start")}</p>
             </div>
           </div>
         )}

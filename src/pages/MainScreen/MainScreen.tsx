@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import profileController from "../../api/profile.controller";
 import DailyEventWrapper from "../../components/DailyEventWrapper/DailyEventWrapper";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
@@ -32,6 +33,8 @@ const MainScreen: React.FC = () => {
     id: "",
     name: "No data",
   });
+
+  const { t } = useTranslation();
 
   const profileID = JSON.parse(localStorage.getItem("profileID") as string);
 
@@ -295,7 +298,7 @@ const MainScreen: React.FC = () => {
               <p className="chart-data-num">
                 {burntKcal.toFixed(1).toString()}
               </p>
-              <h5 className="chart-data-title">Burnt</h5>
+              <h5 className="chart-data-title">{t("main_burnt")}</h5>
             </div>
             <div className="calories-chart__chart">
               <ChartComponent
@@ -315,7 +318,7 @@ const MainScreen: React.FC = () => {
                     .toFixed(1)
                     .toString()}
                 </p>
-                <h5 className="chart-data-title">Kcal available</h5>
+                <h5 className="chart-data-title">{t("main_kcal_available")}</h5>
               </div>
             </div>
             <div className="calories-chart__info">
@@ -323,14 +326,14 @@ const MainScreen: React.FC = () => {
               <p className="chart-data-num">
                 {eatenKcal.toFixed(1).toString()}
               </p>
-              <h5 className="chart-data-title">Eaten</h5>
+              <h5 className="chart-data-title">{t("main_eaten")}</h5>
             </div>
           </div>
           <div className="goal-kcal">
             <p className="chart-data-num">
               {recomKcalPerDay.toFixed(1).toString()}
             </p>
-            <h5 className="chart-data-title">Kcal goal</h5>
+            <h5 className="chart-data-title">{t("main_kcal_goal")}</h5>
           </div>
           <div className="nutrients-charts">
             <div className="nutrients-charts__item">
@@ -351,9 +354,10 @@ const MainScreen: React.FC = () => {
               </div>
               <div className="chart-info">
                 <p className="chart-data-num nutrients-num">
-                  {eatenCarbs.toFixed(1).toString()}g
+                  {eatenCarbs.toFixed(1).toString()}
+                  {t("g")}
                 </p>
-                <h5 className="chart-data-title">Carbs</h5>
+                <h5 className="chart-data-title">{t("main_carbs")}</h5>
               </div>
             </div>
             <div className="nutrients-charts__item">
@@ -374,9 +378,10 @@ const MainScreen: React.FC = () => {
               </div>
               <div className="chart-info">
                 <p className="chart-data-num nutrients-num">
-                  {eatenFats.toFixed(1).toString()}g
+                  {eatenFats.toFixed(1).toString()}
+                  {t("g")}
                 </p>
-                <h5 className="chart-data-title">Fats</h5>
+                <h5 className="chart-data-title">{t("main_fats")}</h5>
               </div>
             </div>
             <div className="nutrients-charts__item">
@@ -397,9 +402,10 @@ const MainScreen: React.FC = () => {
               </div>
               <div className="chart-info">
                 <p className="chart-data-num nutrients-num">
-                  {eatenProteins.toFixed(1).toString()}g
+                  {eatenProteins.toFixed(1).toString()}
+                  {t("g")}
                 </p>
-                <h5 className="chart-data-title">Protein</h5>
+                <h5 className="chart-data-title">{t("main_proteins")}</h5>
               </div>
             </div>
           </div>
@@ -409,61 +415,84 @@ const MainScreen: React.FC = () => {
         <div className="daily-events">
           <EditButton className="daily-events__edit" to="/edit-event" />
           <div className="daily-events__meals">
-            <h1 className="daily-events__title">Daily meals</h1>
+            <h1 className="daily-events__title">{t("main_daily_meals")}</h1>
             <DailyEventWrapper
               title="Breakfast"
-              recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity={`${breakfastKcal.toFixed(1).toString()} kcal`}
+              name={t("main_breakfast")}
+              recommended={`${t("main_recommended")} ${Math.round(
+                recomKcalPerDay / 4,
+              )} ${t("main_kcal")}`}
+              quantity={`${breakfastKcal.toFixed(1).toString()} ${t(
+                "main_kcal",
+              )}`}
               className="daily-events__item daily-events__item_breakfast"
             />
             <DailyEventWrapper
               title="Lunch"
-              recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity={`${lunchKcal.toFixed(1).toString()} kcal`}
+              name={t("main_lunch")}
+              recommended={`${t("main_recommended")} ${Math.round(
+                recomKcalPerDay / 4,
+              )} ${t("main_kcal")}`}
+              quantity={`${lunchKcal.toFixed(1).toString()} ${t("main_kcal")}`}
               className="daily-events__item daily-events__item_lunch"
             />
             <DailyEventWrapper
               title="Dinner"
-              recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity={`${dinnerKcal.toFixed(1).toString()} kcal`}
+              name={t("main_dinner")}
+              recommended={`${t("main_recommended")} ${Math.round(
+                recomKcalPerDay / 4,
+              )} ${t("main_kcal")}`}
+              quantity={`${dinnerKcal.toFixed(1).toString()} ${t("main_kcal")}`}
               className="daily-events__item daily-events__item_dinner"
             />
             <DailyEventWrapper
               title="Snack"
-              recommended={`Recomended ${Math.round(recomKcalPerDay / 4)} Kcal`}
-              quantity={`${snackKcal.toFixed(1).toString()} kcal`}
+              name={t("main_snack")}
+              recommended={`${t("main_recommended")} ${Math.round(
+                recomKcalPerDay / 4,
+              )} ${t("main_kcal")}`}
+              quantity={`${snackKcal.toFixed(1).toString()} ${t("main_kcal")}`}
               className="daily-events__item daily-events__item_snack"
             />
           </div>
           <div className="daily-events__water">
-            <h3 className="daily-events__title">Water consumed</h3>
+            <h3 className="daily-events__title">{t("main_water_consumed")}</h3>
             <DailyEventWrapper
               title="Water"
+              name={t("main_water")}
               quantity={`${waterConsumed}L (${Math.round(
                 (waterConsumed / recomWater) * 100,
               )}%)`}
-              recommended={`Recomended ${recomWater
+              recommended={`${t("main_recommended")} ${recomWater
                 .toFixed(2)
-                .toString()}L (${Math.ceil(recomWater / 0.25)} glasses)`}
+                .toString()}${t("main_liter")} (${Math.ceil(
+                recomWater / 0.25,
+              )} ${t("main_glasses")})`}
               className="daily-events__item daily-events__item_water"
               handleClick={addWater}
               content={drawGlasses(waterConsumed)}
             />
           </div>
           <div className="daily-events__exercise">
-            <h3 className="daily-events__title">Daily exercise</h3>
+            <h3 className="daily-events__title">{t("main_daily_exercise")}</h3>
             <DailyEventWrapper
               title="Activity"
-              quantity={`${burntKcal.toFixed(1).toString()} kcal burnt`}
-              recommended={`Last: ${lastActivity.name}`}
+              name={t("main_activity")}
+              quantity={`${burntKcal.toFixed(1).toString()} ${t(
+                "main_kcal",
+              )} ${t("main_burnt_min")}`}
+              recommended={`${t("main_last_activity")}: ${lastActivity.name}`}
               className="daily-events__item daily-events__item_exercise"
             />
           </div>
           <div className="daily-events__weight">
-            <h3 className="daily-events__title">Body control</h3>
+            <h3 className="daily-events__title">{t("main_body_control")}</h3>
             <DailyEventWrapper
               title="Weight"
-              recommended={`Target: ${targetWeight} kg`}
+              name={t("main_weight")}
+              recommended={`${t("main_target_weight")}: ${targetWeight} ${t(
+                "kg",
+              )}`}
               className="daily-events__item daily-events__item_weight"
               handleClick={() => changeWeight(true)}
               minusButton={
@@ -474,7 +503,7 @@ const MainScreen: React.FC = () => {
               }
               curWeight={
                 <p className="curr-weight-display">
-                  {currentWeight.toFixed(1).toString()} kg
+                  {currentWeight.toFixed(1).toString()} ${t("kg")}
                 </p>
               }
             />

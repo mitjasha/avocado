@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useSearchParams, useParams, Link } from "react-router-dom";
 import CardCategory from "../../components/CardCategory/CardRecipe/CardCategory";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
@@ -10,26 +11,32 @@ import "./CategoriesRecipesScreen.scss";
 import { RecipeResponse } from "../../api/api.interface";
 import recipesController from "../../api/recipes.controller";
 import profileController from "../../api/profile.controller";
+import recipesRUController from "../../api/recipes-ru.controller";
 
 const CategoriesRecipesScreen: React.FC = () => {
+  const { t } = useTranslation();
   const categories = {
     breakfast: {
       title: "Breakfast",
+      name: t("main_breakfast"),
       image: breakfastImg,
       color: "rgba(234, 167, 15, 0.5)",
     },
     appetizers: {
       title: "Appetizers",
+      name: t("recipes_appetizers"),
       image: appetizersImg,
       color: "rgba(85, 156, 79, 0.5)",
     },
     dinner: {
       title: "Dinner",
+      name: t("main_dinner"),
       image: pastaImg,
       color: "rgba(218, 38, 2, 0.5)",
     },
     favorites: {
       title: "Favorites",
+      name: t("recipes_favourites"),
       image: favImg,
       color: "rgba(2, 50, 218, 0.5)",
     },
@@ -48,10 +55,16 @@ const CategoriesRecipesScreen: React.FC = () => {
   // });
 
   const getRcipes = async () => {
-    const result = await recipesController.getAllRecipes();
-    if (result) {
-      setRecipes(result);
-      console.log(recipes);
+    if (localStorage.getItem("language") === "en") {
+      const result = await recipesController.getAllRecipes();
+      if (result) {
+        setRecipes(result);
+      }
+    } else {
+      const result = await recipesRUController.getAllRecipes();
+      if (result) {
+        setRecipes(result);
+      }
     }
   };
 
@@ -76,8 +89,6 @@ const CategoriesRecipesScreen: React.FC = () => {
     const queryTime = searchParams.get("time");
     const queryKcal = searchParams.get("kcal");
 
-    console.log(queryFavourite, queryVegetarian, queryTime, queryKcal);
-
     let categoryData = data.filter((item) =>
       item.category.includes("appetizers"),
     );
@@ -98,7 +109,6 @@ const CategoriesRecipesScreen: React.FC = () => {
       );
     }
     setRecipes(categoryData);
-    console.log(recipes.length);
   };
 
   useEffect(() => {
@@ -146,7 +156,7 @@ const CategoriesRecipesScreen: React.FC = () => {
           <BackButton to="/recipes" />
           <div className="categories__header__nav">
             <h1 className="categories__header__h1">
-              {categories[category as keyof typeof categories].title}
+              {categories[category as keyof typeof categories].name}
             </h1>
             <span className="categories__header__span">
               {categories[category as keyof typeof categories].title !==
@@ -158,7 +168,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                 "Favorites" &&
                 recipes.filter((item) => favourites.includes(item.id))
                   .length}{" "}
-              Recipes
+              {t("recipes_resipes")}
             </span>
             <ul className="categories__header__ul">
               <li className="categories__header__li">
@@ -177,7 +187,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                     );
                   }}
                 >
-                  Veg
+                  {t("categories_veg")}
                 </button>
               </li>
               <li className="categories__header__li">
@@ -194,7 +204,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                     );
                   }}
                 >
-                  Favorites
+                  {t("recipes_favourites")}
                 </button>
               </li>
               <li className="categories__header__li">
@@ -211,7 +221,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                     );
                   }}
                 >
-                  Quick
+                  {t("categories_quick")}
                 </button>
               </li>
               <li className="categories__header__li">
@@ -219,12 +229,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                   type="button"
                   onClick={() => {
                     setSearchParams({ kcal: "true" });
-                    console.log(
-                      searchParams.get("vegetarian"),
-                      searchParams.get("favourite"),
-                      searchParams.get("time"),
-                      searchParams.get("kcal"),
-                    );
+
                     sortAndFilter(
                       searchParams.get("vegetarian"),
                       searchParams.get("favourite"),
@@ -234,7 +239,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                     );
                   }}
                 >
-                  Calories
+                  {t("categories_calories")}
                 </button>
               </li>
             </ul>
@@ -274,7 +279,7 @@ const CategoriesRecipesScreen: React.FC = () => {
               }`,
             }}
           >
-            No recipes found
+            {t("categories_no_found")}
           </div>
         </div>
       </div>

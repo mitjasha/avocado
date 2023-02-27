@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./EditProfileDataScreen.scss";
@@ -16,6 +17,7 @@ const getAge = (birth: string) => {
 };
 
 const EditProfileDataScreen: React.FC = () => {
+  const { t } = useTranslation();
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [gender, setGender] = useState<string>("");
@@ -74,7 +76,7 @@ const EditProfileDataScreen: React.FC = () => {
   return (
     <div className="edit-profile__screen">
       <div className="container">
-        <h1 className="edit-profile__h1">Edit your data</h1>
+        <h1 className="edit-profile__h1">{t("edit_profile_header")}</h1>
         <div className="edit-profile__container">
           <div className="edit-profile__header">
             <div
@@ -89,7 +91,7 @@ const EditProfileDataScreen: React.FC = () => {
             />
             <div className="edit-profile__info">
               <label htmlFor="username">
-                Username:
+                {t("edit_profile_username")}:
                 <ProductInput
                   type="text"
                   placeholder={userName}
@@ -100,7 +102,7 @@ const EditProfileDataScreen: React.FC = () => {
                 />
               </label>
               <label htmlFor="firstname">
-                First Name:
+                {t("edit_profile_first_name")}:
                 <ProductInput
                   type="text"
                   placeholder={firstName}
@@ -113,7 +115,7 @@ const EditProfileDataScreen: React.FC = () => {
                 />
               </label>
               <label htmlFor="lastname">
-                Last Name:
+                {t("edit_profile_last_name")}:
                 <ProductInput
                   type="text"
                   placeholder={lastName}
@@ -132,7 +134,7 @@ const EditProfileDataScreen: React.FC = () => {
             style={{ width: "360px", flexDirection: "row" }}
           >
             <div className="item__container">
-              Gender:
+              {t("edit_profile_gender")}:
               <div className="item__container">
                 <label
                   htmlFor="gender"
@@ -147,7 +149,7 @@ const EditProfileDataScreen: React.FC = () => {
                     id="gender"
                     checked={gender === "MALE"}
                   />
-                  Male
+                  {t("edit_profile_male")}
                 </label>
               </div>
               <div className="item__container">
@@ -160,12 +162,12 @@ const EditProfileDataScreen: React.FC = () => {
                     id="gender"
                     checked={gender === "FEMALE"}
                   />
-                  Female
+                  {t("edit_profile_female")}
                 </label>
               </div>
             </div>
             <label htmlFor="age" className="item__container">
-              Age:
+              {t("edit_profile_age")}:
               <ProductInput
                 type="text"
                 placeholder={getAge(birth)}
@@ -176,7 +178,7 @@ const EditProfileDataScreen: React.FC = () => {
               />
             </label>
             <label htmlFor="birth" className="item__container">
-              Birth:
+              {t("edit_profile_birth")}:
               <ProductInput
                 type="date"
                 placeholder={birth.slice(0, 10)}
@@ -190,7 +192,7 @@ const EditProfileDataScreen: React.FC = () => {
             </label>
             <div className="item__container">
               <label htmlFor="goal">
-                Goal:
+                {t("edit_profile_goal")}:
                 <select
                   className="select__container"
                   id="goal"
@@ -200,19 +202,19 @@ const EditProfileDataScreen: React.FC = () => {
                   }
                 >
                   <option defaultChecked={goal === "Lose weight"}>
-                    Lose weight
+                    {t("edit_profile_lose_weight")}
                   </option>
                   <option defaultChecked={goal === "Maintain weight"}>
-                    Maintain weight
+                    {t("edit_profile_maintain_weight")}
                   </option>
                   <option defaultChecked={goal === "Gain weight"}>
-                    Gain weight
+                    {t("edit_profile_gain_weight")}
                   </option>
                 </select>
               </label>
             </div>
             <label htmlFor="currentWeight" className="item__container">
-              Current weight:
+              {t("edit_profile_current_weight")}:
               <div>
                 <ProductInput
                   type="number"
@@ -226,11 +228,11 @@ const EditProfileDataScreen: React.FC = () => {
                   maxLength={3}
                   minLength={2}
                 />
-                &nbsp;kg
+                &nbsp;{t("kg")}
               </div>
             </label>
             <label htmlFor="targetWeight" className="item__container">
-              Target weight:
+              {t("edit_profile_target_weight")}:
               <div>
                 <ProductInput
                   type="number"
@@ -246,11 +248,11 @@ const EditProfileDataScreen: React.FC = () => {
                   maxLength={3}
                   minLength={2}
                 />
-                &nbsp;kg
+                &nbsp;{t("kg")}
               </div>
             </label>
             <label htmlFor="height" className="item__container">
-              Height:
+              {t("edit_profile_height")}:
               <div>
                 <ProductInput
                   type="number"
@@ -264,7 +266,7 @@ const EditProfileDataScreen: React.FC = () => {
                   maxLength={3}
                   minLength={2}
                 />
-                &nbsp;cm
+                &nbsp;{t("cm")}
               </div>
             </label>
           </div>
@@ -290,7 +292,7 @@ const EditProfileDataScreen: React.FC = () => {
           navigate("/profile");
         }}
       >
-        Save changes
+        {t("edit_profile_save")}
       </ButtonTemplate>
     </div>
   );
