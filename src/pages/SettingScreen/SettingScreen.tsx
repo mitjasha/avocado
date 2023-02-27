@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Buttons/Button/Button";
 import "./SettingScreen.scss";
 
 const SettingScreen = () => {
   const navigate = useNavigate();
-
+  const { t } = useTranslation();
   const pressExit = () => {
     localStorage.clear();
     navigate("/");
@@ -49,10 +50,12 @@ const SettingScreen = () => {
   return (
     <div className="setting__screen">
       <div className="container">
-        <h1 className="setting__screen__h1">Settings</h1>
+        <h1 className="setting__screen__h1">{t("settings_title")}</h1>
         <div className="setting__container">
           <div className="setting__container__child">
-            <span className="setting__container__span">Dark theme</span>
+            <span className="setting__container__span">
+              {t("settings_theme")}
+            </span>
             <div className="switch__container">
               <button
                 type="button"
@@ -64,31 +67,31 @@ const SettingScreen = () => {
           </div>
 
           <div className="setting__container__child">
-            <span className="setting__container__span">Language</span>
+            <span className="setting__container__span">
+              {t("settings_lang")}
+            </span>
             <select
               className="select-lang__container"
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
             >
               <option value="en" defaultChecked>
-                en
+                {t("settings_en")}
               </option>
-              <option value="ru">ru</option>
+              <option value="ru">{t("settings_ru")}</option>
             </select>
           </div>
           <div className="setting__container__child">
-            <span className="setting__container__span">
-              Want to leave an account?
-            </span>
+            <span className="setting__container__span">{t("leave")}</span>
             <button className="leave-acc-btn" type="button" onClick={pressExit}>
-              Yes
+              {t("yes")}
             </button>
           </div>
         </div>
         <div className="setting__screen__logo" />
         <div className="setting__container__child">
           <Button className="settings__save-btn" to="/profile">
-            SAVE
+            {t("save")}
           </Button>
         </div>
       </div>
