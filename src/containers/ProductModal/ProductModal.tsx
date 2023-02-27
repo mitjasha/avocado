@@ -58,10 +58,6 @@ const ProductModal: React.FC<ProductProps> = ({ data, mealType }) => {
     }
   };
 
-  // useEffect(() => {
-  //   setKcal(data.calories_100g);
-  // }, []);
-
   return (
     <BasicModalComponent title={data.name} className="product-modal">
       <div className="modal__container">

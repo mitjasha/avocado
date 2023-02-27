@@ -7,9 +7,10 @@ import fireImg from "../../assets/svg/fire.svg";
 import eatenImg from "../../assets/svg/eaten.svg";
 import EditButton from "../../components/Buttons/EditButton/EditButton";
 import eventActivityController from "../../api/event-activity.controller";
-import "./MainScreen.scss";
 import eventMealController from "../../api/event-meal.controller";
 import eventsController from "../../api/event.controller";
+import { useAppContext } from "../../context";
+import "./MainScreen.scss";
 
 const MainScreen: React.FC = () => {
   const [recomKcalPerDay, setRecomKcalPerDay] = useState<number>(0);
@@ -38,15 +39,14 @@ const MainScreen: React.FC = () => {
     return date > 9 ? `${date}` : `0${date}`;
   };
 
-  const date = `${new Date().getFullYear()}-${correctData(
-    new Date().getMonth() + 1,
-  )}-${correctData(new Date().getDate())}`;
-
   const time = `${new Date().getFullYear()}-${correctData(
     new Date().getMonth() + 1,
   )}-${correctData(new Date().getDate())} ${correctData(
     new Date().getHours(),
   )}:${correctData(new Date().getMinutes())}`;
+
+  const appContext = useAppContext();
+  const date = localStorage.getItem("date") as string;
 
   const getEatenKcal = async () => {
     const eaten = await eventMealController.getEventsByDate(date);
@@ -115,7 +115,7 @@ const MainScreen: React.FC = () => {
           return acc + res;
         }, 0),
       );
-    }
+    } else setBurntKcal(0);
   };
 
   const getLastActivity = async () => {
@@ -184,15 +184,18 @@ const MainScreen: React.FC = () => {
       startTime: time,
       description: "",
     });
-    console.log("Drink");
-
     setWaterConsumed(waterConsumed + 0.25);
   };
 
-  const drawGlasses = () => {
+  const getWater = async () => {
+    const userWater = await eventsController.getEventsByDate(date);
+    setWaterConsumed(userWater.length * 0.25);
+  };
+
+  const drawGlasses = (water: number) => {
     const content = [];
     const oneGlass = 0.25;
-    const glasses = waterConsumed / oneGlass;
+    const glasses = water / oneGlass;
     for (let i = 0; i < glasses; i += 1) {
       content.push(<div className="glass" key={i} />);
     }
@@ -260,11 +263,27 @@ const MainScreen: React.FC = () => {
     getEatenKcal();
     getActivityKcal();
     getLastActivity();
+    getWater();
   }, []);
 
   useEffect(() => {
     getCurrentWeight();
   }, [currentWeight]);
+  
+  useEffect(() => {
+    getRecommendedKcal();
+    getRecomWater();
+    getCurrentWeight();
+    getTargetWeight();
+    getEatenKcal();
+    getActivityKcal();
+    getLastActivity();
+    getWater();
+  }, [appContext]);
+
+  useEffect(() => {
+    getWater();
+  }, [waterConsumed]);
 
   return (
     <div className="main-screen">
@@ -427,8 +446,8 @@ const MainScreen: React.FC = () => {
                 .toFixed(2)
                 .toString()}L (${Math.ceil(recomWater / 0.25)} glasses)`}
               className="daily-events__item daily-events__item_water"
-              content={drawGlasses()}
               handleClick={addWater}
+              content={drawGlasses(waterConsumed)}
             />
           </div>
           <div className="daily-events__exercise">
