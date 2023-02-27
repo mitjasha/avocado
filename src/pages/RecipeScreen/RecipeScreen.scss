@@ -38,7 +38,7 @@
     background: none;
     height: 40px;
     width: 40px;
-    background-image: url("../../assets/svg/heart_recipe-light.svg");
+    background-image: url("../../assets/svg/favorites.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-size: 80%;
@@ -47,7 +47,7 @@
 
     &:hover {
       background-color: var(--input-color);
-      background-image: url("../../assets/svg/heart_recipe.svg");
+      background-image: url("../../assets/svg/favorites-light.svg");
       transition: 0.4s all ease;
     }
   }

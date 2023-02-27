@@ -39,12 +39,12 @@
     background: none;
     width: 18px;
     height: 16px;
-    background-image: url("../../assets/svg/heart_recipe-light.svg");
+    background-image: url("../../assets/svg/favorites.svg");
     background-repeat: no-repeat;
     background-size: cover;
 
     &:hover {
-      background-image: url("../../assets/svg/heart_recipe.svg");
+      background-image: url("../../assets/svg/favorites-light.svg");
       cursor: pointer;
     }
   }

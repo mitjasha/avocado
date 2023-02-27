@@ -108,8 +108,7 @@
     }
 
     &:hover .list-item__icon_about {
-      background: var(--color-text) url(../../assets/svg/about-us-light.svg)
-        no-repeat;
+      background: var(--color-text) var(--about-us) no-repeat;
       transition: 0.4s all ease;
       background-size: 25px;
       background-position: 50%;
@@ -143,8 +142,7 @@
     }
 
     &_about {
-      background: var(--input-color) url(../../assets/svg/about-us.svg)
-        no-repeat;
+      background: var(--input-color) var(--about-us-hover) no-repeat;
       background-size: 25px;
       background-position: 50%;
     }
