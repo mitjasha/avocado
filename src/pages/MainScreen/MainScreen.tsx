@@ -7,9 +7,10 @@ import fireImg from "../../assets/svg/fire.svg";
 import eatenImg from "../../assets/svg/eaten.svg";
 import EditButton from "../../components/Buttons/EditButton/EditButton";
 import eventActivityController from "../../api/event-activity.controller";
-import "./MainScreen.scss";
 import eventMealController from "../../api/event-meal.controller";
 import eventsController from "../../api/event.controller";
+import { useAppContext } from "../../context";
+import "./MainScreen.scss";
 
 const MainScreen: React.FC = () => {
   const [recomKcalPerDay, setRecomKcalPerDay] = useState<number>(0);
@@ -38,15 +39,14 @@ const MainScreen: React.FC = () => {
     return date > 9 ? `${date}` : `0${date}`;
   };
 
-  const date = `${new Date().getFullYear()}-${correctData(
-    new Date().getMonth() + 1,
-  )}-${correctData(new Date().getDate())}`;
-
   const time = `${new Date().getFullYear()}-${correctData(
     new Date().getMonth() + 1,
   )}-${correctData(new Date().getDate())} ${correctData(
     new Date().getHours(),
   )}:${correctData(new Date().getMinutes())}`;
+
+  const appContext = useAppContext();
+  const date = localStorage.getItem("date") as string;
 
   const getEatenKcal = async () => {
     const eaten = await eventMealController.getEventsByDate(date);
@@ -115,7 +115,7 @@ const MainScreen: React.FC = () => {
           return acc + res;
         }, 0),
       );
-    }
+    } else setBurntKcal(0);
   };
 
   const getLastActivity = async () => {
@@ -184,7 +184,6 @@ const MainScreen: React.FC = () => {
       startTime: time,
       description: "",
     });
-    console.log("Drink");
 
     setWaterConsumed(waterConsumed + 0.25);
   };
@@ -251,6 +250,16 @@ const MainScreen: React.FC = () => {
     getActivityKcal();
     getLastActivity();
   }, []);
+
+  useEffect(() => {
+    getRecommendedKcal();
+    getRecomWater();
+    getCurrentWeight();
+    getTargetWeight();
+    getEatenKcal();
+    getActivityKcal();
+    getLastActivity();
+  }, [appContext]);
 
   return (
     <div className="main-screen">
