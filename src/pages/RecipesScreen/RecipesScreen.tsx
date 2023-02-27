@@ -162,13 +162,9 @@ const RecipesScreen: React.FC = () => {
             </div>
           )}
           {filtredRecipes?.map((item) => (
-            <Link
-              to={`/recipe/${item.id}`}
-              className="recipe__card"
-              key={item.id}
-            >
+            <div className="recipe__card" key={item.id}>
               <CardRecipe data={item} key={item.id} />
-            </Link>
+            </div>
           ))}
         </div>
       </div>

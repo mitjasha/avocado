@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { RecipeResponse } from "../../api/api.interface";
 import profileController from "../../api/profile.controller";
@@ -61,6 +62,8 @@ const CardRecipe: React.FC<CardRecipesProps> = ({ data }) => {
     });
   };
 
+  const { t } = useTranslation();
+
   return (
     <div className="recipe__wrapper">
       <div className="recipe__card__bg__like">
@@ -82,11 +85,15 @@ const CardRecipe: React.FC<CardRecipesProps> = ({ data }) => {
           <div className="recipe__data">
             <div className="recipe__data__calories">
               <div className="recipe__data__img__calories" />
-              <span className="recipe__data__span">{data.calories} Kcal</span>
+              <span className="recipe__data__span">
+                {data.calories} {t("recipe_kal")}
+              </span>
             </div>
             <div className="recipe__data__time">
               <div className="recipe__data__img__time" />
-              <span className="recipe__data__span">{data.time} min</span>
+              <span className="recipe__data__span">
+                {data.time} {t("min")}
+              </span>
             </div>
           </div>
         </div>

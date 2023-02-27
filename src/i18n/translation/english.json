@@ -110,6 +110,7 @@
   "recipe_ingredients": "INGREDIENTS",
   "recipe_method": "METHOD",
   "recipe_min": "MIN",
+  "recipe_kal": "Kcal",
   "categories_veg": "Veg",
   "categories_quick": "Quick",
   "categories_no_found": "No recipes found",
