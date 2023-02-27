@@ -36,7 +36,7 @@
   border: none;
 
   &-icon {
-    background: url(../../../assets//svg/arrow-light.svg) no-repeat;
+    background: var(--arrow-hover) no-repeat;
     transform: rotate(180deg);
     width: 20px;
     height: 30px;

@@ -24,7 +24,7 @@
   &__arrow {
     width: 30px;
     height: 30px;
-    background: url(../../assets/svg/arrow.svg) no-repeat;
+    background: var(--arrow) no-repeat;
     background-position: 50%;
     transform: rotate(180deg);
   }
