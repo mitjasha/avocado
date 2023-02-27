@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import plus from "../../assets/svg/plus-light.svg";
 import PlusMinusButton from "../Buttons/PlusMinusButton/PlusMinusButton";
 import "./DailyEventWrapper.scss";
 
@@ -44,24 +43,18 @@ const DailyEventWrapper: React.FC<DailyEventWrapperProps> = ({
           return (
             title === itemTitle && (
               <Link to={`/event/${item}`} key={item}>
-                <PlusMinusButton>
-                  <img src={plus} alt="plus" className="plus-minus-img" />
-                </PlusMinusButton>
+                <PlusMinusButton className="plus-img" />
               </Link>
             )
           );
         })}
 
         {title === "Water" && (
-          <PlusMinusButton>
-            <img src={plus} alt="plus" className="plus-minus-img" />
-          </PlusMinusButton>
+          <PlusMinusButton onClick={handleClick} className="plus-img" />
         )}
 
         {title === "Weight" && (
-          <PlusMinusButton onClick={handleClick}>
-            <img src={plus} alt="plus" className="plus-minus-img" />
-          </PlusMinusButton>
+          <PlusMinusButton onClick={handleClick} className="plus-img" />
         )}
       </div>
     </div>

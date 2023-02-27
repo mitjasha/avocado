@@ -1,12 +1,14 @@
 @import "../../variables.scss";
 
 .progress-screen {
-  background-color: $bg-color;
+  background-color: var(--color-background);
+  min-height: 100vh;
 
   &__title {
     margin: 0 0 20px 0;
     text-align: center;
     font-weight: 500;
+    color: var(--color-text);
   }
 
   &__progress {
@@ -28,21 +30,23 @@
     text-align: center;
     font-size: 18px;
     font-weight: 500;
+    color: var(--color-text);
   }
 
   &__slash:before {
     content: "";
     display: block;
     height: 173px;
-    border-left: 3px solid $dark-color;
+    border-left: 3px solid var(--color-text);
   }
 
   &__curr-weight {
     width: 125px;
     font-size: 24px;
+    color: var(--color-text);
 
     &_bg {
-      background-color: #c6e8aa;
+      background-color: var(--choosen-input-color);
       padding: 2px;
       border-radius: 10px;
     }
@@ -52,8 +56,12 @@
 .calories {
   padding: 20px 0;
 
+  &__title {
+    color: var(--color-text);
+  }
+
   &__daily-data {
-    background-color: $light-color;
+    background-color: var(--input-color);
     padding: 15px;
     border-radius: 20px;
   }
@@ -63,6 +71,7 @@
   &__title {
     text-align: center;
     font-size: 30px;
+    color: var(--color-text);
   }
 }
 

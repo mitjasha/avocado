@@ -11,7 +11,7 @@
     display: none;
 
     &:checked + label {
-      background-color: $middle-green;
+      background-color: var(--choosen-input-color);
     }
   }
 
@@ -20,7 +20,7 @@
     height: 244px;
     display: flex;
     flex-direction: column;
-    background-color: $light-color;
+    background-color: var(--input-color);
     border-radius: 20px;
     justify-content: center;
     align-items: center;

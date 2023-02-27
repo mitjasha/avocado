@@ -1,14 +1,14 @@
 @import "../../variables";
 
 .header {
-  background-color: $bg-color;
+  background-color: var(--color-background);
   height: 75px;
 
   &__container {
     display: flex;
     line-height: 2;
     letter-spacing: 0.5px;
-    color: $dark-color;
+    color: var(--color-text);
     align-items: center;
   }
 
@@ -27,7 +27,7 @@
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    background: $light-color url(../../assets/svg/calendar.svg) no-repeat;
+    background: var(--input-color) var(--calendar) no-repeat;
     background-size: 30px;
     background-position: 50%;
 
@@ -51,7 +51,7 @@
 
   &__date-input:hover {
     transition: 0.4s all ease;
-    background: $dark-color url(../../assets/svg/calendar-light.svg) no-repeat;
+    background: var(--color-text) var(--calendar-hover) no-repeat;
     background-size: 30px;
     background-position: 50%;
   }
@@ -63,7 +63,7 @@
   &__menu-btn {
     width: 44px;
     height: 44px;
-    background-color: $light-color;
+    background-color: var(--input-color);
     border-radius: 50px;
     display: flex;
     border: none;
@@ -75,11 +75,11 @@
 
   &__menu-btn:hover {
     transition: 0.4s all ease;
-    background-color: $dark-color;
+    background-color: var(--color-text);
   }
 
   &__menu-btn:hover .dot {
-    background-color: $light-color;
+    background-color: var(--input-color);
   }
 }
 
@@ -87,7 +87,7 @@
   width: 4.5px;
   height: 4.5px;
   border-radius: 50px;
-  background-color: $dark-color;
+  background-color: var(--color-text);
 }
 
 @media screen and (min-width: $media-tab-pt) {

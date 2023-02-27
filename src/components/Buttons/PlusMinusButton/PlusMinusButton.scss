@@ -5,7 +5,7 @@
   height: 30px;
   border: 0;
   border-radius: 50px;
-  background-color: $dark-color;
+  background-color: var(--color-text);
   cursor: pointer;
   background-position: 50%;
 
@@ -18,4 +18,18 @@
 .plus-minus-img {
   display: block;
   margin: auto;
+}
+
+.plus-img {
+  background-image: var(--plus-hover);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: 50%;
+}
+
+.minus-img {
+  background-image: var(--minus-hover);
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: 50%;
 }

@@ -18,7 +18,7 @@ const SplashScreen: React.FC = () => {
       } else {
         setLoading(false);
       }
-    }, 5000);
+    }, 3000);
   }, []);
 
   return (

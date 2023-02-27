@@ -67,7 +67,6 @@ const ActivityModal: React.FC<ActivityModalProps> = ({ data }) => {
             placeholder="1"
             className="activity-popup__input"
             onChange={calcKcalBurned}
-            defaultValue={1}
           />
           min
         </div>

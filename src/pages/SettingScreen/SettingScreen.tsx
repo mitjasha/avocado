@@ -1,20 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
+import Button from "../../components/Buttons/Button/Button";
 import "./SettingScreen.scss";
 
 const SettingScreen = () => {
   const navigate = useNavigate();
 
-  const pressSwitcher = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const target = event.target as HTMLButtonElement;
-    target.classList.toggle("switch_active");
-  };
-
   const pressExit = () => {
     localStorage.clear();
     navigate("/");
   };
+
+  const [theme, setTheme] = useState<string>(
+    localStorage.getItem("theme") || "light",
+  );
+
+  const setSwitcherClass = () => {
+    if (theme === "light") {
+      return "switch_theme";
+    }
+    return "switch_theme switch_active";
+  };
+
+  const toggleTheme = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const target = event.target as HTMLButtonElement;
+    target.classList.toggle("switch_active");
+    if (theme === "light") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      setTheme("dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   return (
     <div className="setting__screen">
@@ -27,35 +49,35 @@ const SettingScreen = () => {
               <button
                 type="button"
                 aria-label="theme switcher"
-                className="switch_theme"
-                onClick={(event) => pressSwitcher(event)}
+                className={setSwitcherClass()}
+                onClick={(event) => toggleTheme(event)}
               />
             </div>
           </div>
-          <div className="setting__container__child">
-            <span className="setting__container__span">Sound</span>
-            <div className="switch__container">
-              <button
-                type="button"
-                aria-label="sound switcher"
-                className="switch_sound"
-                onClick={(event) => pressSwitcher(event)}
-              />
-            </div>
-          </div>
+
           <div className="setting__container__child">
             <span className="setting__container__span">Language</span>
             <select className="select-lang__container">
-              <option value="ru">ru</option>
               <option value="en" defaultChecked>
                 en
               </option>
+              <option value="ru">ru</option>
             </select>
+          </div>
+          <div className="setting__container__child">
+            <span className="setting__container__span">
+              Want to leave an account?
+            </span>
+            <button className="leave-acc-btn" type="button" onClick={pressExit}>
+              Yes
+            </button>
           </div>
         </div>
         <div className="setting__screen__logo" />
         <div className="setting__container__child">
-          <ButtonTemplate onClick={pressExit}>EXIT</ButtonTemplate>
+          <Button className="settings__save-btn" to="/profile">
+            SAVE
+          </Button>
         </div>
       </div>
     </div>

@@ -18,6 +18,7 @@ import EventScreen from "./pages/EventScreen/EventScreen";
 import EditProfileDataScreen from "./pages/EditProfileDataScreen/EditProfileDataScreen";
 import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 import ProfileRegistrationScreen from "./pages/ProfileRegistrationScreen/ProfileRegistrationScreen";
+import Screen404 from "./pages/404Screen/404Screen";
 
 const routesWithoutHeader: string[] = [
   "/",
@@ -30,6 +31,12 @@ const App: React.FC = () => {
   const location = useLocation();
   const [isHeader, setHeader] = useState<boolean>(true);
   const [isFooter, setFooter] = useState<boolean>(false);
+
+  if (localStorage.getItem("theme")) {
+    if (localStorage.getItem("theme") === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+    } else document.documentElement.setAttribute("data-theme", "dark");
+  } else document.documentElement.setAttribute("data-theme", "light");
 
   useEffect(() => {
     setHeader(routesWithoutHeader.includes(location.pathname));
@@ -65,6 +72,7 @@ const App: React.FC = () => {
           <Route path="/event/:type" element={<EventScreen />} />
           <Route path="/edit-profile" element={<EditProfileDataScreen />} />
           <Route path="/edit-event" element={<EditEventScreen />} />
+          <Route path="/404" element={<Screen404 />} />
         </Routes>
       </main>
       {!isFooter && <Footer />}

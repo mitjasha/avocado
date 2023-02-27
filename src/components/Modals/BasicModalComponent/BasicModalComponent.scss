@@ -21,7 +21,7 @@
   height: fit-content;
   box-sizing: border-box;
   padding: 30px;
-  background-color: $bg-color;
+  background-color: var(--color-background);
   border-radius: 20px;
   text-align: center;
   position: relative;
@@ -32,8 +32,11 @@
     height: 44px;
     top: 10px;
     right: 10px;
-    background-image: url(../../../assets/svg/plus.svg);
+    background-image: var(--plus);
     transform: rotate(45deg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100%;
     cursor: pointer;
     border: none;
     background-color: transparent;
@@ -41,6 +44,7 @@
 
   &__title {
     font-size: 32px;
+    color: var(--color-text);
   }
 }
 

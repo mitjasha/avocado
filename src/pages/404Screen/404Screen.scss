@@ -1,0 +1,29 @@
+@import "../../variables";
+
+.screen-404 {
+  background-color: $bg-color;
+  padding: 30px 0;
+  min-height: 100vh;
+
+  &__title {
+    font-size: 170px;
+    color: $dark-color;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 300;
+    color: $dark-color;
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: $media-tab) {
+  .screen-404__btn {
+    width: 500px;
+    margin: auto;
+  }
+}

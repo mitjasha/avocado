@@ -1,9 +1,10 @@
 @import "../../variables";
 
 .login-screen {
-  background-color: $bg-color;
+  background-color: var(--color-background);
   padding-bottom: 60px;
   padding-top: 28px;
+  min-height: 100vh;
 
   &__title {
     font-size: 35px;

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
-import minus from "../../assets/svg/minus-light.svg";
-import plus from "../../assets/svg/plus-light.svg";
 import DailyEventEditWrapper from "../../components/DailyEventEditWrapper/DailyEventEditWrapper";
 import DailyEventEditData from "../../components/DailyEventEditData/DailyEventEditData";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
@@ -29,12 +27,8 @@ const EditEventScreen = () => {
       <div className="glasses__container">
         <div className="glasses">{content}</div>
         <div className="glasses__control-btn">
-          <PlusMinusButton>
-            <img src={minus} alt="minus" className="plus-minus-img" />
-          </PlusMinusButton>
-          <PlusMinusButton>
-            <img src={plus} alt="plus" className="plus-plus-img" />
-          </PlusMinusButton>
+          <PlusMinusButton className="minus-img" />
+          <PlusMinusButton className="plus-img" />
         </div>
       </div>
     );
@@ -146,7 +140,6 @@ const EditEventScreen = () => {
             />
           </div>
         </div>
-      </div>
       <ButtonTemplate
         className="event__changes__btn"
         onClick={() => navigate("/main")}

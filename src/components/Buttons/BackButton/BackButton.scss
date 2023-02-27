@@ -4,25 +4,25 @@
   display: flex;
   width: 55px;
   height: 55px;
-  background-color: $light-color;
+  background-color: var(--input-color);
   border-radius: 50%;
   justify-content: center;
   align-items: center;
   border: none;
 
   &-icon {
-    background: url(../../../assets//svg/arrow.svg) no-repeat;
+    background: var(--arrow) no-repeat;
     width: 20px;
     height: 30px;
   }
 
   &:hover {
-    background-color: $dark-color;
+    background-color: var(--color-text);
     transition: 0.4s all ease;
     cursor: pointer;
   }
 
   &:hover .back-btn-icon {
-    background: url(../../../assets//svg/arrow-light.svg) no-repeat;
+    background: var(--arrow-hover) no-repeat;
   }
 }

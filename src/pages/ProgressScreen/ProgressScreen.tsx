@@ -3,11 +3,10 @@ import ChartComponent from "../../components/ChartComponent/ChartComponent";
 import BarChartComponent from "../../components/BarChartComponent/BarChartComponent";
 import BasicModalComponent from "../../components/Modals/BasicModalComponent/BasicModalComponent";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
-import minus from "../../assets/svg/minus-light.svg";
-import plus from "../../assets/svg/plus-light.svg";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./ProgressScreen.scss";
 import profileController from "../../api/profile.controller";
+import eventMealController from "../../api/event-meal.controller";
 
 const ProgressScreen: React.FC = () => {
   const openPopUp = () => {
@@ -23,19 +22,76 @@ const ProgressScreen: React.FC = () => {
   const [currentWeight, setCurrentWeight] = useState<number>(0);
   const [targetWeight, setTargetWeight] = useState<number>(0);
   const [kgLeft, setKgLeft] = useState<number>(0);
-  // const [eatenKcalPerDay, setEatenKcalPerDay] = useState<object>({
-  //   "27 Jan": 1217,
-  //   "28 Jan": 1734,
-  //   "29 Jan": 1578,
-  //   "30 Jan": 1601,
-  // });
   const [averageKcal, setAverageKcal] = useState<number>(0);
 
-  const eatenKcalPerDay = {
-    "27 Jan": 1217,
-    "28 Jan": 1734,
-    "29 Jan": 1578,
-    "30 Jan": 1601,
+  const correctData = (date: number) => {
+    return date > 9 ? `${date}` : `0${date}`;
+  };
+
+  const getEatenKcalPerDay = async (date: Date) => {
+    const day = `${date.getFullYear()}-${correctData(
+      date.getMonth() + 1,
+    )}-${correctData(date.getDate())}`;
+
+    const events = await eventMealController.getEventsByDate(day);
+    if (events.length > 0) {
+      return events.reduce((acc, item) => {
+        return acc + (item.weight / 100) * item.product.calories_100g;
+      }, 0);
+    }
+    return 0;
+  };
+
+  const month = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const today = new Date();
+  const oneDayEarlier = new Date(new Date().getTime() - 86400000);
+  const twoDaysEarlier = new Date(new Date().getTime() - 172800000);
+  const threeDaysEarlier = new Date(new Date().getTime() - 259200000);
+  const fourDaysEarlier = new Date(new Date().getTime() - 345600000);
+  const fiveDaysEarlier = new Date(new Date().getTime() - 432000000);
+  const sixDaysEarlier = new Date(new Date().getTime() - 518400000);
+
+  const [eatenKcalPerDay, setEatenKcalPerDay] = useState<object>({
+    [`${sixDaysEarlier.getDate()} ${month[sixDaysEarlier.getMonth()]}`]: 0,
+    [`${fiveDaysEarlier.getDate()} ${month[fiveDaysEarlier.getMonth()]}`]: 0,
+    [`${fourDaysEarlier.getDate()} ${month[fourDaysEarlier.getMonth()]}`]: 0,
+    [`${threeDaysEarlier.getDate()} ${month[threeDaysEarlier.getMonth()]}`]: 0,
+    [`${twoDaysEarlier.getDate()} ${month[twoDaysEarlier.getMonth()]}`]: 0,
+    [`${oneDayEarlier.getDate()} ${month[oneDayEarlier.getMonth()]}`]: 0,
+    [`${today.getDate()} ${month[today.getMonth()]}`]: 0,
+  });
+
+  const getEatenKcalObject = async () => {
+    setEatenKcalPerDay({
+      [`${sixDaysEarlier.getDate()} ${month[sixDaysEarlier.getMonth()]}`]:
+        await getEatenKcalPerDay(sixDaysEarlier),
+      [`${fiveDaysEarlier.getDate()} ${month[fiveDaysEarlier.getMonth()]}`]:
+        await getEatenKcalPerDay(fiveDaysEarlier),
+      [`${fourDaysEarlier.getDate()} ${month[fourDaysEarlier.getMonth()]}`]:
+        await getEatenKcalPerDay(fourDaysEarlier),
+      [`${threeDaysEarlier.getDate()} ${month[threeDaysEarlier.getMonth()]}`]:
+        await getEatenKcalPerDay(threeDaysEarlier),
+      [`${twoDaysEarlier.getDate()} ${month[twoDaysEarlier.getMonth()]}`]:
+        await getEatenKcalPerDay(twoDaysEarlier),
+      [`${oneDayEarlier.getDate()} ${month[oneDayEarlier.getMonth()]}`]:
+        await getEatenKcalPerDay(oneDayEarlier),
+      [`${today.getDate()} ${month[today.getMonth()]}`]:
+        await getEatenKcalPerDay(today),
+    });
   };
 
   const getAverageKcal = () => {
@@ -102,6 +158,7 @@ const ProgressScreen: React.FC = () => {
     getTargetWeight();
     getKgLeft();
     getAverageKcal();
+    getEatenKcalObject();
   }, []);
 
   return (
@@ -151,15 +208,17 @@ const ProgressScreen: React.FC = () => {
       </div>
       <BasicModalComponent title="Current Weight">
         <div className="pop-up__update">
-          <PlusMinusButton onClick={() => changeWeight(false)}>
-            <img src={minus} alt="minus" className="plus-minus-img" />
-          </PlusMinusButton>
+          <PlusMinusButton
+            onClick={() => changeWeight(false)}
+            className="minus-img"
+          />
           <div className="pop-up__weight">
             {currentWeight.toFixed(1).toString()} kg
           </div>
-          <PlusMinusButton onClick={() => changeWeight(true)}>
-            <img src={plus} alt="plus" className="plus-minus-img" />
-          </PlusMinusButton>
+          <PlusMinusButton
+            onClick={() => changeWeight(true)}
+            className="plus-img"
+          />
         </div>
       </BasicModalComponent>
     </div>

@@ -20,7 +20,7 @@
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  border: 5px solid $middle-green;
+  border: 5px solid var(--choosen-input-color);
 }
 
 .next-btn {
@@ -36,7 +36,7 @@
   border: none;
 
   &-icon {
-    background: url(../../../assets//svg/arrow-light.svg) no-repeat;
+    background: var(--arrow-hover) no-repeat;
     transform: rotate(180deg);
     width: 20px;
     height: 30px;

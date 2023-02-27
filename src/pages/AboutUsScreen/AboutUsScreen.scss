@@ -2,7 +2,8 @@
 
 .about__us {
   &__screen {
-    background-color: $bg-color;
+    background-color: var(--color-background);
+    min-height: 100vh;
   }
 
   &__title {
@@ -11,7 +12,7 @@
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
-    color: $dark-color;
+    color: var(--color-text);
   }
 
   &__logo-wrapper {
@@ -35,7 +36,7 @@
     font-weight: 800;
     margin: 0;
     font-size: 50px;
-    color: $dark-color;
+    color: var(--color-text);
     text-align: right;
     width: 302px;
     height: 120px;
@@ -49,7 +50,7 @@
   &__text {
     font-weight: 500;
     font-size: 24px;
-    color: $dark-color;
+    color: var(--color-text);
     line-height: 40px;
 
     &__h3 {
@@ -57,7 +58,7 @@
       font-size: 30px;
       line-height: 40px;
       margin: 30px 0px 0px;
-      color: $dark-color;
+      color: var(--color-text);
     }
   }
 

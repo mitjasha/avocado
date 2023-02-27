@@ -1,7 +1,11 @@
 @import "../../variables.scss";
 
+.recipe__wrapper {
+  position: relative;
+}
+
 .recipe__card {
-  background: $light-color;
+  background: var(--input-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   height: 200px;
   width: calc(50% - 10px);
@@ -16,29 +20,33 @@
   }
 
   &__bg__like {
-    background-color: rgba(255, 255, 255, 0.5);
     width: 28px;
     height: 28px;
     position: absolute;
-    border-radius: 7px;
     top: 10px;
     right: 0px;
     margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 90;
   }
 
   &__like {
-    width: 18px;
-    height: 16px;
-    background-image: url("../../assets/svg/heart_recipe-light.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    border: none;
+    width: 28px;
+    height: 28px;
+    background: var(--color-text) var(--favorites-hover) no-repeat;
+    border-radius: 7px;
+    background-size: 80%;
+    background-position: 50%;
+    cursor: pointer;
 
     &:hover {
-      background-image: url("../../assets/svg/heart_recipe.svg");
-      cursor: pointer;
+      background: var(--input-color) var(--favorites) no-repeat;
+      background-position: 50%;
+      background-size: 80%;
+      transition: 0.4s all ease;
     }
   }
 
@@ -47,6 +55,7 @@
     font-size: 13px;
     padding: 5px;
     margin: 0;
+    color: var(--color-text);
   }
 
   &__wrapper {
@@ -79,7 +88,7 @@
     font-weight: 500;
     font-size: 9px;
     line-height: 11px;
-    color: #868686;
+    color: var(--color-text);
   }
 
   &__img__calories {

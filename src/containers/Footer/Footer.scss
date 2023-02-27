@@ -1,9 +1,9 @@
 @import "../../variables";
 
 .footer {
-  background-color: $dark-color;
+  background-color: var(--color-text);
   height: 179px;
-  color: $bg-color;
+  color: var(--color-background);
 
   &__container {
     margin: auto;
@@ -30,7 +30,7 @@
   }
 
   &__media-icon {
-    background-color: $light-color;
+    background-color: var(--input-color);
     width: 40px;
     height: 40px;
     border-radius: 50px;
@@ -38,32 +38,32 @@
     background-position: 50%;
 
     &_fb {
-      background-image: url(../../assets/svg/facebook.svg);
+      background-image: var(--facebook);
     }
 
     &_inst {
-      background-image: url(../../assets/svg/instagram.svg);
+      background-image: var(--instagram);
     }
 
     &_yt {
-      background-image: url(../../assets/svg/youtube.svg);
+      background-image: var(--youtube);
     }
   }
 
   &__media-icon:hover {
-    background-color: $dark-color;
+    background-color: var(--color-text);
     transition: 0.4s all ease;
 
     &.footer__media-icon_fb {
-      background-image: url(../../assets/svg/facebook-light.svg);
+      background-image: var(--facebook-hover);
     }
 
     &.footer__media-icon_inst {
-      background-image: url(../../assets/svg/instagram-light.svg);
+      background-image: var(--instagram-hover);
     }
 
     &.footer__media-icon_yt {
-      background-image: url(../../assets/svg/youtube-light.svg);
+      background-image: var(--youtube-hover);
     }
   }
 }
@@ -83,7 +83,7 @@
 }
 
 .creators__item:hover {
-  color: $middle-green;
+  color: var(--choosen-input-color);
   transition: 0.4s all ease;
 }
 
@@ -100,7 +100,7 @@ a {
   }
 
   .school-link:hover {
-    color: $middle-green;
+    color: var(--choosen-input-color);
     transition: 0.4s all ease;
   }
 }
