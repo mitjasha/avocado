@@ -32,8 +32,11 @@
     height: 44px;
     top: 10px;
     right: 10px;
-    background-image: url(../../../assets/svg/plus.svg);
+    background-image: var(--plus);
     transform: rotate(45deg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100%;
     cursor: pointer;
     border: none;
     background-color: transparent;

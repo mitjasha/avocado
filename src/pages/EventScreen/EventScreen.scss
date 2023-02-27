@@ -23,7 +23,7 @@
     &__add {
       width: 44px;
       height: 44px;
-      background-image: url("../../assets/svg/plus.svg");
+      background-image: var(--plus);
       background-repeat: no-repeat;
       background-size: cover;
       cursor: pointer;
@@ -82,7 +82,7 @@
     width: 30px;
     height: 30px;
     background: none;
-    background-image: url("../../assets/svg/plus.svg");
+    background-image: var(--plus);
     background-repeat: no-repeat;
     background-size: cover;
     border: none;

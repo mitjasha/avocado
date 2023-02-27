@@ -27,7 +27,7 @@
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    background: var(--input-color) url(../../assets/svg/calendar.svg) no-repeat;
+    background: var(--input-color) var(--calendar) no-repeat;
     background-size: 30px;
     background-position: 50%;
 
@@ -51,8 +51,7 @@
 
   &__date-input:hover {
     transition: 0.4s all ease;
-    background: var(--color-text) url(../../assets/svg/calendar-light.svg)
-      no-repeat;
+    background: var(--color-text) var(--calendar-hover) no-repeat;
     background-size: 30px;
     background-position: 50%;
   }
