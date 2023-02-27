@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link, useSearchParams } from "react-router-dom";
 import { RecipeResponse } from "../../api/api.interface";
 import profileController from "../../api/profile.controller";
+import recipesRUController from "../../api/recipes-ru.controller";
 import recipesController from "../../api/recipes.controller";
 import CardRecipe from "../../components/CardRecipe/CardRecipe";
 import ProductInput from "../../components/Inputs/ProductInput/ProductInput";
@@ -15,11 +17,21 @@ const RecipesScreen: React.FC = () => {
   const [filtredRecipes, setFiltredRecipes] =
     useState<RecipeResponse[]>(recipes);
 
+  const { t } = useTranslation();
+
   const getRcipes = async () => {
-    const result = await recipesController.getAllRecipes();
-    if (result) {
-      setRecipes(result);
-      setFiltredRecipes(result);
+    if (localStorage.getItem("language") === "en") {
+      const result = await recipesController.getAllRecipes();
+      if (result) {
+        setRecipes(result);
+        setFiltredRecipes(result);
+      }
+    } else {
+      const result = await recipesRUController.getAllRecipes();
+      if (result) {
+        setRecipes(result);
+        setFiltredRecipes(result);
+      }
     }
   };
 
@@ -65,8 +77,8 @@ const RecipesScreen: React.FC = () => {
     <div className="recipes__screen">
       <div className="container">
         <div className="main-header__container">
-          <span>Categories</span>
-          <span className="main-header__container__view">View All</span>
+          <span>{t("recipes_categories")}</span>
+          {/* <span className="main-header__container__view">View All</span> */}
         </div>
         <div className="categories-container">
           <div className="categories-container__scroll">
@@ -74,56 +86,56 @@ const RecipesScreen: React.FC = () => {
               to="/recipes/breakfast"
               className="category category__breakfast"
             >
-              <h3 className="category__h3">Breakfast</h3>
+              <h3 className="category__h3">{t("main_breakfast")}</h3>
               <span className="category__span">
                 {
                   recipes?.filter((item) => item.category.includes("breakfast"))
                     .length
                 }{" "}
-                Recipes
+                {t("recipes_resipes")}
               </span>
             </Link>
             <Link
               to="/recipes/appetizers"
               className="category category__appetizers"
             >
-              <h3 className="category__h3">Appetizers</h3>
+              <h3 className="category__h3">{t("recipes_appetizers")}</h3>
               <span className="category__span">
                 {
                   recipes?.filter((item) =>
                     item.category.includes("appetizers"),
                   ).length
                 }{" "}
-                Recipes
+                {t("recipes_resipes")}
               </span>
             </Link>
             <Link to="/recipes/dinner" className="category category__pasta">
-              <h3 className="category__h3">Dinner</h3>
+              <h3 className="category__h3">{t("main_dinner")}</h3>
               <span className="category__span">
                 {
                   recipes?.filter((item) => item.category.includes("dinner"))
                     .length
                 }{" "}
-                Recipes
+                {t("recipes_resipes")}
               </span>
             </Link>
             <Link
               to="/recipes/favorites"
               className="category category__favourites"
             >
-              <h3 className="category__h3">Favourites</h3>
+              <h3 className="category__h3">{t("recipes_favourites")}</h3>
               <span className="category__span">
-                {favourites.length} Recipes
+                {favourites.length} {t("recipes_resipes")}
               </span>
             </Link>
           </div>
         </div>
-        <h1 className="recipes__screen__h1">What is in your kitchen?</h1>
-        <h3 className="recipes__screen__h3">Enter some ingredient</h3>
+        <h1 className="recipes__screen__h1">{t("recipes_header_1")}</h1>
+        <h3 className="recipes__screen__h3">{t("recipes_header_2")}</h3>
         <div className="search__container">
           <ProductInput
             type="text"
-            placeholder="Type your ingredient"
+            placeholder={String(t("recipes_placeholder"))}
             className="search__container__input"
             onChange={(event) => {
               textSearch((event.target as HTMLInputElement).value);
@@ -143,7 +155,9 @@ const RecipesScreen: React.FC = () => {
         <div className="recipes__container">
           {!filtredRecipes.length && (
             <div className="no__found">
-              <span className="no__found__text">Not found</span>
+              <span className="no__found__text">
+                {t("categories_no_found")}
+              </span>
               <div className="no__found__image" />
             </div>
           )}

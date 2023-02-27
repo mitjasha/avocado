@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { RecipeResponse } from "../../api/api.interface";
 import profileController from "../../api/profile.controller";
+import recipesRUController from "../../api/recipes-ru.controller";
 import recipesController from "../../api/recipes.controller";
 import "./RecipeScreen.scss";
 
@@ -26,11 +27,17 @@ const RecipeScreen: React.FC = () => {
   };
 
   const getRecipe = async () => {
-    const result = await recipesController.getRecipeById(id as string);
-    if (result) {
-      setRecipe(result);
+    if (localStorage.getItem("language") === "en") {
+      const result = await recipesController.getRecipeById(id as string);
+      if (result) {
+        setRecipe(result);
+      }
+    } else {
+      const result = await recipesRUController.getRecipeById(id as string);
+      if (result) {
+        setRecipe(result);
+      }
     }
-
     await setLike();
   };
 

@@ -11,6 +11,7 @@ import "./CategoriesRecipesScreen.scss";
 import { RecipeResponse } from "../../api/api.interface";
 import recipesController from "../../api/recipes.controller";
 import profileController from "../../api/profile.controller";
+import recipesRUController from "../../api/recipes-ru.controller";
 
 const CategoriesRecipesScreen: React.FC = () => {
   const { t } = useTranslation();
@@ -54,10 +55,16 @@ const CategoriesRecipesScreen: React.FC = () => {
   // });
 
   const getRcipes = async () => {
-    const result = await recipesController.getAllRecipes();
-    if (result) {
-      setRecipes(result);
-      console.log(recipes);
+    if (localStorage.getItem("language") === "en") {
+      const result = await recipesController.getAllRecipes();
+      if (result) {
+        setRecipes(result);
+      }
+    } else {
+      const result = await recipesRUController.getAllRecipes();
+      if (result) {
+        setRecipes(result);
+      }
     }
   };
 
@@ -82,8 +89,6 @@ const CategoriesRecipesScreen: React.FC = () => {
     const queryTime = searchParams.get("time");
     const queryKcal = searchParams.get("kcal");
 
-    console.log(queryFavourite, queryVegetarian, queryTime, queryKcal);
-
     let categoryData = data.filter((item) =>
       item.category.includes("appetizers"),
     );
@@ -104,7 +109,6 @@ const CategoriesRecipesScreen: React.FC = () => {
       );
     }
     setRecipes(categoryData);
-    console.log(recipes.length);
   };
 
   useEffect(() => {
@@ -225,12 +229,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                   type="button"
                   onClick={() => {
                     setSearchParams({ kcal: "true" });
-                    console.log(
-                      searchParams.get("vegetarian"),
-                      searchParams.get("favourite"),
-                      searchParams.get("time"),
-                      searchParams.get("kcal"),
-                    );
+
                     sortAndFilter(
                       searchParams.get("vegetarian"),
                       searchParams.get("favourite"),

@@ -14,9 +14,9 @@ export async function fetchAsync(
   );
   if (accessToken) {
     headers.Authorization = `Token ${accessToken}`;
-    console.log(headers);
+    // console.log(headers);
   }
-  console.log(method, headers, body);
+  // console.log(method, headers, body);
 
   const response = await fetch(`${BASE_URL}${url}`, {
     method,
@@ -34,7 +34,7 @@ export async function fetchAsync(
   if (!response.ok) {
     throw result;
   }
-  console.log(result);
+  // console.log(result);
 
   return result;
 }
