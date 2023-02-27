@@ -48,6 +48,11 @@ const MainScreen: React.FC = () => {
     new Date().getHours(),
   )}:${correctData(new Date().getMinutes())}`;
 
+  const getWater = async () => {
+    const waterEvents = await eventsController.getEventsByDate(date);
+    setWaterConsumed(waterEvents.length * 0.25);
+  };
+
   const getEatenKcal = async () => {
     const eaten = await eventMealController.getEventsByDate(date);
     const breakfast = eaten.filter((item) => item.name === "breakfast");
@@ -250,6 +255,7 @@ const MainScreen: React.FC = () => {
     getEatenKcal();
     getActivityKcal();
     getLastActivity();
+    getWater();
   }, []);
 
   return (
