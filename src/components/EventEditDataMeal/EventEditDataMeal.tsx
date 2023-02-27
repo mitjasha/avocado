@@ -46,14 +46,35 @@ const EventEditDataMeal: React.FC<DailyMeal> = ({ data, className }) => {
   };
 
   const [weight, setWeight] = useState<number>();
+  const [removedUS, setRemovedUS] = useState<boolean>(false);
 
-  useEffect(() => {}, [[weight, setWeight]]);
+  useEffect(() => {
+    updateMealEvent(
+      data.id,
+      data.product.name,
+      data.startTime,
+      weight ? weight : data.weight,
+      data.description,
+    );
+    deleteMealEvent(
+      data.id,
+      data.product.name,
+      data.startTime,
+      weight ? weight : data.weight,
+      data.description,
+    );
+  }, [[weight, setWeight]]);
 
   return (
     <li className={className} key={data.product.id}>
       <div className="container__info__text">
         <div style={{ display: "flex", gap: "5px" }}>
-          <span className="info__name">{data.product.name}</span>
+          <span
+            className="info__name"
+            style={{ textDecoration: removedUS ? "line-through" : "none" }}
+          >
+            {data.product.name}
+          </span>
           <div className="input__container">
             <ProductInput
               type="number"
@@ -84,15 +105,16 @@ const EventEditDataMeal: React.FC<DailyMeal> = ({ data, className }) => {
       </div>
       <span
         className="info__delete"
-        onClick={() =>
+        onClick={() => {
+          setRemovedUS(!removedUS);
           deleteMealEvent(
             data.id,
             data.product.name,
             data.startTime,
             weight ? weight : data.weight,
             data.description,
-          )
-        }
+          );
+        }}
       >
         delete
       </span>

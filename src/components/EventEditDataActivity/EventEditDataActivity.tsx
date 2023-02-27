@@ -64,14 +64,33 @@ const EventEditDataActivity: React.FC<DailyActivity> = ({
   };
 
   const [timeEnd, setEndTime] = useState<string>();
+  const [removedUS, setRemovedUS] = useState<boolean>(false);
 
-  useEffect(() => {}, [[timeEnd, setEndTime]]);
+  useEffect(() => {
+    updateActivityEvent(
+      data.activity.id,
+      data.startTime,
+      timeEnd ? timeEnd : data.endTime,
+      data.description,
+    );
+    deleteActivityEvent(
+      data.activity.id,
+      data.startTime,
+      timeEnd ? timeEnd : data.endTime,
+      data.description,
+    );
+  }, [[timeEnd, setEndTime]]);
 
   return (
     <li className={className} key={data.activity.id}>
       <div className="container__info__text">
         <div style={{ display: "flex", gap: "5px" }}>
-          <span className="info__name">{data.activity.name}</span>
+          <span
+            className="info__name"
+            style={{ textDecoration: removedUS ? "line-through" : "none" }}
+          >
+            {data.activity.name}
+          </span>
           <div className="input__container">
             <ProductInput
               type="number"
@@ -109,6 +128,7 @@ const EventEditDataActivity: React.FC<DailyActivity> = ({
       <span
         className="info__delete"
         onClick={() => {
+          setRemovedUS(!removedUS);
           deleteActivityEvent(
             data.activity.id,
             data.startTime,
