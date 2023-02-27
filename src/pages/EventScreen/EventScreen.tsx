@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
 import AddProductModal from "../../containers/AddProductModal/AddProductModal";
@@ -9,6 +8,7 @@ import "./EventScreen.scss";
 import "../../index.scss";
 import productsController from "../../api/product.controller";
 import { ProductResponse } from "../../api/api.interface";
+import ProductInput from "../../components/Inputs/ProductInput/ProductInput";
 
 const EventScreen: React.FC = () => {
   const { type } = useParams();
@@ -95,7 +95,7 @@ const EventScreen: React.FC = () => {
         </div>
         <div className="event__screen__search">
           <div className="event__screen__search__icon" />
-          <RegInput
+          <ProductInput
             type="search"
             placeholder="What have you eaten?"
             value={text !== null ? text : ""}
