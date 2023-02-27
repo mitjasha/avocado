@@ -269,7 +269,7 @@ const MainScreen: React.FC = () => {
   useEffect(() => {
     getCurrentWeight();
   }, [currentWeight]);
-  
+
   useEffect(() => {
     getRecommendedKcal();
     getRecomWater();
