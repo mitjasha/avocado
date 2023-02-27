@@ -13,12 +13,6 @@ const SplashScreen: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const { t } = useTranslation();
 
-  if (localStorage.getItem("theme")) {
-    if (localStorage.getItem("theme") === "light") {
-      document.documentElement.setAttribute("data-theme", "light");
-    } else document.documentElement.setAttribute("data-theme", "dark");
-  } else document.documentElement.setAttribute("data-theme", "light");
-
   useEffect(() => {
     setTimeout(() => {
       if (accessToken) {

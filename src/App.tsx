@@ -32,6 +32,12 @@ const App: React.FC = () => {
   const [isHeader, setHeader] = useState<boolean>(true);
   const [isFooter, setFooter] = useState<boolean>(false);
 
+  if (localStorage.getItem("theme")) {
+    if (localStorage.getItem("theme") === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+    } else document.documentElement.setAttribute("data-theme", "dark");
+  } else document.documentElement.setAttribute("data-theme", "light");
+
   useEffect(() => {
     setHeader(routesWithoutHeader.includes(location.pathname));
     setFooter(routesWithoutHeader.includes(location.pathname));
