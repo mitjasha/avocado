@@ -162,7 +162,7 @@ const App: React.FC = () => {
                 </RequireAuth>
               }
             />
-            <Route path="/404" element={<Screen404 />} />
+            <Route path="*" element={<Screen404 />} />
           </Routes>
         </main>
         {!isFooter && <Footer />}
