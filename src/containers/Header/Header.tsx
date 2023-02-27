@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import LogoComponent from "../../components/LogoComponent/LogoComponent";
 import NavComponent from "../../components/NavComponent/NavComponent";
 import "./Header.scss";
@@ -10,30 +11,31 @@ const Header: React.FC = () => {
     nav.classList.add("nav-active");
     burgerCloseBtn.style.display = "block";
   };
+  const { t } = useTranslation();
 
   const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    t("header_month_1"),
+    t("header_month_2"),
+    t("header_month_3"),
+    t("header_month_4"),
+    t("header_month_5"),
+    t("header_month_6"),
+    t("header_month_7"),
+    t("header_month_8"),
+    t("header_month_9"),
+    t("header_month_10"),
+    t("header_month_11"),
+    t("header_month_12"),
   ];
 
   const weekDays = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    t("header_day_1"),
+    t("header_day_2"),
+    t("header_day_3"),
+    t("header_day_4"),
+    t("header_day_5"),
+    t("header_day_6"),
+    t("header_day_7"),
   ];
 
   const todaysDate =
