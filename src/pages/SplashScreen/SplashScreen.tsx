@@ -11,12 +11,6 @@ const SplashScreen: React.FC = () => {
   const accessToken = localStorage.getItem("accessToken");
   const [loading, setLoading] = useState(true);
 
-  if (localStorage.getItem("theme")) {
-    if (localStorage.getItem("theme") === "light") {
-      document.documentElement.setAttribute("data-theme", "light");
-    } else document.documentElement.setAttribute("data-theme", "dark");
-  } else document.documentElement.setAttribute("data-theme", "light");
-
   useEffect(() => {
     setTimeout(() => {
       if (accessToken) {

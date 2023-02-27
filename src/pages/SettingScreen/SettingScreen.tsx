@@ -58,10 +58,10 @@ const SettingScreen = () => {
           <div className="setting__container__child">
             <span className="setting__container__span">Language</span>
             <select className="select-lang__container">
-              <option value="ru">ru</option>
               <option value="en" defaultChecked>
                 en
               </option>
+              <option value="ru">ru</option>
             </select>
           </div>
           <div className="setting__container__child">

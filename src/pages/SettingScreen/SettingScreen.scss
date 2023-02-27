@@ -108,6 +108,7 @@
   font-size: 24px;
   background-color: transparent;
   cursor: pointer;
+  color: var(--color-text);
 
   &:hover {
     color: $middle-green;
