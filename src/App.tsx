@@ -20,6 +20,7 @@ import EditEventScreen from "./pages/EditEventsScreen/EditEventScreen";
 import ProfileRegistrationScreen from "./pages/ProfileRegistrationScreen/ProfileRegistrationScreen";
 import Screen404 from "./pages/404Screen/404Screen";
 import AppContext, { AppContextType } from "./context";
+import RequireAuth from "./helpers/RequireAuth";
 
 const routesWithoutHeader: string[] = [
   "/",
@@ -65,21 +66,102 @@ const App: React.FC = () => {
               path="/registration/profile"
               element={<ProfileRegistrationScreen />}
             />
-            <Route path="/main" element={<MainScreen />} />
-            <Route path="/profile" element={<ProfileScreen />} />
-            <Route path="/progress" element={<ProgressScreen />} />
-            <Route path="/recipes" element={<RecipesScreen />} />
+            <Route
+              path="/main"
+              element={
+                <RequireAuth>
+                  <MainScreen />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <RequireAuth>
+                  <ProfileScreen />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/progress"
+              element={
+                <RequireAuth>
+                  <ProgressScreen />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/recipes"
+              element={
+                <RequireAuth>
+                  <RecipesScreen />
+                </RequireAuth>
+              }
+            />
             <Route
               path="/recipes/:category"
-              element={<CategoriesRecipesScreen />}
+              element={
+                <RequireAuth>
+                  <CategoriesRecipesScreen />
+                </RequireAuth>
+              }
             />
-            <Route path="/recipe/:id" element={<RecipeScreen />} />
-            <Route path="/event/activity" element={<ActivityScreen />} />
-            <Route path="/about" element={<AboutUsScreen />} />
-            <Route path="/settings" element={<SettingScreen />} />
-            <Route path="/event/:type" element={<EventScreen />} />
-            <Route path="/edit-profile" element={<EditProfileDataScreen />} />
-            <Route path="/edit-event" element={<EditEventScreen />} />
+            <Route
+              path="/recipe/:id"
+              element={
+                <RequireAuth>
+                  <RecipeScreen />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/event/activity"
+              element={
+                <RequireAuth>
+                  <ActivityScreen />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <RequireAuth>
+                  <AboutUsScreen />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <RequireAuth>
+                  <SettingScreen />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/event/:type"
+              element={
+                <RequireAuth>
+                  <EventScreen />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/edit-profile"
+              element={
+                <RequireAuth>
+                  <EditProfileDataScreen />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/edit-event"
+              element={
+                <RequireAuth>
+                  <EditEventScreen />
+                </RequireAuth>
+              }
+            />
             <Route path="/404" element={<Screen404 />} />
           </Routes>
         </main>

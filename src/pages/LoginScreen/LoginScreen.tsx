@@ -39,7 +39,6 @@ const LoginScreen: React.FC = () => {
 
       if (profile) {
         const profileID = profile[0].id;
-        console.log("ID", profileID);
         localStorage.setItem("profileID", JSON.stringify(profileID));
         navigate("/main");
       }
