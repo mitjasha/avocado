@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useSearchParams, useParams, Link } from "react-router-dom";
 import CardCategory from "../../components/CardCategory/CardRecipe/CardCategory";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
@@ -12,24 +13,29 @@ import recipesController from "../../api/recipes.controller";
 import profileController from "../../api/profile.controller";
 
 const CategoriesRecipesScreen: React.FC = () => {
+  const { t } = useTranslation();
   const categories = {
     breakfast: {
       title: "Breakfast",
+      name: t("main_breakfast"),
       image: breakfastImg,
       color: "rgba(234, 167, 15, 0.5)",
     },
     appetizers: {
       title: "Appetizers",
+      name: t("recipes_appetizers"),
       image: appetizersImg,
       color: "rgba(85, 156, 79, 0.5)",
     },
     dinner: {
       title: "Dinner",
+      name: t("main_dinner"),
       image: pastaImg,
       color: "rgba(218, 38, 2, 0.5)",
     },
     favorites: {
       title: "Favorites",
+      name: t("recipes_favourites"),
       image: favImg,
       color: "rgba(2, 50, 218, 0.5)",
     },
@@ -146,7 +152,7 @@ const CategoriesRecipesScreen: React.FC = () => {
           <BackButton to="/recipes" />
           <div className="categories__header__nav">
             <h1 className="categories__header__h1">
-              {categories[category as keyof typeof categories].title}
+              {categories[category as keyof typeof categories].name}
             </h1>
             <span className="categories__header__span">
               {categories[category as keyof typeof categories].title !==
@@ -158,7 +164,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                 "Favorites" &&
                 recipes.filter((item) => favourites.includes(item.id))
                   .length}{" "}
-              Recipes
+              {t("recipes_resipes")}
             </span>
             <ul className="categories__header__ul">
               <li className="categories__header__li">
@@ -177,7 +183,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                     );
                   }}
                 >
-                  Veg
+                  {t("categories_veg")}
                 </button>
               </li>
               <li className="categories__header__li">
@@ -194,7 +200,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                     );
                   }}
                 >
-                  Favorites
+                  {t("recipes_favourites")}
                 </button>
               </li>
               <li className="categories__header__li">
@@ -211,7 +217,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                     );
                   }}
                 >
-                  Quick
+                  {t("categories_quick")}
                 </button>
               </li>
               <li className="categories__header__li">
@@ -234,7 +240,7 @@ const CategoriesRecipesScreen: React.FC = () => {
                     );
                   }}
                 >
-                  Calories
+                  {t("categories_calories")}
                 </button>
               </li>
             </ul>
@@ -274,7 +280,7 @@ const CategoriesRecipesScreen: React.FC = () => {
               }`,
             }}
           >
-            No recipes found
+            {t("categories_no_found")}
           </div>
         </div>
       </div>
