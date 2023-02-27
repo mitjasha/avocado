@@ -113,7 +113,7 @@ const ProgressScreen: React.FC = () => {
   const getTargetWeight = async () => {
     if (profileID) {
       const profile = await profileController.getProfileById(profileID);
-      setTargetWeight(Number(profile.targetWeight));
+      setTargetWeight(profile.targetWeight);
     }
   };
 
@@ -131,35 +131,57 @@ const ProgressScreen: React.FC = () => {
     if (profileID) {
       const profile = await profileController.getProfileById(profileID);
       if (up === true) {
+        await profileController.updateProfile({
+          id: profileID,
+          firstName: profile.firstName,
+          lastName: profile.lastName,
+          gender: profile.gender,
+          birth: profile.birth,
+          weight: currentWeight + 0.1,
+          height: profile.height,
+          goal: profile.goal,
+          targetWeight: profile.targetWeight,
+          photo: "",
+          favorites: profile.favorites,
+          recentRecipes: profile.recentRecipes,
+        });
         setCurrentWeight(currentWeight + 0.1);
       } else {
+        await profileController.updateProfile({
+          id: profileID,
+          firstName: profile.firstName,
+          lastName: profile.lastName,
+          gender: profile.gender,
+          birth: profile.birth,
+          weight: currentWeight - 0.1,
+          height: profile.height,
+          goal: profile.goal,
+          targetWeight: profile.targetWeight,
+          photo: "",
+          favorites: profile.favorites,
+          recentRecipes: profile.recentRecipes,
+        });
         setCurrentWeight(currentWeight - 0.1);
       }
-      await profileController.updateProfile({
-        id: profileID,
-        firstName: profile.firstName,
-        lastName: profile.lastName,
-        gender: profile.gender,
-        birth: profile.birth,
-        weight: currentWeight,
-        height: profile.height,
-        goal: profile.goal,
-        targetWeight: profile.targetWeight,
-        photo: "",
-        favorites: profile.favorites,
-        recentRecipes: profile.recentRecipes,
-      });
-      getKgLeft();
     }
   };
 
   useEffect(() => {
-    getCurrentWeight();
     getTargetWeight();
+    getCurrentWeight();
     getKgLeft();
     getAverageKcal();
     getEatenKcalObject();
   }, []);
+
+  useEffect(() => {
+    getCurrentWeight();
+    getKgLeft();
+  }, [currentWeight]);
+
+  useEffect(() => {
+    getAverageKcal();
+  }, [eatenKcalPerDay]);
 
   return (
     <div className="progress-screen">

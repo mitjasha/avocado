@@ -70,9 +70,9 @@ const ProfileScreen: React.FC = () => {
               <p>{gender[0] + gender.slice(1).toLowerCase()}</p>
               <p>{getAge(birth)}</p>
               <p>{Number(height).toFixed()} cm</p>
-              <p>{Number(weight).toFixed()} kg</p>
+              <p>{Number(weight).toFixed(1)} kg</p>
               <p>{goal}</p>
-              <p>{Number(targetWeight).toFixed()} kg</p>
+              <p>{Number(targetWeight).toFixed(1)} kg</p>
             </div>
           </div>
         </div>
