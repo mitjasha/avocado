@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LogoComponent from "../../components/LogoComponent/LogoComponent";
 import NavComponent from "../../components/NavComponent/NavComponent";
+import { useAppContext } from "../../context";
 import "./Header.scss";
 
 const Header: React.FC = () => {
+  const appContext = useAppContext();
+
   const openBurger = () => {
     const nav = document.querySelector(".nav-list") as HTMLElement;
     const burgerCloseBtn = document.querySelector(".nav-close") as HTMLElement;
@@ -47,15 +50,30 @@ const Header: React.FC = () => {
   const todaysYear = new Date().getFullYear();
   const max = `${todaysYear}-${todaysMonth}-${todaysDate}`;
 
-  const month = months[new Date().getMonth()];
-  const date = new Date().getDate();
-  const weekDay = weekDays[new Date().getDay()];
+  const [date, setDate] = useState<string>(
+    localStorage.getItem("date") || new Date().toISOString(),
+  );
+
+  useEffect(() => {
+    localStorage.setItem("date", date);
+    appContext?.setCurrentDateState(date);
+  }, [date]);
+
+  const setDateDisplay = () => {
+    const newDate = new Date(date);
+    const month = months[newDate.getMonth()];
+    const day = newDate.getDate();
+    const weekDay = weekDays[newDate.getDay()];
+    return `${day} ${month}, ${weekDay}`;
+  };
 
   const changeDate = () => {
     const dateInput = document.querySelector(
       ".header__date-input",
     ) as HTMLInputElement;
     const newValue = new Date(dateInput.value);
+    setDate(dateInput.value);
+    localStorage.setItem("date", newValue.toISOString());
     const dataDisplay = document.querySelector(".header__date") as HTMLElement;
     dataDisplay.textContent = `${newValue.getDate()} ${
       months[newValue.getMonth()]
@@ -76,9 +94,7 @@ const Header: React.FC = () => {
             max={max}
             onChange={changeDate}
           />
-          <div className="header__date">
-            {date} {month}, {weekDay}
-          </div>
+          <div className="header__date">{setDateDisplay()}</div>
           <button
             type="button"
             className="header__menu-btn"
