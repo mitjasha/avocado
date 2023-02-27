@@ -149,5 +149,17 @@
   "registration_female": "Female",
   "reg_form_user_username": "Username",
   "reg_form_user_password": "Password",
-  "reg_form_user_continue": "Continue"
+  "reg_form_user_continue": "Continue",
+  "Jan": "Jan",
+  "Feb": "Feb",
+  "Mar": "Mar",
+  "Apr": "Apr",
+  "May": "May",
+  "June": "June",
+  "July": "July",
+  "Aug": "Aug",
+  "Sept": "Sept",
+  "Oct": "Oct",
+  "Nov": "Nov",
+  "Dec": "Dec"
 }

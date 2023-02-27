@@ -149,5 +149,17 @@
   "registration_female": "Женщина",
   "reg_form_user_username": "Имя пользователя",
   "reg_form_user_password": "Пароль",
-  "reg_form_user_continue": "Продолжить"
+  "reg_form_user_continue": "Продолжить",
+  "Jan": "Янв",
+  "Feb": "Фев",
+  "Mar": "Март",
+  "Apr": "Апр",
+  "May": "Май",
+  "June": "Июнь",
+  "July": "Июль",
+  "Aug": "Авг",
+  "Sept": "Сент",
+  "Oct": "Окт",
+  "Nov": "Ноя",
+  "Dec": "Дек"
 }
