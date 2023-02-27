@@ -23,7 +23,7 @@
     &__add {
       width: 44px;
       height: 44px;
-      background-image: url("../../assets/svg/add_product_event.svg");
+      background-image: url("../../assets/svg/plus.svg");
       background-repeat: no-repeat;
       background-size: cover;
       cursor: pointer;
@@ -79,10 +79,10 @@
   }
 
   &__close__icon {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     background: none;
-    background-image: url("../../assets/svg/close.svg");
+    background-image: url("../../assets/svg/plus.svg");
     background-repeat: no-repeat;
     background-size: cover;
     border: none;
@@ -90,7 +90,7 @@
     margin: 0;
     top: 50%;
     right: 12px;
-    transform: translate(0, -50%);
+    transform: translate(0, -50%) rotate(45deg);
     cursor: pointer;
   }
 }
