@@ -384,7 +384,8 @@ const MainScreen: React.FC = () => {
           <div className="daily-events__meals">
             <h1 className="daily-events__title">{t("main_daily_meals")}</h1>
             <DailyEventWrapper
-              title={t("main_breakfast")}
+              title="Breakfast"
+              name={t("main_breakfast")}
               recommended={`${t("main_recommended")} ${Math.round(
                 recomKcalPerDay / 4,
               )} ${t("main_kcal")}`}
@@ -395,6 +396,7 @@ const MainScreen: React.FC = () => {
             />
             <DailyEventWrapper
               title="Lunch"
+              name={t("main_lunch")}
               recommended={`${t("main_recommended")} ${Math.round(
                 recomKcalPerDay / 4,
               )} ${t("main_kcal")}`}
@@ -403,6 +405,7 @@ const MainScreen: React.FC = () => {
             />
             <DailyEventWrapper
               title="Dinner"
+              name={t("main_dinner")}
               recommended={`${t("main_recommended")} ${Math.round(
                 recomKcalPerDay / 4,
               )} ${t("main_kcal")}`}
@@ -411,6 +414,7 @@ const MainScreen: React.FC = () => {
             />
             <DailyEventWrapper
               title="Snack"
+              name={t("main_snack")}
               recommended={`${t("main_recommended")} ${Math.round(
                 recomKcalPerDay / 4,
               )} ${t("main_kcal")}`}
@@ -422,6 +426,7 @@ const MainScreen: React.FC = () => {
             <h3 className="daily-events__title">{t("main_water_consumed")}</h3>
             <DailyEventWrapper
               title="Water"
+              name={t("main_water")}
               quantity={`${waterConsumed}L (${Math.round(
                 (waterConsumed / recomWater) * 100,
               )}%)`}
@@ -439,6 +444,7 @@ const MainScreen: React.FC = () => {
             <h3 className="daily-events__title">{t("main_daily_exercise")}</h3>
             <DailyEventWrapper
               title="Activity"
+              name={t("main_activity")}
               quantity={`${burntKcal.toFixed(1).toString()} ${t(
                 "main_kcal",
               )} ${t("main_burnt_min")}`}
@@ -450,6 +456,7 @@ const MainScreen: React.FC = () => {
             <h3 className="daily-events__title">{t("main_body_control")}</h3>
             <DailyEventWrapper
               title="Weight"
+              name={t("main_weight")}
               recommended={`${t("main_target_weight")}: ${targetWeight} ${t(
                 "kg",
               )}`}
