@@ -17,7 +17,7 @@ const getLanguage = (): string => {
   if (lang) {
     return lang as string;
   }
-  return "ru";
+  return "en";
 };
 
 i18next.use(initReactI18next).init({

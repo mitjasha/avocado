@@ -1,3 +1,4 @@
+import i18next from "i18next";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -45,6 +46,7 @@ const SettingScreen = () => {
 
   useEffect(() => {
     localStorage.setItem("language", language);
+    i18next.changeLanguage(language);
   }, [language]);
 
   return (
