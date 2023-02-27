@@ -19,11 +19,9 @@
 
 .recipe {
   &__bg__like {
-    background-color: var(--color-text);
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     position: absolute;
-    border-radius: 7px;
     top: 10px;
     right: 10px;
     margin-right: 10px;
@@ -35,19 +33,18 @@
 
   &__favorite {
     border: none;
-    background: none;
     height: 40px;
     width: 40px;
-    background-image: url("../../assets/svg/favorites.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: var(--color-text) var(--favorites-hover) no-repeat;
+    border-radius: 7px;
     background-size: 80%;
     background-position: 50%;
     cursor: pointer;
 
     &:hover {
-      background-color: var(--input-color);
-      background-image: url("../../assets/svg/favorites-light.svg");
+      background: var(--input-color) var(--favorites) no-repeat;
+      background-position: 50%;
+      background-size: 80%;
       transition: 0.4s all ease;
     }
   }
@@ -155,8 +152,15 @@
 }
 
 .like {
-  filter: invert(90%) sepia(75%) saturate(7259%) hue-rotate(359deg)
-    brightness(88%) contrast(110%);
+  background: var(--color-text) var(--filled-heart-hover) no-repeat;
+  background-size: 80%;
+  background-position: 50%;
+
+  &:hover {
+    background: var(--input-color) var(--filled-heart) no-repeat;
+    background-size: 80%;
+    background-position: 50%;
+  }
 }
 
 @media screen and (min-width: $media-tab) {
@@ -164,9 +168,20 @@
     background-position: 50%;
   }
 
-  .recipe__favorite {
-    width: 60px;
-    height: 60px;
+  .recipe {
+    &__bg__like {
+      width: 60px;
+      height: 60px;
+    }
+
+    &__favorite {
+      height: 60px;
+      width: 60px;
+
+      &:hover {
+        background-size: 80%;
+      }
+    }
   }
 }
 
