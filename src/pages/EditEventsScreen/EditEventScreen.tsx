@@ -140,12 +140,13 @@ const EditEventScreen = () => {
             />
           </div>
         </div>
-      <ButtonTemplate
-        className="event__changes__btn"
-        onClick={() => navigate("/main")}
-      >
-        Save changes
-      </ButtonTemplate>
+        <ButtonTemplate
+          className="event__changes__btn"
+          onClick={() => navigate("/main")}
+        >
+          Save changes
+        </ButtonTemplate>
+      </div>
     </div>
   );
 };
