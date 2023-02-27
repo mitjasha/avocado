@@ -1,10 +1,8 @@
-/* eslint-disable no-unneeded-ternary */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { EventMealResponse } from "../../api/api.interface";
 import eventMealController from "../../api/event-meal.controller";
-import ProductInput from "../Inputs/ProductInput/ProductInput";
 import "./EventEditDataMeal.scss";
 
 interface DailyMeal {
@@ -13,22 +11,6 @@ interface DailyMeal {
 }
 
 const EventEditDataMeal: React.FC<DailyMeal> = ({ data, className }) => {
-  const updateMealEvent = async (
-    id: string,
-    name: string,
-    startTime: string,
-    weight: number,
-    description: string,
-  ) => {
-    await eventMealController.updateEvent({
-      id,
-      name,
-      startTime,
-      weight,
-      description,
-    });
-  };
-
   const deleteMealEvent = async (
     id: string,
     name: string,
@@ -45,25 +27,7 @@ const EventEditDataMeal: React.FC<DailyMeal> = ({ data, className }) => {
     });
   };
 
-  const [weight, setWeight] = useState<number>();
   const [removedUS, setRemovedUS] = useState<boolean>(false);
-
-  useEffect(() => {
-    updateMealEvent(
-      data.id,
-      data.product.name,
-      data.startTime,
-      weight ? weight : data.weight,
-      data.description,
-    );
-    deleteMealEvent(
-      data.id,
-      data.product.name,
-      data.startTime,
-      weight ? weight : data.weight,
-      data.description,
-    );
-  }, [[weight, setWeight]]);
 
   return (
     <li className={className} key={data.product.id}>
@@ -76,31 +40,11 @@ const EventEditDataMeal: React.FC<DailyMeal> = ({ data, className }) => {
             {data.product.name}
           </span>
           <div className="input__container">
-            <ProductInput
-              type="number"
-              placeholder={String(data.weight)}
-              value={weight ? String(weight) : String(data.weight)}
-              className="info__input"
-              onChange={(event) => {
-                setWeight(Number((event.target as HTMLSelectElement).value));
-                updateMealEvent(
-                  data.id,
-                  data.product.name,
-                  data.startTime,
-                  Number((event.target as HTMLSelectElement).value),
-                  data.description,
-                );
-              }}
-            />
-            <span>g</span>
+            <span>{data.weight} g</span>
           </div>
         </div>
         <span className="info__name">
-          {(
-            (weight ? weight / 100 : data.weight / 100) *
-            data.product.calories_100g
-          ).toFixed(2)}{" "}
-          kcal
+          {((data.weight / 100) * data.product.calories_100g).toFixed()} kcal
         </span>
       </div>
       <span
@@ -111,7 +55,7 @@ const EventEditDataMeal: React.FC<DailyMeal> = ({ data, className }) => {
             data.id,
             data.product.name,
             data.startTime,
-            weight ? weight : data.weight,
+            data.weight,
             data.description,
           );
         }}
