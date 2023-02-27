@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import "./NavComponent.scss";
 
@@ -10,7 +11,15 @@ const NavComponent: React.FC = () => {
     burgerCloseBtn.style.display = "none";
   };
 
-  const menuItems = ["main", "profile", "progress", "recipes", "about"];
+  const { t } = useTranslation();
+
+  const menuItems = {
+    main: t("nav_menu_1"),
+    profile: t("nav_menu_2"),
+    progress: t("nav_menu_3"),
+    recipes: t("nav_menu_4"),
+    about: t("nav_menu_5"),
+  };
 
   const menuItemCreate = (text: string, index: number) => {
     return (
@@ -21,7 +30,7 @@ const NavComponent: React.FC = () => {
           key={text + index}
           onClick={closeBurger}
         >
-          {text}
+          {Object.values(menuItems)[index]}
         </Link>
       </li>
     );
@@ -30,7 +39,9 @@ const NavComponent: React.FC = () => {
   return (
     <nav>
       <ul className="nav-list">
-        {menuItems.map((menuItem, index) => menuItemCreate(menuItem, index))}
+        {Object.keys(menuItems).map((menuItem, index) =>
+          menuItemCreate(menuItem, index),
+        )}
       </ul>
       <button
         type="button"
