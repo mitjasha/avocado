@@ -16,7 +16,7 @@ export async function fetchAsync(
     headers.Authorization = `Token ${accessToken}`;
     // console.log(headers);
   }
-  console.log(method, headers, body);
+  // console.log(method, headers, body);
 
   const response = await fetch(`${BASE_URL}${url}`, {
     method,
