@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import BasicModalComponent from "../../components/Modals/BasicModalComponent/BasicModalComponent";
-import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./AddProductModal.scss";
 import { Product } from "../../api/api.interface";
 import productsController from "../../api/product.controller";
+import ProductInput from "../../components/Inputs/ProductInput/ProductInput";
 
 const AddProductModal: React.FC = () => {
   const addProdutFields = [
@@ -92,7 +92,7 @@ const AddProductModal: React.FC = () => {
                 return <option key={item}>{item}</option>;
               })}
             </select>
-            <RegInput
+            <ProductInput
               className="add__input"
               type="text"
               placeholder="Enter a name"
@@ -102,7 +102,7 @@ const AddProductModal: React.FC = () => {
               }
             />
             <div className="add__input__container">
-              <RegInput
+              <ProductInput
                 className="add__input"
                 type="number"
                 placeholder="Kcal per 100 g"
@@ -114,7 +114,7 @@ const AddProductModal: React.FC = () => {
               <span>&nbsp;kcal</span>
             </div>
             <div className="add__input__container">
-              <RegInput
+              <ProductInput
                 className="add__input"
                 type="number"
                 placeholder="Proteins per 100 g"
@@ -126,7 +126,7 @@ const AddProductModal: React.FC = () => {
               <span>&nbsp;g</span>
             </div>
             <div className="add__input__container">
-              <RegInput
+              <ProductInput
                 className="add__input"
                 type="number"
                 placeholder="Fats per 100 g"
@@ -138,7 +138,7 @@ const AddProductModal: React.FC = () => {
               <span>&nbsp;g</span>
             </div>
             <div className="add__input__container">
-              <RegInput
+              <ProductInput
                 className="add__input"
                 type="number"
                 placeholder="Carbs per 100 g"

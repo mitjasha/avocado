@@ -4,7 +4,7 @@ import { RecipeResponse } from "../../api/api.interface";
 import profileController from "../../api/profile.controller";
 import recipesController from "../../api/recipes.controller";
 import CardRecipe from "../../components/CardRecipe/CardRecipe";
-import RegInput from "../../components/Inputs/BaseInput/BaseInput";
+import ProductInput from "../../components/Inputs/ProductInput/ProductInput";
 import "./RecipesScreen.scss";
 
 const RecipesScreen: React.FC = () => {
@@ -121,7 +121,7 @@ const RecipesScreen: React.FC = () => {
         <h1 className="recipes__screen__h1">What is in your kitchen?</h1>
         <h3 className="recipes__screen__h3">Enter some ingredient</h3>
         <div className="search__container">
-          <RegInput
+          <ProductInput
             type="text"
             placeholder="Type your ingredient"
             className="search__container__input"

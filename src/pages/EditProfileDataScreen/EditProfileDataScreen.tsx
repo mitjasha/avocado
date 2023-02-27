@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./EditProfileDataScreen.scss";
 import profileController from "../../api/profile.controller";
 import { EGender, EGoal } from "../../api/api.interface";
+import ProductInput from "../../components/Inputs/ProductInput/ProductInput";
 
 const getAge = (birth: string) => {
   const userAge = Math.floor(
@@ -90,7 +90,7 @@ const EditProfileDataScreen: React.FC = () => {
             <div className="edit-profile__info">
               <label htmlFor="username">
                 Username:
-                <RegInput
+                <ProductInput
                   type="text"
                   placeholder={userName}
                   value={userName}
@@ -101,7 +101,7 @@ const EditProfileDataScreen: React.FC = () => {
               </label>
               <label htmlFor="firstname">
                 First Name:
-                <RegInput
+                <ProductInput
                   type="text"
                   placeholder={firstName}
                   value={firstName}
@@ -114,7 +114,7 @@ const EditProfileDataScreen: React.FC = () => {
               </label>
               <label htmlFor="lastname">
                 Last Name:
-                <RegInput
+                <ProductInput
                   type="text"
                   placeholder={lastName}
                   value={lastName}
@@ -166,7 +166,7 @@ const EditProfileDataScreen: React.FC = () => {
             </div>
             <label htmlFor="age" className="item__container">
               Age:
-              <RegInput
+              <ProductInput
                 type="text"
                 placeholder={getAge(birth)}
                 value={getAge(birth)}
@@ -177,7 +177,7 @@ const EditProfileDataScreen: React.FC = () => {
             </label>
             <label htmlFor="birth" className="item__container">
               Birth:
-              <RegInput
+              <ProductInput
                 type="date"
                 placeholder={birth.slice(0, 10)}
                 value={birth.slice(0, 10)}
@@ -214,7 +214,7 @@ const EditProfileDataScreen: React.FC = () => {
             <label htmlFor="currentWeight" className="item__container">
               Current weight:
               <div>
-                <RegInput
+                <ProductInput
                   type="number"
                   defaultValue={weight}
                   value={Number(weight).toFixed()}
@@ -232,7 +232,7 @@ const EditProfileDataScreen: React.FC = () => {
             <label htmlFor="targetWeight" className="item__container">
               Target weight:
               <div>
-                <RegInput
+                <ProductInput
                   type="number"
                   defaultValue={targetWeight}
                   value={Number(targetWeight).toFixed()}
@@ -252,7 +252,7 @@ const EditProfileDataScreen: React.FC = () => {
             <label htmlFor="height" className="item__container">
               Height:
               <div>
-                <RegInput
+                <ProductInput
                   type="number"
                   defaultValue={height}
                   value={Number(height).toFixed()}
