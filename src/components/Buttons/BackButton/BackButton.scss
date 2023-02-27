@@ -11,7 +11,7 @@
   border: none;
 
   &-icon {
-    background: url(../../../assets//svg/arrow.svg) no-repeat;
+    background: var(--arrow) no-repeat;
     width: 20px;
     height: 30px;
   }
@@ -23,6 +23,6 @@
   }
 
   &:hover .back-btn-icon {
-    background: url(../../../assets//svg/arrow-light.svg) no-repeat;
+    background: var(--arrow-hover) no-repeat;
   }
 }

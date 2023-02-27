@@ -84,24 +84,21 @@
     }
 
     &:hover .list-item__icon_progress {
-      background: var(--color-text) url(../../assets/svg/progress-light.svg)
-        no-repeat;
+      background: var(--color-text) var(--progress-hover) no-repeat;
       transition: 0.4s all ease;
       background-size: 25px;
       background-position: 50%;
     }
 
     &:hover .list-item__icon_recipes {
-      background: var(--color-text) url(../../assets/svg/favorites-light.svg)
-        no-repeat;
+      background: var(--color-text) var(--favorites-hover) no-repeat;
       transition: 0.4s all ease;
       background-size: 25px;
       background-position: 50%;
     }
 
     &:hover .list-item__icon_settings {
-      background: var(--color-text) url(../../assets/svg/settings-light.svg)
-        no-repeat;
+      background: var(--color-text) var(--settings-hover) no-repeat;
       transition: 0.4s all ease;
       background-size: 25px;
       background-position: 50%;
@@ -121,22 +118,19 @@
     border-radius: 50%;
 
     &_progress {
-      background: var(--input-color) url(../../assets/svg/progress.svg)
-        no-repeat;
+      background: var(--input-color) var(--progress) no-repeat;
       background-size: 25px;
       background-position: 50%;
     }
 
     &_recipes {
-      background: var(--input-color) url(../../assets/svg/favorites.svg)
-        no-repeat;
+      background: var(--input-color) var(--favorites) no-repeat;
       background-size: 25px;
       background-position: 50%;
     }
 
     &_settings {
-      background: var(--input-color) url(../../assets/svg/settings.svg)
-        no-repeat;
+      background: var(--input-color) var(--settings) no-repeat;
       background-size: 25px;
       background-position: 50%;
     }

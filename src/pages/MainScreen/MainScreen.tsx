@@ -4,7 +4,6 @@ import profileController from "../../api/profile.controller";
 import DailyEventWrapper from "../../components/DailyEventWrapper/DailyEventWrapper";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
 import ChartComponent from "../../components/ChartComponent/ChartComponent";
-import minus from "../../assets/svg/minus-light.svg";
 import fireImg from "../../assets/svg/fire.svg";
 import eatenImg from "../../assets/svg/eaten.svg";
 import EditButton from "../../components/Buttons/EditButton/EditButton";
@@ -377,7 +376,6 @@ const MainScreen: React.FC = () => {
               </div>
             </div>
           </div>
-          {/* <div className="daily-data__status">now: fasting</div> */}
         </div>
       </div>
       <div className="container">
@@ -458,9 +456,10 @@ const MainScreen: React.FC = () => {
               className="daily-events__item daily-events__item_weight"
               handleClick={() => changeWeight(true)}
               minusButton={
-                <PlusMinusButton onClick={() => changeWeight(false)}>
-                  <img src={minus} alt="minus" className="plus-minus-img" />
-                </PlusMinusButton>
+                <PlusMinusButton
+                  onClick={() => changeWeight(false)}
+                  className="minus-img"
+                />
               }
               curWeight={
                 <p className="curr-weight-display">

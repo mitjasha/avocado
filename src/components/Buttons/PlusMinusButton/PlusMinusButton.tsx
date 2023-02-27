@@ -3,17 +3,20 @@ import "./PlusMinusButton.scss";
 
 export interface PlusMinusButtonProps {
   onClick?: () => void;
-  children: JSX.Element;
+  children?: JSX.Element;
+  className: string;
 }
 
 const PlusMinusButton: React.FC<PlusMinusButtonProps> = ({
   onClick,
   children,
+  className,
 }) => {
+  const classes = `${"plus-minus-btn"} ${className}`;
   return (
     <button
       type="button"
-      className="plus-minus-btn"
+      className={classes}
       aria-label="plus-minus"
       onClick={onClick}
     >

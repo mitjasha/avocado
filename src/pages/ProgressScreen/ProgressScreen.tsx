@@ -3,8 +3,6 @@ import ChartComponent from "../../components/ChartComponent/ChartComponent";
 import BarChartComponent from "../../components/BarChartComponent/BarChartComponent";
 import BasicModalComponent from "../../components/Modals/BasicModalComponent/BasicModalComponent";
 import PlusMinusButton from "../../components/Buttons/PlusMinusButton/PlusMinusButton";
-import minus from "../../assets/svg/minus-light.svg";
-import plus from "../../assets/svg/plus-light.svg";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import "./ProgressScreen.scss";
 import profileController from "../../api/profile.controller";
@@ -210,15 +208,17 @@ const ProgressScreen: React.FC = () => {
       </div>
       <BasicModalComponent title="Current Weight">
         <div className="pop-up__update">
-          <PlusMinusButton onClick={() => changeWeight(false)}>
-            <img src={minus} alt="minus" className="plus-minus-img" />
-          </PlusMinusButton>
+          <PlusMinusButton
+            onClick={() => changeWeight(false)}
+            className="minus-img"
+          />
           <div className="pop-up__weight">
             {currentWeight.toFixed(1).toString()} kg
           </div>
-          <PlusMinusButton onClick={() => changeWeight(true)}>
-            <img src={plus} alt="plus" className="plus-minus-img" />
-          </PlusMinusButton>
+          <PlusMinusButton
+            onClick={() => changeWeight(true)}
+            className="plus-img"
+          />
         </div>
       </BasicModalComponent>
     </div>
