@@ -20,11 +20,9 @@
   }
 
   &__bg__like {
-    background-color: rgba(255, 255, 255, 0.5);
     width: 28px;
     height: 28px;
     position: absolute;
-    border-radius: 7px;
     top: 10px;
     right: 0px;
     margin-right: 10px;
@@ -36,16 +34,19 @@
 
   &__like {
     border: none;
-    background: none;
-    width: 18px;
-    height: 16px;
-    background-image: url("../../assets/svg/favorites.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 28px;
+    height: 28px;
+    background: var(--color-text) var(--favorites-hover) no-repeat;
+    border-radius: 7px;
+    background-size: 80%;
+    background-position: 50%;
+    cursor: pointer;
 
     &:hover {
-      background-image: url("../../assets/svg/favorites-light.svg");
-      cursor: pointer;
+      background: var(--input-color) var(--favorites) no-repeat;
+      background-position: 50%;
+      background-size: 80%;
+      transition: 0.4s all ease;
     }
   }
 

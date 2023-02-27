@@ -29,6 +29,8 @@ $youtube: url(./assets/svg/youtube.svg);
 $youtube-hover: url(./assets/svg/youtube-light.svg);
 $favorites: url(./assets/svg/favorites.svg);
 $favorites-hover: url(./assets/svg/favorites-light.svg);
+$filled-heart: url(./assets/svg/filled-heart.svg);
+$filled-heart-hover: url(./assets/svg/filled-heart-light.svg);
 $minus: url(./assets/svg/minus.svg);
 $minus-hover: url(./assets/svg/minus-light.svg);
 $plus: url(./assets/svg/plus.svg);
@@ -59,6 +61,8 @@ html[data-theme="light"] {
   --youtube-hover: #{$youtube-hover};
   --favorites: #{$favorites};
   --favorites-hover: #{$favorites-hover};
+  --filled-heart: #{$filled-heart};
+  --filled-heart-hover: #{$filled-heart-hover};
   --minus: #{$minus};
   --minus-hover: #{$minus-hover};
   --plus: #{$plus};
@@ -90,6 +94,8 @@ html[data-theme="dark"] {
   --youtube-hover: #{$youtube};
   --favorites: #{$favorites-hover};
   --favorites-hover: #{$favorites};
+  --filled-heart: #{$filled-heart-hover};
+  --filled-heart-hover: #{$filled-heart};
   --minus: #{$minus-hover};
   --minus-hover: #{$minus};
   --plus: #{$plus-hover};
