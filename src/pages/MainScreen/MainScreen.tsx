@@ -217,28 +217,38 @@ const MainScreen: React.FC = () => {
     if (profileID) {
       const profile = await profileController.getProfileById(profileID);
       if (up === true) {
+        await profileController.updateProfile({
+          id: profileID,
+          firstName: profile.firstName,
+          lastName: profile.lastName,
+          gender: profile.gender,
+          birth: profile.birth,
+          weight: currentWeight + 0.1,
+          height: profile.height,
+          goal: profile.goal,
+          targetWeight: profile.targetWeight,
+          photo: "",
+          favorites: profile.favorites,
+          recentRecipes: profile.recentRecipes,
+        });
         setCurrentWeight(currentWeight + 0.1);
       } else {
+        await profileController.updateProfile({
+          id: profileID,
+          firstName: profile.firstName,
+          lastName: profile.lastName,
+          gender: profile.gender,
+          birth: profile.birth,
+          weight: currentWeight - 0.1,
+          height: profile.height,
+          goal: profile.goal,
+          targetWeight: profile.targetWeight,
+          photo: "",
+          favorites: profile.favorites,
+          recentRecipes: profile.recentRecipes,
+        });
         setCurrentWeight(currentWeight - 0.1);
       }
-      await profileController.updateProfile({
-        id: profileID,
-        firstName: profile.firstName,
-        lastName: profile.lastName,
-        gender: profile.gender,
-        birth: profile.birth,
-        weight: currentWeight,
-        height: profile.height,
-        goal: profile.goal,
-        targetWeight: profile.targetWeight,
-        photo: "",
-        favorites: profile.favorites,
-        recentRecipes: profile.recentRecipes,
-      });
-      const weightDisplay = document.querySelector(
-        ".curr-weight-display",
-      ) as HTMLElement;
-      weightDisplay.textContent = `${currentWeight.toFixed(1).toString()} kg`;
     }
   };
 
@@ -251,6 +261,10 @@ const MainScreen: React.FC = () => {
     getActivityKcal();
     getLastActivity();
   }, []);
+
+  useEffect(() => {
+    getCurrentWeight();
+  }, [currentWeight]);
 
   return (
     <div className="main-screen">
