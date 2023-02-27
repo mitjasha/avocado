@@ -184,14 +184,18 @@ const MainScreen: React.FC = () => {
       startTime: time,
       description: "",
     });
-
     setWaterConsumed(waterConsumed + 0.25);
   };
 
-  const drawGlasses = () => {
+  const getWater = async () => {
+    const userWater = await eventsController.getEventsByDate(date);
+    setWaterConsumed(userWater.length * 0.25);
+  };
+
+  const drawGlasses = (water: number) => {
     const content = [];
     const oneGlass = 0.25;
-    const glasses = waterConsumed / oneGlass;
+    const glasses = water / oneGlass;
     for (let i = 0; i < glasses; i += 1) {
       content.push(<div className="glass" key={i} />);
     }
@@ -249,6 +253,7 @@ const MainScreen: React.FC = () => {
     getEatenKcal();
     getActivityKcal();
     getLastActivity();
+    getWater();
   }, []);
 
   useEffect(() => {
@@ -259,7 +264,12 @@ const MainScreen: React.FC = () => {
     getEatenKcal();
     getActivityKcal();
     getLastActivity();
+    getWater();
   }, [appContext]);
+
+  useEffect(() => {
+    getWater();
+  }, [waterConsumed]);
 
   return (
     <div className="main-screen">
@@ -422,8 +432,8 @@ const MainScreen: React.FC = () => {
                 .toFixed(2)
                 .toString()}L (${Math.ceil(recomWater / 0.25)} glasses)`}
               className="daily-events__item daily-events__item_water"
-              content={drawGlasses()}
               handleClick={addWater}
+              content={drawGlasses(waterConsumed)}
             />
           </div>
           <div className="daily-events__exercise">
