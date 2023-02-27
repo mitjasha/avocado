@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import RegInput from "../Inputs/BaseInput/BaseInput";
 import "./DailyEventEditData.scss";
 
@@ -8,6 +9,7 @@ export interface DailyEventData {
 }
 
 const DailyEventEditData: React.FC<DailyEventData> = ({ type, data }) => {
+  const { t } = useTranslation();
   return (
     <ul className="container__info__ul">
       {data.map((item, index) => (
@@ -21,12 +23,14 @@ const DailyEventEditData: React.FC<DailyEventData> = ({ type, data }) => {
                   placeholder={item[1]}
                   className="info__input"
                 />
-                <span>{type === "meal" ? " g" : " min"}</span>
+                <span>{type === "meal" ? t("g") : t("min")}</span>
               </div>
             </div>
-            <span className="info__name">{item[2]} kcal</span>
+            <span className="info__name">
+              {item[2]} {t("main_kcal")}
+            </span>
           </div>
-          <span className="info__delete">delete</span>
+          <span className="info__delete">{t("edit_event_delete")}</span>
         </li>
       ))}
     </ul>
