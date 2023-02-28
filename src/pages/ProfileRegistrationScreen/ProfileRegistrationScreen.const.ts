@@ -1,7 +1,3 @@
-import { useTranslation } from "react-i18next";
-
-const { t } = useTranslation();
-
 export interface IValidation {
   required: boolean;
   pattern?: RegExp;
@@ -13,17 +9,18 @@ export const validationName: IValidation = {
   required: true,
   maxLength: 32,
   pattern: /[a-zA-Z\d]{3,32}$/,
-  message: t("name_validation"),
+  message:
+    "The name must contain only letters and numbers and be at least 3 and no more than 32 characters",
 };
 
 export const validationEmail: IValidation = {
   required: true,
   maxLength: 15,
   pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-  message: t("email_validation"),
+  message: "Invalid email address",
 };
 
 export const validationGender: IValidation = {
   required: true,
-  message: t("gender_validation"),
+  message: "Please specify your gender",
 };

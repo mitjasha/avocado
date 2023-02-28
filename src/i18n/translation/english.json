@@ -199,8 +199,5 @@
   "placeholder_name_proteins": "Proteins per 100 g",
   "placeholder_name_fats": "Fats per 100 g",
   "placeholder_name_carbs": "Carbs per 100 g",
-  "add_modal_title": "Add new product",
-  "name_validation": "The name must contain only letters and numbers and be at least 3 and no more than 32 characters",
-  "email_validation": "Invalid email address",
-  "gender_validation": "Please specify your gender"
+  "add_modal_title": "Add new product"
 }

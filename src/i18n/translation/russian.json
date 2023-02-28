@@ -199,8 +199,5 @@
   "placeholder_name_proteins": "Белков в 100 гр.",
   "placeholder_name_fats": "Жиров в 100 гр.",
   "placeholder_name_carbs": "Углеводов в 100 гр.",
-  "add_modal_title": "Добавьте новый продукт",
-  "name_validation": "Имя должно содержать только буквы и цифры и быть не менее 3 и не более 32 символов",
-  "email_validation": "Неверный адрес электронной почты",
-  "gender_validation": "Пожалуйста, укажите ваш пол"
+  "add_modal_title": "Добавьте новый продукт"
 }
