@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import BasicModalComponent from "../../components/Modals/BasicModalComponent/BasicModalComponent";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
@@ -11,6 +12,8 @@ interface ActivityModalProps {
 }
 
 const ActivityModal: React.FC<ActivityModalProps> = ({ data }) => {
+  const { t } = useTranslation();
+
   const [kcalBurned, setKcalBurned] = useState<number>(
     Math.round(data.calories_per_min),
   );
@@ -58,8 +61,13 @@ const ActivityModal: React.FC<ActivityModalProps> = ({ data }) => {
     }
   };
 
+  const lang = localStorage.getItem("language");
+
   return (
-    <BasicModalComponent title={data.name} className="activity-popup">
+    <BasicModalComponent
+      title={lang === "en" ? data.name : data.nameRU}
+      className="activity-popup"
+    >
       <div className="activity-popup__wrapper">
         <div className="activity-popup__input-wrapper">
           <RegInput
@@ -68,12 +76,14 @@ const ActivityModal: React.FC<ActivityModalProps> = ({ data }) => {
             className="activity-popup__input"
             onChange={calcKcalBurned}
           />
-          min
+          {t("min")}
         </div>
         <div className="activity-popup__arrow" />
-        <div className="activity-popup__kcal">kcal burned: {kcalBurned}</div>
+        <div className="activity-popup__kcal">
+          {t("recipe_kal")} {t("main_burnt_min")}: {kcalBurned}
+        </div>
       </div>
-      <ButtonTemplate onClick={addEventActivity}>Save</ButtonTemplate>
+      <ButtonTemplate onClick={addEventActivity}>{t("save")}</ButtonTemplate>
     </BasicModalComponent>
   );
 };

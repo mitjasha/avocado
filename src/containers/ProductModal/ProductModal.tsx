@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import BasicModalComponent from "../../components/Modals/BasicModalComponent/BasicModalComponent";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
@@ -12,6 +13,8 @@ interface ProductProps {
 }
 
 const ProductModal: React.FC<ProductProps> = ({ data, mealType }) => {
+  const { t } = useTranslation();
+
   const [kcal, setKcal] = useState<number>(Math.round(data.calories_100g));
   const [proteins, setProteins] = useState<number>(
     Math.round(data.proteins_100g),
@@ -78,27 +81,35 @@ const ProductModal: React.FC<ProductProps> = ({ data, mealType }) => {
             placeholder="100"
             onChange={updateModalData}
           />
-          <span className="modal__span">&nbsp;g</span>
+          <span className="modal__span">&nbsp;{t("g")}</span>
         </div>
         <div className="modal__arrow-icon" />
-        <div className="modal__span__disabled">{kcal} kcal</div>
+        <div className="modal__span__disabled">
+          {kcal} {t("modal__kcal")}
+        </div>
       </div>
       <div className="modal__nutritions">
         <div className="modal__container">
-          <span className="modal__span">Proteins</span>
-          <div className="modal__span__disabled">{proteins} g</div>
+          <span className="modal__span">{t("main_proteins")}</span>
+          <div className="modal__span__disabled">
+            {proteins} {t("g")}
+          </div>
         </div>
         <div className="modal__container">
-          <span className="modal__span">Fats</span>
-          <div className="modal__span__disabled">{fats} g</div>
+          <span className="modal__span">{t("main_fats")}</span>
+          <div className="modal__span__disabled">
+            {fats} {t("g")}
+          </div>
         </div>
         <div className="modal__container">
-          <span className="modal__span">Carbs</span>
-          <div className="modal__span__disabled">{carbs} g</div>
+          <span className="modal__span">{t("main_carbs")}</span>
+          <div className="modal__span__disabled">
+            {carbs} {t("g")}
+          </div>
         </div>
       </div>
       <ButtonTemplate className="modal__button" onClick={addEventMeal}>
-        Add
+        {t("add_button")}
       </ButtonTemplate>
     </BasicModalComponent>
   );
