@@ -503,7 +503,7 @@ const MainScreen: React.FC = () => {
               }
               curWeight={
                 <p className="curr-weight-display">
-                  {currentWeight.toFixed(1).toString()} ${t("kg")}
+                  {currentWeight.toFixed(1).toString()} {t("kg")}
                 </p>
               }
             />
