@@ -30,6 +30,7 @@ const routesWithoutHeader: string[] = [
 ];
 
 const dateState: string = new Date().toISOString().slice(0, 10);
+localStorage.setItem("date", dateState);
 
 const App: React.FC = () => {
   const [currentDateState, setCurrentDateState] =
