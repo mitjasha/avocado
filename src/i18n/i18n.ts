@@ -25,4 +25,9 @@ i18next.use(initReactI18next).init({
   lng: getLanguage(), // default language
 });
 
+const lng = localStorage.getItem("language");
+if (!lng) {
+  localStorage.setItem("language", "en");
+}
+
 export default i18next;
