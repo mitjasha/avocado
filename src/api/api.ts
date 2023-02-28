@@ -8,6 +8,7 @@ export async function fetchAsync(
 ) {
   const headers: HeadersInit = {
     "Content-Type": "application/json",
+    "Access-Control-Allow_Headers": "*",
   };
   const accessToken: string = JSON.parse(
     localStorage.getItem("accessToken") as string,
