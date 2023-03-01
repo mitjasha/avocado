@@ -53,7 +53,7 @@ const Header: React.FC = () => {
   const max = `${todaysYear}-${todaysMonth}-${todaysDate}`;
 
   const [date, setDate] = useState<string>(
-    localStorage.getItem("date") || new Date().toISOString(),
+    localStorage.getItem("date") || new Date().toString(),
   );
 
   useEffect(() => {
@@ -75,7 +75,7 @@ const Header: React.FC = () => {
     ) as HTMLInputElement;
     const newValue = new Date(dateInput.value);
     setDate(dateInput.value);
-    localStorage.setItem("date", newValue.toISOString());
+    localStorage.setItem("date", newValue.toString());
     const dataDisplay = document.querySelector(".header__date") as HTMLElement;
     dataDisplay.textContent = `${newValue.getDate()} ${
       months[newValue.getMonth()]
@@ -94,6 +94,7 @@ const Header: React.FC = () => {
             type="date"
             className="header__date-input"
             max={max}
+            value={date}
             onChange={changeDate}
           />
           <div className="header__date">{setDateDisplay()}</div>
