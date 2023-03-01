@@ -18,28 +18,29 @@ const AddProductModal: React.FC = () => {
     t("main_fats"),
     t("main_carbs"),
   ];
+
   const productCategories = [
-    "",
-    t("dairy"),
-    t("pastries"),
-    t("oils"),
-    t("sauces"),
-    t("grains"),
-    t("vegetables"),
-    t("fruits"),
-    t("dried_fruits"),
-    t("beans"),
-    t("mushrooms"),
-    t("meat"),
-    t("sausages"),
-    t("smoked_meat"),
-    t("eggs"),
-    t("fish"),
-    t("nuts"),
-    t("sweets"),
-    t("pasta"),
-    t("soup"),
-    t("salad"),
+    ["", ""],
+    ["diary", t("dairy")],
+    ["pastries", t("pastries")],
+    ["oils", t("oils")],
+    ["souces", t("sauces")],
+    ["grains", t("grains")],
+    ["vegetables", t("vegetables")],
+    ["fruits", t("fruits")],
+    ["dried_fruits", t("dried_fruits")],
+    ["beans", t("beans")],
+    ["mushrooms", t("mushrooms")],
+    ["meat", t("meat")],
+    ["sausages", t("sausages")],
+    ["smoked_meat", t("smoked_meat")],
+    ["eggs", t("eggs")],
+    ["fish", t("fish")],
+    ["nuts", t("nuts")],
+    ["sweets", t("sweets")],
+    ["pasta", t("pasta")],
+    ["soup", t("soup")],
+    ["salad", t("salad")],
   ];
 
   const addProductRequest = async (
@@ -69,7 +70,7 @@ const AddProductModal: React.FC = () => {
 
   return (
     <BasicModalComponent
-      title={t("add_modal_title")!}
+      title={t("add_modal_title") as string}
       className="add-product-modal"
     >
       <div className="add__containter">
@@ -95,13 +96,13 @@ const AddProductModal: React.FC = () => {
               }
             >
               {productCategories.map((item) => {
-                return <option key={item}>{item}</option>;
+                return <option key={item[0]}>{item[1]}</option>;
               })}
             </select>
             <ProductInput
               className="add__input"
               type="text"
-              placeholder={t("placeholder_name")!}
+              placeholder={t("placeholder_name") as string}
               value={name}
               onChange={(event) =>
                 setName((event.target as HTMLInputElement).value)
@@ -111,7 +112,7 @@ const AddProductModal: React.FC = () => {
               <ProductInput
                 className="add__input"
                 type="number"
-                placeholder={t("placeholder_name_kcal")!}
+                placeholder={t("placeholder_name_kcal") as string}
                 value={String(kcal)}
                 onChange={(event) =>
                   setKcal(Number((event.target as HTMLInputElement).value))
@@ -123,7 +124,7 @@ const AddProductModal: React.FC = () => {
               <ProductInput
                 className="add__input"
                 type="number"
-                placeholder={t("placeholder_name_proteins")!}
+                placeholder={t("placeholder_name_proteins") as string}
                 value={String(proteins)}
                 onChange={(event) =>
                   setProteins(Number((event.target as HTMLInputElement).value))
@@ -135,7 +136,7 @@ const AddProductModal: React.FC = () => {
               <ProductInput
                 className="add__input"
                 type="number"
-                placeholder={t("placeholder_name_fats")!}
+                placeholder={t("placeholder_name_fats") as string}
                 value={String(fats)}
                 onChange={(event) =>
                   setFats(Number((event.target as HTMLInputElement).value))
@@ -147,7 +148,7 @@ const AddProductModal: React.FC = () => {
               <ProductInput
                 className="add__input"
                 type="number"
-                placeholder={t("placeholder_name_carbs")!}
+                placeholder={t("placeholder_name_carbs") as string}
                 value={String(carbs)}
                 onChange={(event) =>
                   setCarbs(Number((event.target as HTMLInputElement).value))

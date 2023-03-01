@@ -269,18 +269,20 @@ const CategoriesRecipesScreen: React.FC = () => {
                     <CardCategory data={item} key={item.id} />
                   </Link>
                 ))}
-          <div
-            className="no-found"
-            style={{
-              display: `${
-                document.querySelectorAll(".card__category").length > 0
-                  ? "none"
-                  : "block"
-              }`,
-            }}
-          >
-            {t("categories_no_found")}
-          </div>
+          {recipes.length === 0 && (
+            <div
+              className="no-found"
+              style={{
+                display: `${
+                  document.querySelectorAll(".card__category").length > 0
+                    ? "none"
+                    : "block"
+                }`,
+              }}
+            >
+              {t("categories_no_found")}
+            </div>
+          )}
         </div>
       </div>
     </div>

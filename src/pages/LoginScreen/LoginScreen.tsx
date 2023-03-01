@@ -21,7 +21,7 @@ import profileController from "../../api/profile.controller";
 const LoginScreen: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-
+  localStorage.setItem("date", new Date().toISOString().slice(0, 10));
   const {
     register,
     formState: { errors },
