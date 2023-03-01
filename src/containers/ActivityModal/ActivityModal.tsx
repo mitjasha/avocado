@@ -6,6 +6,7 @@ import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTempla
 import eventActivityController from "../../api/event-activity.controller";
 import { ActivityResponse } from "../../api/api.interface";
 import "./ActivityModal.scss";
+import { eventTime } from "../../helpers/getEventTime";
 
 interface ActivityModalProps {
   data: ActivityResponse;
@@ -25,32 +26,18 @@ const ActivityModal: React.FC<ActivityModalProps> = ({ data }) => {
     setKcalBurned(Math.round(Number(input.value) * data.calories_per_min));
   };
 
-  const correctData = (date: number) => {
-    return date > 9 ? `${date}` : `0${date}`;
-  };
-
-  const date = `${new Date().getFullYear()}-${correctData(
-    new Date().getMonth() + 1,
-  )}-${correctData(new Date().getDate())} ${correctData(
-    new Date().getHours(),
-  )}:${correctData(new Date().getMinutes())}`;
-
   const addEventActivity = async () => {
     const modalInput = document.querySelector(
       ".activity-popup__input",
     ) as HTMLInputElement;
     if (modalInput.value.length > 0) {
-      const endMin = new Date();
-      endMin.setMinutes(endMin.getMinutes() + Number(modalInput.value));
-      const endDate = `${endMin.getFullYear()}-${correctData(
-        endMin.getMonth() + 1,
-      )}-${correctData(endMin.getDate())} ${correctData(
-        endMin.getHours(),
-      )}:${correctData(endMin.getMinutes())}`;
+      const endDate = new Date(eventTime(new Date().toString()));
+      endDate.setMinutes(endDate.getMinutes() + Number(modalInput.value));
+
       await eventActivityController.addEvent(
         {
-          startTime: date,
-          endTime: endDate,
+          startTime: eventTime(new Date().toString()),
+          endTime: eventTime(endDate.toString()),
           description: "",
         },
         data,
