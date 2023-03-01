@@ -38,7 +38,7 @@ const ProductCard: React.FC<ProductProps> = ({ data, onClick }) => {
             EProductCategory[
               Object.keys(EProductCategory)[
                 productArray.indexOf(data.category)
-              ].toString() as keyof typeof EProductCategory
+              ] as keyof typeof EProductCategory
             ]
           }")`,
         }}
