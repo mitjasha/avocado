@@ -32,13 +32,13 @@ const Header: React.FC = () => {
   ];
 
   const weekDays = [
+    t("header_day_7"),
     t("header_day_1"),
     t("header_day_2"),
     t("header_day_3"),
     t("header_day_4"),
     t("header_day_5"),
     t("header_day_6"),
-    t("header_day_7"),
   ];
 
   const todaysDate =
