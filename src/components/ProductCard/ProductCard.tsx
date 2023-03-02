@@ -22,6 +22,7 @@ const productArray = [
   "sausages",
   "smoked meat",
   "fish and seafood",
+  "eggs",
   "nuts",
   "sweets",
   "pasta",
