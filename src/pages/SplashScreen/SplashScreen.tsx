@@ -6,6 +6,7 @@ import logoSVG from "../../assets/img/svg/logo.svg";
 import Button from "../../components/Buttons/Button/Button";
 import LogoComponent from "../../components/LogoComponent/LogoComponent";
 import "./SplashScreen.scss";
+import { eventTime } from "../../helpers/getEventTime";
 
 const SplashScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ const SplashScreen: React.FC = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
+    localStorage.setItem("date", eventTime(new Date().toString()).slice(0, 10));
     setTimeout(() => {
       if (accessToken) {
         navigate("/main");
