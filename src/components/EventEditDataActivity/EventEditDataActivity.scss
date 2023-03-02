@@ -1,59 +1,59 @@
 @import "../../variables.scss";
 
 .container__info {
-    &__li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 10px 0px;
-    }
+  &__li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+  }
 
-    &__ul {
-        padding: 0px;
-    }
+  &__ul {
+    padding: 0px;
+  }
 
-    &__text {
-        width: fit-content;
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        align-items: center;
-    }
+  &__text {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
 }
 
 .input__container {
-    width: 100px;
+  width: 100px;
 }
 
 .info {
-    &__delete {
-        color: #9da8c3;
-        font-weight: 200;
-    }
+  &__delete {
+    color: var(--color-text);
+    font-weight: 200;
+  }
 
-    &__header__span {
-        font-size: 16px;
-        font-weight: 600;
-    }
+  &__header__span {
+    font-size: 16px;
+    font-weight: 600;
+  }
 
-    &__input {
-        height: 30px;
-        width: 50px;
-        padding: 5px;
-    }
+  &__input {
+    height: 30px;
+    width: 50px;
+    padding: 5px;
+  }
 }
 
 .info {
-    &__delete {
-        &:hover {
-            color: red;
-            cursor: pointer;
-            font-weight: 500;
-        }
+  &__delete {
+    &:hover {
+      color: red;
+      cursor: pointer;
+      font-weight: 500;
     }
+  }
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import BasicModalComponent from "../../components/Modals/BasicModalComponent/BasicModalComponent";
 import RegInput from "../../components/Inputs/BaseInput/BaseInput";
 import ButtonTemplate from "../../components/Buttons/ButtonTemplate/ButtonTemplate";
 import { ProductRequest } from "../../api/api.interface";
 import "./ProductModal.scss";
 import eventMealController from "../../api/event-meal.controller";
+import { eventTime } from "../../helpers/getEventTime";
 
 interface ProductProps {
   data: ProductRequest;
@@ -12,6 +14,8 @@ interface ProductProps {
 }
 
 const ProductModal: React.FC<ProductProps> = ({ data, mealType }) => {
+  const { t } = useTranslation();
+
   const [kcal, setKcal] = useState<number>(Math.round(data.calories_100g));
   const [proteins, setProteins] = useState<number>(
     Math.round(data.proteins_100g),
@@ -31,23 +35,6 @@ const ProductModal: React.FC<ProductProps> = ({ data, mealType }) => {
     setCarbs(Math.round((Number(modalInput.value) / 100) * data.carbs_100g));
   };
 
-  const month =
-    new Date().getMonth() > 9
-      ? `${new Date().getMonth() + 1}`
-      : `0${new Date().getMonth() + 1}`;
-
-  const hours =
-    new Date().getHours() > 9
-      ? `${new Date().getHours()}`
-      : `0${new Date().getHours()}`;
-
-  const minutes =
-    new Date().getMinutes() > 9
-      ? `${new Date().getMinutes()}`
-      : `0${new Date().getMinutes()}`;
-
-  const time = `${new Date().getFullYear()}-${month}-${new Date().getDate()} ${hours}:${minutes}`;
-
   const addEventMeal = async () => {
     const modalInput = document.querySelector(
       ".modal__input",
@@ -56,7 +43,7 @@ const ProductModal: React.FC<ProductProps> = ({ data, mealType }) => {
       await eventMealController.addEvent(
         {
           name: mealType,
-          startTime: time,
+          startTime: eventTime(new Date().toString()),
           weight: Number(modalInput.value),
           description: "",
         },
@@ -78,27 +65,35 @@ const ProductModal: React.FC<ProductProps> = ({ data, mealType }) => {
             placeholder="100"
             onChange={updateModalData}
           />
-          <span className="modal__span">&nbsp;g</span>
+          <span className="modal__span">&nbsp;{t("g")}</span>
         </div>
         <div className="modal__arrow-icon" />
-        <div className="modal__span__disabled">{kcal} kcal</div>
+        <div className="modal__span__disabled">
+          {kcal} {t("modal__kcal")}
+        </div>
       </div>
       <div className="modal__nutritions">
         <div className="modal__container">
-          <span className="modal__span">Proteins</span>
-          <div className="modal__span__disabled">{proteins} g</div>
+          <span className="modal__span">{t("main_proteins")}</span>
+          <div className="modal__span__disabled">
+            {proteins} {t("g")}
+          </div>
         </div>
         <div className="modal__container">
-          <span className="modal__span">Fats</span>
-          <div className="modal__span__disabled">{fats} g</div>
+          <span className="modal__span">{t("main_fats")}</span>
+          <div className="modal__span__disabled">
+            {fats} {t("g")}
+          </div>
         </div>
         <div className="modal__container">
-          <span className="modal__span">Carbs</span>
-          <div className="modal__span__disabled">{carbs} g</div>
+          <span className="modal__span">{t("main_carbs")}</span>
+          <div className="modal__span__disabled">
+            {carbs} {t("g")}
+          </div>
         </div>
       </div>
       <ButtonTemplate className="modal__button" onClick={addEventMeal}>
-        Add
+        {t("add_button")}
       </ButtonTemplate>
     </BasicModalComponent>
   );

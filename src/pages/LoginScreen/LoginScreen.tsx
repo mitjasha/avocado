@@ -21,7 +21,6 @@ import profileController from "../../api/profile.controller";
 const LoginScreen: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-
   const {
     register,
     formState: { errors },

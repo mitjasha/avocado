@@ -21,6 +21,7 @@ import ProfileRegistrationScreen from "./pages/ProfileRegistrationScreen/Profile
 import Screen404 from "./pages/404Screen/404Screen";
 import AppContext, { AppContextType } from "./context";
 import RequireAuth from "./helpers/RequireAuth";
+import { eventTime } from "./helpers/getEventTime";
 
 const routesWithoutHeader: string[] = [
   "/",
@@ -29,7 +30,9 @@ const routesWithoutHeader: string[] = [
   "/login",
 ];
 
-const dateState: string = new Date().toISOString().slice(0, 10);
+const dateState: string =
+  localStorage.getItem("date") || eventTime(new Date().toString()).slice(0, 10);
+localStorage.setItem("date", dateState);
 
 const App: React.FC = () => {
   const [currentDateState, setCurrentDateState] =

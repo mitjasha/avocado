@@ -12,6 +12,7 @@ import eventMealController from "../../api/event-meal.controller";
 import eventsController from "../../api/event.controller";
 import { useAppContext } from "../../context";
 import "./MainScreen.scss";
+import { eventTime } from "../../helpers/getEventTime";
 
 const MainScreen: React.FC = () => {
   const [recomKcalPerDay, setRecomKcalPerDay] = useState<number>(0);
@@ -37,16 +38,6 @@ const MainScreen: React.FC = () => {
   const { t } = useTranslation();
 
   const profileID = JSON.parse(localStorage.getItem("profileID") as string);
-
-  const correctData = (date: number) => {
-    return date > 9 ? `${date}` : `0${date}`;
-  };
-
-  const time = `${new Date().getFullYear()}-${correctData(
-    new Date().getMonth() + 1,
-  )}-${correctData(new Date().getDate())} ${correctData(
-    new Date().getHours(),
-  )}:${correctData(new Date().getMinutes())}`;
 
   const appContext = useAppContext();
   const date = localStorage.getItem("date") as string;
@@ -184,7 +175,7 @@ const MainScreen: React.FC = () => {
   const addWater = async () => {
     await eventsController.addEvent({
       name: "Drink",
-      startTime: time,
+      startTime: eventTime(new Date().toString()),
       description: "",
     });
     setWaterConsumed(waterConsumed + 0.25);
@@ -460,7 +451,7 @@ const MainScreen: React.FC = () => {
             <DailyEventWrapper
               title="Water"
               name={t("main_water")}
-              quantity={`${waterConsumed}L (${Math.round(
+              quantity={`${waterConsumed}${t("main_liter")} (${Math.round(
                 (waterConsumed / recomWater) * 100,
               )}%)`}
               recommended={`${t("main_recommended")} ${recomWater

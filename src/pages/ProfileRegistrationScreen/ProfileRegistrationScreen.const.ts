@@ -10,7 +10,7 @@ export const validationName: IValidation = {
   maxLength: 32,
   pattern: /[a-zA-Z\d]{3,32}$/,
   message:
-    "Имя должно содержать только буквы и цифры и быть не менее 3 и не более 32 символов",
+    "The name must contain only letters and numbers and be at least 3 and no more than 32 characters",
 };
 
 export const validationEmail: IValidation = {

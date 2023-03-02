@@ -69,6 +69,7 @@ export interface Activity {
   name: string;
   calories_per_min: number;
   image: string;
+  nameRU: string;
 }
 
 export interface ActivityRequest extends Activity {

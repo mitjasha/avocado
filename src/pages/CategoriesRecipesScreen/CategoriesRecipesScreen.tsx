@@ -245,7 +245,7 @@ const CategoriesRecipesScreen: React.FC = () => {
             </ul>
           </div>
         </header>
-        <div className="container categories__main">
+        <div className="categories__main">
           {categories[category as keyof typeof categories].title !== "Favorites"
             ? recipes
                 .filter((item) => item.category.includes(category as string))
@@ -269,18 +269,20 @@ const CategoriesRecipesScreen: React.FC = () => {
                     <CardCategory data={item} key={item.id} />
                   </Link>
                 ))}
-          <div
-            className="no-found"
-            style={{
-              display: `${
-                document.querySelectorAll(".card__category").length > 0
-                  ? "none"
-                  : "block"
-              }`,
-            }}
-          >
-            {t("categories_no_found")}
-          </div>
+          {recipes.length === 0 && (
+            <div
+              className="no-found"
+              style={{
+                display: `${
+                  document.querySelectorAll(".card__category").length > 0
+                    ? "none"
+                    : "block"
+                }`,
+              }}
+            >
+              {t("categories_no_found")}
+            </div>
+          )}
         </div>
       </div>
     </div>

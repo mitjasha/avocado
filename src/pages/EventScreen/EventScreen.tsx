@@ -135,7 +135,7 @@ const EventScreen: React.FC = () => {
           {filtredProducts.map((item) => (
             <ProductCard
               data={item}
-              key={products.indexOf(item)}
+              key={item.id}
               onClick={() => openProductModal(item)}
             />
           ))}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import ActivityWrapper from "../../components/ActivityWrapper/ActivityWrapper";
 import ActivityModal from "../../containers/ActivityModal/ActivityModal";
 import BackButton from "../../components/Buttons/BackButton/BackButton";
@@ -7,13 +8,18 @@ import { ActivityResponse } from "../../api/api.interface";
 import activitiesController from "../../api/activity.controller";
 
 const ActivityScreen: React.FC = () => {
+  const { t } = useTranslation();
+
   const [activities, setActivities] = useState<ActivityResponse[]>([]);
   const [activityData, setActivityData] = useState<ActivityResponse>({
     id: "",
     name: "",
+    nameRU: "",
     calories_per_min: 0,
     image: "",
   });
+
+  const lang = localStorage.getItem("language");
 
   const openActivityPopUp = (item: ActivityResponse) => {
     setActivityData(item);
@@ -40,14 +46,14 @@ const ActivityScreen: React.FC = () => {
       <div className="container">
         <div className="activity-screen__title-wrapper">
           <BackButton to="/main" />
-          <h1 className="activity-screen__title">Activities</h1>
+          <h1 className="activity-screen__title">{t("activities_title")}</h1>
         </div>
-        <p className="activity-screen__subtitle">What did you do today?</p>
+        <p className="activity-screen__subtitle">{t("activities_subtitle")}</p>
         <div className="activity-screen__wrapper">
           {activities.map((item) => {
             return (
               <ActivityWrapper
-                name={item.name}
+                name={lang === "ru" ? item.nameRU : item.name}
                 image={item.image}
                 handleClick={() => openActivityPopUp(item)}
                 key={activities.indexOf(item)}
