@@ -451,7 +451,7 @@ const MainScreen: React.FC = () => {
             <DailyEventWrapper
               title="Water"
               name={t("main_water")}
-              quantity={`${waterConsumed}L (${Math.round(
+              quantity={`${waterConsumed}${t("main_liter")} (${Math.round(
                 (waterConsumed / recomWater) * 100,
               )}%)`}
               recommended={`${t("main_recommended")} ${recomWater
