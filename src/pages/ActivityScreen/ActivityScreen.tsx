@@ -53,7 +53,7 @@ const ActivityScreen: React.FC = () => {
           {activities.map((item) => {
             return (
               <ActivityWrapper
-                name={lang === "en" ? item.name : item.nameRU}
+                name={lang === "ru" ? item.nameRU : item.name}
                 image={item.image}
                 handleClick={() => openActivityPopUp(item)}
                 key={activities.indexOf(item)}

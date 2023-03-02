@@ -65,7 +65,7 @@ const ActivityModal: React.FC<ActivityModalProps> = ({ data }) => {
 
   return (
     <BasicModalComponent
-      title={lang === "en" ? data.name : data.nameRU}
+      title={lang === "ru" ? data.nameRU : data.name}
       className="activity-popup"
     >
       <div className="activity-popup__wrapper">
