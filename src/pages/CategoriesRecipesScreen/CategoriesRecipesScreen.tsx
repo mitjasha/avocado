@@ -245,7 +245,7 @@ const CategoriesRecipesScreen: React.FC = () => {
             </ul>
           </div>
         </header>
-        <div className="container categories__main">
+        <div className="categories__main">
           {categories[category as keyof typeof categories].title !== "Favorites"
             ? recipes
                 .filter((item) => item.category.includes(category as string))
