@@ -2,6 +2,8 @@
 
 ### Deploy https://avocado-rss.netlify.app/
 
+### Presentation https://avocado-rss-presentation.netlify.app/
+
 ## Frontend:
 
 - React
