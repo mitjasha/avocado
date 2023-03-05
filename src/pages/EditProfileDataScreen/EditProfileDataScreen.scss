@@ -1,0 +1,147 @@
+@import "../../variables";
+
+.edit-profile {
+  &__screen {
+    background-color: var(--color-background);
+    padding-bottom: 30px;
+    height: 100%;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  &__h1 {
+    margin: 0;
+    margin-bottom: 30px;
+    color: var(--color-text);
+    padding: 20px 0px;
+    text-align: center;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 360px;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__icon {
+    height: 180px;
+    background-color: var(--input-color);
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: 50%;
+  }
+
+  &__info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__input {
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+
+    &[type="text"] {
+      width: 180px;
+    }
+
+    &[type="number"] {
+      width: 80px;
+    }
+  }
+}
+
+.item__container {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+label {
+  padding: 5px 0px;
+}
+
+.edit-profile__input__radio {
+  cursor: pointer;
+
+  &::after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -5px;
+    left: -1px;
+    position: relative;
+    background-color: var(--color-background);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #559c4f;
+  }
+
+  &:checked::after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -5px;
+    left: -1px;
+    position: relative;
+    background-color: var(--choosen-input-color);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid var(--choosen-input-color);
+  }
+}
+
+.select__container {
+  background-color: var(--choosen-input-color);
+  height: 40px;
+  width: 200px;
+  margin-left: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Montserrat";
+  color: var(--color-text);
+}
+
+.accept__button {
+  width: 220px;
+  height: 50px;
+  margin: 30px auto 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 2px solid var(--color-text);
+  background-color: var(--color-text);
+  color: var(--input-color);
+
+  &:hover {
+    cursor: pointer;
+    background: var(--input-color);
+    border: 2px solid var(--color-text);
+    border-radius: 20px;
+    color: var(--color-text);
+  }
+}

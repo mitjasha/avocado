@@ -1,0 +1,197 @@
+@import "../../variables";
+
+.main-screen {
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+.edit-event__screen {
+  background-color: var(--color-background);
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.daily-data {
+  background-color: var(--choosen-input-color);
+  padding-bottom: 20px;
+
+  &__status {
+    margin: auto;
+    width: 192px;
+    text-align: center;
+    background-color: var(--color-text);
+    color: var(--color-background);
+    border-radius: 20px;
+    padding: 10px;
+  }
+}
+
+.calories-chart {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  padding-top: 20px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 100px;
+  }
+
+  &__chart {
+    position: relative;
+  }
+}
+
+.kcal-available {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  &__num {
+    font-size: 36px;
+    color: $dark-green;
+    margin: 0;
+  }
+}
+
+.goal-kcal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.chart-data-num {
+  margin: 0;
+  font-size: 26px;
+  color: var(--color-text);
+}
+
+.chart-data-title {
+  margin: 0;
+  font-weight: 300;
+  color: #9da8c3;
+}
+
+.nutrients-charts {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nutrients-num {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.daily-events {
+  display: block;
+  padding-bottom: 30px;
+  position: relative;
+
+  &__edit {
+    top: 10px;
+    right: 0;
+  }
+
+  &__meals,
+  &__water,
+  &__exercise,
+  &__weight {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 25px 0 0 0;
+    color: var(--color-text);
+  }
+}
+
+.glasses {
+  display: flex;
+  flex-wrap: wrap;
+  width: 270px;
+  gap: 10px;
+  margin-top: 10px;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__control-btn {
+    display: flex;
+    width: 70px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.glass {
+  width: 26px;
+  height: 44px;
+  background-image: url(../../assets/png/glass.png);
+}
+
+.curr-weight-display {
+  font-size: 26px;
+  color: var(--color-text);
+}
+
+@media screen and (min-width: $media-tab-pt) {
+  .nutrients-charts {
+    width: 500px;
+    margin: auto;
+  }
+
+  .calories-chart {
+    gap: 25px;
+  }
+
+  .daily-events {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "meals water"
+      "meals exercise"
+      "meals weight";
+    gap: 10px 30px;
+
+    &__edit {
+      right: 83%;
+    }
+
+    &__meals {
+      grid-area: meals;
+    }
+
+    &__water {
+      grid-area: water;
+    }
+
+    &__exercise {
+      grid-area: exercise;
+    }
+
+    &__weight {
+      grid-area: weight;
+    }
+  }
+}

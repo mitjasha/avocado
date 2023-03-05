@@ -1,0 +1,206 @@
+@import "../../variables.scss";
+
+.recipes__screen {
+  background-color: var(--color-background);
+  min-height: 100vh;
+
+  &__h1 {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 20px 0px;
+    width: 100%;
+    color: var(--color-text);
+  }
+
+  &__h3 {
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--color-text);
+    margin: 0px;
+    width: 100%;
+  }
+}
+
+.main-header__container {
+  padding: 30px 0px;
+  width: 100%;
+  margin: 0;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  color: var(--color-text);
+
+  &__view {
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+.categories-container {
+  width: 100%;
+  height: 130px;
+  margin: 0px;
+  overflow-y: auto;
+
+  &__scroll {
+    width: 138%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.category {
+  width: 23%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-weight: 600;
+  cursor: pointer;
+
+  &__h3 {
+    font-size: 14px;
+    padding: 5px 8%;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  &__span {
+    font-size: 10px;
+    padding: 0px 0px 15px 8%;
+    color: #d9d9d9;
+  }
+
+  &__breakfast {
+    background: rgba(234, 167, 15, 0.5)
+      url("../../assets/png/breakfast-category.png") no-repeat;
+    background-size: 70%;
+    background-position: top right;
+    border-radius: 10px;
+  }
+
+  &__appetizers {
+    background: rgba(85, 156, 79, 0.5)
+      url("../../assets/png/appetizers-category.png") no-repeat;
+    background-size: 80%;
+    background-position: top right;
+    border-radius: 10px;
+  }
+
+  &__pasta {
+    background: rgba(218, 38, 2, 0.5) url("../../assets/png/pasta-category.png")
+      no-repeat;
+    background-size: 80%;
+    background-position: top right;
+    border-radius: 10px;
+  }
+
+  &__favourites {
+    background: rgba(2, 50, 218, 0.5) url("../../assets/png/fav-category.png")
+      no-repeat;
+    background-size: 70%;
+    background-position: top right;
+    border-radius: 10px;
+  }
+}
+
+.search__container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  padding: 10px 0px;
+  position: relative;
+
+  &__icon {
+    background-image: url("../../assets/svg/search.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 20px;
+  }
+
+  &__input {
+    outline: none;
+    height: 50px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+  }
+}
+
+.recipes__container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 0;
+  gap: 10px;
+}
+
+@media screen and (min-width: $media-tab-pt) {
+  .search__container {
+    width: 500px;
+    margin: auto;
+  }
+
+  .category {
+    &__breakfast {
+      background-size: 50%;
+    }
+
+    &__appetizers {
+      background-size: 60%;
+    }
+
+    &__pasta {
+      background-size: 60%;
+    }
+
+    &__favourites {
+      background-size: 50%;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 4px;
+  background-color: var(--choosen-input-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--choosen-input-color);
+  border-radius: 9em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $dark-green;
+}
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+  display: none;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+  display: none;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  display: none;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+  display: none;
+}

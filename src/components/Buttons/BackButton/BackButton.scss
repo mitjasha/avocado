@@ -1,0 +1,28 @@
+@import "../../../variables.scss";
+
+.back-btn {
+  display: flex;
+  width: 55px;
+  height: 55px;
+  background-color: var(--input-color);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  border: none;
+
+  &-icon {
+    background: var(--arrow) no-repeat;
+    width: 20px;
+    height: 30px;
+  }
+
+  &:hover {
+    background-color: var(--color-text);
+    transition: 0.4s all ease;
+    cursor: pointer;
+  }
+
+  &:hover .back-btn-icon {
+    background: var(--arrow-hover) no-repeat;
+  }
+}

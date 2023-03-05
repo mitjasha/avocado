@@ -1,0 +1,133 @@
+@import "./variables.scss";
+
+/* montserrat-100 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100;
+  src: url("./assets/fonts/montserrat-v25-latin-100.woff2") format("woff2"),
+    url("./assets/fonts/montserrat-v25-latin-100.woff") format("woff");
+}
+/* montserrat-200 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 200;
+  src: url("./assets/fonts/montserrat-v25-latin-200.woff2") format("woff2"),
+    url("./assets/fonts/montserrat-v25-latin-200.woff") format("woff");
+}
+/* montserrat-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./assets/fonts/montserrat-v25-latin-300.woff2") format("woff2"),
+    url("./assets/fonts/montserrat-v25-latin-300.woff") format("woff");
+}
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/montserrat-v25-latin-regular.woff2") format("woff2"),
+    url("./assets/fonts/montserrat-v25-latin-regular.woff") format("woff");
+}
+/* montserrat-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/montserrat-v25-latin-500.woff2") format("woff2"),
+    url("./assets/fonts/montserrat-v25-latin-500.woff") format("woff");
+}
+/* montserrat-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./assets/fonts/montserrat-v25-latin-600.woff2") format("woff2"),
+    url("./assets/fonts/montserrat-v25-latin-600.woff") format("woff");
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/montserrat-v25-latin-700.woff2") format("woff2"),
+    url("./assets/fonts/montserrat-v25-latin-700.woff") format("woff");
+}
+/* montserrat-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./assets/fonts/montserrat-v25-latin-800.woff2") format("woff2"),
+    url("./assets/fonts/montserrat-v25-latin-800.woff") format("woff");
+}
+/* montserrat-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./assets/fonts/montserrat-v25-latin-900.woff2") format("woff2"),
+    url("./assets/fonts/montserrat-v25-latin-900.woff") format("woff");
+}
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/inter-v12-latin-regular.woff2") format("woff2"),
+    url("./assets/fonts/inter-v12-latin-regular.woff") format("woff");
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Montserrat, Inter, sans-serif;
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 0 $offset-mob;
+}
+
+@media screen and (min-width: $media-tab) {
+  .container {
+    padding: 0 $offset-tab;
+  }
+}
+
+@media screen and (min-width: $media-tab-pt) {
+  .container {
+    padding: 0 $offset-tab-pt;
+  }
+}
+
+@media screen and (min-width: $media-desk) {
+  .container {
+    max-width: 1100px;
+    padding: 0;
+  }
+}

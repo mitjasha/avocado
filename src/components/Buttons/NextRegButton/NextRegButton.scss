@@ -1,0 +1,55 @@
+@import "../../../variables";
+
+.btn-circle {
+  display: flex;
+  position: relative;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid $dark-green;
+  background-color: $dark-green;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress {
+  display: flex;
+  position: absolute;
+  margin: auto;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 5px solid var(--choosen-input-color);
+}
+
+.next-btn {
+  display: flex;
+  width: 85px;
+  height: 85px;
+  margin: auto;
+  background-color: $dark-color;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+
+  &-icon {
+    background: var(--arrow-hover) no-repeat;
+    transform: rotate(180deg);
+    width: 20px;
+    height: 30px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.4s all ease;
+  }
+
+  &:disabled {
+    background-color: #6e6f6d;
+    cursor: default;
+    transform: scale(1);
+  }
+}

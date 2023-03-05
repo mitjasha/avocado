@@ -1,0 +1,40 @@
+@import "../../variables";
+
+.gender-input {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  margin: 40px 0;
+
+  &__input {
+    display: none;
+
+    &:checked + label {
+      background-color: var(--choosen-input-color);
+    }
+  }
+
+  &__label {
+    width: 164px;
+    height: 244px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--input-color);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.4s all ease;
+    }
+  }
+
+  &__icon {
+    height: 130px;
+  }
+}

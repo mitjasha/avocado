@@ -1,0 +1,67 @@
+@import "../../variables";
+
+.splash-screen {
+  background-color: var(--color-background);
+  display: flex;
+  min-height: 100vh;
+}
+
+.splash-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.figure {
+  margin: 30px 0 70px;
+  &__text {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--color-text);
+    margin-top: 21px;
+  }
+}
+
+.button-container {
+  width: 100%;
+
+  &__spiner {
+    margin: auto;
+  }
+
+  &__button {
+    display: flex;
+    margin: auto;
+  }
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin: 50px 0;
+    gap: 5px;
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: center;
+    color: $dark-green;
+
+    &:hover {
+      color: var(--choosen-input-color);
+      transition: 0.4s all ease;
+    }
+  }
+}
+
+@media screen and (min-width: $media-tab-pt) {
+  .splash-container {
+    width: 500px;
+  }
+}

@@ -1,0 +1,124 @@
+@import "../../variables";
+
+.header {
+  background-color: var(--color-background);
+  height: 75px;
+
+  &__container {
+    display: flex;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    color: var(--color-text);
+    align-items: center;
+  }
+
+  &_mob {
+    display: flex;
+    width: 100%;
+  }
+
+  &__logo {
+    display: none;
+  }
+
+  &__date-input {
+    width: 44px;
+    height: 44px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background: var(--input-color) var(--calendar) no-repeat;
+    background-size: 30px;
+    background-position: 50%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-datetime-edit-month-field,
+    &::-webkit-datetime-edit-day-field,
+    &::-webkit-datetime-edit-year-field {
+      display: none;
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      opacity: 0;
+    }
+  }
+
+  &__date-input:hover {
+    transition: 0.4s all ease;
+    background: var(--color-text) var(--calendar-hover) no-repeat;
+    background-size: 30px;
+    background-position: 50%;
+  }
+
+  &__date {
+    margin: auto;
+  }
+
+  &__menu-btn {
+    width: 44px;
+    height: 44px;
+    background-color: var(--input-color);
+    border-radius: 50px;
+    display: flex;
+    border: none;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__menu-btn:hover {
+    transition: 0.4s all ease;
+    background-color: var(--color-text);
+  }
+
+  &__menu-btn:hover .dot {
+    background-color: var(--input-color);
+  }
+}
+
+.dot {
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50px;
+  background-color: var(--color-text);
+}
+
+@media screen and (min-width: $media-tab-pt) {
+  .header {
+    height: 140px;
+
+    &__logo {
+      display: block;
+    }
+
+    &__menu-btn {
+      display: none;
+    }
+
+    &__container {
+      flex-direction: column;
+    }
+
+    &_desk {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &_mob {
+      align-items: center;
+      gap: 15px;
+    }
+
+    &__date {
+      margin: 0;
+    }
+  }
+}

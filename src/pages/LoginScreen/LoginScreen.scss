@@ -1,0 +1,86 @@
+@import "../../variables";
+
+.login-screen {
+  background-color: var(--color-background);
+  padding-bottom: 60px;
+  padding-top: 28px;
+  min-height: 100vh;
+
+  &__title {
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 115px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 22px;
+  }
+
+  &__email-address {
+    margin-top: 64px;
+  }
+
+  &__password {
+    margin-top: 15px;
+  }
+}
+
+.error {
+  position: absolute;
+  color: red;
+  font-weight: 100;
+  bottom: 125px;
+  position: absolute;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+
+  &_email:before {
+    content: url(../../assets/svg/reg-email.svg);
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding-left: 20px;
+  }
+
+  &_password:before {
+    content: url(../../assets/svg/reg-password.svg);
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding-left: 20px;
+  }
+}
+
+.password__show-btn {
+  background-image: url(../../assets/svg/reg-show.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.submit-btn {
+  margin-top: 200px;
+}
+
+@media screen and (min-width: $media-tab-pt) {
+  .login-screen-container {
+    width: 500px;
+  }
+}

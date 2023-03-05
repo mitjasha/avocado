@@ -1,0 +1,96 @@
+@import "../../variables.scss";
+
+.about__us {
+  &__screen {
+    background-color: var(--color-background);
+    min-height: 100vh;
+  }
+
+  &__title {
+    margin: 0;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    color: var(--color-text);
+  }
+
+  &__logo-wrapper {
+    display: flex;
+    position: relative;
+    margin-top: 30px;
+  }
+
+  &__logo {
+    background-image: url("../../assets/svg/logo.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 128px;
+    height: 162px;
+    top: 60px;
+    left: 10px;
+  }
+
+  &__top_h3 {
+    font-weight: 800;
+    margin: 0;
+    font-size: 50px;
+    color: var(--color-text);
+    text-align: right;
+    width: 302px;
+    height: 120px;
+  }
+
+  &__container {
+    margin-top: 150px;
+    padding: 0 10px;
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--color-text);
+    line-height: 40px;
+
+    &__h3 {
+      font-weight: 800;
+      font-size: 30px;
+      line-height: 40px;
+      margin: 30px 0px 0px;
+      color: var(--color-text);
+    }
+  }
+
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+    position: relative;
+
+    & li:before {
+      content: url("../../assets/svg/pionts_about.svg");
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  &__heart {
+    background-image: url("../../assets/svg/about_us.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 68px;
+    height: 74px;
+    margin: 20px auto 0px;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: $media-tab) {
+  .about__us {
+    &__logo-wrapper {
+      margin-left: 100px;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+@import "../../variables.scss";
+
+.setting__screen {
+  padding: 20px 0;
+  background-color: var(--color-background);
+  min-height: 100vh;
+
+  &__h1 {
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
+    font-size: 32px;
+    color: var(--color-text);
+  }
+
+  &__logo {
+    background-image: url("../../assets/svg/logo.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 215px;
+    height: 272px;
+    margin: 50px auto;
+  }
+}
+
+.setting__container {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  &__child {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+  }
+
+  &__span {
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--color-text);
+  }
+}
+
+.switch {
+  &_theme,
+  &_sound {
+    transition: all 0.5s;
+    left: 8%;
+    text-align: center;
+    z-index: 0;
+    background-color: var(--choosen-input-color);
+    width: 42%;
+    height: 80%;
+    color: var(--choosen-input-color);
+    font-weight: 800;
+    position: absolute;
+    top: 10%;
+    border-radius: 100px;
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &_active {
+    right: 8%;
+    left: auto;
+  }
+
+  &__container {
+    width: 58px;
+    position: relative;
+    height: 30px;
+    float: right;
+    background-color: var(--input-color);
+    border-radius: 100px;
+    cursor: pointer;
+  }
+}
+
+.select-lang__container {
+  background-color: var(--choosen-input-color);
+  width: 80px;
+  height: 40px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 100px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--color-text);
+  border: none;
+  position: relative;
+  outline: none;
+}
+
+.leave-acc-btn {
+  border: none;
+  font-size: 24px;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--color-text);
+
+  &:hover {
+    color: var(--choosen-input-color);
+    transition: 0.4s all ease;
+  }
+}
+
+@media screen and (min-width: $media-tab-pt) {
+  .setting__container {
+    width: 500px;
+    margin: auto;
+    padding: 40px 0;
+  }
+}
+
+@media screen and (min-width: $media-tab) {
+  .settings__save-btn {
+    width: 500px;
+    margin: auto;
+  }
+}
